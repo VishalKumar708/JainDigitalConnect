@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-a3z&h2hki16x=vk*87!8-xba!tg!50szf=!npl0=)kpvg(_4)w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.100.3', '127.0.0.1']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
+    # "debug_toolbar",
     # 'rest_framework_simplejwt',
     'rest_framework',
     # 'rest_framework.authtoken'
@@ -51,8 +52,16 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'accounts.middleware.Json404Middleware'
+
+    # "debug_toolbar.middleware.DebugToolbarMiddleware",
+
 ]
 
+# for debug the program
+# INTERNAL_IPS = [
+#     "127.0.0.1",
+# ]
 ROOT_URLCONF = 'auth_api.urls'
 
 TEMPLATES = [
@@ -72,7 +81,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'auth_api.wsgi.application'
-AUTH_USER_MODEL = 'accounts.CustomUser'
+# for creating custom user
+# AUTH_USER_MODEL = 'accounts.CustomUser'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -131,3 +141,4 @@ SID = 'AC74f8aa592b9f4bc82af4402dfd2ce24a'
 AUTH_TOKEN = '580a9c14bfb1bc99add5ba9c820d858c'
 SENDER_NUMBER = '+15187540316'
 OTP_EXPIRY_DURATION = 600  # in seconds
+

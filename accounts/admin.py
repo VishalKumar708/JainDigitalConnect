@@ -3,7 +3,8 @@ from .models import CustomUser, OTP
 
 
 class CustomUserAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['userId', 'headId', 'name',  'relationWithHead', 'phoneNumber', 'maritalStatus', 'lookingForMatch', 'sect',
+                  'profession', 'bloodGroup', 'dob', 'nativePlace', 'gotra', 'phoneNumberVisibility', 'gender','createdBy']
 
 
 admin.site.register(CustomUser, CustomUserAdmin)
