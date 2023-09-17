@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import RegisterHead, RegisterMember, GETFamilyByHeadId, IsUserExist, DeleteMember, UpdateUserById, GetAllResidents, GETUserById
+from .user_views import RegisterHead, RegisterMember, GETFamilyByHeadId, IsUserExist, DeleteMember, UpdateUserById, GetAllResidents, GETUserById
 from .auth_view import SendOTPWithNumber, VerifyOTP
 urlpatterns = [
 

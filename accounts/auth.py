@@ -7,6 +7,13 @@ from twilio.rest import Client
 from .models import CustomUser
 from django.db.models import Q
 
+import logging
+logger = logging.getLogger(__name__)
+logger_auth = logging.getLogger('auth_log')
+
+import traceback
+
+
 # check data is in json format or not
 def is_json(data):
     """ Check the data is json or not"""
@@ -47,9 +54,13 @@ def is_send_otp(phone_number, otp):
         cl.messages.create(
             body=f'Your 6 digit otp code is {otp} to login Jain Digital Connect. Thankyou for registration.',
             from_=settings.SENDER_NUMBER, to='+91' + phone_number)
+        logger_auth.info('OTP Sent Successfully.')
         return True
     except Exception as e:
-        print('While sending otp on mobile an exception occur===> ', e)
+        # error_message = traceback.format_exception_only(str(e))[0]
+        error_message = traceback.format_exception(e, limit=0)
+        logger_auth.error('While sending OTP to client an exception occur == > %s ', error_message)
+        print('While sending otp on mobile an exception occur===> ', Exception(e))
         return False
 
 

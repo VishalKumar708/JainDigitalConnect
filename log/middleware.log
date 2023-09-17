@@ -1,0 +1,7 @@
+INFO: 2023-09-17 08:54:45,733 | middleware.py| func: __call__| line number: 91| Unsupported Media Type
+INFO: 2023-09-17 08:55:46,795 | middleware.py| func: __call__| line number: 91| Unsupported Media Type
+INFO: 2023-09-17 08:56:39,072 | middleware.py| func: __call__| line number: 91| Unsupported Media Type
+INFO: 2023-09-17 08:57:43,621 | middleware.py| func: __call__| line number: 91| Unsupported Media Type. Expected application/json but got text/plain
+INFO: 2023-09-17 09:12:57,628 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 09:13:40,253 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 09:14:19,356 | middleware.py| func: __call__| line number: 80| Invalid URL.

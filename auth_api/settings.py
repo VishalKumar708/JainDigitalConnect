@@ -52,7 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'accounts.middleware.Json404Middleware'
+    'accounts.middleware.ValidateURLAndJSONMiddleware'
 
     # "debug_toolbar.middleware.DebugToolbarMiddleware",
 
@@ -138,7 +138,104 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # for otp
 SID = 'AC74f8aa592b9f4bc82af4402dfd2ce24a'
-AUTH_TOKEN = '580a9c14bfb1bc99add5ba9c820d858c'
+# AUTH_TOKEN = '580a9c14bfb1bc99add5ba9c820d858c'
+AUTH_TOKEN = '9bc540aefab30e0bff9d9780623866b9'
 SENDER_NUMBER = '+15187540316'
 OTP_EXPIRY_DURATION = 600  # in seconds
 
+import os
+LOG_DIR = os.path.join(BASE_DIR, 'log')
+
+# Ensure the log directory exists, and create it if it doesn't
+if not os.path.exists(LOG_DIR):
+    os.makedirs(LOG_DIR)
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "verbose": {
+            "format": "%(levelname)s %(asctime)s  %(lineno)s %(message)s",
+            # "style": "{",
+        },
+        "plain": {
+            "format": "%(levelname)s: %(asctime)s | %(module)s.py| func: %(funcName)s| line number: %(lineno)s| %(message)s",
+            # "style": "{",
+        },
+    },
+    "filters": {
+        # "special": {
+        #     "()": "project.logging.SpecialFilter",
+        #     "foo": "bar",
+        # },
+        "require_debug_true": {
+            "()": "django.utils.log.RequireDebugTrue",
+        },
+    },
+    "handlers": {
+        "console": {
+            "level": "INFO",
+            "filters": ["require_debug_true"],
+            "class": "logging.StreamHandler",
+            "formatter": "verbose",
+        },
+        'info': {
+            "level": "INFO",
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(LOG_DIR, "info.log"),
+            'maxBytes': 300 * 1024 * 1024,
+            'backupCount': 10,
+            "formatter": "verbose",
+            "encoding": 'utf-8'
+        },
+        'auth_view_log': {
+            "level": "INFO",
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(LOG_DIR, "auth_views.log"),
+            'maxBytes': 300 * 1024 * 1024,
+            'backupCount': 10,
+            "formatter": "plain",
+            "encoding": 'utf-8'
+        },
+        'user_view_log': {
+            "level": "INFO",
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(LOG_DIR, "user_views.log"),
+            'maxBytes': 300 * 1024 * 1024,
+            'backupCount': 10,
+            "formatter": "plain",
+            "encoding": 'utf-8'
+        },
+        'middleware_log': {
+            "level": "INFO",
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(LOG_DIR, "middleware.log"),
+            'maxBytes': 300 * 1024 * 1024,
+            'backupCount': 10,
+            "formatter": "plain",
+            "encoding": 'utf-8'
+        }
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["info", "console"],
+            "propagate": True,
+            "level": "INFO"
+        },
+        "auth_log": {
+            "handlers": ["auth_view_log"],
+            "level": "INFO",
+            "propagate": True,
+        },
+        "user_log": {
+            "handlers": ["user_view_log"],
+            "level": "INFO",
+            "propagate": True,
+        },
+        "middleware_log": {
+            "handlers": ["middleware_log"],
+            "level": "INFO",
+            "propagate": True,
+        },
+    },
+}

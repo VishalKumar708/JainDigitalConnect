@@ -8,6 +8,10 @@ from django.db.models import Q
 from .auth import is_json, is_otp_expired, generate_otp, is_send_otp, check_number_exist_for_login
 from .utils import is_valid_mobile_number
 from rest_framework import status
+import logging
+logger = logging.getLogger(__name__)
+# logger = logging.getLogger('django')
+logger_auth = logging.getLogger('auth_log')
 
 
 class SendOTPWithNumber(APIView):
@@ -31,9 +35,8 @@ class SendOTPWithNumber(APIView):
                 'data': 'Please provide valid JSONData.'
             }
             return Response(json_data, status=406)
-
         phone_number = request.data.get('phoneNumber')
-
+        print('phone Number==> ', phone_number)
         # check phone_number is None or not
         if phone_number is not None:
             # check phone_number is correct or not
@@ -50,7 +53,7 @@ class SendOTPWithNumber(APIView):
                 'status': 'Failed',
                 'data': f'Please provide phoneNumber. You have not provide any phoneNumber.'
             }
-            return Response(json_data, status=406)
+            return Response(json_data, status=400)
         # before sending check email is locked or not
 
         check_timestamp = self.check_number_is_locked(phone_number)
@@ -59,12 +62,10 @@ class SendOTPWithNumber(APIView):
             otp = generate_otp()
 
             # send otp
-            is_send = is_send_otp(phone_number=phone_number, otp=otp)
 
-            # create and save otp in tabel
+            is_send = is_send_otp(phone_number=phone_number, otp=otp)
             obj = OTP.objects.create(phoneNumber=phone_number, otp=otp)
             obj.save()
-
             if is_send:
                 json_data = {
                     'statusCode': 200,
@@ -72,6 +73,7 @@ class SendOTPWithNumber(APIView):
                     'data': f'OTP has sent successfully.'
                 }
                 return Response(json_data)
+
         else:
             default_otp_expiry_time = 300
             otp_expiry_time = getattr(settings, 'OTP_EXPIRY_DURATION', default_otp_expiry_time)
@@ -86,6 +88,7 @@ class SendOTPWithNumber(APIView):
             'status': 'failed',
             'data': 'Please try after some time.'
         }
+
         return Response(json_data, status=500)
 
 
@@ -152,6 +155,7 @@ class VerifyOTP(APIView):
                 'status': 'Failed',
                 'data': 'Your OTP has expired.'
             }
+            logger_auth.info(f'This OTP {otp} has expired.')
             return Response(json_data, status=406)
         else:
             if instance.otp == otp:
@@ -169,6 +173,7 @@ class VerifyOTP(APIView):
                             'message': 'OTP Matched.Please activate your account.',
                             'data': {'userid': user_obj.userId}
                         }
+                        logger_auth.info(f'This {phone_number} is Inactive and try to login.')
                         return Response(json_data)
                     else:
                         json_data = {
@@ -177,6 +182,7 @@ class VerifyOTP(APIView):
                             'message': 'Your OTP has matched successfully.',
                             'data': {'userid': user_obj.userId}
                         }
+                        logger_auth.info(f'OTP matched successfully and This {phone_number} user has logged in.')
                         return Response(json_data)
                 else:
                     json_data = {
@@ -197,6 +203,7 @@ class VerifyOTP(APIView):
                      'status': 'Failed',
                      'data': f'You entered more then 3 times wrong OTP. Please try again after {otp_expiry_time//60} minutes.'
                 }
+                logger_auth.info(f'This {phone_number} has locked for next {otp_expiry_time//60} minutes.')
                 return Response(json_data)
 
             instance.count += 1

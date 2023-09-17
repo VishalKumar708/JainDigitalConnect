@@ -1,0 +1,21 @@
+INFO: 2023-09-16 17:27:54,359 | user_views.py| func: post| line number: 44| Head is already found.
+INFO: 2023-09-16 17:28:57,016 | user_views.py| func: post| line number: 148| This None user entered wrong headId.
+INFO: 2023-09-16 17:37:51,721 | user_views.py| func: post| line number: 205| headId = 1 user member added successfully.
+INFO: 2023-09-16 17:39:38,307 | user_views.py| func: get| line number: 239| User entered wrong headId = 23.
+INFO: 2023-09-16 17:39:46,129 | user_views.py| func: get| line number: 251| Send all family members data to headId = 1 user successfully.
+INFO: 2023-09-16 17:40:17,282 | user_views.py| func: post| line number: 277| This number 1234567890 is already exist.
+INFO: 2023-09-16 17:47:26,020 | user_views.py| func: post| line number: 277| This number 1234567890 is already exist.
+INFO: 2023-09-16 17:48:19,923 | user_views.py| func: post| line number: 277| This number 1234567890 is already exist.
+INFO: 2023-09-16 17:49:10,885 | user_views.py| func: post| line number: 277| This number 1234567890 is already exist.
+INFO: 2023-09-16 17:51:57,746 | user_views.py| func: post| line number: 286| This number None user not found in database.
+INFO: 2023-09-17 08:24:35,020 | user_views.py| func: list| line number: 440| All user data retrieve successfully.
+INFO: 2023-09-17 08:24:45,872 | user_views.py| func: list| line number: 440| All user data retrieve successfully.
+INFO: 2023-09-17 08:26:34,244 | user_views.py| func: list| line number: 440| All user data retrieve successfully.
+INFO: 2023-09-17 08:38:55,163 | user_views.py| func: post| line number: 288| This number None user not found in database.
+INFO: 2023-09-17 08:39:02,532 | user_views.py| func: post| line number: 288| This number None user not found in database.
+INFO: 2023-09-17 08:46:10,879 | user_views.py| func: post| line number: 288| This number None user not found in database.
+INFO: 2023-09-17 08:46:31,029 | user_views.py| func: post| line number: 288| This number None user not found in database.
+INFO: 2023-09-17 08:49:45,630 | user_views.py| func: post| line number: 288| This number None user not found in database.
+INFO: 2023-09-17 08:50:13,114 | user_views.py| func: post| line number: 279| This number 7056599221 is already exist.
+INFO: 2023-09-17 09:00:28,109 | user_views.py| func: post| line number: 288| This number None user not found in database.
+INFO: 2023-09-17 09:03:19,987 | user_views.py| func: post| line number: 295| This number  user not found in database.
