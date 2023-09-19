@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     # "debug_toolbar",
     # 'rest_framework_simplejwt',
     'rest_framework',
+    'django_filters',
+
     # 'rest_framework.authtoken'
 ]
 
@@ -139,7 +141,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # for otp
 SID = 'AC74f8aa592b9f4bc82af4402dfd2ce24a'
 # AUTH_TOKEN = '580a9c14bfb1bc99add5ba9c820d858c'
-AUTH_TOKEN = '9bc540aefab30e0bff9d9780623866b9'
+# AUTH_TOKEN = '9bc540aefab30e0bff9d9780623866b9'
+AUTH_TOKEN = '9a76bfb5fa67140a3747eef4fd576f08'
 SENDER_NUMBER = '+15187540316'
 OTP_EXPIRY_DURATION = 600  # in seconds
 
@@ -156,18 +159,14 @@ LOGGING = {
     "formatters": {
         "verbose": {
             "format": "%(levelname)s %(asctime)s  %(lineno)s %(message)s",
-            # "style": "{",
+
         },
         "plain": {
             "format": "%(levelname)s: %(asctime)s | %(module)s.py| func: %(funcName)s| line number: %(lineno)s| %(message)s",
-            # "style": "{",
+
         },
     },
     "filters": {
-        # "special": {
-        #     "()": "project.logging.SpecialFilter",
-        #     "foo": "bar",
-        # },
         "require_debug_true": {
             "()": "django.utils.log.RequireDebugTrue",
         },
@@ -238,4 +237,10 @@ LOGGING = {
             "propagate": True,
         },
     },
+}
+REST_FRAMEWORK = {
+    # 'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+    # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination', #for builtin pagination
+    'DEFAULT_PAGINATION_CLASS': 'accounts.pagination.CustomPagination',# for customized pagination
+    'PAGE_SIZE': 5
 }

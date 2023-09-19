@@ -71,6 +71,7 @@ class ValidateURLAndJSONMiddleware:
         # Check if the URL is valid
         try:
             resolve(request.path_info)
+            # print(request.path_info)
         except Exception as e:
             response_data = {
                 'status_code': status.HTTP_404_NOT_FOUND,
@@ -83,7 +84,9 @@ class ValidateURLAndJSONMiddleware:
         if request.method in ['POST', 'PUT']:
             # Check if the request has a valid JSON content type
             content_type = request.content_type
-            if content_type != 'application/json':
+            print('content_type ==> ', content_type)
+            # if content_type != 'application/json':
+            if content_type not in ('application/x-www-form-urlencoded', 'application/json'):
                 response_data = {
                     'statusCode': 415,  # Use 415 Unsupported Media Type for non-JSON data
                     'status': 'Failed',
@@ -94,17 +97,18 @@ class ValidateURLAndJSONMiddleware:
                 return JsonResponse(response_data, status=415)
 
             # Attempt to parse the request data as JSON
-            try:
-                request_data = json.loads(request.body.decode('utf-8'))  # Assumes UTF-8 encoding
-            except json.JSONDecodeError as e:
-                response_data = {
-                    'statusCode': 400,  # Use 400 Bad Request for invalid JSON
-                    'status': 'Failed',
-                    'data': {'error': 'Invalid JSON data', 'details': str(e)}
-                }
-                logger_middleware.info(f'Invalid JSON data.{str(e)}')
+            if content_type == 'application/json':
+                try:
+                    request_data = json.loads(request.body.decode('utf-8'))  # Assumes UTF-8 encoding
+                except json.JSONDecodeError as e:
+                    response_data = {
+                        'statusCode': 400,  # Use 400 Bad Request for invalid JSON
+                        'status': 'Failed',
+                        'data': {'error': 'Invalid JSON data', 'details': str(e)}
+                    }
+                    logger_middleware.info(f'Invalid JSON data.{str(e)}')
 
-                return JsonResponse(response_data, status=400)
+                    return JsonResponse(response_data, status=400)
 
         return self.get_response(request)
 

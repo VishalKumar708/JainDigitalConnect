@@ -134,10 +134,12 @@ class GETFamilyByHeadIdSerializer(serializers.ModelSerializer):
         return data
 
 
+
+
 class GETAllUserSerializer(serializers.ModelSerializer):
     # age = serializers.CharField()
     class Meta:
-        fields = ['name', 'gotra',  'nativePlace','profession',  'dob',  'address', 'phoneNumber','phoneNumberVisibility' ]
+        fields = ['name', 'gotra',  'nativePlace', 'profession',  'dob',  'address', 'phoneNumber','phoneNumberVisibility' ]
         model = CustomUser
 
     def to_representation(self, instance):

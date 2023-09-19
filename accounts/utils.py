@@ -33,7 +33,7 @@ def is_valid_mobile_number(number):
     pattern = r'^\d{1,10}$'
 
     # Use re.match to check if the input matches the pattern
-    if re.match(pattern, number):
+    if re.match(pattern, number) and len(number) == 10:
         return True
     else:
         return False

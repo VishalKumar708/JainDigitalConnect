@@ -73,7 +73,6 @@ class SendOTPWithNumber(APIView):
                     'data': f'OTP has sent successfully.'
                 }
                 return Response(json_data)
-
         else:
             default_otp_expiry_time = 300
             otp_expiry_time = getattr(settings, 'OTP_EXPIRY_DURATION', default_otp_expiry_time)

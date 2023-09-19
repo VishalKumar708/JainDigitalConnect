@@ -5,3 +5,71 @@ INFO: 2023-09-17 08:57:43,621 | middleware.py| func: __call__| line number: 91| 
 INFO: 2023-09-17 09:12:57,628 | middleware.py| func: __call__| line number: 80| Invalid URL.
 INFO: 2023-09-17 09:13:40,253 | middleware.py| func: __call__| line number: 80| Invalid URL.
 INFO: 2023-09-17 09:14:19,356 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 09:33:15,852 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 11:00:17,254 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 11:00:27,840 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 11:00:44,145 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 11:03:21,856 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 11:06:48,126 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 11:07:00,575 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 11:07:07,079 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 11:08:05,747 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 11:08:14,219 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 11:08:19,611 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 11:08:26,341 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 11:28:52,556 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 11:29:28,017 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 11:33:53,519 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 12:44:22,183 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 12:44:31,903 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 12:45:53,148 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 12:48:58,616 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 12:49:04,117 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 12:50:45,861 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 12:50:52,717 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 12:52:54,620 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 12:53:15,692 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 12:54:41,800 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 12:55:32,025 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 12:55:59,834 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 12:56:11,591 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 12:56:35,513 | middleware.py| func: __call__| line number: 92| Unsupported Media Type. Expected application/json but got application/x-www-form-urlencoded
+INFO: 2023-09-17 12:56:59,353 | middleware.py| func: __call__| line number: 92| Unsupported Media Type. Expected application/json but got application/x-www-form-urlencoded
+INFO: 2023-09-17 12:58:44,151 | middleware.py| func: __call__| line number: 106| Invalid JSON data.Expecting value: line 1 column 1 (char 0)
+INFO: 2023-09-17 12:58:59,795 | middleware.py| func: __call__| line number: 106| Invalid JSON data.Expecting value: line 1 column 1 (char 0)
+INFO: 2023-09-17 13:01:59,802 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 13:02:17,725 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 13:05:04,493 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 13:05:11,831 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 13:05:45,974 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 13:07:25,075 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 13:13:10,538 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 13:13:25,585 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 13:14:29,067 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 13:14:47,504 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 13:15:00,983 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 13:16:20,293 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 13:16:29,853 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 13:17:37,090 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 13:17:52,372 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 13:19:34,134 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 13:19:51,663 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 13:21:18,853 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 13:21:21,369 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 13:21:35,842 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-17 13:22:53,125 | middleware.py| func: __call__| line number: 80| Invalid URL.
+INFO: 2023-09-18 11:10:11,951 | middleware.py| func: __call__| line number: 81| Invalid URL.
+INFO: 2023-09-18 11:25:28,543 | middleware.py| func: __call__| line number: 108| Invalid JSON data.Expecting ',' delimiter: line 3 column 5 (char 57)
+INFO: 2023-09-18 11:25:41,938 | middleware.py| func: __call__| line number: 94| Unsupported Media Type. Expected application/json but got text/plain
+INFO: 2023-09-18 12:02:45,763 | middleware.py| func: __call__| line number: 81| Invalid URL.
+INFO: 2023-09-18 12:02:51,550 | middleware.py| func: __call__| line number: 81| Invalid URL.
+INFO: 2023-09-18 16:24:49,525 | middleware.py| func: __call__| line number: 94| Unsupported Media Type. Expected application/json but got text/plain
+INFO: 2023-09-18 16:25:30,580 | middleware.py| func: __call__| line number: 94| Unsupported Media Type. Expected application/json but got text/plain
+INFO: 2023-09-18 16:25:43,303 | middleware.py| func: __call__| line number: 94| Unsupported Media Type. Expected application/json but got text/plain
+INFO: 2023-09-18 16:25:57,633 | middleware.py| func: __call__| line number: 94| Unsupported Media Type. Expected application/json but got text/plain
+INFO: 2023-09-18 16:26:19,391 | middleware.py| func: __call__| line number: 94| Unsupported Media Type. Expected application/json but got text/plain
+INFO: 2023-09-18 16:26:33,648 | middleware.py| func: __call__| line number: 94| Unsupported Media Type. Expected application/json but got text/plain
+INFO: 2023-09-18 16:28:01,552 | middleware.py| func: __call__| line number: 95| Unsupported Media Type. Expected application/json but got text/plain
+INFO: 2023-09-18 16:28:43,888 | middleware.py| func: __call__| line number: 95| Unsupported Media Type. Expected application/json but got text/plain
+INFO: 2023-09-18 16:29:53,032 | middleware.py| func: __call__| line number: 95| Unsupported Media Type. Expected application/json but got text/plain
+INFO: 2023-09-18 16:53:38,136 | middleware.py| func: __call__| line number: 81| Invalid URL.

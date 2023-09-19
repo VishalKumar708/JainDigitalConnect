@@ -1,3 +1,5 @@
+from django.db.models import Q
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.generics import ListAPIView
 
 from .models import CustomUser
@@ -11,6 +13,7 @@ from .serializers import HeadSerializer, MemberSerializer, GETFamilyByHeadIdSeri
 import logging
 logger = logging.getLogger(__name__)
 logger_user = logging.getLogger('user_log')
+
 
 class RegisterHead(APIView):
     def post(self, request, *args, **kwargs):
@@ -419,33 +422,91 @@ class UpdateUserById(APIView):
 
             return Response(json_data)
 
+from .filters import filter_queryset
+from .pagination import CustomPagination
+
 
 class GetAllResidents(ListAPIView):
     serializer_class = GETAllUserSerializer
-    queryset = CustomUser.objects.all()
+    # pagination_class = CustomPagination
+
+
+    def get_queryset(self):
+        qs = CustomUser.objects.all()
+        return qs
 
     def list(self, request, *args, **kwargs):
-        queryset = self.get_queryset()
+        # queryset = self.get_queryset()
+        get_filter_fields = request.query_params
+        if get_filter_fields is not None:
+            q_objects = filter_queryset(request.query_params)
+            try:
+                queryset = CustomUser.objects.filter(q_objects)
+                print("filter query===> ", queryset.query)
+            except Exception as e:
+                response_data = {
+                    'statusCode': 404,
+                    'status': 'failed',
+                    'data': {'msg': str(e)},
+                    }
+                return Response(response_data)
+        else:
+            queryset = self.get_queryset()
+
+        # print('Serializer class==> ', self.get_serializer())
+        # filters = {}
+        # for param_name, param_value in request.query_params.items():
+        #     # Create a case-insensitive search for string fields
+        #     filters[f"{param_name.strip()}__icontains"] = param_value.strip()
+        # print("Your filter parameters ==> ", filters)
+        # # Apply filters to the queryset using Q objects
+        # q_objects = Q()
+        # for field, value in filters.items():
+        #     q_objects |= Q(**{field: value})
+        # print('Your queryset objects==> ', q_objects)
+        # try:
+        #     queryset = queryset.filter(q_objects)
+        #     print("This is your query==> ", queryset.query)
+        # except Exception as e:
+        #     if not queryset.exists():
+        #         response_data = {
+        #             'statusCode': 404,
+        #             'status': 'failed',
+        #             'data': {'msg': f'User Not found.{e}'},
+        #         }
+        #         logger_user.info('All user data retrieve failed because User not found. ')
+        #         return Response(response_data)
 
         if len(queryset) < 1:
             response_data = {
                 'statusCode': 404,
                 'status': 'failed',
-                'data': {'msg': 'User Not found.'},
+                'data': {'msg': 'Record Not found.'},
             }
             logger_user.info('All user data retrieve failed because User not found. ')
             return Response(response_data)
+        # serializer = self.get_serializer(queryset, many=True)
+
+        page = self.paginate_queryset(queryset)
+        # serializer = self.get_serializer(page, many=True)
+        print("page==> ", page)
+
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
         serializer = self.get_serializer(queryset, many=True)
 
-        response_data = {
-            'statusCode': 200,
+        json_data = {
+            'statusCode': status.HTTP_204_NO_CONTENT,
             'status': 'success',
-            'totalResidents':len(serializer.data),
-            'data': serializer.data,
+            'totalResidents': len(serializer.data),
+            'results': serializer.data
         }
         logger_user.info('All user data retrieve successfully.')
+        return Response(json_data)
 
-        return Response(response_data)
+
 
 
 class GETUserById(APIView):
