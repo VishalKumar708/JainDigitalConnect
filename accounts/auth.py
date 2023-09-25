@@ -4,12 +4,14 @@ from django.utils import timezone
 from json import JSONDecodeError
 import json
 from twilio.rest import Client
-from .models import CustomUser
+from .models import User
 from django.db.models import Q
 
 import logging
-logger = logging.getLogger(__name__)
-logger_auth = logging.getLogger('auth_log')
+# logger = logging.getLogger(__name__)
+error_logger = logging.getLogger('error')
+info_logger = logging.getLogger('info')
+
 
 import traceback
 
@@ -54,19 +56,19 @@ def is_send_otp(phone_number, otp):
         cl.messages.create(
             body=f'Your 6 digit otp code is {otp} to login Jain Digital Connect. Thankyou for registration.',
             from_=settings.SENDER_NUMBER, to='+91' + phone_number)
-        logger_auth.info('OTP Sent Successfully.')
+        info_logger.info('OTP has sent successfully.')
         return True
     except Exception as e:
         # error_message = traceback.format_exception_only(str(e))[0]
         error_message = traceback.format_exception(e, limit=0)
-        logger_auth.error('While sending OTP to client an exception occur == > %s ', error_message)
-        print('While sending otp on mobile an exception occur===> ', Exception(e))
+        error_logger.error('While sending OTP to client an exception occur == > %s ', error_message)
+        # print('While sending otp on mobile an exception occur===> ', Exception(e))
         return False
 
 
 def check_number_exist_for_login(phone_number):
     """"to check user can login or not """
-    filtered_data = CustomUser.objects.filter(phoneNumber=phone_number)
+    filtered_data = User.objects.filter(phoneNumber=phone_number)
     print("Record found===>", filtered_data)
     if len(filtered_data) == 1:
         obj = filtered_data[0]
@@ -76,7 +78,7 @@ def check_number_exist_for_login(phone_number):
 
 def before_update_check_number_exist(phone_number, user_id):
     """"to check user can login or not """
-    filtered_data = CustomUser.objects.filter(Q(phoneNumber=phone_number) & ~Q(userId=user_id))
+    filtered_data = User.objects.filter(Q(phoneNumber=phone_number) & ~Q(userId=user_id))
     print("Record found===>", filtered_data)
     if len(filtered_data) == 1:
         return True
@@ -85,7 +87,7 @@ def before_update_check_number_exist(phone_number, user_id):
 
 def is_account_exist(phone_number):
     """ to check the number already exists or not"""
-    filtered_data = CustomUser.objects.filter(phoneNumber=phone_number)
+    filtered_data = User.objects.filter(phoneNumber=phone_number)
     print("Record found===>", filtered_data)
     if len(filtered_data) == 1:
         obj = filtered_data[0]
@@ -95,7 +97,7 @@ def is_account_exist(phone_number):
 
 def check_number_exist_for_add_member(phone_number):
     """to check member number exist or not"""
-    filtered_data = CustomUser.objects.filter(phoneNumber=phone_number)
+    filtered_data = User.objects.filter(phoneNumber=phone_number)
     # print("Record found===>", filtered_data)
     if len(filtered_data) == 1:
         return True
@@ -105,9 +107,9 @@ def check_number_exist_for_add_member(phone_number):
 def check_head_exist_by_id(id):
     """ check user id is existed or not """
     try:
-        CustomUser.objects.get(userId=id, headId=None)
+        User.objects.get(userId=id, headId=None)
         return True
-    except CustomUser.DoesNotExist:
+    except User.DoesNotExist:
         return False
 
 
@@ -118,7 +120,7 @@ def is_applicable_for_matrimonial(birthdate_str, gender):
     """ to check user is applicable for matrimonial or not"""
     # Convert the input date string to a datetime object
     try:
-        birthdate = datetime.strptime(birthdate_str.strip(), '%B %d, %Y')
+        birthdate = datetime.strptime(birthdate_str.strip(), '%B %d %Y')
 
         # Get the current date
         current_date = datetime.now()
@@ -127,12 +129,14 @@ def is_applicable_for_matrimonial(birthdate_str, gender):
         age = current_date.year - birthdate.year - (
                     (current_date.month, current_date.day) < (birthdate.month, birthdate.day))
 
-        if gender == 'male' and age < 21:
+        if gender.lower().strip() == 'male' and age < 21:
+            # print("your gender==>",gender.lower().strip() )
             return False, 'Sorry! Your age is less then 21. So You are not eligible for matrimonial'
-        elif gender == 'female' and age < 18:
+        elif gender.lower().strip() == 'female' and age < 18:
             return False, 'Sorry! Your age is less then 18. So You are not eligible for matrimonial'
         return True, " "
     except Exception as e:
+        error_logger.error("While converting dob to object an Exception occur == > %s ", e)
         print('failed===> ', e)
         return False, " "
     # return age
@@ -154,7 +158,7 @@ def get_age_by_dob(birthdate_str):
 
 def check_same_name_member_in_a_head(head_id, member_name):
     """if member number is 0000000000 then check name if name not same then add """
-    filtered_data = CustomUser.objects.filter(phoneNumber='0000000000', headId=head_id, name__iexact=member_name)
+    filtered_data = User.objects.filter(phoneNumber='0000000000', headId=head_id, name__iexact=member_name)
 
     if len(filtered_data)>0:
         return True

@@ -11,22 +11,7 @@ import re
 from twilio.rest import Client
 
 
-# def send_mail_to_client(mail_id, otp):
-#     """ Help to send mail to recipient
-#     it returns boolean value """
-#     try:
-#         # otp = generate_otp()
-#         subject = "Jain Digit Connect Login OTP."
-#         message = f"Your 6 digit otp is {otp} to verify email."
-#         print('your otp==> ', otp)
-#         from_email = settings.EMAIL_HOST_USER
-#         recipient_list = (mail_id,)
-#         send_mail(subject, message, from_email, recipient_list)
-#         return True
-#
-#     except Exception as e:
-#         print('Exception while sending email to client.', e)
-#         return False
+
 
 def is_valid_mobile_number(number):
     # Define a regular expression pattern for a valid mobile number with a maximum of 12 digits
@@ -59,3 +44,20 @@ def string_to_bool(input_str):
 #     if is_matched:
 #         return True
 #     return False
+
+# def send_mail_to_client(mail_id, otp):
+#     """ Help to send mail to recipient
+#     it returns boolean value """
+#     try:
+#         # otp = generate_otp()
+#         subject = "Jain Digit Connect Login OTP."
+#         message = f"Your 6 digit otp is {otp} to verify email."
+#         print('your otp==> ', otp)
+#         from_email = settings.EMAIL_HOST_USER
+#         recipient_list = (mail_id,)
+#         send_mail(subject, message, from_email, recipient_list)
+#         return True
+#
+#     except Exception as e:
+#         print('Exception while sending email to client.', e)
+#         return False

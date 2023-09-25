@@ -2,7 +2,7 @@ from django.db.models import Q
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.generics import ListAPIView
 
-from .models import CustomUser
+from .models import User
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .auth import is_json, is_account_exist, check_number_exist_for_add_member, is_applicable_for_matrimonial, check_head_exist_by_id, check_same_name_member_in_a_head, before_update_check_number_exist
@@ -10,57 +10,29 @@ from .utils import is_valid_mobile_number, is_integer, string_to_bool
 from rest_framework import status
 from .serializers import HeadSerializer, MemberSerializer, GETFamilyByHeadIdSerializer, UpdateMemberSerializer, GETAllUserSerializer, GETMemberByIdSerializer
 
+from .push_notification import send_notification
+
 import logging
-logger = logging.getLogger(__name__)
-logger_user = logging.getLogger('user_log')
+# logger = logging.getLogger(__name__)
+error_logger = logging.getLogger('error')
+info_logger = logging.getLogger('info')
 
 
 class RegisterHead(APIView):
     def post(self, request, *args, **kwargs):
-        is_json_data = is_json(data=request.body)
-        print('is json==>', is_json_data)
-
-        if not is_json_data:
-            json_data = {
-                'statusCode': status.HTTP_406_NOT_ACCEPTABLE,
-                'status': 'Failed',
-                'data': 'Please provide valid JSONData.'
-            }
-            return Response(json_data, status=406)
-
         data = request.data
         head_phone_number = data.get('phoneNumber')
 
         # check number exist in whole tabel
         is_exist, instance = is_account_exist(phone_number=head_phone_number)
         if is_exist:
-            # have to send head data
-            # try:
-                # Fetch user data based on the user ID
-                # obj = CustomUser.objects.get(userId=instance)
-                # if obj.headId is not None:
-                    json_data = {
-                        'statusCode': 400,
-                        'status': 'Failed',
-                        'data': 'Head is already exist.'
-                    }
-                    logger_user.info('Head is already found.')
-                    return Response(json_data)
-                # Serialize the retrieved data
-                # serializer = GETHeadSerializer(instance=obj, context={'phoneNumberVisibility': obj.phoneNumberVisibility})
-                # json_data = {
-                #     'statusCode': 200,
-                #     'status': 'Success',
-                #     'data': serializer.data
-                # }
-                # return Response(json_data)
-            # except CustomUser.DoesNotExist:
-            #     json_data = {
-            #         'statusCode': 404,
-            #         'status': 'Failed',
-            #         'data': 'User id not found.'
-            #     }
-            #     return Response(json_data)
+            json_data = {
+                'statusCode': 400,
+                'status': 'Failed',
+                'data': 'Head is already exist.'
+            }
+            info_logger.info('Head is already found.')
+            return Response(json_data)
 
         print('head_phone_number====> ', head_phone_number)
         # check head phone number
@@ -103,7 +75,13 @@ class RegisterHead(APIView):
                 'status': 'Success',
                 'data': 'Head Created Successfully.'
             }
-            logger_user.info('Head Added Successfully.')
+
+            # send notification to head
+            title = 'New head has registered.'
+            body = f'Head phone number is {head_phone_number}'
+            send_notification(title=title, body=body)
+
+            info_logger.info('Head Added Successfully.')
             return Response(json_data, status=406)
 
         # serializer error
@@ -118,17 +96,6 @@ class RegisterHead(APIView):
 
 class RegisterMember(APIView):
     def post(self, request, *args, **kwargs):
-        is_json_data = is_json(data=request.body)
-        print('is json==>', is_json_data)
-
-        if not is_json_data:
-            json_data = {
-                'statusCode': status.HTTP_406_NOT_ACCEPTABLE,
-                'status': 'Failed',
-                'data': 'Please provide valid JSONData.'
-            }
-            return Response(json_data, status=406)
-
         data = request.data
         member_phone_number = data.get('phoneNumber')
         # check mobile number
@@ -140,7 +107,7 @@ class RegisterMember(APIView):
                     'status': 'Success',
                     'data': 'This member has already exist.'
                 }
-                logger_user.info(f'This {member_phone_number} Member is already exist.')
+                info_logger.info(f'This {member_phone_number} Member is already exist.')
                 return Response(json_data)
 
             # check head id is valid or not
@@ -150,8 +117,8 @@ class RegisterMember(APIView):
                 'status': 'Failed',
                 'data': 'Head id not found or you entered wrong head id'
             }
-            logger_user.info(f'This {member_phone_number} user entered wrong headId.')
-            return Response(json_data)
+            info_logger.info(f'This {member_phone_number} user entered wrong headId.')
+            return Response(json_data, status=404)
 
         member_name = data.get('name')
         if member_phone_number == '0000000000' and member_name is not None:
@@ -162,8 +129,8 @@ class RegisterMember(APIView):
                     'status': 'Failed',
                     'data': 'This member is already added. Please add different member.'
                 }
-                logger_user.info(f'headId = {data.get("headId")} user try to add same member more than 1 time. ')
-                return Response(json_data)
+                info_logger.info(f'headId = {data.get("headId")} user try to add same member more than 1 time. ')
+                return Response(json_data, status=400)
 
 
         print('member_phone_number====> ', member_phone_number)
@@ -174,7 +141,7 @@ class RegisterMember(APIView):
                 'status': 'Failed',
                 'data': 'Please Provide member phone number.'
             }
-            return Response(json_data)
+            return Response(json_data, status=400)
         else:
             if not is_valid_mobile_number(member_phone_number):
                 json_data = {
@@ -182,7 +149,7 @@ class RegisterMember(APIView):
                     'status': 'Failed',
                     'data': 'Please Provide a valid phone number.'
                 }
-                return Response(json_data)
+                return Response(json_data, status=400)
 
         # Put all data in serializer
         serializer = MemberSerializer(data=data)
@@ -199,7 +166,7 @@ class RegisterMember(APIView):
                         'status': 'Failed',
                         'data': message
                     }
-                    return Response(json_data)
+                    return Response(json_data, status=400)
 
             serializer.save()
             json_data = {
@@ -207,22 +174,25 @@ class RegisterMember(APIView):
                 'status': 'Success',
                 'data': 'Member Added Successfully.'
             }
-            logger_user.info(f'headId = {data.get("headId")} user member added successfully.')
+            # send notification to head
+            title = 'New Member has registered.'
+            body = f'A new member registered Phone Number is {member_phone_number}. Head id is {data.get("headId")} '
+            send_notification(title=title, body=body)
+            info_logger.info(f'headId = {data.get("headId")} user member added successfully.')
 
-            return Response(json_data, status=406)
+            return Response(json_data)
 
         json_data = {
             'statusCode': 400,
             'status': 'failed',
             'data': serializer.errors
         }
-        return Response(json_data, status=406)
+        return Response(json_data, status=400)
 
 
 class GETFamilyByHeadId(APIView):
 
     def get(self, request, head_id,  *args, **kwargs):
-
         is_valid_id = is_integer(head_id)
         if not is_valid_id:
             json_data = {
@@ -239,11 +209,11 @@ class GETFamilyByHeadId(APIView):
                 'status': 'failed',
                 'data': 'Your entered wrong head id.'
             }
-            logger_user.info(f'User entered wrong headId = {head_id}.')
+            info_logger.info(f'User entered wrong headId = {head_id}.')
 
             return Response(json_data)
 
-        filtered_obj = CustomUser.objects.filter(headId=head_id)
+        filtered_obj = User.objects.filter(headId=head_id)
         if len(filtered_obj) > 0:
             serializer = GETFamilyByHeadIdSerializer(filtered_obj, many=True)
             json_data = {
@@ -251,7 +221,7 @@ class GETFamilyByHeadId(APIView):
                 'status': 'Success',
                 'data': serializer.data
             }
-            logger_user.info(f'Send all family members data to headId = {head_id} user successfully.')
+            info_logger.info(f'Send all family members data to headId = {head_id} user successfully.')
 
             return Response(json_data)
         else:
@@ -260,9 +230,9 @@ class GETFamilyByHeadId(APIView):
                 'status': 'failed',
                 'data': 'No member found.'
             }
-            logger_user.info(f'headId = {head_id} user has No member found.')
+            info_logger.info(f'headId = {head_id} user has No member found.')
 
-            return Response(json_data)
+            return Response(json_data, status=404)
 
 
 #  check Member exist or not by Mobile Number
@@ -288,14 +258,14 @@ class IsUserExist(APIView):
                 return Response(json_data)
 
         is_available = check_number_exist_for_add_member(phone_number)
-        print("number exist or not==> ", is_available)
+        # print("number exist or not==> ", is_available)
         if is_available:
             json_data = {
                 'statusCode': 200,
                 'status': 'Success',
                 'data': {'message': 'Number already exist'}
             }
-            logger_user.info(f'This number {phone_number} is already exist.')
+            info_logger.info(f'This number {phone_number} is already exist.')
 
             return Response(json_data)
 
@@ -304,7 +274,7 @@ class IsUserExist(APIView):
             'status': 'Failed',
             'data': {'message': 'user not found.'}
         }
-        logger_user.info(f'This number {phone_number} user not found in database.')
+        info_logger.info(f'This number {phone_number} user not found in database.')
 
         return Response(json_data)
 
@@ -318,13 +288,13 @@ class DeleteMember(APIView):
                 'status': 'Failed',
                 'data': 'member_id must be only integer.'
             }
-            logger_user.info(f'Wrong user id entered to delete user.')
+            info_logger.info(f'Wrong user id entered to delete user.')
 
             return Response(json_data)
 
         try:
             # make user inactive
-            member = CustomUser.objects.get(userId=member_id)
+            member = User.objects.get(userId=member_id)
             member.isActive = False
             member.save()
 
@@ -333,27 +303,18 @@ class DeleteMember(APIView):
                 'status': 'Success',
                 'data': 'Member deleted successfully.'
             }
-            logger_user.info(f'user_id = {member_id} deleted(inactive) successfully.')
+            info_logger.info(f'user_id = {member_id} deleted(inactive) successfully.')
 
             return Response(json_data)
-        except CustomUser.DoesNotExist:
+        except User.DoesNotExist:
             json_data = {
                 'statusCode': 404,
                 'status': 'Failed',
                 'data': 'id not found. Please input valid id.'
             }
-            logger_user.info(f"user_id = {member_id} doesn't exist.")
+            error_logger.error(f"user_id = {member_id} doesn't exist.")
 
-            return Response(json_data)
-
-        #
-        # member.delete()
-        # json_data = {
-        #     'statusCode': 200,
-        #     'status': 'Success',
-        #     'data': 'Member deleted successfully.'
-        # }
-        # return Response(json_data)
+            return Response(json_data, status=404)
 
 
 class UpdateUserById(APIView):
@@ -368,7 +329,7 @@ class UpdateUserById(APIView):
             return Response(json_data)
 
         try:
-            member = CustomUser.objects.get(userId=member_id)
+            member = User.objects.get(userId=member_id)
             if len(request.data) < 1:
                 serializer = UpdateMemberSerializer(member, data=request.data)
                 if not serializer.is_valid():
@@ -377,19 +338,19 @@ class UpdateUserById(APIView):
                         'status': 'Failed',
                         'data': serializer.errors
                     }
-                    return Response(json_data)
+                    return Response(json_data, status=400)
             # print("check number===>", request.data.get('phoneNumber'))
             # print("check number type ===>", type(request.data.get('phoneNumber')))
             if request.data.get('phoneNumber') is not None:
                 exist = before_update_check_number_exist(request.data.get('phoneNumber'), user_id=member_id)
-                print('exist==>', exist)
+                # print('exist==>', exist)
                 if exist:
                     json_data = {
                         'statusCode': 400,
                         'status': 'Failed',
                         'data': "This number is already exist.Number must be unique."
                     }
-                    return Response(json_data)
+                    return Response(json_data, status=404)
 
             serializer = UpdateMemberSerializer(member, data=request.data, partial=True)
 
@@ -402,7 +363,7 @@ class UpdateUserById(APIView):
                     'status': 'Success',
                     'data': 'Member updated successfully.'
                 }
-                logger_user.info(f'user_id = {member_id} record updated successfully.')
+                info_logger.info(f'user_id = {member_id} record updated successfully.')
                 return Response(json_data, status=status.HTTP_200_OK)
             else:
                 json_data = {
@@ -412,15 +373,16 @@ class UpdateUserById(APIView):
                 }
                 return Response(json_data, status=status.HTTP_400_BAD_REQUEST)
 
-        except CustomUser.DoesNotExist:
+        except User.DoesNotExist:
             json_data = {
                 'statusCode': 404,
                 'status': 'Failed',
                 'data': 'id not found. Please input valid id.'
             }
-            logger_user.info(f'User Entered wrong user_id = {member_id} to update record.')
+            error_logger.error(f'User Entered wrong user_id = {member_id} to update record.')
 
-            return Response(json_data)
+            return Response(json_data, status=400)
+
 
 from .filters import filter_queryset
 from .pagination import CustomPagination
@@ -428,11 +390,10 @@ from .pagination import CustomPagination
 
 class GetAllResidents(ListAPIView):
     serializer_class = GETAllUserSerializer
-    # pagination_class = CustomPagination
-
+    pagination_class = CustomPagination
 
     def get_queryset(self):
-        qs = CustomUser.objects.all()
+        qs = User.objects.all()
         return qs
 
     def list(self, request, *args, **kwargs):
@@ -441,41 +402,18 @@ class GetAllResidents(ListAPIView):
         if get_filter_fields is not None:
             q_objects = filter_queryset(request.query_params)
             try:
-                queryset = CustomUser.objects.filter(q_objects)
-                print("filter query===> ", queryset.query)
+                queryset = User.objects.filter(q_objects)
+                # print("filter query===> ", queryset.query)
             except Exception as e:
                 response_data = {
                     'statusCode': 404,
                     'status': 'failed',
                     'data': {'msg': str(e)},
                     }
-                return Response(response_data)
+                error_logger.error('Exception occur while filtering data ==> %s',e)
+                return Response(response_data, status=404)
         else:
             queryset = self.get_queryset()
-
-        # print('Serializer class==> ', self.get_serializer())
-        # filters = {}
-        # for param_name, param_value in request.query_params.items():
-        #     # Create a case-insensitive search for string fields
-        #     filters[f"{param_name.strip()}__icontains"] = param_value.strip()
-        # print("Your filter parameters ==> ", filters)
-        # # Apply filters to the queryset using Q objects
-        # q_objects = Q()
-        # for field, value in filters.items():
-        #     q_objects |= Q(**{field: value})
-        # print('Your queryset objects==> ', q_objects)
-        # try:
-        #     queryset = queryset.filter(q_objects)
-        #     print("This is your query==> ", queryset.query)
-        # except Exception as e:
-        #     if not queryset.exists():
-        #         response_data = {
-        #             'statusCode': 404,
-        #             'status': 'failed',
-        #             'data': {'msg': f'User Not found.{e}'},
-        #         }
-        #         logger_user.info('All user data retrieve failed because User not found. ')
-        #         return Response(response_data)
 
         if len(queryset) < 1:
             response_data = {
@@ -483,10 +421,38 @@ class GetAllResidents(ListAPIView):
                 'status': 'failed',
                 'data': {'msg': 'Record Not found.'},
             }
-            logger_user.info('All user data retrieve failed because User not found. ')
+            info_logger.info('All user data retrieve failed because User not found. ')
             return Response(response_data)
+
+        print('Serializer class==> ', self.get_serializer())
+
+        # filtered  data
+        filters = {}
+        for param_name, param_value in request.query_params.items():
+            # Create a case-insensitive search for string fields
+            filters[f"{param_name.strip()}__icontains"] = param_value.strip()
+        print("Your filter parameters ==> ", filters)
+        # Apply filters to the queryset using Q objects
+        q_objects = Q()
+        for field, value in filters.items():
+            q_objects |= Q(**{field: value})
+        print('Your queryset objects==> ', q_objects)
+        try:
+            queryset = queryset.filter(q_objects)
+            print("This is your query==> ", queryset.query)
+        except Exception as e:
+            if not queryset.exists():
+                response_data = {
+                    'statusCode': 404,
+                    'status': 'failed',
+                    'data': {'msg': f'User Not found.{e}'},
+                }
+                info_logger.info('All user data retrieve failed because User not found. ')
+                return Response(response_data)
+
         # serializer = self.get_serializer(queryset, many=True)
 
+        # Apply pagination
         page = self.paginate_queryset(queryset)
         # serializer = self.get_serializer(page, many=True)
         print("page==> ", page)
@@ -498,12 +464,12 @@ class GetAllResidents(ListAPIView):
         serializer = self.get_serializer(queryset, many=True)
 
         json_data = {
-            'statusCode': status.HTTP_204_NO_CONTENT,
+            'statusCode': 200,
             'status': 'success',
             'totalResidents': len(serializer.data),
             'results': serializer.data
         }
-        logger_user.info('All user data retrieve successfully.')
+        info_logger.info('All user data retrieve successfully.')
         return Response(json_data)
 
 
@@ -522,23 +488,23 @@ class GETUserById(APIView):
 
         try:
             # Attempt to retrieve the product by its primary key (pk)
-            user = CustomUser.objects.get(userId=user_id)
+            user = User.objects.get(userId=user_id)
             serializer = GETMemberByIdSerializer(user)
             json_data = {
                 'statusCode': 200,
                 'status': 'Success',
                 'data': serializer.data
             }
-            logger_user.info(f'user_id = {user_id} data retrieve successfully.')
+            info_logger.info(f'user_id = {user_id} data retrieve successfully.')
 
             return Response(json_data)
 
-        except CustomUser.DoesNotExist:
+        except User.DoesNotExist:
             json_data = {
                 'statusCode': 404,
                 'status': 'Failed',
                 'data': 'id not found. Please input valid id.'
             }
-            logger_user.info(f'user_id = {user_id} failed to retrieve data.')
+            error_logger.error(f'user_id = {user_id} failed to retrieve data.')
 
             return Response(json_data)

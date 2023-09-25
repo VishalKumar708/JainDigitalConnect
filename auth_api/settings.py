@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -42,9 +43,12 @@ INSTALLED_APPS = [
     # 'rest_framework_simplejwt',
     'rest_framework',
     'django_filters',
+    'fcm_django'
 
     # 'rest_framework.authtoken'
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -57,6 +61,7 @@ MIDDLEWARE = [
     'accounts.middleware.ValidateURLAndJSONMiddleware'
 
     # "debug_toolbar.middleware.DebugToolbarMiddleware",
+
 
 ]
 
@@ -84,18 +89,30 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'auth_api.wsgi.application'
 # for creating custom user
-# AUTH_USER_MODEL = 'accounts.CustomUser'
+AUTH_USER_MODEL = 'accounts.User'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'api',
+        'USER': 'root',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -121,7 +138,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+# TIME_ZONE = 'UTC'
+TIME_ZONE = "GMT"
 
 USE_I18N = True
 
@@ -136,16 +154,19 @@ STATIC_URL = 'static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# for otp
+# *********************    SMS for otp    *****************************
 SID = 'AC74f8aa592b9f4bc82af4402dfd2ce24a'
 # AUTH_TOKEN = '580a9c14bfb1bc99add5ba9c820d858c'
 # AUTH_TOKEN = '9bc540aefab30e0bff9d9780623866b9'
-AUTH_TOKEN = '9a76bfb5fa67140a3747eef4fd576f08'
+# AUTH_TOKEN = '9a76bfb5fa67140a3747eef4fd576f08'
+AUTH_TOKEN = '82f8533cbb320001d5901e8e3c0c10a6'
 SENDER_NUMBER = '+15187540316'
 OTP_EXPIRY_DURATION = 600  # in seconds
 
+# *************************    Django Logger   ****************************
 import os
 LOG_DIR = os.path.join(BASE_DIR, 'log')
 
@@ -187,60 +208,77 @@ LOGGING = {
             "formatter": "verbose",
             "encoding": 'utf-8'
         },
-        'auth_view_log': {
-            "level": "INFO",
+        'error': {
+            "level": "ERROR",
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(LOG_DIR, "auth_views.log"),
+            'filename': os.path.join(LOG_DIR, "error.log"),
             'maxBytes': 300 * 1024 * 1024,
             'backupCount': 10,
-            "formatter": "plain",
+            "formatter": "verbose",
             "encoding": 'utf-8'
         },
-        'user_view_log': {
+        'terminal': {
             "level": "INFO",
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(LOG_DIR, "user_views.log"),
+            'filename': os.path.join(LOG_DIR, "console.log"),
             'maxBytes': 300 * 1024 * 1024,
             'backupCount': 10,
-            "formatter": "plain",
+            "formatter": "verbose",
             "encoding": 'utf-8'
         },
-        'middleware_log': {
-            "level": "INFO",
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(LOG_DIR, "middleware.log"),
-            'maxBytes': 300 * 1024 * 1024,
-            'backupCount': 10,
-            "formatter": "plain",
-            "encoding": 'utf-8'
-        }
     },
     "loggers": {
         "django": {
-            "handlers": ["info", "console"],
-            "propagate": True,
+            "handlers": ["console", "terminal"],
+            "propagate": False,
             "level": "INFO"
         },
-        "auth_log": {
-            "handlers": ["auth_view_log"],
-            "level": "INFO",
-            "propagate": True,
+        "info": {
+            "handlers": ["info"],
+            "propagate": False,
+            "level": "INFO"
         },
-        "user_log": {
-            "handlers": ["user_view_log"],
-            "level": "INFO",
-            "propagate": True,
-        },
-        "middleware_log": {
-            "handlers": ["middleware_log"],
-            "level": "INFO",
-            "propagate": True,
-        },
+        "error": {
+            "handlers": ["error"],
+            "level": "ERROR",
+            "propagate": False,
+        }
+
+    },
+    "root": {
+        "handlers": ["info", "error", "console"],  # Send messages to both info and error handlers
+        "level": "INFO",
     },
 }
+
+#  *******************************   Rest Framework settings   *******************************
 REST_FRAMEWORK = {
     # 'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination', #for builtin pagination
     'DEFAULT_PAGINATION_CLASS': 'accounts.pagination.CustomPagination',# for customized pagination
     'PAGE_SIZE': 5
 }
+
+#  ********************************   firebase settings to send push notification   ***********************
+
+
+import firebase_admin
+from firebase_admin import credentials
+cred = credentials.Certificate(os.path.join(BASE_DIR, 'google-services_for_JCDDev.json'))
+app = firebase_admin.initialize_app(cred)
+
+FCM_DJANGO_SETTINGS = {
+     # an instance of firebase_admin.App to be used as default for all fcm-django requests
+     # default: None (the default Firebase app)
+    "DEFAULT_FIREBASE_APP": app,
+     # default: _('FCM Django')
+    "APP_VERBOSE_NAME": "FCM Notifications",
+     # true if you want to have only one active device per registered user at a time
+     # default: False
+    "ONE_DEVICE_PER_USER": True,
+     # devices to which notifications cannot be sent,
+     # are deleted upon receiving error response from FCM
+     # default: False
+    "DELETE_INACTIVE_DEVICES": False,
+}
+

@@ -1,6 +1,9 @@
 from django.urls import path
 from .user_views import RegisterHead, RegisterMember, GETFamilyByHeadId, IsUserExist, DeleteMember, UpdateUserById, GetAllResidents, GETUserById
 from .auth_view import SendOTPWithNumber, VerifyOTP
+from .push_notification import CreateNewNotification
+# from .generate_fcm_token import generate_fcm_token
+from .push_notification import send_notification#, send_notification_to_admin
 urlpatterns = [
 
     path('sendOTP/', SendOTPWithNumber.as_view()),
@@ -12,7 +15,11 @@ urlpatterns = [
     path('DELETEMember/<slug:member_id>/', DeleteMember.as_view()),
     path('UPDATEUserById/<slug:user_id>/', UpdateUserById.as_view()),
     path('GETAllResidents/', GetAllResidents.as_view()),
-    path('GETUserById/<slug:user_id>/', GETUserById.as_view())
+    path('GETUserById/<slug:user_id>/', GETUserById.as_view()),
+    # path('GenerateFCMToken/', generate_fcm_token)
+    path('sendNotification/', send_notification),
+    # path('sendNotificationToAdmin/', send_notification_to_admin)
+    path('POSTNewNotification/', CreateNewNotification.as_view())
 
 
 

@@ -1,66 +1,14 @@
 
 
-# import json
-# from django.http import JsonResponse
-# from rest_framework import status
-# import logging
-#
-# logger = logging.getLogger(__name__)
-# logger_middleware = logging.getLogger('middleware_log')
-#
-#
-# class Json404Middleware:
-#     def __init__(self, get_response):
-#         self.get_response = get_response
-#
-#     def __call__(self, request):
-#         try:
-#             response = self.get_response(request)
-#
-#             if response.status_code == 404:
-#                 response_data = {
-#                     'status_code': status.HTTP_404_NOT_FOUND,
-#                     'status': 'failed',
-#                     'msg': 'Please provide a valid URL',
-#                 }
-#                 logger_middleware.error('Requested for Invalid URL.')
-#
-#                 return JsonResponse(response_data, status=404)
-#
-#             if request.method in ['POST', 'PUT']:
-#                 try:
-#                     # Attempt to parse the request data as JSON
-#                     json.loads(response.body.decode('utf-8'))  # Assumes UTF-8 encoding
-#                 except json.JSONDecodeError:
-#                     response_data = {
-#                         'statusCode': 406,
-#                         'status': 'Failed',
-#                         'data': {'error': 'Invalid JSON data', }
-#                     }
-#                     logger_middleware.error('Invalid JSON data.')
-#
-#                     return JsonResponse(response_data, status=400)
-#         except Exception as e:
-#             error_message = str(e)
-#             status_code = 500
-#             error_response = {
-#                 'statusCode': status_code,
-#                 'status': 'failed',
-#                 'error': error_message,
-#             }
-#             logger_middleware.error(error_message)
-#             return JsonResponse(error_response, status=status_code)
-#
-#         return response  # Return the original response if no exceptions occurred
-
 import json
 from django.http import JsonResponse
 from django.urls import resolve
 from rest_framework import status
 import logging
 
-logger = logging.getLogger(__name__)
-logger_middleware = logging.getLogger('middleware_log')
+
+error_logger = logging.getLogger('error')
+info_logger = logging.getLogger('django')
 
 
 class ValidateURLAndJSONMiddleware:
@@ -69,6 +17,7 @@ class ValidateURLAndJSONMiddleware:
 
     def __call__(self, request):
         # Check if the URL is valid
+
         try:
             resolve(request.path_info)
             # print(request.path_info)
@@ -78,7 +27,7 @@ class ValidateURLAndJSONMiddleware:
                 'status': 'failed',
                 'msg': f'Please provide a valid URL.',
             }
-            logger_middleware.info('Invalid URL.')
+            error_logger.error('Invalid URL.')
             return JsonResponse(response_data, status=404)
 
         if request.method in ['POST', 'PUT']:
@@ -92,7 +41,7 @@ class ValidateURLAndJSONMiddleware:
                     'status': 'Failed',
                     'data': {'error': 'Unsupported Media Type', 'details': f'Expected application/json but got {content_type}'}
                 }
-                logger_middleware.info(f'Unsupported Media Type. Expected application/json but got {content_type}')
+                error_logger.error(f'Unsupported Media Type. Expected application/json but got {content_type}')
 
                 return JsonResponse(response_data, status=415)
 
@@ -106,10 +55,10 @@ class ValidateURLAndJSONMiddleware:
                         'status': 'Failed',
                         'data': {'error': 'Invalid JSON data', 'details': str(e)}
                     }
-                    logger_middleware.info(f'Invalid JSON data.{str(e)}')
+                    error_logger.error(f'Invalid JSON data.{str(e)}')
 
                     return JsonResponse(response_data, status=400)
-
+            print('Middleware working fine')
         return self.get_response(request)
 
 

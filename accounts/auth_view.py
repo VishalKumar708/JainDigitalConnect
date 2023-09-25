@@ -5,13 +5,13 @@ from .models import OTP
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.db.models import Q
-from .auth import is_json, is_otp_expired, generate_otp, is_send_otp, check_number_exist_for_login
+from .auth import is_otp_expired, generate_otp, is_send_otp, check_number_exist_for_login
 from .utils import is_valid_mobile_number
 from rest_framework import status
+# from .push_notification import send_notification_to_admin
 import logging
-logger = logging.getLogger(__name__)
-# logger = logging.getLogger('django')
-logger_auth = logging.getLogger('auth_log')
+info_logger = logging.getLogger('info')
+error_logger = logging.getLogger('error')
 
 
 class SendOTPWithNumber(APIView):
@@ -25,18 +25,10 @@ class SendOTPWithNumber(APIView):
             return None
 
     def post(self, request, *args, **kwargs):
-        data = request.body
-        json_data = is_json(data=data)
-
-        if not json_data:
-            json_data = {
-                'statusCode': status.HTTP_406_NOT_ACCEPTABLE,
-                'status': 'Failed',
-                'data': 'Please provide valid JSONData.'
-            }
-            return Response(json_data, status=406)
+        # data = request.body
         phone_number = request.data.get('phoneNumber')
-        print('phone Number==> ', phone_number)
+        # print('phone Number==> ', phone_number)
+
         # check phone_number is None or not
         if phone_number is not None:
             # check phone_number is correct or not
@@ -77,11 +69,11 @@ class SendOTPWithNumber(APIView):
             default_otp_expiry_time = 300
             otp_expiry_time = getattr(settings, 'OTP_EXPIRY_DURATION', default_otp_expiry_time)
             json_data = {
-                'statusCode': status.HTTP_200_OK,
+                'statusCode': status.HTTP_400_BAD_REQUEST,
                 'status': 'Failed',
                 'data': f'You entered more then 3 times wrong OTP. Please try again after {otp_expiry_time // 60} minutes.'
             }
-            return Response(json_data)
+            return Response(json_data, status=400)
         json_data = {
             'statusCode': status.HTTP_500_INTERNAL_SERVER_ERROR,
             'status': 'failed',
@@ -101,17 +93,6 @@ class VerifyOTP(APIView):
         return obj
 
     def post(self, request, *args, **kwargs):
-        # check data is json or not
-        is_json_data = is_json(data=request.body)
-        # print('value==> ', value)
-        if not is_json_data:
-            json_data = {
-                'statusCode': status.HTTP_406_NOT_ACCEPTABLE,
-                'status': 'Failed',
-                'data': 'Please provide valid JSONData.'
-            }
-            return Response(json_data, status=406)
-
         otp = request.data.get('otp')
         phone_number = request.data.get('phoneNumber')
 
@@ -121,41 +102,49 @@ class VerifyOTP(APIView):
                 'status': 'Failed',
                 'data': "Please Provide Phone Number."
             }
-            return Response(json_data, status=406)
+            return Response(json_data, status=400)
 
+        if otp is None:
+            json_data = {
+                'statusCode': 400,
+                'status': 'Failed',
+                'data': "Please Provide OTP."
+            }
+            return Response(json_data, status=400)
         # find the latest OTP by mail_id form database
         instance = self.get_active_otp_by_number(phone_number=phone_number)
 
         # instance is None
         if instance is None:
             json_data = {
-                'statusCode': status.HTTP_406_NOT_ACCEPTABLE,
+                'statusCode': status.HTTP_400_BAD_REQUEST,
                 'status': 'Failed',
                 'data': "Invalid OTP."
             }
-            return Response(json_data, status=406)
+            return Response(json_data, status=400)
+
 
         # check otp length
         if len(otp) != 6:
             instance.count += 1
             instance.save()
             json_data = {
-                'statusCode': status.HTTP_200_OK,
+                'statusCode': status.HTTP_400_BAD_REQUEST,
                 'status': 'Failed',
                 'data': 'You entered wrong OTP.'
             }
 
-            return Response(json_data)
+            return Response(json_data, status=400)
         # check OTP is expired or not
         # if expired
         if is_otp_expired(instance.timestamp):
             json_data = {
-                'statusCode': status.HTTP_406_NOT_ACCEPTABLE,
+                'statusCode': status.HTTP_400_BAD_REQUEST,
                 'status': 'Failed',
                 'data': 'Your OTP has expired.'
             }
-            logger_auth.info(f'This OTP {otp} has expired.')
-            return Response(json_data, status=406)
+            info_logger.info(f'This OTP {otp} has expired.')
+            return Response(json_data, status=400)
         else:
             if instance.otp == otp:
                 instance.status = 'inactive'
@@ -172,7 +161,10 @@ class VerifyOTP(APIView):
                             'message': 'OTP Matched.Please activate your account.',
                             'data': {'userid': user_obj.userId}
                         }
-                        logger_auth.info(f'This {phone_number} is Inactive and try to login.')
+                        info_logger.info(f'This {phone_number} is Inactive and try to login.')
+                        title = "Logged In for Inactive User."
+                        body = f"A User who's mobile number is '{phone_number}'has login failed in JAIN DIGITAL CONNECT. "
+                        # send_notification_to_admin(title=title, body=body)
                         return Response(json_data)
                     else:
                         json_data = {
@@ -181,7 +173,13 @@ class VerifyOTP(APIView):
                             'message': 'Your OTP has matched successfully.',
                             'data': {'userid': user_obj.userId}
                         }
-                        logger_auth.info(f'OTP matched successfully and This {phone_number} user has logged in.')
+                        # for Notification
+                        title = "Logged In for Active User."
+                        body = f"A User who's mobile number is '{phone_number}'has successful login in JAIN DIGITAL CONNECT. "
+                        # if send_notification_to_admin(title=title, body=body):
+                        #     info_logger.info(f'OTP matched successfully and This {phone_number} user has logged in.')
+                        # else:
+                        #     error_logger.error(f'Failed to add data in "NotificationHistory" tabel.')
                         return Response(json_data)
                 else:
                     json_data = {
@@ -189,7 +187,7 @@ class VerifyOTP(APIView):
                         'status': 'Failed',
                         'data': 'Account not found',
                     }
-                    return Response(json_data)
+                    return Response(json_data, status=404)
 
             # if user enter more than 3 times wrong otp
             if instance.count >= 3:
@@ -198,20 +196,20 @@ class VerifyOTP(APIView):
                 default_otp_expiry_time = 300
                 otp_expiry_time = getattr(settings, 'OTP_EXPIRY_DURATION', default_otp_expiry_time)
                 json_data = {
-                     'statusCode': status.HTTP_200_OK,
+                     'statusCode': status.HTTP_400_BAD_REQUEST,
                      'status': 'Failed',
                      'data': f'You entered more then 3 times wrong OTP. Please try again after {otp_expiry_time//60} minutes.'
                 }
-                logger_auth.info(f'This {phone_number} has locked for next {otp_expiry_time//60} minutes.')
-                return Response(json_data)
+                info_logger.info(f'This {phone_number} has locked for next {otp_expiry_time//60} minutes.')
+                return Response(json_data, status=400)
 
             instance.count += 1
             instance.save()
             json_data = {
-                'statusCode': status.HTTP_200_OK,
+                'statusCode': status.HTTP_400_BAD_REQUEST,
                 'status': 'Failed',
                 'data': 'You entered wrong OTP.'
                 }
 
-            return Response(json_data)
+            return Response(json_data, status=400)
 

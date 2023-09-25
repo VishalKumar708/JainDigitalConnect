@@ -1,13 +1,13 @@
 from django.contrib import admin
-from .models import CustomUser, OTP
+from .models import User, OTP, Notification, NotificationHistory
 
 
-class CustomUserAdmin(admin.ModelAdmin):
+class UserAdmin(admin.ModelAdmin):
     list_display = ['userId', 'headId', 'name',  'relationWithHead', 'phoneNumber', 'maritalStatus', 'lookingForMatch', 'sect',
-                  'profession', 'bloodGroup', 'dob', 'nativePlace', 'gotra', 'phoneNumberVisibility', 'gender','createdBy']
+                  'profession', 'bloodGroup', 'isAdmin', 'dob', 'nativePlace', 'gotra', 'phoneNumberVisibility', 'gender','createdBy']
 
 
-admin.site.register(CustomUser, CustomUserAdmin)
+admin.site.register(User, UserAdmin)
 
 
 class OTPAdmin(admin.ModelAdmin):
@@ -15,3 +15,17 @@ class OTPAdmin(admin.ModelAdmin):
 
 
 admin.site.register(OTP, OTPAdmin)
+
+
+class NotificationAdmin(admin.ModelAdmin):
+    list_display = ['id', 'userId', 'title', 'body', 'screen', 'createdBy']
+
+
+admin.site.register(Notification, NotificationAdmin)
+
+class NotificationHistoryAdmin(admin.ModelAdmin):
+    list_display = ['id', 'userId', 'notificationId']
+
+
+admin.site.register(NotificationHistory, NotificationHistoryAdmin)
+

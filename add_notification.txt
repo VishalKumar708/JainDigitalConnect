@@ -1,0 +1,61 @@
+
+datetime format dd-mm-yyyy
+add "is_admin" field
+how we implement notification in api
+time format gmt timezone
+
+
+******************************    To set up send push notification using DJANGO + FIREBASE     ******************************
+1. step ==> Install a module "fcm-django"
+    command: pip install fcm-django
+
+2. step ==> Add "fcm_django" inside INSTALLED_APP in settings.py file.
+
+3. step ==> run  command "py manage.py migrate"
+
+4. step ==> run  command "py manage.py runserver".
+       Now, login in django-admin
+       check there a table "FCM devices" has created or not.
+
+Add firebase App configuration
+1. step ==> login into firebase and create a project.
+
+2. step ==> go to "project setting".
+
+3. step ==> select "service account" tab.
+        Now, select "python" option and click "Generate new private key."
+        A file '.json' will download.
+
+4. step ==> Copy downloaded file and paste it into django project root directory where "manage.py" file is there.
+
+5. step ==> Add this code into "settings.py" file at the end.
+
+        // Import all these modules first //
+        import firebase_admin
+        from firebase_admin import credentials
+
+        // add 'firebase SDK' file path
+        cred = credentials.Certificate(os.path.join(BASE_DIR, 'google-services_for_JCDDev.json'))
+
+        // create a instance/object of "firebase_admin" app.
+        app = firebase_admin.initialize_app(cred)
+
+        FCM_DJANGO_SETTINGS = {
+
+             # an instance of firebase_admin.App to be used as default for all fcm-django requests
+             # default: None (the default Firebase app)
+            "DEFAULT_FIREBASE_APP": app,
+
+             # default: _('FCM Django')
+            "APP_VERBOSE_NAME": "FCM Notifications",
+
+            "ONE_DEVICE_PER_USER": True,
+
+            "DELETE_INACTIVE_DEVICES": False,
+        }
+
+6. step ==> Add your firebase .json file name in "os.path.join" function.
+   cred = credentials.Certificate(os.path.join(BASE_DIR, 'google-services_for_JCDDev.json'))
+
+Note:- For more visit official documentation of "fcm_django".
+    link ==> https://fcm-django.readthedocs.io/en/latest/

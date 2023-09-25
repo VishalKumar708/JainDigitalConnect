@@ -1,7 +1,7 @@
 from django.contrib.auth.base_user import BaseUserManager
 
 
-class CustomUserManager(BaseUserManager):
+class UserManager(BaseUserManager):
     def create_user(self,name, phoneNumber, dob, address, password=None):
         if not phoneNumber:
             raise ValueError("The Mobile Number field must be set")
@@ -15,7 +15,7 @@ class CustomUserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, name, phoneNumber,dob, address,  password=None):
+    def create_superuser(self, name, userId, phoneNumber,dob, address,  password=None):
         user = self.create_user(
             phoneNumber=phoneNumber,
             password=password,

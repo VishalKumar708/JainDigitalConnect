@@ -1,0 +1,59 @@
+ERROR 2023-09-22 13:26:40,235  30 Invalid URL.
+ERROR 2023-09-22 13:51:54,336  35 while sending notification an Exception occurred ==> Message.token must be a non-empty string. 
+ERROR 2023-09-22 13:51:54,484  30 Invalid URL.
+ERROR 2023-09-22 13:52:48,229  35 while sending notification an Exception occurred ==> Message.token must be a non-empty string. 
+ERROR 2023-09-22 13:52:49,955  35 while sending notification an Exception occurred ==> Message.token must be a non-empty string. 
+ERROR 2023-09-22 13:53:33,229  35 while sending notification an Exception occurred ==> list index out of range 
+ERROR 2023-09-22 13:53:35,256  35 while sending notification an Exception occurred ==> list index out of range 
+ERROR 2023-09-22 13:54:12,450  35 while sending notification an Exception occurred ==> list index out of range 
+ERROR 2023-09-22 13:56:22,098  35 while sending notification an Exception occurred ==> list index out of range 
+ERROR 2023-09-22 13:58:26,984  36 while sending notification an Exception occurred ==> list index out of range 
+ERROR 2023-09-22 13:58:47,978  36 while sending notification an Exception occurred ==> Message.token must be a non-empty string. 
+ERROR 2023-09-22 13:58:50,174  36 while sending notification an Exception occurred ==> Message.token must be a non-empty string. 
+ERROR 2023-09-22 13:59:51,789  36 while sending notification an Exception occurred ==> Message.token must be a non-empty string. 
+ERROR 2023-09-22 13:59:54,064  36 while sending notification an Exception occurred ==> Message.token must be a non-empty string. 
+ERROR 2023-09-22 14:00:19,626  36 while sending notification an Exception occurred ==> Message.token must be a non-empty string. 
+ERROR 2023-09-22 14:00:43,112  36 while sending notification an Exception occurred ==> Message.token must be a non-empty string. 
+ERROR 2023-09-22 14:01:34,548  36 while sending notification an Exception occurred ==> Message.token must be a non-empty string. 
+ERROR 2023-09-22 14:03:04,855  36 while sending notification an Exception occurred ==> Message.token must be a non-empty string. 
+ERROR 2023-09-22 14:33:09,731  30 Invalid URL.
+ERROR 2023-09-22 14:33:37,923  38 while sending notification an Exception occurred ==> Message.token must be a non-empty string. 
+ERROR 2023-09-22 14:34:08,946  38 while sending notification an Exception occurred ==> Message.token must be a non-empty string. 
+ERROR 2023-09-22 14:35:17,397  38 while sending notification an Exception occurred ==> Message.token must be a non-empty string. 
+ERROR 2023-09-22 14:35:21,402  38 while sending notification an Exception occurred ==> Message.token must be a non-empty string. 
+ERROR 2023-09-22 14:35:24,914  38 while sending notification an Exception occurred ==> Message.token must be a non-empty string. 
+ERROR 2023-09-22 14:37:12,150  38 while sending notification an Exception occurred ==> Message.token must be a non-empty string. 
+ERROR 2023-09-22 14:37:13,494  38 while sending notification an Exception occurred ==> Message.token must be a non-empty string. 
+ERROR 2023-09-22 14:39:13,062  35 while sending notification an Exception occurred ==> Message.token must be a non-empty string. 
+ERROR 2023-09-22 14:40:09,565  35 while sending notification an Exception occurred ==> Message.token must be a non-empty string. 
+ERROR 2023-09-22 14:40:12,235  35 while sending notification an Exception occurred ==> Message.token must be a non-empty string. 
+ERROR 2023-09-22 14:41:53,660  33 while sending notification an Exception occurred ==> Message.token must be a non-empty string. 
+ERROR 2023-09-22 15:12:24,082  30 Invalid URL.
+ERROR 2023-09-22 15:37:18,939  30 Invalid URL.
+ERROR 2023-09-22 16:05:32,051  30 Invalid URL.
+ERROR 2023-09-22 17:11:35,146  38 An exception occurred while creating objects of "Notification History" tabel. NotificationHistory() got unexpected keyword arguments: 'user_id'
+ERROR 2023-09-22 17:18:36,757  38 An exception occurred while creating objects of "Notification History" tabel. Cannot assign "'eQEeIebzQTu8uSyoq6pMCI:APA91bEj_pVYQrZPEllKGt8jJWfFWnKbdHod13NKCMNzbiFTwRmiLKN6oEZgar5gC30vuPoSdxHi5Yo0POlLdWP-ZWT4itpzooYO2gWY4BqcKNamsBxoHy-S4Mvvn6DJgAA75DNftH3X'": "NotificationHistory.userId" must be a "User" instance.
+ERROR 2023-09-22 17:20:24,937  38 An exception occurred while creating objects of "Notification History" tabel. Cannot assign "(1,)": "NotificationHistory.userId" must be a "User" instance.
+ERROR 2023-09-22 17:31:21,702  64 While sending OTP to client an exception occur == > ['socket.gaierror: [Errno 11001] getaddrinfo failed\n', '\nDuring handling of the above exception, another exception occurred:\n\n', 'urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x000001DDEE558650>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed\n', '\nDuring handling of the above exception, another exception occurred:\n\n', "urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.twilio.com', port=443): Max retries exceeded with url: /2010-04-01/Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001DDEE558650>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))\n", '\nDuring handling of the above exception, another exception occurred:\n\n', "requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.twilio.com', port=443): Max retries exceeded with url: /2010-04-01/Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001DDEE558650>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))\n"] 
+ERROR 2023-09-22 17:32:15,996  64 While sending OTP to client an exception occur == > ['socket.gaierror: [Errno 11001] getaddrinfo failed\n', '\nDuring handling of the above exception, another exception occurred:\n\n', 'urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x000001DDEE54B3D0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed\n', '\nDuring handling of the above exception, another exception occurred:\n\n', "urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.twilio.com', port=443): Max retries exceeded with url: /2010-04-01/Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001DDEE54B3D0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))\n", '\nDuring handling of the above exception, another exception occurred:\n\n', "requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.twilio.com', port=443): Max retries exceeded with url: /2010-04-01/Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001DDEE54B3D0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))\n"] 
+ERROR 2023-09-22 17:32:36,195  64 While sending OTP to client an exception occur == > ['socket.gaierror: [Errno 11001] getaddrinfo failed\n', '\nDuring handling of the above exception, another exception occurred:\n\n', 'urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x000001DDEE14DC50>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed\n', '\nDuring handling of the above exception, another exception occurred:\n\n', "urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.twilio.com', port=443): Max retries exceeded with url: /2010-04-01/Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001DDEE14DC50>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))\n", '\nDuring handling of the above exception, another exception occurred:\n\n', "requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.twilio.com', port=443): Max retries exceeded with url: /2010-04-01/Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001DDEE14DC50>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))\n"] 
+ERROR 2023-09-22 17:33:21,095  50 while sending notification an Exception occurred ==> Unknown error while making a remote service call: Unable to find the server at oauth2.googleapis.com 
+ERROR 2023-09-22 17:33:21,099  197 Failed to add data in "NotificationHistory" tabel.
+ERROR 2023-09-25 10:02:19,128  30 Invalid URL.
+ERROR 2023-09-25 10:02:23,156  30 Invalid URL.
+ERROR 2023-09-25 12:24:38,557  44 Unsupported Media Type. Expected application/json but got text/plain
+ERROR 2023-09-25 12:32:55,329  44 Unsupported Media Type. Expected application/json but got text/plain
+ERROR 2023-09-25 13:10:39,064  68 An error occurred while sending notification to admins name 'fcm_tokens' is not defined
+ERROR 2023-09-25 13:11:20,556  68 An error occurred while sending notification to admins name 'fcm_tokens' is not defined
+ERROR 2023-09-25 13:15:27,297  79 User not found to get fcm_token.
+ERROR 2023-09-25 13:15:56,446  79 User not found to get fcm_token.
+ERROR 2023-09-25 13:16:39,869  79 User not found to get fcm_token.
+ERROR 2023-09-25 13:16:46,804  79 User not found to get fcm_token.
+ERROR 2023-09-25 13:43:19,677  138 While converting dob to object an Exception occur == > time data 'January 1 2009' does not match format '%B %d, %Y' 
+ERROR 2023-09-25 14:00:53,963  44 Unsupported Media Type. Expected application/json but got text/plain
+ERROR 2023-09-25 14:58:20,076  413 Exception occur while filtering data ==> Cannot resolve keyword 'limit' into field. Choices are: address, areaId, bloodGroup, cityId, createdBy, createdDate, currentAddress, dob, emailId, fatherName, fcmdevice, gender, gotra, groupId, groups, headId, isActive, isAdmin, is_staff, is_superuser, last_login, logentry, lookingForMatch, maritalStatus, name, nativePlace, notification, password, phoneNumber, phoneNumberVisibility, profession, relationWithHead, sect, updatedBy, updatedDate, user, userId, user_permissions
+ERROR 2023-09-25 14:59:25,315  413 Exception occur while filtering data ==> Cannot resolve keyword 'limit' into field. Choices are: address, areaId, bloodGroup, cityId, createdBy, createdDate, currentAddress, dob, emailId, fatherName, fcmdevice, gender, gotra, groupId, groups, headId, isActive, isAdmin, is_staff, is_superuser, last_login, logentry, lookingForMatch, maritalStatus, name, nativePlace, notification, password, phoneNumber, phoneNumberVisibility, profession, relationWithHead, sect, updatedBy, updatedDate, user, userId, user_permissions
+ERROR 2023-09-25 15:31:43,697  413 Exception occur while filtering data ==> Cannot resolve keyword 'page_size' into field. Choices are: address, areaId, bloodGroup, cityId, createdBy, createdDate, currentAddress, dob, emailId, fatherName, fcmdevice, gender, gotra, groupId, groups, headId, isActive, isAdmin, is_staff, is_superuser, last_login, logentry, lookingForMatch, maritalStatus, name, nativePlace, notification, password, phoneNumber, phoneNumberVisibility, profession, relationWithHead, sect, updatedBy, updatedDate, user, userId, user_permissions
+ERROR 2023-09-25 16:35:38,937  44 Unsupported Media Type. Expected application/json but got text/plain
+ERROR 2023-09-25 16:35:47,304  44 Unsupported Media Type. Expected application/json but got application/javascript
+ERROR 2023-09-25 16:35:55,411  44 Unsupported Media Type. Expected application/json but got application/javascript
