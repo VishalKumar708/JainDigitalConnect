@@ -78,3 +78,207 @@ INFO 2023-09-25 14:18:28,989  1563 Attempting refresh to obtain initial access_t
 INFO 2023-09-25 14:18:30,151  39 Notification has sent successfully.
 INFO 2023-09-25 14:18:30,154  192 headId = 1 user member added successfully.
 INFO 2023-09-25 15:00:02,268  424 All user data retrieve failed because User not found. 
+INFO 2023-09-26 12:18:40,239  43 User id found to get fcm_token.
+INFO 2023-09-26 12:20:23,522  43 User id found to get fcm_token.
+INFO 2023-09-26 12:25:48,312  43 User id found to get fcm_token.
+INFO 2023-09-26 12:27:34,102  43 User id found to get fcm_token.
+INFO 2023-09-26 12:29:37,312  43 User id found to get fcm_token.
+INFO 2023-09-26 12:33:11,052  43 User id found to get fcm_token.
+INFO 2023-09-26 12:33:11,068  1563 Attempting refresh to obtain initial access_token
+INFO 2023-09-26 12:33:12,209  60 Notification has sent to all admins.
+INFO 2023-09-26 12:33:12,209  107 Notification Added Successfully.
+INFO 2023-09-26 12:42:42,504  46 User id found to get fcm_token.
+INFO 2023-09-26 12:42:42,521  1563 Attempting refresh to obtain initial access_token
+INFO 2023-09-26 12:42:43,627  63 Notification has sent to all admins.
+INFO 2023-09-26 12:42:43,628  114 Notification Added Successfully.
+INFO 2023-09-26 13:39:01,185  56 -- BEGIN Twilio API Request --
+INFO 2023-09-26 13:39:01,187  66 POST Request: https://api.twilio.com/2010-04-01/Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json
+INFO 2023-09-26 13:39:01,188  69 Headers:
+INFO 2023-09-26 13:39:01,189  73 User-Agent : twilio-python/8.8.0 (Windows AMD64) Python/3.11.3
+INFO 2023-09-26 13:39:01,190  73 X-Twilio-Client : python-8.8.0
+INFO 2023-09-26 13:39:01,190  73 Accept-Charset : utf-8
+INFO 2023-09-26 13:39:01,191  73 Content-Type : application/x-www-form-urlencoded
+INFO 2023-09-26 13:39:01,192  73 Accept : application/json
+INFO 2023-09-26 13:39:01,195  75 -- END Twilio API Request --
+INFO 2023-09-26 13:39:02,444  81 Response Status Code: 401
+INFO 2023-09-26 13:39:02,445  82 Response Headers: {'Date': 'Tue, 26 Sep 2023 08:09:01 GMT', 'Content-Type': 'application/json', 'Content-Length': '107', 'Connection': 'keep-alive', 'WWW-Authenticate': 'Basic realm="Twilio API"', 'Twilio-Request-Id': 'RQb6f0cab13c66449cae36730381d1ba83', 'X-Shenanigans': 'none', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO 2023-09-26 13:40:53,015  56 -- BEGIN Twilio API Request --
+INFO 2023-09-26 13:40:53,016  66 POST Request: https://api.twilio.com/2010-04-01/Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json
+INFO 2023-09-26 13:40:53,016  69 Headers:
+INFO 2023-09-26 13:40:53,016  73 User-Agent : twilio-python/8.8.0 (Windows AMD64) Python/3.11.3
+INFO 2023-09-26 13:40:53,018  73 X-Twilio-Client : python-8.8.0
+INFO 2023-09-26 13:40:53,019  73 Accept-Charset : utf-8
+INFO 2023-09-26 13:40:53,019  73 Content-Type : application/x-www-form-urlencoded
+INFO 2023-09-26 13:40:53,020  73 Accept : application/json
+INFO 2023-09-26 13:40:53,020  75 -- END Twilio API Request --
+INFO 2023-09-26 13:40:54,217  81 Response Status Code: 201
+INFO 2023-09-26 13:40:54,218  82 Response Headers: {'Date': 'Tue, 26 Sep 2023 08:10:53 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '892', 'Connection': 'keep-alive', 'Twilio-Request-Id': 'RQbf9a5b5ad2a87957a3da0b407ae26381', 'Twilio-Request-Duration': '0.144', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'Strict-Transport-Security': 'max-age=31536000', 'Twilio-Concurrent-Requests': '1', 'X-Shenanigans': 'none', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO 2023-09-26 13:40:54,220  59 OTP has sent successfully.
+INFO 2023-09-26 13:59:06,730  225 Send all family members data to headId = 1 user successfully.
+INFO 2023-09-26 14:00:02,348  225 Send all family members data to headId = 1 user successfully.
+INFO 2023-09-26 14:02:44,284  225 Send all family members data to headId = 1 user successfully.
+INFO 2023-09-26 14:14:13,779  225 Send all family members data to headId = 1 user successfully.
+INFO 2023-09-26 14:18:34,258  226 Send all family members data to headId = 1 user successfully.
+INFO 2023-09-26 14:30:15,324  226 Send all family members data to headId = 1 user successfully.
+INFO 2023-09-26 14:30:55,118  226 Send all family members data to headId = 1 user successfully.
+INFO 2023-09-26 14:31:00,225  226 Send all family members data to headId = 1 user successfully.
+INFO 2023-09-26 14:33:47,687  56 -- BEGIN Twilio API Request --
+INFO 2023-09-26 14:33:47,688  66 POST Request: https://api.twilio.com/2010-04-01/Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json
+INFO 2023-09-26 14:33:47,689  69 Headers:
+INFO 2023-09-26 14:33:47,689  73 User-Agent : twilio-python/8.8.0 (Windows AMD64) Python/3.11.3
+INFO 2023-09-26 14:33:47,690  73 X-Twilio-Client : python-8.8.0
+INFO 2023-09-26 14:33:47,691  73 Accept-Charset : utf-8
+INFO 2023-09-26 14:33:47,691  73 Content-Type : application/x-www-form-urlencoded
+INFO 2023-09-26 14:33:47,693  73 Accept : application/json
+INFO 2023-09-26 14:33:47,694  75 -- END Twilio API Request --
+INFO 2023-09-26 14:33:49,295  81 Response Status Code: 201
+INFO 2023-09-26 14:33:49,298  82 Response Headers: {'Date': 'Tue, 26 Sep 2023 09:03:48 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '892', 'Connection': 'keep-alive', 'Twilio-Request-Id': 'RQ542c77e9968c15cab7a3a1d28f71179b', 'Twilio-Request-Duration': '0.174', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'Strict-Transport-Security': 'max-age=31536000', 'Twilio-Concurrent-Requests': '1', 'X-Shenanigans': 'none', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO 2023-09-26 14:33:49,302  59 OTP has sent successfully.
+INFO 2023-09-26 14:34:12,893  56 -- BEGIN Twilio API Request --
+INFO 2023-09-26 14:34:12,894  66 POST Request: https://api.twilio.com/2010-04-01/Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json
+INFO 2023-09-26 14:34:12,895  69 Headers:
+INFO 2023-09-26 14:34:12,895  73 User-Agent : twilio-python/8.8.0 (Windows AMD64) Python/3.11.3
+INFO 2023-09-26 14:34:12,896  73 X-Twilio-Client : python-8.8.0
+INFO 2023-09-26 14:34:12,896  73 Accept-Charset : utf-8
+INFO 2023-09-26 14:34:12,896  73 Content-Type : application/x-www-form-urlencoded
+INFO 2023-09-26 14:34:12,897  73 Accept : application/json
+INFO 2023-09-26 14:34:12,898  75 -- END Twilio API Request --
+INFO 2023-09-26 14:34:14,376  81 Response Status Code: 201
+INFO 2023-09-26 14:34:14,378  82 Response Headers: {'Date': 'Tue, 26 Sep 2023 09:04:13 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '892', 'Connection': 'keep-alive', 'Twilio-Request-Id': 'RQed237fded970fadfb0eaaaed3f447337', 'Twilio-Request-Duration': '0.179', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'Strict-Transport-Security': 'max-age=31536000', 'Twilio-Concurrent-Requests': '1', 'X-Shenanigans': 'none', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO 2023-09-26 14:34:14,381  59 OTP has sent successfully.
+INFO 2023-09-26 15:27:19,122  56 -- BEGIN Twilio API Request --
+INFO 2023-09-26 15:27:19,123  66 POST Request: https://api.twilio.com/2010-04-01/Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json
+INFO 2023-09-26 15:27:19,123  69 Headers:
+INFO 2023-09-26 15:27:19,124  73 User-Agent : twilio-python/8.8.0 (Windows AMD64) Python/3.11.3
+INFO 2023-09-26 15:27:19,125  73 X-Twilio-Client : python-8.8.0
+INFO 2023-09-26 15:27:19,125  73 Accept-Charset : utf-8
+INFO 2023-09-26 15:27:19,126  73 Content-Type : application/x-www-form-urlencoded
+INFO 2023-09-26 15:27:19,128  73 Accept : application/json
+INFO 2023-09-26 15:27:19,128  75 -- END Twilio API Request --
+INFO 2023-09-26 15:27:20,572  81 Response Status Code: 201
+INFO 2023-09-26 15:27:20,573  82 Response Headers: {'Date': 'Tue, 26 Sep 2023 09:57:20 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '892', 'Connection': 'keep-alive', 'Twilio-Request-Id': 'RQ5eec8591e8e58442a5eb02bd0a0aa077', 'Twilio-Request-Duration': '0.161', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'Strict-Transport-Security': 'max-age=31536000', 'Twilio-Concurrent-Requests': '1', 'X-Shenanigans': 'none', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO 2023-09-26 15:27:20,573  59 OTP has sent successfully.
+INFO 2023-09-26 15:57:40,770  56 -- BEGIN Twilio API Request --
+INFO 2023-09-26 15:57:40,771  66 POST Request: https://api.twilio.com/2010-04-01/Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json
+INFO 2023-09-26 15:57:40,773  69 Headers:
+INFO 2023-09-26 15:57:40,774  73 User-Agent : twilio-python/8.8.0 (Windows AMD64) Python/3.11.3
+INFO 2023-09-26 15:57:40,774  73 X-Twilio-Client : python-8.8.0
+INFO 2023-09-26 15:57:40,775  73 Accept-Charset : utf-8
+INFO 2023-09-26 15:57:40,775  73 Content-Type : application/x-www-form-urlencoded
+INFO 2023-09-26 15:57:40,776  73 Accept : application/json
+INFO 2023-09-26 15:57:40,776  75 -- END Twilio API Request --
+INFO 2023-09-26 15:57:42,223  81 Response Status Code: 201
+INFO 2023-09-26 15:57:42,225  82 Response Headers: {'Date': 'Tue, 26 Sep 2023 10:27:41 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '892', 'Connection': 'keep-alive', 'Twilio-Request-Id': 'RQbd2ca3e398c547c1fe593bbc22d027e0', 'Twilio-Request-Duration': '0.142', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'Strict-Transport-Security': 'max-age=31536000', 'Twilio-Concurrent-Requests': '1', 'X-Shenanigans': 'none', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO 2023-09-26 15:57:42,226  59 OTP has sent successfully.
+INFO 2023-09-26 16:00:30,467  56 -- BEGIN Twilio API Request --
+INFO 2023-09-26 16:00:30,467  66 POST Request: https://api.twilio.com/2010-04-01/Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json
+INFO 2023-09-26 16:00:30,467  69 Headers:
+INFO 2023-09-26 16:00:30,468  73 User-Agent : twilio-python/8.8.0 (Windows AMD64) Python/3.11.3
+INFO 2023-09-26 16:00:30,468  73 X-Twilio-Client : python-8.8.0
+INFO 2023-09-26 16:00:30,469  73 Accept-Charset : utf-8
+INFO 2023-09-26 16:00:30,469  73 Content-Type : application/x-www-form-urlencoded
+INFO 2023-09-26 16:00:30,469  73 Accept : application/json
+INFO 2023-09-26 16:00:30,470  75 -- END Twilio API Request --
+INFO 2023-09-26 16:00:31,884  81 Response Status Code: 201
+INFO 2023-09-26 16:00:31,884  82 Response Headers: {'Date': 'Tue, 26 Sep 2023 10:30:31 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '892', 'Connection': 'keep-alive', 'Twilio-Request-Id': 'RQ2bc781cdf63ff04f6fdb2b1ea403298e', 'Twilio-Request-Duration': '0.144', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'Strict-Transport-Security': 'max-age=31536000', 'Twilio-Concurrent-Requests': '1', 'X-Shenanigans': 'none', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO 2023-09-26 16:00:31,885  59 OTP has sent successfully.
+INFO 2023-09-26 16:00:52,280  56 -- BEGIN Twilio API Request --
+INFO 2023-09-26 16:00:52,281  66 POST Request: https://api.twilio.com/2010-04-01/Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json
+INFO 2023-09-26 16:00:52,281  69 Headers:
+INFO 2023-09-26 16:00:52,281  73 User-Agent : twilio-python/8.8.0 (Windows AMD64) Python/3.11.3
+INFO 2023-09-26 16:00:52,282  73 X-Twilio-Client : python-8.8.0
+INFO 2023-09-26 16:00:52,282  73 Accept-Charset : utf-8
+INFO 2023-09-26 16:00:52,283  73 Content-Type : application/x-www-form-urlencoded
+INFO 2023-09-26 16:00:52,283  73 Accept : application/json
+INFO 2023-09-26 16:00:52,285  75 -- END Twilio API Request --
+INFO 2023-09-26 16:00:53,869  81 Response Status Code: 201
+INFO 2023-09-26 16:00:53,869  82 Response Headers: {'Date': 'Tue, 26 Sep 2023 10:30:53 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '892', 'Connection': 'keep-alive', 'Twilio-Request-Id': 'RQ83cf8bbd884e6b914155d2c4e996f275', 'Twilio-Request-Duration': '0.174', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'Strict-Transport-Security': 'max-age=31536000', 'Twilio-Concurrent-Requests': '1', 'X-Shenanigans': 'none', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO 2023-09-26 16:00:53,871  59 OTP has sent successfully.
+INFO 2023-09-26 16:01:04,088  56 -- BEGIN Twilio API Request --
+INFO 2023-09-26 16:01:04,089  66 POST Request: https://api.twilio.com/2010-04-01/Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json
+INFO 2023-09-26 16:01:04,089  69 Headers:
+INFO 2023-09-26 16:01:04,090  73 User-Agent : twilio-python/8.8.0 (Windows AMD64) Python/3.11.3
+INFO 2023-09-26 16:01:04,090  73 X-Twilio-Client : python-8.8.0
+INFO 2023-09-26 16:01:04,094  73 Accept-Charset : utf-8
+INFO 2023-09-26 16:01:04,095  73 Content-Type : application/x-www-form-urlencoded
+INFO 2023-09-26 16:01:04,095  73 Accept : application/json
+INFO 2023-09-26 16:01:04,096  75 -- END Twilio API Request --
+INFO 2023-09-26 16:01:05,493  81 Response Status Code: 201
+INFO 2023-09-26 16:01:05,494  82 Response Headers: {'Date': 'Tue, 26 Sep 2023 10:31:04 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '892', 'Connection': 'keep-alive', 'Twilio-Request-Id': 'RQ1b2c63d618a8a1f49c86d534a4db8f8f', 'Twilio-Request-Duration': '0.127', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'Strict-Transport-Security': 'max-age=31536000', 'Twilio-Concurrent-Requests': '1', 'X-Shenanigans': 'none', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO 2023-09-26 16:01:05,496  59 OTP has sent successfully.
+INFO 2023-09-26 16:01:13,962  56 -- BEGIN Twilio API Request --
+INFO 2023-09-26 16:01:13,962  66 POST Request: https://api.twilio.com/2010-04-01/Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json
+INFO 2023-09-26 16:01:13,962  69 Headers:
+INFO 2023-09-26 16:01:13,963  73 User-Agent : twilio-python/8.8.0 (Windows AMD64) Python/3.11.3
+INFO 2023-09-26 16:01:13,963  73 X-Twilio-Client : python-8.8.0
+INFO 2023-09-26 16:01:13,964  73 Accept-Charset : utf-8
+INFO 2023-09-26 16:01:13,964  73 Content-Type : application/x-www-form-urlencoded
+INFO 2023-09-26 16:01:13,964  73 Accept : application/json
+INFO 2023-09-26 16:01:13,965  75 -- END Twilio API Request --
+INFO 2023-09-26 16:01:15,359  81 Response Status Code: 201
+INFO 2023-09-26 16:01:15,359  82 Response Headers: {'Date': 'Tue, 26 Sep 2023 10:31:14 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '892', 'Connection': 'keep-alive', 'Twilio-Request-Id': 'RQ8ae5316e98f3183bf1947d3ded22f17b', 'Twilio-Request-Duration': '0.132', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'Strict-Transport-Security': 'max-age=31536000', 'Twilio-Concurrent-Requests': '1', 'X-Shenanigans': 'none', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO 2023-09-26 16:01:15,360  59 OTP has sent successfully.
+INFO 2023-09-26 16:09:10,341  56 -- BEGIN Twilio API Request --
+INFO 2023-09-26 16:09:10,342  66 POST Request: https://api.twilio.com/2010-04-01/Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json
+INFO 2023-09-26 16:09:10,342  69 Headers:
+INFO 2023-09-26 16:09:10,343  73 User-Agent : twilio-python/8.8.0 (Windows AMD64) Python/3.11.3
+INFO 2023-09-26 16:09:10,343  73 X-Twilio-Client : python-8.8.0
+INFO 2023-09-26 16:09:10,344  73 Accept-Charset : utf-8
+INFO 2023-09-26 16:09:10,345  73 Content-Type : application/x-www-form-urlencoded
+INFO 2023-09-26 16:09:10,345  73 Accept : application/json
+INFO 2023-09-26 16:09:10,346  75 -- END Twilio API Request --
+INFO 2023-09-26 16:09:11,617  81 Response Status Code: 201
+INFO 2023-09-26 16:09:11,618  82 Response Headers: {'Date': 'Tue, 26 Sep 2023 10:39:11 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '892', 'Connection': 'keep-alive', 'Twilio-Request-Id': 'RQ06eacf4b0fcee51001c0083e3ce8b906', 'Twilio-Request-Duration': '0.147', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'Strict-Transport-Security': 'max-age=31536000', 'Twilio-Concurrent-Requests': '1', 'X-Shenanigans': 'none', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO 2023-09-26 16:09:11,619  59 OTP has sent successfully.
+INFO 2023-09-26 16:17:31,615  56 -- BEGIN Twilio API Request --
+INFO 2023-09-26 16:17:31,618  66 POST Request: https://api.twilio.com/2010-04-01/Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json
+INFO 2023-09-26 16:17:31,619  69 Headers:
+INFO 2023-09-26 16:17:31,619  73 User-Agent : twilio-python/8.8.0 (Windows AMD64) Python/3.11.3
+INFO 2023-09-26 16:17:31,620  73 X-Twilio-Client : python-8.8.0
+INFO 2023-09-26 16:17:31,620  73 Accept-Charset : utf-8
+INFO 2023-09-26 16:17:31,621  73 Content-Type : application/x-www-form-urlencoded
+INFO 2023-09-26 16:17:31,621  73 Accept : application/json
+INFO 2023-09-26 16:17:31,621  75 -- END Twilio API Request --
+INFO 2023-09-26 16:17:32,903  81 Response Status Code: 201
+INFO 2023-09-26 16:17:32,903  82 Response Headers: {'Date': 'Tue, 26 Sep 2023 10:47:32 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '892', 'Connection': 'keep-alive', 'Twilio-Request-Id': 'RQ74665e29b430ee322570e2431325788c', 'Twilio-Request-Duration': '0.178', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'Strict-Transport-Security': 'max-age=31536000', 'Twilio-Concurrent-Requests': '1', 'X-Shenanigans': 'none', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO 2023-09-26 16:17:32,904  59 OTP has sent successfully.
+INFO 2023-09-26 16:17:38,723  56 -- BEGIN Twilio API Request --
+INFO 2023-09-26 16:17:38,724  66 POST Request: https://api.twilio.com/2010-04-01/Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json
+INFO 2023-09-26 16:17:38,724  69 Headers:
+INFO 2023-09-26 16:17:38,725  73 User-Agent : twilio-python/8.8.0 (Windows AMD64) Python/3.11.3
+INFO 2023-09-26 16:17:38,726  73 X-Twilio-Client : python-8.8.0
+INFO 2023-09-26 16:17:38,728  73 Accept-Charset : utf-8
+INFO 2023-09-26 16:17:38,729  73 Content-Type : application/x-www-form-urlencoded
+INFO 2023-09-26 16:17:38,729  73 Accept : application/json
+INFO 2023-09-26 16:17:38,730  75 -- END Twilio API Request --
+INFO 2023-09-26 16:17:39,912  81 Response Status Code: 201
+INFO 2023-09-26 16:17:39,912  82 Response Headers: {'Date': 'Tue, 26 Sep 2023 10:47:39 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '892', 'Connection': 'keep-alive', 'Twilio-Request-Id': 'RQ93d691699eca9b983014b652cae9513a', 'Twilio-Request-Duration': '0.140', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'Strict-Transport-Security': 'max-age=31536000', 'Twilio-Concurrent-Requests': '1', 'X-Shenanigans': 'none', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO 2023-09-26 16:17:39,913  59 OTP has sent successfully.
+INFO 2023-09-26 16:18:35,582  56 -- BEGIN Twilio API Request --
+INFO 2023-09-26 16:18:35,583  66 POST Request: https://api.twilio.com/2010-04-01/Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json
+INFO 2023-09-26 16:18:35,585  69 Headers:
+INFO 2023-09-26 16:18:35,585  73 User-Agent : twilio-python/8.8.0 (Windows AMD64) Python/3.11.3
+INFO 2023-09-26 16:18:35,586  73 X-Twilio-Client : python-8.8.0
+INFO 2023-09-26 16:18:35,586  73 Accept-Charset : utf-8
+INFO 2023-09-26 16:18:35,587  73 Content-Type : application/x-www-form-urlencoded
+INFO 2023-09-26 16:18:35,587  73 Accept : application/json
+INFO 2023-09-26 16:18:35,587  75 -- END Twilio API Request --
+INFO 2023-09-26 16:18:36,991  81 Response Status Code: 201
+INFO 2023-09-26 16:18:36,991  82 Response Headers: {'Date': 'Tue, 26 Sep 2023 10:48:36 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '892', 'Connection': 'keep-alive', 'Twilio-Request-Id': 'RQ025a412499f0d5d3ad9741c5f1ff8d32', 'Twilio-Request-Duration': '0.165', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'Strict-Transport-Security': 'max-age=31536000', 'Twilio-Concurrent-Requests': '1', 'X-Shenanigans': 'none', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO 2023-09-26 16:18:36,992  59 OTP has sent successfully.
+INFO 2023-09-26 16:24:49,298  56 -- BEGIN Twilio API Request --
+INFO 2023-09-26 16:24:49,298  66 POST Request: https://api.twilio.com/2010-04-01/Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json
+INFO 2023-09-26 16:24:49,300  69 Headers:
+INFO 2023-09-26 16:24:49,301  73 User-Agent : twilio-python/8.8.0 (Windows AMD64) Python/3.11.3
+INFO 2023-09-26 16:24:49,302  73 X-Twilio-Client : python-8.8.0
+INFO 2023-09-26 16:24:49,302  73 Accept-Charset : utf-8
+INFO 2023-09-26 16:24:49,303  73 Content-Type : application/x-www-form-urlencoded
+INFO 2023-09-26 16:24:49,304  73 Accept : application/json
+INFO 2023-09-26 16:24:49,304  75 -- END Twilio API Request --
+INFO 2023-09-26 16:24:50,676  81 Response Status Code: 201
+INFO 2023-09-26 16:24:50,676  82 Response Headers: {'Date': 'Tue, 26 Sep 2023 10:54:50 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '892', 'Connection': 'keep-alive', 'Twilio-Request-Id': 'RQ34bdb981d4a0f47926754985c09d838c', 'Twilio-Request-Duration': '0.138', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'Strict-Transport-Security': 'max-age=31536000', 'Twilio-Concurrent-Requests': '1', 'X-Shenanigans': 'none', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO 2023-09-26 16:24:50,677  59 OTP has sent successfully.
+INFO 2023-09-26 16:51:31,731  46 User id found to get fcm_token.
+INFO 2023-09-26 16:51:31,751  1563 Attempting refresh to obtain initial access_token
+INFO 2023-09-26 16:51:32,939  63 Notification has sent to all admins.
+INFO 2023-09-26 16:51:32,940  114 Notification Added Successfully.

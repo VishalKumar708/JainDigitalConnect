@@ -11,6 +11,7 @@ from rest_framework import status
 from .serializers import HeadSerializer, MemberSerializer, GETFamilyByHeadIdSerializer, UpdateMemberSerializer, GETAllUserSerializer, GETMemberByIdSerializer
 
 from .push_notification import send_notification
+from rest_framework.permissions import IsAuthenticated, AllowAny
 
 import logging
 # logger = logging.getLogger(__name__)
@@ -95,6 +96,7 @@ class RegisterHead(APIView):
 
 
 class RegisterMember(APIView):
+
     def post(self, request, *args, **kwargs):
         data = request.data
         member_phone_number = data.get('phoneNumber')
@@ -191,7 +193,9 @@ class RegisterMember(APIView):
 
 
 class GETFamilyByHeadId(APIView):
+    permission_classes = [IsAuthenticated]
 
+    authentication_classes = []
     def get(self, request, head_id,  *args, **kwargs):
         is_valid_id = is_integer(head_id)
         if not is_valid_id:
@@ -237,6 +241,7 @@ class GETFamilyByHeadId(APIView):
 
 #  check Member exist or not by Mobile Number
 class IsUserExist(APIView):
+
     def post(self, request, *args, **kwargs):
         phone_number = request.data.get('phoneNumber')
         # data = request.data
@@ -280,6 +285,7 @@ class IsUserExist(APIView):
 
 
 class DeleteMember(APIView):
+    permission_classes = [IsAuthenticated]
 
     def delete(self, request, member_id):
         if not is_integer(member_id):
@@ -294,7 +300,7 @@ class DeleteMember(APIView):
 
         try:
             # make user inactive
-            member = User.objects.get(userId=member_id)
+            member = User.objects.get(id=member_id)
             member.isActive = False
             member.save()
 
@@ -318,6 +324,7 @@ class DeleteMember(APIView):
 
 
 class UpdateUserById(APIView):
+    permission_classes = [IsAuthenticated]
 
     def put(self, request, member_id,  *args, **kwargs):
         if not is_integer(member_id):
@@ -329,7 +336,7 @@ class UpdateUserById(APIView):
             return Response(json_data)
 
         try:
-            member = User.objects.get(userId=member_id)
+            member = User.objects.get(id=member_id)
             if len(request.data) < 1:
                 serializer = UpdateMemberSerializer(member, data=request.data)
                 if not serializer.is_valid():
@@ -391,7 +398,7 @@ from .pagination import CustomPagination
 class GetAllResidents(ListAPIView):
     serializer_class = GETAllUserSerializer
     pagination_class = CustomPagination
-
+    permission_classes = [IsAuthenticated]
     def get_queryset(self):
         qs = User.objects.all()
         return qs
@@ -476,6 +483,8 @@ class GetAllResidents(ListAPIView):
 
 
 class GETUserById(APIView):
+    permission_classes = [IsAuthenticated]
+
     def get(self,request, user_id, *args, **kwargs):
 
         if not is_integer(user_id):
@@ -488,7 +497,7 @@ class GETUserById(APIView):
 
         try:
             # Attempt to retrieve the product by its primary key (pk)
-            user = User.objects.get(userId=user_id)
+            user = User.objects.get(id=user_id)
             serializer = GETMemberByIdSerializer(user)
             json_data = {
                 'statusCode': 200,

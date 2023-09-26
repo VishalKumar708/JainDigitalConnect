@@ -9,6 +9,7 @@ from .auth import is_otp_expired, generate_otp, is_send_otp, check_number_exist_
 from .utils import is_valid_mobile_number
 from rest_framework import status
 # from .push_notification import send_notification_to_admin
+from .tokens import generate_tokens
 import logging
 info_logger = logging.getLogger('info')
 error_logger = logging.getLogger('error')
@@ -167,19 +168,28 @@ class VerifyOTP(APIView):
                         # send_notification_to_admin(title=title, body=body)
                         return Response(json_data)
                     else:
-                        json_data = {
-                            'statusCode': status.HTTP_200_OK,
-                            'status': 'Success',
-                            'message': 'Your OTP has matched successfully.',
-                            'data': {'userid': user_obj.userId}
-                        }
-                        # for Notification
-                        title = "Logged In for Active User."
-                        body = f"A User who's mobile number is '{phone_number}'has successful login in JAIN DIGITAL CONNECT. "
-                        # if send_notification_to_admin(title=title, body=body):
-                        #     info_logger.info(f'OTP matched successfully and This {phone_number} user has logged in.')
-                        # else:
-                        #     error_logger.error(f'Failed to add data in "NotificationHistory" tabel.')
+
+                        is_token_generated, tokens = generate_tokens(user_obj.id, phone_number=phone_number)
+
+                        # json_data = {
+                        #     'statusCode': status.HTTP_200_OK,
+                        #     'status': 'Success',
+                        #     'message': 'Your OTP has matched successfully.',
+                        #     'data': {'userid': user_obj.id}
+                        # }
+                        if is_token_generated:
+                            json_data = {
+                                'statusCode': status.HTTP_200_OK,
+                                'status': 'Success',
+                                'data': {'userid': user_obj.id, 'message': 'Your OTP has matched successfully.', 'tokens': tokens}
+                            }
+                        else:
+                            json_data = {
+                                'statusCode': status.HTTP_200_OK,
+                                'status': 'Success',
+                                'data': {'userid': user_obj.id, 'message': 'Your OTP has matched successfully.', 'msg': tokens}
+                            }
+
                         return Response(json_data)
                 else:
                     json_data = {

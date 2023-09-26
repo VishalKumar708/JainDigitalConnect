@@ -57,3 +57,10 @@ ERROR 2023-09-25 15:31:43,697  413 Exception occur while filtering data ==> Cann
 ERROR 2023-09-25 16:35:38,937  44 Unsupported Media Type. Expected application/json but got text/plain
 ERROR 2023-09-25 16:35:47,304  44 Unsupported Media Type. Expected application/json but got application/javascript
 ERROR 2023-09-25 16:35:55,411  44 Unsupported Media Type. Expected application/json but got application/javascript
+ERROR 2023-09-26 10:13:21,488  30 Invalid URL.
+ERROR 2023-09-26 10:13:25,249  30 Invalid URL.
+ERROR 2023-09-26 10:18:16,617  44 Unsupported Media Type. Expected application/json but got text/plain
+ERROR 2023-09-26 12:06:50,344  44 Unsupported Media Type. Expected application/json but got text/plain
+ERROR 2023-09-26 13:39:02,446  64 While sending OTP to client an exception occur == > ['twilio.base.exceptions.TwilioRestException: \n\x1b[31m\x1b[49mHTTP Error\x1b[0m \x1b[37m\x1b[49mYour request was:\x1b[0m\n\n\x1b[36m\x1b[49mPOST /Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json\x1b[0m\n\n\x1b[37m\x1b[49mTwilio returned the following information:\x1b[0m\n\n\x1b[34m\x1b[49mUnable to create record: Authenticate\x1b[0m\n\n\x1b[37m\x1b[49mMore information may be available here:\x1b[0m\n\n\x1b[34m\x1b[49mhttps://www.twilio.com/docs/errors/20003\x1b[0m\n\n\n'] 
+ERROR 2023-09-26 14:34:44,499  30 Invalid URL.
+ERROR 2023-09-26 16:17:48,955  30 Invalid URL.

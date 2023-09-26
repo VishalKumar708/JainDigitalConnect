@@ -17,7 +17,7 @@ class BaseModel(models.Model):
 
 
 class User(BaseModel, AbstractBaseUser, PermissionsMixin):
-    userId = models.BigAutoField(primary_key=True)
+    id = models.BigAutoField(primary_key=True)
     dob = models.DateField()
     address = models.CharField(max_length=200)
     areaId = models.CharField(max_length=10, default=1, null=True)
@@ -43,7 +43,7 @@ class User(BaseModel, AbstractBaseUser, PermissionsMixin):
     isAdmin = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
 
-    USERNAME_FIELD = "userId"
+    USERNAME_FIELD = "id"
     REQUIRED_FIELDS = ['name', 'phoneNumber', 'dob', 'address']
     objects = UserManager()
 
@@ -51,7 +51,7 @@ class User(BaseModel, AbstractBaseUser, PermissionsMixin):
     #     return True
 
     def __str__(self):
-        return self.phoneNumber
+        return str(self.phoneNumber)
 
     def has_perm(self, perm, obj=None):
         "Does the user have a specific permission?"
@@ -87,7 +87,4 @@ class NotificationHistory(BaseModel):
     userId = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user')
     notificationId = models.ForeignKey(Notification, on_delete=models.CASCADE, related_name='notification')
 
-    # title = models.CharField(max_length=100)
-    # body = models.TextField()
-    # screen = models.CharField(max_length=100)
 

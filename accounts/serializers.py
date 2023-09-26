@@ -106,7 +106,7 @@ class UpdateMemberSerializer(serializers.ModelSerializer):
 
 class GETHeadSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = ['userId', 'name', 'phoneNumber', 'gotra', 'dob', 'nativePlace', 'address']
+        fields = ['id', 'name', 'phoneNumber', 'gotra', 'dob', 'nativePlace', 'address']
         model = User
 
     def to_representation(self, instance):
@@ -126,14 +126,25 @@ from .auth import get_age_by_dob
 class GETFamilyByHeadIdSerializer(serializers.ModelSerializer):
     # age = serializers.CharField()
     class Meta:
-        fields = ['userId', 'name', 'relationWithHead', 'gotra', 'profession', 'dob', 'nativePlace', 'address', 'phoneNumber','phoneNumberVisibility' ]
+        fields = ['id', 'name', 'relationWithHead', 'gotra', 'profession', 'dob', 'nativePlace', 'address', 'phoneNumber','phoneNumberVisibility' ]
         model = User
 
     def to_representation(self, instance):
         # Get the default representation of the instance
         data = super().to_representation(instance)
 
-        data['age'] = str(get_age_by_dob(data['dob']))+' Year'
+        # data['age'] = str(get_age_by_dob(data['dob']))+' Year'
+
+        #  *****  to find the 'age' by using 'dob'  *****
+        birthdate = datetime.strptime(data['dob'], '%Y-%m-%d')
+        current_date = datetime.now()
+        # Calculate the age
+        age = current_date.year - birthdate.year - (
+                    (current_date.month, current_date.day) < (birthdate.month, birthdate.day))
+        # ****   END LOGIC   ******
+
+        # add new key 'age' in serializer
+        data['age'] = str(age) + ' Year'
 
         # Modify the field before returning the data
         is_number_visible = data['phoneNumberVisibility']
@@ -198,7 +209,8 @@ class CreateNewNotificationSerializer(serializers.ModelSerializer):
         user_obj = self.context.get('user_obj')
         print('In serializer user object==> ',user_obj )
         # created_by_user = request.user if request else validated_data['userId']
-        created_by_user = user_obj.userId
+        print("user_obj.id==> ",user_obj.id)
+        created_by_user = user_obj.id
         validated_data['createdBy'] = created_by_user
 
         # Create the user instance with modified data

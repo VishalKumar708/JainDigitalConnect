@@ -78,7 +78,7 @@ def check_number_exist_for_login(phone_number):
 
 def before_update_check_number_exist(phone_number, user_id):
     """"to check user can login or not """
-    filtered_data = User.objects.filter(Q(phoneNumber=phone_number) & ~Q(userId=user_id))
+    filtered_data = User.objects.filter(Q(phoneNumber=phone_number) & ~Q(id=user_id))
     print("Record found===>", filtered_data)
     if len(filtered_data) == 1:
         return True
@@ -91,7 +91,7 @@ def is_account_exist(phone_number):
     print("Record found===>", filtered_data)
     if len(filtered_data) == 1:
         obj = filtered_data[0]
-        return True, obj.userId
+        return True, obj.id
     return False, None
 
 
@@ -107,7 +107,7 @@ def check_number_exist_for_add_member(phone_number):
 def check_head_exist_by_id(id):
     """ check user id is existed or not """
     try:
-        User.objects.get(userId=id, headId=None)
+        User.objects.get(id=id, headId=None)
         return True
     except User.DoesNotExist:
         return False

@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+from datetime import timedelta
 from pathlib import Path
 
 
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     # "debug_toolbar",
-    # 'rest_framework_simplejwt',
+    'rest_framework_simplejwt',
     'rest_framework',
     'django_filters',
     'fcm_django'
@@ -51,6 +51,7 @@ INSTALLED_APPS = [
 
 
 MIDDLEWARE = [
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -58,11 +59,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'accounts.middleware.ValidateURLAndJSONMiddleware'
+    'accounts.middleware.ValidateURLAndJSONMiddleware',
 
     # "debug_toolbar.middleware.DebugToolbarMiddleware",
-
-
 ]
 
 # for debug the program
@@ -162,7 +161,7 @@ SID = 'AC74f8aa592b9f4bc82af4402dfd2ce24a'
 # AUTH_TOKEN = '580a9c14bfb1bc99add5ba9c820d858c'
 # AUTH_TOKEN = '9bc540aefab30e0bff9d9780623866b9'
 # AUTH_TOKEN = '9a76bfb5fa67140a3747eef4fd576f08'
-AUTH_TOKEN = '82f8533cbb320001d5901e8e3c0c10a6'
+AUTH_TOKEN = 'cd3ac4b4c94ae7c403cdc9e873c0f022'
 SENDER_NUMBER = '+15187540316'
 OTP_EXPIRY_DURATION = 600  # in seconds
 
@@ -256,7 +255,21 @@ REST_FRAMEWORK = {
     # 'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination', #for builtin pagination
     'DEFAULT_PAGINATION_CLASS': 'accounts.pagination.CustomPagination',# for customized pagination
-    'PAGE_SIZE': 5
+    'PAGE_SIZE': 5,
+    # 'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',),
+
+    # help to exclude jwt authentication for some api
+    'DEFAULT_AUTHENTICATION_CLASSES': ('accounts.custom_jwt_authentication.CustomJWTAuthentication',),
+
+    'EXCEPTION_HANDLER': 'accounts.jwt_custom_exception.custom_jwt_exception_handler',
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),  # Set your desired access token expiration time
+    'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),  # Set your desired refresh token expiration time
+    'SLIDING_TOKEN_LIFETIME': timedelta(days=1),  # Set your desired sliding token lifetime
+    'SLIDING_TOKEN_REFRESH_LIFETIME_GRACE_PERIOD': timedelta(minutes=60),  # Optional
+    "AUTH_HEADER_TYPES": ("Token",),
 }
 
 #  ********************************   firebase settings to send push notification   ***********************
