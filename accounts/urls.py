@@ -30,7 +30,7 @@ urlpatterns = [
     path('DELETEMember/<slug:member_id>/', DeleteMember.as_view()),
 
     # to update member by 'id' (GET)
-    path('UPDATEUserById/<slug:user_id>/', UpdateUserById.as_view()),
+    path('UPDATEUserById/<slug:member_id>/', UpdateUserById.as_view()),
 
     # to get all residents (GET)
     path('GETAllResidents/', GetAllResidents.as_view()),
@@ -41,7 +41,7 @@ urlpatterns = [
     # to create new notification (POST)
     path('POSTNewNotification/', CreateNewNotification.as_view()),
 
-    # generate new tokens both "access" and "refresh" (POST)
+    # (12) generate new tokens both "access" and "refresh" (POST)
     path('obtainToken/', obtain_token)
 
 ]

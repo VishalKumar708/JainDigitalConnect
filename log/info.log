@@ -282,3 +282,61 @@ INFO 2023-09-26 16:51:31,731  46 User id found to get fcm_token.
 INFO 2023-09-26 16:51:31,751  1563 Attempting refresh to obtain initial access_token
 INFO 2023-09-26 16:51:32,939  63 Notification has sent to all admins.
 INFO 2023-09-26 16:51:32,940  114 Notification Added Successfully.
+INFO 2023-09-27 10:04:44,581  56 -- BEGIN Twilio API Request --
+INFO 2023-09-27 10:04:44,581  66 POST Request: https://api.twilio.com/2010-04-01/Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json
+INFO 2023-09-27 10:04:44,589  69 Headers:
+INFO 2023-09-27 10:04:44,589  73 User-Agent : twilio-python/8.8.0 (Windows AMD64) Python/3.11.3
+INFO 2023-09-27 10:04:44,589  73 X-Twilio-Client : python-8.8.0
+INFO 2023-09-27 10:04:44,589  73 Accept-Charset : utf-8
+INFO 2023-09-27 10:04:44,589  73 Content-Type : application/x-www-form-urlencoded
+INFO 2023-09-27 10:04:44,589  73 Accept : application/json
+INFO 2023-09-27 10:04:44,589  75 -- END Twilio API Request --
+INFO 2023-09-27 10:04:45,898  81 Response Status Code: 401
+INFO 2023-09-27 10:04:45,898  82 Response Headers: {'Date': 'Wed, 27 Sep 2023 04:34:45 GMT', 'Content-Type': 'application/json', 'Content-Length': '107', 'Connection': 'keep-alive', 'WWW-Authenticate': 'Basic realm="Twilio API"', 'Twilio-Request-Id': 'RQeb677165350295b62bf8bcd6f44d24b7', 'X-Shenanigans': 'none', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO 2023-09-27 10:06:23,540  56 -- BEGIN Twilio API Request --
+INFO 2023-09-27 10:06:23,540  66 POST Request: https://api.twilio.com/2010-04-01/Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json
+INFO 2023-09-27 10:06:23,540  69 Headers:
+INFO 2023-09-27 10:06:23,540  73 User-Agent : twilio-python/8.8.0 (Windows AMD64) Python/3.11.3
+INFO 2023-09-27 10:06:23,540  73 X-Twilio-Client : python-8.8.0
+INFO 2023-09-27 10:06:23,540  73 Accept-Charset : utf-8
+INFO 2023-09-27 10:06:23,540  73 Content-Type : application/x-www-form-urlencoded
+INFO 2023-09-27 10:06:23,540  73 Accept : application/json
+INFO 2023-09-27 10:06:23,540  75 -- END Twilio API Request --
+INFO 2023-09-27 10:06:25,042  81 Response Status Code: 201
+INFO 2023-09-27 10:06:25,042  82 Response Headers: {'Date': 'Wed, 27 Sep 2023 04:36:24 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '892', 'Connection': 'keep-alive', 'Twilio-Request-Id': 'RQ651ea8b5f1e9c1e742738d9bd680f3d2', 'Twilio-Request-Duration': '0.139', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Accept, Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, Idempotency-Key', 'Access-Control-Allow-Methods': 'GET, POST, DELETE, OPTIONS', 'Access-Control-Expose-Headers': 'ETag', 'Access-Control-Allow-Credentials': 'true', 'X-Powered-By': 'AT-5000', 'Strict-Transport-Security': 'max-age=31536000', 'Twilio-Concurrent-Requests': '1', 'X-Shenanigans': 'none', 'X-Home-Region': 'us1', 'X-API-Domain': 'api.twilio.com'}
+INFO 2023-09-27 10:06:25,050  59 OTP has sent successfully.
+INFO 2023-09-27 10:10:38,026  35 Head is already found.
+INFO 2023-09-27 10:14:22,912  35 Head is already found.
+INFO 2023-09-27 10:14:30,908  35 Head is already found.
+INFO 2023-09-27 10:18:23,029  1563 Attempting refresh to obtain initial access_token
+INFO 2023-09-27 10:18:24,858  27 Notification has sent successfully.
+INFO 2023-09-27 10:18:24,858  85 Head Added Successfully.
+INFO 2023-09-27 10:21:17,389  112 This 7056599211 Member is already exist.
+INFO 2023-09-27 10:22:31,766  112 This 7056599211 Member is already exist.
+INFO 2023-09-27 10:25:53,884  112 This 7056599211 Member is already exist.
+INFO 2023-09-27 10:28:26,448  122 This 7056599210 user entered wrong headId.
+INFO 2023-09-27 10:28:52,190  1563 Attempting refresh to obtain initial access_token
+INFO 2023-09-27 10:28:53,745  27 Notification has sent successfully.
+INFO 2023-09-27 10:28:53,745  182 headId = 6 user member added successfully.
+INFO 2023-09-27 10:34:52,165  228 Send all family members data to headId = 6 user successfully.
+INFO 2023-09-27 10:38:08,011  228 Send all family members data to headId = 6 user successfully.
+INFO 2023-09-27 10:50:09,244  373 user_id = 6 record updated successfully.
+INFO 2023-09-27 11:06:55,950  460 All user data retrieve successfully.
+INFO 2023-09-27 11:19:24,728  435 All user data retrieve failed because User not found. 
+INFO 2023-09-27 11:19:31,100  435 All user data retrieve failed because User not found. 
+INFO 2023-09-27 11:19:39,505  435 All user data retrieve failed because User not found. 
+INFO 2023-09-27 11:19:47,521  435 All user data retrieve failed because User not found. 
+INFO 2023-09-27 11:41:28,120  488 user_id = 6 data retrieve successfully.
+INFO 2023-09-27 11:50:11,819  312 user_id = 7 deleted(inactive) successfully.
+INFO 2023-09-27 11:52:45,523  312 user_id = 7 deleted(inactive) successfully.
+INFO 2023-09-27 11:52:56,657  312 user_id = 7 deleted(inactive) successfully.
+INFO 2023-09-27 12:06:08,285  321 user_id = 6 deleted(inactive) successfully.
+INFO 2023-09-27 12:09:59,367  46 User id found to get fcm_token.
+INFO 2023-09-27 12:09:59,385  1563 Attempting refresh to obtain initial access_token
+INFO 2023-09-27 12:10:00,744  63 Notification has sent to all admins.
+INFO 2023-09-27 12:10:00,746  114 Notification Added Successfully.
+INFO 2023-09-27 12:19:41,239  273 This number 7056599210 is already exist.
+INFO 2023-09-27 12:25:17,724  46 User id found to get fcm_token.
+INFO 2023-09-27 12:25:17,745  1563 Attempting refresh to obtain initial access_token
+INFO 2023-09-27 12:25:19,183  63 Notification has sent to all admins.
+INFO 2023-09-27 12:25:19,185  114 Notification Added Successfully.

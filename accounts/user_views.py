@@ -33,7 +33,7 @@ class RegisterHead(APIView):
                 'data': 'Head is already exist.'
             }
             info_logger.info('Head is already found.')
-            return Response(json_data)
+            return Response(json_data, status=400)
 
         print('head_phone_number====> ', head_phone_number)
         # check head phone number
@@ -43,7 +43,7 @@ class RegisterHead(APIView):
                 'status': 'Failed',
                 'data': 'Please Provide head phoneNumber'
             }
-            return Response(json_data)
+            return Response(json_data, status=400)
         else:
             if not is_valid_mobile_number(head_phone_number):
                 json_data = {
@@ -51,7 +51,7 @@ class RegisterHead(APIView):
                     'status': 'Failed',
                     'data': 'Please Provide a valid phone number.'
                 }
-                return Response(json_data)
+                return Response(json_data, status=400)
 
         serializer = HeadSerializer(data=data)
         if serializer.is_valid():
@@ -67,7 +67,7 @@ class RegisterHead(APIView):
                         'status': 'Failed',
                         'data': message
                     }
-                    return Response(json_data)
+                    return Response(json_data, status=400)
 
             # save record
             serializer.save()
@@ -83,7 +83,7 @@ class RegisterHead(APIView):
             send_notification(title=title, body=body)
 
             info_logger.info('Head Added Successfully.')
-            return Response(json_data, status=406)
+            return Response(json_data)
 
         # serializer error
         json_data = {
@@ -92,7 +92,7 @@ class RegisterHead(APIView):
             'data': serializer.errors
         }
 
-        return Response(json_data, status=406)
+        return Response(json_data, status=404)
 
 
 class RegisterMember(APIView):
@@ -105,19 +105,19 @@ class RegisterMember(APIView):
             is_exist = check_number_exist_for_add_member(phone_number=member_phone_number)
             if is_exist:
                 json_data = {
-                    'statusCode': 200,
-                    'status': 'Success',
-                    'data': 'This member has already exist.'
+                    'statusCode': 400,
+                    'status': 'failed',
+                    'data': {'msg': 'This member has already exist.'}
                 }
                 info_logger.info(f'This {member_phone_number} Member is already exist.')
-                return Response(json_data)
+                return Response(json_data, status=400)
 
             # check head id is valid or not
         if not check_head_exist_by_id(id=data.get('headId')):
             json_data = {
                 'statusCode': 404,
                 'status': 'Failed',
-                'data': 'Head id not found or you entered wrong head id'
+                'data': {'msg': 'Head id not found or you entered wrong head id'}
             }
             info_logger.info(f'This {member_phone_number} user entered wrong headId.')
             return Response(json_data, status=404)
@@ -129,19 +129,18 @@ class RegisterMember(APIView):
                 json_data = {
                     'statusCode': 400,
                     'status': 'Failed',
-                    'data': 'This member is already added. Please add different member.'
+                    'data': {'msg': 'This member is already added. Please add different member.'}
                 }
                 info_logger.info(f'headId = {data.get("headId")} user try to add same member more than 1 time. ')
                 return Response(json_data, status=400)
 
-
-        print('member_phone_number====> ', member_phone_number)
+        # print('member_phone_number====> ', member_phone_number)
         # check member enter mobile no. or not
         if member_phone_number is None:
             json_data = {
                 'statusCode': 400,
                 'status': 'Failed',
-                'data': 'Please Provide member phone number.'
+                'data': {'msg': 'Please Provide member phone number.'}
             }
             return Response(json_data, status=400)
         else:
@@ -149,7 +148,7 @@ class RegisterMember(APIView):
                 json_data = {
                     'statusCode': 400,
                     'status': 'Failed',
-                    'data': 'Please Provide a valid phone number.'
+                    'data': {'msg': 'Please Provide a valid phone number.'}
                 }
                 return Response(json_data, status=400)
 
@@ -166,7 +165,7 @@ class RegisterMember(APIView):
                     json_data = {
                         'statusCode': 400,
                         'status': 'Failed',
-                        'data': message
+                        'data': {'msg': message}
                     }
                     return Response(json_data, status=400)
 
@@ -174,7 +173,7 @@ class RegisterMember(APIView):
             json_data = {
                 'statusCode': 200,
                 'status': 'Success',
-                'data': 'Member Added Successfully.'
+                'data': {'msg': 'Member Added Successfully.'}
             }
             # send notification to head
             title = 'New Member has registered.'
@@ -195,7 +194,8 @@ class RegisterMember(APIView):
 class GETFamilyByHeadId(APIView):
     permission_classes = [IsAuthenticated]
 
-    authentication_classes = []
+    # authentication_classes = []
+
     def get(self, request, head_id,  *args, **kwargs):
         is_valid_id = is_integer(head_id)
         if not is_valid_id:
@@ -204,7 +204,7 @@ class GETFamilyByHeadId(APIView):
                 'status': 'failed',
                 'data': 'Your entered wrong id. Id can only be integer.'
             }
-            return Response(json_data, status=406)
+            return Response(json_data, status=400)
 
         is_valid_head_id = check_head_exist_by_id(head_id)
         if not is_valid_head_id:
@@ -215,7 +215,7 @@ class GETFamilyByHeadId(APIView):
             }
             info_logger.info(f'User entered wrong headId = {head_id}.')
 
-            return Response(json_data)
+            return Response(json_data, status=404)
 
         filtered_obj = User.objects.filter(headId=head_id)
         if len(filtered_obj) > 0:
@@ -252,7 +252,7 @@ class IsUserExist(APIView):
                 'status': 'Failed',
                 'data': {'message': 'Please provide phone Number.'}
             }
-            return Response(json_data)
+            return Response(json_data, status=400)
         else:
             if not is_valid_mobile_number(phone_number):
                 json_data = {
@@ -260,7 +260,7 @@ class IsUserExist(APIView):
                     'status': 'Failed',
                     'data': {'message':'Please Provide a valid phone number.'}
                 }
-                return Response(json_data)
+                return Response(json_data, status=400)
 
         is_available = check_number_exist_for_add_member(phone_number)
         # print("number exist or not==> ", is_available)
@@ -281,7 +281,7 @@ class IsUserExist(APIView):
         }
         info_logger.info(f'This number {phone_number} user not found in database.')
 
-        return Response(json_data)
+        return Response(json_data, status=404)
 
 
 class DeleteMember(APIView):
@@ -296,18 +296,27 @@ class DeleteMember(APIView):
             }
             info_logger.info(f'Wrong user id entered to delete user.')
 
-            return Response(json_data)
+            return Response(json_data, status=404)
 
         try:
+
+            # print('User id to delete==>', member_id)
             # make user inactive
             member = User.objects.get(id=member_id)
+            if not member.isActive:
+                json_data = {
+                    'statusCode': 400,
+                    'status': 'Failed',
+                    'data': {'msg': 'This member is already deleted.'}
+                }
+                return Response(json_data, status=400)
             member.isActive = False
             member.save()
 
             json_data = {
                 'statusCode': 200,
                 'status': 'Success',
-                'data': 'Member deleted successfully.'
+                'data': {'msg': 'Member deleted successfully.'}
             }
             info_logger.info(f'user_id = {member_id} deleted(inactive) successfully.')
 
@@ -316,7 +325,7 @@ class DeleteMember(APIView):
             json_data = {
                 'statusCode': 404,
                 'status': 'Failed',
-                'data': 'id not found. Please input valid id.'
+                'data': {'msg': 'id not found. Please input valid id.'}
             }
             error_logger.error(f"user_id = {member_id} doesn't exist.")
 
@@ -333,7 +342,7 @@ class UpdateUserById(APIView):
                 'status': 'Failed',
                 'data': 'user_id must be only integer.'
             }
-            return Response(json_data)
+            return Response(json_data, status=404)
 
         try:
             member = User.objects.get(id=member_id)
@@ -399,87 +408,72 @@ class GetAllResidents(ListAPIView):
     serializer_class = GETAllUserSerializer
     pagination_class = CustomPagination
     permission_classes = [IsAuthenticated]
+
     def get_queryset(self):
         qs = User.objects.all()
         return qs
 
     def list(self, request, *args, **kwargs):
-        # queryset = self.get_queryset()
-        get_filter_fields = request.query_params
-        if get_filter_fields is not None:
-            q_objects = filter_queryset(request.query_params)
-            try:
-                queryset = User.objects.filter(q_objects)
-                # print("filter query===> ", queryset.query)
-            except Exception as e:
-                response_data = {
-                    'statusCode': 404,
-                    'status': 'failed',
-                    'data': {'msg': str(e)},
-                    }
-                error_logger.error('Exception occur while filtering data ==> %s',e)
-                return Response(response_data, status=404)
-        else:
-            queryset = self.get_queryset()
-
-        if len(queryset) < 1:
-            response_data = {
-                'statusCode': 404,
-                'status': 'failed',
-                'data': {'msg': 'Record Not found.'},
-            }
-            info_logger.info('All user data retrieve failed because User not found. ')
-            return Response(response_data)
-
-        print('Serializer class==> ', self.get_serializer())
-
-        # filtered  data
-        filters = {}
-        for param_name, param_value in request.query_params.items():
-            # Create a case-insensitive search for string fields
-            filters[f"{param_name.strip()}__icontains"] = param_value.strip()
-        print("Your filter parameters ==> ", filters)
-        # Apply filters to the queryset using Q objects
-        q_objects = Q()
-        for field, value in filters.items():
-            q_objects |= Q(**{field: value})
-        print('Your queryset objects==> ', q_objects)
         try:
-            queryset = queryset.filter(q_objects)
-            print("This is your query==> ", queryset.query)
-        except Exception as e:
-            if not queryset.exists():
+            # queryset = self.get_queryset()
+            get_filter_fields = request.query_params
+            # print("filtered_parameters ==> ", get_filter_fields)
+            if len(get_filter_fields) > 0:
+                q_objects = filter_queryset(request.query_params)
+                # print("q_objects ==> ", q_objects)
+                try:
+                    queryset = User.objects.filter(q_objects)
+                    # print("filter query===> ", queryset.query)
+                except Exception as e:
+                    response_data = {
+                        'statusCode': 404,
+                        'status': 'failed',
+                        'data': {'msg': str(e)},
+                        }
+                    error_logger.error('Exception occur while filtering data ==> %s', e)
+                    return Response(response_data, status=404)
+
+            else:
+                queryset = self.get_queryset()
+
+            if len(queryset) < 1:
                 response_data = {
                     'statusCode': 404,
                     'status': 'failed',
-                    'data': {'msg': f'User Not found.{e}'},
+                    'data': {'msg': 'Record Not found.'},
                 }
                 info_logger.info('All user data retrieve failed because User not found. ')
                 return Response(response_data)
 
-        # serializer = self.get_serializer(queryset, many=True)
+            # Apply pagination
+            # page_size = self.get_page_size(request)
 
-        # Apply pagination
-        page = self.paginate_queryset(queryset)
-        # serializer = self.get_serializer(page, many=True)
-        print("page==> ", page)
+            page = self.paginate_queryset(queryset)
 
-        if page is not None:
-            serializer = self.get_serializer(page, many=True)
-            return self.get_paginated_response(serializer.data)
+            # print("page==> ", page)
 
-        serializer = self.get_serializer(queryset, many=True)
+            if page is not None:
+                serializer = self.get_serializer(page, many=True)
+                return self.get_paginated_response(serializer.data)
 
-        json_data = {
-            'statusCode': 200,
-            'status': 'success',
-            'totalResidents': len(serializer.data),
-            'results': serializer.data
-        }
-        info_logger.info('All user data retrieve successfully.')
-        return Response(json_data)
+            serializer = self.get_serializer(queryset, many=True)
 
-
+            json_data = {
+                'statusCode': 200,
+                'status': 'success',
+                'totalResidents': len(serializer.data),
+                'results': serializer.data
+            }
+            info_logger.info('All user data retrieve successfully.')
+            return Response(json_data)
+        except Exception as e:
+            error_logger.error('An exception occurred in "GetAllResidents" class. %s', str(e))
+            json_data = {
+                'statusCode': 500,
+                'status': 'failed',
+                'data': {'msg': str(e)}
+            }
+            return Response(json_data, status=500)
 
 
 class GETUserById(APIView):
@@ -493,7 +487,7 @@ class GETUserById(APIView):
                 'status': 'Failed',
                 'data': 'member_id must be only integer.'
             }
-            return Response(json_data)
+            return Response(json_data, status=404)
 
         try:
             # Attempt to retrieve the product by its primary key (pk)
@@ -516,4 +510,6 @@ class GETUserById(APIView):
             }
             error_logger.error(f'user_id = {user_id} failed to retrieve data.')
 
-            return Response(json_data)
+            return Response(json_data, status=404)
+
+

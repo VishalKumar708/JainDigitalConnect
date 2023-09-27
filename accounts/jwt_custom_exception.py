@@ -9,26 +9,33 @@ def custom_jwt_exception_handler(exc, context):
         status_code = response.status_code
     except AttributeError:
         return response
+    if status_code is not None:
+        if status_code == 401:
 
-    if status_code is not None and status_code == 401:
-
-        custom_response = {
-            'statusCode': response.status_code,
-            'status': 'failed' if response.status_code != 200 else 'success',
-            'data': {
-                'detail': response.data.get('detail', 'Something went wrong'),
-                # 'code': response.data.get('code', 'token_not_valid'),
-                'error': response.data.get('messages', []),
+            custom_response = {
+                'statusCode': response.status_code,
+                'status': 'failed' if response.status_code != 200 else 'success',
+                'data': {
+                    'detail': response.data.get('detail', 'Something went wrong'),
+                    # 'code': response.data.get('code', 'token_not_valid'),
+                    'error': response.data.get('messages', []),
+                }
             }
-        }
-        response.data = custom_response
-    elif status_code is not None and status_code == 400:
-        custom_response = {
-            'statusCode': response.status_code,
-            'status': 'failed' if response.status_code != 200 else 'success',
-            'data': [response.data]
-        }
-        response.data = custom_response
+            response.data = custom_response
+        elif status_code == 400:
+            custom_response = {
+                'statusCode': response.status_code,
+                'status': 'failed' if response.status_code != 200 else 'success',
+                'data': [response.data]
+            }
+            response.data = custom_response
+        else:
+            custom_response = {
+                'statusCode': response.status_code,
+                'status': 'failed' if response.status_code != 200 else 'success',
+                'data': [response.data]
+            }
+            response.data = custom_response
 
     return response
 

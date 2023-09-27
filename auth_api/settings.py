@@ -48,8 +48,6 @@ INSTALLED_APPS = [
     # 'rest_framework.authtoken'
 ]
 
-
-
 MIDDLEWARE = [
 
     'django.middleware.security.SecurityMiddleware',
@@ -161,7 +159,7 @@ SID = 'AC74f8aa592b9f4bc82af4402dfd2ce24a'
 # AUTH_TOKEN = '580a9c14bfb1bc99add5ba9c820d858c'
 # AUTH_TOKEN = '9bc540aefab30e0bff9d9780623866b9'
 # AUTH_TOKEN = '9a76bfb5fa67140a3747eef4fd576f08'
-AUTH_TOKEN = 'cd3ac4b4c94ae7c403cdc9e873c0f022'
+AUTH_TOKEN = 'c5303cd7cae25ccb58cbc1a150719fbe'
 SENDER_NUMBER = '+15187540316'
 OTP_EXPIRY_DURATION = 600  # in seconds
 
