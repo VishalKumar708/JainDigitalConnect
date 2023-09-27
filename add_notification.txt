@@ -59,3 +59,4 @@ Add firebase App configuration
 
 Note:- For more visit official documentation of "fcm_django".
     link ==> https://fcm-django.readthedocs.io/en/latest/
+
