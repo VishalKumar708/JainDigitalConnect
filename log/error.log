@@ -1,1 +1,17 @@
 ERROR 2023-09-27 15:50:32,386  30 Invalid URL.
+ERROR 2023-09-27 16:06:21,746  30 Invalid URL.
+ERROR 2023-09-28 12:02:50,221  30 Invalid URL.
+ERROR 2023-09-28 12:02:55,649  30 Invalid URL.
+ERROR 2023-09-28 13:05:25,974  434 Exception occur while filtering data ==> Cannot resolve keyword 'mypage' into field. Choices are: address, areaId, bloodGroup, cityId, createdBy, createdDate, currentAddress, dob, emailId, fatherName, fcmdevice, gender, gotra, groupId, groups, headId, id, isActive, isAdmin, is_staff, is_superuser, last_login, logentry, lookingForMatch, maritalStatus, name, nativePlace, notification, password, phoneNumber, phoneNumberVisibility, profession, relationWithHead, sect, updatedBy, updatedDate, user, user_permissions
+ERROR 2023-09-28 13:30:09,604  487 An exception occurred in "GetAllResidents" class. unhashable type: 'ReturnList'
+ERROR 2023-09-28 16:10:16,565  515 An exception occurred in "GetAllResidents" class. 'NoneType' object has no attribute 'dict'
+ERROR 2023-09-28 16:11:01,383  515 An exception occurred in "GetAllResidents" class. 'str' object has no attribute 'dict'
+ERROR 2023-09-28 16:16:48,683  515 An exception occurred in "GetAllResidents" class. 'str' object has no attribute 'dict'
+ERROR 2023-09-28 16:21:21,845  515 An exception occurred in "GetAllResidents" class. 'str' object has no attribute 'dict'
+ERROR 2023-09-28 16:37:20,854  491 An exception occurred in "GetAllResidents" class. object of type 'NoneType' has no len()
+ERROR 2023-09-29 10:29:46,033  30 Invalid URL.
+ERROR 2023-09-29 10:29:50,858  30 Invalid URL.
+ERROR 2023-09-29 13:12:12,715  30 Invalid URL.
+ERROR 2023-09-29 14:28:36,862  64 While sending OTP to client an exception occur == > ['twilio.base.exceptions.TwilioRestException: \n\x1b[31m\x1b[49mHTTP Error\x1b[0m \x1b[37m\x1b[49mYour request was:\x1b[0m\n\n\x1b[36m\x1b[49mPOST /Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json\x1b[0m\n\n\x1b[37m\x1b[49mTwilio returned the following information:\x1b[0m\n\n\x1b[34m\x1b[49mUnable to create record: The number +91819898XXXX is unverified. Trial accounts cannot send messages to unverified numbers; verify +91819898XXXX at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers\x1b[0m\n\n\x1b[37m\x1b[49mMore information may be available here:\x1b[0m\n\n\x1b[34m\x1b[49mhttps://www.twilio.com/docs/errors/21608\x1b[0m\n\n\n'] 
+ERROR 2023-09-29 14:28:57,572  64 While sending OTP to client an exception occur == > ['twilio.base.exceptions.TwilioRestException: \n\x1b[31m\x1b[49mHTTP Error\x1b[0m \x1b[37m\x1b[49mYour request was:\x1b[0m\n\n\x1b[36m\x1b[49mPOST /Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json\x1b[0m\n\n\x1b[37m\x1b[49mTwilio returned the following information:\x1b[0m\n\n\x1b[34m\x1b[49mUnable to create record: The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.\x1b[0m\n\n\x1b[37m\x1b[49mMore information may be available here:\x1b[0m\n\n\x1b[34m\x1b[49mhttps://www.twilio.com/docs/errors/21608\x1b[0m\n\n\n'] 
+ERROR 2023-09-29 16:53:15,066  231 An exception occurred when extracting payload data from the refresh token. Token has wrong type

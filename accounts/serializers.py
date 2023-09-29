@@ -2,9 +2,7 @@ from datetime import datetime
 
 from .models import User, Notification
 from rest_framework import serializers
-
-
-
+from .auth import get_user_id_from_token_view
 
 
 class HeadSerializer(serializers.ModelSerializer):
@@ -17,37 +15,23 @@ class HeadSerializer(serializers.ModelSerializer):
         model = User
 
     def create(self, validated_data):
-        request = self.context.get('request')
-        created_by_user = request.user if request else validated_data['phoneNumber']
-        validated_data['createdBy'] = created_by_user
 
         # Example: Transforming 'name' to uppercase
         validated_data['name'] = validated_data['name'].upper()
-
         # Create the user instance with modified data
         user = self.Meta.model.objects.create(**validated_data)
 
-        return user
+        #  add data in field createdBy
+        user_id_by_token = self.context.get('user_id_by_token')
+        user.createdBy = user_id_by_token if user_id_by_token else user.id
+        user.save()
 
-    # def update(self, instance, validated_data):
-    #     request = self.context.get('request')
-    #     updated_by_user = request.user if request else validated_data['phoneNumber']
-    #
-    #     # Set the 'updatedBy' field to the user who is updating the instance
-    #     validated_data['updatedBy'] = updated_by_user
-    #
-    #     # Update the user instance with modified data
-    #     for attr, value in validated_data.items():
-    #         setattr(instance, attr, value)
-    #     instance.save()
-    #
-    #     return instance
+        return user
 
 
 class MemberSerializer(serializers.ModelSerializer):
     headId = serializers.IntegerField()
     dob = serializers.DateField(input_formats=("%B %d %Y",))
-
 
     class Meta:
         fields = ['headId', 'name',  'relationWithHead', 'phoneNumber', 'maritalStatus', 'lookingForMatch', 'sect',
@@ -57,36 +41,25 @@ class MemberSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         request = self.context.get('request')
         # print('request user==>', request.user)
-        created_by_user = request.user if request else validated_data['headId']
-        validated_data['createdBy'] = created_by_user
+        # created_by_user = request.user if request else validated_data['headId']
+        # validated_data['createdBy'] = created_by_user
 
         # Create the user instance with modified data
         user = self.Meta.model.objects.create(**validated_data)
 
+        #  add data in field createdBy
+        user_id_by_token = self.context.get('user_id_by_token')
+        user.createdBy = user_id_by_token if user_id_by_token else user.id
+        user.save()
         return user
-
-    # def update(self, instance, validated_data):
-    #     request = self.context.get('request')
-    #     updated_by_user = request.user if request else validated_data['headId']
-    #     print('updated_by_user ==> ', updated_by_user)
-    #     # Set the 'updatedBy' field to the user who is updating the instance
-    #     validated_data['updatedBy'] = updated_by_user
-    #
-    #     # Update the user instance with modified data
-    #     for attr, value in validated_data.items():
-    #         setattr(instance, attr, value)
-    #     instance.save()
-    #
-    #     return instance
 
 
 class UpdateMemberSerializer(serializers.ModelSerializer):
     dob = serializers.DateField(input_formats=("%B %d %Y",))
 
-
     class Meta:
         fields = ['name',  'relationWithHead', 'phoneNumber', 'maritalStatus', 'lookingForMatch', 'sect',
-                  'profession', 'bloodGroup', 'dob', 'nativePlace', 'gotra', 'phoneNumberVisibility', 'gender']
+                  'profession', "isActive", 'bloodGroup', 'dob', 'nativePlace', 'gotra', 'phoneNumberVisibility', 'gender']
         model = User
 
     def update(self, instance, validated_data):
@@ -97,6 +70,8 @@ class UpdateMemberSerializer(serializers.ModelSerializer):
         # validated_data['updatedBy'] = updated_by_user
 
         # Update the user instance with modified data
+        user_id_by_token = self.context.get('user_id_by_token')
+        validated_data['updatedBy'] = user_id_by_token if user_id_by_token else instance.id
         for attr, value in validated_data.items():
             setattr(instance, attr, value)
         instance.save()
@@ -155,8 +130,6 @@ class GETFamilyByHeadIdSerializer(serializers.ModelSerializer):
         return data
 
 
-
-
 class GETAllUserSerializer(serializers.ModelSerializer):
     # age = serializers.CharField()
     dob = serializers.DateField(input_formats=['%Y-%m-%d'])
@@ -195,6 +168,16 @@ class GETMemberByIdSerializer(serializers.ModelSerializer):
         fields = ['name', 'phoneNumber', 'address', 'profession', 'bloodGroup', 'nativePlace',   'maritalStatus',
                   'lookingForMatch', 'relationWithHead', 'gotra', 'dob', 'phoneNumberVisibility', 'gender', 'phoneNumberVisibility']
         model = User
+
+    def to_representation(self, instance):
+        # Get the default representation of the instance
+        data = super().to_representation(instance)
+
+        #  to find the age by using 'dob'
+        original_dob = datetime.strptime(data['dob'], "%Y-%m-%d")
+        data['dob'] = original_dob.strftime("%B %d, %Y")
+
+        return data
 
 
 class CreateNewNotificationSerializer(serializers.ModelSerializer):

@@ -12,7 +12,7 @@ from .serializers import HeadSerializer, MemberSerializer, GETFamilyByHeadIdSeri
 
 from .push_notification import send_notification
 from rest_framework.permissions import IsAuthenticated, AllowAny
-
+from .auth import get_user_id_from_token_view
 import logging
 # logger = logging.getLogger(__name__)
 error_logger = logging.getLogger('error')
@@ -30,7 +30,7 @@ class RegisterHead(APIView):
             json_data = {
                 'statusCode': 400,
                 'status': 'Failed',
-                'data': 'Head is already exist.'
+                'data': {'message': 'This number is already exist.'}
             }
             info_logger.info('Head is already found.')
             return Response(json_data, status=400)
@@ -53,8 +53,16 @@ class RegisterHead(APIView):
                 }
                 return Response(json_data, status=400)
 
-        serializer = HeadSerializer(data=data)
+        # get head id from "access token" payload
+        get_user_id = get_user_id_from_token_view(request)
+        if get_user_id:
+            # user_id_by_token = get_user_id
+            serializer = HeadSerializer(data=data, context={'user_id_by_token': get_user_id})
+        else:
+            serializer = HeadSerializer(data=data)
+
         if serializer.is_valid():
+
             for_match = data.get('lookingForMatch')
             is_looking_for_match = False if for_match is None else string_to_bool(for_match)
             # is_looking_for_match = string_to_bool(data.get('lookingForMatch'))
@@ -152,8 +160,15 @@ class RegisterMember(APIView):
                 }
                 return Response(json_data, status=400)
 
+                # get head id from "access token" payload
+        get_user_id = get_user_id_from_token_view(request)
+        if get_user_id:
+            # user_id_by_token = get_user_id
+            serializer = MemberSerializer(data=data, context={'user_id_by_token': get_user_id})
+        else:
+            serializer = MemberSerializer(data=data)
+
         # Put all data in serializer
-        serializer = MemberSerializer(data=data)
         if serializer.is_valid():
             for_match = data.get('lookingForMatch')
 
@@ -232,7 +247,7 @@ class GETFamilyByHeadId(APIView):
             json_data = {
                 'statusCode': 404,
                 'status': 'failed',
-                'data': 'No member found.'
+                'data': {'message': 'No member found.'}
             }
             info_logger.info(f'headId = {head_id} user has No member found.')
 
@@ -240,12 +255,10 @@ class GETFamilyByHeadId(APIView):
 
 
 #  check Member exist or not by Mobile Number
+from .serializers import GETHeadSerializer
 class IsUserExist(APIView):
-
     def post(self, request, *args, **kwargs):
         phone_number = request.data.get('phoneNumber')
-        # data = request.data
-        # phone_number = data.get('phoneNumber')
         if phone_number is None:
             json_data = {
                 'statusCode': 400,
@@ -258,30 +271,40 @@ class IsUserExist(APIView):
                 json_data = {
                     'statusCode': 400,
                     'status': 'Failed',
-                    'data': {'message':'Please Provide a valid phone number.'}
+                    'data': {'message': 'Please Provide a valid phone number.'}
                 }
                 return Response(json_data, status=400)
 
-        is_available = check_number_exist_for_add_member(phone_number)
-        # print("number exist or not==> ", is_available)
-        if is_available:
+        try:
+            obj = User.objects.get(phoneNumber=phone_number)
+
+            if obj.headId is None:
+                serializer = GETHeadSerializer(obj)
+                json_data = {
+                    'statusCode': 200,
+                    'isHead': True,
+                    'status': 'Success',
+                    'data': serializer.data
+                }
+                info_logger.info(f'This number {phone_number} is already exist.')
+                return Response(json_data, status=200)
+            else:
+                json_data = {
+                    'statusCode': 200,
+                    'status': 'Success',
+                    'data': {'msg': "This number is already exist"}
+                }
+                info_logger.info(f'This number {phone_number} is already exist.')
+                return Response(json_data, status=200)
+        except User.DoesNotExist:
             json_data = {
-                'statusCode': 200,
-                'status': 'Success',
-                'data': {'message': 'Number already exist'}
+                'statusCode': 404,
+                'status': 'Failed',
+                'data': {'message': 'user not found.'}
             }
-            info_logger.info(f'This number {phone_number} is already exist.')
+            info_logger.info(f'This number {phone_number} user not found in database.')
 
-            return Response(json_data)
-
-        json_data = {
-            'statusCode': 404,
-            'status': 'Failed',
-            'data': {'message': 'user not found.'}
-        }
-        info_logger.info(f'This number {phone_number} user not found in database.')
-
-        return Response(json_data, status=404)
+            return Response(json_data, status=404)
 
 
 class DeleteMember(APIView):
@@ -311,6 +334,9 @@ class DeleteMember(APIView):
                 }
                 return Response(json_data, status=400)
             member.isActive = False
+            get_user_id = get_user_id_from_token_view(request)
+
+            member.updatedBy = get_user_id if get_user_id else member.id
             member.save()
 
             json_data = {
@@ -347,6 +373,7 @@ class UpdateUserById(APIView):
         try:
             member = User.objects.get(id=member_id)
             if len(request.data) < 1:
+
                 serializer = UpdateMemberSerializer(member, data=request.data)
                 if not serializer.is_valid():
                     json_data = {
@@ -367,8 +394,15 @@ class UpdateUserById(APIView):
                         'data': "This number is already exist.Number must be unique."
                     }
                     return Response(json_data, status=404)
+                    # get head id from "access token" payload
+            get_user_id = get_user_id_from_token_view(request)
+            if get_user_id:
+                # user_id_by_token = get_user_id
+                serializer = UpdateMemberSerializer(member, data=request.data,partial=True, context={'user_id_by_token': get_user_id})
+            else:
+                serializer = UpdateMemberSerializer(member, data=request.data, partial=True)
 
-            serializer = UpdateMemberSerializer(member, data=request.data, partial=True)
+            # serializer = UpdateMemberSerializer(member, data=request.data, partial=True)
 
             if serializer.is_valid():
                 # Save the updated member
@@ -400,14 +434,16 @@ class UpdateUserById(APIView):
             return Response(json_data, status=400)
 
 
-from .filters import filter_queryset
+
 from .pagination import CustomPagination
 
-
+# from .custom_filter import
 class GetAllResidents(ListAPIView):
     serializer_class = GETAllUserSerializer
     pagination_class = CustomPagination
     permission_classes = [IsAuthenticated]
+    # queryset = User.objects.all()
+
 
     def get_queryset(self):
         qs = User.objects.all()
@@ -415,27 +451,7 @@ class GetAllResidents(ListAPIView):
 
     def list(self, request, *args, **kwargs):
         try:
-            # queryset = self.get_queryset()
-            get_filter_fields = request.query_params
-            # print("filtered_parameters ==> ", get_filter_fields)
-            if len(get_filter_fields) > 0:
-                q_objects = filter_queryset(request.query_params)
-                # print("q_objects ==> ", q_objects)
-                try:
-                    queryset = User.objects.filter(q_objects)
-                    # print("filter query===> ", queryset.query)
-                except Exception as e:
-                    response_data = {
-                        'statusCode': 404,
-                        'status': 'failed',
-                        'data': {'msg': str(e)},
-                        }
-                    error_logger.error('Exception occur while filtering data ==> %s', e)
-                    return Response(response_data, status=404)
-
-            else:
-                queryset = self.get_queryset()
-
+            queryset = self.get_queryset()
             if len(queryset) < 1:
                 response_data = {
                     'statusCode': 404,
@@ -447,11 +463,7 @@ class GetAllResidents(ListAPIView):
 
             # Apply pagination
             # page_size = self.get_page_size(request)
-
             page = self.paginate_queryset(queryset)
-
-            # print("page==> ", page)
-
             if page is not None:
                 serializer = self.get_serializer(page, many=True)
                 return self.get_paginated_response(serializer.data)

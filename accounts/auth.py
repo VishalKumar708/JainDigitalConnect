@@ -165,5 +165,70 @@ def check_same_name_member_in_a_head(head_id, member_name):
     return False
 
 
+# helpt to get "id" from jwt access token
+
+from rest_framework_simplejwt.tokens import AccessToken
 
 
+def get_user_id_from_token_view(request):
+    # Get the Authorization header from the request
+    authorization_header = request.META.get("HTTP_AUTHORIZATION")
+
+    if authorization_header:
+        # Check if the header starts with "Bearer "
+        if authorization_header.startswith("Token "):
+            # Extract the token (remove "Bearer " from the header)
+            token_string = authorization_header[len("Token "):].strip()
+
+            try:
+                # Decode the access token
+                token = AccessToken(token_string)
+
+                # to print all payload data inside "access token"
+                # print("complete payload data==> ",token.payload.items())
+
+                # Access the user_id claim from the token's payload
+                user_id = token.payload.get('user_id')
+
+                if user_id is not None:
+                    # Return the user_id in the response
+                    return user_id
+                else:
+                    return None
+
+            except Exception as e:
+                # Handle token decoding or validation errors
+                error_logger.error("An exception occurred when we find user_id by access token. %s", str(e))
+
+
+# from rest_framework_simplejwt.tokens import RefreshToken
+# from django.http import JsonResponse
+#
+# def get_payload_data_from_refresh_token(request):
+#     # Get the Authorization header from the request
+#     authorization_header = request.META.get("HTTP_AUTHORIZATION")
+#
+#     if authorization_header:
+#         # Check if the header starts with "Bearer "
+#         if authorization_header.startswith("Token "):
+#             # Extract the token (remove "Bearer " from the header)
+#             token_string = authorization_header[len("Token "):].strip()
+#
+#             try:
+#                 # Decode the refresh token
+#                 token = RefreshToken(token_string)
+#
+#                 # Access the payload data from the token
+#                 payload_data = token.payload
+#
+#                 # To print all payload data inside the refresh token
+#                 # print("complete payload data==> ", payload_data.items())
+#
+#                 return JsonResponse(payload_data)
+#
+#             except Exception as e:
+#                 # Handle token decoding or validation errors
+#                 error_logger.error("An exception occurred when extracting payload data from the refresh token. %s",
+#                                    str(e))
+#
+#     return None

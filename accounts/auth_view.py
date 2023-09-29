@@ -8,7 +8,7 @@ from django.db.models import Q
 from .auth import is_otp_expired, generate_otp, is_send_otp, check_number_exist_for_login
 from .utils import is_valid_mobile_number
 from rest_framework import status
-# from .push_notification import send_notification_to_admin
+from .push_notification import send_notification
 from .tokens import generate_tokens
 import logging
 info_logger = logging.getLogger('info')
@@ -155,39 +155,39 @@ class VerifyOTP(APIView):
                 is_number_exist, user_obj = check_number_exist_for_login(phone_number=phone_number)
 
                 if is_number_exist:
+                    is_token_generated, tokens = generate_tokens(user_obj.id, phone_number=phone_number)
                     if not user_obj.isActive:
-                        json_data = {
-                            'statusCode': status.HTTP_200_OK,
-                            'status': 'Success',
-                            'message': 'OTP Matched.Please activate your account.',
-                            'data': {'userid': user_obj.userId}
-                        }
-                        info_logger.info(f'This {phone_number} is Inactive and try to login.')
-                        title = "Logged In for Inactive User."
-                        body = f"A User who's mobile number is '{phone_number}'has login failed in JAIN DIGITAL CONNECT. "
-                        # send_notification_to_admin(title=title, body=body)
-                        return Response(json_data)
-                    else:
-
-                        is_token_generated, tokens = generate_tokens(user_obj.id, phone_number=phone_number)
-
-                        # json_data = {
-                        #     'statusCode': status.HTTP_200_OK,
-                        #     'status': 'Success',
-                        #     'message': 'Your OTP has matched successfully.',
-                        #     'data': {'userid': user_obj.id}
-                        # }
                         if is_token_generated:
                             json_data = {
                                 'statusCode': status.HTTP_200_OK,
                                 'status': 'Success',
-                                'data': {'userid': user_obj.id, 'message': 'Your OTP has matched successfully.', 'tokens': tokens}
+                                'data': {'userid': user_obj.id, 'message': 'OTP Matched.Please activate your account.',
+                                         'tokens': tokens}
                             }
                         else:
                             json_data = {
                                 'statusCode': status.HTTP_200_OK,
                                 'status': 'Success',
-                                'data': {'userid': user_obj.id, 'message': 'Your OTP has matched successfully.', 'msg': tokens}
+                                'data': {'userid': user_obj.id, 'message': 'OTP Matched.Please activate your account.',
+                                         'msg': tokens}
+                            }
+                        info_logger.info(f'This {phone_number} is Inactive and try to login.')
+                        title = "Logged In for Inactive User."
+                        body = f"A User who's mobile number is '{phone_number}'has login failed in JAIN DIGITAL CONNECT. "
+                        send_notification(title=title, body=body)
+                        return Response(json_data)
+                    else:
+                        if is_token_generated:
+                            json_data = {
+                                'statusCode': status.HTTP_200_OK,
+                                'status': 'Success',
+                                'data': {'userid': user_obj.id, 'isActive':True, 'message': 'Your OTP has matched successfully.', 'tokens': tokens}
+                            }
+                        else:
+                            json_data = {
+                                'statusCode': status.HTTP_200_OK,
+                                'status': 'Success',
+                                'data': {'userid': user_obj.id, 'isActive':True, 'message': 'Your OTP has matched successfully.', 'msg': tokens}
                             }
 
                         return Response(json_data)
@@ -222,4 +222,6 @@ class VerifyOTP(APIView):
                 }
 
             return Response(json_data, status=400)
+
+
 

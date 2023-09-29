@@ -263,7 +263,7 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),  # Set your desired access token expiration time
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=180),  # Set your desired access token expiration time
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),  # Set your desired refresh token expiration time
     'SLIDING_TOKEN_LIFETIME': timedelta(days=1),  # Set your desired sliding token lifetime
     'SLIDING_TOKEN_REFRESH_LIFETIME_GRACE_PERIOD': timedelta(minutes=60),  # Optional

@@ -4329,3 +4329,959 @@ INFO 2023-09-27 15:50:40,057  212 "GET /admin/fcm_django/fcmdevice/ HTTP/1.1" 20
 INFO 2023-09-27 15:50:40,201  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
 INFO 2023-09-27 15:50:43,038  212 "GET /admin/fcm_django/fcmdevice/3/change/ HTTP/1.1" 200 13639
 INFO 2023-09-27 15:50:43,091  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-09-27 16:06:13,201  668 Watching for file changes with StatReloader
+WARNING 2023-09-27 16:06:21,747  241 Not Found: /
+WARNING 2023-09-27 16:06:21,749  212 "GET / HTTP/1.1" 404 78
+INFO 2023-09-27 16:06:25,701  212 "GET /admin/ HTTP/1.1" 200 10816
+INFO 2023-09-27 16:06:29,432  212 "GET /admin/ HTTP/1.1" 200 10816
+INFO 2023-09-27 16:43:49,334  212 "POST /sendOTP/ HTTP/1.1" 200 73
+WARNING 2023-09-27 16:43:49,434  241 Bad Request: /verifyOTP/
+WARNING 2023-09-27 16:43:49,435  212 "POST /verifyOTP/ HTTP/1.1" 400 68
+WARNING 2023-09-27 16:43:49,548  241 Bad Request: /registerHead/
+WARNING 2023-09-27 16:43:49,548  212 "POST /registerHead/ HTTP/1.1" 400 68
+WARNING 2023-09-27 16:43:49,639  241 Bad Request: /registerMember/
+WARNING 2023-09-27 16:43:49,640  212 "POST /registerMember/ HTTP/1.1" 400 84
+WARNING 2023-09-27 16:43:49,724  241 Unauthorized: /GETFamilyByHeadId/6/
+WARNING 2023-09-27 16:43:49,725  212 "GET /GETFamilyByHeadId/6/ HTTP/1.1" 401 199
+WARNING 2023-09-27 16:43:49,798  241 Unauthorized: /UPDATEUserById/6/
+WARNING 2023-09-27 16:43:49,799  212 "PUT /UPDATEUserById/6/ HTTP/1.1" 401 199
+WARNING 2023-09-27 16:43:49,877  241 Unauthorized: /GETAllResidents/
+WARNING 2023-09-27 16:43:49,878  212 "GET /GETAllResidents/ HTTP/1.1" 401 199
+INFO 2023-09-27 16:43:49,947  212 "POST /api/token/refresh/ HTTP/1.1" 200 241
+WARNING 2023-09-27 16:43:50,005  241 Unauthorized: /GETUserById/6/
+WARNING 2023-09-27 16:43:50,006  212 "GET /GETUserById/6/ HTTP/1.1" 401 199
+WARNING 2023-09-27 16:43:50,086  241 Unauthorized: /checkNumberExist/
+WARNING 2023-09-27 16:43:50,087  212 "POST /checkNumberExist/ HTTP/1.1" 401 199
+WARNING 2023-09-27 16:43:50,166  241 Unauthorized: /DELETEMember/6/
+WARNING 2023-09-27 16:43:50,167  212 "DELETE /DELETEMember/6/ HTTP/1.1" 401 199
+WARNING 2023-09-27 16:43:50,254  241 Unauthorized: /POSTNewNotification/
+WARNING 2023-09-27 16:43:50,255  212 "POST /POSTNewNotification/ HTTP/1.1" 401 199
+WARNING 2023-09-27 16:43:50,348  241 Unauthorized: /api/token/verify/
+WARNING 2023-09-27 16:43:50,348  212 "POST /api/token/verify/ HTTP/1.1" 401 95
+INFO 2023-09-27 16:43:50,432  212 "POST /obtainToken/ HTTP/1.1" 200 483
+WARNING 2023-09-27 17:19:12,924  241 Unauthorized: /checkNumberExist/
+WARNING 2023-09-27 17:19:12,927  212 "POST /checkNumberExist/ HTTP/1.1" 401 199
+INFO 2023-09-27 17:19:41,054  212 "POST /checkNumberExist/ HTTP/1.1" 200 79
+WARNING 2023-09-27 17:28:19,263  241 Unauthorized: /api/token/verify/
+WARNING 2023-09-27 17:28:19,264  212 "POST /api/token/verify/ HTTP/1.1" 401 95
+INFO 2023-09-28 10:14:00,227  668 Watching for file changes with StatReloader
+WARNING 2023-09-28 10:14:07,159  241 Unauthorized: /GETFamilyByHeadId/6/
+WARNING 2023-09-28 10:14:07,160  212 "GET /GETFamilyByHeadId/6/ HTTP/1.1" 401 199
+WARNING 2023-09-28 10:15:55,097  241 Unauthorized: /api/token/refresh/
+WARNING 2023-09-28 10:15:55,098  212 "POST /api/token/refresh/ HTTP/1.1" 401 95
+INFO 2023-09-28 10:16:10,138  212 "POST /obtainToken/ HTTP/1.1" 200 483
+INFO 2023-09-28 10:17:05,468  212 "GET /GETFamilyByHeadId/6/ HTTP/1.1" 200 200
+WARNING 2023-09-28 10:25:30,217  241 Bad Request: /DELETEMember/6/
+WARNING 2023-09-28 10:25:30,220  212 "DELETE /DELETEMember/6/ HTTP/1.1" 400 85
+INFO 2023-09-28 10:26:19,658  212 "DELETE /DELETEMember/3/ HTTP/1.1" 200 83
+INFO 2023-09-28 10:30:51,529  212 "PUT /UPDATEUserById/6/ HTTP/1.1" 200 75
+INFO 2023-09-28 10:34:12,513  212 "GET /GETAllResidents/ HTTP/1.1" 200 782
+INFO 2023-09-28 10:38:54,538  212 "GET /GETUserById/1/ HTTP/1.1" 200 310
+INFO 2023-09-28 10:44:02,624  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-09-28 10:44:04,131  668 Watching for file changes with StatReloader
+ERROR 2023-09-28 10:44:17,069  241 Internal Server Error: /GETUserById/1/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py", line 499, in get
+    'data': serializer.data
+            ^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py", line 204, in to_representation
+    data['dob'] = datetime.strptime(data['dob'], '"%B %d %Y"')
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\AppData\Local\Programs\Python\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\AppData\Local\Programs\Python\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '2001-01-01' does not match format '"%B %d %Y"'
+ERROR 2023-09-28 10:44:17,082  212 "GET /GETUserById/1/ HTTP/1.1" 500 125004
+INFO 2023-09-28 10:44:34,564  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-09-28 10:44:35,909  668 Watching for file changes with StatReloader
+ERROR 2023-09-28 10:44:42,318  241 Internal Server Error: /GETUserById/1/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py", line 499, in get
+    'data': serializer.data
+            ^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py", line 204, in to_representation
+    data['dob'] = datetime.strptime(data['dob'], '%B %d %Y')
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\AppData\Local\Programs\Python\Python311\Lib\_strptime.py", line 568, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\AppData\Local\Programs\Python\Python311\Lib\_strptime.py", line 349, in _strptime
+    raise ValueError("time data %r does not match format %r" %
+ValueError: time data '2001-01-01' does not match format '%B %d %Y'
+ERROR 2023-09-28 10:44:42,326  212 "GET /GETUserById/1/ HTTP/1.1" 500 124844
+INFO 2023-09-28 10:48:43,109  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-09-28 10:48:44,556  668 Watching for file changes with StatReloader
+INFO 2023-09-28 10:49:22,640  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-09-28 10:49:24,074  668 Watching for file changes with StatReloader
+INFO 2023-09-28 10:49:33,667  212 "GET /GETUserById/1/ HTTP/1.1" 200 316
+INFO 2023-09-28 10:51:11,826  212 "POST /POSTNewNotification/ HTTP/1.1" 200 89
+INFO 2023-09-28 11:22:24,137  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-09-28 11:22:26,016  668 Watching for file changes with StatReloader
+INFO 2023-09-28 11:29:20,489  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-09-28 11:29:21,524  668 Watching for file changes with StatReloader
+INFO 2023-09-28 12:02:47,971  668 Watching for file changes with StatReloader
+WARNING 2023-09-28 12:02:50,223  241 Not Found: /
+WARNING 2023-09-28 12:02:50,223  212 "GET / HTTP/1.1" 404 78
+INFO 2023-09-28 12:02:55,514  212 "GET /admin/ HTTP/1.1" 200 10816
+INFO 2023-09-28 12:02:55,559  212 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2023-09-28 12:02:55,559  212 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2023-09-28 12:02:55,561  212 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2023-09-28 12:02:55,563  212 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2023-09-28 12:02:55,564  212 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2023-09-28 12:02:55,566  212 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+WARNING 2023-09-28 12:02:55,651  241 Not Found: /favicon.ico
+WARNING 2023-09-28 12:02:55,652  212 "GET /favicon.ico HTTP/1.1" 404 78
+INFO 2023-09-28 12:03:08,378  212 "GET /admin/accounts/notification/ HTTP/1.1" 200 24945
+INFO 2023-09-28 12:03:08,447  212 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2023-09-28 12:03:08,451  212 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2023-09-28 12:03:08,454  212 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2023-09-28 12:03:08,455  212 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2023-09-28 12:03:08,457  212 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2023-09-28 12:03:08,457  212 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2023-09-28 12:03:08,458  212 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2023-09-28 12:03:08,470  212 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2023-09-28 12:03:08,470  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-09-28 12:03:15,765  212 "GET /admin/accounts/user/ HTTP/1.1" 200 19580
+INFO 2023-09-28 12:03:15,805  212 "GET /static/admin/img/icon-no.svg HTTP/1.1" 304 0
+INFO 2023-09-28 12:03:15,811  212 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2023-09-28 12:03:15,817  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-09-28 12:42:55,052  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\manager.py changed, reloading.
+INFO 2023-09-28 12:42:57,055  668 Watching for file changes with StatReloader
+INFO 2023-09-28 12:45:29,248  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\manager.py changed, reloading.
+INFO 2023-09-28 12:45:30,286  668 Watching for file changes with StatReloader
+INFO 2023-09-28 12:46:37,481  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\manager.py changed, reloading.
+INFO 2023-09-28 12:46:38,537  668 Watching for file changes with StatReloader
+INFO 2023-09-28 12:49:02,334  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\manager.py changed, reloading.
+INFO 2023-09-28 12:49:03,352  668 Watching for file changes with StatReloader
+INFO 2023-09-28 12:51:12,362  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\manager.py changed, reloading.
+INFO 2023-09-28 12:51:13,522  668 Watching for file changes with StatReloader
+INFO 2023-09-28 12:54:45,686  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\manager.py changed, reloading.
+INFO 2023-09-28 12:54:46,555  668 Watching for file changes with StatReloader
+INFO 2023-09-28 12:57:18,659  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\manager.py changed, reloading.
+INFO 2023-09-28 12:57:19,682  668 Watching for file changes with StatReloader
+INFO 2023-09-28 13:01:06,089  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-28 13:01:07,453  668 Watching for file changes with StatReloader
+WARNING 2023-09-28 13:03:17,942  241 Unauthorized: /GETAllResidents/
+WARNING 2023-09-28 13:03:17,943  212 "GET /GETAllResidents/ HTTP/1.1" 401 199
+INFO 2023-09-28 13:04:02,587  212 "POST /api/token/refresh/ HTTP/1.1" 200 241
+INFO 2023-09-28 13:05:00,835  212 "GET /GETAllResidents/ HTTP/1.1" 200 782
+INFO 2023-09-28 13:05:15,092  212 "GET /GETAllResidents/?page=2 HTTP/1.1" 200 534
+WARNING 2023-09-28 13:05:25,974  241 Not Found: /GETAllResidents/
+WARNING 2023-09-28 13:05:25,975  212 "GET /GETAllResidents/?mypage=2 HTTP/1.1" 404 527
+INFO 2023-09-28 13:20:08,480  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-28 13:20:09,580  668 Watching for file changes with StatReloader
+INFO 2023-09-28 13:27:21,797  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-28 13:27:22,843  668 Watching for file changes with StatReloader
+INFO 2023-09-28 13:27:31,053  212 "GET /GETAllResidents/?mypage=2 HTTP/1.1" 200 51
+ERROR 2023-09-28 13:27:59,807  241 Internal Server Error: /GETAllResidents/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\response.py", line 70, in rendered_content
+    ret = renderer.render(self.data, accepted_media_type, context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\renderers.py", line 99, in render
+    ret = json.dumps(
+          ^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\utils\json.py", line 25, in dumps
+    return json.dumps(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\AppData\Local\Programs\Python\Python311\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Users\vs123\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\utils\encoders.py", line 67, in default
+    return super().default(obj)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\AppData\Local\Programs\Python\Python311\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type User is not JSON serializable
+ERROR 2023-09-28 13:27:59,813  212 "GET /GETAllResidents/?name=vishal HTTP/1.1" 500 107078
+INFO 2023-09-28 13:30:06,240  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-28 13:30:07,364  668 Watching for file changes with StatReloader
+ERROR 2023-09-28 13:30:09,605  241 Internal Server Error: /GETAllResidents/
+ERROR 2023-09-28 13:30:09,606  212 "GET /GETAllResidents/?name=vishal HTTP/1.1" 500 83
+INFO 2023-09-28 13:32:45,659  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-28 13:32:46,706  668 Watching for file changes with StatReloader
+INFO 2023-09-28 13:32:49,473  212 "GET /GETAllResidents/?name=vishal HTTP/1.1" 200 177
+INFO 2023-09-28 13:37:24,102  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-28 13:37:25,121  668 Watching for file changes with StatReloader
+INFO 2023-09-28 13:38:06,817  212 "GET /GETAllResidents/?name=vishal HTTP/1.1" 200 177
+INFO 2023-09-28 13:38:14,138  212 "GET /GETAllResidents/?age=vishal HTTP/1.1" 200 47
+INFO 2023-09-28 13:40:06,351  212 "GET /GETAllResidents/?dob=1990-01-01&gt HTTP/1.1" 200 47
+INFO 2023-09-28 13:40:21,740  212 "GET /GETAllResidents/?dob=1990-01-01&lt HTTP/1.1" 200 47
+INFO 2023-09-28 13:41:22,730  212 "GET /GETAllResidents/?dob=May%202,%202001&lt HTTP/1.1" 200 47
+INFO 2023-09-28 13:41:30,145  212 "GET /GETAllResidents/?dob=May%202,%202001&lt HTTP/1.1" 200 47
+INFO 2023-09-28 13:41:38,681  212 "GET /GETAllResidents/?dob=May%202,%202001 HTTP/1.1" 200 47
+INFO 2023-09-28 13:42:10,917  212 "GET /GETAllResidents/?dob=2001-5-9 HTTP/1.1" 200 47
+INFO 2023-09-28 13:42:19,874  212 "GET /GETAllResidents/?dob=2001-5-2 HTTP/1.1" 200 47
+INFO 2023-09-28 13:42:51,718  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-28 13:42:52,722  668 Watching for file changes with StatReloader
+INFO 2023-09-28 13:42:57,339  212 "GET /GETAllResidents/?dob=2001-5-2 HTTP/1.1" 200 1089
+INFO 2023-09-28 13:43:08,846  212 "GET /GETAllResidents/?dob=2001-5-9 HTTP/1.1" 200 1089
+INFO 2023-09-28 13:43:58,855  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-28 13:43:59,829  668 Watching for file changes with StatReloader
+INFO 2023-09-28 13:44:04,372  212 "GET /GETAllResidents/?dob=2001-5-9 HTTP/1.1" 200 1089
+INFO 2023-09-28 13:44:23,278  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-28 13:44:24,277  668 Watching for file changes with StatReloader
+INFO 2023-09-28 13:44:34,347  212 "GET /GETAllResidents/?dob=2001-5-9 HTTP/1.1" 200 1092
+INFO 2023-09-28 13:46:51,004  212 "GET /GETAllResidents/?name=vishal HTTP/1.1" 200 180
+INFO 2023-09-28 13:47:01,193  212 "GET /GETAllResidents/?name=visAL HTTP/1.1" 200 50
+INFO 2023-09-28 13:47:08,728  212 "GET /GETAllResidents/?name=visHAL HTTP/1.1" 200 180
+INFO 2023-09-28 13:48:19,288  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-28 13:48:20,297  668 Watching for file changes with StatReloader
+INFO 2023-09-28 13:48:25,552  212 "GET /GETAllResidents/?name=visHAL HTTP/1.1" 200 49
+INFO 2023-09-28 14:09:52,726  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-28 14:09:54,694  668 Watching for file changes with StatReloader
+INFO 2023-09-28 14:15:07,287  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-28 14:15:08,412  668 Watching for file changes with StatReloader
+WARNING 2023-09-28 14:15:43,735  241 Unauthorized: /GETAllResidents/
+WARNING 2023-09-28 14:15:43,737  212 "GET /GETAllResidents/?filter=name=vishal&age=20 HTTP/1.1" 401 199
+INFO 2023-09-28 14:16:09,403  212 "POST /api/token/refresh/ HTTP/1.1" 200 241
+WARNING 2023-09-28 14:17:44,087  241 Bad Request: /GETAllResidents/
+WARNING 2023-09-28 14:17:44,087  212 "GET /GETAllResidents/?filter=name=vishal&age=20 HTTP/1.1" 400 69
+WARNING 2023-09-28 14:18:27,656  241 Bad Request: /GETAllResidents/
+WARNING 2023-09-28 14:18:27,657  212 "GET /GETAllResidents/?filter={name=vishal,age=20,} HTTP/1.1" 400 69
+INFO 2023-09-28 14:19:16,247  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-28 14:19:17,385  668 Watching for file changes with StatReloader
+WARNING 2023-09-28 14:19:19,445  241 Bad Request: /GETAllResidents/
+WARNING 2023-09-28 14:19:19,446  212 "GET /GETAllResidents/?filter={name=vishal,age=20,} HTTP/1.1" 400 69
+WARNING 2023-09-28 14:19:47,752  241 Bad Request: /GETAllResidents/
+WARNING 2023-09-28 14:19:47,753  212 "GET /GETAllResidents/?filter=%27name=vishal,age=20%27 HTTP/1.1" 400 69
+INFO 2023-09-28 14:21:57,453  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-28 14:21:59,041  668 Watching for file changes with StatReloader
+INFO 2023-09-28 15:24:36,260  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-28 15:24:38,038  668 Watching for file changes with StatReloader
+INFO 2023-09-28 15:24:49,675  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-28 15:24:51,065  668 Watching for file changes with StatReloader
+INFO 2023-09-28 15:25:07,444  212 "POST /checkNumberExist/ HTTP/1.1" 200 83
+INFO 2023-09-28 15:25:37,046  212 "GET /admin/accounts/user/ HTTP/1.1" 200 19580
+INFO 2023-09-28 15:25:37,181  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-09-28 15:28:42,227  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-28 15:28:43,272  668 Watching for file changes with StatReloader
+INFO 2023-09-28 15:28:46,028  212 "POST /checkNumberExist/ HTTP/1.1" 200 83
+INFO 2023-09-28 15:29:00,629  212 "POST /checkNumberExist/ HTTP/1.1" 200 164
+INFO 2023-09-28 15:30:10,444  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-28 15:30:11,470  668 Watching for file changes with StatReloader
+ERROR 2023-09-28 15:30:14,877  241 Internal Server Error: /checkNumberExist/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py", line 269, in post
+    if obj.headId is None:
+       ^^^^^^^^^^
+AttributeError: 'QuerySet' object has no attribute 'headId'
+ERROR 2023-09-28 15:30:14,882  212 "POST /checkNumberExist/ HTTP/1.1" 500 97845
+INFO 2023-09-28 15:31:31,153  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-28 15:31:32,290  668 Watching for file changes with StatReloader
+INFO 2023-09-28 15:31:34,060  212 "POST /checkNumberExist/ HTTP/1.1" 200 164
+WARNING 2023-09-28 15:31:52,576  241 Bad Request: /checkNumberExist/
+WARNING 2023-09-28 15:31:52,577  212 "POST /checkNumberExist/ HTTP/1.1" 400 94
+WARNING 2023-09-28 15:31:58,722  241 Bad Request: /checkNumberExist/
+WARNING 2023-09-28 15:31:58,723  212 "POST /checkNumberExist/ HTTP/1.1" 400 94
+WARNING 2023-09-28 15:32:06,963  241 Not Found: /checkNumberExist/
+WARNING 2023-09-28 15:32:06,964  212 "POST /checkNumberExist/ HTTP/1.1" 404 73
+INFO 2023-09-28 15:34:04,088  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-28 15:34:05,041  668 Watching for file changes with StatReloader
+INFO 2023-09-28 15:34:48,747  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-28 15:34:49,982  668 Watching for file changes with StatReloader
+WARNING 2023-09-28 15:34:52,030  241 Not Found: /checkNumberExist/
+WARNING 2023-09-28 15:34:52,030  212 "POST /checkNumberExist/ HTTP/1.1" 404 73
+INFO 2023-09-28 15:35:01,460  212 "POST /checkNumberExist/ HTTP/1.1" 200 176
+INFO 2023-09-28 15:35:29,544  212 "POST /checkNumberExist/ HTTP/1.1" 200 83
+INFO 2023-09-28 15:43:28,858  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-28 15:43:29,922  668 Watching for file changes with StatReloader
+INFO 2023-09-28 15:49:44,325  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-28 15:49:45,560  668 Watching for file changes with StatReloader
+INFO 2023-09-28 15:58:52,175  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-28 15:58:53,370  668 Watching for file changes with StatReloader
+INFO 2023-09-28 16:07:44,994  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-28 16:07:46,355  668 Watching for file changes with StatReloader
+WARNING 2023-09-28 16:08:11,311  241 Unauthorized: /GETAllResidents/
+WARNING 2023-09-28 16:08:11,312  212 "GET /GETAllResidents/ HTTP/1.1" 401 199
+INFO 2023-09-28 16:08:46,876  212 "POST /api/token/refresh/ HTTP/1.1" 200 241
+ERROR 2023-09-28 16:10:16,565  241 Internal Server Error: /GETAllResidents/
+ERROR 2023-09-28 16:10:16,566  212 "GET /GETAllResidents/ HTTP/1.1" 500 95
+ERROR 2023-09-28 16:11:01,383  241 Internal Server Error: /GETAllResidents/
+ERROR 2023-09-28 16:11:01,384  212 "GET /GETAllResidents/?filter=%27name=vishal,age=20%27 HTTP/1.1" 500 90
+ERROR 2023-09-28 16:16:48,685  241 Internal Server Error: /GETAllResidents/
+ERROR 2023-09-28 16:16:48,687  212 "GET /GETAllResidents/?filter=%27name=vishal&age=20%27 HTTP/1.1" 500 90
+INFO 2023-09-28 16:21:09,023  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\tokens.py changed, reloading.
+INFO 2023-09-28 16:21:10,195  668 Watching for file changes with StatReloader
+ERROR 2023-09-28 16:21:21,846  241 Internal Server Error: /GETAllResidents/
+ERROR 2023-09-28 16:21:21,847  212 "GET /GETAllResidents/?filter=%27name=vishal&age=20%27 HTTP/1.1" 500 90
+INFO 2023-09-28 16:29:22,015  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-28 16:29:23,300  668 Watching for file changes with StatReloader
+INFO 2023-09-28 16:37:01,523  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-28 16:37:02,553  668 Watching for file changes with StatReloader
+ERROR 2023-09-28 16:37:20,855  241 Internal Server Error: /GETAllResidents/
+ERROR 2023-09-28 16:37:20,858  212 "GET /GETAllResidents/?filter={name=vishal,age=20%27} HTTP/1.1" 500 92
+INFO 2023-09-28 16:39:11,253  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-28 16:39:12,228  668 Watching for file changes with StatReloader
+INFO 2023-09-28 16:39:16,642  212 "GET /GETAllResidents/?filter={name=vishal,age=20%27} HTTP/1.1" 200 823
+INFO 2023-09-28 16:39:54,404  212 "GET /GETAllResidents/?filter=name=vishal&age=20 HTTP/1.1" 200 810
+INFO 2023-09-28 16:40:22,974  212 "GET /GETAllResidents/?filter=[name=vishal,age=20] HTTP/1.1" 200 820
+INFO 2023-09-28 16:42:24,371  212 "GET /GETAllResidents/?filter=name=vishal&gender=male HTTP/1.1" 200 815
+INFO 2023-09-28 16:42:43,164  212 "GET /GETAllResidents/?filter=name=vishal HTTP/1.1" 200 803
+INFO 2023-09-28 16:43:31,111  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-28 16:43:32,112  668 Watching for file changes with StatReloader
+INFO 2023-09-28 16:43:44,809  212 "GET /GETAllResidents/?filter=name=vishal HTTP/1.1" 200 803
+INFO 2023-09-28 16:44:20,599  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-28 16:44:21,628  668 Watching for file changes with StatReloader
+INFO 2023-09-28 16:44:29,670  212 "GET /GETAllResidents/?filter=name=vishal HTTP/1.1" 200 803
+INFO 2023-09-28 16:52:16,918  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-28 16:52:18,120  668 Watching for file changes with StatReloader
+INFO 2023-09-28 16:54:36,713  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-28 16:54:38,227  668 Watching for file changes with StatReloader
+INFO 2023-09-28 17:07:30,274  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-28 17:07:31,582  668 Watching for file changes with StatReloader
+INFO 2023-09-28 17:07:40,764  212 "GET /GETAllResidents/?name=vishal HTTP/1.1" 200 794
+INFO 2023-09-28 17:07:57,768  212 "GET /GETAllResidents/?name=vishal HTTP/1.1" 200 794
+INFO 2023-09-28 17:08:58,272  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-28 17:08:59,864  668 Watching for file changes with StatReloader
+WARNING 2023-09-28 17:09:01,184  241 Unauthorized: /GETAllResidents/
+WARNING 2023-09-28 17:09:01,184  212 "GET /GETAllResidents/?name=vishal HTTP/1.1" 401 199
+INFO 2023-09-28 17:11:24,528  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\auth_api\settings.py changed, reloading.
+INFO 2023-09-28 17:11:25,525  668 Watching for file changes with StatReloader
+INFO 2023-09-28 17:11:42,331  212 "POST /api/token/refresh/ HTTP/1.1" 200 241
+WARNING 2023-09-28 17:11:58,409  241 Unauthorized: /GETAllResidents/
+WARNING 2023-09-28 17:11:58,410  212 "GET /GETAllResidents/?name=vishal HTTP/1.1" 401 199
+WARNING 2023-09-28 17:12:02,202  241 Unauthorized: /GETAllResidents/
+WARNING 2023-09-28 17:12:02,203  212 "GET /GETAllResidents/?name=vishal HTTP/1.1" 401 199
+INFO 2023-09-28 17:12:26,265  212 "GET /GETAllResidents/?name=vishal HTTP/1.1" 200 794
+INFO 2023-09-28 17:13:29,593  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-28 17:13:30,598  668 Watching for file changes with StatReloader
+INFO 2023-09-28 17:13:34,257  212 "GET /GETAllResidents/?name=vishal HTTP/1.1" 200 794
+INFO 2023-09-28 17:13:37,317  212 "GET /GETAllResidents/?name=vishal HTTP/1.1" 200 794
+INFO 2023-09-29 10:04:19,434  668 Watching for file changes with StatReloader
+INFO 2023-09-29 10:11:50,714  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-29 10:11:52,115  668 Watching for file changes with StatReloader
+INFO 2023-09-29 10:13:24,060  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\urls.py changed, reloading.
+INFO 2023-09-29 10:13:25,352  668 Watching for file changes with StatReloader
+ERROR 2023-09-29 10:14:11,609  241 Internal Server Error: /filterResidentData/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: filter_queryset() missing 1 required positional argument: 'queryset'
+ERROR 2023-09-29 10:14:11,611  212 "GET /filterResidentData/ HTTP/1.1" 500 66645
+INFO 2023-09-29 10:20:07,026  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 10:20:08,418  668 Watching for file changes with StatReloader
+ERROR 2023-09-29 10:20:14,537  241 Internal Server Error: /filterResidentData/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py", line 9, in filter_queryset
+    filter_params = request.query_params.dict()
+                    ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'WSGIRequest' object has no attribute 'query_params'
+ERROR 2023-09-29 10:20:14,540  212 "GET /filterResidentData/ HTTP/1.1" 500 70455
+ERROR 2023-09-29 10:20:33,339  241 Internal Server Error: /filterResidentData/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py", line 9, in filter_queryset
+    filter_params = request.query_params.dict()
+                    ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'WSGIRequest' object has no attribute 'query_params'
+ERROR 2023-09-29 10:20:33,341  212 "GET /filterResidentData/?name=vishal HTTP/1.1" 500 70817
+ERROR 2023-09-29 10:21:02,041  241 Internal Server Error: /filterResidentData/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py", line 9, in filter_queryset
+    filter_params = request.query_params.dict()
+                    ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'WSGIRequest' object has no attribute 'query_params'
+ERROR 2023-09-29 10:21:02,045  212 "GET /filterResidentData/?query_params=name=vishla HTTP/1.1" 500 70908
+INFO 2023-09-29 10:21:54,949  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 10:21:56,335  668 Watching for file changes with StatReloader
+ERROR 2023-09-29 10:22:04,082  241 Internal Server Error: /filterResidentData/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\response.py", line 55, in rendered_content
+    assert renderer, ".accepted_renderer not set on Response"
+AssertionError: .accepted_renderer not set on Response
+ERROR 2023-09-29 10:22:04,085  212 "GET /filterResidentData/?name=vishla HTTP/1.1" 500 75022
+INFO 2023-09-29 10:23:14,930  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 10:23:16,130  668 Watching for file changes with StatReloader
+ERROR 2023-09-29 10:23:20,867  241 Internal Server Error: /filterResidentData/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\response.py", line 55, in rendered_content
+    assert renderer, ".accepted_renderer not set on Response"
+AssertionError: .accepted_renderer not set on Response
+ERROR 2023-09-29 10:23:20,872  212 "GET /filterResidentData/?name=vishla HTTP/1.1" 500 75022
+INFO 2023-09-29 10:24:23,016  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 10:24:24,508  668 Watching for file changes with StatReloader
+INFO 2023-09-29 10:24:26,190  212 "GET /filterResidentData/?name=vishla HTTP/1.1" 200 52
+INFO 2023-09-29 10:25:12,189  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 10:25:13,441  668 Watching for file changes with StatReloader
+INFO 2023-09-29 10:25:23,329  212 "GET /filterResidentData/?name=vishal HTTP/1.1" 200 195
+INFO 2023-09-29 10:25:46,524  212 "GET /filterResidentData/?name=v HTTP/1.1" 200 195
+INFO 2023-09-29 10:26:35,494  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 10:26:36,859  668 Watching for file changes with StatReloader
+INFO 2023-09-29 10:27:09,082  212 "GET /filterResidentData/?name=v&fatherName=x HTTP/1.1" 200 626
+INFO 2023-09-29 10:28:56,787  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 10:28:58,216  668 Watching for file changes with StatReloader
+INFO 2023-09-29 10:29:10,309  212 "GET /filterResidentData/?name=v&fatherName=^x HTTP/1.1" 200 195
+WARNING 2023-09-29 10:29:46,034  241 Not Found: /
+WARNING 2023-09-29 10:29:46,038  212 "GET / HTTP/1.1" 404 78
+INFO 2023-09-29 10:29:50,705  212 "GET /admin/ HTTP/1.1" 200 10816
+WARNING 2023-09-29 10:29:50,859  241 Not Found: /favicon.ico
+WARNING 2023-09-29 10:29:50,860  212 "GET /favicon.ico HTTP/1.1" 404 78
+INFO 2023-09-29 10:29:55,651  212 "GET /admin/accounts/user/ HTTP/1.1" 200 19580
+INFO 2023-09-29 10:29:55,725  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-09-29 10:31:20,733  212 "GET /filterResidentData/?name=v&fatherName=%27^x%27 HTTP/1.1" 200 195
+INFO 2023-09-29 10:36:08,499  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 10:36:09,915  668 Watching for file changes with StatReloader
+INFO 2023-09-29 10:47:14,913  212 "GET /filterResidentData/?name=v&fatherName=x HTTP/1.1" 200 626
+INFO 2023-09-29 10:47:28,377  212 "GET /filterResidentData/?name=v&gender=male HTTP/1.1" 200 1205
+INFO 2023-09-29 11:13:34,050  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\auth_view.py changed, reloading.
+INFO 2023-09-29 11:13:35,792  668 Watching for file changes with StatReloader
+INFO 2023-09-29 11:20:54,553  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 11:20:55,991  668 Watching for file changes with StatReloader
+INFO 2023-09-29 11:23:22,378  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 11:23:23,624  668 Watching for file changes with StatReloader
+INFO 2023-09-29 11:27:10,460  212 "GET /filterResidentData/?name=v&age_gt=20 HTTP/1.1" 200 195
+INFO 2023-09-29 11:27:56,946  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 11:27:58,226  668 Watching for file changes with StatReloader
+INFO 2023-09-29 11:28:07,204  212 "GET /filterResidentData/?name=v&age__gt=20 HTTP/1.1" 200 195
+INFO 2023-09-29 11:29:41,877  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 11:29:42,969  668 Watching for file changes with StatReloader
+INFO 2023-09-29 11:29:44,889  212 "GET /filterResidentData/?name=v&age__gt=20 HTTP/1.1" 200 349
+INFO 2023-09-29 11:31:29,763  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 11:31:30,766  668 Watching for file changes with StatReloader
+INFO 2023-09-29 11:31:33,006  212 "GET /filterResidentData/?name=v&age__gt=20 HTTP/1.1" 200 1051
+INFO 2023-09-29 11:32:28,646  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 11:32:29,625  668 Watching for file changes with StatReloader
+INFO 2023-09-29 11:32:34,222  212 "GET /filterResidentData/?name=v&age__gt=20 HTTP/1.1" 200 195
+INFO 2023-09-29 11:32:54,757  212 "GET /filterResidentData/?name=e&age__gt=20 HTTP/1.1" 200 188
+INFO 2023-09-29 11:33:18,699  212 "GET /filterResidentData/?name=a&age__gt=20 HTTP/1.1" 200 774
+INFO 2023-09-29 11:34:12,274  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 11:34:13,274  668 Watching for file changes with StatReloader
+INFO 2023-09-29 11:34:31,445  212 "GET /filterResidentData/?name=a&age__gt=20 HTTP/1.1" 200 774
+INFO 2023-09-29 11:36:38,052  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 11:36:39,186  668 Watching for file changes with StatReloader
+INFO 2023-09-29 11:52:06,512  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-09-29 11:52:07,887  668 Watching for file changes with StatReloader
+INFO 2023-09-29 12:05:45,286  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-09-29 12:05:46,558  668 Watching for file changes with StatReloader
+INFO 2023-09-29 12:20:12,916  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 12:20:13,935  668 Watching for file changes with StatReloader
+INFO 2023-09-29 12:21:53,938  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 12:21:55,092  668 Watching for file changes with StatReloader
+INFO 2023-09-29 12:23:28,931  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 12:23:30,328  668 Watching for file changes with StatReloader
+INFO 2023-09-29 12:31:32,811  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 12:31:33,853  668 Watching for file changes with StatReloader
+INFO 2023-09-29 12:35:38,397  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\auth_view.py changed, reloading.
+INFO 2023-09-29 12:35:39,366  668 Watching for file changes with StatReloader
+INFO 2023-09-29 12:39:11,824  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-29 12:39:13,009  668 Watching for file changes with StatReloader
+INFO 2023-09-29 12:39:24,026  212 "GET /filterResidentData/?name=a&age__gte=20 HTTP/1.1" 200 774
+INFO 2023-09-29 12:39:36,030  212 "GET /filterResidentData/?name=a&age__lte=20 HTTP/1.1" 200 52
+INFO 2023-09-29 12:39:43,808  212 "GET /filterResidentData/?name=a&age__lte=25 HTTP/1.1" 200 615
+ERROR 2023-09-29 12:41:05,536  241 Internal Server Error: /filterResidentData/
+ERROR 2023-09-29 12:41:05,536  212 "GET /filterResidentData/ HTTP/1.1" 500 108
+INFO 2023-09-29 12:42:31,944  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 12:42:32,927  668 Watching for file changes with StatReloader
+ERROR 2023-09-29 12:42:37,595  241 Internal Server Error: /filterResidentData/
+ERROR 2023-09-29 12:42:37,596  212 "GET /filterResidentData/ HTTP/1.1" 500 1205
+INFO 2023-09-29 12:43:19,809  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 12:43:21,017  668 Watching for file changes with StatReloader
+INFO 2023-09-29 12:43:21,557  212 "GET /filterResidentData/ HTTP/1.1" 200 1205
+INFO 2023-09-29 12:49:29,143  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 12:49:30,203  668 Watching for file changes with StatReloader
+INFO 2023-09-29 12:52:25,878  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 12:52:26,958  668 Watching for file changes with StatReloader
+INFO 2023-09-29 12:52:50,052  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-29 12:52:51,384  668 Watching for file changes with StatReloader
+INFO 2023-09-29 13:02:51,177  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\urls.py changed, reloading.
+INFO 2023-09-29 13:02:52,503  668 Watching for file changes with StatReloader
+INFO 2023-09-29 13:08:59,631  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 13:09:00,700  668 Watching for file changes with StatReloader
+WARNING 2023-09-29 13:09:48,556  241 Unauthorized: /filterResidentData/
+WARNING 2023-09-29 13:09:48,557  212 "POST /filterResidentData/ HTTP/1.1" 401 199
+INFO 2023-09-29 13:10:39,552  212 "POST /api/token/refresh/ HTTP/1.1" 200 241
+INFO 2023-09-29 13:11:40,831  212 "GET /filterResidentData/ HTTP/1.1" 200 785
+WARNING 2023-09-29 13:12:12,717  241 Not Found: /filterResidentData/age__gte=20
+WARNING 2023-09-29 13:12:12,720  212 "GET /filterResidentData/age__gte=20 HTTP/1.1" 404 78
+INFO 2023-09-29 13:12:21,381  212 "GET /filterResidentData/?age__gte=20 HTTP/1.1" 200 797
+INFO 2023-09-29 13:12:33,012  212 "GET /filterResidentData/?age__lte=20 HTTP/1.1" 200 797
+INFO 2023-09-29 13:12:55,977  212 "GET /filterResidentData/?age__gte=25 HTTP/1.1" 200 797
+INFO 2023-09-29 13:14:13,508  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 13:14:14,527  668 Watching for file changes with StatReloader
+INFO 2023-09-29 13:14:24,226  212 "GET /filterResidentData/?age__gte=25 HTTP/1.1" 200 797
+INFO 2023-09-29 13:16:43,942  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\urls.py changed, reloading.
+INFO 2023-09-29 13:16:44,961  668 Watching for file changes with StatReloader
+INFO 2023-09-29 13:17:08,437  212 "GET /filterResidentData/?age__gte=25 HTTP/1.1" 200 348
+INFO 2023-09-29 13:18:58,532  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 13:18:59,640  668 Watching for file changes with StatReloader
+INFO 2023-09-29 13:25:35,616  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_filter.py changed, reloading.
+INFO 2023-09-29 13:25:36,722  668 Watching for file changes with StatReloader
+INFO 2023-09-29 13:29:34,082  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\urls.py changed, reloading.
+INFO 2023-09-29 13:29:35,691  668 Watching for file changes with StatReloader
+INFO 2023-09-29 13:31:26,936  212 "GET /admin/accounts/user/ HTTP/1.1" 200 19580
+INFO 2023-09-29 13:31:27,003  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-09-29 13:34:15,627  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-09-29 13:34:16,700  668 Watching for file changes with StatReloader
+INFO 2023-09-29 13:35:49,343  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\admin.py changed, reloading.
+INFO 2023-09-29 13:35:50,472  668 Watching for file changes with StatReloader
+INFO 2023-09-29 13:35:51,696  212 "GET /admin/accounts/user/ HTTP/1.1" 200 19999
+INFO 2023-09-29 13:35:51,746  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-09-29 13:43:12,848  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-09-29 13:43:14,048  668 Watching for file changes with StatReloader
+INFO 2023-09-29 13:44:05,957  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-09-29 13:44:07,006  668 Watching for file changes with StatReloader
+WARNING 2023-09-29 13:44:42,404  241 Not Found: /registerHead/
+WARNING 2023-09-29 13:44:42,405  212 "POST /registerHead/ HTTP/1.1" 404 309
+WARNING 2023-09-29 13:58:08,575  241 Bad Request: /registerHead/
+WARNING 2023-09-29 13:58:08,578  212 "POST /registerHead/ HTTP/1.1" 400 118
+ERROR 2023-09-29 13:59:54,952  241 Internal Server Error: /registerHead/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py", line 73, in post
+    serializer.save()
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py", line 28, in create
+    print('Your requested user ===> ', request.user)
+                                       ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'user'
+ERROR 2023-09-29 13:59:54,958  212 "POST /registerHead/ HTTP/1.1" 500 115449
+INFO 2023-09-29 14:00:27,578  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-09-29 14:00:29,233  668 Watching for file changes with StatReloader
+WARNING 2023-09-29 14:00:33,547  241 Bad Request: /registerHead/
+WARNING 2023-09-29 14:00:33,548  212 "POST /registerHead/ HTTP/1.1" 400 87
+INFO 2023-09-29 14:01:49,494  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\admin.py changed, reloading.
+INFO 2023-09-29 14:01:50,604  668 Watching for file changes with StatReloader
+INFO 2023-09-29 14:01:56,089  212 "GET /admin/accounts/user/ HTTP/1.1" 200 21013
+INFO 2023-09-29 14:01:56,146  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-09-29 14:03:54,473  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-09-29 14:03:55,518  668 Watching for file changes with StatReloader
+ERROR 2023-09-29 14:04:31,433  241 Internal Server Error: /registerHead/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py", line 73, in post
+    serializer.save()
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py", line 28, in create
+    print('Your requested user ===> ', request.user.id)
+                                       ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'user'
+ERROR 2023-09-29 14:04:31,438  212 "POST /registerHead/ HTTP/1.1" 500 115254
+INFO 2023-09-29 14:05:07,541  212 "GET /admin/accounts/user/ HTTP/1.1" 200 22021
+INFO 2023-09-29 14:05:07,591  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-09-29 14:12:04,213  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-09-29 14:12:05,425  668 Watching for file changes with StatReloader
+INFO 2023-09-29 14:12:14,857  212 "POST /registerHead/ HTTP/1.1" 200 73
+INFO 2023-09-29 14:12:24,996  212 "GET /admin/accounts/user/ HTTP/1.1" 200 23053
+INFO 2023-09-29 14:12:25,042  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-09-29 14:14:17,737  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-09-29 14:14:18,782  668 Watching for file changes with StatReloader
+WARNING 2023-09-29 14:14:34,413  241 Bad Request: /registerHead/
+WARNING 2023-09-29 14:14:34,416  212 "POST /registerHead/ HTTP/1.1" 400 87
+INFO 2023-09-29 14:14:42,467  212 "POST /registerHead/ HTTP/1.1" 200 73
+INFO 2023-09-29 14:14:48,322  212 "GET /admin/accounts/user/ HTTP/1.1" 200 24060
+INFO 2023-09-29 14:14:48,370  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-09-29 14:27:23,922  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\auth_view.py changed, reloading.
+INFO 2023-09-29 14:27:25,669  668 Watching for file changes with StatReloader
+INFO 2023-09-29 14:28:19,010  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\auth_view.py changed, reloading.
+INFO 2023-09-29 14:28:19,964  668 Watching for file changes with StatReloader
+ERROR 2023-09-29 14:28:36,871  241 Internal Server Error: /sendOTP/
+ERROR 2023-09-29 14:28:36,872  212 "POST /sendOTP/ HTTP/1.1" 500 73
+ERROR 2023-09-29 14:28:57,585  241 Internal Server Error: /sendOTP/
+ERROR 2023-09-29 14:28:57,586  212 "POST /sendOTP/ HTTP/1.1" 500 73
+INFO 2023-09-29 14:33:06,811  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\auth_view.py changed, reloading.
+INFO 2023-09-29 14:33:08,071  668 Watching for file changes with StatReloader
+ERROR 2023-09-29 14:34:19,029  241 Internal Server Error: /GETUserId/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\auth_view.py", line 238, in my_api_view
+    token_obj = Token.objects.get(key=token)
+                ^^^^^^^^^^^^^
+AttributeError: type object 'Token' has no attribute 'objects'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\auth_view.py", line 243, in my_api_view
+    except Token.DoesNotExist:
+           ^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'Token' has no attribute 'DoesNotExist'
+ERROR 2023-09-29 14:34:19,031  212 "GET /GETUserId/ HTTP/1.1" 500 75633
+INFO 2023-09-29 14:38:01,545  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\auth_view.py changed, reloading.
+INFO 2023-09-29 14:38:02,568  668 Watching for file changes with StatReloader
+INFO 2023-09-29 14:38:52,392  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\auth_view.py changed, reloading.
+INFO 2023-09-29 14:38:53,385  668 Watching for file changes with StatReloader
+INFO 2023-09-29 14:39:16,384  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\urls.py changed, reloading.
+INFO 2023-09-29 14:39:17,401  668 Watching for file changes with StatReloader
+ERROR 2023-09-29 14:39:20,646  241 Internal Server Error: /GETUserId/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\response.py", line 55, in rendered_content
+    assert renderer, ".accepted_renderer not set on Response"
+AssertionError: .accepted_renderer not set on Response
+ERROR 2023-09-29 14:39:20,649  212 "GET /GETUserId/ HTTP/1.1" 500 74602
+INFO 2023-09-29 14:40:05,446  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\auth_view.py changed, reloading.
+INFO 2023-09-29 14:40:06,681  668 Watching for file changes with StatReloader
+INFO 2023-09-29 14:40:07,378  212 "GET /GETUserId/ HTTP/1.1" 200 16
+INFO 2023-09-29 14:57:13,769  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\urls.py changed, reloading.
+INFO 2023-09-29 14:57:14,957  668 Watching for file changes with StatReloader
+WARNING 2023-09-29 14:57:46,583  241 Unauthorized: /GETUserId/
+WARNING 2023-09-29 14:57:46,584  212 "GET /GETUserId/ HTTP/1.1" 401 54
+INFO 2023-09-29 15:00:23,819  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\auth_view.py changed, reloading.
+INFO 2023-09-29 15:00:25,244  668 Watching for file changes with StatReloader
+INFO 2023-09-29 15:00:26,724  212 "GET /GETUserId/ HTTP/1.1" 200 14
+INFO 2023-09-29 15:01:16,999  212 "GET /admin/accounts/user/ HTTP/1.1" 200 24060
+INFO 2023-09-29 15:01:17,059  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-09-29 15:02:11,006  212 "POST /obtainToken/ HTTP/1.1" 200 483
+INFO 2023-09-29 15:03:11,830  212 "GET /GETUserId/ HTTP/1.1" 200 14
+INFO 2023-09-29 15:07:02,941  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\auth_view.py changed, reloading.
+INFO 2023-09-29 15:07:04,361  668 Watching for file changes with StatReloader
+INFO 2023-09-29 15:07:15,415  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\auth_view.py changed, reloading.
+INFO 2023-09-29 15:07:16,635  668 Watching for file changes with StatReloader
+INFO 2023-09-29 15:07:18,269  212 "GET /GETUserId/ HTTP/1.1" 200 14
+INFO 2023-09-29 15:09:27,439  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\auth_view.py changed, reloading.
+INFO 2023-09-29 15:09:28,453  668 Watching for file changes with StatReloader
+INFO 2023-09-29 15:09:33,553  212 "GET /GETUserId/ HTTP/1.1" 200 14
+INFO 2023-09-29 15:13:25,756  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\auth_view.py changed, reloading.
+INFO 2023-09-29 15:13:26,787  668 Watching for file changes with StatReloader
+INFO 2023-09-29 15:13:28,790  212 "GET /GETUserId/ HTTP/1.1" 200 14
+INFO 2023-09-29 15:14:20,444  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\auth_view.py changed, reloading.
+INFO 2023-09-29 15:14:21,607  668 Watching for file changes with StatReloader
+INFO 2023-09-29 15:14:22,040  212 "GET /GETUserId/ HTTP/1.1" 200 14
+INFO 2023-09-29 15:21:21,087  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-09-29 15:21:22,471  668 Watching for file changes with StatReloader
+INFO 2023-09-29 15:22:23,548  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-09-29 15:22:24,667  668 Watching for file changes with StatReloader
+INFO 2023-09-29 16:04:45,285  668 Watching for file changes with StatReloader
+INFO 2023-09-29 16:07:45,317  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\auth.py changed, reloading.
+INFO 2023-09-29 16:07:46,360  668 Watching for file changes with StatReloader
+INFO 2023-09-29 16:08:06,847  668 Watching for file changes with StatReloader
+INFO 2023-09-29 16:08:43,662  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\urls.py changed, reloading.
+INFO 2023-09-29 16:08:44,631  668 Watching for file changes with StatReloader
+INFO 2023-09-29 16:08:58,365  212 "GET /admin/accounts/user/ HTTP/1.1" 200 24060
+INFO 2023-09-29 16:08:58,445  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+ERROR 2023-09-29 16:10:06,432  241 Internal Server Error: /registerHead/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py", line 73, in post
+    serializer.save()
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py", line 26, in create
+    user_id_by_token = get_user_id_from_token_view(request)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\auth.py", line 175, in get_user_id_from_token_view
+    authorization_header = request.META.get("HTTP_AUTHORIZATION")
+                           ^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'META'
+ERROR 2023-09-29 16:10:06,439  212 "POST /registerHead/ HTTP/1.1" 500 119034
+INFO 2023-09-29 16:22:19,389  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-29 16:22:20,417  668 Watching for file changes with StatReloader
+WARNING 2023-09-29 16:22:24,653  241 Bad Request: /registerHead/
+WARNING 2023-09-29 16:22:24,654  212 "POST /registerHead/ HTTP/1.1" 400 87
+INFO 2023-09-29 16:22:32,487  212 "POST /registerHead/ HTTP/1.1" 200 73
+INFO 2023-09-29 16:22:48,012  212 "GET /admin/accounts/user/ HTTP/1.1" 200 26070
+INFO 2023-09-29 16:22:48,059  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-09-29 16:28:24,169  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-09-29 16:28:25,217  668 Watching for file changes with StatReloader
+INFO 2023-09-29 16:29:10,131  212 "POST /registerHead/ HTTP/1.1" 200 73
+INFO 2023-09-29 16:29:19,439  212 "GET /admin/accounts/user/ HTTP/1.1" 200 27075
+INFO 2023-09-29 16:29:19,482  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-09-29 16:29:46,128  241 Bad Request: /registerHead/
+WARNING 2023-09-29 16:29:46,129  212 "POST /registerHead/ HTTP/1.1" 400 87
+INFO 2023-09-29 16:29:54,175  212 "POST /registerHead/ HTTP/1.1" 200 73
+INFO 2023-09-29 16:29:58,729  212 "GET /admin/accounts/user/ HTTP/1.1" 200 28082
+INFO 2023-09-29 16:29:58,776  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-09-29 16:32:23,600  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-29 16:32:24,848  668 Watching for file changes with StatReloader
+WARNING 2023-09-29 16:32:59,471  241 Not Found: /registerMember/
+WARNING 2023-09-29 16:32:59,472  212 "POST /registerMember/ HTTP/1.1" 404 100
+INFO 2023-09-29 16:33:10,259  212 "POST /registerMember/ HTTP/1.1" 200 81
+INFO 2023-09-29 16:33:15,809  212 "GET /admin/accounts/user/ HTTP/1.1" 200 29089
+INFO 2023-09-29 16:33:15,862  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-09-29 16:33:56,513  212 "POST /registerMember/ HTTP/1.1" 200 81
+INFO 2023-09-29 16:34:02,507  212 "GET /admin/accounts/user/ HTTP/1.1" 200 30094
+INFO 2023-09-29 16:34:02,556  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-09-29 16:36:44,794  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-09-29 16:36:45,814  668 Watching for file changes with StatReloader
+INFO 2023-09-29 16:37:42,270  212 "PUT /UPDATEUserById/110/ HTTP/1.1" 200 75
+INFO 2023-09-29 16:37:51,537  212 "GET /admin/accounts/user/ HTTP/1.1" 200 30096
+INFO 2023-09-29 16:37:51,581  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-09-29 16:40:41,136  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-29 16:40:42,208  668 Watching for file changes with StatReloader
+INFO 2023-09-29 16:40:47,329  212 "PUT /UPDATEUserById/110/ HTTP/1.1" 200 75
+INFO 2023-09-29 16:40:55,778  212 "GET /admin/accounts/user/ HTTP/1.1" 200 30096
+INFO 2023-09-29 16:40:55,821  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-09-29 16:41:58,375  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-09-29 16:41:59,414  668 Watching for file changes with StatReloader
+INFO 2023-09-29 16:42:01,928  212 "PUT /UPDATEUserById/110/ HTTP/1.1" 200 75
+INFO 2023-09-29 16:42:06,023  212 "GET /admin/accounts/user/ HTTP/1.1" 200 30096
+INFO 2023-09-29 16:42:06,075  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-09-29 16:44:26,113  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-29 16:44:27,142  668 Watching for file changes with StatReloader
+INFO 2023-09-29 16:44:29,995  212 "PUT /UPDATEUserById/110/ HTTP/1.1" 200 75
+INFO 2023-09-29 16:44:33,609  212 "GET /admin/accounts/user/ HTTP/1.1" 200 30094
+INFO 2023-09-29 16:44:33,659  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-09-29 16:52:37,085  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\urls.py changed, reloading.
+INFO 2023-09-29 16:52:38,195  668 Watching for file changes with StatReloader
+ERROR 2023-09-29 16:53:15,119  241 Internal Server Error: /GETUserId/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view accounts.auth.get_payload_data_from_refresh_token didn't return an HttpResponse object. It returned None instead.
+ERROR 2023-09-29 16:53:15,123  212 "GET /GETUserId/ HTTP/1.1" 500 71263
+INFO 2023-09-29 16:55:23,301  212 "GET /GETUserId/ HTTP/1.1" 200 120
+INFO 2023-09-29 16:56:31,570  212 "POST /api/token/refresh/ HTTP/1.1" 200 241
+INFO 2023-09-29 16:57:14,547  212 "GET /GETUserId/ HTTP/1.1" 200 120
+INFO 2023-09-29 17:06:19,977  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\urls.py changed, reloading.
+INFO 2023-09-29 17:06:21,400  668 Watching for file changes with StatReloader
+WARNING 2023-09-29 17:06:37,771  241 Bad Request: /obtainToken/
+WARNING 2023-09-29 17:06:37,772  212 "POST /obtainToken/ HTTP/1.1" 400 88
+INFO 2023-09-29 17:07:22,312  212 "POST /obtainToken/ HTTP/1.1" 200 483
+INFO 2023-09-29 17:20:54,266  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-29 17:20:55,541  668 Watching for file changes with StatReloader
+INFO 2023-09-29 17:21:04,216  212 "POST /obtainToken/ HTTP/1.1" 200 483
+ERROR 2023-09-29 17:21:56,013  241 Internal Server Error: /DELETEMember/107/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py", line 325, in delete
+    user_id_by_token = self.context.get('user_id_by_token')
+                       ^^^^^^^^^^^^
+AttributeError: 'DeleteMember' object has no attribute 'context'
+ERROR 2023-09-29 17:21:56,017  212 "DELETE /DELETEMember/107/ HTTP/1.1" 500 98166
+INFO 2023-09-29 17:22:34,650  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-29 17:22:35,753  668 Watching for file changes with StatReloader
+INFO 2023-09-29 17:22:38,192  212 "DELETE /DELETEMember/107/ HTTP/1.1" 200 83
+INFO 2023-09-29 17:22:48,321  212 "GET /admin/accounts/user/ HTTP/1.1" 200 30094
+INFO 2023-09-29 17:22:48,366  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343

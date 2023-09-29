@@ -24,8 +24,8 @@ def is_valid_mobile_number(number):
 
 
 class ObtainTokeSerializer(serializers.Serializer):
-    id = serializers.IntegerField()
-    phoneNumber = serializers.CharField(validators=[is_valid_mobile_number])
+    id = serializers.CharField()
+    # phoneNumber = serializers.CharField(validators=[is_valid_mobile_number])
 
 
 @api_view(['POST'])
@@ -40,11 +40,9 @@ def obtain_token(request):
         }
         return Response(json_data, status=400)
     user_id = request.data.get('id')  # Replace with your authentication criteria
-    phone_number = request.data.get('phoneNumber')  # Replace with your authentication criteria
-
     # Authenticate the user based on userId and phoneNumber
     try:
-        user = User.objects.get(id=user_id, phoneNumber=phone_number)
+        user = User.objects.get(id=user_id)
         print("user ==> ", user)
     except User.DoesNotExist:
         json_data = {
@@ -79,7 +77,6 @@ def generate_tokens(user_id, phone_number):
         user = User.objects.get(id=user_id, phoneNumber=phone_number)
         print("user ==> ", user)
     except User.DoesNotExist:
-
         return False, {'error': 'Invalid credentials.'}
 
 

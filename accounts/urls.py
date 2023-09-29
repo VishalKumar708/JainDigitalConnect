@@ -2,10 +2,10 @@ from django.urls import path
 from .user_views import RegisterHead, RegisterMember, GETFamilyByHeadId, IsUserExist, DeleteMember, UpdateUserById, GetAllResidents, GETUserById
 from .auth_view import SendOTPWithNumber, VerifyOTP
 from .push_notification import CreateNewNotification
-# from .generate_fcm_token import generate_fcm_token
-from .push_notification import send_notification
 
+from .custom_filter import filter_queryset
 from .tokens import obtain_token
+# from .auth import get_payload_data_from_refresh_token
 urlpatterns = [
 
     # to send OTP (POST)
@@ -42,6 +42,10 @@ urlpatterns = [
     path('POSTNewNotification/', CreateNewNotification.as_view()),
 
     # (12) generate new tokens both "access" and "refresh" (POST)
-    path('obtainToken/', obtain_token)
+    path('obtainToken/', obtain_token),
+
+    path('filterResidentData/', filter_queryset),
+
+    # path('GETUserId/', get_payload_data_from_refresh_token)
 
 ]

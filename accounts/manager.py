@@ -1,12 +1,13 @@
 from django.contrib.auth.base_user import BaseUserManager
+from django.db.models import Q
 
 
 class UserManager(BaseUserManager):
-    def create_user(self,name,id, phoneNumber, dob, address, password=None):
+    def create_user(self, name, id, phoneNumber, dob, address, password=None):
         if not phoneNumber:
             raise ValueError("The Mobile Number field must be set")
         user = self.model(
-            id = id,
+            id=id,
             phoneNumber=phoneNumber,
             dob=dob,
             address=address,
@@ -29,7 +30,6 @@ class UserManager(BaseUserManager):
         user.is_staff = True
         user.save(using=self._db)
         return user
-
 
 
 
