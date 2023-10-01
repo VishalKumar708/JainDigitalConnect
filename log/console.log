@@ -5285,3 +5285,72 @@ INFO 2023-09-29 17:22:35,753  668 Watching for file changes with StatReloader
 INFO 2023-09-29 17:22:38,192  212 "DELETE /DELETEMember/107/ HTTP/1.1" 200 83
 INFO 2023-09-29 17:22:48,321  212 "GET /admin/accounts/user/ HTTP/1.1" 200 30094
 INFO 2023-09-29 17:22:48,366  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-09-30 15:27:48,078  668 Watching for file changes with StatReloader
+INFO 2023-09-30 15:36:37,937  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-30 15:36:40,032  668 Watching for file changes with StatReloader
+ERROR 2023-09-30 15:56:10,481  241 Internal Server Error: /registerHead/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py", line 66, in post
+    is_looking_for_match = False if for_match is None else string_to_bool(for_match)
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\utils.py", line 36, in string_to_bool
+    if input_str.lower() == "true":
+       ^^^^^^^^^^^^^^^
+AttributeError: 'bool' object has no attribute 'lower'
+ERROR 2023-09-30 15:56:10,489  212 "POST /registerHead/ HTTP/1.1" 500 104928
+INFO 2023-09-30 15:56:50,829  212 "POST /registerHead/ HTTP/1.1" 200 73
+INFO 2023-09-30 15:58:05,097  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\utils.py changed, reloading.
+INFO 2023-09-30 15:58:07,081  668 Watching for file changes with StatReloader
+WARNING 2023-09-30 15:58:15,351  241 Bad Request: /registerHead/
+WARNING 2023-09-30 15:58:15,354  212 "POST /registerHead/ HTTP/1.1" 400 87
+INFO 2023-09-30 15:58:24,569  212 "POST /registerHead/ HTTP/1.1" 200 73
+WARNING 2023-09-30 16:13:11,820  241 Not Found: /registerMember/
+WARNING 2023-09-30 16:13:11,821  212 "POST /registerMember/ HTTP/1.1" 404 100
+WARNING 2023-09-30 16:13:31,007  241 Bad Request: /registerMember/
+WARNING 2023-09-30 16:13:31,009  212 "POST /registerMember/ HTTP/1.1" 400 89
+WARNING 2023-09-30 16:13:45,731  241 Bad Request: /registerMember/
+WARNING 2023-09-30 16:13:45,737  212 "POST /registerMember/ HTTP/1.1" 400 84
+WARNING 2023-09-30 16:13:54,883  241 Bad Request: /registerMember/
+WARNING 2023-09-30 16:13:54,887  212 "POST /registerMember/ HTTP/1.1" 400 80
+INFO 2023-09-30 16:17:09,993  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-09-30 16:17:11,884  668 Watching for file changes with StatReloader
+WARNING 2023-09-30 16:17:22,941  241 Bad Request: /registerMember/
+WARNING 2023-09-30 16:17:22,943  212 "POST /registerMember/ HTTP/1.1" 400 127
+INFO 2023-09-30 16:18:23,325  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-09-30 16:18:24,810  668 Watching for file changes with StatReloader
+WARNING 2023-09-30 16:18:28,521  241 Bad Request: /registerMember/
+WARNING 2023-09-30 16:18:28,523  212 "POST /registerMember/ HTTP/1.1" 400 127
+WARNING 2023-09-30 16:18:30,318  241 Bad Request: /registerMember/
+WARNING 2023-09-30 16:18:30,319  212 "POST /registerMember/ HTTP/1.1" 400 127
+WARNING 2023-09-30 16:18:32,006  241 Bad Request: /registerMember/
+WARNING 2023-09-30 16:18:32,007  212 "POST /registerMember/ HTTP/1.1" 400 127
+WARNING 2023-09-30 16:18:34,496  241 Bad Request: /registerMember/
+WARNING 2023-09-30 16:18:34,499  212 "POST /registerMember/ HTTP/1.1" 400 127
+INFO 2023-09-30 16:40:47,155  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-30 16:40:49,310  668 Watching for file changes with StatReloader
+INFO 2023-09-30 16:43:23,788  212 "POST /registerHead/ HTTP/1.1" 200 99
+INFO 2023-09-30 16:47:32,924  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-09-30 16:47:34,443  668 Watching for file changes with StatReloader
+INFO 2023-09-30 16:47:50,569  212 "POST /registerHead/ HTTP/1.1" 200 98

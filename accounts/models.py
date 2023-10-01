@@ -38,7 +38,7 @@ class User(BaseModel, AbstractBaseUser, PermissionsMixin):
     phoneNumber = models.CharField(max_length=12)
     phoneNumberVisibility = models.BooleanField(default=True)
     profession = models.CharField(max_length=20, null=True, blank=True)
-    relationWithHead = models.CharField(max_length=50, blank=True)
+    relationWithHead = models.CharField(max_length=50)
     sect = models.CharField(max_length=20)
     isAdmin = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)

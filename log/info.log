@@ -423,3 +423,18 @@ INFO 2023-09-29 16:40:47,328  412 user_id = 110 record updated successfully.
 INFO 2023-09-29 16:42:01,926  412 user_id = 110 record updated successfully.
 INFO 2023-09-29 16:44:29,992  413 user_id = 110 record updated successfully.
 INFO 2023-09-29 17:22:38,189  347 user_id = 107 deleted(inactive) successfully.
+INFO 2023-09-30 15:56:49,829  1563 Attempting refresh to obtain initial access_token
+INFO 2023-09-30 15:56:50,827  27 Notification has sent successfully.
+INFO 2023-09-30 15:56:50,828  92 Head Added Successfully.
+INFO 2023-09-30 15:58:15,349  35 Head is already found.
+INFO 2023-09-30 15:58:23,773  1563 Attempting refresh to obtain initial access_token
+INFO 2023-09-30 15:58:24,566  27 Notification has sent successfully.
+INFO 2023-09-30 15:58:24,568  92 Head Added Successfully.
+INFO 2023-09-30 16:13:11,819  129 This None user entered wrong headId.
+INFO 2023-09-30 16:13:45,729  119 This 7056599210 Member is already exist.
+INFO 2023-09-30 16:43:22,504  1563 Attempting refresh to obtain initial access_token
+INFO 2023-09-30 16:43:23,783  27 Notification has sent successfully.
+INFO 2023-09-30 16:43:23,784  92 Head Added Successfully.
+INFO 2023-09-30 16:47:49,708  1563 Attempting refresh to obtain initial access_token
+INFO 2023-09-30 16:47:50,566  27 Notification has sent successfully.
+INFO 2023-09-30 16:47:50,567  92 Head Added Successfully.

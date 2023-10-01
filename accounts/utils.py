@@ -33,9 +33,19 @@ def is_integer(id):
 
 
 def string_to_bool(input_str):
-    if input_str.lower() == "true":
-        return True
-    elif input_str.lower() == "false":
+    if type(input_str) is bool:
+        if input_str is True:
+            return True
+        else:
+            return False
+    elif type(input_str) is str:
+        if input_str.capitalize() == "True":
+            return True
+        elif input_str.capitalize() == "False":
+            return False
+        else:
+            return False
+    else:
         return False
 
 # def validate_email_address(value):

@@ -32,7 +32,7 @@ class HeadSerializer(serializers.ModelSerializer):
 class MemberSerializer(serializers.ModelSerializer):
     headId = serializers.IntegerField()
     dob = serializers.DateField(input_formats=("%B %d %Y",))
-
+    # relationWithHead = serializers.IntegerField()
     class Meta:
         fields = ['headId', 'name',  'relationWithHead', 'phoneNumber', 'maritalStatus', 'lookingForMatch', 'sect',
                   'profession', 'bloodGroup', 'dob', 'nativePlace', 'gotra', 'phoneNumberVisibility', 'gender']

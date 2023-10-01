@@ -62,7 +62,6 @@ class RegisterHead(APIView):
             serializer = HeadSerializer(data=data)
 
         if serializer.is_valid():
-
             for_match = data.get('lookingForMatch')
             is_looking_for_match = False if for_match is None else string_to_bool(for_match)
             # is_looking_for_match = string_to_bool(data.get('lookingForMatch'))
@@ -78,11 +77,11 @@ class RegisterHead(APIView):
                     return Response(json_data, status=400)
 
             # save record
-            serializer.save()
+            obj = serializer.save()
             json_data = {
                 'statusCode': 200,
                 'status': 'Success',
-                'data': 'Head Created Successfully.'
+                'data': {'headId': obj.id, 'message': 'Head Created Successfully.'}
             }
 
             # send notification to head
