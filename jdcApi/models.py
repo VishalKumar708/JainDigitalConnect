@@ -12,6 +12,7 @@ class BaseModel(models.Model):
 
     class Meta:
         abstract = True
+
 # Create your models here.
 
 
@@ -41,7 +42,7 @@ class Area(BaseModel, models.Model):
     areaId = models.AutoField(primary_key=True)
     cityId = models.ForeignKey(City, on_delete=models.CASCADE, related_name='GetAllAreaByCityId')
     areaName = models.CharField(max_length=70)
-    areaMC = models.CharField(max_length=70,null=True)
+    areaMC = models.CharField(max_length=70, null=True)
     landmark = models.CharField(max_length=100, null=True)
     areaContactNumber = models.IntegerField(null=True)
     isVerified = models.BooleanField(default=False)

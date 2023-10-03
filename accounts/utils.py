@@ -8,10 +8,6 @@ from django.utils import timezone
 import json
 import re
 
-from twilio.rest import Client
-
-
-
 
 def is_valid_mobile_number(number):
     # Define a regular expression pattern for a valid mobile number with a maximum of 12 digits

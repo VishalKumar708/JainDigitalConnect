@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     # "debug_toolbar",
     'rest_framework_simplejwt',
     'rest_framework',
-    'django_filters',
-    'fcm_django'
+    'fcm_django',
+    'jdcApi'
 
     # 'rest_framework.authtoken'
 ]

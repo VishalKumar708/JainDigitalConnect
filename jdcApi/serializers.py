@@ -14,6 +14,7 @@ def check_pincode_length(value):
 
 # ******************* Area serializers ***********************
 class PartialAreaSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Area
         # fields = ['areaId', 'areaName', 'selectState', 'selectCity']
@@ -37,22 +38,53 @@ class PartialBusinessSerializer(serializers.ModelSerializer):
     class Meta:
         model = Business
         fields = ['businessId', 'businessName', 'businessType', 'businessNumber', 'email', 'website', 'businessDescription']
+
+
 # ************************* city serializer  *****************************
-class CitySerializer(serializers.ModelSerializer):
-    pincode = serializers.CharField(validators=[check_pincode_length])
 
-    class Meta:
-        model = City
-        exclude = ['updatedDate', 'createdDate', 'groupId', 'createdBy', 'updatedBy']
-
-
-class PartialCitySerializer(serializers.ModelSerializer):
-
+class GETCitySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = City
         # fields = ['cityId', 'cityName','city_by_areas']
         fields = ['cityId', 'cityName']
+
+
+class CREATECitySerializer(serializers.ModelSerializer):
+    """ this serializer use both 'getById, create and update' """
+
+    class Meta:
+        model = City
+        fields = ['cityName', 'pincode', 'stateId', 'description']
+
+    def create(self, validated_data):
+        validated_data['cityName'] = validated_data['cityName'].capitalize()
+        # Create the user instance with modified data
+        city_obj = self.Meta.model.objects.create(**validated_data)
+
+        #  add data in field createdBy
+        user_id_by_token = self.context.get('user_id_by_token')
+        city_obj.createdBy = user_id_by_token
+        city_obj.save()
+
+        return city_obj
+
+    def update(self, instance, validated_data):
+        # Update the user instance with modified data
+        validated_data['cityName'] = validated_data['cityName'].capitalize()
+
+        user_id_by_token = self.context.get('user_id_by_token')
+        validated_data['updatedBy'] = user_id_by_token
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        instance.save()
+        return instance
+
+
+class GETCityByCityIdSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = City
+        fields = ['cityId', 'cityName', 'pincode', 'stateId', 'description']
 
 
 class GetAllAreaByCitySerializer(serializers.ModelSerializer):
@@ -73,29 +105,52 @@ class GetAllBusinessByCitySerializer(serializers.ModelSerializer):
 
 #  ******************* State serializers *************************
 
-class StateSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = State
-        exclude = ['updatedDate', 'createdDate', 'groupId', 'createdBy', 'updatedBy']
-
-
-class PartialStateSerializer(serializers.ModelSerializer):
+class GETStateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = State
         fields = ['stateId', 'stateName']
 
 
+class CREATEStateSerializer(serializers.ModelSerializer):
+    """ this serializer use both 'create and update' """
+    class Meta:
+        model = State
+        fields = ['stateName']
+
+    def create(self, validated_data):
+        validated_data['stateName'] = validated_data['stateName'].capitalize()
+        # Create the user instance with modified data
+        state_obj = self.Meta.model.objects.create(**validated_data)
+
+        #  add data in field createdBy
+        user_id_by_token = self.context.get('user_id_by_token')
+        state_obj.createdBy = user_id_by_token
+        state_obj.save()
+
+        return state_obj
+
+    def update(self, instance, validated_data):
+        # Update the user instance with modified data
+        validated_data['stateName'] = validated_data['stateName'].capitalize()
+
+        user_id_by_token = self.context.get('user_id_by_token')
+        validated_data['updatedBy'] = user_id_by_token
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        instance.save()
+        return instance
+
+
 class GetAllCitiesByStateSerializer(serializers.ModelSerializer):
-    city_by_state = PartialCitySerializer(read_only=True, many=True)
+    city_by_state = GETCitySerializer(read_only=True, many=True)
 
     class Meta:
         model = State
         fields = ('stateId', 'stateName', 'city_by_state')
 
 
-#  ***********************    Literature Serializer ******************
+#  ***********************    Literature Serializer  ******************
 class PartialLiteratureSerializer(serializers.ModelSerializer):
     class Meta:
         model = Literature

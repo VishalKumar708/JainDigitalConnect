@@ -15,3 +15,10 @@ ERROR 2023-09-29 13:12:12,715  30 Invalid URL.
 ERROR 2023-09-29 14:28:36,862  64 While sending OTP to client an exception occur == > ['twilio.base.exceptions.TwilioRestException: \n\x1b[31m\x1b[49mHTTP Error\x1b[0m \x1b[37m\x1b[49mYour request was:\x1b[0m\n\n\x1b[36m\x1b[49mPOST /Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json\x1b[0m\n\n\x1b[37m\x1b[49mTwilio returned the following information:\x1b[0m\n\n\x1b[34m\x1b[49mUnable to create record: The number +91819898XXXX is unverified. Trial accounts cannot send messages to unverified numbers; verify +91819898XXXX at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers\x1b[0m\n\n\x1b[37m\x1b[49mMore information may be available here:\x1b[0m\n\n\x1b[34m\x1b[49mhttps://www.twilio.com/docs/errors/21608\x1b[0m\n\n\n'] 
 ERROR 2023-09-29 14:28:57,572  64 While sending OTP to client an exception occur == > ['twilio.base.exceptions.TwilioRestException: \n\x1b[31m\x1b[49mHTTP Error\x1b[0m \x1b[37m\x1b[49mYour request was:\x1b[0m\n\n\x1b[36m\x1b[49mPOST /Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json\x1b[0m\n\n\x1b[37m\x1b[49mTwilio returned the following information:\x1b[0m\n\n\x1b[34m\x1b[49mUnable to create record: The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.\x1b[0m\n\n\x1b[37m\x1b[49mMore information may be available here:\x1b[0m\n\n\x1b[34m\x1b[49mhttps://www.twilio.com/docs/errors/21608\x1b[0m\n\n\n'] 
 ERROR 2023-09-29 16:53:15,066  231 An exception occurred when extracting payload data from the refresh token. Token has wrong type
+ERROR 2023-10-03 10:03:01,232  30 Invalid URL.
+ERROR 2023-10-03 10:03:14,808  30 Invalid URL.
+ERROR 2023-10-03 11:54:51,410  44 Unsupported Media Type. Expected application/json but got text/plain
+ERROR 2023-10-03 11:56:41,625  30 Invalid URL.
+ERROR 2023-10-03 13:28:05,018  30 Invalid URL.
+ERROR 2023-10-03 14:06:48,175  30 Invalid URL.
+ERROR 2023-10-03 17:24:15,324  30 Invalid URL.

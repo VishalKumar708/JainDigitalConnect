@@ -33,6 +33,7 @@ class MemberSerializer(serializers.ModelSerializer):
     headId = serializers.IntegerField()
     dob = serializers.DateField(input_formats=("%B %d %Y",))
     # relationWithHead = serializers.IntegerField()
+
     class Meta:
         fields = ['headId', 'name',  'relationWithHead', 'phoneNumber', 'maritalStatus', 'lookingForMatch', 'sect',
                   'profession', 'bloodGroup', 'dob', 'nativePlace', 'gotra', 'phoneNumberVisibility', 'gender']
@@ -63,11 +64,6 @@ class UpdateMemberSerializer(serializers.ModelSerializer):
         model = User
 
     def update(self, instance, validated_data):
-        # request = self.context.get('request')
-        # updated_by_user = request.user if request else validated_data['headId']
-        # print('updated_by_user ==> ', updated_by_user)
-        # # Set the 'updatedBy' field to the user who is updating the instance
-        # validated_data['updatedBy'] = updated_by_user
 
         # Update the user instance with modified data
         user_id_by_token = self.context.get('user_id_by_token')
@@ -95,7 +91,7 @@ class GETHeadSerializer(serializers.ModelSerializer):
         return data
 
 
-from .auth import get_age_by_dob
+# from .auth import get_age_by_dob
 
 
 class GETFamilyByHeadIdSerializer(serializers.ModelSerializer):
@@ -187,12 +183,10 @@ class CreateNewNotificationSerializer(serializers.ModelSerializer):
         model = Notification
 
     def create(self, validated_data):
-        request = self.context.get('request')
-        # print('request user==>', request.user)
         user_obj = self.context.get('user_obj')
-        print('In serializer user object==> ',user_obj )
+        print('In serializer user object==> ', user_obj)
         # created_by_user = request.user if request else validated_data['userId']
-        print("user_obj.id==> ",user_obj.id)
+        print("user_obj.id==> ", user_obj.id)
         created_by_user = user_obj.id
         validated_data['createdBy'] = created_by_user
 
