@@ -65,12 +65,15 @@ class Aarti(BaseModel, models.Model):
     isVerified = models.BooleanField(default=False)
 
 
-class Business(BaseModel, models.Model):
+from accounts.models import User
+
+class Business(BaseModel):
     businessId = models.AutoField(primary_key=True)
     cityId = models.ForeignKey(City, on_delete=models.CASCADE, related_name='GetAllBusinessByCityId')
+    userId = models.ForeignKey(User, on_delete=models.CASCADE, related_name='GetAllBusinessByUserId')
     businessName = models.CharField(max_length=200)
     businessType = models.CharField(max_length=120)
-    businessNumber = models.CharField(max_length=10, null=True, )
+    businessPhoneNumber = models.CharField(max_length=10, null=True, )
     email = models.EmailField(null=True)
     website = models.CharField(max_length=220, null=True)
     businessDescription = models.TextField()

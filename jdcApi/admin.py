@@ -38,8 +38,7 @@ admin.site.register(Aarti, AartiAdmin)
 
 
 class BusinessAdmin(admin.ModelAdmin):
-    list_display = ['businessId', 'cityId', 'businessName','businessType','businessNumber', 'email', 'website', 'businessDescription', 'isVerified', 'isActive', 'groupId', 'createdBy', 'updatedBy', 'createdDate', 'updatedDate']
-
+    list_display = ['businessId', 'userId', 'cityId', 'businessName','businessType','businessPhoneNumber', 'email', 'website', 'businessDescription', 'isVerified', 'isActive', 'groupId', 'createdBy', 'updatedBy', 'createdDate', 'updatedDate']
 
 admin.site.register(Business, BusinessAdmin)
 

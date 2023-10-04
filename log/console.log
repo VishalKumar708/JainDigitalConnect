@@ -5912,3 +5912,575 @@ WARNING 2023-10-03 17:45:49,485  212 "GET /api/GETAllAreasByCityId/12/ HTTP/1.1"
 INFO 2023-10-03 17:45:56,213  212 "GET /api/GETAllAreasByCityId/1/ HTTP/1.1" 200 130
 INFO 2023-10-03 17:54:16,859  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
 INFO 2023-10-03 17:54:17,986  668 Watching for file changes with StatReloader
+INFO 2023-10-04 10:17:24,358  668 Watching for file changes with StatReloader
+INFO 2023-10-04 10:18:51,260  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-10-04 10:18:53,000  668 Watching for file changes with StatReloader
+WARNING 2023-10-04 10:19:08,041  241 Unauthorized: /api/GETAllAreasByCityId/1/
+WARNING 2023-10-04 10:19:08,041  212 "GET /api/GETAllAreasByCityId/1/ HTTP/1.1" 401 199
+INFO 2023-10-04 10:20:15,919  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-10-04 10:20:18,540  668 Watching for file changes with StatReloader
+INFO 2023-10-04 10:27:12,335  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\state_views.py changed, reloading.
+INFO 2023-10-04 10:27:14,048  668 Watching for file changes with StatReloader
+INFO 2023-10-04 10:29:09,649  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 10:29:12,448  668 Watching for file changes with StatReloader
+INFO 2023-10-04 10:30:30,880  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 10:30:32,487  668 Watching for file changes with StatReloader
+INFO 2023-10-04 10:31:47,657  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 10:31:49,236  668 Watching for file changes with StatReloader
+INFO 2023-10-04 10:33:35,067  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 10:33:36,416  668 Watching for file changes with StatReloader
+INFO 2023-10-04 10:33:59,166  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 10:34:00,490  668 Watching for file changes with StatReloader
+INFO 2023-10-04 10:34:28,333  212 "POST /obtainToken/ HTTP/1.1" 200 483
+ERROR 2023-10-04 10:35:31,199  241 Internal Server Error: /api/GETAllAreasByCityId/1/
+ERROR 2023-10-04 10:35:31,199  212 "GET /api/GETAllAreasByCityId/1/ HTTP/1.1" 500 65
+INFO 2023-10-04 10:36:49,179  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 10:36:50,566  668 Watching for file changes with StatReloader
+INFO 2023-10-04 10:36:53,470  212 "GET /api/GETAllAreasByCityId/1/ HTTP/1.1" 200 130
+INFO 2023-10-04 10:38:07,103  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 10:38:08,757  668 Watching for file changes with StatReloader
+ERROR 2023-10-04 10:38:14,198  241 Internal Server Error: /api/GETAllAreasByCityId/1/
+ERROR 2023-10-04 10:38:14,198  212 "GET /api/GETAllAreasByCityId/1/ HTTP/1.1" 500 115
+INFO 2023-10-04 10:39:36,954  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 10:39:38,549  668 Watching for file changes with StatReloader
+INFO 2023-10-04 10:41:24,696  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 10:41:26,540  668 Watching for file changes with StatReloader
+ERROR 2023-10-04 10:41:27,433  241 Internal Server Error: /api/GETAllAreasByCityId/1/
+ERROR 2023-10-04 10:41:27,433  212 "GET /api/GETAllAreasByCityId/1/ HTTP/1.1" 500 115
+ERROR 2023-10-04 10:41:29,997  241 Internal Server Error: /api/GETAllAreasByCityId/1/
+ERROR 2023-10-04 10:41:29,997  212 "GET /api/GETAllAreasByCityId/1/ HTTP/1.1" 500 115
+ERROR 2023-10-04 10:41:36,326  241 Internal Server Error: /api/GETAllAreasByCityId/1/
+ERROR 2023-10-04 10:41:36,326  212 "GET /api/GETAllAreasByCityId/1/ HTTP/1.1" 500 115
+INFO 2023-10-04 10:42:14,511  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 10:42:15,889  668 Watching for file changes with StatReloader
+INFO 2023-10-04 10:46:03,587  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 10:46:04,832  668 Watching for file changes with StatReloader
+ERROR 2023-10-04 10:46:10,001  241 Internal Server Error: /api/GETAllAreasByCityId/1/
+ERROR 2023-10-04 10:46:10,001  212 "GET /api/GETAllAreasByCityId/1/ HTTP/1.1" 500 65
+INFO 2023-10-04 10:47:12,829  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 10:47:14,146  668 Watching for file changes with StatReloader
+INFO 2023-10-04 10:47:16,997  212 "GET /api/GETAllAreasByCityId/1/ HTTP/1.1" 200 101
+WARNING 2023-10-04 10:47:36,171  241 Not Found: /
+WARNING 2023-10-04 10:47:36,171  212 "GET / HTTP/1.1" 404 78
+INFO 2023-10-04 10:47:40,551  212 "GET /admin/ HTTP/1.1" 200 13575
+WARNING 2023-10-04 10:47:40,725  241 Not Found: /favicon.ico
+WARNING 2023-10-04 10:47:40,730  212 "GET /favicon.ico HTTP/1.1" 404 78
+INFO 2023-10-04 10:47:44,044  212 "GET /admin/jdcApi/area/ HTTP/1.1" 200 14148
+INFO 2023-10-04 10:47:44,124  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 10:47:53,286  212 "GET /admin/jdcApi/area/1/change/ HTTP/1.1" 200 18300
+INFO 2023-10-04 10:47:53,354  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 10:48:02,516  212 "POST /admin/jdcApi/area/1/change/ HTTP/1.1" 302 0
+INFO 2023-10-04 10:48:02,553  212 "GET /admin/jdcApi/area/ HTTP/1.1" 200 14340
+INFO 2023-10-04 10:48:02,626  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 10:48:23,025  212 "GET /api/GETAllAreasByCityId/1/ HTTP/1.1" 200 164
+INFO 2023-10-04 10:50:44,740  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 10:50:46,152  668 Watching for file changes with StatReloader
+INFO 2023-10-04 10:51:14,314  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 10:51:15,760  668 Watching for file changes with StatReloader
+INFO 2023-10-04 10:51:19,958  212 "GET /api/GETAllAreasByCityId/1/ HTTP/1.1" 200 164
+INFO 2023-10-04 11:00:38,445  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 11:00:40,321  668 Watching for file changes with StatReloader
+ERROR 2023-10-04 11:00:41,816  241 Internal Server Error: /api/GETAllAreasByCityId/1/
+ERROR 2023-10-04 11:00:41,816  212 "GET /api/GETAllAreasByCityId/1/ HTTP/1.1" 500 93
+INFO 2023-10-04 11:02:41,028  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 11:02:42,774  668 Watching for file changes with StatReloader
+INFO 2023-10-04 11:02:43,919  212 "GET /api/GETAllAreasByCityId/1/ HTTP/1.1" 200 130
+INFO 2023-10-04 11:09:19,809  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 11:09:21,122  668 Watching for file changes with StatReloader
+ERROR 2023-10-04 11:09:24,807  241 Internal Server Error: /api/GETAllAreasByCityId/1/
+ERROR 2023-10-04 11:09:24,815  212 "GET /api/GETAllAreasByCityId/1/ HTTP/1.1" 500 177
+INFO 2023-10-04 11:09:44,339  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 11:09:45,912  668 Watching for file changes with StatReloader
+INFO 2023-10-04 11:09:47,277  212 "GET /api/GETAllAreasByCityId/1/ HTTP/1.1" 200 117
+INFO 2023-10-04 11:10:02,131  212 "GET /admin/jdcApi/area/1/change/ HTTP/1.1" 200 18316
+INFO 2023-10-04 11:10:02,204  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 11:10:06,977  212 "POST /admin/jdcApi/area/1/change/ HTTP/1.1" 302 0
+INFO 2023-10-04 11:10:07,068  212 "GET /admin/jdcApi/area/ HTTP/1.1" 200 14340
+INFO 2023-10-04 11:10:07,130  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 11:10:24,898  212 "GET /api/GETAllAreasByCityId/1/ HTTP/1.1" 200 88
+INFO 2023-10-04 11:17:39,892  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 11:17:41,223  668 Watching for file changes with StatReloader
+INFO 2023-10-04 11:40:03,047  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 11:40:04,115  668 Watching for file changes with StatReloader
+INFO 2023-10-04 11:40:07,669  212 "GET /api/GETAllAreasByCityId/1/ HTTP/1.1" 200 88
+INFO 2023-10-04 11:40:18,073  212 "GET /admin/jdcApi/area/1/change/ HTTP/1.1" 200 18300
+INFO 2023-10-04 11:40:18,126  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 11:40:24,115  212 "POST /admin/jdcApi/area/1/change/ HTTP/1.1" 302 0
+INFO 2023-10-04 11:40:24,149  212 "GET /admin/jdcApi/area/ HTTP/1.1" 200 14340
+INFO 2023-10-04 11:40:24,216  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 11:40:39,954  212 "GET /admin/jdcApi/area/ HTTP/1.1" 200 14147
+INFO 2023-10-04 11:40:40,004  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 11:41:08,768  212 "GET /api/GETAllAreasByCityId/1/ HTTP/1.1" 200 117
+INFO 2023-10-04 11:41:26,544  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 11:41:28,735  668 Watching for file changes with StatReloader
+ERROR 2023-10-04 11:41:32,699  241 Internal Server Error: /api/GETAllAreasByCityId/1/
+ERROR 2023-10-04 11:41:32,699  212 "GET /api/GETAllAreasByCityId/1/ HTTP/1.1" 500 119
+INFO 2023-10-04 11:42:44,439  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 11:42:45,535  668 Watching for file changes with StatReloader
+ERROR 2023-10-04 11:42:47,907  241 Internal Server Error: /api/GETAllAreasByCityId/1/
+ERROR 2023-10-04 11:42:47,909  212 "GET /api/GETAllAreasByCityId/1/ HTTP/1.1" 500 138
+INFO 2023-10-04 11:43:11,029  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 11:43:12,074  668 Watching for file changes with StatReloader
+INFO 2023-10-04 11:45:45,484  212 "GET /api/GETAllAreasByCityId/1/ HTTP/1.1" 200 117
+INFO 2023-10-04 11:46:03,071  212 "GET /admin/jdcApi/business/add/ HTTP/1.1" 200 20726
+INFO 2023-10-04 11:46:03,131  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 11:47:45,031  212 "POST /admin/jdcApi/business/add/ HTTP/1.1" 302 0
+INFO 2023-10-04 11:47:45,158  212 "GET /admin/jdcApi/business/ HTTP/1.1" 200 14846
+INFO 2023-10-04 11:47:45,209  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 11:48:44,812  212 "GET /api/GETAllBusinessByCityId/1/ HTTP/1.1" 200 289
+INFO 2023-10-04 11:52:43,663  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 11:52:44,755  668 Watching for file changes with StatReloader
+INFO 2023-10-04 11:58:49,719  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 11:58:51,139  668 Watching for file changes with StatReloader
+INFO 2023-10-04 11:58:54,426  212 "GET /api/GETAllBusinessByCityId/1/ HTTP/1.1" 200 289
+INFO 2023-10-04 11:59:06,055  212 "GET /api/GETAllBusinessByCityId/2/ HTTP/1.1" 200 104
+INFO 2023-10-04 11:59:37,012  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 11:59:37,998  668 Watching for file changes with StatReloader
+ERROR 2023-10-04 11:59:52,431  241 Internal Server Error: /api/GETAllBusinessByCityId/2/
+ERROR 2023-10-04 11:59:52,433  212 "GET /api/GETAllBusinessByCityId/2/ HTTP/1.1" 500 321
+ERROR 2023-10-04 12:00:20,137  241 Internal Server Error: /api/GETAllBusinessByCityId/1/
+ERROR 2023-10-04 12:00:20,138  212 "GET /api/GETAllBusinessByCityId/1/ HTTP/1.1" 500 321
+ERROR 2023-10-04 12:01:13,669  241 Internal Server Error: /api/GETAllBusinessByCityId/1/
+ERROR 2023-10-04 12:01:13,670  212 "GET /api/GETAllBusinessByCityId/1/ HTTP/1.1" 500 321
+INFO 2023-10-04 12:01:56,774  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 12:01:57,782  668 Watching for file changes with StatReloader
+ERROR 2023-10-04 12:02:00,944  241 Internal Server Error: /api/GETAllBusinessByCityId/1/
+ERROR 2023-10-04 12:02:00,945  212 "GET /api/GETAllBusinessByCityId/1/ HTTP/1.1" 500 321
+ERROR 2023-10-04 12:02:10,162  241 Internal Server Error: /api/GETAllBusinessByCityId/2/
+ERROR 2023-10-04 12:02:10,162  212 "GET /api/GETAllBusinessByCityId/2/ HTTP/1.1" 500 321
+INFO 2023-10-04 12:03:36,666  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 12:03:37,937  668 Watching for file changes with StatReloader
+ERROR 2023-10-04 12:04:45,798  241 Internal Server Error: /api/GETAllBusinessByCityId/2/
+ERROR 2023-10-04 12:04:45,801  212 "GET /api/GETAllBusinessByCityId/2/ HTTP/1.1" 500 321
+INFO 2023-10-04 12:06:43,473  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 12:06:44,604  668 Watching for file changes with StatReloader
+INFO 2023-10-04 12:07:26,886  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 12:07:27,961  668 Watching for file changes with StatReloader
+INFO 2023-10-04 12:07:30,089  212 "GET /api/GETAllBusinessByCityId/2/ HTTP/1.1" 200 93
+INFO 2023-10-04 12:07:36,970  212 "GET /api/GETAllBusinessByCityId/1/ HTTP/1.1" 200 94
+INFO 2023-10-04 12:07:41,458  212 "GET /admin/jdcApi/business/1/change/ HTTP/1.1" 200 21105
+INFO 2023-10-04 12:07:41,523  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 12:07:45,951  212 "POST /admin/jdcApi/business/1/change/ HTTP/1.1" 302 0
+INFO 2023-10-04 12:07:46,012  212 "GET /admin/jdcApi/business/ HTTP/1.1" 200 14848
+INFO 2023-10-04 12:07:46,056  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 12:07:51,084  212 "GET /api/GETAllBusinessByCityId/1/ HTTP/1.1" 200 278
+INFO 2023-10-04 12:07:56,433  212 "GET /api/GETAllBusinessByCityId/2/ HTTP/1.1" 200 277
+INFO 2023-10-04 12:08:02,057  212 "GET /api/GETAllBusinessByCityId/4/ HTTP/1.1" 200 280
+INFO 2023-10-04 12:10:32,753  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 12:10:33,926  668 Watching for file changes with StatReloader
+INFO 2023-10-04 12:14:29,249  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 12:14:30,284  668 Watching for file changes with StatReloader
+INFO 2023-10-04 12:14:33,633  212 "GET /api/GETAllBusinessByCityId/4/ HTTP/1.1" 200 96
+INFO 2023-10-04 12:14:39,515  212 "GET /api/GETAllBusinessByCityId/1/ HTTP/1.1" 200 278
+INFO 2023-10-04 12:14:44,637  212 "GET /api/GETAllBusinessByCityId/2/ HTTP/1.1" 200 93
+INFO 2023-10-04 12:16:34,327  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\city_views.py changed, reloading.
+INFO 2023-10-04 12:16:35,350  668 Watching for file changes with StatReloader
+INFO 2023-10-04 12:18:41,677  212 "GET /api/GETAllAreasByCityId/2/ HTTP/1.1" 200 116
+INFO 2023-10-04 12:19:47,610  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 12:19:48,571  668 Watching for file changes with StatReloader
+INFO 2023-10-04 12:19:52,615  212 "GET /api/GETAllAreasByCityId/2/ HTTP/1.1" 200 87
+INFO 2023-10-04 12:19:57,839  212 "GET /api/GETAllAreasByCityId/1/ HTTP/1.1" 200 88
+INFO 2023-10-04 12:20:10,971  212 "GET /admin/jdcApi/area/ HTTP/1.1" 200 14147
+INFO 2023-10-04 12:20:11,013  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 12:20:19,093  212 "GET /admin/jdcApi/area/?o=2 HTTP/1.1" 200 14455
+INFO 2023-10-04 12:20:19,146  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 12:20:19,164  212 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2023-10-04 12:20:22,425  212 "GET /admin/jdcApi/city/ HTTP/1.1" 200 16312
+INFO 2023-10-04 12:20:22,484  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 12:20:42,962  212 "GET /admin/jdcApi/area/ HTTP/1.1" 200 14147
+INFO 2023-10-04 12:20:43,018  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 12:20:44,880  212 "GET /admin/jdcApi/area/1/change/ HTTP/1.1" 200 18316
+INFO 2023-10-04 12:20:44,919  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 12:21:08,590  212 "GET /api/GETAllAreasByCityId/1/ HTTP/1.1" 200 88
+INFO 2023-10-04 12:21:56,475  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 12:21:57,508  668 Watching for file changes with StatReloader
+INFO 2023-10-04 12:22:00,172  212 "GET /api/GETAllAreasByCityId/1/ HTTP/1.1" 200 117
+INFO 2023-10-04 12:22:06,484  212 "GET /api/GETAllAreasByCityId/2/ HTTP/1.1" 200 87
+INFO 2023-10-04 12:23:51,787  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 12:23:52,804  668 Watching for file changes with StatReloader
+INFO 2023-10-04 12:24:09,437  212 "GET /api/GETAllAreasByCityId/2/ HTTP/1.1" 200 87
+INFO 2023-10-04 12:57:02,598  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 12:57:03,918  668 Watching for file changes with StatReloader
+WARNING 2023-10-04 12:57:21,780  241 Bad Request: /api/POSTNewArea/
+WARNING 2023-10-04 12:57:21,781  212 "POST /api/POSTNewArea/ HTTP/1.1" 400 135
+ERROR 2023-10-04 12:57:27,944  241 Internal Server Error: /api/POSTNewArea/
+ERROR 2023-10-04 12:57:27,946  212 "POST /api/POSTNewArea/ HTTP/1.1" 500 97
+INFO 2023-10-04 13:01:46,005  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\area_views.py changed, reloading.
+INFO 2023-10-04 13:01:47,069  668 Watching for file changes with StatReloader
+INFO 2023-10-04 13:02:01,199  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\area_views.py changed, reloading.
+INFO 2023-10-04 13:02:02,419  668 Watching for file changes with StatReloader
+WARNING 2023-10-04 13:02:04,219  241 Bad Request: /api/POSTNewArea/
+WARNING 2023-10-04 13:02:04,220  212 "POST /api/POSTNewArea/ HTTP/1.1" 400 84
+INFO 2023-10-04 13:03:33,326  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\area_views.py changed, reloading.
+INFO 2023-10-04 13:03:34,574  668 Watching for file changes with StatReloader
+WARNING 2023-10-04 13:03:36,664  241 Bad Request: /api/POSTNewArea/
+WARNING 2023-10-04 13:03:36,665  212 "POST /api/POSTNewArea/ HTTP/1.1" 400 84
+INFO 2023-10-04 13:06:12,769  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\area_views.py changed, reloading.
+INFO 2023-10-04 13:06:14,025  668 Watching for file changes with StatReloader
+WARNING 2023-10-04 13:06:15,983  241 Bad Request: /api/POSTNewArea/
+WARNING 2023-10-04 13:06:15,984  212 "POST /api/POSTNewArea/ HTTP/1.1" 400 121
+WARNING 2023-10-04 13:06:50,056  241 Bad Request: /api/POSTNewArea/
+WARNING 2023-10-04 13:06:50,061  212 "POST /api/POSTNewArea/ HTTP/1.1" 400 82
+WARNING 2023-10-04 13:07:11,659  241 Bad Request: /api/POSTNewArea/
+WARNING 2023-10-04 13:07:11,660  212 "POST /api/POSTNewArea/ HTTP/1.1" 400 82
+INFO 2023-10-04 13:07:26,223  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 13:07:27,334  668 Watching for file changes with StatReloader
+INFO 2023-10-04 13:07:50,655  212 "POST /api/POSTNewArea/ HTTP/1.1" 302 79
+INFO 2023-10-04 13:08:17,182  212 "POST /api/POSTNewArea/ HTTP/1.1" 200 85
+INFO 2023-10-04 13:08:25,278  212 "GET /admin/jdcApi/area/ HTTP/1.1" 200 14934
+INFO 2023-10-04 13:14:09,281  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\area_views.py changed, reloading.
+INFO 2023-10-04 13:14:10,321  668 Watching for file changes with StatReloader
+INFO 2023-10-04 13:31:08,976  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\area_views.py changed, reloading.
+INFO 2023-10-04 13:31:09,975  668 Watching for file changes with StatReloader
+INFO 2023-10-04 13:31:32,984  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\area_views.py changed, reloading.
+INFO 2023-10-04 13:31:33,982  668 Watching for file changes with StatReloader
+INFO 2023-10-04 13:31:38,427  212 "GET /admin/jdcApi/area/ HTTP/1.1" 200 14934
+INFO 2023-10-04 13:31:38,470  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 13:35:01,737  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\area_views.py changed, reloading.
+INFO 2023-10-04 13:35:02,741  668 Watching for file changes with StatReloader
+INFO 2023-10-04 13:37:31,338  668 Watching for file changes with StatReloader
+WARNING 2023-10-04 13:39:15,835  241 Unauthorized: /api/PUTAreaById/1/
+WARNING 2023-10-04 13:39:15,836  212 "PUT /api/PUTAreaById/1/ HTTP/1.1" 401 199
+INFO 2023-10-04 13:39:41,350  212 "POST /api/token/refresh/ HTTP/1.1" 200 241
+INFO 2023-10-04 13:40:04,022  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-10-04 13:40:05,393  668 Watching for file changes with StatReloader
+INFO 2023-10-04 13:40:14,820  212 "POST /api/token/refresh/ HTTP/1.1" 200 241
+INFO 2023-10-04 13:40:58,986  212 "PUT /api/PUTAreaById/1/ HTTP/1.1" 204 124
+INFO 2023-10-04 13:42:05,589  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-10-04 13:42:06,723  668 Watching for file changes with StatReloader
+INFO 2023-10-04 13:42:37,732  212 "PUT /api/PUTAreaById/1/ HTTP/1.1" 200 85
+INFO 2023-10-04 13:42:59,196  212 "GET /admin/jdcApi/area/ HTTP/1.1" 200 14934
+INFO 2023-10-04 13:42:59,243  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 13:43:48,258  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\area_views.py changed, reloading.
+INFO 2023-10-04 13:43:49,293  668 Watching for file changes with StatReloader
+INFO 2023-10-04 13:43:51,961  212 "PUT /api/PUTAreaById/1/ HTTP/1.1" 204 85
+INFO 2023-10-04 13:44:31,563  212 "PUT /api/PUTAreaById/1/ HTTP/1.1" 200 85
+INFO 2023-10-04 13:44:37,617  212 "GET /admin/jdcApi/area/ HTTP/1.1" 200 14934
+INFO 2023-10-04 13:44:37,671  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 13:44:50,905  212 "PUT /api/PUTAreaById/2/ HTTP/1.1" 200 85
+INFO 2023-10-04 13:45:02,797  212 "GET /admin/jdcApi/area/ HTTP/1.1" 200 14931
+INFO 2023-10-04 13:45:02,845  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 13:48:47,620  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\area_views.py changed, reloading.
+INFO 2023-10-04 13:48:48,595  668 Watching for file changes with StatReloader
+INFO 2023-10-04 13:48:53,333  212 "GET /admin/jdcApi/area/ HTTP/1.1" 200 14931
+INFO 2023-10-04 13:48:53,370  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+ERROR 2023-10-04 13:48:59,576  241 Internal Server Error: /api/PUTAreaById/2/
+ERROR 2023-10-04 13:48:59,576  212 "PUT /api/PUTAreaById/2/ HTTP/1.1" 500 316
+INFO 2023-10-04 13:49:40,730  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\area_views.py changed, reloading.
+INFO 2023-10-04 13:49:41,845  668 Watching for file changes with StatReloader
+ERROR 2023-10-04 13:49:43,995  241 Internal Server Error: /api/PUTAreaById/2/
+ERROR 2023-10-04 13:49:43,995  212 "PUT /api/PUTAreaById/2/ HTTP/1.1" 500 265
+INFO 2023-10-04 13:50:02,022  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\area_views.py changed, reloading.
+INFO 2023-10-04 13:50:03,123  668 Watching for file changes with StatReloader
+INFO 2023-10-04 13:50:05,005  212 "PUT /api/PUTAreaById/2/ HTTP/1.1" 302 81
+INFO 2023-10-04 13:50:32,971  212 "PUT /api/PUTAreaById/2/ HTTP/1.1" 200 85
+INFO 2023-10-04 13:50:37,590  212 "GET /admin/jdcApi/area/ HTTP/1.1" 200 14934
+INFO 2023-10-04 13:50:37,629  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 13:50:38,567  212 "GET /admin/jdcApi/area/ HTTP/1.1" 200 14934
+INFO 2023-10-04 13:50:38,615  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 13:50:39,677  212 "GET /admin/jdcApi/area/ HTTP/1.1" 200 14934
+INFO 2023-10-04 13:50:39,726  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 13:50:40,768  212 "GET /admin/jdcApi/area/ HTTP/1.1" 200 14934
+INFO 2023-10-04 13:50:40,811  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 13:50:42,144  212 "GET /admin/jdcApi/area/ HTTP/1.1" 200 14934
+INFO 2023-10-04 13:50:42,181  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 13:50:45,039  212 "GET /admin/jdcApi/area/ HTTP/1.1" 200 14934
+INFO 2023-10-04 13:50:45,088  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 13:55:22,664  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 13:55:23,874  668 Watching for file changes with StatReloader
+INFO 2023-10-04 13:55:27,388  212 "PUT /api/PUTAreaById/2/ HTTP/1.1" 200 85
+INFO 2023-10-04 13:57:03,888  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\area_views.py changed, reloading.
+INFO 2023-10-04 13:57:05,276  668 Watching for file changes with StatReloader
+INFO 2023-10-04 13:57:07,379  212 "PUT /api/PUTAreaById/2/ HTTP/1.1" 200 85
+INFO 2023-10-04 13:57:11,470  212 "GET /admin/jdcApi/area/ HTTP/1.1" 200 14934
+INFO 2023-10-04 13:57:11,513  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 14:01:18,100  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\city_views.py changed, reloading.
+INFO 2023-10-04 14:01:20,449  668 Watching for file changes with StatReloader
+INFO 2023-10-04 14:29:40,924  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-10-04 14:29:42,359  668 Watching for file changes with StatReloader
+INFO 2023-10-04 14:29:54,844  212 "GET /api/GETAllApprovedAreas/ HTTP/1.1" 200 110
+INFO 2023-10-04 14:31:46,239  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\area_views.py changed, reloading.
+INFO 2023-10-04 14:31:49,080  668 Watching for file changes with StatReloader
+INFO 2023-10-04 14:32:34,636  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\area_views.py changed, reloading.
+INFO 2023-10-04 14:32:36,052  668 Watching for file changes with StatReloader
+INFO 2023-10-04 14:32:36,679  212 "GET /admin/jdcApi/area/2/change/ HTTP/1.1" 200 18284
+INFO 2023-10-04 14:32:36,758  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 14:32:40,815  212 "POST /admin/jdcApi/area/2/change/ HTTP/1.1" 200 18552
+INFO 2023-10-04 14:32:40,874  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 14:32:54,094  212 "POST /admin/jdcApi/area/2/change/ HTTP/1.1" 302 0
+INFO 2023-10-04 14:32:54,144  212 "GET /admin/jdcApi/area/ HTTP/1.1" 200 15144
+INFO 2023-10-04 14:32:54,210  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 14:32:57,694  212 "GET /admin/jdcApi/area/1/change/ HTTP/1.1" 200 18316
+INFO 2023-10-04 14:32:57,761  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 14:33:03,110  212 "POST /admin/jdcApi/area/1/change/ HTTP/1.1" 302 0
+INFO 2023-10-04 14:33:03,144  212 "GET /admin/jdcApi/area/ HTTP/1.1" 200 15141
+INFO 2023-10-04 14:33:03,193  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 14:33:12,751  212 "GET /api/GETAllApprovedAreas/ HTTP/1.1" 200 73
+INFO 2023-10-04 14:35:54,318  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\area_views.py changed, reloading.
+INFO 2023-10-04 14:35:55,457  668 Watching for file changes with StatReloader
+INFO 2023-10-04 14:36:59,928  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-10-04 14:37:01,427  668 Watching for file changes with StatReloader
+INFO 2023-10-04 14:37:06,215  212 "GET /api/GETAllUnapprovedAreas/ HTTP/1.1" 200 110
+INFO 2023-10-04 14:49:34,812  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 14:49:35,798  668 Watching for file changes with StatReloader
+INFO 2023-10-04 14:49:57,230  212 "GET /api/GETAreaById/1/ HTTP/1.1" 200 174
+INFO 2023-10-04 14:50:12,066  212 "GET /api/GETAreaById/2/ HTTP/1.1" 200 176
+INFO 2023-10-04 14:50:21,948  212 "GET /api/GETAreaById/2/ HTTP/1.1" 200 176
+WARNING 2023-10-04 14:50:31,719  241 Not Found: /api/GETAreaById/200/
+WARNING 2023-10-04 14:50:31,721  212 "GET /api/GETAreaById/200/ HTTP/1.1" 404 73
+WARNING 2023-10-04 14:50:45,509  241 Not Found: /api/GETAreaById/4/
+WARNING 2023-10-04 14:50:45,510  212 "GET /api/GETAreaById/4/ HTTP/1.1" 404 73
+INFO 2023-10-04 14:50:53,357  212 "GET /api/GETAreaById/2/ HTTP/1.1" 200 176
+INFO 2023-10-04 14:51:17,729  212 "GET /admin/jdcApi/area/ HTTP/1.1" 200 14948
+INFO 2023-10-04 14:51:17,774  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 14:51:34,251  212 "GET /api/GETAreaById/1/ HTTP/1.1" 200 174
+INFO 2023-10-04 14:52:00,978  212 "GET /admin/jdcApi/area/2/change/ HTTP/1.1" 200 18320
+INFO 2023-10-04 14:52:01,020  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 14:52:03,553  212 "GET /admin/jdcApi/area/ HTTP/1.1" 200 14948
+INFO 2023-10-04 14:55:25,490  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-10-04 14:55:26,603  668 Watching for file changes with StatReloader
+INFO 2023-10-04 15:00:47,110  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\models.py changed, reloading.
+INFO 2023-10-04 15:00:48,501  668 Watching for file changes with StatReloader
+INFO 2023-10-04 15:01:18,734  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\models.py changed, reloading.
+INFO 2023-10-04 15:01:19,993  668 Watching for file changes with StatReloader
+INFO 2023-10-04 15:03:04,365  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\models.py changed, reloading.
+INFO 2023-10-04 15:03:05,537  668 Watching for file changes with StatReloader
+INFO 2023-10-04 15:03:27,614  212 "GET /api/GETAllBusinessByCityId/1/ HTTP/1.1" 200 278
+INFO 2023-10-04 15:16:37,606  668 Watching for file changes with StatReloader
+INFO 2023-10-04 15:16:52,208  212 "GET /api/GETAllBusinessByCityId/1/ HTTP/1.1" 200 94
+INFO 2023-10-04 15:27:04,936  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-10-04 15:27:06,419  668 Watching for file changes with StatReloader
+WARNING 2023-10-04 15:27:18,127  241 Not Found: /POSTNewBusiness/
+WARNING 2023-10-04 15:27:18,128  212 "POST /POSTNewBusiness/ HTTP/1.1" 404 78
+INFO 2023-10-04 15:27:27,482  212 "POST /api/POSTNewBusiness/ HTTP/1.1" 200 123
+INFO 2023-10-04 15:28:44,973  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\admin.py changed, reloading.
+INFO 2023-10-04 15:28:46,065  668 Watching for file changes with StatReloader
+ERROR 2023-10-04 15:29:50,635  241 Internal Server Error: /api/POSTNewBusiness/
+ERROR 2023-10-04 15:29:50,638  212 "POST /api/POSTNewBusiness/ HTTP/1.1" 500 194
+INFO 2023-10-04 15:33:49,932  668 Watching for file changes with StatReloader
+INFO 2023-10-04 15:34:47,417  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 15:34:48,485  668 Watching for file changes with StatReloader
+INFO 2023-10-04 15:34:55,487  212 "POST /api/POSTNewBusiness/ HTTP/1.1" 200 255
+INFO 2023-10-04 15:40:10,883  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 15:40:12,169  668 Watching for file changes with StatReloader
+INFO 2023-10-04 15:40:18,387  212 "POST /api/POSTNewBusiness/ HTTP/1.1" 200 255
+INFO 2023-10-04 15:41:51,247  212 "POST /api/POSTNewBusiness/ HTTP/1.1" 200 159
+INFO 2023-10-04 15:46:12,318  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 15:46:13,517  668 Watching for file changes with StatReloader
+INFO 2023-10-04 15:46:17,807  212 "POST /api/POSTNewBusiness/ HTTP/1.1" 200 96
+INFO 2023-10-04 15:47:13,329  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 15:47:14,650  668 Watching for file changes with StatReloader
+INFO 2023-10-04 15:47:16,726  212 "POST /api/POSTNewBusiness/ HTTP/1.1" 200 92
+ERROR 2023-10-04 15:48:35,771  241 Internal Server Error: /api/POSTNewBusiness/
+ERROR 2023-10-04 15:48:35,772  212 "POST /api/POSTNewBusiness/ HTTP/1.1" 500 102
+ERROR 2023-10-04 15:49:44,706  241 Internal Server Error: /api/POSTNewBusiness/
+ERROR 2023-10-04 15:49:44,707  212 "POST /api/POSTNewBusiness/ HTTP/1.1" 500 552
+INFO 2023-10-04 15:50:12,343  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 15:50:13,940  668 Watching for file changes with StatReloader
+INFO 2023-10-04 15:50:14,786  212 "POST /api/POSTNewBusiness/ HTTP/1.1" 200 92
+INFO 2023-10-04 15:51:28,444  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 15:51:29,587  668 Watching for file changes with StatReloader
+INFO 2023-10-04 15:51:39,636  212 "POST /api/POSTNewBusiness/ HTTP/1.1" 200 91
+INFO 2023-10-04 15:51:49,018  212 "GET /admin/jdcApi/area/ HTTP/1.1" 200 14948
+INFO 2023-10-04 15:51:49,075  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 15:51:50,639  212 "GET /admin/jdcApi/business/ HTTP/1.1" 200 14609
+INFO 2023-10-04 15:51:50,702  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 15:56:36,649  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 15:56:37,824  668 Watching for file changes with StatReloader
+INFO 2023-10-04 16:18:18,302  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\business_views.py changed, reloading.
+INFO 2023-10-04 16:18:19,435  668 Watching for file changes with StatReloader
+INFO 2023-10-04 16:18:43,201  668 Watching for file changes with StatReloader
+ERROR 2023-10-04 16:19:25,110  241 Internal Server Error: /api/PUTBusinessById/1/
+ERROR 2023-10-04 16:19:25,111  212 "PUT /api/PUTBusinessById/1/ HTTP/1.1" 500 140
+INFO 2023-10-04 16:20:25,799  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\business_views.py changed, reloading.
+INFO 2023-10-04 16:20:27,062  668 Watching for file changes with StatReloader
+INFO 2023-10-04 16:20:27,576  212 "GET /admin/jdcApi/business/ HTTP/1.1" 200 14609
+INFO 2023-10-04 16:20:27,617  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+ERROR 2023-10-04 16:20:35,815  241 Internal Server Error: /api/PUTBusinessById/1/
+ERROR 2023-10-04 16:20:35,816  212 "PUT /api/PUTBusinessById/1/ HTTP/1.1" 500 140
+INFO 2023-10-04 16:24:16,542  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\business_views.py changed, reloading.
+INFO 2023-10-04 16:24:17,808  668 Watching for file changes with StatReloader
+INFO 2023-10-04 16:24:18,859  212 "PUT /api/PUTBusinessById/1/ HTTP/1.1" 204 92
+INFO 2023-10-04 16:25:52,576  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 16:25:53,836  668 Watching for file changes with StatReloader
+INFO 2023-10-04 16:25:56,014  212 "PUT /api/PUTBusinessById/1/ HTTP/1.1" 204 181
+INFO 2023-10-04 16:26:30,255  212 "PUT /api/PUTBusinessById/1/ HTTP/1.1" 200 92
+INFO 2023-10-04 16:26:52,646  212 "PUT /api/PUTBusinessById/1/ HTTP/1.1" 200 92
+INFO 2023-10-04 16:27:32,466  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 16:27:33,599  668 Watching for file changes with StatReloader
+INFO 2023-10-04 16:27:36,245  212 "PUT /api/PUTBusinessById/1/ HTTP/1.1" 200 92
+INFO 2023-10-04 16:28:02,087  212 "GET /admin/jdcApi/business/ HTTP/1.1" 200 14609
+INFO 2023-10-04 16:28:02,128  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 16:28:26,451  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\admin.py changed, reloading.
+INFO 2023-10-04 16:28:27,738  668 Watching for file changes with StatReloader
+INFO 2023-10-04 16:28:28,514  212 "PUT /api/PUTBusinessById/1/ HTTP/1.1" 200 92
+INFO 2023-10-04 16:28:32,681  212 "GET /admin/jdcApi/business/ HTTP/1.1" 200 14797
+INFO 2023-10-04 16:28:32,731  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 16:30:40,929  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\business_views.py changed, reloading.
+INFO 2023-10-04 16:30:42,172  668 Watching for file changes with StatReloader
+WARNING 2023-10-04 16:30:49,276  241 Bad Request: /api/PUTBusinessById/1/
+WARNING 2023-10-04 16:30:49,279  212 "PUT /api/PUTBusinessById/1/ HTTP/1.1" 400 92
+INFO 2023-10-04 16:31:08,945  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 16:31:10,492  668 Watching for file changes with StatReloader
+WARNING 2023-10-04 16:31:12,588  241 Bad Request: /api/PUTBusinessById/1/
+WARNING 2023-10-04 16:31:12,591  212 "PUT /api/PUTBusinessById/1/ HTTP/1.1" 400 92
+WARNING 2023-10-04 16:36:01,154  241 Bad Request: /api/PUTBusinessById/1/
+WARNING 2023-10-04 16:36:01,156  212 "PUT /api/PUTBusinessById/1/ HTTP/1.1" 400 92
+INFO 2023-10-04 16:37:28,558  212 "GET /admin/jdcApi/business/ HTTP/1.1" 200 14797
+INFO 2023-10-04 16:37:28,604  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 16:37:42,816  212 "GET /admin/jdcApi/business/1/change/ HTTP/1.1" 200 23488
+INFO 2023-10-04 16:37:42,874  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 16:38:19,578  212 "PUT /api/PUTBusinessById/1/ HTTP/1.1" 200 89
+INFO 2023-10-04 16:38:33,704  212 "GET /admin/jdcApi/business/ HTTP/1.1" 200 14797
+INFO 2023-10-04 16:38:35,630  212 "GET /admin/jdcApi/business/ HTTP/1.1" 200 14797
+INFO 2023-10-04 16:38:35,718  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 16:38:36,711  212 "GET /admin/jdcApi/business/ HTTP/1.1" 200 14797
+INFO 2023-10-04 16:38:36,753  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 16:38:37,204  212 "GET /admin/jdcApi/business/ HTTP/1.1" 200 14797
+INFO 2023-10-04 16:38:37,308  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 16:38:37,496  212 "GET /admin/jdcApi/business/ HTTP/1.1" 200 14797
+INFO 2023-10-04 16:38:37,600  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 16:39:41,018  212 "PUT /api/PUTBusinessById/1/ HTTP/1.1" 200 89
+INFO 2023-10-04 16:39:46,114  212 "GET /admin/jdcApi/business/ HTTP/1.1" 200 14797
+INFO 2023-10-04 16:39:46,177  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 16:39:47,177  212 "GET /admin/jdcApi/business/ HTTP/1.1" 200 14797
+INFO 2023-10-04 16:39:47,216  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 16:39:47,363  212 "GET /admin/jdcApi/business/ HTTP/1.1" 200 14797
+INFO 2023-10-04 16:39:47,401  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 16:41:10,895  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\models.py changed, reloading.
+INFO 2023-10-04 16:41:12,013  668 Watching for file changes with StatReloader
+INFO 2023-10-04 16:44:30,144  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\business_views.py changed, reloading.
+INFO 2023-10-04 16:44:31,655  668 Watching for file changes with StatReloader
+WARNING 2023-10-04 16:44:38,602  241 Unauthorized: /api/PUTBusinessById/1/
+WARNING 2023-10-04 16:44:38,602  212 "PUT /api/PUTBusinessById/1/ HTTP/1.1" 401 199
+INFO 2023-10-04 16:44:46,121  212 "POST /api/token/refresh/ HTTP/1.1" 200 241
+ERROR 2023-10-04 16:45:22,324  241 Internal Server Error: /api/PUTBusinessById/1/
+ERROR 2023-10-04 16:45:22,325  212 "PUT /api/PUTBusinessById/1/ HTTP/1.1" 500 69
+ERROR 2023-10-04 16:47:22,952  241 Internal Server Error: /api/PUTBusinessById/1/
+ERROR 2023-10-04 16:47:22,953  212 "PUT /api/PUTBusinessById/1/ HTTP/1.1" 500 69
+INFO 2023-10-04 16:47:41,085  212 "PUT /api/PUTBusinessById/1/ HTTP/1.1" 204 181
+ERROR 2023-10-04 16:47:51,625  241 Internal Server Error: /api/PUTBusinessById/1/
+ERROR 2023-10-04 16:47:51,626  212 "PUT /api/PUTBusinessById/1/ HTTP/1.1" 500 69
+INFO 2023-10-04 16:48:41,243  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 16:48:42,423  668 Watching for file changes with StatReloader
+INFO 2023-10-04 16:48:44,615  212 "GET /admin/jdcApi/business/ HTTP/1.1" 200 14797
+INFO 2023-10-04 16:48:44,659  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 16:50:59,994  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\business_views.py changed, reloading.
+INFO 2023-10-04 16:51:01,174  668 Watching for file changes with StatReloader
+ERROR 2023-10-04 16:51:03,522  241 Internal Server Error: /api/PUTBusinessById/1/
+ERROR 2023-10-04 16:51:03,523  212 "PUT /api/PUTBusinessById/1/ HTTP/1.1" 500 69
+INFO 2023-10-04 16:51:23,565  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\business_views.py changed, reloading.
+INFO 2023-10-04 16:51:24,681  668 Watching for file changes with StatReloader
+ERROR 2023-10-04 16:51:27,106  241 Internal Server Error: /api/PUTBusinessById/1/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\business_views.py", line 148, in put
+    serializer.save()
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 207, in save
+    self.instance = self.update(self.instance, validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py", line 103, in update
+    validated_data['businessName'] = validated_data['businessName'].capitalize()
+                                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+KeyError: 'businessName'
+ERROR 2023-10-04 16:51:27,112  212 "PUT /api/PUTBusinessById/1/ HTTP/1.1" 500 110527
+INFO 2023-10-04 16:54:01,674  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 16:54:02,903  668 Watching for file changes with StatReloader
+ERROR 2023-10-04 16:54:07,624  241 Internal Server Error: /api/PUTBusinessById/1/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\business_views.py", line 148, in put
+    serializer.save()
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 207, in save
+    self.instance = self.update(self.instance, validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py", line 103, in update
+    business_name = validated_data['businessName']
+                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+KeyError: 'businessName'
+ERROR 2023-10-04 16:54:07,630  212 "PUT /api/PUTBusinessById/1/ HTTP/1.1" 500 110511
+INFO 2023-10-04 16:57:15,313  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 16:57:16,931  668 Watching for file changes with StatReloader
+ERROR 2023-10-04 16:57:18,572  241 Internal Server Error: /api/PUTBusinessById/1/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\business_views.py", line 148, in put
+    serializer.save()
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 207, in save
+    self.instance = self.update(self.instance, validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py", line 103, in update
+    validated_data['businessName'] = validated_data['businessName'].capitalize() if validated_data['businessName'] else instance.businessName
+                                                                                    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+KeyError: 'businessName'
+ERROR 2023-10-04 16:57:18,578  212 "PUT /api/PUTBusinessById/1/ HTTP/1.1" 500 110763
+INFO 2023-10-04 16:59:33,096  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 16:59:34,236  668 Watching for file changes with StatReloader
+INFO 2023-10-04 16:59:36,361  212 "PUT /api/PUTBusinessById/1/ HTTP/1.1" 200 89
+INFO 2023-10-04 16:59:46,228  212 "GET /admin/jdcApi/business/ HTTP/1.1" 200 14797
+INFO 2023-10-04 16:59:46,279  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-10-04 17:04:08,185  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-10-04 17:04:09,379  668 Watching for file changes with StatReloader

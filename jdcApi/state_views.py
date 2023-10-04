@@ -74,13 +74,6 @@ class GetStateById(APIView):
             obj = State.objects.get(stateId=stateId)
             serializer = GETStateSerializer(obj)
 
-            # if len(serializer.data) == 0:
-            #     response = {
-            #         'statusCode': 200,
-            #         'status': 'failed',
-            #         'data': {'message': 'No Record Found.'}
-            #     }
-            #     return Response(response, status=200)
             response = {
                 'statusCode': 200,
                 'status': 'success',

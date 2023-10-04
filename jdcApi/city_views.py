@@ -4,13 +4,11 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 
 from .serializers import GETCitySerializer, CREATECitySerializer, GetAllAreaByCitySerializer, \
-    GetAllBusinessByCitySerializer, GETCityByCityIdSerializer
+    GetAllBusinessByCitySerializer, GETCityByCityIdSerializer, UPDATECitySerializer
 from rest_framework import status
 from rest_framework.response import Response
 from .models import City, Business
 
-from rest_framework.exceptions import ValidationError
-from django.http import Http404
 from .models import State
 from utils.get_id_by_token import get_user_id_from_token_view
 from utils.permission import IsOwnerOrReadOnly
@@ -18,6 +16,7 @@ from utils.permission import IsOwnerOrReadOnly
 
 class GetAllApprovedCity(ListAPIView):
     serializer_class = GETCitySerializer
+
 
     def get_queryset(self):
         queryset = City.objects.filter(isActive=True, isVerified=True).order_by('cityName')
@@ -56,6 +55,7 @@ class GetAllApprovedCity(ListAPIView):
 
 class GetAllUnapprovedCity(ListAPIView):
     serializer_class = GETCitySerializer
+    permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
         queryset = City.objects.filter(Q(isActive=False)| Q(isVerified=False)).order_by('cityName')
@@ -89,6 +89,8 @@ class GetAllUnapprovedCity(ListAPIView):
 
 
 class GetCityById(APIView):
+    permission_classes = [IsAuthenticated]
+
     def get(self, request, cityId, *args, **kwargs):
         try:
             instance = City.objects.get(cityId=cityId)
@@ -118,10 +120,12 @@ class GetCityById(APIView):
 
 # Get all areas by cityId
 class GetAreaByCityId(APIView):
+    permission_classes = [IsAuthenticated]
+
     def get(self, request, cityId, *args, **kwargs):
         try:
             instance = City.objects.get(cityId=cityId)
-            serializer = GetAllAreaByCitySerializer(instance)
+            serializer = GetAllAreaByCitySerializer(instance, context={'cityId': cityId})
             response_data = {
                 'status_code': status.HTTP_200_OK,
                 'status': 'Success',
@@ -146,10 +150,12 @@ class GetAreaByCityId(APIView):
 
 # get all business by city id
 class GetAllBusinessByCityId(APIView):
+    permission_classes = [IsAuthenticated]
+
     def get(self, request, cityId, *args, **kwargs):
         try:
             instance = City.objects.get(cityId=cityId)
-            serializer = GetAllBusinessByCitySerializer(instance)
+            serializer = GetAllBusinessByCitySerializer(instance, context={'cityId': cityId})
             response_data = {
                 'status_code': status.HTTP_200_OK,
                 'status': 'Success',
@@ -170,7 +176,6 @@ class GetAllBusinessByCityId(APIView):
                 'data': {'error': str(e)}
             }
             return Response(response_data, status=500)
-
 
 
 class CreateNewCity(APIView):
@@ -234,7 +239,7 @@ class UpdateCityById(APIView):
         try:
             # check user provide value or not
             if len(request.data) < 1:
-                serializer = CREATECitySerializer(data=request.data)
+                serializer = UPDATECitySerializer(data=request.data)
                 if not serializer.is_valid():
                     response_data = {
                         'statusCode': status.HTTP_204_NO_CONTENT,
@@ -249,7 +254,7 @@ class UpdateCityById(APIView):
             # print('count ==> ', matching_city_counts)
             if matching_city_counts > 0:
                 json_data = {
-                    'status_code': status.HTTP_302_FOUND,
+                    'statuscode': status.HTTP_302_FOUND,
                     'status': 'failed',
                     'message': {'msg': f"'{city_name}' is already exists."},
                 }
@@ -257,7 +262,7 @@ class UpdateCityById(APIView):
 
             get_user_id = get_user_id_from_token_view(request)
             instance = City.objects.get(cityId=cityId)
-            serializer = CREATECitySerializer(instance, data=request.data, partial=True, context={'user_id_by_token': get_user_id})
+            serializer = UPDATECitySerializer(instance, data=request.data, partial=True, context={'user_id_by_token': get_user_id})
             if serializer.is_valid():
                 serializer.save()
                 response_data = {
@@ -269,21 +274,21 @@ class UpdateCityById(APIView):
 
             # Customize the response data if needed
             response_data = {
-                'status_code': status.HTTP_400_BAD_REQUEST,
+                'statusCode': status.HTTP_400_BAD_REQUEST,
                 'status': 'failed',
                 'data': serializer.errors,
             }
             return Response(response_data, status=404)
         except City.DoesNotExist:
             response_data = {
-                'status_code': status.HTTP_400_BAD_REQUEST,
+                'statusCode': status.HTTP_400_BAD_REQUEST,
                 'status': 'failed',
                 'data': {'message': "Invalid city Id."},
             }
             return Response(response_data, status=400)
         except Exception as e:
             response_data = {
-                'status_code': status.HTTP_500_INTERNAL_SERVER_ERROR,
+                'statusCode': status.HTTP_500_INTERNAL_SERVER_ERROR,
                 'status': 'error',
                 'data': {'error': str(e)},
             }
