@@ -36,7 +36,7 @@ def obtain_token(request):
         json_data = {
             'statusCode': status.HTTP_400_BAD_REQUEST,
             'status': 'failed',
-            'data': {'error': serializer.errors}
+            'data': serializer.errors
         }
         return Response(json_data, status=400)
     user_id = request.data.get('id')  # Replace with your authentication criteria

@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-a3z&h2hki16x=vk*87!8-xba!tg!50szf=!npl0=)kpvg(_4)w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.100.3', '127.0.0.1']
 
 
 # Application definition
@@ -253,7 +253,7 @@ REST_FRAMEWORK = {
     # 'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination', #for builtin pagination
     'DEFAULT_PAGINATION_CLASS': 'accounts.pagination.CustomPagination',# for customized pagination
-    'PAGE_SIZE': 5,
+    'PAGE_SIZE': 15,
     # 'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',),
 
     # help to exclude jwt authentication for some api

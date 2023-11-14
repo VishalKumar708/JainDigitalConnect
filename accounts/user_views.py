@@ -436,13 +436,13 @@ class UpdateUserById(APIView):
 
 from .pagination import CustomPagination
 
+
 # from .custom_filter import
 class GetAllResidents(ListAPIView):
     serializer_class = GETAllUserSerializer
     pagination_class = CustomPagination
     permission_classes = [IsAuthenticated]
     # queryset = User.objects.all()
-
 
     def get_queryset(self):
         qs = User.objects.all()

@@ -30,24 +30,7 @@ class Migration(migrations.Migration):
                 'abstract': False,
             },
         ),
-        migrations.CreateModel(
-            name='Literature',
-            fields=[
-                ('isActive', models.BooleanField(default=False)),
-                ('groupId', models.CharField(default=1, max_length=40)),
-                ('createdBy', models.CharField(default=1, max_length=50)),
-                ('updatedBy', models.CharField(default=1, max_length=50)),
-                ('createdDate', models.DateTimeField(auto_now_add=True)),
-                ('updatedDate', models.DateTimeField(auto_now=True)),
-                ('literatureId', models.AutoField(primary_key=True, serialize=False)),
-                ('title', models.CharField(max_length=200)),
-                ('body', models.TextField()),
-                ('isVerified', models.BooleanField(default=False)),
-            ],
-            options={
-                'abstract': False,
-            },
-        ),
+
         migrations.CreateModel(
             name='State',
             fields=[
@@ -86,31 +69,7 @@ class Migration(migrations.Migration):
                 'abstract': False,
             },
         ),
-        # migrations.CreateModel(
-        #     name='Business',
-        #     fields=[
-        #         ('isActive', models.BooleanField(default=False)),
-        #         ('groupId', models.CharField(default=1, max_length=40)),
-        #         ('createdBy', models.CharField(default=1, max_length=50)),
-        #         ('updatedBy', models.CharField(default=1, max_length=50)),
-        #         ('createdDate', models.DateTimeField(auto_now_add=True)),
-        #         ('updatedDate', models.DateTimeField(auto_now=True)),
-        #         ('businessId', models.AutoField(primary_key=True, serialize=False)),
-        #         ('businessName', models.CharField(max_length=200)),
-        #         ('businessType', models.CharField(max_length=120)),
-        #         ('businessNumber', models.CharField(max_length=10, null=True)),
-        #         ('email', models.EmailField(max_length=254, null=True)),
-        #         ('website', models.CharField(max_length=220, null=True)),
-        #         ('businessDescription', models.TextField()),
-        #         ('isVerified', models.BooleanField(default=False)),
-        #         ('gstNumber', models.CharField(max_length=20)),
-        #         ('address', models.CharField(max_length=120)),
-        #         ('cityId', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='GetAllBusinessByCityId', to='jdcApi.city')),
-        #     ],
-        #     options={
-        #         'abstract': False,
-        #     },
-        # ),
+
         migrations.CreateModel(
             name='Area',
             fields=[

@@ -55,6 +55,7 @@ class Literature(BaseModel, models.Model):
     literatureId = models.AutoField(primary_key=True)
     title = models.CharField(max_length=200)
     body = models.TextField()
+    order = models.IntegerField()
     isVerified = models.BooleanField(default=False)
 
 
@@ -85,8 +86,40 @@ class Business(BaseModel):
         return self.businessName
 
 
+class Sect(BaseModel):
+    SECT_CHOICES = [
+        ('Digambar', 'Digambar'),
+        ('Terapanthi', 'Terapanthi'),
+        ('Svetambar', 'Svetambar'),
+        ('Murtipujaka', 'Murtipujaka'),
+    ]
+
+    id = models.AutoField(primary_key=True)
+    sectName = models.CharField(max_length=20, choices=SECT_CHOICES)
+
+    def __str__(self):
+        return self.sectName
 
 
+class Saint(BaseModel):
+    GENDER_CHOICES = [
+        ('Male', 'Male'),
+        ('Female', 'Female')
+    ]
+    id = models.BigAutoField(primary_key=True)
+    name = models.CharField(max_length=30)
+    selectSect = models.ForeignKey(Sect, on_delete=models.CASCADE, related_name='select_sect')
+    fatherName = models.CharField(max_length=30)
+    motherName = models.CharField(max_length=30)
+    birthPlace = models.CharField(max_length=30)
+    dikshaPlace = models.CharField(max_length=30)
+    guruName = models.CharField(max_length=30)
+    dob = models.DateTimeField()
+    dikshaDate = models.DateField()
+    devlokDate = models.DateField(null=True, blank=True)
+    gender = models.CharField(max_length=10, choices=GENDER_CHOICES)
+    description = models.TextField(null=True, blank=True)
+    isVerified = models.BooleanField(default=False, verbose_name='status')
 
 
 

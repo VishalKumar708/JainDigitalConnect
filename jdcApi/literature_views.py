@@ -1,21 +1,22 @@
-from rest_framework.generics import ListAPIView
+from rest_framework.generics import *
 from rest_framework.views import APIView
 
-from .serializers import CREATEBusinessSerializer, UPDATEBusinessSerializer, GETBusinessSerializer, GETBusinessByIdSerializer
+from .serializers import GETLiteratureSerializer, GETLiteratureByIdSerializer, CREATELiteratureSerializer, UPDATELiteratureSerializer
 from rest_framework import status
 from rest_framework.response import Response
+from .models import Literature
 from rest_framework.permissions import IsAuthenticated
 from utils.get_id_by_token import get_user_id_from_token_view
-from .models import Business
 from django.db.models import Q
+from rest_framework.exceptions import ValidationError
+from django.http import Http404
 
+class GetAllApprovedLiterature(ListAPIView):
 
-class GetAllApprovedBusiness(ListAPIView):
-
-    serializer_class = GETBusinessSerializer
+    serializer_class = GETLiteratureSerializer
 
     def get_queryset(self):
-        return Business.objects.filter(isActive=True, isVerified=True).order_by('businessName')
+        return Literature.objects.filter(isActive=True, isVerified=True).order_by('title')
 
     def list(self, request, *args, **kwargs):
         try:
@@ -47,16 +48,16 @@ class GetAllApprovedBusiness(ListAPIView):
             return Response(response_data, status=500)
 
 
-class GetAllUnapprovedBusiness(ListAPIView):
-    serializer_class = GETBusinessSerializer
+class GetAllUnapprovedLiterature(ListAPIView):
+    serializer_class = GETLiteratureSerializer
     permission_classes = [IsAuthenticated]
+
     def get_queryset(self):
-        return Business.objects.filter(Q(isActive=False) | Q(isVerified=False)).order_by('businessName')
+        return Literature.objects.filter(Q(isActive=False) | Q(isVerified=False)).order_by('title')
 
     def list(self, request, *args, **kwargs):
         try:
             queryset = self.get_queryset()
-
             if len(queryset) == 0:
                 response_data = {
                     'statusCode': status.HTTP_200_OK,
@@ -83,19 +84,21 @@ class GetAllUnapprovedBusiness(ListAPIView):
             return Response(response_data, status=500)
 
 
-class GetBusinessById(APIView):
+class GetLiteratureById(APIView):
     permission_classes = [IsAuthenticated]
-    def get(self, request, businessId, *args, **kwargs):
+
+    def get(self, request, literatureId, *args, **kwargs):
         try:
-            if not businessId.isdigit():
+            if not literatureId.isdigit():
                 response_data = {
                     'statusCode': status.HTTP_400_BAD_REQUEST,
-                    'status': 'success',
-                    'data': {'businessId': [f"business Id must be 'int' but you got '{businessId}'."]}
+                    'status': 'failed',
+                    'data': {'literatureId': [f"business Id must be 'int' but you got '{literatureId}'."]}
                 }
                 return Response(response_data, status=400)
-            instance = Business.objects.get(businessId=businessId)
-            serializer = GETBusinessByIdSerializer(instance)
+
+            instance = Literature.objects.get(literatureId=literatureId)
+            serializer = GETLiteratureByIdSerializer(instance)
 
             response_data = {
                 'statusCode': status.HTTP_200_OK,
@@ -104,11 +107,11 @@ class GetBusinessById(APIView):
             }
             return Response(response_data)
 
-        except Business.DoesNotExist:
+        except Literature.DoesNotExist:
             response_data = {
                 'statusCode': status.HTTP_404_NOT_FOUND,
                 'status': 'failed',
-                'data': {'message': "Invalid BusinessId."}
+                'data': {'message': "Invalid literature id."}
             }
             return Response(response_data, status=404)
         except Exception as e:
@@ -120,33 +123,29 @@ class GetBusinessById(APIView):
             return Response(response_data, status=500)
 
 
-class CreateNewBusiness(APIView):
+class CreateNewLiterature(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
         try:
-            business_name = request.data.get('businessName')
-            user_id = request.data.get('userId')
-
-            # if business_name and user_id is not None
-            if business_name and user_id:
-                matching_business_count = Business.objects.filter(businessName__iexact=business_name, userId=user_id).count()
-                if matching_business_count > 0:
+            if request.data.get('title'):
+                matching_literature_count = Literature.objects.filter(title__iexact=request.data.get('title')).count()
+                if matching_literature_count > 0:
                     response_data = {
                         'statusCode': status.HTTP_302_FOUND,
                         'status': 'failed',
-                        'data': {'message': 'You had already added this business.'}
+                        'data': {'message': 'This literature is already exist.'}
                     }
                     return Response(response_data, status=302)
 
             get_user_id = get_user_id_from_token_view(request)
-            serializer = CREATEBusinessSerializer(data=request.data, context={'user_id_by_token': get_user_id})
+            serializer = CREATELiteratureSerializer(data=request.data, context={'user_id_by_token': get_user_id})
             if serializer.is_valid():
                 serializer.save()
                 response_data = {
                     'statusCode': status.HTTP_200_OK,
-                    'status': 'success',
-                    'data': {'message': 'New Business Added Successfully.'}
+                    'status': 'Success',
+                    'data': {'message': 'New literature added successfully.'}
                 }
                 return Response(response_data)
             response_data = {
@@ -154,62 +153,68 @@ class CreateNewBusiness(APIView):
                 'status': 'failed',
                 'data': serializer.errors
             }
-            return Response(response_data)
-
+            return Response(response_data, status=400)
         except Exception as e:
-            # Handle the case when request data is not valid
             response_data = {
                 'statusCode': status.HTTP_500_INTERNAL_SERVER_ERROR,
                 'status': 'error',
                 'data': {'error': str(e)},
             }
-            return Response(response_data, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response(response_data, status=500)
 
 
-class UpdateBusinessById(APIView):
+class UPDATELiterature(APIView):
     permission_classes = [IsAuthenticated]
 
-    def put(self, request, businessId, *args, **kwargs):
+    def put(self, request, literatureId, *args, **kwargs):
         try:
-            # check user provide value or not
-            if len(request.data) < 1:
-                serializer = UPDATEBusinessSerializer(data=request.data)
+
+            instance = Literature.objects.get(literatureId=literatureId)
+            if len(request.data) == 0:
+                serializer = UPDATELiteratureSerializer(data=request.data)
                 if not serializer.is_valid():
                     response_data = {
-                        'statusCode': status.HTTP_204_NO_CONTENT,
+                        'statusCode': status.HTTP_400_BAD_REQUEST,
                         'status': 'failed',
-                        'data': serializer.errors,
+                        'data': serializer.errors
                     }
-                    return Response(response_data, status=status.HTTP_204_NO_CONTENT)
+                    return Response(response_data, status=400)
 
-            instance = Business.objects.get(businessId=businessId)
+            literatureName = request.data.get('title')
+            get_literature_name = literatureName.strip() if literatureName else literatureName
+            matching_literature_counts = Literature.objects.filter(Q(title__iexact=get_literature_name), ~Q(literatureId=literatureId),).count()
+
+            if matching_literature_counts > 0:
+                json_data = {
+                    'statuscode': status.HTTP_302_FOUND,
+                    'status': 'failed',
+                    'message': {'msg': f"'{literatureName}' is already exists."},
+                }
+                return Response(json_data, status=status.HTTP_302_FOUND)
+
             get_user_id = get_user_id_from_token_view(request)
-            serializer = UPDATEBusinessSerializer(instance, data=request.data, partial=True, context={'user_id_by_token': get_user_id})
-
+            serializer = UPDATELiteratureSerializer(instance, data=request.data, partial=True, context={'user_id_by_token': get_user_id})
             if serializer.is_valid():
                 serializer.save()
                 response_data = {
                     'statusCode': status.HTTP_200_OK,
-                    'status': 'success',
-                    'data': {'message': 'Business updated successfully.'},
+                    'status': 'Success',
+                    'data': {'message': 'literature updated successfully.'}
                 }
                 return Response(response_data)
-
-            # Customize the response data if needed
             response_data = {
                 'statusCode': status.HTTP_400_BAD_REQUEST,
                 'status': 'failed',
-                'data': serializer.errors,
+                'data': serializer.errors
             }
-            return Response(response_data, status=400)
-
-        except Business.DoesNotExist:
+            return Response(response_data, status=404)
+        except Literature.DoesNotExist:
             response_data = {
-                'statusCode': status.HTTP_400_BAD_REQUEST,
+                'statusCode': status.HTTP_404_NOT_FOUND,
                 'status': 'failed',
-                'data': {'message': "Invalid Business Id."},
+                'data': {'message': "Invalid literature id."},
             }
-            return Response(response_data, status=400)
+            return Response(response_data, status=404)
         # except Exception as e:
         #     response_data = {
         #         'statusCode': status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -218,3 +223,4 @@ class UpdateBusinessById(APIView):
         #     }
         #     return Response(response_data, status=500)
 
+#

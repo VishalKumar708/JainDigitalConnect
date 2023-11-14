@@ -2,15 +2,18 @@ from django.conf import settings
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 from rest_framework import status
+# from collections import OrderedDict
 
 
 class CustomPagination(PageNumberPagination):
     page_size_query_param = 'page_size'  # Change the page size query parameter if needed
-    max_page_size = 100  # Set your maximum page size if needed
+    max_page_size = 30  # Set your maximum page size if needed
     page_query_param = 'page'
     # page_size = getattr(settings,  3)
     rest_framework_settings = getattr(settings, 'REST_FRAMEWORK', {})
     page_size = rest_framework_settings.get('PAGE_SIZE', 10)
+    # page_size = rest_framework_settings.get('PAGE_SIZE')
+
     # last_page_strings = 'end_page'
 
     def get_paginated_response(self, data):
@@ -36,7 +39,6 @@ class CustomPagination(PageNumberPagination):
                 'results': data,
             }
         })
-
 
 # from rest_framework.pagination import LimitOffsetPagination
 # from rest_framework.response import Response

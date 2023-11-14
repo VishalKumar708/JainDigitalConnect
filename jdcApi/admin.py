@@ -40,5 +40,20 @@ admin.site.register(Aarti, AartiAdmin)
 class BusinessAdmin(admin.ModelAdmin):
     list_display = ['businessId', 'userId', 'cityId', 'businessName','businessType','businessPhoneNumber', 'email', 'website', 'businessDescription', 'isVerified', 'isActive', 'groupId', 'createdBy', 'updatedBy', 'createdDate', 'updatedDate']
 
+
 admin.site.register(Business, BusinessAdmin)
+
+
+class SectAdmin(admin.ModelAdmin):
+    list_display = ['id', 'sectName']
+
+
+admin.site.register(Sect, SectAdmin)
+
+
+class SaintAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'selectSect', 'fatherName', 'motherName', 'birthPlace', 'dikshaPlace', 'guruName','dob', 'devlokDate', 'gender', 'description', 'isVerified']
+
+
+admin.site.register(Saint, SaintAdmin)
 
