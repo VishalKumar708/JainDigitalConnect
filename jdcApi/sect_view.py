@@ -31,7 +31,7 @@ class GETAllSect(ListAPIView):
         return Response(response_data)
 
 
-class GETAllSectWithCount(ListAPIView):
+class GETAllSectSaint(ListAPIView):
     """ Count 'Saint' by 'Sect' """
     serializer_class = GETAllSectWithCountSerializer
 

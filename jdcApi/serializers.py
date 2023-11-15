@@ -359,9 +359,9 @@ class GETAllSectSerializer(serializers.ModelSerializer):
 
 #                       ***********************             Saint Serializers             ****************************
 class CREATESaintSerializer(serializers.ModelSerializer):
-    dob = serializers.DateField(input_formats=['%B %d, %Y %I:%M %p'])
+    dob = serializers.DateField(input_formats=['%B %d, %Y %I:%M:%S %p'])
     dikshaDate = serializers.DateField(input_formats=['%B %d, %Y'])
-    devlokDate = serializers.DateField(input_formats=['%B %d, %Y'])
+    devlokDate = serializers.DateField(input_formats=['%B %d, %Y %I:%M:%S %p'])
 
     class Meta:
         model = Saint
@@ -398,9 +398,9 @@ class CREATESaintSerializer(serializers.ModelSerializer):
 
 
 class UPDATESaintSerializer(serializers.ModelSerializer):
-    dob = serializers.DateField(input_formats=['%B %d, %Y'])
+    dob = serializers.DateField(input_formats=['%B %d, %Y %I:%M:%S %p'])
     dikshaDate = serializers.DateField(input_formats=['%B %d, %Y'])
-    devlokDate = serializers.DateField(input_formats=['%B %d, %Y'])
+    devlokDate = serializers.DateField(input_formats=['%B %d, %Y %I:%M:%S %p'])
 
     class Meta:
         model = Saint

@@ -5,7 +5,7 @@ from .city_views import CreateNewCity, UpdateCityById, GetCityById, GetAllApprov
 from .area_views import CreateNewArea, UpdateAreaById, GetAllApprovedAreas, GetAllUnapprovedAreas, GetAreaById
 from .business_views import CreateNewBusiness, UpdateBusinessById, GetAllUnapprovedBusiness, GetBusinessById, GetAllApprovedBusiness
 from .literature_views import CreateNewLiterature, UPDATELiterature, GetLiteratureById, GetAllApprovedLiterature, GetAllUnapprovedLiterature
-from .sect_view import GETAllSect, GETAllSectWithCount
+from .sect_view import GETAllSect, GETAllSectSaint
 from .saint_views import POSTNewSaint, PUTSaintById, GETAllSaintsBySearchParam, GETSaintDetailById, GETAllActiveSaintBySectIdUsingSearchParam, GETAllAddAndApprovedSaint
 urlpatterns = [
     path('POSTNewState/', CreateNewState.as_view()),
@@ -46,8 +46,8 @@ urlpatterns = [
 
     #     Sect
     path('GETAllSect/', GETAllSect.as_view()),
-    #  for saint
-    path('GETAllSectWithCount/', GETAllSectWithCount.as_view()),
+    #  count for saint
+    path('GETAllSectSaint/', GETAllSectSaint.as_view()),
 
     #     Saint
     # create new saint

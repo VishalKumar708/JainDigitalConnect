@@ -116,7 +116,7 @@ class Saint(BaseModel):
     guruName = models.CharField(max_length=30)
     dob = models.DateTimeField()
     dikshaDate = models.DateField()
-    devlokDate = models.DateField(null=True, blank=True)
+    devlokDate = models.DateTimeField(null=True, blank=True)
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES)
     description = models.TextField(null=True, blank=True)
     isVerified = models.BooleanField(default=False, verbose_name='status')

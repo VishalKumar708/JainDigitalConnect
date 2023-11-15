@@ -12888,3 +12888,23 @@ WARNING 2023-11-14 16:43:02,034  241 Not Found: /api/GETSaintDetailById/sfds/
 WARNING 2023-11-14 16:43:02,037  212 "GET /api/GETSaintDetailById/sfds/ HTTP/1.1" 404 100
 INFO 2023-11-14 16:47:23,225  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\auth_api\settings.py changed, reloading.
 INFO 2023-11-14 16:47:24,526  668 Watching for file changes with StatReloader
+INFO 2023-11-15 10:37:49,517  668 Watching for file changes with StatReloader
+WARNING 2023-11-15 10:37:56,431  241 Not Found: /
+WARNING 2023-11-15 10:37:56,486  212 "GET / HTTP/1.1" 404 78
+INFO 2023-11-15 10:38:02,806  212 "GET /admin/ HTTP/1.1" 200 14412
+WARNING 2023-11-15 10:38:03,056  241 Not Found: /favicon.ico
+WARNING 2023-11-15 10:38:03,057  212 "GET /favicon.ico HTTP/1.1" 404 78
+INFO 2023-11-15 10:38:35,033  212 "GET /admin/jdcApi/saint/ HTTP/1.1" 200 19843
+INFO 2023-11-15 10:38:35,261  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-11-15 11:02:14,902  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-11-15 11:02:16,540  668 Watching for file changes with StatReloader
+INFO 2023-11-15 11:50:51,347  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\sect_view.py changed, reloading.
+INFO 2023-11-15 11:50:53,081  668 Watching for file changes with StatReloader
+INFO 2023-11-15 12:18:51,273  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-11-15 12:18:52,769  668 Watching for file changes with StatReloader
+INFO 2023-11-15 12:19:09,251  668 Watching for file changes with StatReloader
+INFO 2023-11-15 12:19:25,123  668 Watching for file changes with StatReloader
+INFO 2023-11-15 12:21:37,028  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\serializers.py changed, reloading.
+INFO 2023-11-15 12:21:38,344  668 Watching for file changes with StatReloader
+WARNING 2023-11-15 12:41:53,703  241 Bad Request: /registerHead/
+WARNING 2023-11-15 12:41:53,704  212 "POST /registerHead/ HTTP/1.1" 400 77
