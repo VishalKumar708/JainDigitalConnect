@@ -3,7 +3,7 @@ from .serializers import CREATESaintSerializer, UPDATESaintSerializer, GETAllSai
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from utils.get_id_by_token import get_user_id_from_token_view
-from .models import Saint, Sect
+from .models import Saint, MstSect
 from accounts.pagination import CustomPagination
 import logging
 error_logger = logging.getLogger('error')
@@ -34,6 +34,12 @@ class POSTNewSaint(APIView):
             return Response(response_data, status=400)
         except Exception as e:
             error_logger.error(f'An Exception occured while creating new saint {e}')
+            response_data = {
+                'status': 500,
+                'statusCode': 'error',
+                'data': {'error': "Internal Server error."}
+            }
+            return Response(response_data, status=500)
 
 
 class PUTSaintById(APIView):
@@ -43,7 +49,6 @@ class PUTSaintById(APIView):
         try:
             saint_obj = Saint.objects.get(id=id)
             get_user_id = get_user_id_from_token_view(request)
-            # print('get_user_id==> ', get_user_id)
             serializer = UPDATESaintSerializer(data=request.data, instance=saint_obj, partial=True, context={'user_id_by_token': get_user_id})
             if serializer.is_valid():
                 serializer.save()
@@ -70,6 +75,12 @@ class PUTSaintById(APIView):
             return Response(response_data, status=404)
         except Exception as e:
             error_logger.error(f'An Exception occured while updating new saint {e}')
+            response_data = {
+                'status': 500,
+                'statusCode': 'error',
+                'data': {'error': "Internal Server error."}
+            }
+            return Response(response_data, status=500)
 
 
 # for search
@@ -80,12 +91,12 @@ class GETAllSaintsBySearchParam(APIView):
         """ Search saint in specific sect by 'search' param"""
 
         try:
-            Sect.objects.get(id=sectId)
+            MstSect.objects.get(id=sectId)
             search_param = request.GET.get('search')
             if search_param:
-                queryset = Saint.objects.filter(isVerified=True, selectSect=sectId, name__icontains=search_param.strip()).order_by('name')
+                queryset = Saint.objects.filter(isVerified=True, sectId=sectId, name__icontains=search_param.strip()).order_by('name')
             else:
-                queryset = Saint.objects.filter(isVerified=True, selectSect=sectId).order_by('name')
+                queryset = Saint.objects.filter(isVerified=True, sectId=sectId).order_by('name')
 
             if len(queryset) < 1:
                 response_data = {
@@ -107,7 +118,7 @@ class GETAllSaintsBySearchParam(APIView):
                     'data': serializer.data
                 }
             return Response(response_data)
-        except Sect.DoesNotExist:
+        except MstSect.DoesNotExist:
             response_data = {
                 'status': 404,
                 'statusCode': 'failed',
@@ -124,7 +135,12 @@ class GETAllSaintsBySearchParam(APIView):
             return Response(response_data, status=400)
         except Exception as e:
             error_logger.error(f'An Exception occured while searching saint by name {e}')
-
+            response_data = {
+                'status': 500,
+                'statusCode': 'error',
+                'data': {'error': "Internal Server error."}
+            }
+            return Response(response_data, status=500)
 
 class GETAllActiveSaintBySectIdUsingSearchParam(APIView):
     pagination_class = CustomPagination
@@ -132,11 +148,11 @@ class GETAllActiveSaintBySectIdUsingSearchParam(APIView):
     def get(self, request, sectId, *args, **kwargs):
         search_param = request.GET.get('gender')
         try:
-            Sect.objects.get(id=sectId)
+            MstSect.objects.get(id=sectId)
             if search_param:
-                queryset = Saint.objects.filter(selectSect=sectId, gender=search_param.strip().capitalize(), isVerified=True).order_by('name')
+                queryset = Saint.objects.filter(sectId=sectId, gender=search_param.strip().capitalize(), isVerified=True).order_by('name')
             else:
-                queryset = Saint.objects.filter(selectSect=sectId, isVerified=True).order_by('name')
+                queryset = Saint.objects.filter(sectId=sectId, isVerified=True).order_by('name')
             if len(queryset) < 1:
                 response_data = {
                     'status': 200,
@@ -159,7 +175,7 @@ class GETAllActiveSaintBySectIdUsingSearchParam(APIView):
             }
             return Response(response_data)
 
-        except Sect.DoesNotExist:
+        except MstSect.DoesNotExist:
             response_data = {
                 'status': 404,
                 'statusCode': 'failed',
@@ -175,6 +191,12 @@ class GETAllActiveSaintBySectIdUsingSearchParam(APIView):
             return Response(response_data,status=404)
         except Exception as e:
             error_logger.error(f'An Exception occured while searching saint by gender {e}')
+            response_data = {
+                'status': 500,
+                'statusCode': 'error',
+                'data': {'error': "Internal Server error."}
+            }
+            return Response(response_data, status=500)
 
 
 class GETAllAddAndApprovedSaint(APIView):
@@ -230,7 +252,12 @@ class GETAllAddAndApprovedSaint(APIView):
                 return Response(response_data, status=400)
         except Exception as e:
             error_logger.error(f'An Exception occured while fetching data in "GETAllAddAndApprovedSaint" api view. {e}')
-
+            response_data = {
+                'status': 500,
+                'statusCode': 'error',
+                'data': {'error': "Internal Server error."}
+            }
+            return Response(response_data, status=500)
 
 class GETSaintDetailById(APIView):
 
@@ -262,5 +289,9 @@ class GETSaintDetailById(APIView):
             return Response(response_data, status=404)
         except Exception as e:
             error_logger.error(f'An Exception occured while fetching individual saint record. {e}')
-
-
+            response_data = {
+                'status': 500,
+                'statusCode': 'error',
+                'data': {'error': "Internal Server error."}
+            }
+            return Response(response_data, status=500)

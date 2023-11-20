@@ -75,3 +75,193 @@ ERROR 2023-11-14 15:57:54,976  30 Invalid URL.
 ERROR 2023-11-14 16:01:59,823  30 Invalid URL.
 ERROR 2023-11-15 10:37:56,428  30 Invalid URL.
 ERROR 2023-11-15 10:38:03,054  30 Invalid URL.
+ERROR 2023-11-15 13:31:45,122  30 Invalid URL.
+ERROR 2023-11-15 13:31:49,397  30 Invalid URL.
+ERROR 2023-11-16 11:21:56,244  139 While converting dob to object an Exception occur == > time data 'May 9, 2005' does not match format '%B %d %Y' 
+ERROR 2023-11-16 11:26:53,203  139 While converting dob to object an Exception occur == > time data 'May 9, 2005' does not match format '%B %d %Y' 
+ERROR 2023-11-16 11:27:03,971  139 While converting dob to object an Exception occur == > time data 'May 9, 2005' does not match format '%B %d %Y' 
+ERROR 2023-11-16 11:28:11,722  139 While converting dob to object an Exception occur == > time data 'May 9, 2005' does not match format '%B %d %Y' 
+ERROR 2023-11-16 12:50:42,328  36 An Exception occured while creating new Blood Group Field name `description` is not valid for model `MstBloodGroup`.
+ERROR 2023-11-16 13:24:55,007  107 Invalid BloodGroup Id. While fetching record.
+ERROR 2023-11-16 13:25:02,278  110 An Exception occured while fetching data from blood Group. Field 'id' expected a number but got 'sdf'.
+ERROR 2023-11-16 13:33:37,655  132 An Exception occured while fetching all bloodGroup names from blood Group table. Got AttributeError when attempting to get a value for field `bloodGroupName` on serializer `GETBloodGroupByIdSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
+Original exception text was: 'QuerySet' object has no attribute 'bloodGroupName'.
+ERROR 2023-11-16 13:34:36,932  132 An Exception occured while fetching all bloodGroup names from blood Group table. Got AttributeError when attempting to get a value for field `bloodGroupName` on serializer `GETAllBloodGroupSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
+Original exception text was: 'QuerySet' object has no attribute 'bloodGroupName'.
+ERROR 2023-11-16 13:35:26,186  132 An Exception occured while fetching all bloodGroup names from blood Group table. Got AttributeError when attempting to get a value for field `bloodGroupName` on serializer `GETAllBloodGroupSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
+Original exception text was: 'QuerySet' object has no attribute 'bloodGroupName'.
+ERROR 2023-11-16 13:36:29,968  133 An Exception occured while fetching all bloodGroup names from blood Group table. Got AttributeError when attempting to get a value for field `bloodGroupName` on serializer `GETAllBloodGroupSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
+Original exception text was: 'QuerySet' object has no attribute 'bloodGroupName'.
+ERROR 2023-11-16 13:38:05,018  133 An Exception occured while fetching all bloodGroup names from blood Group table. Got AttributeError when attempting to get a value for field `bloodGroupName` on serializer `GETAllBloodGroupSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
+Original exception text was: 'QuerySet' object has no attribute 'bloodGroupName'.
+ERROR 2023-11-16 13:38:38,125  133 An Exception occured while fetching all bloodGroup names from blood Group table. Got AttributeError when attempting to get a value for field `bloodGroupName` on serializer `GETAllBloodGroupSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
+Original exception text was: 'QuerySet' object has no attribute 'bloodGroupName'.
+ERROR 2023-11-16 13:40:51,955  133 An Exception occured while fetching all bloodGroup names from blood Group table. Got AttributeError when attempting to get a value for field `order` on serializer `GETAllBloodGroupSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
+Original exception text was: 'QuerySet' object has no attribute 'order'.
+ERROR 2023-11-16 14:40:42,544  36 An Exception occured while creating new Blood Group Cannot resolve keyword 'bloodGroupName' into field. Choices are: createdBy, createdDate, groupId, id, isActive, sectName, select_sect, updatedBy, updatedDate
+ERROR 2023-11-16 15:43:58,606  36 An Exception occured while creating new MaritalStatus Cannot resolve keyword 'maritalStatusName' into field. Choices are: bloodGroupName, createdBy, createdDate, groupId, id, isActive, order, updatedBy, updatedDate
+ERROR 2023-11-16 15:49:21,837  74 Invalid MaritalStatus Id. While updating record.
+ERROR 2023-11-16 15:51:47,841  77 An Exception occured while updating "MaritalStatus" Record. Field 'id' expected a number but got 'afds'.
+ERROR 2023-11-16 15:52:29,336  77 An Exception occured while updating "MaritalStatus" Record. Cannot resolve keyword 'maritalStatusName' into field. Choices are: bloodGroupName, createdBy, createdDate, groupId, id, isActive, order, updatedBy, updatedDate
+ERROR 2023-11-16 16:14:18,265  105 Invalid MaritalStatus Id. While fetching record.
+ERROR 2023-11-16 16:14:25,072  108 An Exception occured while fetching data from MaritalStatus. Field 'id' expected a number but got 'aksd'.
+ERROR 2023-11-16 16:15:25,336  168 An Exception occured while fetching all MaritalStatus names from MstMaritalStatus table. Got AttributeError when attempting to get a value for field `bloodGroupName` on serializer `GETAllMaritalStatusForDropDownSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `MstMaritalStatus` instance.
+Original exception text was: 'MstMaritalStatus' object has no attribute 'bloodGroupName'.
+ERROR 2023-11-16 16:15:51,589  168 An Exception occured while fetching all MaritalStatus names from MstMaritalStatus table. Field name `bloodGroupName` is not valid for model `MstMaritalStatus`.
+ERROR 2023-11-16 17:15:37,421  73 Invalid Relation Id. While updating record.
+ERROR 2023-11-16 17:15:44,194  76 An Exception occured while updating "Relation" Record. Field 'id' expected a number but got 'afds'.
+ERROR 2023-11-16 17:20:00,188  104 Invalid MaritalStatus Id. While fetching record.
+ERROR 2023-11-16 17:20:03,490  107 An Exception occured while fetching data from MaritalStatus. Field 'id' expected a number but got 'sfads'.
+ERROR 2023-11-16 17:20:08,845  107 An Exception occured while fetching data from MaritalStatus. Field 'id' expected a number but got '10adsfdaf'.
+ERROR 2023-11-17 10:14:11,133  30 Invalid URL.
+ERROR 2023-11-17 10:14:15,468  30 Invalid URL.
+ERROR 2023-11-17 10:40:56,685  73 Invalid Profession Id. While updating record.
+ERROR 2023-11-17 10:41:05,315  76 An Exception occured while updating "Profession" Record. Field 'id' expected a number but got 'hghj'.
+ERROR 2023-11-17 10:53:46,581  113 Invalid MaritalStatus Id. While fetching record.
+ERROR 2023-11-17 11:38:54,910  64 An Exception occured while creating new Sect Field name `sectNameorder` is not valid for model `Sect`.
+ERROR 2023-11-17 11:40:59,687  30 Invalid URL.
+ERROR 2023-11-17 11:44:20,693  103 Invalid Sect Id. While updating record.
+ERROR 2023-11-17 11:44:29,039  103 Invalid Sect Id. While updating record.
+ERROR 2023-11-17 11:51:05,912  142 Invalid MaritalStatus Id. While fetching record.
+ERROR 2023-11-17 11:52:28,471  182 An Exception occured while fetching all Sect names from MstSect table. Field name `sectName` is not valid for model `MstProfession`.
+ERROR 2023-11-17 12:11:21,002  184 An Exception occured while fetching all Sect names from MstSect table. name 'Sect' is not defined
+ERROR 2023-11-17 12:40:19,535  44 Unsupported Media Type. Expected application/json but got text/plain
+ERROR 2023-11-17 12:58:40,367  36 An Exception occured while creating new saint Field name `SectId` is not valid for model `Saint`.
+ERROR 2023-11-17 13:49:16,726  36 An Exception occured while creating new saint cannot unpack non-iterable NoneType object
+ERROR 2023-11-17 13:49:33,469  36 An Exception occured while creating new saint too many values to unpack (expected 2)
+ERROR 2023-11-17 14:17:00,080  30 Invalid URL.
+ERROR 2023-11-17 14:17:13,271  192 An Exception occured while searching saint by gender Cannot resolve keyword 'selectSect' into field. Choices are: birthPlace, createdBy, createdDate, description, devlokDate, dikshaDate, dikshaPlace, dob, fatherName, gender, groupId, guruName, id, isActive, isVerified, motherName, name, sectId, sectId_id, updatedBy, updatedDate
+ERROR 2023-11-17 14:21:20,458  30 Invalid URL.
+ERROR 2023-11-17 14:37:05,768  36 An Exception occured while creating new saint 'name'
+ERROR 2023-11-17 14:53:43,329  36 An Exception occured while creating new saint 'name'
+ERROR 2023-11-17 14:53:58,957  36 An Exception occured while creating new saint 'name'
+ERROR 2023-11-17 15:01:34,588  36 An Exception occured while creating new saint 'list' object has no attribute 'items'
+ERROR 2023-11-17 16:39:35,318  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 16:39:47,371  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 16:39:49,788  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 16:40:25,279  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 16:41:25,058  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 16:46:17,339  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 16:46:43,806  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 16:46:57,097  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 16:46:59,216  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 16:47:18,991  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 16:49:45,336  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 16:50:01,009  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 16:51:35,325  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 16:55:27,946  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 16:56:59,386  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 16:58:40,029  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 17:00:11,641  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 17:00:59,836  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 17:01:08,145  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 17:01:39,810  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 17:01:51,965  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 17:02:10,159  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 17:04:01,684  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 17:04:18,748  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 17:04:26,626  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 17:04:42,083  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 17:10:32,806  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 17:10:50,920  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 17:11:30,347  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 17:11:50,238  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 17:12:47,333  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 17:13:10,898  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 17:20:12,337  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 17:20:14,605  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 17:21:05,686  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 17:21:40,212  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 17:22:38,176  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 17:22:51,306  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-17 17:23:33,255  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 10:15:34,348  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 10:19:33,736  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 10:22:02,939  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 10:22:39,177  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 10:25:11,140  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 10:25:21,698  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 10:28:04,090  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 10:33:08,785  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 10:37:01,588  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 10:37:26,060  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 10:42:38,573  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 10:48:58,019  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 10:50:09,444  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 10:51:51,877  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 10:52:29,285  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 10:54:26,252  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 10:57:49,151  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 11:01:42,263  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 11:02:20,057  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 11:02:36,252  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 11:03:58,567  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 11:04:43,020  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 11:05:03,616  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 11:05:34,509  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 11:10:57,235  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 11:11:08,772  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 11:12:57,530  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 11:13:14,508  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 11:16:47,374  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 11:18:30,535  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 11:18:51,690  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 11:22:41,198  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 11:31:04,965  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 11:32:26,266  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 11:32:31,991  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 11:34:03,469  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 11:34:14,320  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 12:07:31,346  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 12:07:52,891  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 12:09:52,004  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 12:13:08,940  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 12:14:05,858  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 12:30:18,447  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 12:30:28,911  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 12:32:14,147  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 12:57:37,443  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 12:57:51,753  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 13:03:15,250  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 13:06:05,029  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 13:06:50,336  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 13:07:14,785  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 13:07:23,115  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 13:07:30,670  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 13:07:44,962  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 13:08:26,309  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 13:09:14,175  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 14:32:32,926  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 14:34:29,128  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 14:42:37,088  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 14:46:17,167  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 14:53:38,603  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 14:55:53,132  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 15:01:14,193  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 15:02:27,598  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 15:02:42,468  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 15:05:22,004  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 15:05:33,048  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-11-18 16:09:24,993  397 An exception occurred in "GetAllResidents" class. Field name `address` is not valid for model `User`.
+ERROR 2023-11-18 16:09:57,039  397 An exception occurred in "GetAllResidents" class. strptime() argument 1 must be str, not None
+ERROR 2023-11-18 16:42:45,400  178 Head not found or Invalid headId.
+ERROR 2023-11-18 16:47:04,428  184 'headId' excepted a number but got 'aad'.
+ERROR 2023-11-18 16:48:46,495  165 'headId' excepted a number but got 'aad'.
+ERROR 2023-11-18 16:49:31,219  157 Head not found or Invalid headId.
+ERROR 2023-11-20 10:24:23,553  30 Invalid URL.
+ERROR 2023-11-20 10:37:44,349  434 user_id = 100 failed to retrieve data.
+ERROR 2023-11-20 10:38:16,469  434 user_id = 100 failed to retrieve data.
+ERROR 2023-11-20 11:27:10,556  30 Invalid URL.
+ERROR 2023-11-20 11:27:15,814  30 Invalid URL.
+ERROR 2023-11-20 11:50:16,495  58 Invalid JSON data.Expecting ',' delimiter: line 14 column 15 (char 129)
+ERROR 2023-11-20 12:00:49,188  260 user_id = 1000 doesn't exist.
+ERROR 2023-11-20 13:18:06,656  30 Invalid URL.
+ERROR 2023-11-20 15:21:25,953  436 user_id = 17 failed to retrieve data.

@@ -7,11 +7,11 @@ from .serializers import GETCitySerializer, CREATECitySerializer, GetAllAreaByCi
     GetAllBusinessByCitySerializer, GETCityByCityIdSerializer, UPDATECitySerializer
 from rest_framework import status
 from rest_framework.response import Response
-from .models import City, Business
+from .models import City
 
 from .models import State
 from utils.get_id_by_token import get_user_id_from_token_view
-from utils.permission import IsOwnerOrReadOnly
+
 
 
 class GetAllApprovedCity(ListAPIView):

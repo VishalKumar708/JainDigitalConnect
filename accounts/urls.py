@@ -1,5 +1,5 @@
 from django.urls import path
-from .user_views import RegisterHead, RegisterMember, GETFamilyByHeadId, IsUserExist, DeleteMember, UpdateUserById, GetAllResidents, GETUserById
+from .user_views import RegisterHead, RegisterMember, GETFamilyByHeadId, IsNumberExist, DeleteMemberById, UpdateUserById, GetAllResidents, GETUserDetailsById
 from .auth_view import SendOTPWithNumber, VerifyOTP
 from .push_notification import CreateNewNotification
 
@@ -15,28 +15,28 @@ urlpatterns = [
     path('verifyOTP/', VerifyOTP.as_view()),
 
     # to create a new 'Head' (POST)
-    path('registerHead/', RegisterHead.as_view()),
+    path('registerHead/', RegisterHead.as_view()),  # correct
 
     # to create a new 'member' (POST)
-    path('registerMember/', RegisterMember.as_view()),
+    path('registerMember/', RegisterMember.as_view()),  # correct
 
     # to get all members by headId (GET)
-    path('GETFamilyByHeadId/<slug:head_id>/', GETFamilyByHeadId.as_view()),
+    path('GETFamilyByHeadId/<slug:head_id>/', GETFamilyByHeadId.as_view()),  # correct
 
     # to check Number exist or not (POST)
-    path('checkNumberExist/', IsUserExist.as_view()),
+    path('checkNumberExist/', IsNumberExist.as_view()),  # correct --
 
-    # to delete member by 'id' (GET)
-    path('DELETEMember/<slug:member_id>/', DeleteMember.as_view()),
+    # to delete member by 'id'
+    path('DELETEMemberById/<slug:user_id>/', DeleteMemberById.as_view()),  # correct
 
     # to update member by 'id' (GET)
-    path('UPDATEUserById/<slug:member_id>/', UpdateUserById.as_view()),
+    path('UPDATEUserById/<slug:user_id>/', UpdateUserById.as_view()),  # correct
 
     # to get all residents (GET)
-    path('GETAllResidents/', GetAllResidents.as_view()),
+    path('GETAllResidents/', GetAllResidents.as_view()),  # correct
 
     # to get data by 'id' (GET)
-    path('GETUserById/<slug:user_id>/', GETUserById.as_view()),
+    path('GETUserDetailsById/<slug:user_id>/', GETUserDetailsById.as_view()),  # correct
 
     # to create new notification (POST)
     path('POSTNewNotification/', CreateNewNotification.as_view()),

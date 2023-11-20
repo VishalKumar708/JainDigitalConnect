@@ -120,7 +120,7 @@ def is_applicable_for_matrimonial(birthdate_str, gender):
     """ to check user is applicable for matrimonial or not"""
     # Convert the input date string to a datetime object
     try:
-        birthdate = datetime.strptime(birthdate_str.strip(), '%B %d %Y')
+        birthdate = datetime.strptime(birthdate_str.strip(), '%B %d, %Y')
 
         # Get the current date
         current_date = datetime.now()
@@ -129,16 +129,16 @@ def is_applicable_for_matrimonial(birthdate_str, gender):
         age = current_date.year - birthdate.year - (
                     (current_date.month, current_date.day) < (birthdate.month, birthdate.day))
 
-        if gender.lower().strip() == 'male' and age < 21:
+        if gender.strip().lower() == 'male' and age < 21:
             # print("your gender==>",gender.lower().strip() )
             return False, 'Sorry! Your age is less then 21. So You are not eligible for matrimonial'
-        elif gender.lower().strip() == 'female' and age < 18:
+        elif gender.strip().lower() == 'female' and age < 18:
             return False, 'Sorry! Your age is less then 18. So You are not eligible for matrimonial'
         return True, " "
     except Exception as e:
         error_logger.error("While converting dob to object an Exception occur == > %s ", e)
         print('failed===> ', e)
-        return False, " "
+        return False, str(e)
     # return age
 
 

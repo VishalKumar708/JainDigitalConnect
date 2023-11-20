@@ -3,8 +3,8 @@ from .models import User, OTP, Notification, NotificationHistory
 
 
 class UserAdmin(admin.ModelAdmin):
-    list_display = ['id', 'headId', 'name',  'relationWithHead', 'phoneNumber', 'maritalStatus', 'lookingForMatch', 'sect',
-                  'profession', 'bloodGroup', 'isAdmin', 'dob', 'nativePlace', 'gotra', 'phoneNumberVisibility', 'gender','createdBy', 'updatedBy']
+    list_display = ['id', 'headId', 'name',  'relationId', 'phoneNumber', 'maritalStatusId', 'lookingForMatch', 'sectId',
+                  'professionId', 'bloodGroupId', 'isAdmin', 'dob', 'nativePlace', 'gotra', 'phoneNumberVisibility', 'gender','createdBy', 'updatedBy']
 
 
 admin.site.register(User, UserAdmin)

@@ -44,16 +44,43 @@ class BusinessAdmin(admin.ModelAdmin):
 admin.site.register(Business, BusinessAdmin)
 
 
-class SectAdmin(admin.ModelAdmin):
-    list_display = ['id', 'sectName']
+class MstSectAdmin(admin.ModelAdmin):
+    list_display = ['id', 'sectName', 'isActive']
 
 
-admin.site.register(Sect, SectAdmin)
+admin.site.register(MstSect, MstSectAdmin)
 
 
 class SaintAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'selectSect', 'fatherName', 'motherName', 'birthPlace', 'dikshaPlace', 'guruName','dob', 'devlokDate', 'gender', 'description', 'isVerified']
+    list_display = ['id', 'name', 'sectId', 'fatherName', 'motherName', 'birthPlace', 'dikshaPlace', 'guruName','dob', 'devlokDate', 'gender', 'description', 'isVerified']
 
 
 admin.site.register(Saint, SaintAdmin)
 
+
+class MstBloodGroupAdmin(admin.ModelAdmin):
+    list_display = ['id', 'bloodGroupName', 'order', 'isActive']
+
+
+admin.site.register(MstBloodGroup, MstBloodGroupAdmin)
+
+
+class MstMaritalStatusAdmin(admin.ModelAdmin):
+    list_display = ['id', 'maritalStatusName',  'order', 'isActive']
+
+
+admin.site.register(MstMaritalStatus, MstMaritalStatusAdmin)
+
+
+class MstRelationAdmin(admin.ModelAdmin):
+    list_display = ['id', 'description', 'order', 'isActive']
+
+
+admin.site.register(MstRelation,MstRelationAdmin)
+
+
+class MstProfessionAdmin(admin.ModelAdmin):
+    list_display = ['id', 'description', 'order', 'isActive']
+
+
+admin.site.register(MstProfession, MstProfessionAdmin)

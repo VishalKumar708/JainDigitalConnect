@@ -5,8 +5,13 @@ from .city_views import CreateNewCity, UpdateCityById, GetCityById, GetAllApprov
 from .area_views import CreateNewArea, UpdateAreaById, GetAllApprovedAreas, GetAllUnapprovedAreas, GetAreaById
 from .business_views import CreateNewBusiness, UpdateBusinessById, GetAllUnapprovedBusiness, GetBusinessById, GetAllApprovedBusiness
 from .literature_views import CreateNewLiterature, UPDATELiterature, GetLiteratureById, GetAllApprovedLiterature, GetAllUnapprovedLiterature
-from .sect_view import GETAllSect, GETAllSectSaint
+from .mst_sect_view import POSTSect, PUTSectById, GETAllSectForDropDown, GETSectDetailById, GETAllSect,  GETAllSectSaint
 from .saint_views import POSTNewSaint, PUTSaintById, GETAllSaintsBySearchParam, GETSaintDetailById, GETAllActiveSaintBySectIdUsingSearchParam, GETAllAddAndApprovedSaint
+from .mst_blood_group_views import POSTNewBloodGroup, PUTBloodGroupById, GETBloodGroupDetailById, GETAllBloodGroup, GETAllBloodGroupForDropDown
+from .mst_marital_status import POSTMaritalStatus, PUTMaritalStatusById, GETMaritalStatusDetailById, GETAllMaritalStatus, GETAllMaritalStatusForDropDown
+from .mst_relation_views import POSTRelation, PUTRelationById, GETRelationDetailById, GETAllRelation, GETAllRelationForDropDown
+from .mst_profession_views import POSTProfession, PUTProfessionById, GETProfessionDetailById, GETAllProfession, GETAllProfessionForDropDown
+
 urlpatterns = [
     path('POSTNewState/', CreateNewState.as_view()),
     path('PUTStateById/<slug:stateId>/', UpdateStateById.as_view()),
@@ -44,8 +49,8 @@ urlpatterns = [
     path('GETAllUnapprovedLiterature/', GetAllUnapprovedLiterature.as_view()),
     path('GETLiteratureById/<slug:literatureId>/', GetLiteratureById.as_view()),
 
-    #     Sect
-    path('GETAllSect/', GETAllSect.as_view()),
+
+
     #  count for saint
     path('GETAllSectSaint/', GETAllSectSaint.as_view()),
 
@@ -61,6 +66,42 @@ urlpatterns = [
     # it takes sectId and 'gender' param
     path('GETAllActiveSaintBySectId/<slug:sectId>/', GETAllActiveSaintBySectIdUsingSearchParam.as_view()),
     #  for admin, it takes one parameter 'status'
-    path('GETAllAddAndApprovedSaint/', GETAllAddAndApprovedSaint.as_view())
+    path('GETAllAddAndApprovedSaint/', GETAllAddAndApprovedSaint.as_view()),
+
+    #     Sect
+    path('POSTSect/', POSTSect.as_view()),
+    path('PUTSectById/<slug:id>/', PUTSectById.as_view()),
+    path('GETSectDetailById/<slug:id>/', GETSectDetailById.as_view()),
+    path('GETAllSect/', GETAllSect.as_view()),
+    path('GETAllSectForDropDown/', GETAllSectForDropDown.as_view()),
+
+    # Blood Group
+    path('POSTNewBloodGroup/', POSTNewBloodGroup.as_view()),
+    path('PUTBloodGroupById/<slug:id>/', PUTBloodGroupById.as_view()),
+    path('GETBloodGroupDetailById/<slug:id>/', GETBloodGroupDetailById.as_view()),
+    path('GETAllBloodGroups/', GETAllBloodGroup.as_view()),
+    path('GETAllBloodGroupForDropDown/', GETAllBloodGroupForDropDown.as_view()),
+
+    # MaritalStatus
+    path('POSTMaritalStatus/', POSTMaritalStatus.as_view()),
+    path('PUTMaritalStatusById/<slug:id>/', PUTMaritalStatusById.as_view()),
+    path('GETMaritalStatusDetailById/<slug:id>/', GETMaritalStatusDetailById.as_view()),
+    path('GETAllMaritalStatus/', GETAllMaritalStatus.as_view()),
+    path('GETAllMaritalStatusForDropDown/', GETAllMaritalStatusForDropDown.as_view()),
+
+    # Relation
+    path('POSTRelation/', POSTRelation.as_view()),
+    path('PUTRelationById/<slug:id>/', PUTRelationById.as_view()),
+    path('GETRelationDetailsById/<slug:id>/', GETRelationDetailById.as_view()),
+    path('GETAllRelation/', GETAllRelation.as_view()),
+    path('GETAllRelationForDropDown/', GETAllRelationForDropDown.as_view()),
+
+    # Profession
+    path('POSTProfession/', POSTProfession.as_view()),
+    path('PUTProfessionById/<slug:id>/', PUTProfessionById.as_view()),
+    path('GETProfessionDetailsById/<slug:id>/', GETProfessionDetailById.as_view()),
+    path('GETAllProfession/', GETAllProfession.as_view()),
+    path('GETAllProfessionForDropDown/', GETAllProfessionForDropDown.as_view()),
+
 ]
 

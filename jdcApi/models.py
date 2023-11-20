@@ -1,5 +1,6 @@
 
 from django.db import models
+from django.utils import timezone
 
 
 class BaseModel(models.Model):
@@ -68,6 +69,7 @@ class Aarti(BaseModel, models.Model):
 
 from accounts.models import User
 
+
 class Business(BaseModel):
     businessId = models.AutoField(primary_key=True)
     cityId = models.ForeignKey(City, on_delete=models.CASCADE, related_name='GetAllBusinessByCityId')
@@ -86,16 +88,10 @@ class Business(BaseModel):
         return self.businessName
 
 
-class Sect(BaseModel):
-    SECT_CHOICES = [
-        ('Digambar', 'Digambar'),
-        ('Terapanthi', 'Terapanthi'),
-        ('Svetambar', 'Svetambar'),
-        ('Murtipujaka', 'Murtipujaka'),
-    ]
-
+class MstSect(BaseModel):
     id = models.AutoField(primary_key=True)
-    sectName = models.CharField(max_length=20, choices=SECT_CHOICES)
+    sectName = models.CharField(max_length=20, unique=True)
+    order = models.IntegerField()
 
     def __str__(self):
         return self.sectName
@@ -108,7 +104,7 @@ class Saint(BaseModel):
     ]
     id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=30)
-    selectSect = models.ForeignKey(Sect, on_delete=models.CASCADE, related_name='select_sect')
+    sectId = models.ForeignKey(MstSect, on_delete=models.CASCADE, related_name='select_sect')
     fatherName = models.CharField(max_length=30)
     motherName = models.CharField(max_length=30)
     birthPlace = models.CharField(max_length=30)
@@ -121,6 +117,35 @@ class Saint(BaseModel):
     description = models.TextField(null=True, blank=True)
     isVerified = models.BooleanField(default=False, verbose_name='status')
 
+    def save(self, *args, **kwargs):
+        # Set the time zone here before saving
+        self.dob = timezone.now()
+        super().save(*args, **kwargs)
+
+#  Master tables
+
+class MstBloodGroup(BaseModel):
+    id = models.BigAutoField(primary_key=True)
+    bloodGroupName = models.CharField(max_length=7, unique=True)
+    order = models.IntegerField()
+
+
+class MstMaritalStatus(BaseModel):
+    id = models.BigAutoField(primary_key=True)
+    maritalStatusName = models.CharField(max_length=20, unique=True)
+    order = models.IntegerField()
+
+
+class MstRelation(BaseModel):
+    id = models.BigAutoField(primary_key=True)
+    description = models.CharField(max_length=40, unique=True)
+    order = models.IntegerField()
+
+
+class MstProfession(BaseModel):
+    id = models.BigAutoField(primary_key=True)
+    description = models.CharField(max_length=50, unique=True)
+    order = models.IntegerField()
 
 
 
