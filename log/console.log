@@ -18843,3 +18843,37 @@ INFO 2023-11-23 15:00:23,625  212 "GET /api/GETAreaDetailsById/1/ HTTP/1.1" 200 
 INFO 2023-11-23 15:08:49,464  668 Watching for file changes with StatReloader
 INFO 2023-11-23 15:16:38,595  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\city_views.py changed, reloading.
 INFO 2023-11-23 15:16:39,698  668 Watching for file changes with StatReloader
+INFO 2023-11-23 15:43:56,147  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\city_views.py changed, reloading.
+INFO 2023-11-23 15:43:57,990  668 Watching for file changes with StatReloader
+INFO 2023-11-23 15:48:02,135  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-11-23 15:48:03,824  668 Watching for file changes with StatReloader
+INFO 2023-11-23 15:48:33,745  212 "GET /api/GetAllApprovedCityAndSearchCityName/ HTTP/1.1" 200 48
+INFO 2023-11-23 15:50:21,149  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\city_views.py changed, reloading.
+INFO 2023-11-23 15:50:22,490  668 Watching for file changes with StatReloader
+INFO 2023-11-23 15:50:23,590  212 "GET /api/GetAllApprovedCityAndSearchCityName/ HTTP/1.1" 200 75
+INFO 2023-11-23 15:51:16,808  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\admin.py changed, reloading.
+INFO 2023-11-23 15:51:18,036  668 Watching for file changes with StatReloader
+INFO 2023-11-23 15:51:20,287  212 "GET /admin/jdcApi/city/ HTTP/1.1" 200 22140
+INFO 2023-11-23 15:51:20,376  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-11-23 15:51:26,463  212 "GET /admin/jdcApi/city/1/change/ HTTP/1.1" 200 20134
+INFO 2023-11-23 15:51:26,520  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-11-23 15:51:29,438  212 "POST /admin/jdcApi/city/1/change/ HTTP/1.1" 302 0
+INFO 2023-11-23 15:51:29,476  212 "GET /admin/jdcApi/city/ HTTP/1.1" 200 22335
+INFO 2023-11-23 15:51:29,526  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-11-23 15:51:31,654  212 "GET /admin/jdcApi/city/3/change/ HTTP/1.1" 200 20142
+INFO 2023-11-23 15:51:31,704  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-11-23 15:51:34,700  212 "POST /admin/jdcApi/city/3/change/ HTTP/1.1" 302 0
+INFO 2023-11-23 15:51:34,738  212 "GET /admin/jdcApi/city/ HTTP/1.1" 200 22338
+INFO 2023-11-23 15:51:34,789  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-11-23 15:51:41,066  212 "GET /api/GetAllApprovedCityAndSearchCityName/ HTTP/1.1" 200 134
+INFO 2023-11-23 16:25:38,349  668 Watching for file changes with StatReloader
+INFO 2023-11-23 16:26:04,697  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\auth_api\settings.py changed, reloading.
+INFO 2023-11-23 16:26:05,799  668 Watching for file changes with StatReloader
+INFO 2023-11-23 16:43:59,849  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\auth_api\settings.py changed, reloading.
+INFO 2023-11-23 16:44:01,702  668 Watching for file changes with StatReloader
+INFO 2023-11-23 16:45:21,800  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\auth_api\settings.py changed, reloading.
+INFO 2023-11-23 16:45:22,936  668 Watching for file changes with StatReloader
+INFO 2023-11-23 16:46:23,071  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\auth_api\settings.py changed, reloading.
+INFO 2023-11-23 16:46:24,262  668 Watching for file changes with StatReloader
+INFO 2023-11-23 16:46:41,051  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\auth_api\settings.py changed, reloading.
+INFO 2023-11-23 16:46:42,264  668 Watching for file changes with StatReloader

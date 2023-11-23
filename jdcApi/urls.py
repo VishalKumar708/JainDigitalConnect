@@ -38,7 +38,6 @@ urlpatterns = [
 
 
 
-
     #     Business Api
     path('POSTNewBusiness/', CreateNewBusiness.as_view()),
     path('PUTBusinessById/<slug:businessId>/', UpdateBusinessById.as_view()),

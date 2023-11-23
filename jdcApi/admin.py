@@ -3,7 +3,7 @@ from .models import *
 
 
 class CityAdmin(admin.ModelAdmin):
-    list_display = ['cityId', 'stateId', 'cityName', 'pincode', 'description', 'isVerified','isActive','groupId', 'createdBy', 'updatedBy', 'createdDate','updatedDate']
+    list_display = ['cityId', 'stateId', 'cityName', 'pincode', 'description', 'isVerified','isActive', 'isActiveForResidents', 'groupId', 'createdBy', 'updatedBy', 'createdDate','updatedDate']
 
 
 admin.site.register(City, CityAdmin)

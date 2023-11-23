@@ -48,9 +48,6 @@ from django.db.models import Q
 
 
 class GetAllApprovedBusinessByCityId(APIView):
-    # serializer_class = GETBusinessSerializer
-    def get_queryset(self):
-        return Business.objects.filter(isActive=True, isVerified=True).order_by('businessName')
 
     def get(self, request,cityId, *args, **kwargs):
         try:

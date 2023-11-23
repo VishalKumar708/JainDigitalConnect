@@ -1,5 +1,4 @@
 from django.db.models import Q
-from rest_framework.generics import *
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 
@@ -19,7 +18,7 @@ class GetAllApprovedCityAndSearchCityName(APIView):
         try:
             queryset = City.objects.filter(isActive=True, isVerified=True, isActiveForResidents=True).order_by('cityName')
             # Customize the response data as needed
-            if len(queryset) < 0:
+            if len(queryset) < 1:
                 response_data = {
                     'statusCode': status.HTTP_200_OK,
                     'status': 'Success',
