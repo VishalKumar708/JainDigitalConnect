@@ -15,10 +15,11 @@ class CustomPagination(PageNumberPagination):
 
     # last_page_strings = 'end_page'
 
-    def get_paginated_response(self, data):
+    def get_paginated_response(self, data, *args, **kwargs):
+        # print('inside pagination ==> ', len(kwargs))
         if self.page.paginator.count == 0:
             return Response({
-                'status_code': status.HTTP_204_NO_CONTENT,
+                'statusCode': status.HTTP_204_NO_CONTENT,
                 'status': 'success',
                 'data': {
                     'count': self.page.paginator.count,
@@ -28,16 +29,21 @@ class CustomPagination(PageNumberPagination):
                 }
             }, status=204)
 
-        return Response({
-            'status_code': 200,
-            'status': 'success',
-            'data': {
-                'count': self.page.paginator.count,
-                'next': self.get_next_link(),
-                'previous': self.get_previous_link(),
-                'results': data,
-            }
-        })
+
+        # return Response({
+        #     'statusCode': 200,
+        #     'status': 'success',
+        #     'count': self.page.paginator.count,
+        #     'next': self.get_next_link(),
+        #     'previous': self.get_previous_link(),
+        #     'data': data
+        # })
+        return {
+            'count': self.page.paginator.count,
+            'next': self.get_next_link(),
+            'previous': self.get_previous_link(),
+            'data': data
+        }
 
 # from rest_framework.pagination import LimitOffsetPagination
 # from rest_framework.response import Response

@@ -93,6 +93,7 @@ class GETAllSaintsBySearchParam(APIView):
         try:
             MstSect.objects.get(id=sectId)
             search_param = request.GET.get('search')
+            pagination_data = {}
             if search_param:
                 queryset = Saint.objects.filter(isVerified=True, sectId=sectId, name__icontains=search_param.strip()).order_by('name')
             else:
@@ -105,18 +106,19 @@ class GETAllSaintsBySearchParam(APIView):
                     'data': {'message': 'No Record Found!'}
                 }
                 return Response(response_data)
+            # pagination
             paginator = self.pagination_class()
             page = paginator.paginate_queryset(queryset, request)
             if page is not None:
                 serializer = GETAllSaintSerializer(page, many=True)
-                return paginator.get_paginated_response(serializer.data)
+                pagination_data = paginator.get_paginated_response(serializer.data)
 
-            serializer = GETAllSaintSerializer(queryset, many=True)
-            response_data = {
+            # serializer = GETAllSaintSerializer(queryset, many=True)
+            response_data = {**{
                     'status': 200,
                     'statusCode': 'success',
-                    'data': serializer.data
-                }
+                    # 'data': serializer.data
+                }, **pagination_data}
             return Response(response_data)
         except MstSect.DoesNotExist:
             response_data = {
@@ -147,6 +149,7 @@ class GETAllActiveSaintBySectIdUsingSearchParam(APIView):
 
     def get(self, request, sectId, *args, **kwargs):
         search_param = request.GET.get('gender')
+        pagination_data = {}
         try:
             MstSect.objects.get(id=sectId)
             if search_param:
@@ -164,15 +167,15 @@ class GETAllActiveSaintBySectIdUsingSearchParam(APIView):
             page = paginator.paginate_queryset(queryset, request)
             if page is not None:
                 serializer = GETAllSaintBySectIdSerializer(page, many=True)
-                return paginator.get_paginated_response(serializer.data)
-            else:
-                serializer = GETAllSaintBySectIdSerializer(queryset, many=True)
+                pagination_data = paginator.get_paginated_response(serializer.data)
+            #
+            # serializer = GETAllSaintBySectIdSerializer(queryset, many=True)
 
-            response_data = {
+            response_data = {**{
                 'status': 200,
                 'statusCode': 'success',
-                'data': serializer.data
-            }
+                # 'data': serializer.data
+            }, ** pagination_data}
             return Response(response_data)
 
         except MstSect.DoesNotExist:
@@ -207,6 +210,7 @@ class GETAllAddAndApprovedSaint(APIView):
             search_param = request.GET.get('status')
             # queryset = None
             if search_param:
+                pagination_data = {}
                 if search_param.strip().lower() == 'active':
                     queryset = Saint.objects.filter(isVerified=True).order_by('name')
                 elif search_param.strip().lower() == 'inactive':
@@ -232,16 +236,16 @@ class GETAllAddAndApprovedSaint(APIView):
                 page = paginator.paginate_queryset(queryset, request)
                 if page is not None:
                     serializer = GETAllSaintForAdminSerializer(page, many=True)
-                    return paginator.get_paginated_response(serializer.data)
+                    pagination_data = paginator.get_paginated_response(serializer.data)
 
                 # if pagination is disable
-                serializer = GETAllSaintForAdminSerializer(queryset, many=True)
+                # serializer = GETAllSaintForAdminSerializer(queryset, many=True)
 
-                response_data = {
+                response_data = {**{
                     'status': 200,
                     'statusCode': 'success',
-                    'data': serializer.data
-                }
+                    # 'data': serializer.data
+                }, **pagination_data}
                 return Response(response_data)
             else:
                 response_data = {
@@ -258,6 +262,7 @@ class GETAllAddAndApprovedSaint(APIView):
                 'data': {'error': "Internal Server error."}
             }
             return Response(response_data, status=500)
+
 
 class GETSaintDetailById(APIView):
 

@@ -25,6 +25,17 @@ def find_age_using_dob(dob):
     return age
 
 # ******************* Area serializers ***********************
+class GETAreaWithCountSerializer(serializers.ModelSerializer):
+    count = serializers.SerializerMethodField()
+    class Meta:
+        model = Area
+        fields = ['areaId', 'areaName', 'count']
+
+    def get_count(self, instance):
+        total_members = User.objects.filter(areaId=instance.areaId).count()
+        return total_members
+
+
 class GETAreaSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -32,10 +43,51 @@ class GETAreaSerializer(serializers.ModelSerializer):
         fields = ['areaId', 'areaName']
 
 
+class GETAreaForAdminSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Area
+        fields = ['areaId', 'areaName', 'areaContactNumber']
+
+
 class CREATEAreaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Area
         fields = ['cityId', 'areaName', 'areaMC', 'landmark', 'areaContactNumber']
+
+    def to_internal_value(self, data):
+        city_id = data.get('cityId')
+        area_name = data.get('areaName')
+        errors = {}
+        # custom validation
+        if city_id:
+            try:
+                City.objects.get(cityId=city_id)
+                if area_name:
+                    matching_cities_count = Area.objects.filter(Q(cityId=city_id) & Q(areaName__iexact=area_name.strip())).count()
+                    if matching_cities_count > 0:
+                        errors['areaName'] = [f"'{area_name}' is already exist."]
+            except City.DoesNotExist:
+                errors['cityId'] = ["Invalid City Id."]
+            except ValueError:
+                errors['cityId'] = [f"'city id' excepted a number but got '{city_id}'."]
+
+        # default validation
+        validated_data = None
+        try:
+            # store all data in "validated_data" variable and return it
+            validated_data = super().to_internal_value(data)
+        except serializers.ValidationError as e:
+            new_errors = e.detail.copy()  # Make a copy of the custom errors
+            for key, value in new_errors.items():
+                if key not in errors:
+                    errors[key] = value  # Add new keys to the errors dictionary
+
+        # raise validations errors
+        if errors:
+            # print('errors ==> ', errors)
+            raise serializers.ValidationError(errors)
+
+        return validated_data
 
     def create(self, validated_data):
         validated_data['areaName'] = validated_data['areaName'].capitalize()
@@ -57,7 +109,8 @@ class UPDATEAreaSerializer(serializers.ModelSerializer):
 
     def update(self, instance, validated_data):
         # Update the user instance with modified data
-        validated_data['areaName'] = validated_data['areaName'].capitalize()
+        if validated_data.get('areaName'):
+            validated_data['areaName'] = validated_data['areaName'].capitalize()
 
         user_id_by_token = self.context.get('user_id_by_token')
         validated_data['updatedBy'] = user_id_by_token
@@ -66,6 +119,53 @@ class UPDATEAreaSerializer(serializers.ModelSerializer):
         instance.save()
         return instance
 
+    def to_internal_value(self, data):
+        updated_fields = {key: value for key, value in data.items() if key in self.Meta.fields}
+        if len(updated_fields) == 0:
+            raise serializers.ValidationError(
+                {'update_validation_error': ["At least one field must be provided to update the record."]})
+
+        city_id = data.get('cityId')
+        area_name = data.get('areaName')
+        errors = {}
+        # custom validation
+        if city_id:
+            try:
+                City.objects.get(cityId=city_id)
+                if area_name:
+                    area_id = self.context.get('areaId')
+                    matching_cities_count = Area.objects.filter(Q(areaName__iexact=area_name.strip()), ~Q(areaId=area_id), ~Q(cityId=city_id)).count()
+                    if matching_cities_count > 0:
+                        errors['areaName'] = [f"'{area_name}' is already exist."]
+            except City.DoesNotExist:
+                errors['cityId'] = ["Invalid City Id."]
+            except ValueError:
+                errors['cityId'] = [f"'city id' excepted a number but got '{city_id}'."]
+
+        if city_id is None and area_name:
+            errors['areaName'] = [f"to update 'areaName' must provide 'cityId' also."]
+        # default validation
+        validated_data = None
+        try:
+            # store all data in "validated_data" variable and return it
+            validated_data = super().to_internal_value(data)
+        except serializers.ValidationError as e:
+            new_errors = e.detail.copy()  # Make a copy of the custom errors
+            for key, value in new_errors.items():
+                if key not in errors:
+                    errors[key] = value  # Add new keys to the errors dictionary
+
+        # raise validations errors
+        if errors:
+            # print('errors ==> ', errors)
+            raise serializers.ValidationError(errors)
+
+        return validated_data
+
+class GETResidentsByAreaId(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['cityId', 'areaName', 'areaMC', 'landmark', 'areaContactNumber', 'isActive', 'isVerified']
 
 class GETAreaByAreaIdSerializer(serializers.ModelSerializer):
     class Meta:
@@ -157,12 +257,87 @@ class GETCitySerializer(serializers.ModelSerializer):
         fields = ['cityId', 'cityName']
 
 
+class GETCityWithCountSerializer(serializers.ModelSerializer):
+    count = serializers.SerializerMethodField()
+
+    class Meta:
+        model = City
+        # fields = ['cityId', 'cityName','city_by_areas']
+        fields = ['cityId', 'cityName', 'count']
+
+    def get_count(self, instance):
+        screen_type = self.context.get('screen_type')
+        if screen_type == 'business':
+            total_businesses = Business.objects.filter(cityId=instance.cityId, isActive=True, isVerified=True).count()
+            return total_businesses
+        else:
+            total_members = User.objects.filter(cityId=instance.cityId).count()
+            return total_members
+class GETCityCountForBusinessSerializer(serializers.ModelSerializer):
+    count = serializers.SerializerMethodField()
+
+    class Meta:
+        model = City
+        # fields = ['cityId', 'cityName','city_by_areas']
+        fields = ['cityId', 'cityName', 'count']
+
+    def get_count(self, instance):
+        total_businesses = Business.objects.filter(cityId=instance.cityId, isActive=True, isVerified=True).count()
+        return total_businesses
+
+
 class CREATECitySerializer(serializers.ModelSerializer):
     """ this serializer use both 'getById, create and update' """
 
     class Meta:
         model = City
-        fields = ['cityName', 'pincode', 'stateId', 'description']
+        fields = ['cityName', 'pincode', 'stateId', 'description', 'isActiveForResidents']
+
+    def to_internal_value(self, data):
+        city_name = data.get('cityName')
+        state_id = data.get('stateId')
+        pincode = data.get('pincode')
+        errors = {}
+
+        #  custom validation
+        if state_id:
+            try:
+                # check stateId is integer or not
+                int(state_id)
+                # check state is exist or not
+                State.objects.get(stateId=state_id)
+
+                # check city name is not None
+                if city_name:
+                    matching_cities_count = City.objects.filter(stateId=state_id, cityName=city_name.strip()).count()
+                    if matching_cities_count > 0:
+                        errors['cityName'] = [f"'{city_name}' is already exist."]
+            except State.DoesNotExist:
+                errors['stateId'] = ["Invalid State Id."]
+                print('does not exist error occur')
+            except ValueError:
+                print('value error occur')
+                errors['stateId'] = [f"'stateId' expected a number but got '{state_id}'."]
+        if pincode:
+            if not pincode.strip().isdigit():
+                errors['pincode'] = ["Enter a valid pincode."]
+        validated_data = None
+        # default validation
+        try:
+            # store all data in "validated_data" variable and return it
+            validated_data = super().to_internal_value(data)
+        except serializers.ValidationError as e:
+            new_errors = e.detail.copy()  # Make a copy of the custom errors
+            for key, value in new_errors.items():
+                if key not in errors:
+                    errors[key] = value  # Add new keys to the errors dictionary
+
+        # return all validations errors
+        if errors:
+            # print('errors ==> ', errors)
+            raise serializers.ValidationError(errors)
+
+        return validated_data
 
     def create(self, validated_data):
         validated_data['cityName'] = validated_data['cityName'].capitalize()
@@ -172,15 +347,15 @@ class CREATECitySerializer(serializers.ModelSerializer):
         #  add data in field createdBy
         user_id_by_token = self.context.get('user_id_by_token')
         city_obj.createdBy = user_id_by_token
+        city_obj.updatedBy = user_id_by_token
         city_obj.save()
-
         return city_obj
 
 
 class UPDATECitySerializer(serializers.ModelSerializer):
     class Meta:
         model = City
-        fields = ['cityName', 'pincode', 'stateId', 'description', 'isVerified', 'isActive']
+        fields = ['cityName', 'pincode', 'stateId', 'description', 'isVerified', 'isActive', 'isActiveForResidents']
 
     def update(self, instance, validated_data):
         # Update the user instance with modified data
@@ -193,39 +368,82 @@ class UPDATECitySerializer(serializers.ModelSerializer):
         instance.save()
         return instance
 
+    def to_internal_value(self, data):
+
+        # if user not provide at least one field to update record
+        updated_fields = {key: value for key, value in data.items() if key in self.Meta.fields}
+        if len(updated_fields) < 1:
+            raise serializers.ValidationError(
+                {'update_validation_error': ["At least one field must be provided to update the record."]})
+
+        city_name = data.get('cityName')
+        state_id = data.get('stateId')
+        pincode = data.get('pincode')
+        errors = {}
+        validated_data = None
+        if state_id:
+            try:
+                # check stateId is integer or not
+                int(state_id)
+                # check state is exist or not
+                State.objects.get(stateId=state_id)
+                # check city name is not None
+                if city_name:
+                    city_id = self.context.get('city_id')
+                    matching_cities_count = City.objects.filter(Q(stateId=state_id), Q(cityName__iexact=city_name.strip()), ~Q(cityId=city_id)).count()
+                    if matching_cities_count > 0:
+                        errors['cityName'] = [f"'{city_name}' is already exist."]
+            except State.DoesNotExist:
+                errors['stateId'] = ["Invalid State Id."]
+                print('does not exist error occur')
+            except ValueError:
+                print('value error occur')
+                errors['stateId'] = [f"'stateId' expected a number but got '{state_id}'."]
+        if pincode:
+            if not pincode.strip().isdigit():
+                errors['pincode'] = ["Enter a valid pincode."]
+
+        # default validation
+        try:
+            # store all data in "validated_data" variable and return it
+            validated_data = super().to_internal_value(data)
+        except serializers.ValidationError as e:
+            new_errors = e.detail.copy()  # Make a copy of the custom errors
+            for key, value in new_errors.items():
+                if key not in errors:
+                    errors[key] = value  # Add new keys to the errors dictionary
+
+        # return all validations errors
+        if errors:
+            # print('errors ==> ', errors)
+            raise serializers.ValidationError(errors)
+
+        return validated_data
+
 
 class GETCityByCityIdSerializer(serializers.ModelSerializer):
     class Meta:
         model = City
-        fields = ['cityId', 'cityName', 'pincode', 'stateId', 'description']
+        fields = ['cityId', 'cityName', 'pincode', 'stateId', 'description', 'isActiveForResidents']
+
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+        if self.context.get('status'):
+            data['isVerified'] = instance.isVerified
+        return data
 
 
-class GetAllAreaByCitySerializer(serializers.ModelSerializer):
-    areas = serializers.SerializerMethodField()
-
-    class Meta:
-        model = City
-        fields = ['cityId', 'cityName', 'areas']
-
-    def get_areas(self, obj):
-        city_id = self.context.get('cityId')
-        # Retrieve 'areaId' and 'areaName' fields from areas where isActive=True and isVerified=True
-        areas = Area.objects.filter(isActive=True, isVerified=True, cityId=city_id).values('areaId', 'areaName')
-        return areas
-
-
-class GetAllBusinessByCitySerializer(serializers.ModelSerializer):
-    # GetAllBusinessByCityId = PartialBusinessSerializer(read_only=True, many=True)
-    allBusiness = serializers.SerializerMethodField()
-
-    class Meta:
-        model = City
-        fields = ['cityId', 'cityName', 'allBusiness']
-
-    def get_allBusiness(self, obj):
-        city_id = self.context.get('cityId')
-        business = Business.objects.filter(isActive=True, isVerified=True, cityId=city_id).values('businessId', 'businessName','businessType', 'businessDescription', 'businessNumber', 'email', 'website')
-        return business
+# class GetAllAreaByCitySerializer(serializers.ModelSerializer):
+#     count = serializers.SerializerMethodField()
+#
+#     class Meta:
+#         model = Area
+#         fields = ['areaId', 'areaName', 'count']
+#
+#     def get_count(self, obj):
+#         # Retrieve 'areaId' and 'areaName' fields from areas where isActive=True and isVerified=True
+#         total_areas = Area.objects.filter(areaId=obj.areaId).count()
+#         return total_areas
 
 
 #  ******************* State serializers *************************
@@ -243,8 +461,41 @@ class CREATEStateSerializer(serializers.ModelSerializer):
         model = State
         fields = ['stateName']
 
+    def to_internal_value(self, data):
+        errors = {}
+        validated_data = None
+
+        # custom validation
+        state_name = data.get('stateName')
+        # check state already exist or not
+        if state_name:
+            if self.context.get('put_method'):  # if put method
+                matching_state_count = State.objects.filter(Q(stateName__iexact=state_name.strip()),
+                                                             ~Q(stateId=self.context.get('state_id'))).count()
+            else:
+                matching_state_count = State.objects.filter(stateName__iexact=state_name.strip()).count()
+            if matching_state_count > 0:
+                errors['stateName'] = [f"{state_name}' is already exists."]
+
+        # default validation
+        try:
+            # store all data in "validated_data" variable and return it
+            validated_data = super().to_internal_value(data)
+        except serializers.ValidationError as e:
+            new_errors = e.detail.copy()  # Make a copy of the custom errors
+            for key, value in new_errors.items():
+                if key not in errors:
+                    errors[key] = value  # Add new keys to the errors dictionary
+
+        # raise all errors
+        if errors:
+            # print('errors ==> ', errors)
+            raise serializers.ValidationError(errors)
+
+        return validated_data
+
     def create(self, validated_data):
-        validated_data['stateName'] = validated_data['stateName'].capitalize()
+        validated_data['stateName'] = validated_data['stateName'].strip().capitalize()
         # Create the user instance with modified data
         state_obj = self.Meta.model.objects.create(**validated_data)
 
@@ -252,12 +503,11 @@ class CREATEStateSerializer(serializers.ModelSerializer):
         user_id_by_token = self.context.get('user_id_by_token')
         state_obj.createdBy = user_id_by_token
         state_obj.save()
-
         return state_obj
 
     def update(self, instance, validated_data):
         # Update the user instance with modified data
-        validated_data['stateName'] = validated_data['stateName'].capitalize()
+        validated_data['stateName'] = validated_data['stateName'].strip().capitalize()
 
         user_id_by_token = self.context.get('user_id_by_token')
         validated_data['updatedBy'] = user_id_by_token
@@ -268,11 +518,11 @@ class CREATEStateSerializer(serializers.ModelSerializer):
 
 
 class GetAllCitiesByStateSerializer(serializers.ModelSerializer):
-    city_by_state = GETCitySerializer(read_only=True, many=True)
+    cities = GETCitySerializer(read_only=True, many=True)
 
     class Meta:
         model = State
-        fields = ('stateId', 'stateName', 'city_by_state')
+        fields = ('stateId', 'stateName', 'cities')
 
 
 #  ***********************    Literature Serializer  ******************
@@ -436,7 +686,7 @@ class UPDATESaintSerializer(serializers.ModelSerializer):
         # Check if at least one field is being updated
         updated_fields = {key: value for key, value in data.items() if key in self.Meta.fields}
         if len(updated_fields) == 0:
-            raise serializers.ValidationError("At least one field must be provided for the update.")
+            raise serializers.ValidationError({'update_validation_error':"At least one field must be provided for the update."})
         return data
 
 
@@ -475,23 +725,22 @@ class GETAllSaintForAdminSerializer(serializers.ModelSerializer):
 
 class GETSaintByIdSerializer(serializers.ModelSerializer):
     # dikshaDate = serializers.DateField(input_formats=['%B %d, %Y'])
-    sect = serializers.CharField(source='sectId.sectName', read_only=True)
+    sectId = serializers.CharField(source='sectId.sectName', read_only=True)
     # dob = serializers.DateField(input_formats=['%B %d, %Y'])
     # age = serializers.SerializerMethodField()
 
     class Meta:
         model = Saint
-        fields = ['name', 'sect', 'fatherName', 'motherName', 'birthPlace', 'dikshaPlace', 'guruName', 'dikshaDate', 'gender', 'dob', 'description']
+        fields = ['name', 'sectId', 'fatherName', 'motherName', 'birthPlace', 'dikshaPlace', 'guruName', 'dikshaDate', 'gender', 'dob', 'description']
 
     def get_age(self, instance):
-        print('get age method.')
         return find_age_using_dob(str(instance.dob.date()))
 
     def to_representation(self, instance):
         data = super().to_representation(instance)
         # print(data)
         data['dikshaDate'] = instance.dikshaDate.strftime("%B %d, %Y")
-        data['dob'] = instance.dob.strftime("%B %d, %Y %I:%M:%S %p")
+        data['dob'] = instance.dob.strftime("%B %d, %Y %I:%M %p")
 
         return data
 
@@ -500,6 +749,7 @@ class GETSaintByIdSerializer(serializers.ModelSerializer):
 #                       ***********************             Sect Serializers             ****************************
 class GETAllSectWithCountSerializer(serializers.ModelSerializer):
     count = serializers.SerializerMethodField()
+
     class Meta:
         model = MstSect
         fields = ['id', 'sectName', 'count']

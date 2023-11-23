@@ -8,12 +8,12 @@ from rest_framework.response import Response
 from django.db.models import Q
 from .models import State
 from utils.get_id_by_token import get_user_id_from_token_view
-from utils.permission import IsOwnerOrReadOnly
+# from utils.permission import IsOwnerOrReadOnly
 from rest_framework.permissions import IsAuthenticated
 
 
 class GetAllApprovedState(ListAPIView):
-    permission_classes = [IsOwnerOrReadOnly]
+    permission_classes = []
     serializer_class = GETStateSerializer
 
     def get_queryset(self):
@@ -22,25 +22,25 @@ class GetAllApprovedState(ListAPIView):
 
     def list(self, request, *args, **kwargs):
         queryset = self.get_queryset()
-        serializer = self.get_serializer(queryset, many=True)
 
         # Customize the response data as needed
-        if len(serializer.data) == 0:
+        if len(queryset) < 1:
             response_data = {
                 'statusCode': status.HTTP_200_OK,
                 'status': 'Success',
-                'data': {'msg': 'No state found.'}
+                'data': {'message': 'Record Not Found'}
             }
             return Response(response_data)
 
-        # data = serializer.data
+        serializer = self.get_serializer(queryset, many=True)
+
         response_data = {
             'statusCode': status.HTTP_200_OK,
             'status': 'Success',
             'data': serializer.data,
         }
 
-        return Response(response_data, status=200)
+        return Response(response_data)
 
 
 class GetAllUnapprovedState(ListAPIView):
@@ -54,17 +54,19 @@ class GetAllUnapprovedState(ListAPIView):
     def list(self, request, *args, **kwargs):
         queryset = self.get_queryset()
         serializer = self.get_serializer(queryset, many=True)
-        if len(serializer.data) == 0:
-            data = {'msg': 'No Record Found'}
-        else:
-            data = serializer.data
+        if len(serializer.data) < 1:
+            response_data = {
+                'status_code': status.HTTP_200_OK,
+                'status': 'Success',
+                'data': {'message': 'No Record Found'}
+            }
+            return Response(response_data)
         # Customize the response data as needed
         response_data = {
             'status_code': status.HTTP_200_OK,
             'status': 'Success',
-            'data': data,
+            'data': serializer.data,
         }
-
         return Response(response_data)
 
 
@@ -101,6 +103,7 @@ class GetCitiesByStateId(APIView):
 
     def get(self, request, stateId, *args, **kwargs):
         try:
+            int(stateId)
             instance = State.objects.get(stateId__iexact=stateId)
             serializer = GetAllCitiesByStateSerializer(instance)
             data = serializer.data
@@ -114,50 +117,47 @@ class GetCitiesByStateId(APIView):
             response_data = {
                 'status_code': status.HTTP_200_OK,
                 'status': 'success',
-                'TotalCities': len(data['city_by_state']),
+                'totalCities': len(data['cities']),
                 'data': data
             }
             return Response(response_data)
         except State.DoesNotExist:
             response_data = {
-                'status_code': status.HTTP_404_NOT_FOUND,
+                'statusCode': status.HTTP_404_NOT_FOUND,
                 'status': 'failed',
                 'data': {'message': "Invalid State Id."}
             }
             return Response(response_data, status=404)
-        except Exception as e:
+        except ValueError:
             response_data = {
-                'status_code': status.HTTP_500_INTERNAL_SERVER_ERROR,
-                'status': 'error',
-                'data': {'error': str(e)},
+                'statusCode': 400,
+                'status': 'failed',
+                'data': {'message': f"'State Id' excepted a number but got '{stateId}'."}
             }
-            return Response(response_data, status=500)
+            return Response(response_data, status=400)
+        # except Exception as e:
+        #     response_data = {
+        #         'status_code': status.HTTP_500_INTERNAL_SERVER_ERROR,
+        #         'status': 'error',
+        #         'data': {'error': str(e)},
+        #     }
+        #     return Response(response_data, status=500)
 
 
-class CreateNewState(APIView):
+class POSTNewState(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
         try:
-            # check city already exist or not
-            state_name = request.data.get('stateName')
-            matching_state_count = State.objects.filter(stateName__iexact=state_name).count()
-            if matching_state_count > 0:
-                json_data = {
-                    'status_code': status.HTTP_302_FOUND,
-                    'status': 'failed',
-                    'message': {'msg': f"'{state_name}' is already exists."},
-                }
-                return Response(json_data, status=302)
+            # fetch 'user_id' from token payload
             get_user_id = get_user_id_from_token_view(request)
             serializer = CREATEStateSerializer(data=request.data, context={'user_id_by_token': get_user_id})
-
             if serializer.is_valid():
                 serializer.save()
                 response_data = {
                     'status_code': status.HTTP_200_OK,
                     'status': 'success',
-                    'message': {'message': 'State created successfully.'},
+                    'message': {'message': 'Record Added Successfully.'},
                 }
                 return Response(response_data, status=200)
 
@@ -166,7 +166,7 @@ class CreateNewState(APIView):
                 'status': 'failed',
                 'message': serializer.errors
             }
-            return Response(response_data, status=404)
+            return Response(response_data, status=400)
 
         except Exception as e:
             # Handle the case when request data is not valid
@@ -183,51 +183,27 @@ class UpdateStateById(APIView):
 
     def put(self, request, stateId, *args, **kwargs):
         try:
-
             instance = State.objects.get(stateId=stateId)
-            # check user provide value or not
-            if len(request.data) < 1:
-                serializer = CREATEStateSerializer(instance, data=request.data)
-                serializer.is_valid(raise_exception=True)
-                response_data = {
-                    'status_code': status.HTTP_204_NO_CONTENT,
-                    'status': 'failed',
-                    'message': serializer.errors,
-                }
-                return Response(response_data, status=status.HTTP_204_NO_CONTENT)
-
-            # check updated state is available or not
-            state_name = request.data.get('stateName')
-            matching_state_counts = State.objects.filter(Q(stateName__iexact=state_name), ~Q(stateId=stateId)).count()
-            print('count ==> ', matching_state_counts)
-            if matching_state_counts > 0:
-                json_data = {
-                    'status_code': status.HTTP_302_FOUND,
-                    'status': 'failed',
-                    'message': {'msg': f"'{state_name}' is already exists."},
-                }
-                return Response(json_data, status=status.HTTP_302_FOUND)
 
             get_user_id = get_user_id_from_token_view(request)
 
-            serializer = CREATEStateSerializer(instance, data=request.data, partial=True, context={'user_id_by_token': get_user_id})
+            serializer = CREATEStateSerializer(instance, data=request.data,  context={'user_id_by_token': get_user_id, 'put_method': True, 'state_id':stateId})
 
             if serializer.is_valid():
                 serializer.save()
                 response_data = {
                     'statusCode': status.HTTP_200_OK,
                     'status': 'success',
-                    'data': {'msg': 'New State Added Successfully.'}
+                    'data': {'message': 'Record Updated Successfully.'}
                 }
                 return Response(response_data)
 
             # Customize the response data if needed
             response_data = {
-                'status_code': status.HTTP_400_BAD_REQUEST,
+                'statusCode': status.HTTP_400_BAD_REQUEST,
                 'status': 'failed',
-                'message': serializer.errors,
+                'data': serializer.errors,
             }
-
             return Response(response_data, status=status.HTTP_400_BAD_REQUEST)
         except State.DoesNotExist:
             response_data = {

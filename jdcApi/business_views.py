@@ -6,22 +6,62 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from utils.get_id_by_token import get_user_id_from_token_view
-from .models import Business
+from .models import Business, City
 from django.db.models import Q
 
 
-class GetAllApprovedBusiness(ListAPIView):
+# class GetAllApprovedBusiness(ListAPIView):
+#
+#     serializer_class = GETBusinessSerializer
+#
+#     def get_queryset(self):
+#         return Business.objects.filter(isActive=True, isVerified=True).order_by('businessName')
+#
+#     def list(self, request, *args, **kwargs):
+#         try:
+#             queryset = self.get_queryset()
+#
+#             if len(queryset) == 0:
+#                 response_data = {
+#                     'statusCode': status.HTTP_200_OK,
+#                     'status': 'Success',
+#                     'data': {'message': 'No Record found.'}
+#                 }
+#
+#                 return Response(response_data)
+#
+#             serializer = self.get_serializer(queryset, many=True)
+#             response_data = {
+#                 'statusCode': status.HTTP_200_OK,
+#                 'status': 'Success',
+#                 'data': serializer.data,
+#             }
+#
+#             return Response(response_data)
+#         except Exception as e:
+#             response_data = {
+#                 'statusCode': status.HTTP_500_INTERNAL_SERVER_ERROR,
+#                 'status': 'error',
+#                 'data': {'error': str(e)},
+#             }
+#             return Response(response_data, status=500)
 
-    serializer_class = GETBusinessSerializer
 
+class GetAllApprovedBusinessByCityId(APIView):
+    # serializer_class = GETBusinessSerializer
     def get_queryset(self):
         return Business.objects.filter(isActive=True, isVerified=True).order_by('businessName')
 
-    def list(self, request, *args, **kwargs):
+    def get(self, request,cityId, *args, **kwargs):
         try:
-            queryset = self.get_queryset()
-
-            if len(queryset) == 0:
+            int(cityId)
+            City.objects.get(cityId=cityId)
+            business_name = request.GET.get('businessName')
+            if business_name:
+                queryset = Business.objects.filter(isActive=True, isVerified=True, businessName__icontains=business_name)
+            else:
+                queryset = Business.objects.filter(isActive=True, isVerified=True).order_by('businessName')
+            if len(queryset) < 1:
                 response_data = {
                     'statusCode': status.HTTP_200_OK,
                     'status': 'Success',
@@ -30,7 +70,7 @@ class GetAllApprovedBusiness(ListAPIView):
 
                 return Response(response_data)
 
-            serializer = self.get_serializer(queryset, many=True)
+            serializer = GETBusinessSerializer(queryset, many=True)
             response_data = {
                 'statusCode': status.HTTP_200_OK,
                 'status': 'Success',
@@ -38,6 +78,20 @@ class GetAllApprovedBusiness(ListAPIView):
             }
 
             return Response(response_data)
+        except City.DoesNotExist:
+            response_data = {
+                'statusCode': 404,
+                'status': 'failed',
+                'data': {'message': 'Invalid City Id.'},
+            }
+            return Response(response_data, status=404)
+        except ValueError:
+            response_data = {
+                'statusCode': 400,
+                'status': 'failed',
+                'data': {'message': f"'cityId' excepted a number but got '{cityId}'."},
+            }
+            return Response(response_data, status=400)
         except Exception as e:
             response_data = {
                 'statusCode': status.HTTP_500_INTERNAL_SERVER_ERROR,

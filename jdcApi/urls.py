@@ -1,9 +1,9 @@
 
 from django.urls import path
-from .state_views import CreateNewState, UpdateStateById, GetAllApprovedState, GetAllUnapprovedState, GetCitiesByStateId
-from .city_views import CreateNewCity, UpdateCityById, GetCityById, GetAllApprovedCity, GetAllUnapprovedCity, GetAreaByCityId, GetAllBusinessByCityId
-from .area_views import CreateNewArea, UpdateAreaById, GetAllApprovedAreas, GetAllUnapprovedAreas, GetAreaById
-from .business_views import CreateNewBusiness, UpdateBusinessById, GetAllUnapprovedBusiness, GetBusinessById, GetAllApprovedBusiness
+from .state_views import POSTNewState, UpdateStateById, GetAllApprovedState, GetAllUnapprovedState, GetCitiesByStateId
+from .city_views import POSTNewCity, UpdateCityById, GetCityDetailsById, GetAllApprovedCityAndSearchCityName, GetAllApprovedAndUnapprovedCityForAdmin, GetAllApprovedCityAndSearchCityNameForBusiness
+from .area_views import POSTNewArea, UpdateAreaById, GetAllApprovedAreasByCityId, GetAllApprovedAndUnapprovedAreasForAdmin, GetAreaDetailsById, GETAllResidentsByAreaId
+from .business_views import CreateNewBusiness, UpdateBusinessById, GetAllUnapprovedBusiness, GetBusinessById, GetAllApprovedBusinessByCityId
 from .literature_views import CreateNewLiterature, UPDATELiterature, GetLiteratureById, GetAllApprovedLiterature, GetAllUnapprovedLiterature
 from .mst_sect_view import POSTSect, PUTSectById, GETAllSectForDropDown, GETSectDetailById, GETAllSect,  GETAllSectSaint
 from .saint_views import POSTNewSaint, PUTSaintById, GETAllSaintsBySearchParam, GETSaintDetailById, GETAllActiveSaintBySectIdUsingSearchParam, GETAllAddAndApprovedSaint
@@ -12,33 +12,37 @@ from .mst_marital_status import POSTMaritalStatus, PUTMaritalStatusById, GETMari
 from .mst_relation_views import POSTRelation, PUTRelationById, GETRelationDetailById, GETAllRelation, GETAllRelationForDropDown
 from .mst_profession_views import POSTProfession, PUTProfessionById, GETProfessionDetailById, GETAllProfession, GETAllProfessionForDropDown
 
+
 urlpatterns = [
-    path('POSTNewState/', CreateNewState.as_view()),
-    path('PUTStateById/<slug:stateId>/', UpdateStateById.as_view()),
-    path('GETAllApprovedStates/', GetAllApprovedState.as_view()),
-    path('GETAllUnapprovedStates/', GetAllUnapprovedState.as_view()),
-    path('GETAllCitiesByStateId/<slug:stateId>/', GetCitiesByStateId.as_view()),
+    path('POSTNewState/', POSTNewState.as_view()),  # correct
+    path('PUTStateById/<slug:stateId>/', UpdateStateById.as_view()),  # correct
+    path('GETAllApprovedStates/', GetAllApprovedState.as_view()),  # correct
+    path('GETAllUnapprovedStates/', GetAllUnapprovedState.as_view()),  # correct
+    path('GETAllCitiesByStateId/<slug:stateId>/', GetCitiesByStateId.as_view()),  # correct
 
     #     City Apis
-    path('POSTNewCity/', CreateNewCity.as_view()),
-    path('PUTCityById/<slug:cityId>/', UpdateCityById.as_view()),
-    path('GETCityByCityId/<slug:cityId>/', GetCityById.as_view()),
-    path('GETAllUnapprovedCity/', GetAllUnapprovedCity.as_view()),
-    path('GETAllApprovedCity/', GetAllApprovedCity.as_view()),
-    path('GETAllAreasByCityId/<slug:cityId>/', GetAreaByCityId.as_view()),
-    path('GETAllBusinessByCityId/<slug:cityId>/', GetAllBusinessByCityId.as_view()),
+    path('POSTNewCity/', POSTNewCity.as_view()),  # correct
+    path('PUTCityById/<slug:cityId>/', UpdateCityById.as_view()),  # correct
+    path('GetCityDetailsById/<slug:cityId>/', GetCityDetailsById.as_view()),  # correct
+    path('GetAllApprovedAndUnapprovedCityForAdmin/', GetAllApprovedAndUnapprovedCityForAdmin.as_view()),  # correct
+    path('GetAllApprovedCityAndSearchCityName/', GetAllApprovedCityAndSearchCityName.as_view()),  # correct
+    path('GetCityByBusiness/', GetAllApprovedCityAndSearchCityNameForBusiness.as_view()),  # new add
 
     #     Area Apis
-    path('POSTNewArea/', CreateNewArea.as_view()),
-    path('PUTAreaById/<slug:areaId>/', UpdateAreaById.as_view()),
-    path('GETAllApprovedAreas/', GetAllApprovedAreas.as_view()),
-    path('GETAllUnapprovedAreas/', GetAllUnapprovedAreas.as_view()),
-    path('GETAreaById/<slug:areaId>/', GetAreaById.as_view()),
+    path('POSTNewArea/', POSTNewArea.as_view()),  # correct
+    path('PUTAreaById/<slug:areaId>/', UpdateAreaById.as_view()),  # correct
+    path('GETAllApprovedAreasByCityId/<slug:cityId>/', GetAllApprovedAreasByCityId.as_view()),  # correct
+    path('GETAllApprovedAndUnapprovedAreasForAdmin/', GetAllApprovedAndUnapprovedAreasForAdmin.as_view()),  # correct
+    path('GETAreaDetailsById/<slug:areaId>/', GetAreaDetailsById.as_view()),  # correct
+    path('GETAllResidentsByAreaId/<slug:areaId>/', GETAllResidentsByAreaId.as_view()),  # new
+
+
+
 
     #     Business Api
     path('POSTNewBusiness/', CreateNewBusiness.as_view()),
     path('PUTBusinessById/<slug:businessId>/', UpdateBusinessById.as_view()),
-    path('GETAllApprovedBusiness/', GetAllApprovedBusiness.as_view()),
+    path('GETAllApprovedBusinessByCityId/<slug:cityId>/', GetAllApprovedBusinessByCityId.as_view()),  # correct
     path('GETAllUnapprovedBusiness/', GetAllUnapprovedBusiness.as_view()),
     path('GETBusinessById/<slug:businessId>/', GetBusinessById.as_view()),
 
@@ -48,7 +52,6 @@ urlpatterns = [
     path('GETAllApprovedLiterature/', GetAllApprovedLiterature.as_view()),
     path('GETAllUnapprovedLiterature/', GetAllUnapprovedLiterature.as_view()),
     path('GETLiteratureById/<slug:literatureId>/', GetLiteratureById.as_view()),
-
 
 
     #  count for saint

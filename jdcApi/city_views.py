@@ -3,8 +3,8 @@ from rest_framework.generics import *
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 
-from .serializers import GETCitySerializer, CREATECitySerializer, GetAllAreaByCitySerializer, \
-    GetAllBusinessByCitySerializer, GETCityByCityIdSerializer, UPDATECitySerializer
+from .serializers import GETCitySerializer, CREATECitySerializer, \
+     GETCityByCityIdSerializer, UPDATECitySerializer, GETCityWithCountSerializer, GETCityCountForBusinessSerializer
 from rest_framework import status
 from rest_framework.response import Response
 from .models import City
@@ -13,22 +13,13 @@ from .models import State
 from utils.get_id_by_token import get_user_id_from_token_view
 
 
-
-class GetAllApprovedCity(ListAPIView):
-    serializer_class = GETCitySerializer
-
-
-    def get_queryset(self):
-        queryset = City.objects.filter(isActive=True, isVerified=True).order_by('cityName')
-        return queryset
-
-    def list(self, request, *args, **kwargs):
+class GetAllApprovedCityAndSearchCityName(APIView):
+    """ show all approved city and search 'cityName' by user."""
+    def get(self, request, *args, **kwargs):
         try:
-            queryset = self.get_queryset()
-            serializer = self.get_serializer(queryset, many=True)
-
+            queryset = City.objects.filter(isActive=True, isVerified=True, isActiveForResidents=True).order_by('cityName')
             # Customize the response data as needed
-            if len(serializer.data) == 0:
+            if len(queryset) < 0:
                 response_data = {
                     'statusCode': status.HTTP_200_OK,
                     'status': 'Success',
@@ -36,14 +27,36 @@ class GetAllApprovedCity(ListAPIView):
                 }
                 return Response(response_data)
 
-            data = serializer.data
-            response_data = {
-                'status_code': status.HTTP_200_OK,
-                'status': 'Success',
-                'data': data,
-            }
+            #  for search city Name
+            cityName = request.GET.get('cityName')
+            if cityName is None:
+                serializer = GETCityWithCountSerializer(queryset, many=True)
+                response_data = {
+                    'status_code': status.HTTP_200_OK,
+                    'status': 'Success',
+                    'data': serializer.data,
+                }
+                return Response(response_data)
+            else:
+                filtered_queryset = queryset.filter(cityName__icontains=cityName.strip())
 
-            return Response(response_data)
+                #  if search not found
+                if len(filtered_queryset) < 1:
+                    response_data = {
+                        'statusCode': status.HTTP_200_OK,
+                        'status': 'Success',
+                        'data': {"message": "No Results found !"},
+                    }
+                    return Response(response_data)
+
+                # if search found.
+                serializer = GETCitySerializer(filtered_queryset, many=True)
+                response_data = {
+                    'status_code': status.HTTP_200_OK,
+                    'status': 'Success',
+                    'data': serializer.data,
+                }
+                return Response(response_data)
         except Exception as e:
             response_data = {
                 'status_code': status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -53,32 +66,50 @@ class GetAllApprovedCity(ListAPIView):
             return Response(response_data, status=500)
 
 
-class GetAllUnapprovedCity(ListAPIView):
-    serializer_class = GETCitySerializer
-    permission_classes = [IsAuthenticated]
-
-    def get_queryset(self):
-        queryset = City.objects.filter(Q(isActive=False)| Q(isVerified=False)).order_by('cityName')
-        return queryset
-
-    def list(self, request, *args, **kwargs):
+class GetAllApprovedCityAndSearchCityNameForBusiness(APIView):
+    """ show all approved city and search 'cityName' by user. for 'business' screen"""
+    def get(self, request, *args, **kwargs):
         try:
-            queryset = self.get_queryset()
-            if len(queryset) == 0:
+            queryset = City.objects.filter(isActive=True, isVerified=True).order_by('cityName')
+            # Customize the response data as needed
+            if len(queryset) < 0:
                 response_data = {
                     'statusCode': status.HTTP_200_OK,
                     'status': 'Success',
-                    'data': {"message": "No Record Found."},
+                    'data': {"message": "No Record found."},
                 }
                 return Response(response_data)
 
-            serializer = self.get_serializer(queryset, many=True)
-            response_data = {
-                'status_code': status.HTTP_200_OK,
-                'status': 'Success',
-                'data': serializer.data,
-            }
-            return Response(response_data)
+            #  for search city Name
+            cityName = request.GET.get('cityName')
+            if cityName is None:
+                serializer = GETCityCountForBusinessSerializer(queryset, many=True)
+                response_data = {
+                    'status_code': status.HTTP_200_OK,
+                    'status': 'Success',
+                    'data': serializer.data,
+                }
+                return Response(response_data)
+            else:
+                filtered_queryset = queryset.filter(cityName__icontains=cityName.strip())
+
+                #  if search not found
+                if len(filtered_queryset) < 1:
+                    response_data = {
+                        'statusCode': status.HTTP_200_OK,
+                        'status': 'Success',
+                        'data': {"message": "No Results found !"},
+                    }
+                    return Response(response_data)
+
+                # if search found.
+                serializer = GETCitySerializer(filtered_queryset, many=True)
+                response_data = {
+                    'status_code': status.HTTP_200_OK,
+                    'status': 'Success',
+                    'data': serializer.data,
+                }
+                return Response(response_data)
         except Exception as e:
             response_data = {
                 'status_code': status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -88,14 +119,60 @@ class GetAllUnapprovedCity(ListAPIView):
             return Response(response_data, status=500)
 
 
-class GetCityById(APIView):
+class GetAllApprovedAndUnapprovedCityForAdmin(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, *args, **kwargs):
+        status = request.GET.get('status')
+        if status is None:
+            response_data = {
+                'statusCode': 400,
+                'status': 'failed',
+                'data': {"message": "Please pass query param 'status' value 'active/inactive' only."},
+            }
+            return Response(response_data, status=400)
+
+        # check query param available or not
+        if status.strip().lower() == 'active':
+            queryset = City.objects.filter(isActive=True, isVerified=True).order_by('cityName')
+
+        elif status.strip().lower() == 'inactive':
+            queryset = City.objects.filter(Q(isActive=False) | Q(isVerified=False)).order_by('cityName')
+        else:
+            response_data = {
+                'statusCode': 400,
+                'status': 'failed',
+                'data': {"message": "Invalid value of query param 'status'."},
+            }
+            return Response(response_data, status=400)
+        if len(queryset) < 1:
+            response_data = {
+                'statusCode': 200,
+                'status': 'Success',
+                'data': {"message": "No Record Found."},
+            }
+            return Response(response_data)
+
+        serializer = GETCitySerializer(queryset, many=True)
+        response_data = {
+            'status_code': 200,
+            'status': 'Success',
+            'data': serializer.data
+        }
+        return Response(response_data)
+
+
+class GetCityDetailsById(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request, cityId, *args, **kwargs):
         try:
+            int(cityId)
             instance = City.objects.get(cityId=cityId)
-            serializer = GETCityByCityIdSerializer(instance)
-
+            if instance.isVerified is False:
+                serializer = GETCityByCityIdSerializer(instance, context={'status': True})
+            else:
+                serializer = GETCityByCityIdSerializer(instance)
             response_data = {
                 'statusCode': status.HTTP_200_OK,
                 'status': 'success',
@@ -109,36 +186,13 @@ class GetCityById(APIView):
                 'data': {'message': "Invalid CityId."}
             }
             return Response(response_data, status=404)
-        except Exception as e:
+        except ValueError:
             response_data = {
-                'statusCode': status.HTTP_500_INTERNAL_SERVER_ERROR,
-                'status': 'error',
-                'data': {'error': str(e)}
-            }
-            return Response(response_data, status=500)
-
-
-# Get all areas by cityId
-class GetAreaByCityId(APIView):
-    permission_classes = [IsAuthenticated]
-
-    def get(self, request, cityId, *args, **kwargs):
-        try:
-            instance = City.objects.get(cityId=cityId)
-            serializer = GetAllAreaByCitySerializer(instance, context={'cityId': cityId})
-            response_data = {
-                'status_code': status.HTTP_200_OK,
-                'status': 'Success',
-                'data': serializer.data,
-            }
-            return Response(response_data)
-        except City.DoesNotExist:
-            response_data = {
-                'statusCode': status.HTTP_404_NOT_FOUND,
+                'statusCode': 400,
                 'status': 'failed',
-                'data': {'message': "Invalid CityId."}
+                'data': {'message': f"cityId excepted a number but got {cityId} "}
             }
-            return Response(response_data, status=404)
+            return Response(response_data, status=400)
         except Exception as e:
             response_data = {
                 'statusCode': status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -148,57 +202,11 @@ class GetAreaByCityId(APIView):
             return Response(response_data, status=500)
 
 
-# get all business by city id
-class GetAllBusinessByCityId(APIView):
-    permission_classes = [IsAuthenticated]
-
-    def get(self, request, cityId, *args, **kwargs):
-        try:
-            instance = City.objects.get(cityId=cityId)
-            serializer = GetAllBusinessByCitySerializer(instance, context={'cityId': cityId})
-            response_data = {
-                'status_code': status.HTTP_200_OK,
-                'status': 'Success',
-                'data': serializer.data,
-            }
-            return Response(response_data)
-        except City.DoesNotExist:
-            response_data = {
-                'statusCode': status.HTTP_404_NOT_FOUND,
-                'status': 'failed',
-                'data': {'message': "Invalid CityId."}
-            }
-            return Response(response_data, status=404)
-        except Exception as e:
-            response_data = {
-                'statusCode': status.HTTP_500_INTERNAL_SERVER_ERROR,
-                'status': 'error',
-                'data': {'error': str(e)}
-            }
-            return Response(response_data, status=500)
-
-
-class CreateNewCity(APIView):
+class POSTNewCity(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
         try:
-            # check city already exist or not
-            city_name = request.data.get('cityName')
-            matching_cities_count = City.objects.filter(cityName__iexact=city_name.strip()).count()
-            if matching_cities_count > 0:
-                json_data = {
-                    'status_code': status.HTTP_302_FOUND,
-                    'status': 'failed',
-                    'message': {'msg': f"'{city_name.strip()}' already exists."},
-                }
-                return Response(json_data, status=302)
-
-            # chekc city,state are not None and description is None
-            state_id = request.data.get('stateId')
-            # Exception occurred if state id is wrong
-            State.objects.get(stateId=state_id)
-
             get_user_id = get_user_id_from_token_view(request)
             serializer = CREATECitySerializer(data=request.data, context={'user_id_by_token': get_user_id})
             if serializer.is_valid():
@@ -206,7 +214,7 @@ class CreateNewCity(APIView):
                 response_data = {
                     'status_code': status.HTTP_200_OK,
                     'status': 'success',
-                    'data': {'message': 'City created successfully.'},
+                    'data': {'message': 'Record added successfully.'},
                 }
                 return Response(response_data, status=200)
             response_data = {
@@ -215,21 +223,14 @@ class CreateNewCity(APIView):
                 'data': serializer.errors,
             }
             return Response(response_data, status=400)
-        except State.DoesNotExist:
-            response_data = {
-                'status_code': status.HTTP_404_NOT_FOUND,
-                'status': 'failed',
-                'data': {'message': "Invalid stateId."},
-            }
-            return Response(response_data, status=status.HTTP_400_BAD_REQUEST)
         except Exception as e:
             # Handle the case when request data is not valid
             response_data = {
-                'status_code': status.HTTP_400_BAD_REQUEST,
+                'status_code': 500,
                 'status': 'error',
                 'data': {'error': str(e)},
             }
-            return Response(response_data, status=status.HTTP_400_BAD_REQUEST)
+            return Response(response_data, status=500)
 
 
 class UpdateCityById(APIView):
@@ -237,53 +238,38 @@ class UpdateCityById(APIView):
 
     def put(self, request, cityId, *args, **kwargs):
         try:
-            # check user provide value or not
-            if len(request.data) < 1:
-                serializer = UPDATECitySerializer(data=request.data)
-                if not serializer.is_valid():
-                    response_data = {
-                        'statusCode': status.HTTP_204_NO_CONTENT,
-                        'status': 'failed',
-                        'message': serializer.errors,
-                    }
-                    return Response(response_data, status=status.HTTP_204_NO_CONTENT)
-
-            city_name = request.data.get('cityName')
-            # check updated state is available or not
-            matching_city_counts = City.objects.filter(Q(cityName__iexact=city_name), ~Q(cityId=cityId)).count()
-            # print('count ==> ', matching_city_counts)
-            if matching_city_counts > 0:
-                json_data = {
-                    'statuscode': status.HTTP_302_FOUND,
-                    'status': 'failed',
-                    'message': {'msg': f"'{city_name}' is already exists."},
-                }
-                return Response(json_data, status=status.HTTP_302_FOUND)
-
+            int(cityId)
             get_user_id = get_user_id_from_token_view(request)
             instance = City.objects.get(cityId=cityId)
-            serializer = UPDATECitySerializer(instance, data=request.data, partial=True, context={'user_id_by_token': get_user_id})
+            serializer = UPDATECitySerializer(instance, data=request.data, partial=True, context={'user_id_by_token': get_user_id, 'city_id':cityId})
             if serializer.is_valid():
                 serializer.save()
                 response_data = {
                     'statusCode': status.HTTP_200_OK,
                     'status': 'success',
-                    'data': {'msg': 'City Updated Successfully.'}
+                    'data': {'msg': 'Record Updated Successfully.'}
                 }
                 return Response(response_data)
 
             # Customize the response data if needed
             response_data = {
-                'statusCode': status.HTTP_400_BAD_REQUEST,
+                'statusCode': 400,
                 'status': 'failed',
                 'data': serializer.errors,
             }
-            return Response(response_data, status=404)
+            return Response(response_data, status=400)
         except City.DoesNotExist:
-            response_data = {
-                'statusCode': status.HTTP_400_BAD_REQUEST,
+            response_data ={
+                'statusCode': 404,
                 'status': 'failed',
-                'data': {'message': "Invalid city Id."},
+                'data': {"message": "Invalid City Id."}
+            }
+            return Response(response_data, status=404)
+        except ValueError:
+            response_data ={
+                'statusCode': 400,
+                'status': 'failed',
+                'data': {"message": f"City Id excepted a number but got {cityId}"}
             }
             return Response(response_data, status=400)
         except Exception as e:

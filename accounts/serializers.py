@@ -423,7 +423,7 @@ class GETAllUserSerializer(serializers.ModelSerializer):
     sect = serializers.SerializerMethodField()
 
     class Meta:
-        fields = ['id', 'name', 'gotra',  'nativePlace', 'profession','sect', 'age', 'currentAddress', 'phoneNumber']
+        fields = ['id', 'name', 'gotra', 'profession','sect', 'age', 'nativePlace', 'currentAddress', 'phoneNumber']
         model = User
 
     def get_profession(self, instance):
@@ -499,8 +499,9 @@ class GETUserDetailsByIdSerializer(serializers.ModelSerializer):
             data['isAdmin'] = instance.isAdmin
 
         #  to find the age by using 'dob'
-        original_dob = datetime.strptime(data['dob'], "%Y-%m-%d")
-        data['dob'] = original_dob.strftime("%B %d, %Y")
+        if data.get('dob'):
+            original_dob = datetime.strptime(data['dob'], "%Y-%m-%d")
+            data['dob'] = original_dob.strftime("%B %d, %Y")
 
         return data
 
@@ -524,3 +525,133 @@ class CreateNewNotificationSerializer(serializers.ModelSerializer):
 
         return user
 
+
+#  *********************************************  get members by areaId  ***********************************************
+
+class GETAllMemberByAreaIdSerializer(serializers.ModelSerializer):
+    age = serializers.SerializerMethodField()
+    phoneNumber = serializers.SerializerMethodField()
+    profession = serializers.SerializerMethodField()
+    sect = serializers.SerializerMethodField()
+
+    class Meta:
+        fields = ['id', 'name', 'gotra', 'profession', 'sect', 'age', 'nativePlace', 'currentAddress', 'phoneNumber']
+        model = User
+
+
+    def get_profession(self, instance):
+        try:
+            obj = MstProfession.objects.get(id=instance.professionId)
+            return obj.description
+        except MstProfession.DoesNotExist:
+            return ""
+
+    def get_sect(self, instance):
+        try:
+            obj = MstSect.objects.get(id=instance.sectId)
+            return obj.sectName
+        except MstProfession.DoesNotExist:
+            return ""
+
+    def get_age(self, instance):
+        dob = instance.dob
+        if dob:
+            birthdate = datetime.strptime(str(dob), '%Y-%m-%d')
+            current_date = datetime.now()
+            # Calculate the age
+            age = current_date.year - birthdate.year - (
+                    (current_date.month, current_date.day) < (birthdate.month, birthdate.day))
+            # return age
+            return str(age) + ' Year'
+        else:
+            return ''
+
+    def get_phoneNumber(self, instance):
+
+        is_number_visible = instance.phoneNumberVisibility
+        if not is_number_visible:
+            return 'xx-xxxx-xxxx'
+        return instance.phoneNumber
+
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        # Loop through each field and convert null values to empty strings
+        for key, value in representation.items():
+            if value is None:
+                representation[key] = ""
+        return representation
+
+
+class GETAllFamilyByAreaIdSerializer(serializers.ModelSerializer):
+    age = serializers.SerializerMethodField()
+    phoneNumber = serializers.SerializerMethodField()
+    profession = serializers.SerializerMethodField()
+    sect = serializers.SerializerMethodField()
+
+    class Meta:
+        fields = ['id', 'name', 'gotra', 'profession', 'sect', 'age', 'nativePlace', 'currentAddress', 'phoneNumber']
+        model = User
+
+    def get_profession(self, instance):
+        try:
+            obj = MstProfession.objects.get(id=instance.professionId)
+            return obj.description
+        except MstProfession.DoesNotExist:
+            return ""
+
+    def get_sect(self, instance):
+        try:
+            obj = MstSect.objects.get(id=instance.sectId)
+            return obj.sectName
+        except MstProfession.DoesNotExist:
+            return ""
+
+    def get_age(self, instance):
+        dob = instance.dob
+        if dob:
+            birthdate = datetime.strptime(str(dob), '%Y-%m-%d')
+            current_date = datetime.now()
+            # Calculate the age
+            age = current_date.year - birthdate.year - (
+                    (current_date.month, current_date.day) < (birthdate.month, birthdate.day))
+            # return age
+            return str(age) + ' Year'
+        else:
+            return ''
+
+    def get_phoneNumber(self, instance):
+
+        is_number_visible = instance.phoneNumberVisibility
+        if not is_number_visible:
+            return 'xx-xxxx-xxxx'
+        return instance.phoneNumber
+
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        # Loop through each field and convert null values to empty strings
+        for key, value in representation.items():
+            if value is None:
+                representation[key] = ""
+        return representation
+
+
+class SearchResidentsInAreaSerializer(serializers.ModelSerializer):
+    phoneNumber = serializers.SerializerMethodField()
+
+    class Meta:
+        fields = ['id', 'name', 'phoneNumber', 'currentAddress']
+        model = User
+
+    def get_phoneNumber(self, instance):
+        is_number_visible = instance.phoneNumberVisibility
+        if not is_number_visible:
+            return 'xx-xxxx-xxxx'
+        return instance.phoneNumber
+
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        # Loop through each field and convert null values to empty strings
+        for key, value in representation.items():
+            if value is None:
+                representation[key] = ""
+        return representation
