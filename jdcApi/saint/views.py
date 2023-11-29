@@ -67,7 +67,7 @@ class POSTNewSaint(APIView):
             response_data = {
                 'status': 500,
                 'statusCode': 'error',
-                'data': {'error': "Internal Server error."}
+                'data': {'message': "Internal Server error."}
             }
             return Response(response_data, status=500)
 
@@ -96,11 +96,19 @@ class PUTSaintById(APIView):
                 'data': serializer.errors
             }
             return Response(response_data, status=400)
-        except Saint.DoesNotExist:
+        except Saint.DoesNotExist or ValueError:
             response_data = {
                 'status': 404,
                 'statusCode': 'failed',
                 'data': {'message': 'Invalid Id'}
+            }
+            error_logger.error(f'Invalid Saint Id. While updating record.')
+            return Response(response_data, status=404)
+        except ValueError:
+            response_data = {
+                'status': 404,
+                'statusCode': 'failed',
+                'data': {'message': f"'id' excepted a number but got '{id}'."}
             }
             error_logger.error(f'Invalid Saint Id. While updating record.')
             return Response(response_data, status=404)
@@ -109,7 +117,7 @@ class PUTSaintById(APIView):
             response_data = {
                 'status': 500,
                 'statusCode': 'error',
-                'data': {'error': "Internal Server error."}
+                'data': {'message': "Internal Server error."}
             }
             return Response(response_data, status=500)
 
@@ -218,19 +226,19 @@ class GETAllActiveSaintBySectId(APIView):
             return Response(response_data, status=404)
         except ValueError:
             response_data = {
-                'status': 400,
+                'status': 404,
                 'statusCode': 'failed',
                 'data': {'message': f" 'saintId' excepted a number but got '{sectId}'."}
             }
-            return Response(response_data,status=404)
-        # except Exception as e:
-        #     error_logger.error(f'An Exception occured while searching saint by gender {e}')
-        #     response_data = {
-        #         'status': 500,
-        #         'statusCode': 'error',
-        #         'data': {'error': "Internal Server error."}
-        #     }
-        #     return Response(response_data, status=500)
+            return Response(response_data, status=404)
+        except Exception as e:
+            error_logger.error(f'An Exception occured while searching saint by gender {e}')
+            response_data = {
+                'status': 500,
+                'statusCode': 'error',
+                'data': {'message': "Internal Server error."}
+            }
+            return Response(response_data, status=500)
 
 
 class GETAllAddAndApprovedSaint(APIView):
@@ -291,7 +299,7 @@ class GETAllAddAndApprovedSaint(APIView):
             response_data = {
                 'status': 500,
                 'statusCode': 'error',
-                'data': {'error': "Internal Server error."}
+                'data': {'message': "Internal Server error."}
             }
             return Response(response_data, status=500)
 
@@ -325,11 +333,11 @@ class GETSaintDetailById(APIView):
                 'data': {'message': f" saintId excepted a number but got '{saintId}'."}
             }
             return Response(response_data, status=404)
-        # except Exception as e:
-        #     error_logger.error(f'An Exception occured while fetching individual saint record. {e}')
-        #     response_data = {
-        #         'status': 500,
-        #         'statusCode': 'error',
-        #         'data': {'error': "Internal Server error."}
-        #     }
-        #     return Response(response_data, status=500)
+        except Exception as e:
+            error_logger.error(f'An Exception occured while fetching individual saint record. {e}')
+            response_data = {
+                'status': 500,
+                'statusCode': 'error',
+                'data': {'message': "Internal Server error."}
+            }
+            return Response(response_data, status=500)

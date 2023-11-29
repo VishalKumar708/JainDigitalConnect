@@ -21057,3 +21057,30 @@ INFO 2023-11-29 10:43:49,188  212 "GET /admin/jdcApi/literature/ HTTP/1.1" 200 2
 INFO 2023-11-29 10:43:49,264  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
 INFO 2023-11-29 10:53:35,072  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
 INFO 2023-11-29 10:53:36,694  668 Watching for file changes with StatReloader
+INFO 2023-11-29 11:12:21,742  668 Watching for file changes with StatReloader
+ERROR 2023-11-29 11:14:45,194  241 Internal Server Error: /api/PUTSaintById/gfgh/
+ERROR 2023-11-29 11:14:45,196  212 "PUT /api/PUTSaintById/gfgh/ HTTP/1.1" 500 77
+INFO 2023-11-29 11:15:55,997  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\saint\views.py changed, reloading.
+INFO 2023-11-29 11:15:56,404  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\saint\views.py changed, reloading.
+INFO 2023-11-29 11:15:58,257  668 Watching for file changes with StatReloader
+INFO 2023-11-29 11:15:58,634  668 Watching for file changes with StatReloader
+ERROR 2023-11-29 11:15:59,005  241 Internal Server Error: /api/PUTSaintById/gfgh/
+ERROR 2023-11-29 11:15:59,006  212 "PUT /api/PUTSaintById/gfgh/ HTTP/1.1" 500 77
+ERROR 2023-11-29 11:16:01,305  241 Internal Server Error: /api/PUTSaintById/gfgh/
+ERROR 2023-11-29 11:16:01,306  212 "PUT /api/PUTSaintById/gfgh/ HTTP/1.1" 500 77
+INFO 2023-11-29 11:17:11,336  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\saint\views.py changed, reloading.
+INFO 2023-11-29 11:17:11,338  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\saint\views.py changed, reloading.
+INFO 2023-11-29 11:17:12,987  668 Watching for file changes with StatReloader
+INFO 2023-11-29 11:17:12,994  668 Watching for file changes with StatReloader
+WARNING 2023-11-29 11:17:16,938  241 Not Found: /api/PUTSaintById/gfgh/
+WARNING 2023-11-29 11:17:16,939  212 "PUT /api/PUTSaintById/gfgh/ HTTP/1.1" 404 96
+INFO 2023-11-29 11:17:48,759  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\saint\views.py changed, reloading.
+INFO 2023-11-29 11:17:49,565  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\saint\views.py changed, reloading.
+INFO 2023-11-29 11:17:50,516  668 Watching for file changes with StatReloader
+INFO 2023-11-29 11:17:51,467  668 Watching for file changes with StatReloader
+WARNING 2023-11-29 11:17:52,165  241 Not Found: /api/PUTSaintById/gfgh/
+WARNING 2023-11-29 11:17:52,166  212 "PUT /api/PUTSaintById/gfgh/ HTTP/1.1" 404 96
+INFO 2023-11-29 11:19:57,335  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\saint\views.py changed, reloading.
+INFO 2023-11-29 11:19:58,618  668 Watching for file changes with StatReloader
+INFO 2023-11-29 11:20:06,309  668 Watching for file changes with StatReloader
+INFO 2023-11-29 11:22:20,427  668 Watching for file changes with StatReloader

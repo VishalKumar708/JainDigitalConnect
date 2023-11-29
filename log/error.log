@@ -314,3 +314,8 @@ ERROR 2023-11-28 15:02:57,493  30 Invalid URL.
 ERROR 2023-11-28 15:03:01,829  30 Invalid URL.
 ERROR 2023-11-29 10:41:31,676  44 Unsupported Media Type. Expected application/json but got text/plain
 ERROR 2023-11-29 10:42:55,198  58 Invalid JSON data.Expecting ',' delimiter: line 3 column 5 (char 28)
+ERROR 2023-11-29 11:14:45,189  108 An Exception occured while updating new saint Field 'id' expected a number but got 'gfgh'.
+ERROR 2023-11-29 11:15:59,004  108 An Exception occured while updating new saint Field 'id' expected a number but got 'gfgh'.
+ERROR 2023-11-29 11:16:01,304  108 An Exception occured while updating new saint Field 'id' expected a number but got 'gfgh'.
+ERROR 2023-11-29 11:17:16,937  113 Invalid Saint Id. While updating record.
+ERROR 2023-11-29 11:17:52,164  113 Invalid Saint Id. While updating record.
