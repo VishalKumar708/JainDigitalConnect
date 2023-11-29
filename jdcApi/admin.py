@@ -24,7 +24,7 @@ admin.site.register(Area, AreaAdmin)
 
 
 class LiteratureAdmin(admin.ModelAdmin):
-    list_display = ['literatureId', 'title', 'body', 'isVerified', 'isActive', 'groupId', 'createdBy', 'updatedBy', 'createdDate','updatedDate']
+    list_display = ['id', 'title', 'body', 'isVerified', 'isActive', 'groupId', 'createdBy', 'updatedBy', 'createdDate','updatedDate']
 
 
 admin.site.register(Literature,LiteratureAdmin)
@@ -52,7 +52,7 @@ admin.site.register(MstSect, MstSectAdmin)
 
 
 class SaintAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'sectId', 'fatherName', 'motherName', 'birthPlace', 'dikshaPlace', 'guruName','dob', 'devlokDate', 'gender', 'description', 'isVerified']
+    list_display = ['id', 'name', 'sectId', 'fatherName', 'motherName', 'birthPlace', 'dikshaPlace', 'guruName','dob','dobTime', 'devlokDate','devlokTime', 'gender', 'description', 'isVerified']
 
 
 admin.site.register(Saint, SaintAdmin)
@@ -84,3 +84,10 @@ class MstProfessionAdmin(admin.ModelAdmin):
 
 
 admin.site.register(MstProfession, MstProfessionAdmin)
+
+
+class EmergencyAdmin(admin.ModelAdmin):
+    list_display = ['id', 'departmentName', 'phoneNumber', 'email', 'website', 'isVerified', 'isActive']
+
+
+admin.site.register(Emergency, EmergencyAdmin)

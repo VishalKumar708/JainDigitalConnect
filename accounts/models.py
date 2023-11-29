@@ -51,7 +51,7 @@ class User(BaseModel, AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
 
     USERNAME_FIELD = "id"
-    REQUIRED_FIELDS = ['name', 'phoneNumber', 'dob', 'address']
+    REQUIRED_FIELDS = ['name', 'phoneNumber', 'dob', 'currentAddress']
     objects = UserManager()
 
     # def has_module_perms(self):

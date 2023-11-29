@@ -52,12 +52,7 @@ class Area(BaseModel, models.Model):
         return self.areaName
 
 
-class Literature(BaseModel, models.Model):
-    literatureId = models.AutoField(primary_key=True)
-    title = models.CharField(max_length=200)
-    body = models.TextField()
-    order = models.IntegerField()
-    isVerified = models.BooleanField(default=False)
+
 
 
 class Aarti(BaseModel, models.Model):
@@ -81,8 +76,8 @@ class Business(BaseModel):
     website = models.CharField(max_length=220, null=True, blank=True)
     businessDescription = models.TextField()
     isVerified = models.BooleanField(default=False)
-    gstNumber = models.CharField(max_length=20, blank=True)
-    address = models.CharField(max_length=120, blank=True)
+    gstNumber = models.CharField(max_length=20, null=True, blank=True)
+    address = models.CharField(max_length=120, null=True, blank=True)
 
     def __str__(self):
         return self.businessName
@@ -97,10 +92,19 @@ class MstSect(BaseModel):
         return self.sectName
 
 
+class Literature(BaseModel):
+    id = models.AutoField(primary_key=True)
+    sectId = models.ForeignKey(MstSect, on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
+    body = models.TextField()
+    order = models.IntegerField()
+    isVerified = models.BooleanField(default=False)
+
+
 class Saint(BaseModel):
     GENDER_CHOICES = [
-        ('Male', 'Male'),
-        ('Female', 'Female')
+        ('Male', 'male'),
+        ('Female', 'female')
     ]
     id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=30)
@@ -110,20 +114,38 @@ class Saint(BaseModel):
     birthPlace = models.CharField(max_length=30)
     dikshaPlace = models.CharField(max_length=30)
     guruName = models.CharField(max_length=30)
-    dob = models.DateTimeField()
+    dob = models.DateField()
+    dobTime = models.TimeField(null=True, blank=True)
     dikshaDate = models.DateField()
-    devlokDate = models.DateTimeField(null=True, blank=True)
+    devlokDate = models.DateField(null=True, blank=True)
+    devlokTime = models.TimeField(null=True, blank=True)
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES)
     description = models.TextField(null=True, blank=True)
-    isVerified = models.BooleanField(default=False, verbose_name='status')
+    isVerified = models.BooleanField(default=False)
 
-    def save(self, *args, **kwargs):
-        # Set the time zone here before saving
-        self.dob = timezone.now()
-        super().save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     # Set the time zone here before saving
+    #     # self.dobTime = timezone.now()
+    #     # self.devlokTime = timezone.now()
+    #     super().save(*args, **kwargs)
+
+# class SaintFamily(BaseModel):
+#     id = models.BigAutoField(primary_key=True)
+#     saintId = models.ForeignKey(Saint, on_delete=models.CASCADE, related_name='saintFamilyMembers')
+#     name = models.CharField(max_length=50)
+
+
+class Emergency(BaseModel):
+    id = models.BigAutoField(primary_key=True)
+    cityId = models.ForeignKey(City, on_delete=models.CASCADE, related_name='cities')
+    departmentName = models.CharField(max_length=30)
+    phoneNumber = models.CharField(max_length=15, null=True)
+    email = models.EmailField(null=True, blank=True)
+    website = models.CharField(max_length=255, null=True, blank=True)
+    isVerified = models.BooleanField(default=False)
+
 
 #  Master tables
-
 class MstBloodGroup(BaseModel):
     id = models.BigAutoField(primary_key=True)
     bloodGroupName = models.CharField(max_length=7, unique=True)

@@ -1,19 +1,49 @@
 from rest_framework.views import APIView
-from .serializers import CREATESaintSerializer, UPDATESaintSerializer, GETAllSaintSerializer, GETSaintByIdSerializer, GETAllSaintBySectIdSerializer, GETAllSaintForAdminSerializer
+from rest_framework.generics import ListAPIView
+from .serializer import *
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from utils.get_id_by_token import get_user_id_from_token_view
-from .models import Saint, MstSect
+from jdcApi.models import Saint, MstSect
 from accounts.pagination import CustomPagination
 import logging
 error_logger = logging.getLogger('error')
 info_logger = logging.getLogger('info')
 
 
+class GETAllSectSaint(ListAPIView):
+    """ Count 'Saint' by 'Sect' """
+    serializer_class = GETAllSectWithCountForSaintSerializer
+
+    def get_queryset(self):
+        query_set = MstSect.objects.all()
+        return query_set
+
+    def list(self, request, *args, **kwargs):
+        queryset = self.get_queryset()
+        # print(queryset)
+        if len(queryset) < 1:
+            response_data = {
+                'status': 200,
+                'statusCode': 'success',
+                'data': {'message': 'No Record Found!'}
+            }
+            return Response(response_data)
+        serializer = self.get_serializer(queryset, many=True)
+
+        response_data = {
+            'status': 200,
+            'statusCode': 'success',
+            'data': serializer.data
+        }
+        return Response(response_data)
+
+
 class POSTNewSaint(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
+        """ Create New Saint Record."""
         try:
             get_user_id = get_user_id_from_token_view(request)
             serializer = CREATESaintSerializer(data=request.data, context={'user_id_by_token': get_user_id})
@@ -46,6 +76,7 @@ class PUTSaintById(APIView):
     permission_classes = [IsAuthenticated]
 
     def put(self, request, id, *args, **kwargs):
+        """ Update existing record by 'id'."""
         try:
             saint_obj = Saint.objects.get(id=id)
             get_user_id = get_user_id_from_token_view(request)
@@ -88,16 +119,20 @@ class GETAllSaintsBySearchParam(APIView):
     pagination_class = CustomPagination
 
     def get(self, request, sectId, *args, **kwargs):
-        """ Search saint in specific sect by 'search' param"""
+        """ Search saint in specific sect by 'saintName' param"""
 
         try:
             MstSect.objects.get(id=sectId)
-            search_param = request.GET.get('search')
-            pagination_data = {}
+            search_param = request.GET.get('saintName')
             if search_param:
                 queryset = Saint.objects.filter(isVerified=True, sectId=sectId, name__icontains=search_param.strip()).order_by('name')
             else:
-                queryset = Saint.objects.filter(isVerified=True, sectId=sectId).order_by('name')
+                response_data = {
+                    'status': 400,
+                    'statusCode': 'failed',
+                    'data': {'message': "Please pass value inside search param 'saintName' to search saint."}
+                }
+                return Response(response_data, status=400)
 
             if len(queryset) < 1:
                 response_data = {
@@ -106,19 +141,13 @@ class GETAllSaintsBySearchParam(APIView):
                     'data': {'message': 'No Record Found!'}
                 }
                 return Response(response_data)
-            # pagination
-            paginator = self.pagination_class()
-            page = paginator.paginate_queryset(queryset, request)
-            if page is not None:
-                serializer = GETAllSaintSerializer(page, many=True)
-                pagination_data = paginator.get_paginated_response(serializer.data)
 
-            # serializer = GETAllSaintSerializer(queryset, many=True)
-            response_data = {**{
+            serializer = GETAllSaintSerializer(queryset, many=True)
+            response_data = {
                     'status': 200,
                     'statusCode': 'success',
-                    # 'data': serializer.data
-                }, **pagination_data}
+                    'data': serializer.data
+                }
             return Response(response_data)
         except MstSect.DoesNotExist:
             response_data = {
@@ -144,10 +173,12 @@ class GETAllSaintsBySearchParam(APIView):
             }
             return Response(response_data, status=500)
 
-class GETAllActiveSaintBySectIdUsingSearchParam(APIView):
+
+class GETAllActiveSaintBySectId(APIView):
     pagination_class = CustomPagination
 
     def get(self, request, sectId, *args, **kwargs):
+        """Get all active records by sectId in 'Saint' model."""
         search_param = request.GET.get('gender')
         pagination_data = {}
         try:
@@ -192,20 +223,21 @@ class GETAllActiveSaintBySectIdUsingSearchParam(APIView):
                 'data': {'message': f" 'saintId' excepted a number but got '{sectId}'."}
             }
             return Response(response_data,status=404)
-        except Exception as e:
-            error_logger.error(f'An Exception occured while searching saint by gender {e}')
-            response_data = {
-                'status': 500,
-                'statusCode': 'error',
-                'data': {'error': "Internal Server error."}
-            }
-            return Response(response_data, status=500)
+        # except Exception as e:
+        #     error_logger.error(f'An Exception occured while searching saint by gender {e}')
+        #     response_data = {
+        #         'status': 500,
+        #         'statusCode': 'error',
+        #         'data': {'error': "Internal Server error."}
+        #     }
+        #     return Response(response_data, status=500)
 
 
 class GETAllAddAndApprovedSaint(APIView):
     pagination_class = CustomPagination
 
     def get(self, request, *args, **kwargs):
+        """ show all active and inactive saint by a query param 'status' """
         try:
             search_param = request.GET.get('status')
             # queryset = None
@@ -267,6 +299,7 @@ class GETAllAddAndApprovedSaint(APIView):
 class GETSaintDetailById(APIView):
 
     def get(self, request, saintId, *args, **kwargs):
+        """ show all details by 'saintId'."""
         try:
             saint_obj = Saint.objects.get(id=saintId)
             # print(saint_obj.dob)
@@ -292,11 +325,11 @@ class GETSaintDetailById(APIView):
                 'data': {'message': f" saintId excepted a number but got '{saintId}'."}
             }
             return Response(response_data, status=404)
-        except Exception as e:
-            error_logger.error(f'An Exception occured while fetching individual saint record. {e}')
-            response_data = {
-                'status': 500,
-                'statusCode': 'error',
-                'data': {'error': "Internal Server error."}
-            }
-            return Response(response_data, status=500)
+        # except Exception as e:
+        #     error_logger.error(f'An Exception occured while fetching individual saint record. {e}')
+        #     response_data = {
+        #         'status': 500,
+        #         'statusCode': 'error',
+        #         'data': {'error': "Internal Server error."}
+        #     }
+        #     return Response(response_data, status=500)

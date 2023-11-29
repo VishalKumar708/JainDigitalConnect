@@ -1,5 +1,5 @@
 from rest_framework.generics import ListAPIView
-from .serializers import CREATESectSerializer, UPDATESectSerializer, GETSectDetailsByIdSerializer, GETAllSectSerializer, GETAllSectForDropDownSerializer, GETAllSectWithCountSerializer
+from .serializers import CREATESectSerializer, UPDATESectSerializer, GETSectDetailsByIdSerializer, GETAllSectSerializer, GETAllSectForDropDownSerializer, GETAllSectWithCountForResidentsSerializer
 from .models import MstSect
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -190,12 +190,12 @@ class GETAllSectForDropDown(APIView):
             return Response(response_data, status=500)
 
 
-
 #  Sect for count
 
-class GETAllSectSaint(ListAPIView):
+
+class GETAllSectResidents(ListAPIView):
     """ Count 'Saint' by 'Sect' """
-    serializer_class = GETAllSectWithCountSerializer
+    serializer_class = GETAllSectWithCountForResidentsSerializer
 
     def get_queryset(self):
         query_set = MstSect.objects.all()
@@ -219,6 +219,3 @@ class GETAllSectSaint(ListAPIView):
             'data': serializer.data
         }
         return Response(response_data)
-
-
-

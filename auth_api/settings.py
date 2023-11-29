@@ -24,10 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-a3z&h2hki16x=vk*87!8-xba!tg!50szf=!npl0=)kpvg(_4)w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-# ALLOWED_HOSTS = ['192.168.100.3', '127.0.0.1']
-ALLOWED_HOSTS = ['.vercel.app', 'now.sh', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['192.168.100.3', '127.0.0.1']
+
 
 # Application definition
 
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # "debug_toolbar",
     'rest_framework_simplejwt',
     'rest_framework',
+    'django_filters',
     'fcm_django',
     'jdcApi'
 
@@ -100,14 +101,14 @@ AUTH_USER_MODEL = 'accounts.User'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'railway',
+        'NAME': 'api',
         'USER': 'root',
-        'PASSWORD': 'bbb3fe-B5aB3ff-FEb6HFh362B4ga4a4',
-        'HOST': 'roundhouse.proxy.rlwy.net',
-        'PORT': '43995',
-        # 'OPTIONS': {
-        #     'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        # }
+        'PASSWORD': 'admin',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
     }
 }
 
@@ -147,10 +148,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 

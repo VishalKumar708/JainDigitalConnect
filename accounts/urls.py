@@ -29,7 +29,7 @@ urlpatterns = [
     # to delete member by 'id'
     path('DELETEMemberById/<slug:user_id>/', DeleteMemberById.as_view()),  # correct
 
-    # to update member by 'id' (GET)
+    # to update member by 'id' (PUT)
     path('UPDATEUserById/<slug:user_id>/', UpdateUserById.as_view()),  # correct
 
     # to get all residents (GET)

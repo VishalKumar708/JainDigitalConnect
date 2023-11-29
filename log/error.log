@@ -276,3 +276,41 @@ ERROR 2023-11-21 14:58:20,497  30 Invalid URL.
 ERROR 2023-11-21 14:58:24,760  30 Invalid URL.
 ERROR 2023-11-21 16:20:10,380  30 Invalid URL.
 ERROR 2023-11-22 17:45:35,589  30 Invalid URL.
+ERROR 2023-11-24 10:19:39,672  30 Invalid URL.
+ERROR 2023-11-24 10:19:44,235  30 Invalid URL.
+ERROR 2023-11-24 10:37:49,028  30 Invalid URL.
+ERROR 2023-11-24 10:38:13,059  30 Invalid URL.
+ERROR 2023-11-24 10:55:53,867  30 Invalid URL.
+ERROR 2023-11-24 11:20:19,532  30 Invalid URL.
+ERROR 2023-11-24 11:51:54,606  30 Invalid URL.
+ERROR 2023-11-24 11:52:16,757  30 Invalid URL.
+ERROR 2023-11-24 12:20:07,906  302 An Exception occured while fetching individual saint record. 'datetime.date' object has no attribute 'date'
+ERROR 2023-11-24 12:35:07,929  30 Invalid URL.
+ERROR 2023-11-24 12:35:31,276  30 Invalid URL.
+ERROR 2023-11-24 14:52:58,129  44 Unsupported Media Type. Expected application/json but got text/plain
+ERROR 2023-11-24 14:53:08,462  44 Unsupported Media Type. Expected application/json but got text/plain
+ERROR 2023-11-24 14:59:09,125  30 Invalid URL.
+ERROR 2023-11-24 15:15:51,539  44 Unsupported Media Type. Expected application/json but got text/plain
+ERROR 2023-11-27 11:25:55,106  30 Invalid URL.
+ERROR 2023-11-27 11:28:49,116  35 An Exception occured while creating new Sect Class CREATEEmergencySerializer missing "Meta.model" attribute
+ERROR 2023-11-27 11:35:35,955  30 Invalid URL.
+ERROR 2023-11-27 11:35:43,727  30 Invalid URL.
+ERROR 2023-11-27 12:04:05,795  76 Invalid Emergency Id. While updating record.
+ERROR 2023-11-27 14:45:48,980  30 Invalid URL.
+ERROR 2023-11-27 14:45:52,847  30 Invalid URL.
+ERROR 2023-11-27 14:50:54,474  30 Invalid URL.
+ERROR 2023-11-27 14:50:58,883  30 Invalid URL.
+ERROR 2023-11-27 14:51:05,102  30 Invalid URL.
+ERROR 2023-11-27 14:52:28,307  30 Invalid URL.
+ERROR 2023-11-27 15:05:49,233  30 Invalid URL.
+ERROR 2023-11-27 15:07:43,104  202 An Exception occured while searching saint by gender 'GETAllActiveSaintBySectIdUsingSearchParam' object has no attribute 'pagination_class'
+ERROR 2023-11-27 15:15:11,040  30 Invalid URL.
+ERROR 2023-11-27 15:19:55,063  30 Invalid URL.
+ERROR 2023-11-27 15:23:22,079  30 Invalid URL.
+ERROR 2023-11-27 15:24:55,868  30 Invalid URL.
+ERROR 2023-11-27 15:25:08,225  30 Invalid URL.
+ERROR 2023-11-27 15:56:31,276  38 An Exception occured while creating new Sect too many values to unpack (expected 2)
+ERROR 2023-11-28 15:02:57,493  30 Invalid URL.
+ERROR 2023-11-28 15:03:01,829  30 Invalid URL.
+ERROR 2023-11-29 10:41:31,676  44 Unsupported Media Type. Expected application/json but got text/plain
+ERROR 2023-11-29 10:42:55,198  58 Invalid JSON data.Expecting ',' delimiter: line 3 column 5 (char 28)

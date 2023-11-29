@@ -1,12 +1,12 @@
 from rest_framework.generics import *
 from rest_framework.views import APIView
 
-from .serializers import *
+from .serializer import *
 from rest_framework import status
 from rest_framework.response import Response
 
 from django.db.models import Q
-from .models import Area
+from jdcApi.models import Area, City
 from utils.get_id_by_token import get_user_id_from_token_view
 from rest_framework.permissions import IsAuthenticated
 
@@ -300,6 +300,7 @@ class GETAllResidentsByAreaId(APIView):
                         'data': {'message': 'No Record Found.'},
                     }
                     return Response(response_data, status=200)
+
                 # apply pagination
                 paginator = self.pagination_class()
                 page = paginator.paginate_queryset(members_queryset, request)
