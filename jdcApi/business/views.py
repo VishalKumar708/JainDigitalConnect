@@ -16,7 +16,7 @@ class GETAllBusinessByUserId(APIView):
     def get(self, request, userId, *args, **kwargs):
         try:
             User.objects.get(id=userId)
-            queryset = Business.objects.filter(userId=userId, isVerified=True, isActive=True)
+            queryset = Business.objects.filter(userId=userId)
             if len(queryset) < 1:
                 response_data = {
                     'statusCode': status.HTTP_200_OK,
@@ -42,11 +42,11 @@ class GETAllBusinessByUserId(APIView):
             return Response(response_data, status=404)
         except ValueError:
             response_data = {
-                'statusCode': 400,
+                'statusCode': 404,
                 'status': 'Success',
                 'data': {"message": f"'userId' excepted a number but got '{userId}'."},
             }
-            return Response(response_data, status=400)
+            return Response(response_data, status=404)
 
 
 class GetAllApprovedCityAndSearchCityNameForBusiness(APIView):
@@ -138,11 +138,11 @@ class GetAllApprovedBusinessByCityId(APIView):  # correct
             return Response(response_data, status=404)
         except ValueError:
             response_data = {
-                'statusCode': 400,
+                'statusCode': 404,
                 'status': 'failed',
                 'data': {'message': f"'cityId' excepted a number but got '{cityId}'."},
             }
-            return Response(response_data, status=400)
+            return Response(response_data, status=404)
         except Exception as e:
             response_data = {
                 'statusCode': status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -224,7 +224,7 @@ class GetBusinessDetailsById(APIView):  # correct
             return Response(response_data, status=404)
         except ValueError:
             response_data = {
-                'statusCode': status.HTTP_404_NOT_FOUND,
+                'statusCode': 404,
                 'status': 'failed',
                 'data': {'message': f"'BusinessId' excepted a number but got '{businessId}'."}
             }
@@ -249,7 +249,7 @@ class POSTNewBusiness(APIView):
             if serializer.is_valid():
                 serializer.save()
                 response_data = {
-                    'statusCode': status.HTTP_200_OK,
+                    'statusCode': 200,
                     'status': 'success',
                     'data': {'message': 'Record Added Successfully.'}
                 }
@@ -259,13 +259,13 @@ class POSTNewBusiness(APIView):
                 'status': 'failed',
                 'data': serializer.errors
             }
-            return Response(response_data)
+            return Response(response_data, status=400)
         except Exception as e:
             # Handle the case when request data is not valid
             response_data = {
                 'statusCode': status.HTTP_500_INTERNAL_SERVER_ERROR,
                 'status': 'error',
-                'data': {'error': str(e)},
+                'data': {'message': str(e)},
             }
             return Response(response_data, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 

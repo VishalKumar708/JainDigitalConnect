@@ -31,7 +31,7 @@ admin.site.register(Literature,LiteratureAdmin)
 
 
 class AartiAdmin(admin.ModelAdmin):
-    list_display = ['aartiId', 'aartiName', 'aartiText', 'isVerified', 'isActive', 'groupId', 'createdBy', 'updatedBy', 'createdDate','updatedDate']
+    list_display = ['id', 'aartiName', 'sectId', 'aartiText', 'isVerified', 'isActive', 'groupId', 'createdBy', 'updatedBy', 'createdDate','updatedDate']
 
 
 admin.site.register(Aarti, AartiAdmin)
@@ -91,3 +91,24 @@ class EmergencyAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Emergency, EmergencyAdmin)
+
+
+class DharamSthanAdmin(admin.ModelAdmin):
+    list_display = ['name', 'cityId', 'sectId', 'address', 'locationLink', 'postalCode', 'foundationDate', 'accountNumber', 'ifscCode', 'upiId', 'isActive', 'isVerified']
+
+
+admin.site.register(DharamSthan, DharamSthanAdmin)
+
+
+class DharamSthanMemberAdmin(admin.ModelAdmin):
+    list_display = ['id', 'dharamSthanId', 'position', 'phoneNumber', 'isVerified', 'isActive']
+
+
+admin.site.register(DharamSthanMember, DharamSthanMemberAdmin)
+
+
+class EventAdmin(admin.ModelAdmin):
+    list_display = ['id', 'cityId', 'sectId', 'startDate', 'endDate', 'title', 'body', 'isVerified', 'isActive']
+
+
+admin.site.register(Event, EventAdmin)

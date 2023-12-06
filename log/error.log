@@ -319,3 +319,19 @@ ERROR 2023-11-29 11:15:59,004  108 An Exception occured while updating new saint
 ERROR 2023-11-29 11:16:01,304  108 An Exception occured while updating new saint Field 'id' expected a number but got 'gfgh'.
 ERROR 2023-11-29 11:17:16,937  113 Invalid Saint Id. While updating record.
 ERROR 2023-11-29 11:17:52,164  113 Invalid Saint Id. While updating record.
+ERROR 2023-11-29 14:32:39,328  30 Invalid URL.
+ERROR 2023-11-29 16:04:28,109  44 Unsupported Media Type. Expected application/json but got text/plain
+ERROR 2023-11-30 12:10:54,520  30 Invalid URL.
+ERROR 2023-12-01 13:33:43,707  30 Invalid URL.
+ERROR 2023-12-01 16:11:20,732  58 Invalid JSON data.Expecting ',' delimiter: line 4 column 30 (char 80)
+ERROR 2023-12-05 11:53:39,715  30 Invalid URL.
+ERROR 2023-12-05 11:53:45,554  30 Invalid URL.
+ERROR 2023-12-05 12:25:50,730  30 Invalid URL.
+ERROR 2023-12-05 13:41:40,770  30 Invalid URL.
+ERROR 2023-12-06 10:05:54,850  30 Invalid URL.
+ERROR 2023-12-06 10:06:02,225  30 Invalid URL.
+ERROR 2023-12-06 10:27:03,679  30 Invalid URL.
+ERROR 2023-12-06 10:27:26,298  30 Invalid URL.
+ERROR 2023-12-06 11:28:44,955  58 Invalid JSON data.Expecting ',' delimiter: line 3 column 5 (char 35)
+ERROR 2023-12-06 12:04:45,432  76 Invalid MaritalStatus Id. While updating record.
+ERROR 2023-12-06 12:09:31,142  30 Invalid URL.

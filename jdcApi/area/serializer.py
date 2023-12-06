@@ -5,22 +5,22 @@ from jdcApi.models import Area, City
 from accounts.models import User
 
 
-class GETAreaWithCountSerializer(serializers.ModelSerializer):
-    count = serializers.SerializerMethodField()
-
-    class Meta:
-        model = Area
-        fields = ['areaId', 'areaName', 'count']
-
-    def get_count(self, instance):
-        total_members = User.objects.filter(areaId=instance.areaId).count()
-        return total_members
-
-
-class GETAreaSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Area
-        fields = ['areaId', 'areaName']
+# class GETAreaWithCountSerializer(serializers.ModelSerializer):
+#     count = serializers.SerializerMethodField()
+#
+#     class Meta:
+#         model = Area
+#         fields = ['areaId', 'areaName', 'count']
+#
+#     def get_count(self, instance):
+#         total_members = User.objects.filter(areaId=instance.areaId).count()
+#         return total_members
+#
+#
+# class GETAreaSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Area
+#         fields = ['areaId', 'areaName']
 
 
 class GETAreaForAdminSerializer(serializers.ModelSerializer):
@@ -37,6 +37,7 @@ class CREATEAreaSerializer(serializers.ModelSerializer):
     def to_internal_value(self, data):
         city_id = data.get('cityId')
         area_name = data.get('areaName')
+        contact_number = data.get('areaContactNumber')
         errors = {}
         # custom validation
         if city_id:
@@ -52,6 +53,9 @@ class CREATEAreaSerializer(serializers.ModelSerializer):
             except ValueError:
                 errors['cityId'] = [f"'city id' excepted a number but got '{city_id}'."]
 
+        if contact_number:
+            if not str(contact_number).isdigit() or len(str(contact_number)) != 10:
+                errors['areaContactNumber'] = ['Please Enter a Valid Number.']
         # default validation
         validated_data = None
         try:
@@ -108,6 +112,7 @@ class UPDATEAreaSerializer(serializers.ModelSerializer):
 
         city_id = data.get('cityId')
         area_name = data.get('areaName')
+        contact_number = data.get('areaContactNumber')
         errors = {}
         # custom validation
         if city_id:
@@ -124,6 +129,9 @@ class UPDATEAreaSerializer(serializers.ModelSerializer):
             except ValueError:
                 errors['cityId'] = [f"'city id' excepted a number but got '{city_id}'."]
 
+        if contact_number:
+            if not str(contact_number).isdigit() or len(str(contact_number)) != 10:
+                errors['areaContactNumber'] = ['Please Enter a Valid Number.']
         if city_id is None and area_name:
             errors['areaName'] = [f"to update 'areaName' must provide 'cityId' also."]
         # default validation

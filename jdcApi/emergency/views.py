@@ -80,11 +80,11 @@ class PUTEmergencyById(APIView):
             return Response(response_data, status=404)
         except ValueError:
             response_data = {
-                'status': 400,
+                'status': 404,
                 'statusCode': 'failed',
                 'data': f" 'id' excepted a number but got '{id}'."
             }
-            return Response(response_data, status=400)
+            return Response(response_data, status=404)
         except Exception as e:
             error_logger.error(f'An Exception occured while updating "Emergency" Record. {e}')
             response_data = {
@@ -118,11 +118,11 @@ class GETEmergencyDetailById(APIView):
             return Response(response_data, status=404)
         except ValueError:
             response_data = {
-                'status': 400,
+                'status': 404,
                 'statusCode': 'failed',
                 'data': {'message': f"'id' excepted a number but got '{id}'."}
             }
-            return Response(response_data, status=400)
+            return Response(response_data, status=404)
 
 
 class GETAllCityByEmergency(APIView):
@@ -209,11 +209,11 @@ class GETAllEmergencyByCityId(APIView):
             return Response(response_data, status=404)
         except ValueError:
             response_data = {
-                'status_code': 400,
+                'status_code': 404,
                 'status': 'failed',
                 'data': {"message": f"'cityId' excepted a number but got '{cityId}'."},
             }
-            return Response(response_data, status=400)
+            return Response(response_data, status=404)
 
 
 class GETAllEmergencyForAdmin(APIView):

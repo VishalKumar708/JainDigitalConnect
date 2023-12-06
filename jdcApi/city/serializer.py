@@ -9,23 +9,22 @@ class GETCitySerializer(serializers.ModelSerializer):
         fields = ['cityId', 'cityName']
 
 
-class GETCityWithCountSerializer(serializers.ModelSerializer):
-    count = serializers.SerializerMethodField()
-
-    class Meta:
-        model = City
-        # fields = ['cityId', 'cityName','city_by_areas']
-        fields = ['cityId', 'cityName', 'count']
-
-    def get_count(self, instance):
-        screen_type = self.context.get('screen_type')
-        if screen_type == 'business':
-            total_businesses = Business.objects.filter(cityId=instance.cityId, isActive=True, isVerified=True).count()
-            return total_businesses
-        else:
-            total_members = User.objects.filter(cityId=instance.cityId).count()
-            return total_members
-
+# class GETCityWithCountSerializer(serializers.ModelSerializer):
+#     count = serializers.SerializerMethodField()
+#
+#     class Meta:
+#         model = City
+#         # fields = ['cityId', 'cityName','city_by_areas']
+#         fields = ['cityId', 'cityName', 'count']
+#
+#     def get_count(self, instance):
+#         # screen_type = self.context.get('screen_type')
+#         # if screen_type == 'business':
+#         #     total_businesses = Business.objects.filter(cityId=instance.cityId, isActive=True, isVerified=True).count()
+#         #     return total_businesses
+#         # else:
+#         total_members = User.objects.filter(cityId=instance.cityId).count()
+#         return total_members
 
 
 class CREATECitySerializer(serializers.ModelSerializer):

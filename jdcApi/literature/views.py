@@ -67,11 +67,11 @@ class GETAllApprovedLiteratureBySectId(APIView):
             return Response(response_data)
         except ValueError:
             response_data = {
-                'statusCode': 400,
+                'statusCode': 404,
                 'status': 'failed',
                 'data': {'message': f" 'sectId' excepted a number but got '{sectId}'." },
             }
-            return Response(response_data, status=400)
+            return Response(response_data, status=404)
         except Exception as e:
             response_data = {
                 'statusCode': 500,
@@ -155,11 +155,11 @@ class GETLiteratureById(APIView):
             return Response(response_data, status=404)
         except ValueError:
             response_data = {
-                'statusCode': 400,
+                'statusCode': 404,
                 'status': 'failed',
                 'data': {'literatureId': [f"excepted a number but you got '{literatureId}'."]}
             }
-            return Response(response_data, status=400)
+            return Response(response_data, status=404)
         except Exception as e:
             response_data = {
                 'statusCode': 500,
@@ -220,7 +220,7 @@ class UPDATELiterature(APIView):
                 'status': 'failed',
                 'data': serializer.errors
             }
-            return Response(response_data, status=404)
+            return Response(response_data, status=400)
         except Literature.DoesNotExist:
             response_data = {
                 'statusCode': status.HTTP_404_NOT_FOUND,
@@ -230,11 +230,11 @@ class UPDATELiterature(APIView):
             return Response(response_data, status=404)
         except ValueError:
             response_data = {
-                'statusCode': 400,
+                'statusCode': 404,
                 'status': 'failed',
                 'data': {'message': f"'literature id' excepted a number but got '{literatureId}'"},
             }
-            return Response(response_data, status=400)
+            return Response(response_data, status=404)
         # except Exception as e:
         #     response_data = {
         #         'statusCode': status.HTTP_500_INTERNAL_SERVER_ERROR,

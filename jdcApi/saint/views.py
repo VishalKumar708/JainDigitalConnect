@@ -167,11 +167,11 @@ class GETAllSaintsBySearchParam(APIView):
             return Response(response_data, status=404)
         except ValueError:
             response_data = {
-                'status': 400,
+                'status': 404,
                 'statusCode': 'failed',
                 'data': {'message': f"'id' expected a number but got '{sectId}'. "}
             }
-            return Response(response_data, status=400)
+            return Response(response_data, status=404)
         except Exception as e:
             error_logger.error(f'An Exception occured while searching saint by name {e}')
             response_data = {
@@ -328,7 +328,7 @@ class GETSaintDetailById(APIView):
             return Response(response_data, status=404)
         except ValueError:
             response_data = {
-                'status': 400,
+                'status': 404,
                 'statusCode': 'failed',
                 'data': {'message': f" saintId excepted a number but got '{saintId}'."}
             }

@@ -3,6 +3,7 @@ from rest_framework import serializers
 from jdcApi.models import Literature, MstSect
 from accounts.models import User
 
+
 class GETAllSectWithCountForLiteratureSerializer(serializers.ModelSerializer):
     count = serializers.SerializerMethodField()
 
@@ -144,7 +145,7 @@ class GETLiteratureByIdSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Literature
-        fields = ['id', 'sectId','sectName', 'title', 'body', 'isVerified', 'isActive']
+        fields = ['id', 'sectId', 'sectName', 'title', 'order', 'body', 'isVerified', 'isActive']
 
 
 class GETLiteratureForAdminSerializer(serializers.ModelSerializer):

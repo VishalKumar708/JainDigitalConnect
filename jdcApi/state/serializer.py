@@ -14,7 +14,7 @@ class CREATEStateSerializer(serializers.ModelSerializer):
     """ this serializer use both 'create and update' """
     class Meta:
         model = State
-        fields = ['stateName']
+        fields = ['stateName', 'isVerified', 'isActive']
 
     def to_internal_value(self, data):
         errors = {}
@@ -85,3 +85,9 @@ class GetAllCitiesByStateSerializer(serializers.ModelSerializer):
     class Meta:
         model = State
         fields = ('stateId', 'stateName', 'cities')
+
+
+class GETStateById(serializers.ModelSerializer):
+    class Meta:
+        model = State
+        fields = ('stateId', 'stateName', 'isVerified', 'isActive')

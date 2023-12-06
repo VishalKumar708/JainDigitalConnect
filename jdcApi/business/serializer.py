@@ -74,7 +74,7 @@ class CREATEBusinessSerializer(serializers.ModelSerializer):
 class PUTBusinessSerializer(serializers.ModelSerializer):
     class Meta:
         model = Business
-        fields = ['userId', 'cityId', 'businessName', 'businessType', 'businessPhoneNumber', 'email', 'website','gstNumber','address', 'businessDescription']
+        fields = ['userId', 'cityId', 'businessName', 'businessType', 'businessPhoneNumber', 'email', 'website','gstNumber','address', 'businessDescription', 'isVerified', 'isActive']
 
     def update(self, instance, validated_data):
         # Update the user instance with modified data
@@ -95,7 +95,6 @@ class PUTBusinessSerializer(serializers.ModelSerializer):
                 {'update_validation_error': ["At least one field must be provided to update the record."]})
 
         city_id = data.get('cityId')
-        business_name = data.get('businessName')
         user_id = data.get('userId')
         errors = {}
         # Custom validation for cityId and userId

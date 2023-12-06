@@ -45,21 +45,11 @@ class Area(BaseModel, models.Model):
     areaName = models.CharField(max_length=70)
     areaMC = models.CharField(max_length=70, null=True, blank=True)
     landmark = models.CharField(max_length=100, null=True, blank=True)
-    areaContactNumber = models.IntegerField(null=True, blank=True)
+    areaContactNumber = models.CharField(max_length=15, null=True, blank=True)
     isVerified = models.BooleanField(default=False)
 
     def __str__(self):
         return self.areaName
-
-
-
-
-
-class Aarti(BaseModel, models.Model):
-    aartiId = models.AutoField(primary_key=True)
-    aartiName = models.CharField(max_length=200)
-    aartiText = models.TextField()
-    isVerified = models.BooleanField(default=False)
 
 
 from accounts.models import User
@@ -90,6 +80,42 @@ class MstSect(BaseModel):
 
     def __str__(self):
         return self.sectName
+
+
+class Aarti(BaseModel, models.Model):
+    id = models.AutoField(primary_key=True)
+    aartiName = models.CharField(max_length=200)
+    sectId = models.ForeignKey(MstSect, on_delete=models.CASCADE)
+    order = models.IntegerField()
+    aartiText = models.TextField()
+    isVerified = models.BooleanField(default=False)
+
+    def __str__(self):
+        return str(self.id)
+
+
+class DharamSthan(BaseModel):
+    id = models.BigAutoField(primary_key=True)
+    name = models.CharField(max_length=200)
+    cityId = models.ForeignKey(City, on_delete=models.CASCADE)
+    sectId = models.ForeignKey(MstSect, on_delete=models.CASCADE)
+    address = models.CharField(max_length=200)
+    locationLink = models.TextField(blank=True, null=True)
+    postalCode = models.CharField(max_length=10)
+    foundationDate = models.DateField(null=True, blank=True)
+    accountNumber = models.CharField(max_length=30, null=True, blank=True)
+    ifscCode = models.CharField(max_length=30, null=True, blank=True)
+    upiId = models.CharField(max_length=50, null=True, blank=True)
+    isVerified = models.BooleanField(default=False)
+
+
+class DharamSthanMember(BaseModel):
+    id = models.BigAutoField(primary_key=True)
+    dharamSthanId = models.ForeignKey(DharamSthan, on_delete=models.CASCADE)
+    name= models.CharField(max_length=50, null=True)
+    position = models.CharField(max_length=50)
+    phoneNumber = models.CharField(max_length=15)
+    isVerified = models.BooleanField(default=False)
 
 
 class Literature(BaseModel):
@@ -170,7 +196,15 @@ class MstProfession(BaseModel):
     order = models.IntegerField()
 
 
-
+class Event(BaseModel):
+    id = models.BigAutoField(primary_key=True)
+    cityId = models.ForeignKey(City, on_delete=models.CASCADE)
+    sectId = models.ForeignKey(MstSect, on_delete=models.CASCADE)
+    startDate = models.DateField()
+    endDate = models.DateField()
+    title = models.CharField(max_length=100)
+    body = models.TextField()
+    isVerified = models.BooleanField(default=False)
 
 
 

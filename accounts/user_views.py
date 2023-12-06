@@ -158,7 +158,7 @@ class GETFamilyByHeadId(APIView):
             return Response(json_data, status=404)
         except ValueError:
             json_data = {
-                'statusCode': 400,
+                'statusCode': 404,
                 'status': 'failed',
                 'data': {'message': f"'HeadId' excepted a number but got '{head_id}' "}
             }
@@ -228,7 +228,6 @@ class DeleteMemberById(APIView):
 
     def delete(self, request, user_id):
         try:
-            int(user_id)
             # make user inactive
             member = User.objects.get(id=user_id)
             if not member.isActive:
@@ -262,13 +261,13 @@ class DeleteMemberById(APIView):
             return Response(json_data, status=404)
         except ValueError:
             json_data = {
-                'statusCode': 400,
+                'statusCode': 404,
                 'status': 'Failed',
                 'data': {'message': f"'user_id' excepted a number but got '{user_id}'."}
             }
             info_logger.info(f'Wrong user id entered to delete user.')
 
-            return Response(json_data, status=400)
+            return Response(json_data, status=404)
 
 
 class UpdateUserById(APIView):

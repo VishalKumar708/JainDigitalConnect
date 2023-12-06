@@ -58,7 +58,18 @@ class ValidateURLAndJSONMiddleware:
                     error_logger.error(f'Invalid JSON data.{str(e)}')
 
                     return JsonResponse(response_data, status=400)
-            print('Middleware working fine')
+            # print('Middleware working fine')
+
+        # response = self.get_response(request)
+        # # If response status code is 500, modify the response
+        # if response.status_code == 500:
+        #     response_data = {
+        #         'statusCode': 500,
+        #         'status': 'error',
+        #         'data': {'message': "Internal Server Error."},
+        #     }
+        #     return JsonResponse(response_data, status=500)
+        # return response
         return self.get_response(request)
 
 

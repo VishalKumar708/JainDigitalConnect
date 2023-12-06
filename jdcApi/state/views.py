@@ -103,7 +103,6 @@ class GetCitiesByStateId(APIView):
 
     def get(self, request, stateId, *args, **kwargs):
         try:
-            int(stateId)
             instance = State.objects.get(stateId__iexact=stateId)
             serializer = GetAllCitiesByStateSerializer(instance)
             data = serializer.data
@@ -130,11 +129,11 @@ class GetCitiesByStateId(APIView):
             return Response(response_data, status=404)
         except ValueError:
             response_data = {
-                'statusCode': 400,
+                'statusCode': 404,
                 'status': 'failed',
                 'data': {'message': f"'State Id' excepted a number but got '{stateId}'."}
             }
-            return Response(response_data, status=400)
+            return Response(response_data, status=404)
         # except Exception as e:
         #     response_data = {
         #         'status_code': status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -212,11 +211,47 @@ class UpdateStateById(APIView):
                 'data': {'message': "Invalid State Id."},
             }
             return Response(response_data, status=400)
+        except ValueError:
+            response_data = {
+                'statusCode': 404,
+                'status': 'failed',
+                'data': {'message': f"'State Id' excepted a number but got '{stateId}'."}
+            }
+            return Response(response_data, status=404)
         except Exception as e:
             response_data = {
                 'status_code': status.HTTP_500_INTERNAL_SERVER_ERROR,
                 'status': 'error',
-                'data': {'error': str(e)},
+                'data': {'message': str(e)},
             }
             return Response(response_data, status=500)
 
+
+class GETStateDetailsById(APIView):
+
+    def get(self, request, stateId, *args, **kwargs):
+        try:
+            instance = State.objects.get(stateId=stateId)
+            serializer = GETStateById(instance=instance)
+            response_data = {
+                'statusCode': 200,
+                'status': 'success',
+                'data': serializer.data
+            }
+            return Response(response_data)
+
+        except State.DoesNotExist:
+            response_data = {
+                'statusCode': 404,
+                'status': 'failed',
+                'data': {'message': "Invalid State id."}
+            }
+            return Response(response_data, status=404)
+
+        except ValueError:
+            response_data = {
+                'statusCode': 404,
+                'status': 'failed',
+                'data': {'message': f"excepted a number but you got '{stateId}'."}
+            }
+            return Response(response_data, status=404)
