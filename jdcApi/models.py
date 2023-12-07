@@ -1,4 +1,4 @@
-
+from django.core.validators import MaxValueValidator
 from django.db import models
 from django.utils import timezone
 
@@ -116,6 +116,17 @@ class DharamSthanMember(BaseModel):
     position = models.CharField(max_length=50)
     phoneNumber = models.CharField(max_length=15)
     isVerified = models.BooleanField(default=False)
+
+
+class DharamSthanHistory(BaseModel):
+    id = models.BigAutoField(primary_key=True)
+    dharamSthanId = models.ForeignKey(DharamSthan, on_delete=models.CASCADE)
+    year = models.IntegerField(validators=[MaxValueValidator(9999)])  # Setting a maximum value for the year field
+    startDate = models.DateField()
+    endDate = models.DateField()
+    title = models.CharField(max_length=50)
+    body = models.TextField()
+    # isVerified = models.BooleanField(default=False)
 
 
 class Literature(BaseModel):

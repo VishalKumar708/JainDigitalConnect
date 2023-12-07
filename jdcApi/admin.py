@@ -112,3 +112,10 @@ class EventAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Event, EventAdmin)
+
+
+class DharamSthanHistoryAdmin(admin.ModelAdmin):
+    list_display = ['id', 'dharamSthanId', "year", 'startDate', 'endDate', 'title', 'body', 'isActive']
+
+
+admin.site.register(DharamSthanHistory, DharamSthanHistoryAdmin)

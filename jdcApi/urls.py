@@ -11,6 +11,7 @@ from .literature.views import *
 from .aarti.views import *
 from .dharam_sthan.views import *
 from .dharam_sthan.dharamSthanMember_views import *
+from .dharam_sthan.dharamSthanHistory_views import *
 from .events.views import *
 from .resident.views import *
 
@@ -151,6 +152,12 @@ urlpatterns = [
     path('GETDharamSthanMemberDetailsById/<slug:dharamSthanMemberId>/', GETDharamSthanMemberDetailsById.as_view()),
     path('GETAllDharamSthanMembersByDharamSthanId/<slug:dharamSthanId>/', GETAllDharamSthanMembersByDharamSthanId.as_view()),
 
+    # Dharam Sthan History
+    path('POSTNewDharamSthanHistory/', POSTNewDharamSthanHistory.as_view()),
+    path('PUTDharamSthanHistoryById/<slug:dharamSthanHistoryId>/', PUTDharamSthanHistoryById.as_view()),
+    path('GETDharamSthanHistoryDetailsById/<slug:dharamSthanHistoryId>/', GETDharamSthanHistoryDetailsById.as_view()),
+    path('GETAllActiveDharamSthanHistoryBydharamSthanId/<slug:dharamSthanId>/', GETAllActiveDharamSthanHistoryBydharamSthanId.as_view()),
+    path('GETAllDharamSthanHistoryBydharamSthanIdForAdmin/<slug:dharamSthanId>/',GETAllDharamSthanHistoryBydharamSthanIdForAdmin.as_view()),
 
     # Events
     path('POSTNewEvent/', POSTNewEvent.as_view()),

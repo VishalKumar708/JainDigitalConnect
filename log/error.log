@@ -335,3 +335,4 @@ ERROR 2023-12-06 10:27:26,298  30 Invalid URL.
 ERROR 2023-12-06 11:28:44,955  58 Invalid JSON data.Expecting ',' delimiter: line 3 column 5 (char 35)
 ERROR 2023-12-06 12:04:45,432  76 Invalid MaritalStatus Id. While updating record.
 ERROR 2023-12-06 12:09:31,142  30 Invalid URL.
+ERROR 2023-12-06 16:06:45,834  58 Invalid JSON data.Expecting ',' delimiter: line 6 column 5 (char 103)

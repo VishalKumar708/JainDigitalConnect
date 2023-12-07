@@ -24829,3 +24829,543 @@ WARNING 2023-12-06 12:25:38,627  212 "GET /api/GETAllProfessionForAdmin/ HTTP/1.
 INFO 2023-12-06 12:27:15,195  212 "GET /api/GETAllProfessionForAdmin/ HTTP/1.1" 200 132
 INFO 2023-12-06 12:30:56,473  212 "GET /api/GETAllProfessionForDropDown/ HTTP/1.1" 200 112
 INFO 2023-12-06 12:31:34,364  212 "GET /api/GETAllProfessionForAdmin/?status=inactive HTTP/1.1" 200 88
+INFO 2023-12-06 13:49:22,890  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-12-06 13:49:26,853  668 Watching for file changes with StatReloader
+INFO 2023-12-06 14:59:35,698  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\models.py changed, reloading.
+INFO 2023-12-06 14:59:37,924  668 Watching for file changes with StatReloader
+INFO 2023-12-06 15:00:56,222  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\models.py changed, reloading.
+INFO 2023-12-06 15:00:57,676  668 Watching for file changes with StatReloader
+INFO 2023-12-06 15:05:50,458  668 Watching for file changes with StatReloader
+INFO 2023-12-06 15:17:51,884  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\models.py changed, reloading.
+INFO 2023-12-06 15:17:53,755  668 Watching for file changes with StatReloader
+INFO 2023-12-06 15:17:59,474  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\models.py changed, reloading.
+INFO 2023-12-06 15:18:00,722  668 Watching for file changes with StatReloader
+INFO 2023-12-06 15:18:17,980  668 Watching for file changes with StatReloader
+INFO 2023-12-06 15:37:07,330  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-12-06 15:37:09,098  668 Watching for file changes with StatReloader
+WARNING 2023-12-06 15:38:56,539  241 Unauthorized: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 15:38:56,539  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 401 199
+INFO 2023-12-06 15:39:20,532  212 "POST /obtainToken/ HTTP/1.1" 200 483
+ERROR 2023-12-06 15:39:57,608  241 Internal Server Error: /api/POSTNewDharamSthanHistory/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_views.py", line 17, in post
+    if serializer.is_valid():
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py", line 45, in to_internal_value
+    validated_data = super().to_internal_value(data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 479, in to_internal_value
+    for field in fields:
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 362, in _writable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 1052, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 1148, in get_field_names
+    assert field_name in fields, (
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: The field 'name' was declared on serializer CREATEDharamSthanHistorySerializer, but has not been included in the 'fields' option.
+ERROR 2023-12-06 15:39:57,617  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 500 146246
+INFO 2023-12-06 15:40:30,979  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py changed, reloading.
+INFO 2023-12-06 15:40:32,425  668 Watching for file changes with StatReloader
+ERROR 2023-12-06 15:40:45,169  241 Internal Server Error: /api/POSTNewDharamSthanHistory/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_views.py", line 17, in post
+    if serializer.is_valid():
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py", line 45, in to_internal_value
+    validated_data = super().to_internal_value(data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 479, in to_internal_value
+    for field in fields:
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 362, in _writable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 1076, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 1222, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 1340, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `isVerified` is not valid for model `DharamSthanHistory`.
+ERROR 2023-12-06 15:40:45,178  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 500 150321
+INFO 2023-12-06 15:41:11,630  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py changed, reloading.
+INFO 2023-12-06 15:41:13,242  668 Watching for file changes with StatReloader
+WARNING 2023-12-06 15:41:16,458  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 15:41:16,459  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 273
+ERROR 2023-12-06 15:41:31,739  241 Internal Server Error: /api/POSTNewDharamSthanHistory/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_views.py", line 17, in post
+    if serializer.is_valid():
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py", line 38, in to_internal_value
+    if year > current_year:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: '>' not supported between instances of 'str' and 'int'
+ERROR 2023-12-06 15:41:31,746  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 500 114898
+ERROR 2023-12-06 15:41:58,930  241 Internal Server Error: /api/POSTNewDharamSthanHistory/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_views.py", line 17, in post
+    if serializer.is_valid():
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py", line 38, in to_internal_value
+    if year > current_year:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: '>' not supported between instances of 'str' and 'int'
+ERROR 2023-12-06 15:41:58,935  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 500 114870
+INFO 2023-12-06 15:42:31,760  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py changed, reloading.
+INFO 2023-12-06 15:42:33,018  668 Watching for file changes with StatReloader
+INFO 2023-12-06 15:43:37,633  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py changed, reloading.
+INFO 2023-12-06 15:43:38,835  668 Watching for file changes with StatReloader
+ERROR 2023-12-06 15:43:42,638  241 Internal Server Error: /api/POSTNewDharamSthanHistory/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_views.py", line 17, in post
+    if serializer.is_valid():
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py", line 40, in to_internal_value
+    if year > current_year:
+       ^^^^^^^^^^^^^^^^^^^
+TypeError: '>' not supported between instances of 'str' and 'int'
+ERROR 2023-12-06 15:43:42,645  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 500 114835
+INFO 2023-12-06 15:43:55,551  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py changed, reloading.
+INFO 2023-12-06 15:43:57,095  668 Watching for file changes with StatReloader
+WARNING 2023-12-06 15:43:58,157  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 15:43:58,158  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 238
+WARNING 2023-12-06 15:44:12,687  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 15:44:12,690  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 280
+ERROR 2023-12-06 15:44:49,059  241 Internal Server Error: /api/POSTNewDharamSthanHistory/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_views.py", line 17, in post
+    if serializer.is_valid():
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py", line 40, in to_internal_value
+    if int(year) > current_year:
+       ^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2025b'
+ERROR 2023-12-06 15:44:49,067  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 500 114639
+INFO 2023-12-06 15:45:21,352  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py changed, reloading.
+INFO 2023-12-06 15:45:22,872  668 Watching for file changes with StatReloader
+WARNING 2023-12-06 15:45:24,557  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 15:45:24,558  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 278
+WARNING 2023-12-06 15:45:38,040  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 15:45:38,043  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 280
+WARNING 2023-12-06 15:45:50,711  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 15:45:50,712  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 238
+INFO 2023-12-06 15:46:53,441  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py changed, reloading.
+INFO 2023-12-06 15:46:55,529  668 Watching for file changes with StatReloader
+WARNING 2023-12-06 15:47:17,895  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 15:47:17,895  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 299
+WARNING 2023-12-06 15:47:24,992  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 15:47:24,993  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 198
+WARNING 2023-12-06 15:47:34,123  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 15:47:34,124  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 198
+WARNING 2023-12-06 15:48:04,179  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 15:48:04,180  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 208
+WARNING 2023-12-06 15:48:12,035  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 15:48:12,038  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 186
+WARNING 2023-12-06 15:48:19,838  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 15:48:19,839  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 154
+INFO 2023-12-06 15:56:16,937  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py changed, reloading.
+INFO 2023-12-06 15:56:18,725  668 Watching for file changes with StatReloader
+INFO 2023-12-06 15:58:06,202  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py changed, reloading.
+INFO 2023-12-06 15:58:07,621  668 Watching for file changes with StatReloader
+INFO 2023-12-06 15:58:17,944  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py changed, reloading.
+INFO 2023-12-06 15:58:19,205  668 Watching for file changes with StatReloader
+INFO 2023-12-06 16:06:19,316  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py changed, reloading.
+INFO 2023-12-06 16:06:21,030  668 Watching for file changes with StatReloader
+WARNING 2023-12-06 16:06:26,147  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 16:06:26,148  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 154
+WARNING 2023-12-06 16:06:45,835  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 16:06:45,837  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 145
+WARNING 2023-12-06 16:06:56,901  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 16:06:56,902  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 180
+INFO 2023-12-06 16:11:44,825  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py changed, reloading.
+INFO 2023-12-06 16:11:46,447  668 Watching for file changes with StatReloader
+INFO 2023-12-06 16:13:36,877  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py changed, reloading.
+INFO 2023-12-06 16:13:38,114  668 Watching for file changes with StatReloader
+WARNING 2023-12-06 16:13:41,524  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 16:13:41,525  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 194
+WARNING 2023-12-06 16:13:54,888  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 16:13:54,891  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 116
+WARNING 2023-12-06 16:14:04,784  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 16:14:04,786  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 116
+INFO 2023-12-06 16:15:41,271  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py changed, reloading.
+INFO 2023-12-06 16:15:42,579  668 Watching for file changes with StatReloader
+INFO 2023-12-06 16:21:05,615  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py changed, reloading.
+INFO 2023-12-06 16:21:06,836  668 Watching for file changes with StatReloader
+WARNING 2023-12-06 16:21:13,181  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 16:21:13,182  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 180
+INFO 2023-12-06 16:21:33,350  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py changed, reloading.
+INFO 2023-12-06 16:21:34,643  668 Watching for file changes with StatReloader
+WARNING 2023-12-06 16:21:37,238  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 16:21:37,241  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 182
+WARNING 2023-12-06 16:21:47,422  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 16:21:47,422  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 182
+WARNING 2023-12-06 16:21:55,772  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 16:21:55,773  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 182
+INFO 2023-12-06 16:22:14,041  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py changed, reloading.
+INFO 2023-12-06 16:22:15,308  668 Watching for file changes with StatReloader
+WARNING 2023-12-06 16:22:17,165  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 16:22:17,167  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 194
+WARNING 2023-12-06 16:22:30,789  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 16:22:30,790  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 182
+INFO 2023-12-06 16:23:15,862  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py changed, reloading.
+INFO 2023-12-06 16:23:17,608  668 Watching for file changes with StatReloader
+WARNING 2023-12-06 16:23:18,444  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 16:23:18,447  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 191
+INFO 2023-12-06 16:23:40,713  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py changed, reloading.
+INFO 2023-12-06 16:23:42,565  668 Watching for file changes with StatReloader
+WARNING 2023-12-06 16:23:43,240  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 16:23:43,241  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 193
+WARNING 2023-12-06 16:24:53,942  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 16:24:53,945  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 122
+WARNING 2023-12-06 16:25:01,925  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 16:25:01,926  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 221
+WARNING 2023-12-06 16:25:19,226  241 Bad Request: /api/POSTNewDharamSthanHistory/
+WARNING 2023-12-06 16:25:19,229  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 400 122
+INFO 2023-12-06 16:25:30,965  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 200 85
+INFO 2023-12-06 16:26:35,781  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py changed, reloading.
+INFO 2023-12-06 16:26:36,965  668 Watching for file changes with StatReloader
+INFO 2023-12-06 16:27:15,118  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py changed, reloading.
+INFO 2023-12-06 16:27:16,476  668 Watching for file changes with StatReloader
+INFO 2023-12-06 16:39:18,722  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py changed, reloading.
+INFO 2023-12-06 16:39:20,257  668 Watching for file changes with StatReloader
+INFO 2023-12-06 16:42:44,213  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-12-06 16:42:45,623  668 Watching for file changes with StatReloader
+INFO 2023-12-06 16:45:05,392  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-12-06 16:45:06,726  668 Watching for file changes with StatReloader
+INFO 2023-12-06 16:45:20,182  212 "GET /api/GETDharamSthanHistoryDetailsById/1/ HTTP/1.1" 200 205
+INFO 2023-12-06 16:47:51,103  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\admin.py changed, reloading.
+INFO 2023-12-06 16:47:52,377  668 Watching for file changes with StatReloader
+INFO 2023-12-06 16:47:54,287  212 "GET /admin/jdcApi/mstprofession/ HTTP/1.1" 200 16609
+INFO 2023-12-06 16:47:54,441  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-06 16:48:01,826  212 "GET /admin/jdcApi/mstprofession/ HTTP/1.1" 200 16609
+INFO 2023-12-06 16:48:01,885  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-06 16:48:08,431  212 "GET /admin/jdcApi/dharamsthanhistory/ HTTP/1.1" 200 16728
+INFO 2023-12-06 16:48:08,499  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-06 16:48:25,522  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\admin.py changed, reloading.
+INFO 2023-12-06 16:48:26,894  668 Watching for file changes with StatReloader
+INFO 2023-12-06 16:49:00,822  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 200 85
+INFO 2023-12-06 16:49:21,585  212 "POST /api/POSTNewDharamSthanHistory/ HTTP/1.1" 200 85
+INFO 2023-12-06 16:50:04,722  212 "GET /admin/jdcApi/dharamsthanhistory/ HTTP/1.1" 200 17920
+INFO 2023-12-06 16:50:04,769  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+ERROR 2023-12-06 16:50:17,626  241 Internal Server Error: /api/PUTDharamSthanHistoryById/30/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_views.py", line 46, in put
+    instance = dharamSthanHistoryId.objects.get(id=dharamSthanHistoryId)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'objects'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_views.py", line 62, in put
+    except dharamSthanHistoryId.DoesNotExist:
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'DoesNotExist'
+ERROR 2023-12-06 16:50:17,633  212 "PUT /api/PUTDharamSthanHistoryById/30/ HTTP/1.1" 500 104864
+INFO 2023-12-06 16:51:14,954  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_views.py changed, reloading.
+INFO 2023-12-06 16:51:16,413  668 Watching for file changes with StatReloader
+ERROR 2023-12-06 16:51:17,746  241 Internal Server Error: /api/PUTDharamSthanHistoryById/30/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_views.py", line 46, in put
+    instance = dharamSthanHistoryId.objects.get(id=dharamSthanHistoryId)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'objects'
+ERROR 2023-12-06 16:51:17,751  212 "PUT /api/PUTDharamSthanHistoryById/30/ HTTP/1.1" 500 99641
+INFO 2023-12-06 16:52:21,405  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_views.py changed, reloading.
+INFO 2023-12-06 16:52:23,124  668 Watching for file changes with StatReloader
+WARNING 2023-12-06 16:52:23,859  241 Not Found: /api/PUTDharamSthanHistoryById/30/
+WARNING 2023-12-06 16:52:23,860  212 "PUT /api/PUTDharamSthanHistoryById/30/ HTTP/1.1" 404 88
+WARNING 2023-12-06 16:52:30,167  241 Not Found: /api/PUTDharamSthanHistoryById/afds/
+WARNING 2023-12-06 16:52:30,169  212 "PUT /api/PUTDharamSthanHistoryById/afds/ HTTP/1.1" 404 114
+INFO 2023-12-06 16:52:52,064  212 "PUT /api/PUTDharamSthanHistoryById/3/ HTTP/1.1" 200 87
+INFO 2023-12-06 16:52:56,325  212 "GET /admin/jdcApi/dharamsthanhistory/ HTTP/1.1" 200 17920
+INFO 2023-12-06 16:52:56,375  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-12-06 16:54:12,031  241 Bad Request: /api/PUTDharamSthanHistoryById/3/
+WARNING 2023-12-06 16:54:12,032  212 "PUT /api/PUTDharamSthanHistoryById/3/ HTTP/1.1" 400 122
+INFO 2023-12-06 16:54:43,289  212 "PUT /api/PUTDharamSthanHistoryById/3/ HTTP/1.1" 200 87
+INFO 2023-12-06 16:54:48,717  212 "GET /admin/jdcApi/dharamsthanhistory/ HTTP/1.1" 200 17920
+INFO 2023-12-06 16:54:48,791  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-06 17:00:38,413  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_views.py changed, reloading.
+INFO 2023-12-06 17:00:39,911  668 Watching for file changes with StatReloader
+INFO 2023-12-06 17:03:51,600  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_views.py changed, reloading.
+INFO 2023-12-06 17:03:53,291  668 Watching for file changes with StatReloader
+INFO 2023-12-06 17:05:29,697  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-12-06 17:05:31,084  668 Watching for file changes with StatReloader
+INFO 2023-12-06 17:06:07,389  212 "GET /api/GETAllActiveDharamSthanHistoryBydharamSthanId/1/ HTTP/1.1" 200 141
+INFO 2023-12-06 17:06:31,435  212 "GET /admin/jdcApi/dharamsthanhistory/2/change/ HTTP/1.1" 200 22230
+INFO 2023-12-06 17:06:31,491  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-06 17:06:40,684  212 "POST /admin/jdcApi/dharamsthanhistory/2/change/ HTTP/1.1" 302 0
+INFO 2023-12-06 17:06:40,763  212 "GET /admin/jdcApi/dharamsthanhistory/ HTTP/1.1" 200 18169
+INFO 2023-12-06 17:06:40,832  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-06 17:06:45,317  212 "GET /admin/jdcApi/dharamsthanhistory/2/change/ HTTP/1.1" 200 22238
+INFO 2023-12-06 17:06:45,368  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-06 17:07:03,035  212 "POST /admin/jdcApi/dharamsthanhistory/2/change/ HTTP/1.1" 302 0
+INFO 2023-12-06 17:07:03,086  212 "GET /admin/jdcApi/dharamsthanhistory/ HTTP/1.1" 200 18169
+INFO 2023-12-06 17:07:03,178  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-06 17:07:09,507  212 "GET /admin/jdcApi/dharamsthanhistory/2/change/ HTTP/1.1" 200 22238
+INFO 2023-12-06 17:07:09,562  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-06 17:07:15,877  212 "GET /admin/jdcApi/dharamsthanhistory/ HTTP/1.1" 200 17920
+INFO 2023-12-06 17:07:19,744  212 "GET /admin/jdcApi/dharamsthanhistory/2/change/ HTTP/1.1" 200 22238
+INFO 2023-12-06 17:07:19,799  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-06 17:07:31,367  212 "POST /admin/jdcApi/dharamsthanhistory/2/change/ HTTP/1.1" 302 0
+INFO 2023-12-06 17:07:31,449  212 "GET /admin/jdcApi/dharamsthanhistory/ HTTP/1.1" 200 18169
+INFO 2023-12-06 17:07:31,528  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-06 17:07:35,441  212 "GET /api/GETAllActiveDharamSthanHistoryBydharamSthanId/1/ HTTP/1.1" 200 141
+INFO 2023-12-06 17:07:46,647  212 "GET /admin/jdcApi/dharamsthanhistory/2/change/ HTTP/1.1" 200 22238
+INFO 2023-12-06 17:07:46,704  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-06 17:07:56,909  212 "POST /admin/jdcApi/dharamsthanhistory/2/change/ HTTP/1.1" 302 0
+INFO 2023-12-06 17:07:57,012  212 "GET /admin/jdcApi/dharamsthanhistory/ HTTP/1.1" 200 18168
+INFO 2023-12-06 17:07:57,127  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-06 17:08:03,686  212 "GET /api/GETAllActiveDharamSthanHistoryBydharamSthanId/1/ HTTP/1.1" 200 141
+WARNING 2023-12-06 17:09:22,471  241 Not Found: /api/GETAllActiveDharamSthanHistoryBydharamSthanId/afds/
+WARNING 2023-12-06 17:09:22,474  212 "GET /api/GETAllActiveDharamSthanHistoryBydharamSthanId/afds/ HTTP/1.1" 404 95
+INFO 2023-12-06 17:09:30,996  212 "GET /api/GETAllActiveDharamSthanHistoryBydharamSthanId/19/ HTTP/1.1" 200 47
+INFO 2023-12-06 17:10:30,416  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_views.py changed, reloading.
+INFO 2023-12-06 17:10:31,859  668 Watching for file changes with StatReloader
+INFO 2023-12-06 17:10:33,554  212 "GET /api/GETAllActiveDharamSthanHistoryBydharamSthanId/19/ HTTP/1.1" 200 75
+INFO 2023-12-06 17:10:55,131  212 "GET /admin/jdcApi/dharamsthanhistory/2/change/ HTTP/1.1" 200 22238
+INFO 2023-12-06 17:10:55,186  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-06 17:11:07,712  212 "POST /admin/jdcApi/dharamsthanhistory/2/change/ HTTP/1.1" 302 0
+INFO 2023-12-06 17:11:07,760  212 "GET /admin/jdcApi/dharamsthanhistory/ HTTP/1.1" 200 18168
+INFO 2023-12-06 17:11:07,817  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-06 17:11:15,424  212 "GET /api/GETAllActiveDharamSthanHistoryBydharamSthanId/19/ HTTP/1.1" 200 75
+INFO 2023-12-06 17:11:20,093  212 "GET /api/GETAllActiveDharamSthanHistoryBydharamSthanId/1/ HTTP/1.1" 200 236
+INFO 2023-12-06 17:17:43,845  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_views.py changed, reloading.
+INFO 2023-12-06 17:17:45,628  668 Watching for file changes with StatReloader
+INFO 2023-12-06 17:19:35,851  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-12-06 17:19:37,628  668 Watching for file changes with StatReloader
+INFO 2023-12-06 17:21:39,481  212 "GET /api/GETAllDharamSthanHistoryBydharamSthanIdForAdmin/1/ HTTP/1.1" 200 345
+INFO 2023-12-06 17:22:23,016  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_views.py changed, reloading.
+INFO 2023-12-06 17:22:24,907  668 Watching for file changes with StatReloader
+INFO 2023-12-06 17:22:44,458  212 "GET /api/GETAllDharamSthanHistoryBydharamSthanIdForAdmin/1/ HTTP/1.1" 200 345
+INFO 2023-12-06 17:27:14,438  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_views.py changed, reloading.
+INFO 2023-12-06 17:27:15,991  668 Watching for file changes with StatReloader
