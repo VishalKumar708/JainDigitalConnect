@@ -119,3 +119,11 @@ class DharamSthanHistoryAdmin(admin.ModelAdmin):
 
 
 admin.site.register(DharamSthanHistory, DharamSthanHistoryAdmin)
+
+
+class LiveLocationAdmin(admin.ModelAdmin):
+    list_display = ['id', 'sectId', 'title', 'person1Name', 'phoneNumber1', 'person2Name', 'phoneNumber2', 'startDate',
+                    'endDate', 'locationLink', 'address', 'description', 'isVerified']
+
+
+admin.site.register(LiveLocation, LiveLocationAdmin)

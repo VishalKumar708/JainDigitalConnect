@@ -108,6 +108,9 @@ class DharamSthan(BaseModel):
     upiId = models.CharField(max_length=50, null=True, blank=True)
     isVerified = models.BooleanField(default=False)
 
+    def __str__(self):
+        return str(self.id)+str(self.name)
+
 
 class DharamSthanMember(BaseModel):
     id = models.BigAutoField(primary_key=True)
@@ -127,6 +130,22 @@ class DharamSthanHistory(BaseModel):
     title = models.CharField(max_length=50)
     body = models.TextField()
     # isVerified = models.BooleanField(default=False)
+
+
+class LiveLocation(BaseModel):
+    id = models.BigAutoField(primary_key=True)
+    sectId = models.ForeignKey(MstSect, on_delete=models.CASCADE)
+    title = models.CharField(max_length=70)
+    person1Name = models.CharField(max_length=50)
+    phoneNumber1 = models.CharField(max_length=15)
+    person2Name = models.CharField(max_length=50, null=True, blank=True)
+    phoneNumber2 = models.CharField(max_length=15, null=True, blank=True)
+    startDate = models.DateField()
+    endDate = models.DateField()
+    locationLink = models.TextField()
+    address = models.CharField(max_length=100)
+    description = models.TextField()
+    isVerified = models.BooleanField(default=False)
 
 
 class Literature(BaseModel):

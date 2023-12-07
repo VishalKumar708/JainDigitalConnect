@@ -20,6 +20,7 @@ from .master_views.sect_views import *
 from .master_views.bloodGroup_views import *
 from .master_views.profession_views import *
 from .master_views.relation_views import *
+from .live_location.views import *
 
 urlpatterns = [
     #  state  ---correct
@@ -62,7 +63,6 @@ urlpatterns = [
     path('GETAllApprovedLiteratureBySectId/<slug:sectId>/', GETAllApprovedLiteratureBySectId.as_view()),
     path('GETAllApprovedAndUnapprovedLiterature/', GETAllApprovedAndUnapprovedLiterature.as_view()),  # correct
     path('GETLiteratureById/<slug:literatureId>/', GETLiteratureById.as_view()),
-
 
 
     # count for residents
@@ -177,6 +177,17 @@ urlpatterns = [
     path('GETAllSectResident/', GETAllSectResident.as_view()),
     path('GETAllApprovedCityBySectId/<slug:sectId>/', GETAllApprovedCityBySectId.as_view()),
     path('GETAllApprovedAreasBySectIdAndCityId/<slug:sectId>/<slug:cityId>/', GETAllApprovedAreasBySectIdAndCityId.as_view()),
-    path('GETAllResidentsBySectIdAndAreaId/<slug:sectId>/<slug:areaId>/', GETAllResidentsBySectIdAndAreaId.as_view())
+    path('GETAllResidentsBySectIdAndAreaId/<slug:sectId>/<slug:areaId>/', GETAllResidentsBySectIdAndAreaId.as_view()),
+
+    # Live Location
+    path('POSTNewLiveLocation/', POSTNewLiveLocation.as_view()),
+    path('PUTLiveLocationById/<slug:liveLocationId>/', PUTLiveLocationById.as_view()),
+    path('GETLiveLocationDetailsById/<slug:liveLocationId>/', GETLiveLocationDetailsById.as_view()),
+    path('GETAllLiveLocationByUserId/<slug:userId>/', GETAllLiveLocationByUserId.as_view()),
+    #  if live location is off
+    path('GETAllSectDharamSthanHistory/', GETAllSectDharamSthanHistory.as_view()),
+    path('GETAllDharamSthanHistoryBySectId/<slug:sectId>/', GETAllDharamSthanHistoryBySectId.as_view()),
+    path('GETDharamSthanDetailsByDharamSthanIdForLiveLocation/<slug:dharamSthanId>/', GETDharamSthanDetailsByDharamSthanIdForLiveLocation.as_view()),
+
 ]
 
