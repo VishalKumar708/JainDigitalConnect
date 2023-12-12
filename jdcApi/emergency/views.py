@@ -176,16 +176,29 @@ class GETAllCityByEmergency(APIView):
 
 
 class GETAllEmergencyByCityId(APIView):
+    pagination_class = CustomPagination
 
-    def get(self,request, cityId, *args, **kwargs):
+    def get(self, request, cityId, *args, **kwargs):
         try:
-
-            City.objects.get(cityId=cityId)
             department_name = request.GET.get('departmentName')
             if department_name:
-                queryset = Emergency.objects.filter(cityId=cityId, departmentName__icontains=department_name.strip())
-            else:
-                queryset = Emergency.objects.filter(cityId=cityId)
+                queryset = Emergency.objects.filter(cityId=cityId, departmentName__icontains=department_name.strip(), isVerified=True, isActive=True)
+                if len(queryset) < 1:
+                    response_data = {
+                        'statusCode': 200,
+                        'status': 'Success',
+                        'data': {"message": "No Record found."},
+                    }
+                    return Response(response_data)
+
+                serializer = GETAllEmergencySerializer(queryset, many=True)
+                return Response({
+                    'statusCode': 200,
+                    'status': "Success",
+                    "data": serializer.data
+                })
+
+            queryset = Emergency.objects.filter(cityId=cityId, isVerified=True, isActive=True).order_by('departmentName')
             if len(queryset) < 1:
                 response_data = {
                     'statusCode': 200,
@@ -193,20 +206,20 @@ class GETAllEmergencyByCityId(APIView):
                     'data': {"message": "No Record found."},
                 }
                 return Response(response_data)
-            serializers = GETAllEmergencySerializer(queryset, many=True)
-            response_data = {
+
+            # pagination
+            pagination_data = {}
+            paginator = self.pagination_class()
+            page = paginator.paginate_queryset(queryset, request)
+            if page is not None:
+                serializer = GETAllEmergencySerializer(queryset, many=True)
+                pagination_data = paginator.get_paginated_response(serializer.data)
+            # serializers = GETAllEmergencySerializer(queryset, many=True)
+            response_data = {**{
                 'statusCode': 200,
                 'status': 'success',
-                'data': serializers.data
-            }
+            }, **pagination_data}
             return Response(response_data)
-        except City.DoesNotExist:
-            response_data = {
-                'status_code': 404,
-                'status': 'failed',
-                'data': {"message":"Invalid cityId."},
-            }
-            return Response(response_data, status=404)
         except ValueError:
             response_data = {
                 'status_code': 404,

@@ -127,3 +127,18 @@ class LiveLocationAdmin(admin.ModelAdmin):
 
 
 admin.site.register(LiveLocation, LiveLocationAdmin)
+
+
+class LiteratureDocumentAdmin(admin.ModelAdmin):
+    list_display = ['id', 'sectId', 'title', 'order', 'link', 'file', 'isVerified', 'isActive']
+
+
+admin.site.register(LiteratureDocument, LiteratureDocumentAdmin)
+
+
+class AppConfigurationsAdmin(admin.ModelAdmin):
+    list_display = ['id', 'configurationKey', 'configurationValue', 'createdBy', 'updatedBy', 'createdDate', 'updatedDate']
+
+
+admin.site.register(AppConfigurations, AppConfigurationsAdmin)
+

@@ -14,14 +14,14 @@ class GETAllSectWithCountForSaintSerializer(serializers.ModelSerializer):
     def get_count(self, sect):
         # print('sect ==> ', sect)
         # Calculate the count of records in the 'Saint' model based on the 'Sect' field
-        return Saint.objects.filter(sectId=sect.id).count()
+        return Saint.objects.filter(sectId=sect.id, isActive=True, isVerified=True).count()
 
 
 class CREATESaintSerializer(serializers.ModelSerializer):
-    dob = serializers.DateTimeField(input_formats=['%B %d, %Y'])  # according to 12hr clock to send default time 12:00 AM
+    dob = serializers.DateTimeField(input_formats=['%d %B, %Y'])  # according to 12hr clock to send default time 12:00 AM
     dobTime = serializers.TimeField(input_formats=['%I:%M %p'], allow_null=True)
-    dikshaDate = serializers.DateField(input_formats=['%B %d, %Y'])
-    devlokDate = serializers.DateTimeField(input_formats=['%B %d, %Y'], required=False, allow_null=True)
+    dikshaDate = serializers.DateField(input_formats=['%d %B, %Y'])
+    devlokDate = serializers.DateTimeField(input_formats=['%d %B, %Y'], required=False, allow_null=True)
     devlokTime = serializers.TimeField(input_formats=['%I:%M %p'], allow_null=True, required=False)
 
     class Meta:
@@ -45,7 +45,9 @@ class CREATESaintSerializer(serializers.ModelSerializer):
         if dob and devlok_date:
             try:
                 # Compare 'devlok_date' less than 'dob' and 'diksha_date'
-                if datetime.strptime(devlok_date, '%B %d, %Y') < datetime.strptime(dob, '%B %d, %Y') or (diksha_date and datetime.strptime(devlok_date, '%B %d, %Y') < datetime.strptime(diksha_date, '%B %d, %Y')):
+                if datetime.strptime(devlok_date, '%d %B, %Y') < datetime.strptime(dob, '%d %B, %Y'):
+                    errors['devlokDate'] = [f"'Devlok Date' must be greater than 'Birth Date' and 'Diksha Date'."]
+                elif diksha_date and (diksha_date and datetime.strptime(devlok_date, '%d %B, %Y') < datetime.strptime(diksha_date, '%d %B, %Y')):
                     errors['devlokDate'] = [f"'Devlok Date' must be greater than 'Birth Date' and 'Diksha Date'."]
             except ValueError:
                 pass
@@ -53,8 +55,11 @@ class CREATESaintSerializer(serializers.ModelSerializer):
         if dob and diksha_date:
             try:
                 #  compare if 'diksha_date' is greater than 'dob' and less than 'devlok_date'
-                if datetime.strptime(diksha_date, '%B %d, %Y') < datetime.strptime(dob, '%B %d, %Y') or (diksha_date and datetime.strptime(diksha_date, '%B %d, %Y') > datetime.strptime(devlok_date, '%B %d, %Y')):
+                if datetime.strptime(diksha_date, '%d %B, %Y') < datetime.strptime(dob, '%d %B, %Y'):
                     errors['dikshaDate'] = [f"'Diksha Date' must be greater than 'Birth Date' and less then 'Devlok Date'."]
+                elif devlok_date and (diksha_date and datetime.strptime(diksha_date, '%d %B, %Y') > datetime.strptime(devlok_date, '%d %B, %Y')):
+                    errors['dikshaDate'] = [f"'Diksha Date' must be greater than 'Birth Date' and less then 'Devlok Date'."]
+
             except ValueError:
                 pass
 
@@ -98,9 +103,9 @@ class CREATESaintSerializer(serializers.ModelSerializer):
 
 
 class UPDATESaintSerializer(serializers.ModelSerializer):
-    dob = serializers.DateField(input_formats=['%B %d, %Y'])
-    dikshaDate = serializers.DateField(input_formats=['%B %d, %Y'])
-    devlokDate = serializers.DateField(input_formats=['%B %d, %Y'],  allow_null=True)
+    dob = serializers.DateField(input_formats=['%d %B, %Y'])
+    dikshaDate = serializers.DateField(input_formats=['%d %B, %Y'])
+    devlokDate = serializers.DateField(input_formats=['%d %B, %Y'],  allow_null=True)
     dobTime = serializers.TimeField(input_formats=['%I:%M %p'], allow_null=True)
     devlokTime = serializers.TimeField(input_formats=['%I:%M %p'], allow_null=True)
 
@@ -129,17 +134,11 @@ class UPDATESaintSerializer(serializers.ModelSerializer):
         return instance
 
     def to_internal_value(self, data):
-        updated_fields = {key: value for key, value in data.items() if key in self.Meta.fields}
-        if len(updated_fields) < 1:
-            raise serializers.ValidationError(
-                {'update_validation_error': "At least one field must be provided for the update."})
-
         sect_id = data.get('sectId')
-        errors = {}
         dob = data.get('dob')
         devlok_date = data.get('devlokDate')
         diksha_date = data.get('dikshaDate')
-
+        errors = {}
         if sect_id:
             try:
                 MstSect.objects.get(id=sect_id)
@@ -151,7 +150,11 @@ class UPDATESaintSerializer(serializers.ModelSerializer):
         if dob and devlok_date:
             try:
                 # Compare 'devlok_date' less than 'dob' and 'diksha_date'
-                if datetime.strptime(devlok_date, '%B %d, %Y') < datetime.strptime(dob, '%B %d, %Y') or (diksha_date and datetime.strptime(devlok_date, '%B %d, %Y') < datetime.strptime(diksha_date, '%B %d, %Y')):
+                if datetime.strptime(devlok_date, '%d %B, %Y') < datetime.strptime(dob, '%d %B, %Y'):
+                    errors['devlokDate'] = [f"'Devlok Date' must be greater than 'Birth Date' and 'Diksha Date'."]
+                elif diksha_date and (
+                        diksha_date and datetime.strptime(devlok_date, '%d %B, %Y') < datetime.strptime(diksha_date,
+                                                                                                        '%d %B, %Y')):
                     errors['devlokDate'] = [f"'Devlok Date' must be greater than 'Birth Date' and 'Diksha Date'."]
             except ValueError:
                 pass
@@ -159,8 +162,15 @@ class UPDATESaintSerializer(serializers.ModelSerializer):
         if dob and diksha_date:
             try:
                 #  compare if 'diksha_date' is greater than 'dob' and less than 'devlok_date'
-                if datetime.strptime(diksha_date, '%B %d, %Y') < datetime.strptime(dob, '%B %d, %Y') or (diksha_date and datetime.strptime(diksha_date, '%B %d, %Y') > datetime.strptime(devlok_date, '%B %d, %Y')):
-                    errors['dikshaDate'] = [f"'Diksha Date' must be greater than 'Birth Date' and less then 'Devlok Date'."]
+                if datetime.strptime(diksha_date, '%d %B, %Y') < datetime.strptime(dob, '%d %B, %Y'):
+                    errors['dikshaDate'] = [
+                        f"'Diksha Date' must be greater than 'Birth Date' and less then 'Devlok Date'."]
+                elif devlok_date and (
+                        diksha_date and datetime.strptime(diksha_date, '%d %B, %Y') > datetime.strptime(devlok_date,
+                                                                                                        '%d %B, %Y')):
+                    errors['dikshaDate'] = [
+                        f"'Diksha Date' must be greater than 'Birth Date' and less then 'Devlok Date'."]
+
             except ValueError:
                 pass
 
@@ -192,7 +202,7 @@ class GETAllSaintSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'birthPlace', 'dikshaPlace', 'dikshaDate']
 
     def get_dikshaDate(self, saint):
-        return saint.dikshaDate.strftime("%B %d, %Y")
+        return saint.dikshaDate.strftime('%d %B, %Y')
 
 
 class GETAllSaintBySectIdSerializer(serializers.ModelSerializer):
@@ -204,10 +214,10 @@ class GETAllSaintBySectIdSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'dob', 'birthPlace', 'dikshaPlace', 'dikshaDate']
 
     def get_dikshaDate(self, instance):
-        return instance.dikshaDate.strftime("%B %d, %Y")
+        return instance.dikshaDate.strftime('%d %B, %Y')
 
     def get_dob(self, instance):
-        return instance.dob.strftime("%B %d, %Y")
+        return instance.dob.strftime('%d %B, %Y')
 
 
 class GETAllSaintForAdminSerializer(serializers.ModelSerializer):
@@ -241,10 +251,10 @@ class GETSaintByIdSerializer(serializers.ModelSerializer):
         return age
 
     def get_dikshaDate(self, instance):
-        return instance.dikshaDate.strftime("%B %d, %Y")
+        return instance.dikshaDate.strftime('%d %B, %Y')
 
     def get_dob(self, instance):
-        return instance.dob.strftime("%B %d, %Y")
+        return instance.dob.strftime('%d %B, %Y')
 
     def get_dobTime(self, instance):
         dob_time = instance.dobTime
@@ -252,7 +262,7 @@ class GETSaintByIdSerializer(serializers.ModelSerializer):
 
     def get_devlokDate(self, instance):
         dob_time = instance.devlokDate
-        return dob_time.strftime("%B %d, %Y") if dob_time else ""
+        return dob_time.strftime('%d %B, %Y') if dob_time else ""
     def get_devlokTime(self, instance):
         devlok_time = instance.devlokTime
 

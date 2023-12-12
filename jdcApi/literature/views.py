@@ -10,6 +10,7 @@ from utils.get_id_by_token import get_user_id_from_token_view
 from django.db.models import Q
 from accounts.pagination import CustomPagination
 
+
 class GETAllSectLiterature(ListAPIView):
     """ Count 'Literature' by 'Sect' """
     serializer_class = GETAllSectWithCountForLiteratureSerializer

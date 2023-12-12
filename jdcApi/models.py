@@ -1,7 +1,7 @@
 from django.core.validators import MaxValueValidator
 from django.db import models
 from django.utils import timezone
-
+from django.core.validators import FileExtensionValidator
 
 class BaseModel(models.Model):
     isActive = models.BooleanField(default=False)
@@ -237,4 +237,23 @@ class Event(BaseModel):
     isVerified = models.BooleanField(default=False)
 
 
+class AppConfigurations(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    configurationKey = models.CharField(max_length=50, unique=True)
+    configurationValue = models.BooleanField()
+    createdBy = models.IntegerField(default=1)
+    updatedBy = models.IntegerField(default=1)
+    createdDate = models.DateTimeField(auto_now_add=True)
+    updatedDate = models.DateTimeField(auto_now=True)
+
+
+class LiteratureDocument(BaseModel):
+    id = models.BigAutoField(primary_key=True)
+    title = models.CharField(max_length=100, null=True)
+    sectId = models.ForeignKey(MstSect, on_delete=models.CASCADE)
+    order = models.IntegerField()
+    link = models.TextField(null=True, blank=True)
+    file = models.FileField(upload_to='literature_Documents', null=True,
+                            validators=[FileExtensionValidator(allowed_extensions=['txt', 'pdf', 'doc', 'docx'])], blank=True)
+    isVerified = models.BooleanField(default=False)
 

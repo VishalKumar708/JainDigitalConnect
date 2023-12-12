@@ -82,7 +82,7 @@ class GETAllApprovedAartiBySectId(APIView):
             return Response(response_data, status=500)
 
 
-class GETAllApprovedAndUnapprovedLiteratureForAdmin(APIView):
+class GETAllApprovedAndUnapprovedAartiForAdmin(APIView):
     permission_classes = [IsAuthenticated]
     pagination_class = CustomPagination
 
@@ -217,14 +217,14 @@ class UPDATEAarti(APIView):
                 }
                 return Response(response_data)
             response_data = {
-                'statusCode': status.HTTP_400_BAD_REQUEST,
+                'statusCode': 400,
                 'status': 'failed',
                 'data': serializer.errors
             }
-            return Response(response_data, status=404)
+            return Response(response_data, status=400)
         except Aarti.DoesNotExist:
             response_data = {
-                'statusCode': status.HTTP_404_NOT_FOUND,
+                'statusCode': 404,
                 'status': 'failed',
                 'data': {'message': "Invalid literature id."},
             }

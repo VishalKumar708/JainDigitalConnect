@@ -16,7 +16,7 @@ class GETAllSectSaint(ListAPIView):
     serializer_class = GETAllSectWithCountForSaintSerializer
 
     def get_queryset(self):
-        query_set = MstSect.objects.all()
+        query_set = MstSect.objects.filter(isActive=True)
         return query_set
 
     def list(self, request, *args, **kwargs):
@@ -61,6 +61,7 @@ class POSTNewSaint(APIView):
                 'statusCode': 'failed',
                 'data': serializer.errors
             }
+
             return Response(response_data, status=400)
         except Exception as e:
             error_logger.error(f'An Exception occured while creating new saint {e}')

@@ -135,9 +135,9 @@ class GETAllBloodGroupForAdmin(APIView):
 
     def get(self, request, *args, **kwargs):
         try:
-            print('blood group admin api call')
+
             status = request.GET.get('status')
-            print(status)
+
             if status is None or status.strip().lower() == 'active':
                 queryset = MstBloodGroup.objects.filter(isActive=True).order_by('order')
             elif status.strip().lower() == 'inactive':

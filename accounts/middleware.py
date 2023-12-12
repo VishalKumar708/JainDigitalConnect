@@ -35,7 +35,7 @@ class ValidateURLAndJSONMiddleware:
             content_type = request.content_type
             print('content_type ==> ', content_type)
             # if content_type != 'application/json':
-            if content_type not in ('application/x-www-form-urlencoded', 'application/json'):
+            if content_type not in ('application/x-www-form-urlencoded', 'application/json', 'multipart/form-data'):
                 response_data = {
                     'statusCode': 415,  # Use 415 Unsupported Media Type for non-JSON data
                     'status': 'Failed',
@@ -58,6 +58,8 @@ class ValidateURLAndJSONMiddleware:
                     error_logger.error(f'Invalid JSON data.{str(e)}')
 
                     return JsonResponse(response_data, status=400)
+
+
             # print('Middleware working fine')
 
         # response = self.get_response(request)

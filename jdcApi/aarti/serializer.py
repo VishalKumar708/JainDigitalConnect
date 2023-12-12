@@ -145,10 +145,10 @@ class GETAartiByIdSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Aarti
-        fields = ['id', 'sectId', 'sectName', 'aartiText', 'isVerified', 'isActive']
+        fields = ['id', 'aartiName', 'sectId', 'sectName', 'order', 'aartiText', 'isVerified', 'isActive']
 
 
 class GETAartiForAdminSerializer(serializers.ModelSerializer):
     class Meta:
         model = Aarti
-        fields = ['id', 'aartiName', 'aartiText']
+        fields = ['id', 'aartiName']

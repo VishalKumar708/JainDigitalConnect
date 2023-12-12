@@ -21,6 +21,9 @@ from .master_views.bloodGroup_views import *
 from .master_views.profession_views import *
 from .master_views.relation_views import *
 from .live_location.views import *
+from .literature.literatureDocument_views import *
+
+from .app_config.views import *
 
 urlpatterns = [
     #  state  ---correct
@@ -37,15 +40,11 @@ urlpatterns = [
     path('GetCityDetailsById/<slug:cityId>/', GetCityDetailsById.as_view()),  # correct
     path('GetAllApprovedAndUnapprovedCityForAdmin/', GetAllApprovedAndUnapprovedCityForAdmin.as_view()),  # correct
 
-
-
     #     Area Apis  ---correct
     path('POSTNewArea/', POSTNewArea.as_view()),  # correct
     path('PUTAreaById/<slug:areaId>/', UpdateAreaById.as_view()),  # correct
     path('GETAllApprovedAndUnapprovedAreasForAdmin/', GetAllApprovedAndUnapprovedAreasForAdmin.as_view()),  # correct
     path('GETAreaDetailsById/<slug:areaId>/', GetAreaDetailsById.as_view()),  # correct
-
-
 
     #     Business Api  ---correct
     path('POSTNewBusinessBy/', POSTNewBusiness.as_view()),
@@ -63,6 +62,12 @@ urlpatterns = [
     path('GETAllApprovedLiteratureBySectId/<slug:sectId>/', GETAllApprovedLiteratureBySectId.as_view()),
     path('GETAllApprovedAndUnapprovedLiterature/', GETAllApprovedAndUnapprovedLiterature.as_view()),  # correct
     path('GETLiteratureById/<slug:literatureId>/', GETLiteratureById.as_view()),
+
+    # LiteratureDocument Api
+    path('POSTNewLiteratureDocument/', POSTNewLiteratureDocument.as_view()),
+    path('UPDATELiteratureDocumentById/<literatureDocumentId>/', UPDATELiteratureDocumentById.as_view()),
+    path('GETAllSectLiteratureDocument/', GETAllSectLiteratureDocument.as_view()),
+    path('GETLiteratureDocumentDetailsById/<literatureDocumentId>/', GETLiteratureDocumentDetailsById.as_view()),
 
 
     # count for residents
@@ -134,7 +139,7 @@ urlpatterns = [
     path('PUTAartiById/<slug:aartiId>/', UPDATEAarti.as_view()),
     path('GETAartiDetailsById/<slug:aartiId>/', GETAartiDetailsById.as_view()),
     path('GETAllApprovedAartiBySectId/<slug:sectId>/', GETAllApprovedAartiBySectId.as_view()),
-    path('GETAllApprovedAndUnapprovedLiteratureForAdmin/', GETAllApprovedAndUnapprovedLiteratureForAdmin.as_view()),
+    path('GETAllApprovedAndUnapprovedAartiForAdmin/', GETAllApprovedAndUnapprovedAartiForAdmin.as_view()),
 
     # Dharam Sthan
     path('POSTNewDharamSthan/', POSTNewDharamSthan.as_view()),
@@ -188,6 +193,17 @@ urlpatterns = [
     path('GETAllSectDharamSthanHistory/', GETAllSectDharamSthanHistory.as_view()),
     path('GETAllDharamSthanHistoryBySectId/<slug:sectId>/', GETAllDharamSthanHistoryBySectId.as_view()),
     path('GETDharamSthanDetailsByDharamSthanIdForLiveLocation/<slug:dharamSthanId>/', GETDharamSthanDetailsByDharamSthanIdForLiveLocation.as_view()),
+    # if live location is on
+    path('GETAllLiveLocationBySectId/<sectId>/', GETAllLiveLocationBySectId.as_view()),
+    path('GETAllLiveLocationForAdmin/', GETAllLiveLocationForAdmin.as_view()),
+
+
+    #     App Configuration
+    path('POSTNewAppConfiguration/', POSTNewAppConfiguration.as_view()),
+    path('PUTAppConfigurationById/<appConfigurationId>/', PUTAppConfigurationById.as_view()),
+    path('GETAppConfigurationDetailsById/<appConfigurationId>/', GETAppConfigurationDetailsById.as_view()),
+    path('GETAllAppConfigurationsForAdmin/', GETAllAppConfigurationsForAdmin.as_view()),
+
 
 ]
 

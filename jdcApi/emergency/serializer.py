@@ -155,5 +155,6 @@ class GETCitySerializer(serializers.ModelSerializer):
 class GETAllEmergencySerializer(serializers.ModelSerializer):
 
     class Meta:
-        fields = ['departmentName', 'phoneNumber', 'email', 'website']
+        fields = ['id', 'departmentName', 'cityId', 'phoneNumber', 'email', 'website']
         model = Emergency
+

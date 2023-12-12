@@ -4,7 +4,7 @@ from rest_framework import serializers
 from jdcApi.models import MstSect, DharamSthanHistory, DharamSthan, LiveLocation
 from django.utils import timezone
 from datetime import datetime
-
+from accounts.models import User
 
 class GETAllSectWithCountForDharamSthanHistorySerializer(serializers.ModelSerializer):
     count = serializers.SerializerMethodField()
@@ -23,6 +23,14 @@ class GETAllSectWithCountForDharamSthanHistorySerializer(serializers.ModelSerial
             year=current_year
         ).count()
         return count
+
+
+class GETAllSectForLiveLocationSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = ['id', 'sectName']
+        model = MstSect
+
+
 
 
 class GETAllDharamSthanHistorySerializer(serializers.ModelSerializer):
@@ -252,3 +260,18 @@ class GETAllLiveLocationByUserIdSerializer(serializers.ModelSerializer):
     class Meta:
         fields = ['id',  'title']
         model = LiveLocation
+
+
+class GETAllLiveLocationBySectIdSerializer(serializers.ModelSerializer):
+    uploadedBy = serializers.SerializerMethodField()
+
+    class Meta:
+        fields = ['id', 'title', 'description', 'uploadedBy']
+        model = LiveLocation
+
+    def get_uploadedBy(self,instance):
+        try:
+            user_obj = User.objects.get(id=instance.createdBy)
+            return user_obj.name
+        except User.DoesNotExist:
+            return ""

@@ -339,3 +339,12 @@ ERROR 2023-12-06 16:06:45,834  58 Invalid JSON data.Expecting ',' delimiter: lin
 ERROR 2023-12-07 12:15:49,695  30 Invalid URL.
 ERROR 2023-12-07 12:16:01,190  30 Invalid URL.
 ERROR 2023-12-07 16:20:12,612  30 Invalid URL.
+ERROR 2023-12-08 10:49:18,313  30 Invalid URL.
+ERROR 2023-12-08 10:49:22,865  30 Invalid URL.
+ERROR 2023-12-08 10:59:28,101  30 Invalid URL.
+ERROR 2023-12-08 15:32:40,872  44 Unsupported Media Type. Expected application/json but got multipart/form-data
+ERROR 2023-12-08 15:36:45,298  44 Unsupported Media Type. Expected application/json but got multipart/form-data
+ERROR 2023-12-11 10:33:42,668  30 Invalid URL.
+ERROR 2023-12-11 10:33:53,940  30 Invalid URL.
+ERROR 2023-12-11 14:18:17,863  67 An Exception occured while creating new saint strptime() argument 1 must be str, not None
+ERROR 2023-12-11 14:51:53,067  30 Invalid URL.
