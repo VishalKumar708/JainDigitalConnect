@@ -1,3 +1,4 @@
+from django.db.models import Q
 from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView
 from .serializer import *
@@ -253,9 +254,9 @@ class GETAllAddAndApprovedSaint(APIView):
             if search_param:
                 pagination_data = {}
                 if search_param.strip().lower() == 'active':
-                    queryset = Saint.objects.filter(isVerified=True).order_by('name')
+                    queryset = Saint.objects.filter(isVerified=True, isActive=True).order_by('name')
                 elif search_param.strip().lower() == 'inactive':
-                    queryset = Saint.objects.filter(isVerified=False).order_by('name')
+                    queryset = Saint.objects.filter(Q(isVerified=False) | Q(isActive=False)).order_by('name')
                 else:
                     response_data = {
                         'status': 400,

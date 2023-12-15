@@ -62,7 +62,7 @@ class PUTEventById(APIView):
                 'status': 'failed',
                 'data': serializer.errors
             }
-            return Response(response_data, status=404)
+            return Response(response_data, status=400)
         except Event.DoesNotExist:
             response_data = {
                 'statusCode': status.HTTP_404_NOT_FOUND,

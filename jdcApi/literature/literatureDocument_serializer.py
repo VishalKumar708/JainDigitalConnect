@@ -1,13 +1,18 @@
+from django.core.exceptions import ValidationError
 from django.db.models import Q
 from rest_framework import serializers
 from jdcApi.models import MstSect, LiteratureDocument
 from accounts.models import User
+from django.core.validators import URLValidator
 import base64
+from django.core.files.uploadedfile import UploadedFile
+
 
 class CREATENewLiteratureDocumentSerializer(serializers.ModelSerializer):
     title = serializers.CharField(required=True)
+
     class Meta:
-        fields = ['sectId','title', 'order', 'link', 'file']
+        fields = ['sectId', 'title', 'order', 'link', 'file']
         model = LiteratureDocument
 
     def create(self, validated_data):
@@ -36,9 +41,24 @@ class CREATENewLiteratureDocumentSerializer(serializers.ModelSerializer):
             except ValueError:
                 errors['sectId'] = [f"'sectId' excepted a number but got '{sect_id}."]
 
+        if link:
+            try:
+                validator = URLValidator()
+                validator(link.strip())
+            except ValidationError:
+                errors['link'] = ["Invalid Link."]
+
+        if file and not isinstance(file, UploadedFile):
+            errors['file'] = ["Invalid File Data."]
+            # print("file name==> ", file.name)
+            # print("file==> ", file)
+            # print("file content_type==> ", file.content_type)
+            # print("file size==> ", file.size)
+
         if not link and not file:
             # raise serializers.ValidationError("Please provide either 'link' or 'file'.")
             errors['link'] = ["Please provide either 'link' or 'file'."]
+            errors['file'] = ["Please provide either 'file' or 'link'."]
 
         # default validation
         validated_data = None
@@ -93,9 +113,24 @@ class UPDATELiteratureDocumentByIdSerializer(serializers.ModelSerializer):
             except ValueError:
                 errors['sectId'] = [f"'sectId' excepted a number but got '{sect_id}."]
 
+        if link:
+            try:
+                validator = URLValidator()
+                validator(link.strip())
+            except ValidationError:
+                errors['link'] = ["Invalid Link."]
+
+        if file and not isinstance(file, UploadedFile):
+            errors['file'] = ["Invalid File Data."]
+            # print("file name==> ", file.name)
+            # print("file==> ", file)
+            # print("file content_type==> ", file.content_type)
+            # print("file size==> ", file.size)
+
         if not link and not file:
             # raise serializers.ValidationError("Please provide either 'link' or 'file'.")
             errors['link'] = ["Please provide either 'link' or 'file'."]
+            errors['file'] = ["Please provide either 'file' or 'link'."]
 
         # default validation
         validated_data = None
@@ -117,20 +152,20 @@ class UPDATELiteratureDocumentByIdSerializer(serializers.ModelSerializer):
 
 
 class GETLiteratureDocumentDetailsSerializer(serializers.ModelSerializer):
-    file = serializers.SerializerMethodField()
+    # file = serializers.SerializerMethodField()
     title = serializers.CharField(required=True)
 
     class Meta:
-        fields = ['id', 'sectId','title', 'order', 'link', 'file', 'isVerified', 'isActive']
+        fields = ['id', 'sectId', 'title', 'order', 'link', 'file', 'isVerified', 'isActive']
         model = LiteratureDocument
 
-    def get_file(self, obj):
-        try:
-            with open(obj.file.path, 'rb') as file:
-                file_content = file.read()
-                return base64.b64encode(file_content).decode('utf-8')
-        except FileNotFoundError:
-            return None
+    # def get_file(self, obj):
+    #     try:
+    #         with open(obj.file.path, 'rb') as file:
+    #             file_content = file.read()
+    #             return base64.b64encode(file_content).decode('utf-8')
+    #     except FileNotFoundError:
+    #         return None
 
 
 class GETAllSectWithCountForLiteratureDocumentSerializer(serializers.ModelSerializer):
@@ -154,7 +189,19 @@ class GETAllLiteratureDocumentSerializer(serializers.ModelSerializer):
 
 
 class GETAllActiveLiteratureDocumentSerializer(serializers.ModelSerializer):
+    uploadedBy = serializers.SerializerMethodField()
+
     class Meta:
-        fields = ['id','title', 'link', 'file']
+        fields = ['id', 'title', 'link', 'file', 'uploadedBy']
         model = LiteratureDocument
+
+    def get_uploadedBy(self, instance):
+        try:
+            obj = User.objects.get(id=instance.createdBy)
+            return obj.name
+        except User.DoesNotExist:
+            return ""
+
+
+
 

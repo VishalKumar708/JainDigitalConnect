@@ -103,15 +103,32 @@ class GetAllApprovedCityAndSearchCityNameForBusiness(APIView):
 
 
 class GetAllApprovedBusinessByCityId(APIView):  # correct
+    pagination_class = CustomPagination
 
     def get(self, request,cityId, *args, **kwargs):
         try:
-            City.objects.get(cityId=cityId)
             business_name = request.GET.get('businessName')
             if business_name:
                 queryset = Business.objects.filter(isActive=True, isVerified=True, cityId=cityId, businessName__icontains=business_name)
-            else:
-                queryset = Business.objects.filter(isActive=True, isVerified=True, cityId=cityId).order_by('businessName')
+                if len(queryset) < 1:
+                    response_data = {
+                        'statusCode': status.HTTP_200_OK,
+                        'status': 'Success',
+                        'data': {'message': 'No Record found.'}
+                    }
+
+                    return Response(response_data)
+
+                serializer = GETBusinessSerializer(queryset, many=True)
+                response_data = {
+                    'statusCode': status.HTTP_200_OK,
+                    'status': 'Success',
+                    'data': serializer.data,
+                }
+
+                return Response(response_data)
+
+            queryset = Business.objects.filter(isActive=True, isVerified=True, cityId=cityId).order_by('businessName')
             if len(queryset) < 1:
                 response_data = {
                     'statusCode': status.HTTP_200_OK,
@@ -120,22 +137,20 @@ class GetAllApprovedBusinessByCityId(APIView):  # correct
                 }
 
                 return Response(response_data)
+            # pagination
+            pagination_data = {}
+            paginator = self.pagination_class()
+            page = paginator.paginate_queryset(queryset, request)
+            if page is not None:
+                serializer = GETBusinessSerializer(page, many=True)
+                pagination_data = paginator.get_paginated_response(serializer.data)
 
-            serializer = GETBusinessSerializer(queryset, many=True)
-            response_data = {
-                'statusCode': status.HTTP_200_OK,
-                'status': 'Success',
-                'data': serializer.data,
-            }
+            response_data = {**{
+                'statusCode': 200,
+                'status': 'Success'
+            }, **pagination_data}
 
             return Response(response_data)
-        except City.DoesNotExist:
-            response_data = {
-                'statusCode': 404,
-                'status': 'failed',
-                'data': {'message': 'Invalid City Id.'},
-            }
-            return Response(response_data, status=404)
         except ValueError:
             response_data = {
                 'statusCode': 404,

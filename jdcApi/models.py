@@ -254,6 +254,6 @@ class LiteratureDocument(BaseModel):
     order = models.IntegerField()
     link = models.TextField(null=True, blank=True)
     file = models.FileField(upload_to='literature_Documents', null=True,
-                            validators=[FileExtensionValidator(allowed_extensions=['txt', 'pdf', 'doc', 'docx'])], blank=True)
+                            validators=[FileExtensionValidator(allowed_extensions=['txt', 'pdf', 'doc', 'docx'])], blank = True)
     isVerified = models.BooleanField(default=False)
 

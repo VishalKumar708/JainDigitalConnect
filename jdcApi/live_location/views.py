@@ -112,7 +112,7 @@ class GETAllLiveLocationByUserId(APIView):
 
     def get(self, request, userId, *args, **kwargs):
         try:
-            queryset = LiveLocation.objects.filter(createdBy=userId)
+            queryset = LiveLocation.objects.filter(createdBy=userId, isVerified=True, isActive=True)
             if len(queryset) < 1:
                 response_data = {
                     'statusCode': 200,
@@ -257,6 +257,7 @@ class GETAllLiveLocationBySectId(APIView):
 
 class GETAllLiveLocationForAdmin(APIView):
     pagination_class = CustomPagination
+    permission_classes = [IsAuthenticated]
 
     def get(self, request, *args, **kwargs):
         status = request.GET.get('status')
@@ -264,7 +265,7 @@ class GETAllLiveLocationForAdmin(APIView):
         if status is None or status.strip().lower() == 'active':
             queryset = LiveLocation.objects.filter(isActive=True, isVerified=True).order_by('startDate')
         elif status.strip().lower() == 'inactive':
-            queryset = LiveLocation.objects.filter(Q(isActive=True), Q(isVerified=True)).order_by('startDate')
+            queryset = LiveLocation.objects.filter(Q(isActive=False) | Q(isVerified=False)).order_by('startDate')
         else:
             response_data = {
                 'status': 400,

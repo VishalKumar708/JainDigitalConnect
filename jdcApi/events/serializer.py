@@ -5,8 +5,8 @@ from accounts.models import User
 
 
 class CREATEEventSerializer(serializers.ModelSerializer):
-    startDate = serializers.DateField(input_formats=("%d %B %Y",))
-    endDate = serializers.DateField(input_formats=("%d %B %Y",))
+    startDate = serializers.DateField(input_formats=("%d %B, %Y",))
+    endDate = serializers.DateField(input_formats=("%d %B, %Y",))
 
     class Meta:
         fields = ['cityId', 'sectId', 'startDate', 'endDate', 'title', 'body']
@@ -48,14 +48,14 @@ class CREATEEventSerializer(serializers.ModelSerializer):
         if start_date:
             today_date = date.today()
             try:
-                if today_date > datetime.strptime(start_date, "%d %B %Y").date():
+                if today_date > datetime.strptime(start_date, "%d %B, %Y").date():
                     errors['startDate'] = ["date must be in the today or future."]
             except ValueError:
                 pass
 
         if start_date and end_date:
             try:
-                if datetime.strptime(end_date, "%d %B %Y").date() < datetime.strptime(start_date, "%d %B %Y").date():
+                if datetime.strptime(end_date, "%d %B, %Y").date() < datetime.strptime(start_date, "%d %B, %Y").date():
                     errors['endDate'] = ["date must be greater then 'startDate' or equal to 'startDate."]
             except ValueError:
                 pass
@@ -79,8 +79,8 @@ class CREATEEventSerializer(serializers.ModelSerializer):
 
 
 class UPDATEEventSerializer(serializers.ModelSerializer):
-    startDate = serializers.DateField(input_formats=("%d %B %Y",))
-    endDate = serializers.DateField(input_formats=("%d %B %Y",))
+    startDate = serializers.DateField(input_formats=("%d %B, %Y",))
+    endDate = serializers.DateField(input_formats=("%d %B, %Y",))
 
     class Meta:
         fields = ['cityId', 'sectId', 'startDate', 'endDate', 'title', 'body', 'isVerified', 'isActive']
@@ -119,17 +119,10 @@ class UPDATEEventSerializer(serializers.ModelSerializer):
                 errors['cityId'] = ['Invalid City Id.']
             except ValueError:
                 errors['cityId'] = [f"'cityId' excepted a number but got '{sect_id}."]
-        if start_date:
-            today_date = date.today()
-            try:
-                if today_date > datetime.strptime(start_date, "%d %B %Y").date():
-                    errors['startDate'] = ["date must be in the today or future."]
-            except ValueError:
-                pass
 
         if start_date and end_date:
             try:
-                if datetime.strptime(end_date, "%d %B %Y").date() < datetime.strptime(start_date, "%d %B %Y").date():
+                if datetime.strptime(end_date, "%d %B, %Y").date() < datetime.strptime(start_date, "%d %B, %Y").date():
                     errors['endDate'] = ["date must be greater then 'startDate' or equal to 'startDate."]
             except ValueError:
                 pass
@@ -163,10 +156,10 @@ class GETEventDetailsSerializer(serializers.ModelSerializer):
         model = Event
 
     def get_startDate(self, instance):
-        return instance.startDate.strftime("%d %B %Y")
+        return instance.startDate.strftime("%d %B, %Y")
 
     def get_endDate(self, instance):
-        return instance.endDate.strftime("%d %B %Y")
+        return instance.endDate.strftime("%d %B, %Y")
 
 
 class GETAllSectWithCountForEventSerializer(serializers.ModelSerializer):

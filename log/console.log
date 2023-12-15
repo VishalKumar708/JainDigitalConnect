@@ -27500,3 +27500,1615 @@ INFO 2023-12-12 12:01:54,206  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_lo
 INFO 2023-12-12 12:01:56,446  668 Watching for file changes with StatReloader
 INFO 2023-12-12 12:02:47,895  212 "GET /api/GETAllDharamSthanHistoryBySectId/1/ HTTP/1.1" 200 272
 INFO 2023-12-12 12:03:55,359  212 "GET /api/GETAllLiveLocationForAdmin/?status=inactive HTTP/1.1" 200 116
+INFO 2023-12-12 12:24:14,617  212 "GET /api/GETAllLiveLocationForAdmin/?status=active HTTP/1.1" 200 116
+INFO 2023-12-12 12:24:18,922  212 "GET /api/GETAllLiveLocationForAdmin/?status=active HTTP/1.1" 200 116
+INFO 2023-12-12 12:24:26,423  212 "GET /api/GETAllLiveLocationForAdmin/?status=inactive HTTP/1.1" 200 116
+INFO 2023-12-12 12:25:09,028  212 "GET /admin/jdcApi/appconfigurations/ HTTP/1.1" 200 17589
+INFO 2023-12-12 12:25:09,125  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-12 12:26:10,582  212 "GET /admin/jdcApi/livelocation/ HTTP/1.1" 200 19557
+INFO 2023-12-12 12:26:10,651  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-12 12:26:31,314  212 "GET /api/GETAllLiveLocationForAdmin/?status=inactive HTTP/1.1" 200 116
+INFO 2023-12-12 12:26:37,849  212 "GET /api/GETAllLiveLocationForAdmin/?status=active HTTP/1.1" 200 116
+INFO 2023-12-12 12:26:43,292  212 "GET /api/GETAllLiveLocationForAdmin/?status=active HTTP/1.1" 200 116
+INFO 2023-12-12 12:27:36,628  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\live_location\views.py changed, reloading.
+INFO 2023-12-12 12:27:38,845  668 Watching for file changes with StatReloader
+INFO 2023-12-12 12:27:40,187  212 "GET /api/GETAllLiveLocationForAdmin/?status=active HTTP/1.1" 200 116
+INFO 2023-12-12 12:27:45,907  212 "GET /api/GETAllLiveLocationForAdmin/?status=inactive HTTP/1.1" 200 116
+INFO 2023-12-12 12:46:04,254  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\business\views.py changed, reloading.
+INFO 2023-12-12 12:46:05,843  668 Watching for file changes with StatReloader
+INFO 2023-12-12 12:46:37,059  212 "GET /api/GETAllCityByEmergency/?cityName=h HTTP/1.1" 200 78
+INFO 2023-12-12 12:47:31,005  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\business\views.py changed, reloading.
+INFO 2023-12-12 12:47:32,298  668 Watching for file changes with StatReloader
+INFO 2023-12-12 13:32:36,012  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-12-12 13:32:38,233  668 Watching for file changes with StatReloader
+INFO 2023-12-12 13:32:44,113  212 "GET /api/GETAllSectDharamSthanHistory/ HTTP/1.1" 200 216
+INFO 2023-12-12 13:32:56,534  212 "GET /api/GETAllDharamSthanHistoryBySectId/1/ HTTP/1.1" 200 272
+INFO 2023-12-12 13:33:23,763  212 "GET /api/GETDharamSthanDetailsByDharamSthanIdForLiveLocation/1/ HTTP/1.1" 200 166
+INFO 2023-12-12 13:54:22,498  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\live_location\serializer.py changed, reloading.
+INFO 2023-12-12 13:54:25,568  668 Watching for file changes with StatReloader
+ERROR 2023-12-12 13:54:27,416  241 Internal Server Error: /api/GETDharamSthanDetailsByDharamSthanIdForLiveLocation/1/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\live_location\views.py", line 208, in get
+    'data': serializer.data
+            ^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\fields.py", line 1838, in to_representation
+    return method(value)
+           ^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\live_location\serializer.py", line 50, in get_foundationDate
+    return instance.foundationDate.strptime("%d %B, %Y")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'datetime.date' object has no attribute 'strptime'
+ERROR 2023-12-12 13:54:27,428  212 "GET /api/GETDharamSthanDetailsByDharamSthanIdForLiveLocation/1/ HTTP/1.1" 500 123712
+INFO 2023-12-12 13:54:41,480  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\live_location\serializer.py changed, reloading.
+INFO 2023-12-12 13:54:43,003  668 Watching for file changes with StatReloader
+INFO 2023-12-12 13:54:44,586  212 "GET /api/GETDharamSthanDetailsByDharamSthanIdForLiveLocation/1/ HTTP/1.1" 200 173
+INFO 2023-12-12 13:55:30,604  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\live_location\serializer.py changed, reloading.
+INFO 2023-12-12 13:55:32,398  668 Watching for file changes with StatReloader
+INFO 2023-12-12 13:55:33,394  212 "GET /api/GETDharamSthanDetailsByDharamSthanIdForLiveLocation/1/ HTTP/1.1" 200 173
+INFO 2023-12-12 13:57:16,984  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\live_location\serializer.py changed, reloading.
+INFO 2023-12-12 13:57:18,381  668 Watching for file changes with StatReloader
+INFO 2023-12-12 13:57:56,608  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\live_location\serializer.py changed, reloading.
+INFO 2023-12-12 13:57:58,096  668 Watching for file changes with StatReloader
+INFO 2023-12-12 14:34:52,398  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\live_location\serializer.py changed, reloading.
+INFO 2023-12-12 14:34:54,292  668 Watching for file changes with StatReloader
+INFO 2023-12-12 14:42:11,531  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\live_location\serializer.py changed, reloading.
+INFO 2023-12-12 14:42:13,028  668 Watching for file changes with StatReloader
+INFO 2023-12-12 14:56:55,464  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-12-12 14:56:57,353  668 Watching for file changes with StatReloader
+INFO 2023-12-12 14:57:18,380  212 "GET /api/GETAllSectLiteratureDocument/ HTTP/1.1" 200 216
+INFO 2023-12-12 15:06:47,875  212 "GET /api/GETLiteratureDocumentDetailsById/1/ HTTP/1.1" 200 498367
+INFO 2023-12-12 15:11:33,511  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-12 15:11:37,714  668 Watching for file changes with StatReloader
+INFO 2023-12-12 15:11:40,012  212 "GET /api/GETLiteratureDocumentDetailsById/1/ HTTP/1.1" 200 199
+INFO 2023-12-12 15:12:18,717  212 "GET /media/literature_Documents/Bca-final-sem-result.pdf HTTP/1.1" 200 373664
+INFO 2023-12-12 15:24:15,205  212 "POST /obtainToken/ HTTP/1.1" 200 483
+INFO 2023-12-12 15:30:54,927  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\live_location\serializer.py changed, reloading.
+INFO 2023-12-12 15:30:57,512  668 Watching for file changes with StatReloader
+INFO 2023-12-12 15:32:18,474  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\live_location\serializer.py changed, reloading.
+INFO 2023-12-12 15:32:20,440  668 Watching for file changes with StatReloader
+WARNING 2023-12-12 15:32:58,172  241 Bad Request: /api/POSTNewLiveLocation/
+WARNING 2023-12-12 15:32:58,173  212 "POST /api/POSTNewLiveLocation/ HTTP/1.1" 400 247
+WARNING 2023-12-12 15:33:10,646  241 Bad Request: /api/POSTNewLiveLocation/
+WARNING 2023-12-12 15:33:10,648  212 "POST /api/POSTNewLiveLocation/ HTTP/1.1" 400 167
+INFO 2023-12-12 15:33:34,463  212 "POST /api/POSTNewLiveLocation/ HTTP/1.1" 200 85
+INFO 2023-12-12 15:33:44,260  212 "GET /admin/jdcApi/livelocation/ HTTP/1.1" 302 0
+INFO 2023-12-12 15:33:44,434  212 "GET /admin/login/?next=/admin/jdcApi/livelocation/ HTTP/1.1" 200 4215
+INFO 2023-12-12 15:33:44,579  212 "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2023-12-12 15:33:51,389  212 "POST /admin/login/?next=/admin/jdcApi/livelocation/ HTTP/1.1" 302 0
+INFO 2023-12-12 15:33:51,527  212 "GET /admin/jdcApi/livelocation/ HTTP/1.1" 200 20419
+INFO 2023-12-12 15:33:51,607  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-12 15:34:55,805  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\live_location\serializer.py changed, reloading.
+INFO 2023-12-12 15:34:57,769  668 Watching for file changes with StatReloader
+INFO 2023-12-12 15:36:00,249  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\live_location\serializer.py changed, reloading.
+INFO 2023-12-12 15:36:02,377  668 Watching for file changes with StatReloader
+INFO 2023-12-12 15:37:19,199  212 "GET /admin/jdcApi/livelocation/ HTTP/1.1" 200 20419
+INFO 2023-12-12 15:37:19,261  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-12-12 15:40:14,066  241 Unauthorized: /api/PUTLiveLocationById/3/
+WARNING 2023-12-12 15:40:14,067  212 "PUT /api/PUTLiveLocationById/3/ HTTP/1.1" 401 199
+INFO 2023-12-12 15:40:36,281  212 "PUT /api/PUTLiveLocationById/3/ HTTP/1.1" 200 87
+INFO 2023-12-12 15:40:48,545  212 "GET /admin/jdcApi/livelocation/ HTTP/1.1" 200 20419
+INFO 2023-12-12 15:40:48,603  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-12 15:42:37,802  212 "PUT /api/PUTLiveLocationById/3/ HTTP/1.1" 200 87
+WARNING 2023-12-12 15:42:43,362  241 Bad Request: /api/PUTLiveLocationById/3/
+WARNING 2023-12-12 15:42:43,363  212 "PUT /api/PUTLiveLocationById/3/ HTTP/1.1" 400 107
+WARNING 2023-12-12 15:42:50,542  241 Bad Request: /api/PUTLiveLocationById/3/
+WARNING 2023-12-12 15:42:50,543  212 "PUT /api/PUTLiveLocationById/3/ HTTP/1.1" 400 167
+INFO 2023-12-12 15:43:51,929  212 "GET /api/GETLiveLocationDetailsById/1/ HTTP/1.1" 200 434
+WARNING 2023-12-12 15:44:23,636  241 Unauthorized: /api/GETAllLiveLocationByUserId/1/
+WARNING 2023-12-12 15:44:23,637  212 "GET /api/GETAllLiveLocationByUserId/1/ HTTP/1.1" 401 199
+INFO 2023-12-12 15:44:33,031  212 "GET /api/GETAllLiveLocationByUserId/1/ HTTP/1.1" 200 144
+INFO 2023-12-12 15:45:26,848  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\live_location\views.py changed, reloading.
+INFO 2023-12-12 15:45:29,358  668 Watching for file changes with StatReloader
+INFO 2023-12-12 15:45:32,381  212 "GET /api/GETAllLiveLocationByUserId/1/ HTTP/1.1" 200 112
+INFO 2023-12-12 15:46:00,567  212 "GET /api/GETAllLiveLocationBySectId/1/ HTTP/1.1" 200 75
+INFO 2023-12-12 15:46:34,368  212 "GET /api/GETAllLiveLocationBySectId/2/ HTTP/1.1" 200 212
+INFO 2023-12-12 15:47:38,362  212 "GET /api/GETAllLiveLocationBySectId/2/ HTTP/1.1" 200 212
+INFO 2023-12-12 15:48:18,272  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\live_location\views.py changed, reloading.
+INFO 2023-12-12 15:48:20,164  668 Watching for file changes with StatReloader
+INFO 2023-12-12 15:48:46,590  212 "GET /api/GETAllLiveLocationForAdmin/?status=inactive HTTP/1.1" 200 116
+INFO 2023-12-12 15:48:55,445  212 "GET /api/GETAllLiveLocationForAdmin/?status=active HTTP/1.1" 200 150
+INFO 2023-12-12 15:49:20,284  212 "GET /api/GETAllSectDharamSthanHistory/ HTTP/1.1" 200 216
+INFO 2023-12-12 15:49:29,581  212 "GET /api/GETAllDharamSthanHistoryBySectId/1/ HTTP/1.1" 200 272
+INFO 2023-12-12 15:49:56,632  212 "GET /api/GETDharamSthanDetailsByDharamSthanIdForLiveLocation/1/ HTTP/1.1" 200 173
+INFO 2023-12-12 17:00:06,173  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-12-12 17:00:08,222  668 Watching for file changes with StatReloader
+INFO 2023-12-12 17:00:29,251  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-12-12 17:00:31,577  668 Watching for file changes with StatReloader
+INFO 2023-12-13 10:12:45,113  668 Watching for file changes with StatReloader
+INFO 2023-12-13 10:23:18,544  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-12-13 10:23:20,243  668 Watching for file changes with StatReloader
+WARNING 2023-12-13 10:52:14,882  241 Not Found: /
+WARNING 2023-12-13 10:52:14,901  212 "GET / HTTP/1.1" 404 78
+INFO 2023-12-13 10:52:15,674  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_views.py changed, reloading.
+INFO 2023-12-13 10:52:17,639  668 Watching for file changes with StatReloader
+INFO 2023-12-13 10:52:27,343  212 "GET /admin HTTP/1.1" 301 0
+INFO 2023-12-13 10:52:27,527  212 "GET /admin/ HTTP/1.1" 200 20084
+INFO 2023-12-13 10:52:27,580  212 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2023-12-13 10:52:27,597  212 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+WARNING 2023-12-13 10:52:27,660  241 Not Found: /favicon.ico
+WARNING 2023-12-13 10:52:27,661  212 "GET /favicon.ico HTTP/1.1" 404 78
+INFO 2023-12-13 10:52:49,453  212 "GET /admin/jdcApi/literaturedocument/ HTTP/1.1" 200 19798
+INFO 2023-12-13 10:52:49,511  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-13 11:18:41,697  212 "GET /api/GETAllSectSaint/ HTTP/1.1" 200 216
+INFO 2023-12-13 11:18:53,684  212 "GET /admin/jdcApi/saint/ HTTP/1.1" 200 51858
+INFO 2023-12-13 11:18:53,731  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-13 11:36:31,821  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\saint\views.py changed, reloading.
+INFO 2023-12-13 11:36:34,580  668 Watching for file changes with StatReloader
+INFO 2023-12-13 11:47:45,604  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\saint\serializer.py changed, reloading.
+INFO 2023-12-13 11:47:46,853  668 Watching for file changes with StatReloader
+INFO 2023-12-13 12:34:50,371  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 12:34:52,275  668 Watching for file changes with StatReloader
+INFO 2023-12-13 12:36:04,437  212 "GET /api/GETAllSectLiteratureDocument/ HTTP/1.1" 200 216
+INFO 2023-12-13 12:36:18,484  212 "GET /api/GETLiteratureDocumentDetailsById/1/ HTTP/1.1" 200 199
+INFO 2023-12-13 12:45:58,668  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 12:46:00,252  668 Watching for file changes with StatReloader
+INFO 2023-12-13 12:46:01,552  212 "GET /api/GETLiteratureDocumentDetailsById/1/ HTTP/1.1" 200 199
+INFO 2023-12-13 13:00:54,189  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-12-13 13:00:55,721  668 Watching for file changes with StatReloader
+INFO 2023-12-13 13:02:12,596  212 "POST /obtainToken/ HTTP/1.1" 200 483
+INFO 2023-12-13 13:02:47,631  212 "GET /api/GETAllLiteratureDocumentForAdmin/ HTTP/1.1" 200 215
+INFO 2023-12-13 13:03:14,274  212 "GET /api/GETAllLiteratureDocumentForAdmin/?status=inactive HTTP/1.1" 200 458
+INFO 2023-12-13 13:06:02,433  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-12-13 13:06:03,905  668 Watching for file changes with StatReloader
+INFO 2023-12-13 13:06:34,476  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-12-13 13:06:35,889  668 Watching for file changes with StatReloader
+INFO 2023-12-13 13:07:25,699  212 "GET /api/GETAllApprovedLiteratureDocument/ HTTP/1.1" 200 215
+INFO 2023-12-13 13:07:41,180  212 "GET /api/GETAllApprovedLiteratureDocument HTTP/1.1" 301 0
+INFO 2023-12-13 13:07:41,208  212 "GET /api/GETAllApprovedLiteratureDocument/ HTTP/1.1" 200 215
+INFO 2023-12-13 13:07:49,429  212 "GET /api/GETAllApprovedLiteratureDocument HTTP/1.1" 301 0
+INFO 2023-12-13 13:07:49,452  212 "GET /api/GETAllApprovedLiteratureDocument/ HTTP/1.1" 200 215
+INFO 2023-12-13 13:20:46,692  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 13:20:48,050  668 Watching for file changes with StatReloader
+INFO 2023-12-13 13:22:11,832  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 13:22:12,994  668 Watching for file changes with StatReloader
+WARNING 2023-12-13 13:23:06,767  241 Unauthorized: /api/POSTNewLiteratureDocument/
+WARNING 2023-12-13 13:23:06,769  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 401 199
+WARNING 2023-12-13 13:23:27,551  241 Bad Request: /api/POSTNewLiteratureDocument/
+WARNING 2023-12-13 13:23:27,552  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 400 81
+INFO 2023-12-13 13:23:49,125  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 200 85
+INFO 2023-12-13 13:24:19,057  212 "GET /admin/jdcApi/literaturedocument/ HTTP/1.1" 200 20367
+INFO 2023-12-13 13:24:19,225  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-13 13:24:58,570  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 13:25:00,195  668 Watching for file changes with StatReloader
+INFO 2023-12-13 13:25:01,473  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 200 85
+INFO 2023-12-13 13:25:04,541  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 200 85
+INFO 2023-12-13 13:25:09,895  212 "GET /admin/jdcApi/literaturedocument/ HTTP/1.1" 200 21505
+INFO 2023-12-13 13:25:09,942  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-13 13:26:14,382  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 13:26:15,818  668 Watching for file changes with StatReloader
+INFO 2023-12-13 13:27:27,489  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 13:27:28,732  668 Watching for file changes with StatReloader
+WARNING 2023-12-13 13:27:31,399  241 Bad Request: /api/POSTNewLiteratureDocument/
+WARNING 2023-12-13 13:27:31,401  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 400 70
+WARNING 2023-12-13 13:27:47,797  241 Bad Request: /api/POSTNewLiteratureDocument/
+WARNING 2023-12-13 13:27:47,798  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 400 70
+WARNING 2023-12-13 13:27:54,837  241 Bad Request: /api/POSTNewLiteratureDocument/
+WARNING 2023-12-13 13:27:54,839  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 400 70
+INFO 2023-12-13 13:29:00,578  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 200 85
+WARNING 2023-12-13 13:29:12,329  241 Bad Request: /api/POSTNewLiteratureDocument/
+WARNING 2023-12-13 13:29:12,330  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 400 70
+WARNING 2023-12-13 13:29:23,545  241 Bad Request: /api/POSTNewLiteratureDocument/
+WARNING 2023-12-13 13:29:23,545  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 400 70
+WARNING 2023-12-13 13:29:26,584  241 Bad Request: /api/POSTNewLiteratureDocument/
+WARNING 2023-12-13 13:29:26,584  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 400 70
+INFO 2023-12-13 13:29:48,457  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 13:29:49,723  668 Watching for file changes with StatReloader
+INFO 2023-12-13 13:29:51,465  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 200 85
+INFO 2023-12-13 13:29:57,456  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 200 85
+WARNING 2023-12-13 13:30:06,457  241 Bad Request: /api/POSTNewLiteratureDocument/
+WARNING 2023-12-13 13:30:06,458  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 400 70
+WARNING 2023-12-13 13:30:55,527  241 Bad Request: /api/POSTNewLiteratureDocument/
+WARNING 2023-12-13 13:30:55,530  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 400 70
+WARNING 2023-12-13 13:30:58,530  241 Bad Request: /api/POSTNewLiteratureDocument/
+WARNING 2023-12-13 13:30:58,531  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 400 70
+INFO 2023-12-13 13:44:02,097  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 13:44:03,666  668 Watching for file changes with StatReloader
+INFO 2023-12-13 15:08:16,608  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 15:08:19,712  668 Watching for file changes with StatReloader
+INFO 2023-12-13 15:10:26,718  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 15:10:29,229  668 Watching for file changes with StatReloader
+WARNING 2023-12-13 15:10:32,881  241 Bad Request: /api/POSTNewLiteratureDocument/
+WARNING 2023-12-13 15:10:32,882  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 400 96
+WARNING 2023-12-13 15:10:50,494  241 Bad Request: /api/POSTNewLiteratureDocument/
+WARNING 2023-12-13 15:10:50,495  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 400 96
+WARNING 2023-12-13 15:11:09,475  241 Bad Request: /api/POSTNewLiteratureDocument/
+WARNING 2023-12-13 15:11:09,476  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 400 70
+INFO 2023-12-13 15:11:28,983  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 200 85
+INFO 2023-12-13 15:23:14,376  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 15:23:16,345  668 Watching for file changes with StatReloader
+INFO 2023-12-13 15:26:09,610  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 15:26:11,524  668 Watching for file changes with StatReloader
+INFO 2023-12-13 15:26:13,551  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 200 85
+INFO 2023-12-13 15:26:53,676  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 15:26:55,443  668 Watching for file changes with StatReloader
+INFO 2023-12-13 15:32:25,268  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 15:32:27,307  668 Watching for file changes with StatReloader
+WARNING 2023-12-13 15:32:33,436  241 Bad Request: /api/POSTNewLiteratureDocument/
+WARNING 2023-12-13 15:32:33,437  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 400 147
+WARNING 2023-12-13 15:32:43,422  241 Bad Request: /api/POSTNewLiteratureDocument/
+WARNING 2023-12-13 15:32:43,423  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 400 147
+INFO 2023-12-13 15:33:26,600  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 15:33:28,732  668 Watching for file changes with StatReloader
+WARNING 2023-12-13 15:33:29,715  241 Bad Request: /api/POSTNewLiteratureDocument/
+WARNING 2023-12-13 15:33:29,716  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 400 147
+INFO 2023-12-13 15:34:21,875  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 15:34:24,005  668 Watching for file changes with StatReloader
+WARNING 2023-12-13 15:34:25,164  241 Bad Request: /api/POSTNewLiteratureDocument/
+WARNING 2023-12-13 15:34:25,166  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 400 147
+INFO 2023-12-13 15:36:12,948  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 15:36:14,604  668 Watching for file changes with StatReloader
+INFO 2023-12-13 15:38:04,515  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 15:38:06,250  668 Watching for file changes with StatReloader
+WARNING 2023-12-13 15:38:08,964  241 Bad Request: /api/POSTNewLiteratureDocument/
+WARNING 2023-12-13 15:38:08,966  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 400 147
+INFO 2023-12-13 15:41:07,328  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 15:41:09,357  668 Watching for file changes with StatReloader
+WARNING 2023-12-13 15:41:10,778  241 Bad Request: /api/POSTNewLiteratureDocument/
+WARNING 2023-12-13 15:41:10,779  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 400 147
+INFO 2023-12-13 15:43:57,233  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 200 85
+INFO 2023-12-13 15:44:52,947  212 "GET /admin/jdcApi/literaturedocument/ HTTP/1.1" 200 25108
+INFO 2023-12-13 15:44:53,173  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-13 15:46:23,521  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 200 85
+INFO 2023-12-13 15:46:24,795  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 200 85
+INFO 2023-12-13 15:46:26,196  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 200 85
+INFO 2023-12-13 15:46:52,373  212 "GET /admin/jdcApi/literaturedocument/ HTTP/1.1" 200 27118
+INFO 2023-12-13 15:46:52,442  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+ERROR 2023-12-13 15:47:12,756  241 Internal Server Error: /api/POSTNewLiteratureDocument/
+ERROR 2023-12-13 15:47:12,757  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 500 91
+INFO 2023-12-13 15:47:50,849  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 15:47:52,688  668 Watching for file changes with StatReloader
+INFO 2023-12-13 15:49:35,457  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 15:49:37,179  668 Watching for file changes with StatReloader
+ERROR 2023-12-13 15:49:41,565  241 Internal Server Error: /api/POSTNewLiteratureDocument/
+ERROR 2023-12-13 15:49:41,566  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 500 91
+ERROR 2023-12-13 15:49:49,809  241 Internal Server Error: /api/POSTNewLiteratureDocument/
+ERROR 2023-12-13 15:49:49,810  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 500 91
+INFO 2023-12-13 15:51:18,984  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 15:51:20,969  668 Watching for file changes with StatReloader
+WARNING 2023-12-13 15:51:21,628  241 Bad Request: /api/POSTNewLiteratureDocument/
+WARNING 2023-12-13 15:51:21,629  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 400 147
+INFO 2023-12-13 15:52:42,419  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 15:52:44,360  668 Watching for file changes with StatReloader
+WARNING 2023-12-13 15:52:46,167  241 Bad Request: /api/POSTNewLiteratureDocument/
+WARNING 2023-12-13 15:52:46,168  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 400 147
+INFO 2023-12-13 15:55:17,218  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 15:55:18,892  668 Watching for file changes with StatReloader
+WARNING 2023-12-13 15:55:21,462  241 Bad Request: /api/POSTNewLiteratureDocument/
+WARNING 2023-12-13 15:55:21,464  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 400 75
+WARNING 2023-12-13 15:55:47,208  241 Bad Request: /api/POSTNewLiteratureDocument/
+WARNING 2023-12-13 15:55:47,209  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 400 142
+INFO 2023-12-13 15:56:16,610  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 200 85
+WARNING 2023-12-13 15:57:15,856  241 Bad Request: /api/POSTNewLiteratureDocument/
+WARNING 2023-12-13 15:57:15,857  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 400 147
+INFO 2023-12-13 15:57:21,526  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 200 85
+INFO 2023-12-13 15:57:26,391  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 200 85
+INFO 2023-12-13 15:57:32,646  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 200 85
+INFO 2023-12-13 15:57:37,147  212 "GET /admin/jdcApi/literaturedocument/ HTTP/1.1" 200 29712
+INFO 2023-12-13 15:57:37,215  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-13 15:58:13,820  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 15:58:15,547  668 Watching for file changes with StatReloader
+INFO 2023-12-13 16:18:31,275  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 16:18:33,537  668 Watching for file changes with StatReloader
+INFO 2023-12-13 17:05:42,697  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-13 17:05:44,689  668 Watching for file changes with StatReloader
+INFO 2023-12-14 10:14:26,401  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\events\views.py changed, reloading.
+INFO 2023-12-14 10:14:28,936  668 Watching for file changes with StatReloader
+INFO 2023-12-14 10:35:53,844  212 "GET /api/GETAllCityEventBySectId/1/ HTTP/1.1" 200 217
+INFO 2023-12-14 10:36:06,487  212 "GET /api/GETAllSectEvent/ HTTP/1.1" 200 216
+INFO 2023-12-14 10:45:39,123  212 "GET /api/GETAllActiveEventBySectIdAndCityId/2/1/?status=inactive HTTP/1.1" 200 201
+INFO 2023-12-14 10:46:01,257  212 "GET /api/GETAllActiveEventBySectIdAndCityId/2/1/?status=active HTTP/1.1" 200 75
+INFO 2023-12-14 10:46:16,924  212 "GET /api/GETAllCityEventBySectId/1/ HTTP/1.1" 200 217
+INFO 2023-12-14 10:46:26,291  212 "GET /api/GETAllSectEvent/ HTTP/1.1" 200 216
+INFO 2023-12-14 11:28:21,738  212 "GET /api/GETAllSectLiteratureDocument/ HTTP/1.1" 200 216
+INFO 2023-12-14 11:28:35,577  212 "GET /media/literature_Documents/Bca-final-sem-result.pdf HTTP/1.1" 304 0
+INFO 2023-12-14 11:35:19,469  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\events\serializer.py changed, reloading.
+INFO 2023-12-14 11:35:21,535  668 Watching for file changes with StatReloader
+INFO 2023-12-14 11:47:19,731  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\events\serializer.py changed, reloading.
+INFO 2023-12-14 11:47:21,750  668 Watching for file changes with StatReloader
+INFO 2023-12-14 11:47:56,126  212 "POST /obtainToken/ HTTP/1.1" 200 483
+INFO 2023-12-14 11:50:24,502  212 "POST /api/POSTNewEvent/ HTTP/1.1" 200 85
+INFO 2023-12-14 11:50:34,954  212 "GET /admin/jdcApi/event/ HTTP/1.1" 200 19205
+INFO 2023-12-14 11:50:35,046  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-14 11:50:37,423  212 "GET /admin/jdcApi/event/ HTTP/1.1" 200 19205
+INFO 2023-12-14 11:50:37,481  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+ERROR 2023-12-14 11:51:26,982  241 Internal Server Error: /api/PUTEventById/3/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\events\views.py", line 53, in put
+    serializer.save()
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 207, in save
+    self.instance = self.update(self.instance, validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\events\serializer.py", line 95, in update
+    if validated_data.get('startDate') and instance.createdDate != datetime.strptime(validated_data.get('startDate'), "%d %B, %Y").date():
+                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: strptime() argument 1 must be str, not datetime.date
+ERROR 2023-12-14 11:51:26,990  212 "PUT /api/PUTEventById/3/ HTTP/1.1" 500 111052
+INFO 2023-12-14 11:53:00,493  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\events\serializer.py changed, reloading.
+INFO 2023-12-14 11:53:01,991  668 Watching for file changes with StatReloader
+INFO 2023-12-14 11:53:05,160  212 "PUT /api/PUTEventById/3/ HTTP/1.1" 200 87
+INFO 2023-12-14 11:53:17,872  212 "GET /admin/jdcApi/event/ HTTP/1.1" 200 19205
+INFO 2023-12-14 11:53:17,922  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-14 11:53:46,866  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\events\serializer.py changed, reloading.
+INFO 2023-12-14 11:53:48,314  668 Watching for file changes with StatReloader
+INFO 2023-12-14 11:53:49,719  212 "PUT /api/PUTEventById/3/ HTTP/1.1" 200 87
+INFO 2023-12-14 11:54:20,170  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\admin.py changed, reloading.
+INFO 2023-12-14 11:54:21,672  668 Watching for file changes with StatReloader
+INFO 2023-12-14 11:54:25,528  212 "GET /admin/jdcApi/event/ HTTP/1.1" 200 19552
+INFO 2023-12-14 11:54:25,578  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-14 11:54:42,398  212 "PUT /api/PUTEventById/3/ HTTP/1.1" 200 87
+INFO 2023-12-14 11:56:28,203  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\events\serializer.py changed, reloading.
+INFO 2023-12-14 11:56:29,506  668 Watching for file changes with StatReloader
+INFO 2023-12-14 11:57:52,018  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\events\serializer.py changed, reloading.
+INFO 2023-12-14 11:57:53,330  668 Watching for file changes with StatReloader
+INFO 2023-12-14 12:00:02,427  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\events\serializer.py changed, reloading.
+INFO 2023-12-14 12:00:03,929  668 Watching for file changes with StatReloader
+ERROR 2023-12-14 12:00:09,397  241 Internal Server Error: /api/PUTEventById/3/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\events\views.py", line 52, in put
+    if serializer.is_valid():
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\events\serializer.py", line 127, in to_internal_value
+    if created_date > datetime.strptime(start_date, "%d %B, %Y").date():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: can't compare datetime.datetime to datetime.date
+ERROR 2023-12-14 12:00:09,406  212 "PUT /api/PUTEventById/3/ HTTP/1.1" 500 116746
+ERROR 2023-12-14 12:04:55,902  241 Internal Server Error: /api/PUTEventById/3/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\events\views.py", line 52, in put
+    if serializer.is_valid():
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\events\serializer.py", line 127, in to_internal_value
+    if created_date > datetime.strptime(start_date, "%d %B, %Y").date():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: can't compare datetime.datetime to datetime.date
+ERROR 2023-12-14 12:04:55,907  212 "PUT /api/PUTEventById/3/ HTTP/1.1" 500 116746
+ERROR 2023-12-14 12:05:03,952  241 Internal Server Error: /api/PUTEventById/3/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\events\views.py", line 52, in put
+    if serializer.is_valid():
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\events\serializer.py", line 127, in to_internal_value
+    if created_date > datetime.strptime(start_date, "%d %B, %Y").date():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: can't compare datetime.datetime to datetime.date
+ERROR 2023-12-14 12:05:03,958  212 "PUT /api/PUTEventById/3/ HTTP/1.1" 500 116746
+INFO 2023-12-14 12:07:53,273  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\events\serializer.py changed, reloading.
+INFO 2023-12-14 12:07:54,626  668 Watching for file changes with StatReloader
+INFO 2023-12-14 12:19:53,620  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-14 12:19:55,296  668 Watching for file changes with StatReloader
+INFO 2023-12-14 12:20:17,194  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-14 12:20:18,479  668 Watching for file changes with StatReloader
+INFO 2023-12-14 12:20:57,761  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-14 12:20:58,950  668 Watching for file changes with StatReloader
+INFO 2023-12-14 12:22:42,588  668 Watching for file changes with StatReloader
+INFO 2023-12-14 12:22:47,171  212 "GET /api/GETLiteratureDocumentDetailsById/1/ HTTP/1.1" 200 199
+INFO 2023-12-14 12:23:32,398  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-14 12:23:33,647  668 Watching for file changes with StatReloader
+INFO 2023-12-14 12:24:46,261  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-14 12:24:47,499  668 Watching for file changes with StatReloader
+INFO 2023-12-14 12:25:22,477  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-14 12:25:23,672  668 Watching for file changes with StatReloader
+INFO 2023-12-14 12:25:27,244  212 "GET /api/GETLiteratureDocumentDetailsById/1/ HTTP/1.1" 200 199
+INFO 2023-12-14 12:25:29,295  212 "GET /api/GETLiteratureDocumentDetailsById/1/ HTTP/1.1" 200 199
+INFO 2023-12-14 12:25:50,475  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-14 12:25:51,674  668 Watching for file changes with StatReloader
+INFO 2023-12-14 12:30:36,957  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-14 12:30:38,086  668 Watching for file changes with StatReloader
+INFO 2023-12-14 13:10:12,590  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-12-14 13:10:14,331  668 Watching for file changes with StatReloader
+ERROR 2023-12-14 13:13:21,120  241 Internal Server Error: /api/GETAllApprovedCityMatrimonial/
+ERROR 2023-12-14 13:13:21,121  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 500 122
+INFO 2023-12-14 13:14:19,222  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 13:14:20,649  668 Watching for file changes with StatReloader
+ERROR 2023-12-14 13:14:24,207  241 Internal Server Error: /api/GETAllApprovedCityMatrimonial/
+ERROR 2023-12-14 13:14:24,208  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 500 122
+ERROR 2023-12-14 13:14:28,784  241 Internal Server Error: /api/GETAllApprovedCityMatrimonial/
+ERROR 2023-12-14 13:14:28,786  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 500 122
+INFO 2023-12-14 13:16:19,507  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 13:16:20,942  668 Watching for file changes with StatReloader
+ERROR 2023-12-14 13:16:24,724  241 Internal Server Error: /api/GETAllApprovedCityMatrimonial/
+ERROR 2023-12-14 13:16:24,725  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 500 122
+INFO 2023-12-14 13:17:58,108  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 13:17:59,505  668 Watching for file changes with StatReloader
+INFO 2023-12-14 13:18:32,869  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 13:18:34,076  668 Watching for file changes with StatReloader
+ERROR 2023-12-14 13:18:36,575  241 Internal Server Error: /api/GETAllApprovedCityMatrimonial/
+ERROR 2023-12-14 13:18:36,578  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 500 345
+INFO 2023-12-14 13:19:09,468  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 13:19:10,617  668 Watching for file changes with StatReloader
+INFO 2023-12-14 13:19:20,283  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 13:19:21,558  668 Watching for file changes with StatReloader
+ERROR 2023-12-14 13:19:23,435  241 Internal Server Error: /api/GETAllApprovedCityMatrimonial/
+ERROR 2023-12-14 13:19:23,436  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 500 345
+INFO 2023-12-14 13:21:25,633  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 13:21:26,943  668 Watching for file changes with StatReloader
+INFO 2023-12-14 13:22:10,716  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 13:22:12,384  668 Watching for file changes with StatReloader
+ERROR 2023-12-14 13:22:13,505  241 Internal Server Error: /api/GETAllApprovedCityMatrimonial/
+ERROR 2023-12-14 13:22:13,506  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 500 345
+INFO 2023-12-14 13:31:57,112  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 13:31:58,918  668 Watching for file changes with StatReloader
+ERROR 2023-12-14 13:31:59,645  241 Internal Server Error: /api/GETAllApprovedCityMatrimonial/
+ERROR 2023-12-14 13:31:59,646  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 500 345
+INFO 2023-12-14 13:33:10,783  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 13:33:12,259  668 Watching for file changes with StatReloader
+ERROR 2023-12-14 13:33:13,787  241 Internal Server Error: /api/GETAllApprovedCityMatrimonial/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py", line 45, in get
+    .annotate(count=Count('user', distinct=True))
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1590, in annotate
+    return self._annotate(args, kwargs, select=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1638, in _annotate
+    clone.query.add_annotation(
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1122, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\aggregates.py", line 64, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\expressions.py", line 942, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(
+                                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\expressions.py", line 822, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1965, in resolve_ref
+    join_info = self.setup_joins(
+                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1812, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+                                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1713, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'user' into field. Choices are: GetAllAreaByCityId, GetAllBusinessByCityId, cities, cityId, cityName, createdBy, createdDate, description, dharamsthan, event, groupId, isActive, isActiveForResidents, isVerified, pincode, stateId, stateId_id, updatedBy, updatedDate
+ERROR 2023-12-14 13:33:13,799  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 500 146473
+INFO 2023-12-14 13:38:08,180  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 13:38:09,651  668 Watching for file changes with StatReloader
+ERROR 2023-12-14 13:38:10,597  241 Internal Server Error: /api/GETAllApprovedCityMatrimonial/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py", line 45, in get
+    .annotate(count_user=Count('user__id', distinct=True))
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1590, in annotate
+    return self._annotate(args, kwargs, select=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1638, in _annotate
+    clone.query.add_annotation(
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1122, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\aggregates.py", line 64, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\expressions.py", line 942, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(
+                                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\expressions.py", line 822, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1965, in resolve_ref
+    join_info = self.setup_joins(
+                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1812, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+                                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1713, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'user' into field. Choices are: GetAllAreaByCityId, GetAllBusinessByCityId, cities, cityId, cityName, createdBy, createdDate, description, dharamsthan, event, groupId, isActive, isActiveForResidents, isVerified, pincode, stateId, stateId_id, updatedBy, updatedDate
+ERROR 2023-12-14 13:38:10,606  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 500 146932
+INFO 2023-12-14 13:38:56,729  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 13:38:58,278  668 Watching for file changes with StatReloader
+ERROR 2023-12-14 13:38:59,487  241 Internal Server Error: /api/GETAllApprovedCityMatrimonial/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py", line 45, in get
+    .annotate(count_user=Count('user__cityId', distinct=True))
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1590, in annotate
+    return self._annotate(args, kwargs, select=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1638, in _annotate
+    clone.query.add_annotation(
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1122, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\aggregates.py", line 64, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\expressions.py", line 942, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(
+                                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\expressions.py", line 822, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1965, in resolve_ref
+    join_info = self.setup_joins(
+                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1812, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+                                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1713, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'user' into field. Choices are: GetAllAreaByCityId, GetAllBusinessByCityId, cities, cityId, cityName, createdBy, createdDate, description, dharamsthan, event, groupId, isActive, isActiveForResidents, isVerified, pincode, stateId, stateId_id, updatedBy, updatedDate
+ERROR 2023-12-14 13:38:59,497  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 500 147000
+INFO 2023-12-14 13:43:37,002  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 13:43:38,419  668 Watching for file changes with StatReloader
+ERROR 2023-12-14 13:43:40,496  241 Internal Server Error: /api/GETAllApprovedCityMatrimonial/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py", line 45, in get
+    .annotate(count=Count('user__id'))
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1590, in annotate
+    return self._annotate(args, kwargs, select=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1638, in _annotate
+    clone.query.add_annotation(
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1122, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\aggregates.py", line 64, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\expressions.py", line 942, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(
+                                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\expressions.py", line 822, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1965, in resolve_ref
+    join_info = self.setup_joins(
+                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1812, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+                                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1713, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'user' into field. Choices are: GetAllAreaByCityId, GetAllBusinessByCityId, cities, cityId, cityName, createdBy, createdDate, description, dharamsthan, event, groupId, isActive, isActiveForResidents, isVerified, pincode, stateId, stateId_id, updatedBy, updatedDate
+ERROR 2023-12-14 13:43:40,508  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 500 146702
+INFO 2023-12-14 13:47:22,972  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 13:47:24,204  668 Watching for file changes with StatReloader
+ERROR 2023-12-14 13:48:15,690  241 Internal Server Error: /api/GETAllApprovedCityMatrimonial/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py", line 73, in get
+    'data': serializer.data,
+            ^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+           ^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\fields.py", line 1837, in to_representation
+    method = getattr(self.parent, self.method_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'GETCityWithCountSerializer' object has no attribute 'get_count'
+ERROR 2023-12-14 13:48:15,697  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 500 128729
+INFO 2023-12-14 13:50:48,690  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 13:50:50,679  668 Watching for file changes with StatReloader
+ERROR 2023-12-14 13:50:51,499  241 Internal Server Error: /api/GETAllApprovedCityMatrimonial/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py", line 73, in get
+    'data': serializer.data,
+            ^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+           ^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 522, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\fields.py", line 1837, in to_representation
+    method = getattr(self.parent, self.method_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'GETCityWithCountSerializer' object has no attribute 'get_count'
+ERROR 2023-12-14 13:50:51,512  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 500 128729
+INFO 2023-12-14 13:51:27,352  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 13:51:28,614  668 Watching for file changes with StatReloader
+INFO 2023-12-14 13:56:59,832  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\serializer.py changed, reloading.
+INFO 2023-12-14 13:57:01,489  668 Watching for file changes with StatReloader
+INFO 2023-12-14 13:57:03,894  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 200 218
+INFO 2023-12-14 14:22:29,756  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 14:22:32,325  668 Watching for file changes with StatReloader
+INFO 2023-12-14 14:26:07,619  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 14:26:09,357  668 Watching for file changes with StatReloader
+INFO 2023-12-14 14:26:10,537  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 200 218
+INFO 2023-12-14 14:28:45,009  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 14:28:46,651  668 Watching for file changes with StatReloader
+ERROR 2023-12-14 14:28:53,137  241 Internal Server Error: /api/GETAllApprovedCityMatrimonial/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py", line 49, in get
+    queryset = City.objects.filter(isVerified=True, isActive=True).annotate(user_count=Count(F('accounts_user__id'))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1590, in annotate
+    return self._annotate(args, kwargs, select=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1638, in _annotate
+    clone.query.add_annotation(
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1122, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\aggregates.py", line 64, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\expressions.py", line 942, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(
+                                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\expressions.py", line 822, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1965, in resolve_ref
+    join_info = self.setup_joins(
+                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1812, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+                                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1713, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'accounts_user' into field. Choices are: GetAllAreaByCityId, GetAllBusinessByCityId, cities, cityId, cityName, createdBy, createdDate, description, dharamsthan, event, groupId, isActive, isActiveForResidents, isVerified, pincode, stateId, stateId_id, updatedBy, updatedDate
+ERROR 2023-12-14 14:28:53,151  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 500 147101
+INFO 2023-12-14 14:29:13,468  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 14:29:15,269  668 Watching for file changes with StatReloader
+ERROR 2023-12-14 14:29:16,509  241 Internal Server Error: /api/GETAllApprovedCityMatrimonial/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py", line 49, in get
+    queryset = City.objects.filter(isVerified=True, isActive=True).annotate(user_count=Count(F(User.id))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1590, in annotate
+    return self._annotate(args, kwargs, select=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1638, in _annotate
+    clone.query.add_annotation(
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1122, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\aggregates.py", line 64, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\expressions.py", line 942, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(
+                                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\expressions.py", line 822, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1959, in resolve_ref
+    field_list = name.split(LOOKUP_SEP)
+                 ^^^^^^^^^^
+AttributeError: 'DeferredAttribute' object has no attribute 'split'
+ERROR 2023-12-14 14:29:16,517  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 500 133854
+INFO 2023-12-14 14:29:33,998  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 14:29:35,554  668 Watching for file changes with StatReloader
+ERROR 2023-12-14 14:29:37,860  241 Internal Server Error: /api/GETAllApprovedCityMatrimonial/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py", line 49, in get
+    queryset = City.objects.filter(isVerified=True, isActive=True).annotate(user_count=Count(F(User))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1590, in annotate
+    return self._annotate(args, kwargs, select=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1638, in _annotate
+    clone.query.add_annotation(
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1122, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\aggregates.py", line 64, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\expressions.py", line 942, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(
+                                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\expressions.py", line 822, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1959, in resolve_ref
+    field_list = name.split(LOOKUP_SEP)
+                 ^^^^^^^^^^
+AttributeError: type object 'User' has no attribute 'split'
+ERROR 2023-12-14 14:29:37,873  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 500 133393
+INFO 2023-12-14 14:29:59,432  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 14:30:01,344  668 Watching for file changes with StatReloader
+ERROR 2023-12-14 14:30:02,172  241 Internal Server Error: /api/GETAllApprovedCityMatrimonial/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py", line 49, in get
+    queryset = City.objects.filter(isVerified=True, isActive=True).annotate(user_count=Count(F('User'))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1590, in annotate
+    return self._annotate(args, kwargs, select=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1638, in _annotate
+    clone.query.add_annotation(
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1122, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\aggregates.py", line 64, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\expressions.py", line 942, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(
+                                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\expressions.py", line 822, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1965, in resolve_ref
+    join_info = self.setup_joins(
+                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1812, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+                                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1713, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'User' into field. Choices are: GetAllAreaByCityId, GetAllBusinessByCityId, cities, cityId, cityName, createdBy, createdDate, description, dharamsthan, event, groupId, isActive, isActiveForResidents, isVerified, pincode, stateId, stateId_id, updatedBy, updatedDate
+ERROR 2023-12-14 14:30:02,184  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 500 146475
+INFO 2023-12-14 14:30:36,436  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 14:30:38,442  668 Watching for file changes with StatReloader
+ERROR 2023-12-14 14:30:39,668  241 Internal Server Error: /api/GETAllApprovedCityMatrimonial/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py", line 49, in get
+    queryset = City.objects.filter(isVerified=True, isActive=True).annotate(user_count=Count(F('accounts_user__id'))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1590, in annotate
+    return self._annotate(args, kwargs, select=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1638, in _annotate
+    clone.query.add_annotation(
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1122, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\aggregates.py", line 64, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\expressions.py", line 942, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(
+                                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\expressions.py", line 822, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1965, in resolve_ref
+    join_info = self.setup_joins(
+                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1812, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+                                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1713, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'accounts_user' into field. Choices are: GetAllAreaByCityId, GetAllBusinessByCityId, cities, cityId, cityName, createdBy, createdDate, description, dharamsthan, event, groupId, isActive, isActiveForResidents, isVerified, pincode, stateId, stateId_id, updatedBy, updatedDate
+ERROR 2023-12-14 14:30:39,679  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 500 147101
+INFO 2023-12-14 14:32:10,267  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 14:32:12,275  668 Watching for file changes with StatReloader
+ERROR 2023-12-14 14:32:14,961  241 Internal Server Error: /api/GETAllApprovedCityMatrimonial/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py", line 49, in get
+    queryset = City.objects.filter(isVerified=True, isActive=True).annotate(user_count=Count(F('city__cityId'))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1590, in annotate
+    return self._annotate(args, kwargs, select=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1638, in _annotate
+    clone.query.add_annotation(
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1122, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\aggregates.py", line 64, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\expressions.py", line 942, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(
+                                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\expressions.py", line 822, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1965, in resolve_ref
+    join_info = self.setup_joins(
+                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1812, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+                                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1713, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'city' into field. Choices are: GetAllAreaByCityId, GetAllBusinessByCityId, cities, cityId, cityName, createdBy, createdDate, description, dharamsthan, event, groupId, isActive, isActiveForResidents, isVerified, pincode, stateId, stateId_id, updatedBy, updatedDate
+ERROR 2023-12-14 14:32:14,985  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 500 146936
+INFO 2023-12-14 14:32:49,340  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 14:32:50,917  668 Watching for file changes with StatReloader
+INFO 2023-12-14 14:36:19,729  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 14:36:21,634  668 Watching for file changes with StatReloader
+ERROR 2023-12-14 14:36:23,186  241 Internal Server Error: /api/GETAllApprovedCityMatrimonial/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py", line 53, in get
+    user_counts = verified_cities.annotate(user_count=Count('accounts_user__id'))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1590, in annotate
+    return self._annotate(args, kwargs, select=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1638, in _annotate
+    clone.query.add_annotation(
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1122, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\aggregates.py", line 64, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\expressions.py", line 942, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(
+                                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\expressions.py", line 822, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1965, in resolve_ref
+    join_info = self.setup_joins(
+                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1812, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+                                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1713, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'accounts_user' into field. Choices are: GetAllAreaByCityId, GetAllBusinessByCityId, cities, cityId, cityName, createdBy, createdDate, description, dharamsthan, event, groupId, isActive, isActiveForResidents, isVerified, pincode, stateId, stateId_id, updatedBy, updatedDate
+ERROR 2023-12-14 14:36:23,196  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 500 147402
+ERROR 2023-12-14 14:36:24,856  241 Internal Server Error: /api/GETAllApprovedCityMatrimonial/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py", line 53, in get
+    user_counts = verified_cities.annotate(user_count=Count('accounts_user__id'))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1590, in annotate
+    return self._annotate(args, kwargs, select=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1638, in _annotate
+    clone.query.add_annotation(
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1122, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\aggregates.py", line 64, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\expressions.py", line 942, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(
+                                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\expressions.py", line 822, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1965, in resolve_ref
+    join_info = self.setup_joins(
+                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1812, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+                                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1713, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'accounts_user' into field. Choices are: GetAllAreaByCityId, GetAllBusinessByCityId, cities, cityId, cityName, createdBy, createdDate, description, dharamsthan, event, groupId, isActive, isActiveForResidents, isVerified, pincode, stateId, stateId_id, updatedBy, updatedDate
+ERROR 2023-12-14 14:36:24,862  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 500 147402
+INFO 2023-12-14 14:36:44,684  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 14:36:46,042  668 Watching for file changes with StatReloader
+ERROR 2023-12-14 14:36:50,379  241 Internal Server Error: /api/GETAllApprovedCityMatrimonial/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\fields.py", line 94, in get_attribute
+    instance = instance[attr]
+               ~~~~~~~~^^^^^^
+KeyError: 'count'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py", line 81, in get
+    'data': serializer.data,
+            ^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+           ^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+KeyError: "Got KeyError when attempting to get a value for field `count` on serializer `GETCityWithCountSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'count'."
+ERROR 2023-12-14 14:36:50,386  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 500 139596
+INFO 2023-12-14 14:39:00,475  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 14:39:01,834  668 Watching for file changes with StatReloader
+INFO 2023-12-14 14:43:33,140  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\serializer.py changed, reloading.
+INFO 2023-12-14 14:43:34,578  668 Watching for file changes with StatReloader
+INFO 2023-12-14 14:43:38,306  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 200 218
+INFO 2023-12-14 14:43:58,008  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\serializer.py changed, reloading.
+INFO 2023-12-14 14:43:59,649  668 Watching for file changes with StatReloader
+INFO 2023-12-14 14:44:01,481  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 200 219
+INFO 2023-12-14 14:44:14,073  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\serializer.py changed, reloading.
+INFO 2023-12-14 14:44:15,410  668 Watching for file changes with StatReloader
+INFO 2023-12-14 14:44:18,784  212 "GET /api/GETAllApprovedCityMatrimonial/ HTTP/1.1" 200 218
+INFO 2023-12-14 15:29:02,280  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-12-14 15:29:04,018  668 Watching for file changes with StatReloader
+ERROR 2023-12-14 15:30:56,405  241 Internal Server Error: /api/GETAllResidentsByCityIdForMatrimonial/1/
+ERROR 2023-12-14 15:30:56,406  212 "GET /api/GETAllResidentsByCityIdForMatrimonial/1/ HTTP/1.1" 500 566
+WARNING 2023-12-14 15:32:19,696  241 Unauthorized: /api/GETAllResidentsByAreaId/1/
+WARNING 2023-12-14 15:32:19,698  212 "GET /api/GETAllResidentsByAreaId/1/?residentName=vish HTTP/1.1" 401 199
+WARNING 2023-12-14 15:32:39,561  241 Unauthorized: /api/GETAllResidentsByAreaId/1/
+WARNING 2023-12-14 15:32:39,564  212 "GET /api/GETAllResidentsByAreaId/1/?residentName=vish HTTP/1.1" 401 199
+INFO 2023-12-14 15:32:48,099  212 "POST /obtainToken/ HTTP/1.1" 200 483
+INFO 2023-12-14 15:33:41,040  212 "GET /api/GETAllResidentsByAreaId/1/?residentName=vish HTTP/1.1" 200 794
+INFO 2023-12-14 15:39:23,842  212 "GET /api/GETAllResidentsByAreaId/1/?gender=Male HTTP/1.1" 200 1874
+INFO 2023-12-14 15:39:33,110  212 "GET /api/GETAllResidentsByAreaId/1/?gender=femAl HTTP/1.1" 200 1874
+INFO 2023-12-14 15:45:27,047  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-12-14 15:45:28,860  668 Watching for file changes with StatReloader
+ERROR 2023-12-14 15:45:45,442  241 Internal Server Error: /api/GETAllResidentsByCityIdForMatrimonial/1/
+ERROR 2023-12-14 15:45:45,445  212 "GET /api/GETAllResidentsByCityIdForMatrimonial/1/ HTTP/1.1" 500 109
+INFO 2023-12-14 15:46:10,360  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\serializer.py changed, reloading.
+INFO 2023-12-14 15:46:11,906  668 Watching for file changes with StatReloader
+ERROR 2023-12-14 15:46:12,610  241 Internal Server Error: /api/GETAllResidentsByCityIdForMatrimonial/1/
+ERROR 2023-12-14 15:46:12,611  212 "GET /api/GETAllResidentsByCityIdForMatrimonial/1/ HTTP/1.1" 500 105
+INFO 2023-12-14 15:47:32,886  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\serializer.py changed, reloading.
+INFO 2023-12-14 15:47:34,134  668 Watching for file changes with StatReloader
+ERROR 2023-12-14 15:47:35,798  241 Internal Server Error: /api/GETAllResidentsByCityIdForMatrimonial/1/
+ERROR 2023-12-14 15:47:35,799  212 "GET /api/GETAllResidentsByCityIdForMatrimonial/1/ HTTP/1.1" 500 101
+INFO 2023-12-14 15:48:26,123  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\serializer.py changed, reloading.
+INFO 2023-12-14 15:48:28,182  668 Watching for file changes with StatReloader
+INFO 2023-12-14 15:48:30,858  212 "GET /api/GETAllResidentsByCityIdForMatrimonial/1/ HTTP/1.1" 200 1537
+INFO 2023-12-14 15:49:28,498  212 "GET /api/GETAllResidentsForMatrimonial/ HTTP/1.1" 200 1749
+WARNING 2023-12-14 15:49:40,466  241 Bad Request: /api/GETAllResidentsForMatrimonial/
+WARNING 2023-12-14 15:49:40,468  212 "GET /api/GETAllResidentsForMatrimonial/?gender=femal HTTP/1.1" 400 118
+INFO 2023-12-14 15:49:45,254  212 "GET /api/GETAllResidentsForMatrimonial/?gender=female HTTP/1.1" 200 265
+INFO 2023-12-14 16:23:25,024  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\push_notification.py changed, reloading.
+INFO 2023-12-14 16:23:27,110  668 Watching for file changes with StatReloader
+INFO 2023-12-14 16:33:41,683  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\push_notification.py changed, reloading.
+INFO 2023-12-14 16:33:43,388  668 Watching for file changes with StatReloader
+INFO 2023-12-14 16:38:03,732  212 "GET /api/GETAllResidentsByAreaId/1/ HTTP/1.1" 200 1874
+INFO 2023-12-14 16:44:01,322  212 "GET /api/GETAllResidentsByAreaId/1/ HTTP/1.1" 200 1874
+INFO 2023-12-14 17:02:28,569  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\resident\views.py changed, reloading.
+INFO 2023-12-14 17:02:31,311  668 Watching for file changes with StatReloader
+INFO 2023-12-14 17:31:13,881  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\matrimonial\views.py changed, reloading.
+INFO 2023-12-14 17:31:15,620  668 Watching for file changes with StatReloader
+INFO 2023-12-15 09:55:16,904  668 Watching for file changes with StatReloader
+WARNING 2023-12-15 09:55:34,222  241 Not Found: /
+WARNING 2023-12-15 09:55:34,223  212 "GET / HTTP/1.1" 404 78
+INFO 2023-12-15 09:55:39,272  212 "GET /admin/ HTTP/1.1" 200 20084
+INFO 2023-12-15 09:55:42,181  212 "GET /admin/ HTTP/1.1" 200 20084
+WARNING 2023-12-15 09:55:42,242  241 Not Found: /static/admin/css/base.css
+WARNING 2023-12-15 09:55:42,245  241 Not Found: /static/admin/css/dark_mode.css
+WARNING 2023-12-15 09:55:42,246  212 "GET /static/admin/css/base.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:55:42,248  241 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2023-12-15 09:55:42,249  212 "GET /static/admin/css/dark_mode.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:55:42,250  241 Not Found: /static/admin/css/dashboard.css
+WARNING 2023-12-15 09:55:42,251  241 Not Found: /static/admin/css/responsive.css
+WARNING 2023-12-15 09:55:42,252  212 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:55:42,255  212 "GET /static/admin/css/dashboard.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:55:42,255  212 "GET /static/admin/css/responsive.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:55:42,260  241 Not Found: /static/admin/js/theme.js
+WARNING 2023-12-15 09:55:42,261  241 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2023-12-15 09:55:42,262  212 "GET /static/admin/js/theme.js HTTP/1.1" 404 78
+WARNING 2023-12-15 09:55:42,262  212 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 404 78
+WARNING 2023-12-15 09:55:42,319  241 Not Found: /favicon.ico
+WARNING 2023-12-15 09:55:42,320  212 "GET /favicon.ico HTTP/1.1" 404 78
+INFO 2023-12-15 09:55:43,060  212 "GET /admin/ HTTP/1.1" 200 20084
+WARNING 2023-12-15 09:55:43,105  241 Not Found: /static/admin/css/base.css
+WARNING 2023-12-15 09:55:43,111  241 Not Found: /static/admin/css/dark_mode.css
+WARNING 2023-12-15 09:55:43,112  212 "GET /static/admin/css/base.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:55:43,112  241 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2023-12-15 09:55:43,113  212 "GET /static/admin/css/dark_mode.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:55:43,113  241 Not Found: /static/admin/css/dashboard.css
+WARNING 2023-12-15 09:55:43,115  241 Not Found: /static/admin/css/responsive.css
+WARNING 2023-12-15 09:55:43,115  212 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:55:43,117  212 "GET /static/admin/css/dashboard.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:55:43,118  212 "GET /static/admin/css/responsive.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:55:43,123  241 Not Found: /static/admin/js/theme.js
+WARNING 2023-12-15 09:55:43,124  241 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2023-12-15 09:55:43,125  212 "GET /static/admin/js/theme.js HTTP/1.1" 404 78
+WARNING 2023-12-15 09:55:43,126  212 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 404 78
+WARNING 2023-12-15 09:55:43,150  241 Not Found: /favicon.ico
+WARNING 2023-12-15 09:55:43,151  212 "GET /favicon.ico HTTP/1.1" 404 78
+INFO 2023-12-15 09:55:43,661  212 "GET /admin/ HTTP/1.1" 200 20084
+WARNING 2023-12-15 09:55:43,711  241 Not Found: /static/admin/css/base.css
+WARNING 2023-12-15 09:55:43,712  241 Not Found: /static/admin/css/dark_mode.css
+WARNING 2023-12-15 09:55:43,713  212 "GET /static/admin/css/base.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:55:43,714  241 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2023-12-15 09:55:43,714  212 "GET /static/admin/css/dark_mode.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:55:43,716  241 Not Found: /static/admin/css/dashboard.css
+WARNING 2023-12-15 09:55:43,716  212 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:55:43,717  241 Not Found: /static/admin/css/responsive.css
+WARNING 2023-12-15 09:55:43,718  212 "GET /static/admin/css/dashboard.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:55:43,720  212 "GET /static/admin/css/responsive.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:55:43,723  241 Not Found: /static/admin/js/theme.js
+WARNING 2023-12-15 09:55:43,725  212 "GET /static/admin/js/theme.js HTTP/1.1" 404 78
+WARNING 2023-12-15 09:55:43,725  241 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2023-12-15 09:55:43,727  212 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 404 78
+WARNING 2023-12-15 09:55:43,749  241 Not Found: /favicon.ico
+WARNING 2023-12-15 09:55:43,750  212 "GET /favicon.ico HTTP/1.1" 404 78
+INFO 2023-12-15 09:56:30,516  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\auth_api\settings.py changed, reloading.
+INFO 2023-12-15 09:56:32,867  668 Watching for file changes with StatReloader
+INFO 2023-12-15 09:56:38,087  212 "GET /admin/ HTTP/1.1" 200 20084
+WARNING 2023-12-15 09:56:38,146  241 Not Found: /static/admin/css/base.css
+WARNING 2023-12-15 09:56:38,149  241 Not Found: /static/admin/css/dark_mode.css
+WARNING 2023-12-15 09:56:38,151  212 "GET /static/admin/css/base.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:56:38,152  241 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2023-12-15 09:56:38,153  212 "GET /static/admin/css/dark_mode.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:56:38,153  241 Not Found: /static/admin/css/dashboard.css
+WARNING 2023-12-15 09:56:38,155  241 Not Found: /static/admin/css/responsive.css
+WARNING 2023-12-15 09:56:38,156  212 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:56:38,157  212 "GET /static/admin/css/dashboard.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:56:38,158  212 "GET /static/admin/css/responsive.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:56:38,163  241 Not Found: /static/admin/js/theme.js
+WARNING 2023-12-15 09:56:38,164  241 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2023-12-15 09:56:38,165  212 "GET /static/admin/js/theme.js HTTP/1.1" 404 78
+WARNING 2023-12-15 09:56:38,165  212 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 404 78
+INFO 2023-12-15 09:56:39,099  212 "GET /admin/ HTTP/1.1" 200 20084
+WARNING 2023-12-15 09:56:39,150  241 Not Found: /static/admin/css/base.css
+WARNING 2023-12-15 09:56:39,152  241 Not Found: /static/admin/css/dark_mode.css
+WARNING 2023-12-15 09:56:39,152  212 "GET /static/admin/css/base.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:56:39,153  241 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2023-12-15 09:56:39,154  241 Not Found: /static/admin/css/dashboard.css
+WARNING 2023-12-15 09:56:39,155  212 "GET /static/admin/css/dark_mode.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:56:39,156  241 Not Found: /static/admin/css/responsive.css
+WARNING 2023-12-15 09:56:39,157  212 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:56:39,157  212 "GET /static/admin/css/dashboard.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:56:39,158  212 "GET /static/admin/css/responsive.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:56:39,166  241 Not Found: /static/admin/js/theme.js
+WARNING 2023-12-15 09:56:39,167  241 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2023-12-15 09:56:39,167  212 "GET /static/admin/js/theme.js HTTP/1.1" 404 78
+WARNING 2023-12-15 09:56:39,168  212 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 404 78
+INFO 2023-12-15 09:56:40,309  212 "GET /admin/ HTTP/1.1" 200 20084
+WARNING 2023-12-15 09:56:40,359  241 Not Found: /static/admin/css/base.css
+WARNING 2023-12-15 09:56:40,361  241 Not Found: /static/admin/css/dark_mode.css
+WARNING 2023-12-15 09:56:40,362  241 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2023-12-15 09:56:40,362  212 "GET /static/admin/css/base.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:56:40,363  212 "GET /static/admin/css/dark_mode.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:56:40,364  241 Not Found: /static/admin/css/dashboard.css
+WARNING 2023-12-15 09:56:40,364  212 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:56:40,365  241 Not Found: /static/admin/css/responsive.css
+WARNING 2023-12-15 09:56:40,366  212 "GET /static/admin/css/dashboard.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:56:40,369  212 "GET /static/admin/css/responsive.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:56:40,374  241 Not Found: /static/admin/js/theme.js
+WARNING 2023-12-15 09:56:40,375  241 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2023-12-15 09:56:40,375  212 "GET /static/admin/js/theme.js HTTP/1.1" 404 78
+WARNING 2023-12-15 09:56:40,376  212 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 404 78
+WARNING 2023-12-15 09:56:40,398  241 Not Found: /favicon.ico
+WARNING 2023-12-15 09:56:40,399  212 "GET /favicon.ico HTTP/1.1" 404 78
+INFO 2023-12-15 09:56:42,444  212 "GET /admin/ HTTP/1.1" 200 20084
+WARNING 2023-12-15 09:56:42,490  241 Not Found: /static/admin/css/base.css
+WARNING 2023-12-15 09:56:42,495  241 Not Found: /static/admin/css/dark_mode.css
+WARNING 2023-12-15 09:56:42,495  212 "GET /static/admin/css/base.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:56:42,498  241 Not Found: /static/admin/css/nav_sidebar.css
+WARNING 2023-12-15 09:56:42,498  212 "GET /static/admin/css/dark_mode.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:56:42,499  241 Not Found: /static/admin/css/dashboard.css
+WARNING 2023-12-15 09:56:42,502  241 Not Found: /static/admin/css/responsive.css
+WARNING 2023-12-15 09:56:42,503  212 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:56:42,504  212 "GET /static/admin/css/dashboard.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:56:42,504  212 "GET /static/admin/css/responsive.css HTTP/1.1" 404 78
+WARNING 2023-12-15 09:56:42,510  241 Not Found: /static/admin/js/theme.js
+WARNING 2023-12-15 09:56:42,511  241 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2023-12-15 09:56:42,512  212 "GET /static/admin/js/theme.js HTTP/1.1" 404 78
+WARNING 2023-12-15 09:56:42,512  212 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 404 78
+WARNING 2023-12-15 09:56:42,538  241 Not Found: /favicon.ico
+WARNING 2023-12-15 09:56:42,539  212 "GET /favicon.ico HTTP/1.1" 404 78
+INFO 2023-12-15 09:56:56,942  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\auth_api\settings.py changed, reloading.
+INFO 2023-12-15 09:56:59,309  668 Watching for file changes with StatReloader
+INFO 2023-12-15 10:07:16,074  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\middleware.py changed, reloading.
+INFO 2023-12-15 10:07:18,446  668 Watching for file changes with StatReloader
+INFO 2023-12-15 10:08:54,748  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\middleware.py changed, reloading.
+INFO 2023-12-15 10:08:56,505  668 Watching for file changes with StatReloader
+INFO 2023-12-15 10:09:13,532  212 "POST /obtainToken/ HTTP/1.1" 200 483
+INFO 2023-12-15 10:10:05,785  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 200 85
+INFO 2023-12-15 10:10:28,373  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\auth_api\settings.py changed, reloading.
+INFO 2023-12-15 10:10:30,718  668 Watching for file changes with StatReloader
+INFO 2023-12-15 10:10:32,891  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 200 85
+INFO 2023-12-15 10:10:35,829  212 "GET /admin/ HTTP/1.1" 200 20084
+INFO 2023-12-15 10:10:36,184  212 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2929
+INFO 2023-12-15 10:10:36,188  212 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2694
+INFO 2023-12-15 10:10:36,189  212 "GET /static/admin/css/base.css HTTP/1.1" 200 21207
+INFO 2023-12-15 10:10:36,196  212 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2023-12-15 10:10:36,199  212 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18533
+INFO 2023-12-15 10:10:36,234  212 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2023-12-15 10:10:36,235  212 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2023-12-15 10:10:36,236  212 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2023-12-15 10:10:36,242  212 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2023-12-15 10:10:36,243  212 "GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+WARNING 2023-12-15 10:10:36,293  241 Not Found: /favicon.ico
+WARNING 2023-12-15 10:10:36,295  212 "GET /favicon.ico HTTP/1.1" 404 78
+INFO 2023-12-15 10:10:41,744  212 "GET /admin/jdcApi/literaturedocument/ HTTP/1.1" 200 30888
+INFO 2023-12-15 10:10:41,848  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-15 10:10:50,316  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 200 85
+INFO 2023-12-15 10:10:55,070  212 "GET /admin/jdcApi/literaturedocument/ HTTP/1.1" 200 31476
+INFO 2023-12-15 10:10:55,159  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-15 10:11:11,207  212 "POST /api/POSTNewLiteratureDocument/ HTTP/1.1" 200 85
+INFO 2023-12-15 10:11:16,084  212 "GET /admin/jdcApi/literaturedocument/ HTTP/1.1" 200 32192
+INFO 2023-12-15 10:11:16,140  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-15 10:11:19,084  212 "GET /media/literature_Documents/Bca-final-sem-result_pgnkLgE.pdf HTTP/1.1" 200 373664
+WARNING 2023-12-15 10:11:55,180  241 Bad Request: /api/UPDATELiteratureDocumentById/3/
+WARNING 2023-12-15 10:11:55,182  212 "PUT /api/UPDATELiteratureDocumentById/3/ HTTP/1.1" 400 96
+INFO 2023-12-15 10:13:52,546  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\literature\literatureDocument_serializer.py changed, reloading.
+INFO 2023-12-15 10:13:54,936  668 Watching for file changes with StatReloader
+WARNING 2023-12-15 10:13:57,524  241 Bad Request: /api/UPDATELiteratureDocumentById/3/
+WARNING 2023-12-15 10:13:57,526  212 "PUT /api/UPDATELiteratureDocumentById/3/ HTTP/1.1" 400 147
+WARNING 2023-12-15 10:14:17,511  241 Bad Request: /api/UPDATELiteratureDocumentById/3/
+WARNING 2023-12-15 10:14:17,513  212 "PUT /api/UPDATELiteratureDocumentById/3/ HTTP/1.1" 400 142
+INFO 2023-12-15 10:14:29,990  212 "PUT /api/UPDATELiteratureDocumentById/3/ HTTP/1.1" 200 87
+INFO 2023-12-15 10:14:45,070  212 "GET /api/GETLiteratureDocumentDetailsById/1/ HTTP/1.1" 200 199

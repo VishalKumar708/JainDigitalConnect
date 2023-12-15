@@ -6,6 +6,7 @@ from django.utils import timezone
 from datetime import datetime
 from accounts.models import User
 
+
 class GETAllSectWithCountForDharamSthanHistorySerializer(serializers.ModelSerializer):
     count = serializers.SerializerMethodField()
 
@@ -16,7 +17,7 @@ class GETAllSectWithCountForDharamSthanHistorySerializer(serializers.ModelSerial
     def get_count(self, instance):
         current_year = timezone.now().year
         count = DharamSthanHistory.objects.filter(
-            isActive=True,
+            # isActive=True,
             dharamSthanId__isActive=True,
             dharamSthanId__isVerified=True,
             dharamSthanId__sectId=instance.id,
@@ -41,16 +42,23 @@ class GETAllDharamSthanHistorySerializer(serializers.ModelSerializer):
 
 
 class GETDharamSthanDetailsSerializer(serializers.ModelSerializer):
+    foundationDate = serializers.SerializerMethodField()
 
     class Meta:
         model = DharamSthan
         fields = ['name', 'foundationDate', 'postalCode', 'address', 'locationLink']
 
+    def get_foundationDate(self, instance):
+        if instance.foundationDate:
+            return instance.foundationDate.strftime("%d %B, %Y")
+        else:
+            return ""
+
 
 #  Live Location Serializer
 class CREATENewLiveLocationSerializer(serializers.ModelSerializer):
-    startDate = serializers.DateField(input_formats=('%d %B %Y',))
-    endDate = serializers.DateField(input_formats=('%d %B %Y',))
+    startDate = serializers.DateField(input_formats=('%d %B, %Y',))
+    endDate = serializers.DateField(input_formats=('%d %B, %Y',))
 
     class Meta:
         fields = ['sectId', 'title', 'person1Name', 'phoneNumber1', 'person2Name', 'phoneNumber2', 'startDate',
@@ -104,7 +112,7 @@ class CREATENewLiveLocationSerializer(serializers.ModelSerializer):
             try:
                 current_date = timezone.now().date()
                 print(current_date)
-                if datetime.strptime(startDate, "%d %B %Y").date() < current_date :
+                if datetime.strptime(startDate, "%d %B, %Y").date() < current_date :
                     errors['startDate'] = ["Date should be today or a date in the future."]
             except ValueError:
                 pass
@@ -112,14 +120,14 @@ class CREATENewLiveLocationSerializer(serializers.ModelSerializer):
         if endDate:
             try:
                 current_date = timezone.now().date()
-                if datetime.strptime(endDate, "%d %B %Y").date() < current_date :
+                if datetime.strptime(endDate, "%d %B, %Y").date() < current_date :
                     errors['endDate'] = ["Date should be today or a date in the future."]
             except ValueError:
                 pass
 
         if startDate and endDate:
             try:
-                if datetime.strptime(endDate, "%d %B %Y") < datetime.strptime(startDate, "%d %B %Y"):
+                if datetime.strptime(endDate, "%d %B, %Y") < datetime.strptime(startDate, "%d %B, %Y"):
                     errors['endDate'] = [f"This date must be later than the 'start date'."]
             except ValueError:
                 pass
@@ -144,8 +152,8 @@ class CREATENewLiveLocationSerializer(serializers.ModelSerializer):
 
 
 class UPDATELiveLocationSerializer(serializers.ModelSerializer):
-    startDate = serializers.DateField(input_formats=('%d %B %Y',))
-    endDate = serializers.DateField(input_formats=('%d %B %Y',))
+    startDate = serializers.DateField(input_formats=('%d %B, %Y',))
+    endDate = serializers.DateField(input_formats=('%d %B, %Y',))
 
     class Meta:
         fields = ['sectId', 'title', 'person1Name', 'phoneNumber1', 'person2Name', 'phoneNumber2', 'startDate',
@@ -199,8 +207,8 @@ class UPDATELiveLocationSerializer(serializers.ModelSerializer):
         if startDate:
             try:
                 current_date = timezone.now().date()
-                print(current_date)
-                if datetime.strptime(startDate, "%d %B %Y").date() < current_date :
+                # print(current_date)
+                if datetime.strptime(startDate, "%d %B, %Y").date() < current_date :
                     errors['startDate'] = ["Date should be today or a date in the future."]
             except ValueError:
                 pass
@@ -208,14 +216,14 @@ class UPDATELiveLocationSerializer(serializers.ModelSerializer):
         if endDate:
             try:
                 current_date = timezone.now().date()
-                if datetime.strptime(endDate, "%d %B %Y").date() < current_date :
+                if datetime.strptime(endDate, "%d %B, %Y").date() < current_date :
                     errors['endDate'] = ["Date should be today or a date in the future."]
             except ValueError:
                 pass
 
         if startDate and endDate:
             try:
-                if datetime.strptime(endDate, "%d %B %Y") < datetime.strptime(startDate, "%d %B %Y"):
+                if datetime.strptime(endDate, "%d %B, %Y") < datetime.strptime(startDate, "%d %B, %Y"):
                     errors['endDate'] = [f"This date must be later than the 'start date'."]
             except ValueError:
                 pass
@@ -249,10 +257,10 @@ class GETLiveLocationDetailByIdSerializer(serializers.ModelSerializer):
         model = LiveLocation
 
     def get_startDate(self,instance):
-        return instance.startDate.strftime('%d %B %Y')
+        return instance.startDate.strftime('%d %B, %Y')
 
     def get_endDate(self, instance):
-        return instance.endDate.strftime('%d %B %Y')
+        return instance.endDate.strftime('%d %B, %Y')
 
 
 class GETAllLiveLocationByUserIdSerializer(serializers.ModelSerializer):

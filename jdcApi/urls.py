@@ -22,6 +22,7 @@ from .master_views.profession_views import *
 from .master_views.relation_views import *
 from .live_location.views import *
 from .literature.literatureDocument_views import *
+from .matrimonial.views import *
 
 from .app_config.views import *
 
@@ -56,7 +57,7 @@ urlpatterns = [
     path('GetCityByBusiness/', GetAllApprovedCityAndSearchCityNameForBusiness.as_view()),  # new add
 
     #     Literature Api
-    path('GETAllSectLiterature/',GETAllSectLiterature.as_view()),  # correct
+    path('GETAllSectLiterature/', GETAllSectLiterature.as_view()),  # correct
     path('POSTNewLiterature/', POSTNewLiterature.as_view()),  # correct
     path('PUTLiteratureById/<slug:literatureId>/', UPDATELiterature.as_view()),
     path('GETAllApprovedLiteratureBySectId/<slug:sectId>/', GETAllApprovedLiteratureBySectId.as_view()),
@@ -65,11 +66,11 @@ urlpatterns = [
 
     # LiteratureDocument Api
     path('POSTNewLiteratureDocument/', POSTNewLiteratureDocument.as_view()),
-    path('UPDATELiteratureDocumentById/<literatureDocumentId>/', UPDATELiteratureDocumentById.as_view()),
+    path('UPDATELiteratureDocumentById/<literatureDocumentId>/', PUTLiteratureDocumentById.as_view()),
     path('GETAllSectLiteratureDocument/', GETAllSectLiteratureDocument.as_view()),
     path('GETLiteratureDocumentDetailsById/<literatureDocumentId>/', GETLiteratureDocumentDetailsById.as_view()),
-
-
+    path('GETAllLiteratureDocumentForAdmin/', GETAllLiteratureDocumentForAdmin.as_view()),
+    path('GETAllApprovedLiteratureDocument/', GETAllApprovedLiteratureDocument.as_view()),
     # count for residents
     # path('GETAllSectResident/', GETAllSectResidents.as_view()),
 
@@ -204,6 +205,9 @@ urlpatterns = [
     path('GETAppConfigurationDetailsById/<appConfigurationId>/', GETAppConfigurationDetailsById.as_view()),
     path('GETAllAppConfigurationsForAdmin/', GETAllAppConfigurationsForAdmin.as_view()),
 
+    path('GETAllApprovedCityMatrimonial/', GETAllApprovedCityMatrimonial.as_view()),
+    path('GETAllResidentsByCityIdForMatrimonial/<cityId>/', GETAllResidentsByCityIdForMatrimonial.as_view()),
+    path('GETAllResidentsForMatrimonial/', GETAllResidentsForMatrimonial.as_view())
 
 ]
 

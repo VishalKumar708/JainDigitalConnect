@@ -111,7 +111,7 @@ class UPDATESaintSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Saint
-        fields = ['name', 'sectId', 'fatherName', 'motherName', 'birthPlace', 'dikshaPlace', 'guruName','dob', 'dobTime', 'dikshaDate', 'devlokDate','devlokTime', 'gender', 'description', 'isVerified']
+        fields = ['name', 'sectId', 'fatherName', 'motherName', 'birthPlace', 'dikshaPlace', 'guruName','dob', 'dobTime', 'dikshaDate', 'devlokDate','devlokTime', 'gender', 'description', 'isVerified', 'isActive']
 
     def update(self, instance, validated_data):
         # Update the user instance with modified data
@@ -237,7 +237,7 @@ class GETSaintByIdSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Saint
-        fields = ['id', 'name', 'sect','sectId', 'fatherName', 'motherName', 'birthPlace', 'dikshaPlace', 'guruName', 'age', 'dikshaDate','devlokDate', 'devlokTime', 'gender', 'dob', 'dobTime', 'dobTime', 'description']
+        fields = ['id', 'name', 'sect','sectId', 'fatherName', 'motherName', 'birthPlace', 'dikshaPlace', 'guruName', 'age', 'dikshaDate','devlokDate', 'devlokTime', 'gender', 'dob', 'dobTime', 'dobTime', 'description', 'isVerified', 'isActive']
 
     def get_age(self, instance):
         dob = instance.dob

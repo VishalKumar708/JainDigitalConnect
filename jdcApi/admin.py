@@ -108,7 +108,7 @@ admin.site.register(DharamSthanMember, DharamSthanMemberAdmin)
 
 
 class EventAdmin(admin.ModelAdmin):
-    list_display = ['id', 'cityId', 'sectId', 'startDate', 'endDate', 'title', 'body', 'isVerified', 'isActive']
+    list_display = ['id', 'cityId', 'sectId', 'startDate', 'endDate', 'title', 'body', 'isVerified', 'isActive', 'createdDate']
 
 
 admin.site.register(Event, EventAdmin)

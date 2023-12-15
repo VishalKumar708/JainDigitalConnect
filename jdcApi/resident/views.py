@@ -67,7 +67,7 @@ class GETAllApprovedCityAndSearchCityName(APIView):
 
 
 class GetAllApprovedAreasByCityId(APIView):
-
+    permission_classes = [IsAuthenticated]
     def get(self, request, cityId, *args, **kwargs):
         try:
             # City.objects.get(cityId=cityId)
