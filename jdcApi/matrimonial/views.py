@@ -9,7 +9,7 @@ from rest_framework.permissions import IsAuthenticated
 from utils.get_id_by_token import get_user_id_from_token_view
 from django.db.models import Q
 from accounts.pagination import CustomPagination
-from django.db.models import Count, F
+from django.db.models import Count, F, OuterRef
 
 
 class GETAllApprovedCityMatrimonial(APIView):
@@ -38,6 +38,7 @@ class GETAllApprovedCityMatrimonial(APIView):
 
             queryset = City.objects.filter(isActive=True, isVerified=True).order_by(
                 'cityName')
+
             if len(queryset) < 1:
                 response_data = {
                     'statusCode': 200,

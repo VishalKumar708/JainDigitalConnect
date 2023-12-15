@@ -3,6 +3,7 @@ from django.db import models
 from django.utils import timezone
 from django.core.validators import FileExtensionValidator
 
+
 class BaseModel(models.Model):
     isActive = models.BooleanField(default=False)
     groupId = models.CharField(max_length=40, default=1)

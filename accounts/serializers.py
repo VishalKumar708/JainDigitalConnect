@@ -538,7 +538,6 @@ class GETAllMemberByAreaIdSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'gotra', 'profession', 'sect', 'age', 'nativePlace', 'currentAddress', 'phoneNumber']
         model = User
 
-
     def get_profession(self, instance):
         try:
             obj = MstProfession.objects.get(id=instance.professionId)
