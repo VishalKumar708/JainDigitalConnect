@@ -11,7 +11,10 @@ class UserManager(BaseUserManager):
             phoneNumber=phoneNumber,
             dob=dob,
             currentAddress=currentAddress,
-            name=name
+            name=name,
+            cityId =1,
+            areaId =1,
+            sectId = 1
         )
         user.set_password(password)
         user.save(using=self._db)
@@ -25,6 +28,7 @@ class UserManager(BaseUserManager):
             dob=dob,
             currentAddress=currentAddress,
             name=name,
+
         )
         user.is_admin = True
         user.is_staff = True

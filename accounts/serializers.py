@@ -603,7 +603,7 @@ class GETAllFamilyByAreaIdSerializer(serializers.ModelSerializer):
         try:
             obj = MstSect.objects.get(id=instance.sectId)
             return obj.sectName
-        except MstProfession.DoesNotExist:
+        except MstSect.DoesNotExist:
             return ""
 
     def get_age(self, instance):
