@@ -300,3 +300,7 @@ FCM_DJANGO_SETTINGS = {
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# Define age limits
+BOY_MIN_AGE = 21
+GIRL_MIN_AGE = 18

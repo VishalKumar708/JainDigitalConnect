@@ -25,6 +25,7 @@ class GETCityWithCountSerializer(serializers.ModelSerializer):
             return total_members
 
 
+
 class GETAreaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Area
@@ -33,10 +34,12 @@ class GETAreaSerializer(serializers.ModelSerializer):
 
 class GETAreaWithCountSerializer(serializers.ModelSerializer):
     count = serializers.SerializerMethodField()
+    memberCount = serializers.SerializerMethodField()
+    familyCount = serializers.SerializerMethodField()
 
     class Meta:
         model = Area
-        fields = ['areaId', 'areaName', 'count']
+        fields = ['areaId', 'areaName', 'count', 'memberCount', 'familyCount']
 
     def get_count(self, instance):
         if self.context.get('sect_wise'):
@@ -46,9 +49,16 @@ class GETAreaWithCountSerializer(serializers.ModelSerializer):
             total_members = User.objects.filter(areaId=instance.areaId).count()
             return total_members
 
+    def get_memberCount(self, instance):
+            return User.objects.filter(areaId=instance.areaId).count()
+
+    def get_familyCount(self, instance):
+            return User.objects.filter(areaId=instance.areaId, headId=None).count()
+
 
 class SearchResidentByCityIdSerializer(serializers.ModelSerializer):
     areaName = serializers.SerializerMethodField()
+
     class Meta:
         model = User
         fields = ['id', 'name', 'nativePlace', 'areaName', 'permanentAddress', 'phoneNumber']

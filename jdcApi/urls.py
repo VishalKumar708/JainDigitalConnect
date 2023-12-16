@@ -205,8 +205,9 @@ urlpatterns = [
     path('GETAppConfigurationDetailsById/<appConfigurationId>/', GETAppConfigurationDetailsById.as_view()),
     path('GETAllAppConfigurationsForAdmin/', GETAllAppConfigurationsForAdmin.as_view()),
 
+    # matrimonial
     path('GETAllApprovedCityMatrimonial/', GETAllApprovedCityMatrimonial.as_view()),
-    path('GETAllResidentsByCityIdForMatrimonial/<cityId>/', GETAllResidentsByCityIdForMatrimonial.as_view()),
+    path('GETAllResidentsByCityIdForMatrimonial/<slug:cityId>/', GETAllResidentsByCityIdForMatrimonial.as_view()),
     path('GETAllResidentsForMatrimonial/', GETAllResidentsForMatrimonial.as_view())
 
 ]

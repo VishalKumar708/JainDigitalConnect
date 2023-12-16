@@ -41,15 +41,6 @@ class GETAllApprovedCityAndSearchCityName(APIView):
                 }
                 return Response(response_data)
 
-            # Customize the response data as needed
-            if len(queryset) < 1:
-                response_data = {
-                    'statusCode': 200,
-                    'status': 'Success',
-                    'data': {"message": "No Record found."},
-                }
-                return Response(response_data)
-
             serializer = GETCityWithCountSerializer(queryset, many=True)
             response_data = {
                 'status_code': 200,
@@ -68,6 +59,7 @@ class GETAllApprovedCityAndSearchCityName(APIView):
 
 class GetAllApprovedAreasByCityId(APIView):
     permission_classes = [IsAuthenticated]
+
     def get(self, request, cityId, *args, **kwargs):
         try:
             # City.objects.get(cityId=cityId)
