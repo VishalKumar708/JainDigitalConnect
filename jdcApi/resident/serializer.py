@@ -1,6 +1,8 @@
 from rest_framework import serializers
-from jdcApi.models import City, Area, MstSect
+from jdcApi.models import City, Area, MstSect, MstProfession
 from accounts.models import User
+
+from datetime import datetime
 
 
 class GETCitySerializer(serializers.ModelSerializer):
@@ -23,7 +25,6 @@ class GETCityWithCountSerializer(serializers.ModelSerializer):
         else:
             total_members = User.objects.filter(cityId=instance.cityId).count()
             return total_members
-
 
 
 class GETAreaSerializer(serializers.ModelSerializer):
@@ -58,10 +59,13 @@ class GETAreaWithCountSerializer(serializers.ModelSerializer):
 
 class SearchResidentByCityIdSerializer(serializers.ModelSerializer):
     areaName = serializers.SerializerMethodField()
+    profession = serializers.SerializerMethodField()
+    phoneNumber = serializers.SerializerMethodField()
+    age = serializers.SerializerMethodField()
 
     class Meta:
         model = User
-        fields = ['id', 'name', 'nativePlace', 'areaName', 'permanentAddress', 'phoneNumber']
+        fields = ['id', 'name', 'nativePlace', 'areaName', 'permanentAddress', 'phoneNumber', 'gotra', 'profession', 'phoneNumber', 'age']
 
     def get_areaName(self, instance):
         try:
@@ -69,6 +73,33 @@ class SearchResidentByCityIdSerializer(serializers.ModelSerializer):
             return obj.areaName
         except Area.DoesNotExist:
             return ""
+
+    def get_profession(self, instance):
+        try:
+            obj = MstProfession.objects.get(id=instance.professionId)
+            return obj.description
+        except MstProfession.DoesNotExist:
+            return ""
+
+    def get_age(self, instance):
+        dob = instance.dob
+        if dob:
+            birthdate = datetime.strptime(str(dob), '%Y-%m-%d')
+            current_date = datetime.now()
+            # Calculate the age
+            age = current_date.year - birthdate.year - (
+                    (current_date.month, current_date.day) < (birthdate.month, birthdate.day))
+            # return age
+            return str(age) + ' Year'
+        else:
+            return ''
+
+    def get_phoneNumber(self, instance):
+
+        is_number_visible = instance.phoneNumberVisibility
+        if not is_number_visible:
+            return 'xx-xxxx-xxxx'
+        return instance.phoneNumber
 
 
 class GETSectWithCountSerializer(serializers.ModelSerializer):

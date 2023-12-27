@@ -31634,3 +31634,112 @@ INFO 2023-12-16 17:43:17,207  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_lo
 INFO 2023-12-16 17:43:19,218  668 Watching for file changes with StatReloader
 INFO 2023-12-16 17:48:54,727  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
 INFO 2023-12-16 17:48:56,605  668 Watching for file changes with StatReloader
+INFO 2023-12-26 10:25:52,729  668 Watching for file changes with StatReloader
+INFO 2023-12-26 10:28:00,043  212 "GET /api/GETAllSectDharamSthan/ HTTP/1.1" 200 75
+WARNING 2023-12-26 10:28:35,556  241 Not Found: /
+WARNING 2023-12-26 10:28:35,558  212 "GET / HTTP/1.1" 404 78
+INFO 2023-12-26 10:28:39,414  212 "GET /admin/ HTTP/1.1" 200 19871
+WARNING 2023-12-26 10:28:39,573  241 Not Found: /favicon.ico
+WARNING 2023-12-26 10:28:39,573  212 "GET /favicon.ico HTTP/1.1" 404 78
+INFO 2023-12-26 10:28:44,642  212 "GET /admin/jdcApi/mstsect/ HTTP/1.1" 200 16648
+INFO 2023-12-26 10:28:44,733  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-26 10:28:49,947  212 "GET /admin/jdcApi/mstsect/1/change/ HTTP/1.1" 200 19179
+INFO 2023-12-26 10:28:50,014  212 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2023-12-26 10:28:50,014  212 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2023-12-26 10:28:50,030  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-26 10:28:50,030  212 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2023-12-26 10:28:50,042  212 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2023-12-26 10:28:54,131  212 "POST /admin/jdcApi/mstsect/1/change/ HTTP/1.1" 302 0
+INFO 2023-12-26 10:28:54,184  212 "GET /admin/jdcApi/mstsect/ HTTP/1.1" 200 16853
+INFO 2023-12-26 10:28:54,254  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-26 10:29:02,315  212 "GET /api/GETAllSectDharamSthan/ HTTP/1.1" 200 87
+INFO 2023-12-26 11:09:14,435  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-12-26 11:09:16,908  668 Watching for file changes with StatReloader
+INFO 2023-12-26 11:28:32,364  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-12-26 11:28:33,770  668 Watching for file changes with StatReloader
+INFO 2023-12-26 11:32:48,286  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-12-26 11:32:49,309  668 Watching for file changes with StatReloader
+INFO 2023-12-26 12:08:47,715  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\resident\views.py changed, reloading.
+INFO 2023-12-26 12:08:49,623  668 Watching for file changes with StatReloader
+INFO 2023-12-26 12:21:48,430  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\resident\views.py changed, reloading.
+INFO 2023-12-26 12:21:50,307  668 Watching for file changes with StatReloader
+INFO 2023-12-26 12:23:00,266  212 "POST /obtainToken/ HTTP/1.1" 200 483
+WARNING 2023-12-26 12:24:48,186  241 Not Found: /
+WARNING 2023-12-26 12:24:48,202  212 "GET / HTTP/1.1" 404 78
+INFO 2023-12-26 12:24:53,107  212 "GET /admin/ HTTP/1.1" 200 19874
+WARNING 2023-12-26 12:24:53,224  241 Not Found: /favicon.ico
+WARNING 2023-12-26 12:24:53,226  212 "GET /favicon.ico HTTP/1.1" 404 78
+INFO 2023-12-26 12:25:07,801  212 "GET /admin/accounts/user/ HTTP/1.1" 200 23680
+INFO 2023-12-26 12:25:07,852  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-26 12:31:33,306  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\resident\views.py changed, reloading.
+INFO 2023-12-26 12:31:35,031  668 Watching for file changes with StatReloader
+INFO 2023-12-26 12:34:05,599  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\resident\views.py changed, reloading.
+INFO 2023-12-26 12:34:07,019  668 Watching for file changes with StatReloader
+INFO 2023-12-26 12:39:30,611  212 code 400, message Bad request version ('À\x13À')
+ERROR 2023-12-26 12:39:30,614  192 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2023-12-26 12:39:35,445  212 code 400, message Bad request version ('À\x13À')
+ERROR 2023-12-26 12:39:35,447  192 You're accessing the development server over HTTPS, but it only supports HTTP.
+WARNING 2023-12-26 12:39:43,680  241 Unauthorized: /api/GETAllResidentsByAreaId/1/
+WARNING 2023-12-26 12:39:43,682  212 "GET /api/GETAllResidentsByAreaId/1/ HTTP/1.1" 401 199
+INFO 2023-12-26 12:39:58,214  212 "GET /api/GETAllResidentsByAreaId/1/ HTTP/1.1" 200 726
+INFO 2023-12-26 12:52:20,324  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\resident\serializer.py changed, reloading.
+INFO 2023-12-26 12:52:21,650  668 Watching for file changes with StatReloader
+INFO 2023-12-26 12:52:45,382  212 "GET /api/GETAllResidentsByAreaId/1/ HTTP/1.1" 200 726
+INFO 2023-12-26 12:53:01,565  212 "GET /api/GETAllResidentsByAreaId/1/ HTTP/1.1" 200 726
+INFO 2023-12-26 12:56:55,210  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\resident\serializer.py changed, reloading.
+INFO 2023-12-26 12:56:56,234  668 Watching for file changes with StatReloader
+INFO 2023-12-26 12:59:04,603  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\resident\serializer.py changed, reloading.
+INFO 2023-12-26 12:59:05,657  668 Watching for file changes with StatReloader
+INFO 2023-12-26 13:02:25,703  212 "GET /api/GETAllApprovedAreasByCityId/1/?residentName=s HTTP/1.1" 200 683
+INFO 2023-12-26 13:03:13,287  212 "GET /api/GETAllResidentsByAreaId/1/?residentName=s HTTP/1.1" 200 336
+INFO 2023-12-26 13:06:09,072  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\resident\views.py changed, reloading.
+INFO 2023-12-26 13:06:10,158  668 Watching for file changes with StatReloader
+INFO 2023-12-26 13:06:15,526  212 "GET /api/GETAllResidentsByAreaId/1/?residentName=s HTTP/1.1" 200 683
+INFO 2023-12-26 13:10:16,178  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\resident\views.py changed, reloading.
+INFO 2023-12-26 13:10:17,202  668 Watching for file changes with StatReloader
+INFO 2023-12-26 13:34:57,064  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\views.py changed, reloading.
+INFO 2023-12-26 13:34:58,176  668 Watching for file changes with StatReloader
+WARNING 2023-12-26 13:35:38,135  241 Bad Request: /api/POSTNewDharamSthan/
+WARNING 2023-12-26 13:35:38,135  212 "POST /api/POSTNewDharamSthan/ HTTP/1.1" 400 130
+INFO 2023-12-26 13:36:11,215  212 "POST /api/POSTNewDharamSthan/ HTTP/1.1" 200 92
+INFO 2023-12-26 13:47:49,879  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\serializer.py changed, reloading.
+INFO 2023-12-26 13:47:50,936  668 Watching for file changes with StatReloader
+WARNING 2023-12-26 13:48:12,535  241 Unauthorized: /api/GETAllApprovedAndUnapprovedDharamSthanByCityIdForAdmin/4/
+WARNING 2023-12-26 13:48:12,536  212 "GET /api/GETAllApprovedAndUnapprovedDharamSthanByCityIdForAdmin/4/?status=active HTTP/1.1" 401 199
+INFO 2023-12-26 13:48:35,877  212 "GET /api/GETAllApprovedAndUnapprovedDharamSthanByCityIdForAdmin/4/?status=active HTTP/1.1" 200 75
+INFO 2023-12-26 13:48:43,440  212 "GET /api/GETAllApprovedAndUnapprovedDharamSthanByCityIdForAdmin/4/?status=inactive HTTP/1.1" 200 75
+INFO 2023-12-26 13:48:45,113  212 "GET /api/GETAllApprovedAndUnapprovedDharamSthanByCityIdForAdmin/4/?status=inactive HTTP/1.1" 200 75
+INFO 2023-12-26 13:49:02,752  212 "GET /api/GETAllApprovedAndUnapprovedDharamSthanByCityIdForAdmin/1/?status=inactive HTTP/1.1" 200 224
+INFO 2023-12-26 13:49:44,160  212 "POST /api/POSTNewDharamSthan/ HTTP/1.1" 200 92
+INFO 2023-12-26 13:50:45,665  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\serializer.py changed, reloading.
+INFO 2023-12-26 13:50:46,752  668 Watching for file changes with StatReloader
+WARNING 2023-12-26 13:50:48,508  241 Bad Request: /api/POSTNewDharamSthan/
+WARNING 2023-12-26 13:50:48,509  212 "POST /api/POSTNewDharamSthan/ HTTP/1.1" 400 168
+INFO 2023-12-26 13:51:45,576  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\serializer.py changed, reloading.
+INFO 2023-12-26 13:51:46,681  668 Watching for file changes with StatReloader
+WARNING 2023-12-26 13:51:48,170  241 Bad Request: /api/POSTNewDharamSthan/
+WARNING 2023-12-26 13:51:48,170  212 "POST /api/POSTNewDharamSthan/ HTTP/1.1" 400 213
+WARNING 2023-12-26 13:51:55,425  241 Bad Request: /api/POSTNewDharamSthan/
+WARNING 2023-12-26 13:51:55,426  212 "POST /api/POSTNewDharamSthan/ HTTP/1.1" 400 106
+WARNING 2023-12-26 13:52:07,811  241 Bad Request: /api/POSTNewDharamSthan/
+WARNING 2023-12-26 13:52:07,813  212 "POST /api/POSTNewDharamSthan/ HTTP/1.1" 400 106
+INFO 2023-12-26 13:59:47,690  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py changed, reloading.
+INFO 2023-12-26 13:59:48,814  668 Watching for file changes with StatReloader
+WARNING 2023-12-26 14:00:30,942  241 Unauthorized: /api/GETAllLiveLocationByUserId/1/
+WARNING 2023-12-26 14:00:30,942  212 "GET /api/GETAllLiveLocationByUserId/1/ HTTP/1.1" 401 199
+INFO 2023-12-26 14:00:43,473  212 "GET /api/GETAllLiveLocationByUserId/1/ HTTP/1.1" 200 75
+INFO 2023-12-26 14:02:34,277  212 "GET /api/GETAllLiveLocationByUserId/1/ HTTP/1.1" 200 75
+INFO 2023-12-26 14:06:15,856  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanHistory_serializer.py changed, reloading.
+INFO 2023-12-26 14:06:16,939  668 Watching for file changes with StatReloader
+INFO 2023-12-26 14:07:13,118  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\live_location\views.py changed, reloading.
+INFO 2023-12-26 14:07:14,181  668 Watching for file changes with StatReloader
+INFO 2023-12-26 14:20:05,309  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanMembeber_serializer.py changed, reloading.
+INFO 2023-12-26 14:20:06,322  668 Watching for file changes with StatReloader
+INFO 2023-12-26 14:21:04,365  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\dharam_sthan\dharamSthanMembeber_serializer.py changed, reloading.
+INFO 2023-12-26 14:21:05,374  668 Watching for file changes with StatReloader
+INFO 2023-12-26 14:54:18,003  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-12-26 14:54:20,588  668 Watching for file changes with StatReloader
+INFO 2023-12-26 15:04:38,151  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-12-26 15:04:39,751  668 Watching for file changes with StatReloader
+INFO 2023-12-26 15:47:25,742  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\models.py changed, reloading.
+INFO 2023-12-26 15:47:27,686  668 Watching for file changes with StatReloader

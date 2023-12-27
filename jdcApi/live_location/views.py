@@ -112,7 +112,7 @@ class GETAllLiveLocationByUserId(APIView):
 
     def get(self, request, userId, *args, **kwargs):
         try:
-            queryset = LiveLocation.objects.filter(createdBy=userId, isVerified=True, isActive=True)
+            queryset = LiveLocation.objects.filter(createdBy=userId)
             if len(queryset) < 1:
                 response_data = {
                     'statusCode': 200,

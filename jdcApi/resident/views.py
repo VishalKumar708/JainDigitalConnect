@@ -12,6 +12,7 @@ class GETAllApprovedCityAndSearchCityName(APIView):
     def get(self, request, *args, **kwargs):
         try:
             #  for search city Name
+
             cityName = request.GET.get('cityName')
             if cityName:
                 queryset = City.objects.filter(isActive=True, isVerified=True, isActiveForResidents=True, cityName__icontains=cityName.strip()).order_by('cityName')
@@ -158,7 +159,7 @@ class GETAllResidentsByAreaId(APIView):
                         'data': {'message': 'No Record Found.'},
                     }
                     return Response(response_data, status=200)
-                serializer = SearchResidentsInAreaSerializer(search_result, many=True)
+                serializer = SearchResidentByCityIdSerializer(search_result, many=True)
                 response_data = {
                     'statusCode': 200,
                     'status': 'success',
@@ -185,9 +186,6 @@ class GETAllResidentsByAreaId(APIView):
                     serializer = GETAllFamilyByAreaIdSerializer(page, many=True)
                     data = paginator.get_paginated_response(serializer.data)
 
-                # if pagination is disable
-                # serializer = GETAllFamilyByAreaIdSerializer(family_queryset, many=True)
-
             elif resident_type.strip().lower() == 'member':
                 members_queryset = User.objects.filter(areaId=areaId).order_by('name')
                 total_member = len(members_queryset)
@@ -208,8 +206,6 @@ class GETAllResidentsByAreaId(APIView):
                     serializer = GETAllMemberByAreaIdSerializer(members_queryset, many=True)
                     data = paginator.get_paginated_response(serializer.data)
 
-                # if pagination is disable
-                # serializer = GETAllMemberByAreaIdSerializer(members_queryset, many=True)
             else:
                 response_data = {
                     'statusCode': 400,
@@ -458,7 +454,7 @@ class GETAllResidentsBySectIdAndAreaId(APIView):
                         'data': {'message': 'No Record Found.'},
                     }
                     return Response(response_data, status=200)
-                serializer = SearchResidentsInAreaSerializer(search_result, many=True)
+                serializer = SearchResidentByCityIdSerializer(search_result, many=True)
                 response_data = {
                     'statusCode': 200,
                     'status': 'success',

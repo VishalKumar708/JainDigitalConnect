@@ -179,9 +179,6 @@ class Saint(BaseModel):
     description = models.TextField(null=True, blank=True)
     isVerified = models.BooleanField(default=False)
 
-    class Meta:
-        abstract = False
-
     # def save(self, *args, **kwargs):
     #     # Set the time zone here before saving
     #     # self.dobTime = timezone.now()

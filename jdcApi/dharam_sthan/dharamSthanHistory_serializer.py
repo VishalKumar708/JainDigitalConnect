@@ -6,8 +6,8 @@ from datetime import datetime
 
 
 class CREATEDharamSthanHistorySerializer(serializers.ModelSerializer):
-    startDate = serializers.DateField(input_formats=("%d %B %Y",))
-    endDate = serializers.DateField(input_formats=("%d %B %Y",))
+    startDate = serializers.DateField(input_formats=("%d %B, %Y",))
+    endDate = serializers.DateField(input_formats=("%d %B, %Y",))
 
     class Meta:
         model = DharamSthanHistory
@@ -48,10 +48,10 @@ class CREATEDharamSthanHistorySerializer(serializers.ModelSerializer):
 
         if startDate and endDate:
             try:
-                if year and datetime.strptime(startDate, "%d %B %Y").year != int(year):
+                if year and datetime.strptime(startDate, "%d %B, %Y").year != int(year):
                     errors['startDate'] = [f"startDate 'year' must be equal to your selected year '{year}'."]
                 else:
-                    if datetime.strptime(endDate, "%d %B %Y") < datetime.strptime(startDate, "%d %B %Y"):
+                    if datetime.strptime(endDate, "%d %B, %Y") < datetime.strptime(startDate, "%d %B, %Y"):
                         errors['endDate'] = [f"This date must be later than the start date '{startDate}'."]
             except ValueError:
                 pass
@@ -74,8 +74,8 @@ class CREATEDharamSthanHistorySerializer(serializers.ModelSerializer):
 
 
 class UPDATEDharamSthanHistorySerializer(serializers.ModelSerializer):
-    startDate = serializers.DateField(input_formats=("%d %B %Y",))
-    endDate = serializers.DateField(input_formats=("%d %B %Y",))
+    startDate = serializers.DateField(input_formats=("%d %B, %Y",))
+    endDate = serializers.DateField(input_formats=("%d %B, %Y",))
 
     class Meta:
         model = DharamSthanHistory
@@ -118,10 +118,10 @@ class UPDATEDharamSthanHistorySerializer(serializers.ModelSerializer):
 
         if startDate and endDate:
             try:
-                if year and datetime.strptime(startDate, "%d %B %Y").year != int(year):
+                if year and datetime.strptime(startDate, "%d %B, %Y").year != int(year):
                     errors['startDate'] = [f"startDate 'year' must be equal to your selected year '{year}'."]
                 else:
-                    if datetime.strptime(endDate, "%d %B %Y") < datetime.strptime(startDate, "%d %B %Y"):
+                    if datetime.strptime(endDate, "%d %B, %Y") < datetime.strptime(startDate, "%d %B, %Y"):
                         errors['endDate'] = [f"This date must be later than the start date '{startDate}'."]
             except ValueError:
                 pass
@@ -149,9 +149,16 @@ class GETDharamSthanHistoryDetialsSerializer(serializers.ModelSerializer):
         model = DharamSthanHistory
         fields = ['id', 'dharamSthanId', "year", 'startDate', 'endDate', 'title', 'body', 'isActive']
 
+    def get_startDate(self, instance):
+        return instance.startDate.strftime("%d %B, %Y")
+
+    def get_endDate(self, instance):
+        return instance.endDate.strftime("%d %B, %Y")
+
 
 class GETAllDharamSthanHistorySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = DharamSthanHistory
         fields = ['id', 'title', "year", 'body', 'isActive']
+

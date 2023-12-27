@@ -430,3 +430,7 @@ ERROR 2023-12-16 11:55:57,538  36 userId not found to send Notification
 ERROR 2023-12-16 12:01:21,919  36 userId not found to send Notification 
 ERROR 2023-12-16 12:02:24,938  36 userId not found to send Notification 
 ERROR 2023-12-16 12:02:41,790  36 userId not found to send Notification 
+ERROR 2023-12-26 10:28:35,554  90 Invalid URL.
+ERROR 2023-12-26 10:28:39,573  90 Invalid URL.
+ERROR 2023-12-26 12:24:48,186  90 Invalid URL.
+ERROR 2023-12-26 12:24:53,223  90 Invalid URL.

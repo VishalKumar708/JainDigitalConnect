@@ -90,7 +90,6 @@ urlpatterns = [
     #  for admin, it takes one parameter 'status'
     path('GETAllAddAndApprovedSaint/', GETAllAddAndApprovedSaint.as_view()),
 
-
     #     Sect
     path('POSTSect/', POSTSect.as_view()),
     path('PUTSectById/<slug:id>/', PUTSectById.as_view()),
@@ -145,6 +144,7 @@ urlpatterns = [
     # Dharam Sthan
     path('POSTNewDharamSthan/', POSTNewDharamSthan.as_view()),
     path('PUTDharamSthanById/<slug:dharamSthanId>/', PUTDharamSthanById.as_view()),
+    path('GETAllSectDharamSthan/', GETAllSectDharamSthan.as_view()),
     path('GETAllCityBySectIdDharamSthan/<slug:sectId>/', GETAllCityBySectIdDharamSthan.as_view()),
     path('GETAllApprovedDharamSthanBySectIdAndCityId/<slug:sectId>/<slug:cityId>/', GETAllApprovedDharamSthanBySectId.as_view()),
     path('GETDharamSthanDetailsById/<slug:dharamSthanId>/', GETDharamSthanDetailsById.as_view()),
@@ -209,6 +209,7 @@ urlpatterns = [
     path('GETAllApprovedCityMatrimonial/', GETAllApprovedCityMatrimonial.as_view()),
     path('GETAllResidentsByCityIdForMatrimonial/<slug:cityId>/', GETAllResidentsByCityIdForMatrimonial.as_view()),
     path('GETAllResidentsForMatrimonial/', GETAllResidentsForMatrimonial.as_view())
+
 
 ]
 

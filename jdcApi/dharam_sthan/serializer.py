@@ -49,7 +49,7 @@ class GETDharamSthanSerializer(serializers.ModelSerializer):
 
 
 class CREATEDharamSthanSerializer(serializers.ModelSerializer):
-    foundationDate = serializers.DateField(input_formats=("%d %B %Y",))
+    foundationDate = serializers.DateField(input_formats=("%d %B, %Y",))
 
     class Meta:
         model = DharamSthan
@@ -107,10 +107,10 @@ class CREATEDharamSthanSerializer(serializers.ModelSerializer):
             try:
                 # parsed_foundation_date = datetime.strptime(foundation_date, "%d %B %Y").date()
 
-                if today_date < datetime.strptime(foundation_date, "%d %B %Y").date():
+                if today_date < datetime.strptime(foundation_date, "%d %B, %Y").date():
                     errors['foundationDate'] = ["Foundation date must be in the past."]
             except ValueError:
-                errors['foundationDate'] = ["Invalid date format for foundation date."]
+                pass
         # default validation
         validated_data = None
         try:
@@ -131,7 +131,7 @@ class CREATEDharamSthanSerializer(serializers.ModelSerializer):
 
 
 class UPDATEDharamSthanSerializer(serializers.ModelSerializer):
-    foundationDate = serializers.DateField(input_formats=("%d %B %Y",))
+    foundationDate = serializers.DateField(input_formats=("%d %B, %Y",))
 
     class Meta:
         model = DharamSthan
@@ -190,10 +190,10 @@ class UPDATEDharamSthanSerializer(serializers.ModelSerializer):
             try:
                 # parsed_foundation_date = datetime.strptime(foundation_date, "%d %B %Y").date()
 
-                if today_date < datetime.strptime(foundation_date, "%d %B %Y").date():
+                if today_date < datetime.strptime(foundation_date, "%d %B, %Y").date():
                     errors['foundationDate'] = ["Foundation date must be in the past."]
             except ValueError:
-                errors['foundationDate'] = ["Invalid date format for foundation date."]
+                pass
         # default validation
         validated_data = None
         try:
@@ -223,7 +223,7 @@ class GETDharamSthanDetailsSerializer(serializers.ModelSerializer):
                   'accountNumber', 'ifscCode', 'upiId', 'isVerified', 'isActive']
 
     def get_foundationDate(self, instance):
-        return instance.foundationDate.strftime("%d %B %Y")
+        return instance.foundationDate.strftime("%d %B, %Y")
 
 
 class GETAllDharamSthanSerializer(serializers.ModelSerializer):
@@ -237,7 +237,7 @@ class GETAllDharamSthanSerializer(serializers.ModelSerializer):
                   'upiId', 'locationLink', 'uploadedBy']
 
     def get_foundationDate(self, instance):
-        return instance.foundationDate.strftime("%d %B %Y")
+        return instance.foundationDate.strftime("%d %B, %Y")
 
     def get_uploadedBy(self, instance):
         try:
@@ -255,13 +255,17 @@ class SearchDharamSthanSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'foundationDate', 'postalCode', 'address',  'locationLink']
 
     def get_foundationDate(self, instance):
-        return instance.foundationDate.strftime("%d %B %Y")
+        return instance.foundationDate.strftime("%d %B, %Y")
 
 
 class GETAllDharamSthanForAdminSerializer(serializers.ModelSerializer):
+    foundationDate = serializers.SerializerMethodField()
     class Meta:
         model = DharamSthan
         fields = ['id', 'name', 'foundationDate', 'postalCode', 'address', 'locationLink']
+
+    def get_foundationDate(self, instance):
+        return instance.foundationDate.strftime("%d %B, %Y")
 
 
 class GETAllCityWithCountForDharamSthanForAdminSerializer(serializers.ModelSerializer):

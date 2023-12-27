@@ -202,11 +202,11 @@ class POSTNewDharamSthan(APIView):
             get_user_id = get_user_id_from_token_view(request)
             serializer = CREATEDharamSthanSerializer(data=request.data, context={'user_id_by_token': get_user_id})
             if serializer.is_valid():
-                serializer.save()
+                obj = serializer.save()
                 response_data = {
                     'statusCode': 200,
                     'status': 'Success',
-                    'data': {'message': 'Record Added successfully.'}
+                    'data': {'message': 'Record Added successfully.', 'id': obj.id}
                 }
                 return Response(response_data)
             response_data = {

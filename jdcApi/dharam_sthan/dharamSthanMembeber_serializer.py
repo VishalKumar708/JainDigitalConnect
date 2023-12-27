@@ -112,5 +112,7 @@ class GETDharamSthanMemberDetialsByIdSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = DharamSthanMember
-        fields = ['id', 'name', 'position', 'phoneNumber']
+        fields = ['id', 'name', 'position', 'phoneNumber', 'isActive', 'isVerified']
+
+
 
