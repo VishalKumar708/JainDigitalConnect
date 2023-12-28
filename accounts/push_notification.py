@@ -15,7 +15,6 @@ error_logger = logging.getLogger('error')
 info_logger = logging.getLogger('info')
 
 
-
 def send_notification(title, body):
     """ To send push notification to "admin" it needs fcm_token, title, body """
     try:

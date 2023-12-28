@@ -142,3 +142,16 @@ class AppConfigurationsAdmin(admin.ModelAdmin):
 
 admin.site.register(AppConfigurations, AppConfigurationsAdmin)
 
+
+class FeedbackTitleAdmin(admin.ModelAdmin):
+    list_display = ['id', 'title', 'order', 'isActive', 'createdBy', 'updatedBy']
+
+
+admin.site.register(MstFeedbackTitle, FeedbackTitleAdmin)
+
+
+class FeedbackAdmin(admin.ModelAdmin):
+    list_display = ['id', 'feedbackTitleId', 'body', 'isActive', 'createdBy', 'updatedBy']
+
+
+admin.site.register(Feedback, FeedbackAdmin)

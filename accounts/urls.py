@@ -6,6 +6,7 @@ from .push_notification import CreateNewNotification
 from .custom_filter import filter_queryset
 from .tokens import obtain_token
 # from .auth import get_payload_data_from_refresh_token
+
 urlpatterns = [
 
     # to send OTP (POST)

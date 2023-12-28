@@ -32,13 +32,19 @@ class GETAllSectForLiveLocationSerializer(serializers.ModelSerializer):
         model = MstSect
 
 
-
-
 class GETAllDharamSthanHistorySerializer(serializers.ModelSerializer):
+    uploadedBy = serializers.SerializerMethodField()
 
     class Meta:
         model = DharamSthanHistory
-        fields = ['id', 'dharamSthanId', 'title', "year", 'body', 'isActive']
+        fields = ['id', 'dharamSthanId', 'title', "year", 'body', 'isActive', 'uploadedBy']
+
+    def get_uploadedBy(self, instance):
+        try:
+            obj = User.objects.get(id=instance.createdBy)
+            return obj.name
+        except User.DoesNotExist:
+            return ""
 
 
 class GETDharamSthanDetailsSerializer(serializers.ModelSerializer):

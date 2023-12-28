@@ -58,7 +58,7 @@ class User(BaseModel, AbstractBaseUser, PermissionsMixin):
     #     return True
 
     def __str__(self):
-        return str(self.phoneNumber)
+        return str(self.id)
 
     def has_perm(self, perm, obj=None):
         "Does the user have a specific permission?"

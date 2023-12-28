@@ -31743,3 +31743,562 @@ INFO 2023-12-26 15:04:38,151  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_lo
 INFO 2023-12-26 15:04:39,751  668 Watching for file changes with StatReloader
 INFO 2023-12-26 15:47:25,742  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\models.py changed, reloading.
 INFO 2023-12-26 15:47:27,686  668 Watching for file changes with StatReloader
+INFO 2023-12-27 10:14:28,864  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\models.py changed, reloading.
+INFO 2023-12-27 10:14:31,102  668 Watching for file changes with StatReloader
+INFO 2023-12-27 10:21:11,900  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\push_notification.py changed, reloading.
+INFO 2023-12-27 10:21:13,715  668 Watching for file changes with StatReloader
+INFO 2023-12-27 10:24:53,579  212 "POST /obtainToken/ HTTP/1.1" 200 483
+WARNING 2023-12-27 10:25:49,609  241 Not Found: /api/POSTNewNotification/
+WARNING 2023-12-27 10:25:49,611  212 "GET /api/POSTNewNotification/ HTTP/1.1" 404 78
+WARNING 2023-12-27 10:25:59,118  241 Method Not Allowed: /POSTNewNotification/
+WARNING 2023-12-27 10:25:59,121  212 "GET /POSTNewNotification/ HTTP/1.1" 405 86
+WARNING 2023-12-27 10:26:06,373  241 Bad Request: /POSTNewNotification/
+WARNING 2023-12-27 10:26:06,376  212 "POST /POSTNewNotification/ HTTP/1.1" 400 91
+WARNING 2023-12-27 10:26:31,697  241 Bad Request: /POSTNewNotification/
+WARNING 2023-12-27 10:26:31,698  212 "POST /POSTNewNotification/ HTTP/1.1" 400 188
+INFO 2023-12-27 10:29:43,682  212 "GET /admin/accounts/notification/ HTTP/1.1" 200 15128
+INFO 2023-12-27 10:29:43,774  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 10:29:48,353  212 "GET /admin/accounts/notification/add/ HTTP/1.1" 200 22009
+INFO 2023-12-27 10:29:48,463  212 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2023-12-27 10:29:48,470  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 10:39:03,634  212 "GET /admin/accounts/notificationhistory/ HTTP/1.1" 200 15182
+INFO 2023-12-27 10:39:03,682  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 10:39:08,255  212 "GET /admin/accounts/notification/ HTTP/1.1" 200 15128
+INFO 2023-12-27 10:39:08,351  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 10:39:13,581  212 "GET /admin/accounts/notificationhistory/ HTTP/1.1" 200 15182
+INFO 2023-12-27 10:39:13,643  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 10:39:16,323  212 "GET /admin/accounts/notificationhistory/add/ HTTP/1.1" 200 21250
+INFO 2023-12-27 10:39:16,404  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 10:42:58,374  212 "GET /admin/accounts/notification/ HTTP/1.1" 200 15128
+INFO 2023-12-27 10:42:58,429  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 10:43:02,059  212 "GET /admin/accounts/notification/add/ HTTP/1.1" 200 22009
+INFO 2023-12-27 10:43:02,109  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 10:43:22,964  212 "POST /admin/accounts/notification/add/ HTTP/1.1" 200 22417
+INFO 2023-12-27 10:43:23,003  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 10:58:25,736  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\urls.py changed, reloading.
+INFO 2023-12-27 10:58:28,319  668 Watching for file changes with StatReloader
+INFO 2023-12-27 11:10:47,366  668 Watching for file changes with StatReloader
+INFO 2023-12-27 11:38:38,889  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\models.py changed, reloading.
+INFO 2023-12-27 11:38:41,850  668 Watching for file changes with StatReloader
+INFO 2023-12-27 11:39:52,657  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\models.py changed, reloading.
+INFO 2023-12-27 11:39:54,567  668 Watching for file changes with StatReloader
+INFO 2023-12-27 11:40:50,318  668 Watching for file changes with StatReloader
+INFO 2023-12-27 11:43:21,242  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\admin.py changed, reloading.
+INFO 2023-12-27 11:43:22,723  668 Watching for file changes with StatReloader
+INFO 2023-12-27 11:43:44,516  668 Watching for file changes with StatReloader
+INFO 2023-12-27 11:44:03,266  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\admin.py changed, reloading.
+INFO 2023-12-27 11:44:04,956  668 Watching for file changes with StatReloader
+INFO 2023-12-27 11:45:30,493  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\admin.py changed, reloading.
+INFO 2023-12-27 11:45:31,929  668 Watching for file changes with StatReloader
+INFO 2023-12-27 11:45:43,411  212 "POST /admin/accounts/notification/add/ HTTP/1.1" 200 23034
+INFO 2023-12-27 11:45:43,550  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 11:45:48,701  212 "GET /admin/jdcApi/feedbacktitle/ HTTP/1.1" 200 15749
+INFO 2023-12-27 11:45:48,777  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 11:45:51,188  212 "GET /admin/jdcApi/feedbacktitle/add/ HTTP/1.1" 200 19593
+INFO 2023-12-27 11:45:51,315  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 11:49:04,877  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\models.py changed, reloading.
+INFO 2023-12-27 11:49:06,470  668 Watching for file changes with StatReloader
+INFO 2023-12-27 11:49:24,097  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\admin.py changed, reloading.
+INFO 2023-12-27 11:49:25,631  668 Watching for file changes with StatReloader
+INFO 2023-12-27 11:50:01,544  668 Watching for file changes with StatReloader
+INFO 2023-12-27 12:10:17,168  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-12-27 12:10:19,435  668 Watching for file changes with StatReloader
+WARNING 2023-12-27 12:12:41,291  241 Unsupported Media Type: /api/POSTNewFeedbackTitle/
+WARNING 2023-12-27 12:12:41,291  212 "POST /api/POSTNewFeedbackTitle/ HTTP/1.1" 415 143
+WARNING 2023-12-27 12:13:05,617  241 Bad Request: /api/POSTNewFeedbackTitle/
+WARNING 2023-12-27 12:13:05,617  212 "POST /api/POSTNewFeedbackTitle/ HTTP/1.1" 400 117
+INFO 2023-12-27 12:14:17,830  212 "POST /api/POSTNewFeedbackTitle/ HTTP/1.1" 200 85
+WARNING 2023-12-27 12:14:27,138  241 Bad Request: /api/POSTNewFeedbackTitle/
+WARNING 2023-12-27 12:14:27,138  212 "POST /api/POSTNewFeedbackTitle/ HTTP/1.1" 400 85
+WARNING 2023-12-27 12:14:56,454  241 Not Found: /admin/jdcApi/feedbacktitle/
+WARNING 2023-12-27 12:14:56,454  212 "GET /admin/jdcApi/feedbacktitle/ HTTP/1.1" 404 8862
+WARNING 2023-12-27 12:15:00,500  241 Not Found: /admin/jdcApi/feedbacktitle/add/
+WARNING 2023-12-27 12:15:00,500  212 "GET /admin/jdcApi/feedbacktitle/add/ HTTP/1.1" 404 8874
+INFO 2023-12-27 12:15:16,955  212 "POST /admin/accounts/notification/add/ HTTP/1.1" 200 23047
+INFO 2023-12-27 12:15:17,044  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 12:15:26,183  212 "GET /admin/jdcApi/mstfeedbacktitle/ HTTP/1.1" 200 17881
+INFO 2023-12-27 12:15:26,245  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 12:16:34,824  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\master_views\feedbackTitle_serializer.py changed, reloading.
+INFO 2023-12-27 12:16:36,467  668 Watching for file changes with StatReloader
+INFO 2023-12-27 12:16:45,697  212 "POST /api/POSTNewFeedbackTitle/ HTTP/1.1" 200 85
+INFO 2023-12-27 12:16:50,272  212 "GET /admin/jdcApi/mstfeedbacktitle/ HTTP/1.1" 200 18306
+INFO 2023-12-27 12:16:50,324  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-12-27 12:18:47,511  241 Not Found: /api/PUTFeedbackTitleById/
+WARNING 2023-12-27 12:18:47,515  212 "GET /api/PUTFeedbackTitleById/ HTTP/1.1" 404 78
+WARNING 2023-12-27 12:18:54,875  241 Method Not Allowed: /api/PUTFeedbackTitleById/1/
+WARNING 2023-12-27 12:18:54,875  212 "GET /api/PUTFeedbackTitleById/1/ HTTP/1.1" 405 86
+WARNING 2023-12-27 12:19:01,419  241 Unsupported Media Type: /api/PUTFeedbackTitleById/1/
+WARNING 2023-12-27 12:19:01,419  212 "PUT /api/PUTFeedbackTitleById/1/ HTTP/1.1" 415 143
+WARNING 2023-12-27 12:19:12,070  241 Bad Request: /api/PUTFeedbackTitleById/1/
+WARNING 2023-12-27 12:19:12,078  212 "PUT /api/PUTFeedbackTitleById/1/ HTTP/1.1" 400 127
+INFO 2023-12-27 12:19:39,353  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\master_views\feedbackTitle_serializer.py changed, reloading.
+INFO 2023-12-27 12:19:41,238  668 Watching for file changes with StatReloader
+INFO 2023-12-27 12:19:43,513  212 "PUT /api/PUTFeedbackTitleById/1/ HTTP/1.1" 200 87
+INFO 2023-12-27 12:19:48,713  212 "GET /admin/jdcApi/mstfeedbacktitle/ HTTP/1.1" 200 18306
+INFO 2023-12-27 12:19:48,766  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 12:20:03,415  212 "PUT /api/PUTFeedbackTitleById/1/ HTTP/1.1" 200 87
+INFO 2023-12-27 12:20:20,691  212 "GET /admin/jdcApi/mstfeedbacktitle/ HTTP/1.1" 200 18306
+INFO 2023-12-27 12:20:20,776  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 12:21:28,118  212 "GET /api/GETFeedbackTitleDetailById/1/ HTTP/1.1" 200 96
+INFO 2023-12-27 12:23:49,557  212 "GET /api/GETAllFeedbackTitleForAdmin/ HTTP/1.1" 200 82
+INFO 2023-12-27 12:24:03,082  212 "GET /api/GETAllFeedbackTitleForAdmin/?status=inactive HTTP/1.1" 200 81
+INFO 2023-12-27 12:25:04,971  212 "GET /api/GETAllFeedbackTitleForDropDown/ HTTP/1.1" 200 72
+INFO 2023-12-27 13:19:57,995  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-12-27 13:20:00,579  668 Watching for file changes with StatReloader
+WARNING 2023-12-27 13:20:44,890  241 Bad Request: /api/POSTNewFeedback/
+WARNING 2023-12-27 13:20:44,891  212 "POST /api/POSTNewFeedback/ HTTP/1.1" 400 126
+ERROR 2023-12-27 13:21:32,450  241 Internal Server Error: /api/POSTNewFeedback/
+ERROR 2023-12-27 13:21:32,452  212 "POST /api/POSTNewFeedback/ HTTP/1.1" 500 78
+INFO 2023-12-27 13:21:53,142  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\views.py changed, reloading.
+INFO 2023-12-27 13:21:54,602  668 Watching for file changes with StatReloader
+ERROR 2023-12-27 13:21:56,059  241 Internal Server Error: /api/POSTNewFeedback/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\views.py", line 109, in post
+    if serializer.is_valid():
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\serializer.py", line 29, in to_internal_value
+    MstFeedbackTitle.objects.get(feedbackTitleId=feedbackTitle_id)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 623, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1534, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1415, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1225, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1713, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'feedbackTitleId' into field. Choices are: createdBy, createdDate, feedbackTitles, groupId, id, isActive, order, title, updatedBy, updatedDate
+ERROR 2023-12-27 13:21:56,069  212 "POST /api/POSTNewFeedback/ HTTP/1.1" 500 163257
+ERROR 2023-12-27 13:23:28,510  241 Internal Server Error: /api/POSTNewFeedback/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\views.py", line 109, in post
+    if serializer.is_valid():
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\serializer.py", line 29, in to_internal_value
+    MstFeedbackTitle.objects.get(feedbackTitleId=feedbackTitle_id)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 623, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1534, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1415, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1225, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1713, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'feedbackTitleId' into field. Choices are: createdBy, createdDate, feedbackTitles, groupId, id, isActive, order, title, updatedBy, updatedDate
+ERROR 2023-12-27 13:23:28,518  212 "POST /api/POSTNewFeedback/ HTTP/1.1" 500 163257
+INFO 2023-12-27 13:26:11,907  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\models.py changed, reloading.
+INFO 2023-12-27 13:26:13,079  668 Watching for file changes with StatReloader
+WARNING 2023-12-27 13:26:15,676  241 Unauthorized: /api/POSTNewFeedback/
+WARNING 2023-12-27 13:26:15,677  212 "POST /api/POSTNewFeedback/ HTTP/1.1" 401 199
+INFO 2023-12-27 13:26:26,374  212 "POST /obtainToken/ HTTP/1.1" 200 483
+ERROR 2023-12-27 13:27:09,028  241 Internal Server Error: /api/POSTNewFeedback/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\views.py", line 109, in post
+    if serializer.is_valid():
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\serializer.py", line 29, in to_internal_value
+    MstFeedbackTitle.objects.get(feedbackTitleId=feedbackTitle_id)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 623, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1534, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1415, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1225, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\db\models\sql\query.py", line 1713, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'feedbackTitleId' into field. Choices are: createdBy, createdDate, feedback, groupId, id, isActive, order, title, updatedBy, updatedDate
+ERROR 2023-12-27 13:27:09,037  212 "POST /api/POSTNewFeedback/ HTTP/1.1" 500 163215
+INFO 2023-12-27 13:28:44,934  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\models.py changed, reloading.
+INFO 2023-12-27 13:28:46,254  668 Watching for file changes with StatReloader
+INFO 2023-12-27 13:31:36,800  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\serializer.py changed, reloading.
+INFO 2023-12-27 13:31:38,214  668 Watching for file changes with StatReloader
+INFO 2023-12-27 13:31:39,867  212 "POST /api/POSTNewFeedback/ HTTP/1.1" 200 85
+INFO 2023-12-27 13:31:51,645  212 "GET /admin/jdcApi/feedback/ HTTP/1.1" 200 17869
+INFO 2023-12-27 13:31:51,735  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 13:36:33,023  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\views.py changed, reloading.
+INFO 2023-12-27 13:36:34,224  668 Watching for file changes with StatReloader
+INFO 2023-12-27 13:37:05,292  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-12-27 13:37:06,640  668 Watching for file changes with StatReloader
+INFO 2023-12-27 13:38:18,154  212 "GET /api/GETAllFeedbackForAdmin HTTP/1.1" 301 0
+ERROR 2023-12-27 13:38:18,186  241 Internal Server Error: /api/GETAllFeedbackForAdmin/
+ERROR 2023-12-27 13:38:18,189  212 "GET /api/GETAllFeedbackForAdmin/ HTTP/1.1" 500 77
+INFO 2023-12-27 13:38:56,795  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\views.py changed, reloading.
+INFO 2023-12-27 13:38:58,204  668 Watching for file changes with StatReloader
+INFO 2023-12-27 13:38:59,672  212 "GET /api/GETAllFeedbackForAdmin HTTP/1.1" 301 0
+ERROR 2023-12-27 13:38:59,767  241 Internal Server Error: /api/GETAllFeedbackForAdmin/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Feedback' object has no attribute 'feedbackTitleId__title'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\views.py", line 37, in get
+    pagination_data = paginator.get_paginated_response(serializer.data)
+                                                       ^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 768, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 686, in to_representation
+    return [
+           ^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 687, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `title` on serializer `GETAllFeedbackForAdminSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `Feedback` instance.
+Original exception text was: 'Feedback' object has no attribute 'feedbackTitleId__title'.
+ERROR 2023-12-27 13:38:59,775  212 "GET /api/GETAllFeedbackForAdmin/ HTTP/1.1" 500 138118
+INFO 2023-12-27 13:43:49,886  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\serializer.py changed, reloading.
+INFO 2023-12-27 13:43:51,070  668 Watching for file changes with StatReloader
+INFO 2023-12-27 13:43:54,011  212 "GET /api/GETAllFeedbackForAdmin HTTP/1.1" 301 0
+INFO 2023-12-27 13:43:54,050  212 "GET /api/GETAllFeedbackForAdmin/ HTTP/1.1" 200 188
+INFO 2023-12-27 13:44:48,454  212 "POST /api/POSTNewFeedback/ HTTP/1.1" 200 85
+INFO 2023-12-27 13:44:58,513  212 "GET /api/GETAllFeedbackForAdmin HTTP/1.1" 301 0
+INFO 2023-12-27 13:44:58,559  212 "GET /api/GETAllFeedbackForAdmin/ HTTP/1.1" 200 293
+INFO 2023-12-27 13:45:24,455  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\views.py changed, reloading.
+INFO 2023-12-27 13:45:25,950  668 Watching for file changes with StatReloader
+INFO 2023-12-27 13:45:28,089  212 "GET /api/GETAllFeedbackForAdmin HTTP/1.1" 301 0
+INFO 2023-12-27 13:45:28,131  212 "GET /api/GETAllFeedbackForAdmin/ HTTP/1.1" 200 293
+INFO 2023-12-27 13:47:59,070  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\views.py changed, reloading.
+INFO 2023-12-27 13:48:00,547  668 Watching for file changes with StatReloader
+ERROR 2023-12-27 13:48:40,889  241 Internal Server Error: /api/GETFeedbackDetailsById/1/
+ERROR 2023-12-27 13:48:40,891  212 "GET /api/GETFeedbackDetailsById/1/ HTTP/1.1" 500 79
+INFO 2023-12-27 13:49:27,440  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\views.py changed, reloading.
+INFO 2023-12-27 13:49:28,557  668 Watching for file changes with StatReloader
+ERROR 2023-12-27 13:49:31,465  241 Internal Server Error: /api/GETFeedbackDetailsById/1/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\fields.py", line 446, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\fields.py", line 96, in get_attribute
+    instance = getattr(instance, attr)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Feedback' object has no attribute 'feedbackTitleId__title'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\views.py", line 64, in get
+    'data': serializer.data
+            ^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 555, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 253, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 509, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\fields.py", line 479, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `title` on serializer `GETFeedbackDetailsSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `Feedback` instance.
+Original exception text was: 'Feedback' object has no attribute 'feedbackTitleId__title'.
+ERROR 2023-12-27 13:49:31,472  212 "GET /api/GETFeedbackDetailsById/1/ HTTP/1.1" 500 127858
+INFO 2023-12-27 13:49:54,196  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\serializer.py changed, reloading.
+INFO 2023-12-27 13:49:55,426  668 Watching for file changes with StatReloader
+INFO 2023-12-27 13:49:57,573  212 "GET /api/GETFeedbackDetailsById/1/ HTTP/1.1" 200 69
+INFO 2023-12-27 13:50:23,329  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\serializer.py changed, reloading.
+INFO 2023-12-27 13:50:25,008  668 Watching for file changes with StatReloader
+INFO 2023-12-27 13:50:25,622  212 "GET /api/GETFeedbackDetailsById/1/ HTTP/1.1" 200 96
+INFO 2023-12-27 14:06:29,017  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\views.py changed, reloading.
+INFO 2023-12-27 14:06:31,066  668 Watching for file changes with StatReloader
+INFO 2023-12-27 14:49:24,086  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\views.py changed, reloading.
+INFO 2023-12-27 14:49:25,945  668 Watching for file changes with StatReloader
+INFO 2023-12-27 14:50:07,057  668 Watching for file changes with StatReloader
+INFO 2023-12-27 14:52:04,465  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\views.py changed, reloading.
+INFO 2023-12-27 14:52:09,440  668 Watching for file changes with StatReloader
+INFO 2023-12-27 14:53:39,738  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\views.py changed, reloading.
+INFO 2023-12-27 14:53:40,857  668 Watching for file changes with StatReloader
+INFO 2023-12-27 14:55:38,752  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\views.py changed, reloading.
+INFO 2023-12-27 14:55:40,028  668 Watching for file changes with StatReloader
+INFO 2023-12-27 14:56:32,618  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\views.py changed, reloading.
+INFO 2023-12-27 14:56:33,771  668 Watching for file changes with StatReloader
+INFO 2023-12-27 15:00:04,950  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\views.py changed, reloading.
+INFO 2023-12-27 15:00:06,555  668 Watching for file changes with StatReloader
+INFO 2023-12-27 15:00:40,137  668 Watching for file changes with StatReloader
+INFO 2023-12-27 15:01:48,559  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\views.py changed, reloading.
+INFO 2023-12-27 15:01:49,747  668 Watching for file changes with StatReloader
+INFO 2023-12-27 15:08:54,047  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\views.py changed, reloading.
+INFO 2023-12-27 15:08:55,350  668 Watching for file changes with StatReloader
+INFO 2023-12-27 15:09:11,390  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\views.py changed, reloading.
+INFO 2023-12-27 15:09:12,736  668 Watching for file changes with StatReloader
+INFO 2023-12-27 15:10:42,775  212 "GET /api/GETAllFeedbackForAdmin HTTP/1.1" 301 0
+WARNING 2023-12-27 15:10:42,837  241 Forbidden: /api/GETAllFeedbackForAdmin/
+WARNING 2023-12-27 15:10:42,838  212 "GET /api/GETAllFeedbackForAdmin/ HTTP/1.1" 403 109
+INFO 2023-12-27 15:11:33,666  212 "GET /admin/accounts/user/ HTTP/1.1" 200 24310
+INFO 2023-12-27 15:11:33,731  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 15:12:12,212  212 "GET /admin/accounts/user/1/change/ HTTP/1.1" 200 46671
+INFO 2023-12-27 15:12:12,295  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 15:12:19,862  212 "POST /admin/accounts/user/1/change/ HTTP/1.1" 200 46822
+INFO 2023-12-27 15:12:19,902  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 15:12:31,303  212 "POST /admin/accounts/user/1/change/ HTTP/1.1" 302 0
+INFO 2023-12-27 15:12:31,356  212 "GET /admin/accounts/user/ HTTP/1.1" 200 24516
+INFO 2023-12-27 15:12:31,419  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 15:12:36,937  212 "GET /api/GETAllFeedbackForAdmin HTTP/1.1" 301 0
+INFO 2023-12-27 15:12:36,957  212 "GET /api/GETAllFeedbackForAdmin/ HTTP/1.1" 200 293
+INFO 2023-12-27 15:14:59,291  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\models.py changed, reloading.
+INFO 2023-12-27 15:15:00,649  668 Watching for file changes with StatReloader
+INFO 2023-12-27 15:15:03,134  212 "GET /api/GETAllFeedbackForAdmin HTTP/1.1" 301 0
+INFO 2023-12-27 15:15:03,177  212 "GET /api/GETAllFeedbackForAdmin/ HTTP/1.1" 200 293
+INFO 2023-12-27 15:19:00,511  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\utils\permission.py changed, reloading.
+INFO 2023-12-27 15:19:01,705  668 Watching for file changes with StatReloader
+INFO 2023-12-27 15:19:06,977  212 "GET /api/GETAllFeedbackForAdmin HTTP/1.1" 301 0
+INFO 2023-12-27 15:19:07,025  212 "GET /api/GETAllFeedbackForAdmin/ HTTP/1.1" 200 293
+INFO 2023-12-27 15:19:36,247  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\utils\permission.py changed, reloading.
+INFO 2023-12-27 15:19:37,421  668 Watching for file changes with StatReloader
+INFO 2023-12-27 15:19:39,992  212 "GET /api/GETAllFeedbackForAdmin HTTP/1.1" 301 0
+WARNING 2023-12-27 15:19:40,039  241 Forbidden: /api/GETAllFeedbackForAdmin/
+WARNING 2023-12-27 15:19:40,040  212 "GET /api/GETAllFeedbackForAdmin/ HTTP/1.1" 403 109
+INFO 2023-12-27 15:20:22,914  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\utils\permission.py changed, reloading.
+INFO 2023-12-27 15:20:24,390  668 Watching for file changes with StatReloader
+INFO 2023-12-27 15:20:25,955  212 "GET /api/GETAllFeedbackForAdmin HTTP/1.1" 301 0
+INFO 2023-12-27 15:20:25,998  212 "GET /api/GETAllFeedbackForAdmin/ HTTP/1.1" 200 293
+INFO 2023-12-27 15:23:34,440  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\feedback\views.py changed, reloading.
+INFO 2023-12-27 15:23:35,959  668 Watching for file changes with StatReloader
+INFO 2023-12-27 16:07:36,259  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\urls.py changed, reloading.
+INFO 2023-12-27 16:07:38,818  668 Watching for file changes with StatReloader
+INFO 2023-12-27 16:15:45,891  212 "GET /admin/fcm_django/fcmdevice/ HTTP/1.1" 200 17330
+INFO 2023-12-27 16:15:46,005  212 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2023-12-27 16:15:46,011  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 16:15:48,499  212 "GET /admin/fcm_django/fcmdevice/add/ HTTP/1.1" 200 20152
+INFO 2023-12-27 16:15:48,579  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 16:17:36,016  212 "GET /admin/fcm_django/fcmdevice/ HTTP/1.1" 200 17330
+INFO 2023-12-27 16:17:36,104  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 16:17:41,313  212 "GET /admin/fcm_django/fcmdevice/ HTTP/1.1" 200 17330
+INFO 2023-12-27 16:17:41,403  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 16:27:24,051  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\auth_api\settings.py changed, reloading.
+INFO 2023-12-27 16:27:25,811  668 Watching for file changes with StatReloader
+INFO 2023-12-27 16:32:18,246  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_jwt_authentication.py changed, reloading.
+INFO 2023-12-27 16:32:19,800  668 Watching for file changes with StatReloader
+INFO 2023-12-27 16:34:40,618  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\custom_jwt_authentication.py changed, reloading.
+INFO 2023-12-27 16:34:42,221  668 Watching for file changes with StatReloader
+INFO 2023-12-27 16:45:45,707  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\app_config\views.py changed, reloading.
+INFO 2023-12-27 16:45:47,011  668 Watching for file changes with StatReloader
+INFO 2023-12-27 17:11:47,297  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\app_config\views.py changed, reloading.
+INFO 2023-12-27 17:11:49,050  668 Watching for file changes with StatReloader
+INFO 2023-12-27 18:00:22,855  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\jdcApi\live_location\serializer.py changed, reloading.
+INFO 2023-12-27 18:00:24,488  668 Watching for file changes with StatReloader
+INFO 2023-12-27 18:01:57,274  212 "GET /api/GETAllDharamSthanHistoryBySectId/1/ HTTP/1.1" 200 75
+INFO 2023-12-27 18:02:10,595  212 "GET /admin/jdcApi/dharamsthanhistory/ HTTP/1.1" 200 15802
+INFO 2023-12-27 18:02:10,764  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 18:02:12,781  212 "GET /admin/jdcApi/dharamsthanhistory/add/ HTTP/1.1" 200 23493
+INFO 2023-12-27 18:02:12,847  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 18:02:57,076  212 "POST /admin/jdcApi/dharamsthanhistory/add/ HTTP/1.1" 302 0
+INFO 2023-12-27 18:02:57,232  212 "GET /admin/jdcApi/dharamsthanhistory/ HTTP/1.1" 200 18583
+INFO 2023-12-27 18:02:57,304  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 18:03:01,553  212 "GET /api/GETAllDharamSthanHistoryBySectId/1/ HTTP/1.1" 200 75
+INFO 2023-12-27 18:03:12,937  212 "GET /api/GETAllDharamSthanHistoryBySectId/2/ HTTP/1.1" 200 75
+INFO 2023-12-27 18:03:18,765  212 "GET /api/GETAllDharamSthanHistoryBySectId/3/ HTTP/1.1" 200 75
+INFO 2023-12-27 18:03:24,416  212 "GET /api/GETAllDharamSthanHistoryBySectId/4/ HTTP/1.1" 200 75
+INFO 2023-12-27 18:03:34,729  212 "GET /admin/jdcApi/dharamsthanhistory/1/change/ HTTP/1.1" 200 23849
+INFO 2023-12-27 18:03:34,801  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 18:05:29,431  212 "GET /admin/jdcApi/dharamsthanmember/ HTTP/1.1" 200 15795
+INFO 2023-12-27 18:05:29,511  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 18:05:33,224  212 "GET /admin/jdcApi/dharamsthan/ HTTP/1.1" 200 19835
+INFO 2023-12-27 18:05:33,291  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 18:05:44,564  212 "GET /admin/jdcApi/dharamsthan/2/change/ HTTP/1.1" 200 27674
+INFO 2023-12-27 18:05:44,641  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 18:05:50,544  212 "POST /admin/jdcApi/dharamsthan/2/change/ HTTP/1.1" 302 0
+INFO 2023-12-27 18:05:50,581  212 "GET /admin/jdcApi/dharamsthan/ HTTP/1.1" 200 20071
+INFO 2023-12-27 18:05:50,638  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-12-27 18:06:00,577  212 "GET /api/GETAllDharamSthanHistoryBySectId/1/ HTTP/1.1" 200 160

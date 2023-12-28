@@ -3,6 +3,7 @@ from django.db import models
 from django.utils import timezone
 from django.core.validators import FileExtensionValidator
 
+
 class BaseModel(models.Model):
     isActive = models.BooleanField(default=False)
     groupId = models.CharField(max_length=40, default=1)
@@ -256,4 +257,16 @@ class LiteratureDocument(BaseModel):
     file = models.FileField(upload_to='literature_Documents', null=True,
                             validators=[FileExtensionValidator(allowed_extensions=['txt', 'pdf', 'doc', 'docx'])], blank = True)
     isVerified = models.BooleanField(default=False)
+
+
+class MstFeedbackTitle(BaseModel):
+    id = models.BigAutoField(primary_key=True)
+    title = models.CharField(max_length=100)
+    order = models.IntegerField()
+
+
+class Feedback(BaseModel):
+    id = models.BigAutoField(primary_key=True)
+    feedbackTitleId = models.ForeignKey(MstFeedbackTitle, on_delete=models.CASCADE, related_name='feedbackTitles')
+    body = models.TextField()
 

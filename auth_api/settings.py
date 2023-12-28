@@ -203,7 +203,7 @@ LOGGING = {
             "level": "INFO",
             'class': 'logging.handlers.RotatingFileHandler',
             'filename': os.path.join(LOG_DIR, "info.log"),
-            'maxBytes': 300 * 1024 * 1024,
+            # 'maxBytes': 300 * 1024 * 1024,
             'backupCount': 10,
             "formatter": "verbose",
             "encoding": 'utf-8'
@@ -212,7 +212,7 @@ LOGGING = {
             "level": "ERROR",
             'class': 'logging.handlers.RotatingFileHandler',
             'filename': os.path.join(LOG_DIR, "error.log"),
-            'maxBytes': 300 * 1024 * 1024,
+            # 'maxBytes': 300 * 1024 * 1024,
             'backupCount': 10,
             "formatter": "verbose",
             "encoding": 'utf-8'
@@ -221,7 +221,7 @@ LOGGING = {
             "level": "INFO",
             'class': 'logging.handlers.RotatingFileHandler',
             'filename': os.path.join(LOG_DIR, "console.log"),
-            'maxBytes': 300 * 1024 * 1024,
+            # 'maxBytes': 300 * 1024 * 1024,
             'backupCount': 10,
             "formatter": "verbose",
             "encoding": 'utf-8'

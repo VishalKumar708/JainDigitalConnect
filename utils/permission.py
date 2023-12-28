@@ -14,3 +14,25 @@ class IsOwnerOrReadOnly(permissions.BasePermission):
 
         # Write permissions are only allowed to the owner of the object.
         return obj.user == request.user
+
+
+class IsAdminUser(permissions.BasePermission):
+    """
+    Custom permission to check if the user is an admin.
+    """
+
+    def has_permission(self, request, view):
+        # Implement your logic here to determine admin status
+        print("custom Admin permission class==> ", request.user)
+        return request.user.isAdmin  # Example: Check if the user is a superuser/admin
+
+
+class IsHeadUser(permissions.BasePermission):
+    """
+    Custom permission to check if the user is an admin.
+    """
+
+    def has_permission(self, request, view):
+        print('head custom permission==> ', request.user.headId)
+        return not request.user.headId
+

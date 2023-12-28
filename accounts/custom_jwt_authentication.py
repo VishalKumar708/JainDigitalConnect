@@ -23,3 +23,4 @@ class CustomJWTAuthentication(JWTAuthentication):
             skip_token_authentication = True
 
         return skip_token_authentication
+

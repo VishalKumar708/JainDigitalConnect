@@ -99,7 +99,7 @@ class GETAppConfigurationDetailsById(APIView):
                 'status': 'Success',
                 'data': serializer.data
             }
-            return Response(response_data, status=400)
+            return Response(response_data, status=200)
         except AppConfigurations.DoesNotExist:
             response_data = {
                 'statusCode': status.HTTP_404_NOT_FOUND,
@@ -135,5 +135,5 @@ class GETAllAppConfigurationsForAdmin(APIView):
             'status': 'Success',
             'data': serializer.data
         }
-        return Response(response_data, status=400)
+        return Response(response_data)
 

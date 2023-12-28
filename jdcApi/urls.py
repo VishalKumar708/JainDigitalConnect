@@ -20,10 +20,12 @@ from .master_views.sect_views import *
 from .master_views.bloodGroup_views import *
 from .master_views.profession_views import *
 from .master_views.relation_views import *
+from .master_views.feedbackTitle_views import *
+
 from .live_location.views import *
 from .literature.literatureDocument_views import *
 from .matrimonial.views import *
-
+from .feedback.views import *
 from .app_config.views import *
 
 urlpatterns = [
@@ -208,8 +210,19 @@ urlpatterns = [
     # matrimonial
     path('GETAllApprovedCityMatrimonial/', GETAllApprovedCityMatrimonial.as_view()),
     path('GETAllResidentsByCityIdForMatrimonial/<slug:cityId>/', GETAllResidentsByCityIdForMatrimonial.as_view()),
-    path('GETAllResidentsForMatrimonial/', GETAllResidentsForMatrimonial.as_view())
+    path('GETAllResidentsForMatrimonial/', GETAllResidentsForMatrimonial.as_view()),
 
+    # Feedback Title
+    path('POSTNewFeedbackTitle/', POSTNewFeedbackTitle.as_view()),
+    path('PUTFeedbackTitleById/<slug:id>/', PUTFeedbackTitleById.as_view()),
+    path('GETFeedbackTitleDetailById/<slug:id>/', GETFeedbackTitleDetailById.as_view()),
+    path('GETAllFeedbackTitleForAdmin/', GETAllFeedbackTitleForAdmin.as_view()),
+    path('GETAllFeedbackTitleForDropDown/', GETAllFeedbackTitleForDropDown.as_view()),
+
+    # Feedback
+    path('POSTNewFeedback/', POSTNewFeedback.as_view()),
+    path('GETAllFeedbackForAdmin/', GETAllFeedbackForAdmin.as_view()),
+    path('GETFeedbackDetailsById/<feedbackId>/', GETFeedbackDetailsById.as_view()),
 
 ]
 
