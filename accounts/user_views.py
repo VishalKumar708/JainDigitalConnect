@@ -32,19 +32,6 @@ class RegisterHead(APIView):
             serializer = HeadSerializer(data=data)
 
         if serializer.is_valid():
-            for_match = data.get('lookingForMatch')
-            is_looking_for_match = False if for_match is None else string_to_bool(for_match)
-
-            if is_looking_for_match:
-                is_applicable, message = is_applicable_for_matrimonial(data.get('dob'), data.get('gender'))
-                if not is_applicable:
-                    json_data = {
-                        'statusCode': 400,
-                        'status': 'Failed',
-                        'data': message
-                    }
-                    return Response(json_data, status=400)
-
             # save record
             obj = serializer.save()
             json_data = {
@@ -86,19 +73,6 @@ class RegisterMember(APIView):
 
         # Put all data in serializer
         if serializer.is_valid():
-            for_match = data.get('lookingForMatch')
-
-            is_looking_for_match = False if for_match is None else string_to_bool(for_match)
-
-            if is_looking_for_match:
-                is_applicable, message = is_applicable_for_matrimonial(data.get('dob'), data.get('gender'))
-                if not is_applicable:
-                    json_data = {
-                        'statusCode': 400,
-                        'status': 'Failed',
-                        'data': {'message': message}
-                    }
-                    return Response(json_data, status=400)
 
             serializer.save()
             json_data = {

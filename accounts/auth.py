@@ -115,11 +115,12 @@ def check_head_exist_by_id(id):
 
 from datetime import datetime
 
+
 def is_applicable_for_matrimonial(birthdate_str, gender):
     """ to check user is applicable for matrimonial or not"""
     # Convert the input date string to a datetime object
     try:
-        birthdate = datetime.strptime(birthdate_str.strip(), '%B %d, %Y')
+        birthdate = datetime.strptime(birthdate_str.strip(), '%d %B, %Y')
 
         # Get the current date
         current_date = datetime.now()

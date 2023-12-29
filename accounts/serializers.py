@@ -4,13 +4,14 @@ from django.db.models import Q
 
 from .models import User, Notification
 from rest_framework import serializers
-from .auth import get_user_id_from_token_view
 from jdcApi.models import City, Area, MstSect, MstBloodGroup, MstMaritalStatus, MstRelation, MstProfession
 from .utils import is_valid_mobile_number
+from django.conf import settings
+from django.utils import timezone
 
 
 class HeadSerializer(serializers.ModelSerializer):
-    dob = serializers.DateField(input_formats=("%B %d, %Y",), required=False)
+    dob = serializers.DateField(input_formats=("%d %B, %Y",), required=False)
 
     class Meta:
         fields = ['name', 'fatherName', 'phoneNumber', 'cityId', 'areaId', 'permanentAddress', 'maritalStatusId', 'lookingForMatch', 'dob',
@@ -41,6 +42,9 @@ class HeadSerializer(serializers.ModelSerializer):
         professionId = data.get('professionId')
         maritalStatusId = data.get('maritalStatusId')
         bloodGroupId = data.get('bloodGroupId')
+        lookingForMatch = data.get('lookingForMatch')
+        dob = data.get('dob')
+        gender = data.get('gender')
 
         # print(phoneNumber, sectId, cityId, areaId)
         errors = {}
@@ -102,6 +106,45 @@ class HeadSerializer(serializers.ModelSerializer):
             except ValueError:
                 errors['bloodGroupId'] = [f"excepted number but got '{bloodGroupId}'."]
 
+        if dob:
+            try:
+                current_date = timezone.now().date()
+                print(current_date)
+                if datetime.strptime(dob, "%d %B, %Y").date() > current_date:
+                    errors['startDate'] = ["Date should be past or today."]
+            except ValueError:
+                pass
+
+        if lookingForMatch and dob is None:
+            errors['lookingForMatch'] = ["Please Enter your 'dob' to active matrimonial."]
+        elif lookingForMatch and dob:
+
+            try:
+                birthdate = datetime.strptime(dob.strip(), '%d %B, %Y')
+                boy_min_age = getattr(settings, 'BOY_MIN_AGE', 18)
+                girl_min_age = getattr(settings, 'GIRL_MIN_AGE', 18)
+                other_min_age = getattr(settings, 'OTHERS_MIN_AGE', 18)
+
+                # Get the current date
+                current_date = datetime.now()
+
+                # Calculate the age
+                age = current_date.year - birthdate.year - (
+                        (current_date.month, current_date.day) < (birthdate.month, birthdate.day))
+                if gender is None:
+                    errors['gender'] = ["Please Select Gender."]
+                elif str(gender).strip().lower() not in ('male', 'female', 'other', 'others'):
+                    errors['gender'] = ["Please Select Valid Gender."]
+                else:
+                    if str(gender).strip().lower() == 'male' and age < boy_min_age:
+                        errors['lookingForMatch'] = [f"Sorry! Your age is less then {boy_min_age}. So You are not eligible for matrimonial"]
+                    elif str(gender).strip().lower() == 'female' and age < girl_min_age :
+                        errors['lookingForMatch'] = [f"Sorry! Your age is less then {girl_min_age}. So You are not eligible for matrimonial"]
+                    elif str(gender).strip().lower() in ('other', 'others') and age < other_min_age :
+                        errors['lookingForMatch'] = [f"Sorry! Your age is less then {other_min_age}. So You are not eligible for matrimonial"]
+            except ValueError:
+                pass
+
         # default validation
         try:
             # store all data in "validated_data" variable and return it
@@ -149,6 +192,10 @@ class MemberSerializer(serializers.ModelSerializer):
         validated_data = None
         head_id = data.get('headId')
         phone_number = data.get('phoneNumber')
+        dob = data.get('dob')
+        gender = data.get('gender')
+        lookingForMatch = data.get('lookingForMatch')
+
 
         errors = {}
 
@@ -184,6 +231,47 @@ class MemberSerializer(serializers.ModelSerializer):
                     filtered_data = User.objects.filter(phoneNumber='0000000000', headId=head_id, name__iexact=member_name.strip()).count()
                     if filtered_data > 0:
                         errors['phoneNumber'] = ["This Member is already exist."]
+
+        if dob:
+            try:
+                current_date = timezone.now().date()
+                print(current_date)
+                if datetime.strptime(dob, "%d %B, %Y").date() > current_date:
+                    errors['startDate'] = ["Date should be past or today."]
+            except ValueError:
+                pass
+
+        if lookingForMatch and dob is None:
+            errors['lookingForMatch'] = ["Please Enter your 'dob' to active matrimonial."]
+        elif lookingForMatch and dob:
+            try:
+                birthdate = datetime.strptime(dob.strip(), '%d %B, %Y')
+                boy_min_age = getattr(settings, 'BOY_MIN_AGE', 18)
+                girl_min_age = getattr(settings, 'GIRL_MIN_AGE', 18)
+                other_min_age = getattr(settings, 'OTHERS_MIN_AGE', 18)
+
+                # Get the current date
+                current_date = datetime.now()
+
+                # Calculate the age
+                age = current_date.year - birthdate.year - (
+                        (current_date.month, current_date.day) < (birthdate.month, birthdate.day))
+                if gender is None:
+                    errors['gender'] = ["Please Select Gender."]
+                elif str(gender).strip().lower() not in ('male', 'female', 'other', 'others'):
+                    errors['gender'] = ["Please Select Valid Gender."]
+                else:
+                    if str(gender).strip().lower() == 'male' and age < boy_min_age:
+                        errors['lookingForMatch'] = [
+                            f"Sorry! Your age is less then {boy_min_age}. So You are not eligible for matrimonial"]
+                    elif str(gender).strip().lower() == 'female' and age < girl_min_age:
+                        errors['lookingForMatch'] = [
+                            f"Sorry! Your age is less then {girl_min_age}. So You are not eligible for matrimonial"]
+                    elif str(gender).strip().lower() in ('other', 'others') and age < other_min_age:
+                        errors['lookingForMatch'] = [
+                            f"Sorry! Your age is less then {other_min_age}. So You are not eligible for matrimonial"]
+            except ValueError:
+                pass
 
         # default validation
         try:

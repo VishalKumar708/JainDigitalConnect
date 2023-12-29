@@ -449,3 +449,62 @@ ERROR 2023-12-27 15:15:03,133  90 Invalid URL.
 ERROR 2023-12-27 15:19:06,975  90 Invalid URL.
 ERROR 2023-12-27 15:19:39,991  90 Invalid URL.
 ERROR 2023-12-27 15:20:25,954  90 Invalid URL.
+ERROR 2023-12-28 11:56:34,778  200 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 11:56:48,968  200 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 11:57:53,177  200 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 11:58:28,170  200 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 11:58:35,213  200 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 11:58:35,228  138 While converting dob to object an Exception occur == > 'NoneType' object has no attribute 'strip' 
+ERROR 2023-12-28 11:58:54,281  200 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:07:59,331  200 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:08:06,200  200 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:08:12,790  200 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:08:12,813  138 While converting dob to object an Exception occur == > 'NoneType' object has no attribute 'strip' 
+ERROR 2023-12-28 12:08:41,987  200 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:17:41,589  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:18:10,600  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:18:10,614  139 While converting dob to object an Exception occur == > 'NoneType' object has no attribute 'strip' 
+ERROR 2023-12-28 12:18:29,121  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:29:20,163  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:29:27,314  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:30:08,952  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:30:28,620  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:32:21,470  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:32:36,560  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:32:50,380  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:33:08,630  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:33:19,009  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:35:04,004  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:35:09,097  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:41:57,123  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:43:18,236  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:43:30,632  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:50:22,762  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:50:54,022  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:50:59,262  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:51:50,135  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:54:39,104  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:54:53,341  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 12:57:08,281  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 13:00:48,108  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 13:00:57,819  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 13:01:27,451  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 13:02:31,030  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 13:03:24,391  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 13:03:33,518  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 13:03:43,712  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 13:06:55,852  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 13:10:55,445  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 13:11:53,060  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 13:12:08,361  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 13:14:35,134  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 13:14:47,180  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 13:16:15,127  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 13:16:29,485  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 13:16:37,417  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 13:18:00,792  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 13:18:07,132  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 13:18:17,671  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 13:18:23,557  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 13:29:19,635  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-28 13:30:47,470  201 An exception occurred when we find user_id by access token. Token is invalid or expired

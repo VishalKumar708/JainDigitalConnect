@@ -32302,3 +32302,236 @@ INFO 2023-12-27 18:05:50,544  212 "POST /admin/jdcApi/dharamsthan/2/change/ HTTP
 INFO 2023-12-27 18:05:50,581  212 "GET /admin/jdcApi/dharamsthan/ HTTP/1.1" 200 20071
 INFO 2023-12-27 18:05:50,638  212 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
 INFO 2023-12-27 18:06:00,577  212 "GET /api/GETAllDharamSthanHistoryBySectId/1/ HTTP/1.1" 200 160
+INFO 2023-12-28 11:56:26,705  668 Watching for file changes with StatReloader
+WARNING 2023-12-28 11:56:34,854  241 Bad Request: /registerHead/
+WARNING 2023-12-28 11:56:34,855  212 "POST /registerHead/ HTTP/1.1" 400 96
+INFO 2023-12-28 11:56:49,005  212 "POST /registerHead/ HTTP/1.1" 200 96
+INFO 2023-12-28 11:57:53,206  212 "POST /registerHead/ HTTP/1.1" 200 96
+WARNING 2023-12-28 11:58:28,185  241 Bad Request: /registerHead/
+WARNING 2023-12-28 11:58:28,186  212 "POST /registerHead/ HTTP/1.1" 400 96
+WARNING 2023-12-28 11:58:35,229  241 Bad Request: /registerHead/
+WARNING 2023-12-28 11:58:35,229  212 "POST /registerHead/ HTTP/1.1" 400 88
+INFO 2023-12-28 11:58:54,309  212 "POST /registerHead/ HTTP/1.1" 200 96
+INFO 2023-12-28 12:01:00,183  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\auth.py changed, reloading.
+INFO 2023-12-28 12:01:02,222  668 Watching for file changes with StatReloader
+INFO 2023-12-28 12:07:03,011  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-12-28 12:07:04,768  668 Watching for file changes with StatReloader
+INFO 2023-12-28 12:07:52,998  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-12-28 12:07:54,446  668 Watching for file changes with StatReloader
+WARNING 2023-12-28 12:07:59,355  241 Bad Request: /registerHead/
+WARNING 2023-12-28 12:07:59,356  212 "POST /registerHead/ HTTP/1.1" 400 96
+WARNING 2023-12-28 12:08:06,222  241 Bad Request: /registerHead/
+WARNING 2023-12-28 12:08:06,223  212 "POST /registerHead/ HTTP/1.1" 400 96
+WARNING 2023-12-28 12:08:12,814  241 Bad Request: /registerHead/
+WARNING 2023-12-28 12:08:12,814  212 "POST /registerHead/ HTTP/1.1" 400 88
+INFO 2023-12-28 12:08:42,019  212 "POST /registerHead/ HTTP/1.1" 200 96
+INFO 2023-12-28 12:17:34,061  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-12-28 12:17:35,453  668 Watching for file changes with StatReloader
+WARNING 2023-12-28 12:17:41,618  241 Bad Request: /registerHead/
+WARNING 2023-12-28 12:17:41,618  212 "POST /registerHead/ HTTP/1.1" 400 96
+WARNING 2023-12-28 12:18:10,615  241 Bad Request: /registerHead/
+WARNING 2023-12-28 12:18:10,616  212 "POST /registerHead/ HTTP/1.1" 400 88
+INFO 2023-12-28 12:18:29,160  212 "POST /registerHead/ HTTP/1.1" 200 97
+INFO 2023-12-28 12:29:13,043  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-12-28 12:29:14,256  668 Watching for file changes with StatReloader
+WARNING 2023-12-28 12:29:20,179  241 Bad Request: /registerHead/
+WARNING 2023-12-28 12:29:20,181  212 "POST /registerHead/ HTTP/1.1" 400 96
+INFO 2023-12-28 12:29:27,350  212 "POST /registerHead/ HTTP/1.1" 200 97
+WARNING 2023-12-28 12:30:08,963  241 Bad Request: /registerHead/
+WARNING 2023-12-28 12:30:08,965  212 "POST /registerHead/ HTTP/1.1" 400 141
+WARNING 2023-12-28 12:30:28,636  241 Bad Request: /registerHead/
+WARNING 2023-12-28 12:30:28,638  212 "POST /registerHead/ HTTP/1.1" 400 86
+INFO 2023-12-28 12:31:05,789  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-12-28 12:31:07,081  668 Watching for file changes with StatReloader
+INFO 2023-12-28 12:32:11,456  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-12-28 12:32:12,673  668 Watching for file changes with StatReloader
+INFO 2023-12-28 12:32:21,510  212 "POST /registerHead/ HTTP/1.1" 200 97
+WARNING 2023-12-28 12:32:36,578  241 Bad Request: /registerHead/
+WARNING 2023-12-28 12:32:36,581  212 "POST /registerHead/ HTTP/1.1" 400 87
+WARNING 2023-12-28 12:32:50,394  241 Bad Request: /registerHead/
+WARNING 2023-12-28 12:32:50,395  212 "POST /registerHead/ HTTP/1.1" 400 140
+WARNING 2023-12-28 12:33:08,644  241 Bad Request: /registerHead/
+WARNING 2023-12-28 12:33:08,645  212 "POST /registerHead/ HTTP/1.1" 400 140
+WARNING 2023-12-28 12:33:19,024  241 Bad Request: /registerHead/
+WARNING 2023-12-28 12:33:19,025  212 "POST /registerHead/ HTTP/1.1" 400 140
+INFO 2023-12-28 12:34:56,936  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-12-28 12:34:58,313  668 Watching for file changes with StatReloader
+WARNING 2023-12-28 12:35:04,027  241 Bad Request: /registerHead/
+WARNING 2023-12-28 12:35:04,028  212 "POST /registerHead/ HTTP/1.1" 400 140
+WARNING 2023-12-28 12:35:09,113  241 Bad Request: /registerHead/
+WARNING 2023-12-28 12:35:09,114  212 "POST /registerHead/ HTTP/1.1" 400 140
+INFO 2023-12-28 12:41:39,400  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-12-28 12:41:40,583  668 Watching for file changes with StatReloader
+ERROR 2023-12-28 12:41:57,587  241 Internal Server Error: /registerHead/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py", line 34, in post
+    if serializer.is_valid():
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py", line 113, in to_internal_value
+    birthdate = datetime.strptime(dob.strip(), '%d %B, %Y')
+                                  ^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'strip'
+ERROR 2023-12-28 12:41:57,592  212 "POST /registerHead/ HTTP/1.1" 500 122589
+INFO 2023-12-28 12:43:14,234  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-12-28 12:43:15,705  668 Watching for file changes with StatReloader
+INFO 2023-12-28 12:43:18,271  212 "POST /registerHead/ HTTP/1.1" 200 97
+WARNING 2023-12-28 12:43:30,641  241 Bad Request: /registerHead/
+WARNING 2023-12-28 12:43:30,642  212 "POST /registerHead/ HTTP/1.1" 400 114
+INFO 2023-12-28 12:45:08,934  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-12-28 12:45:10,216  668 Watching for file changes with StatReloader
+INFO 2023-12-28 12:49:57,392  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-12-28 12:49:58,563  668 Watching for file changes with StatReloader
+WARNING 2023-12-28 12:50:22,786  241 Bad Request: /registerHead/
+WARNING 2023-12-28 12:50:22,788  212 "POST /registerHead/ HTTP/1.1" 400 140
+INFO 2023-12-28 12:50:51,115  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\auth_api\settings.py changed, reloading.
+INFO 2023-12-28 12:50:52,443  668 Watching for file changes with StatReloader
+WARNING 2023-12-28 12:50:54,043  241 Bad Request: /registerHead/
+WARNING 2023-12-28 12:50:54,044  212 "POST /registerHead/ HTTP/1.1" 400 140
+WARNING 2023-12-28 12:50:59,271  241 Bad Request: /registerHead/
+WARNING 2023-12-28 12:50:59,272  212 "POST /registerHead/ HTTP/1.1" 400 140
+INFO 2023-12-28 12:51:45,160  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\auth_api\settings.py changed, reloading.
+INFO 2023-12-28 12:51:46,389  668 Watching for file changes with StatReloader
+WARNING 2023-12-28 12:51:50,160  241 Bad Request: /registerHead/
+WARNING 2023-12-28 12:51:50,162  212 "POST /registerHead/ HTTP/1.1" 400 140
+INFO 2023-12-28 12:52:09,505  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\auth_api\settings.py changed, reloading.
+INFO 2023-12-28 12:52:10,778  668 Watching for file changes with StatReloader
+INFO 2023-12-28 12:54:05,664  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-12-28 12:54:07,025  668 Watching for file changes with StatReloader
+WARNING 2023-12-28 12:54:39,125  241 Bad Request: /registerHead/
+WARNING 2023-12-28 12:54:39,125  212 "POST /registerHead/ HTTP/1.1" 400 140
+WARNING 2023-12-28 12:54:53,356  241 Bad Request: /registerHead/
+WARNING 2023-12-28 12:54:53,357  212 "POST /registerHead/ HTTP/1.1" 400 140
+INFO 2023-12-28 12:57:03,213  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-12-28 12:57:04,600  668 Watching for file changes with StatReloader
+INFO 2023-12-28 12:57:08,316  212 "POST /registerHead/ HTTP/1.1" 200 97
+INFO 2023-12-28 13:00:36,948  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-12-28 13:00:38,906  668 Watching for file changes with StatReloader
+WARNING 2023-12-28 13:00:48,136  241 Bad Request: /registerHead/
+WARNING 2023-12-28 13:00:48,137  212 "POST /registerHead/ HTTP/1.1" 400 140
+WARNING 2023-12-28 13:00:57,832  241 Bad Request: /registerHead/
+WARNING 2023-12-28 13:00:57,833  212 "POST /registerHead/ HTTP/1.1" 400 114
+WARNING 2023-12-28 13:01:27,467  241 Bad Request: /registerHead/
+WARNING 2023-12-28 13:01:27,470  212 "POST /registerHead/ HTTP/1.1" 400 114
+WARNING 2023-12-28 13:02:31,054  241 Bad Request: /registerHead/
+WARNING 2023-12-28 13:02:31,054  212 "POST /registerHead/ HTTP/1.1" 400 134
+INFO 2023-12-28 13:03:20,130  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-12-28 13:03:21,356  668 Watching for file changes with StatReloader
+WARNING 2023-12-28 13:03:24,411  241 Bad Request: /registerHead/
+WARNING 2023-12-28 13:03:24,412  212 "POST /registerHead/ HTTP/1.1" 400 134
+WARNING 2023-12-28 13:03:33,536  241 Bad Request: /registerHead/
+WARNING 2023-12-28 13:03:33,537  212 "POST /registerHead/ HTTP/1.1" 400 87
+WARNING 2023-12-28 13:03:43,721  241 Bad Request: /registerHead/
+WARNING 2023-12-28 13:03:43,721  212 "POST /registerHead/ HTTP/1.1" 400 87
+INFO 2023-12-28 13:06:39,588  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-12-28 13:06:40,920  668 Watching for file changes with StatReloader
+INFO 2023-12-28 13:06:51,692  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-12-28 13:06:52,853  668 Watching for file changes with StatReloader
+INFO 2023-12-28 13:06:55,894  212 "POST /registerHead/ HTTP/1.1" 200 97
+INFO 2023-12-28 13:10:46,749  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-12-28 13:10:48,794  668 Watching for file changes with StatReloader
+ERROR 2023-12-28 13:10:55,529  241 Internal Server Error: /registerHead/
+Traceback (most recent call last):
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py", line 34, in post
+    if serializer.is_valid():
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\venv\Lib\site-packages\rest_framework\serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py", line 127, in to_internal_value
+    elif gender.strip().lower() not in ('male', 'female', 'other', 'others'):
+         ^^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'strip'
+ERROR 2023-12-28 13:10:55,536  212 "POST /registerHead/ HTTP/1.1" 500 124500
+INFO 2023-12-28 13:11:50,592  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-12-28 13:11:52,418  668 Watching for file changes with StatReloader
+WARNING 2023-12-28 13:11:53,081  241 Bad Request: /registerHead/
+WARNING 2023-12-28 13:11:53,082  212 "POST /registerHead/ HTTP/1.1" 400 96
+INFO 2023-12-28 13:12:08,392  212 "POST /registerHead/ HTTP/1.1" 200 97
+INFO 2023-12-28 13:14:26,834  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-12-28 13:14:28,375  668 Watching for file changes with StatReloader
+WARNING 2023-12-28 13:14:35,155  241 Bad Request: /registerHead/
+WARNING 2023-12-28 13:14:35,155  212 "POST /registerHead/ HTTP/1.1" 400 96
+WARNING 2023-12-28 13:14:47,189  241 Bad Request: /registerHead/
+WARNING 2023-12-28 13:14:47,189  212 "POST /registerHead/ HTTP/1.1" 400 100
+INFO 2023-12-28 13:16:11,505  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-12-28 13:16:12,880  668 Watching for file changes with StatReloader
+WARNING 2023-12-28 13:16:15,149  241 Bad Request: /registerHead/
+WARNING 2023-12-28 13:16:15,150  212 "POST /registerHead/ HTTP/1.1" 400 137
+WARNING 2023-12-28 13:16:29,506  241 Bad Request: /registerHead/
+WARNING 2023-12-28 13:16:29,510  212 "POST /registerHead/ HTTP/1.1" 400 96
+INFO 2023-12-28 13:16:37,450  212 "POST /registerHead/ HTTP/1.1" 200 97
+INFO 2023-12-28 13:17:38,883  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-12-28 13:17:40,261  668 Watching for file changes with StatReloader
+WARNING 2023-12-28 13:18:00,814  241 Bad Request: /registerHead/
+WARNING 2023-12-28 13:18:00,815  212 "POST /registerHead/ HTTP/1.1" 400 96
+INFO 2023-12-28 13:18:07,160  212 "POST /registerHead/ HTTP/1.1" 200 97
+WARNING 2023-12-28 13:18:17,689  241 Bad Request: /registerHead/
+WARNING 2023-12-28 13:18:17,690  212 "POST /registerHead/ HTTP/1.1" 400 96
+INFO 2023-12-28 13:18:23,584  212 "POST /registerHead/ HTTP/1.1" 200 97
+INFO 2023-12-28 13:19:50,696  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-12-28 13:19:52,715  668 Watching for file changes with StatReloader
+INFO 2023-12-28 13:29:07,649  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-12-28 13:29:08,828  668 Watching for file changes with StatReloader
+WARNING 2023-12-28 13:29:19,653  241 Bad Request: /registerHead/
+WARNING 2023-12-28 13:29:19,654  212 "POST /registerHead/ HTTP/1.1" 400 91
+INFO 2023-12-28 13:30:08,718  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-12-28 13:30:10,142  668 Watching for file changes with StatReloader
+INFO 2023-12-28 13:30:47,503  212 "POST /registerHead/ HTTP/1.1" 200 97
+INFO 2023-12-28 13:31:37,081  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\user_views.py changed, reloading.
+INFO 2023-12-28 13:31:39,144  668 Watching for file changes with StatReloader
+INFO 2023-12-28 13:35:14,302  266 C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\accounts\serializers.py changed, reloading.
+INFO 2023-12-28 13:35:16,135  668 Watching for file changes with StatReloader
+INFO 2023-12-28 13:57:05,730  668 Watching for file changes with StatReloader

@@ -304,3 +304,4 @@ MEDIA_URL = '/media/'
 # Define age limits
 BOY_MIN_AGE = 21
 GIRL_MIN_AGE = 18
+# OTHERS_MIN_AGE = 25

@@ -4,6 +4,7 @@ from django.db import models
 from .manager import UserManager
 
 
+
 class BaseModel(models.Model):
     isActive = models.BooleanField(default=True)
     groupId = models.CharField(max_length=40, default=1)
