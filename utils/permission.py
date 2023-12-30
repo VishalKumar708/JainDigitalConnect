@@ -1,5 +1,6 @@
 # permissions.py
 from rest_framework import permissions
+from rest_framework.exceptions import PermissionDenied
 
 
 class IsOwnerOrReadOnly(permissions.BasePermission):
@@ -23,16 +24,38 @@ class IsAdminUser(permissions.BasePermission):
 
     def has_permission(self, request, view):
         # Implement your logic here to determine admin status
-        print("custom Admin permission class==> ", request.user)
-        return request.user.isAdmin  # Example: Check if the user is a superuser/admin
+        try:
+            if request.user.isAdmin:
+                return True
+            return False
+        except AttributeError:
+            return False
 
 
 class IsHeadUser(permissions.BasePermission):
     """
-    Custom permission to check if the user is an admin.
+    Custom permission to check if the user is a head.
     """
 
     def has_permission(self, request, view):
-        print('head custom permission==> ', request.user.headId)
-        return not request.user.headId
+        try:
+            if request.user.headId is None or request.user.headId:
+                return True
+            return False
+        except AttributeError:
+            return False
+
+
+class IsAccessToMatrimonialAndResidents(permissions.BasePermission):
+    """
+    Custom permission to check if the user is approved by admin or head.
+    """
+
+    def has_permission(self, request, view):
+        try:
+            if not request.user.isActive:
+                raise PermissionDenied('Please wait for admin approval.')
+            return True
+        except AttributeError:
+            return False
 

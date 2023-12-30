@@ -508,3 +508,42 @@ ERROR 2023-12-28 13:18:17,671  201 An exception occurred when we find user_id by
 ERROR 2023-12-28 13:18:23,557  201 An exception occurred when we find user_id by access token. Token is invalid or expired
 ERROR 2023-12-28 13:29:19,635  201 An exception occurred when we find user_id by access token. Token is invalid or expired
 ERROR 2023-12-28 13:30:47,470  201 An exception occurred when we find user_id by access token. Token is invalid or expired
+ERROR 2023-12-29 15:41:14,891  90 Invalid URL.
+ERROR 2023-12-29 15:41:29,097  90 Invalid URL.
+ERROR 2023-12-29 15:42:48,768  90 Invalid URL.
+ERROR 2023-12-29 15:42:51,751  90 Invalid URL.
+ERROR 2023-12-29 15:43:26,231  90 Invalid URL.
+ERROR 2023-12-29 15:44:55,851  90 Invalid URL.
+ERROR 2023-12-29 15:44:58,852  90 Invalid URL.
+ERROR 2023-12-29 15:46:40,233  90 Invalid URL.
+ERROR 2023-12-29 15:48:05,136  90 Invalid URL.
+ERROR 2023-12-29 15:48:46,591  90 Invalid URL.
+ERROR 2023-12-29 15:48:58,806  90 Invalid URL.
+ERROR 2023-12-29 15:50:25,041  90 Invalid URL.
+ERROR 2023-12-29 15:51:41,043  90 Invalid URL.
+ERROR 2023-12-29 15:51:43,509  90 Invalid URL.
+ERROR 2023-12-29 15:52:56,906  90 Invalid URL.
+ERROR 2023-12-29 15:53:42,901  90 Invalid URL.
+ERROR 2023-12-29 15:53:51,743  90 Invalid URL.
+ERROR 2023-12-29 15:53:58,828  90 Invalid URL.
+ERROR 2023-12-29 15:54:50,246  90 Invalid URL.
+ERROR 2023-12-29 16:04:53,543  90 Invalid URL.
+ERROR 2023-12-29 16:50:16,028  90 Invalid URL.
+ERROR 2023-12-29 17:02:55,983  90 Invalid URL.
+ERROR 2023-12-30 10:26:37,722  90 Invalid URL.
+ERROR 2023-12-30 12:13:15,674  90 Invalid URL.
+ERROR 2023-12-30 15:06:16,196  128 Got AttributeError when attempting to get a value for field `cityName` on serializer `GETCityWithCountSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
+Original exception text was: 'QuerySet' object has no attribute 'cityName'.
+ERROR 2023-12-30 15:19:50,341  156 Got AttributeError when attempting to get a value for field `cityName` on serializer `GETCityWithCountSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
+Original exception text was: 'QuerySet' object has no attribute 'cityName'.
+ERROR 2023-12-30 15:57:33,966  92 Invalid URL.
+ERROR 2023-12-30 15:59:40,863  92 Invalid URL.
+ERROR 2023-12-30 16:27:51,852  54 Invalid JSON data. Expecting value: line 1 column 1 (char 0)
+ERROR 2023-12-30 16:38:18,632  52 Invalid JSON data
+ERROR 2023-12-30 16:39:45,182  52 Invalid JSON data
+ERROR 2023-12-30 16:46:08,222  54 Invalid JSON data
+ERROR 2023-12-30 16:46:22,542  54 Invalid JSON data
+ERROR 2023-12-30 16:46:39,752  54 Invalid JSON data
+ERROR 2023-12-30 16:46:46,249  54 Invalid JSON data

@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'fcm_django',
-    'jdcApi'
+    'jdcApi',
+    'django_countries'
 
     # 'rest_framework.authtoken'
 ]

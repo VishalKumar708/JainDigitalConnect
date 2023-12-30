@@ -1,11 +1,10 @@
-from rest_framework.generics import *
+
 from rest_framework.views import APIView
 
 from .serializer import *
 
 from rest_framework.response import Response
 from jdcApi.models import Aarti, MstSect, Feedback
-from rest_framework.permissions import IsAuthenticated
 from utils.get_id_by_token import get_user_id_from_token_view
 from accounts.pagination import CustomPagination
 
@@ -13,7 +12,7 @@ from utils.permission import IsHeadUser, IsAdminUser
 
 
 class GETAllFeedbackForAdmin(APIView):
-    permission_classes = [IsHeadUser]
+    permission_classes = [IsAdminUser]
     pagination_class = CustomPagination
 
     def get(self, request, *args, **kwargs):
@@ -47,13 +46,13 @@ class GETAllFeedbackForAdmin(APIView):
             response_data = {
                 'statusCode': 500,
                 'status': 'error',
-                'data': {'error':'Internal Server Error.'},
+                'data': {'message':'Internal Server Error.'},
             }
             return Response(response_data, status=500)
 
 
 class GETFeedbackDetailsById(APIView):
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAdminUser]
 
     def get(self, request, feedbackId, *args, **kwargs):
         try:
@@ -80,17 +79,17 @@ class GETFeedbackDetailsById(APIView):
                 'data': {'message': f"excepted a number but you got '{feedbackId}'."}
             }
             return Response(response_data, status=404)
-        # except Exception as e:
-        #     response_data = {
-        #         'statusCode': 500,
-        #         'status': 'error',
-        #         'data': {'message': 'Internal Server Error.'}
-        #     }
-        #     return Response(response_data, status=500)
+        except Exception as e:
+            response_data = {
+                'statusCode': 500,
+                'status': 'error',
+                'data': {'message': 'Internal Server Error.'}
+            }
+            return Response(response_data, status=500)
 
 
 class POSTNewFeedback(APIView):
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
         try:

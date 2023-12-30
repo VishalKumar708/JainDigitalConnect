@@ -265,8 +265,12 @@ class MstFeedbackTitle(BaseModel):
     order = models.IntegerField()
 
 
-class Feedback(BaseModel):
+class Feedback(models.Model):
     id = models.BigAutoField(primary_key=True)
     feedbackTitleId = models.ForeignKey(MstFeedbackTitle, on_delete=models.CASCADE, related_name='feedbackTitles')
     body = models.TextField()
+    createdBy = models.CharField(max_length=50, null=True)
+    updatedBy = models.CharField(max_length=50, null=True)
+    createdDate = models.DateTimeField(auto_now_add=True)
+    updatedDate = models.DateTimeField(auto_now=True)
 

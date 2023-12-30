@@ -166,27 +166,52 @@ class GETAllDharamSthanHistoryBySectId(APIView):
     def get(self, request, sectId, *args, **kwargs):
         try:
             current_year = timezone.now().year
-            queryset = DharamSthanHistory.objects.filter(
-                isActive=True,
-                dharamSthanId__isActive=True,
-                dharamSthanId__isVerified=True,
-                dharamSthanId__sectId=sectId,
-                year=current_year
-            )
-            if len(queryset) < 1:
+            search_field = request.GET.get('title')
+            if search_field is None:
+                queryset = DharamSthanHistory.objects.filter(
+                    isActive=True,
+                    dharamSthanId__isActive=True,
+                    dharamSthanId__isVerified=True,
+                    dharamSthanId__sectId=sectId,
+                    year=current_year
+                )
+                if len(queryset) < 1:
+                    response_data = {
+                        'status': 200,
+                        'statusCode': 'success',
+                        'data': {'message': 'No Record Found!'}
+                    }
+                    return Response(response_data)
+                serializer = GETAllDharamSthanHistorySerializer(queryset, many=True)
                 response_data = {
                     'status': 200,
                     'statusCode': 'success',
-                    'data': {'message': 'No Record Found!'}
+                    'data': serializer.data
                 }
                 return Response(response_data)
-            serializer = GETAllDharamSthanHistorySerializer(queryset, many=True)
-            response_data = {
-                'status': 200,
-                'statusCode': 'success',
-                'data': serializer.data
-            }
-            return Response(response_data)
+            else:
+                queryset = DharamSthanHistory.objects.filter(
+                    isActive=True,
+                    dharamSthanId__isActive=True,
+                    dharamSthanId__isVerified=True,
+                    dharamSthanId__sectId=sectId,
+                    year=current_year,
+                    title__icontains=search_field.strip()
+                )
+                if len(queryset) < 1:
+                    response_data = {
+                        'status': 200,
+                        'statusCode': 'success',
+                        'data': {'message': 'No Record Found!'}
+                    }
+                    return Response(response_data)
+                serializer = SearchDharamSthanHistorySerializer(queryset, many=True)
+                response_data = {
+                    'status': 200,
+                    'statusCode': 'success',
+                    'data': serializer.data
+                }
+                return Response(response_data)
         except ValueError:
             response_data = {
                 'status': 404,

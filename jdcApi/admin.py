@@ -151,7 +151,7 @@ admin.site.register(MstFeedbackTitle, FeedbackTitleAdmin)
 
 
 class FeedbackAdmin(admin.ModelAdmin):
-    list_display = ['id', 'feedbackTitleId', 'body', 'isActive', 'createdBy', 'updatedBy']
+    list_display = ['id', 'feedbackTitleId', 'body', 'createdBy', 'updatedBy']
 
 
 admin.site.register(Feedback, FeedbackAdmin)

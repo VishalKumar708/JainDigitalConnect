@@ -3,89 +3,28 @@
 import json
 from django.http import JsonResponse
 from django.urls import resolve
+from django.utils.deprecation import MiddlewareMixin
 from rest_framework import status
 import logging
 
 
 error_logger = logging.getLogger('error')
-info_logger = logging.getLogger('django')
+info_logger = logging.getLogger('info')
 
-
-# class ValidateURLAndJSONMiddleware:
-#     def __init__(self, get_response):
-#         self.get_response = get_response
-#
-#     def __call__(self, request):
-#         # Check if the URL is valid
-#
-#         try:
-#             resolve(request.path_info)
-#             # print(request.path_info)
-#         except Exception as e:
-#             response_data = {
-#                 'status_code': status.HTTP_404_NOT_FOUND,
-#                 'status': 'failed',
-#                 'message': f'Please provide a valid URL.',
-#             }
-#             error_logger.error('Invalid URL.')
-#             return JsonResponse(response_data, status=404)
-#
-#         if request.method in ['POST', 'PUT']:
-#             # Check if the request has a valid JSON content type
-#             content_type = request.content_type
-#             print('content_type ==> ', content_type)
-#             # if content_type != 'application/json':
-#             if content_type not in ('application/x-www-form-urlencoded', 'application/json', 'multipart/form-data'):
-#                 response_data = {
-#                     'statusCode': 415,  # Use 415 Unsupported Media Type for non-JSON data
-#                     'status': 'Failed',
-#                     'data': {'error': 'Unsupported Media Type', 'details': f'Expected application/json but got {content_type}'}
-#                 }
-#                 error_logger.error(f'Unsupported Media Type. Expected application/json but got {content_type}')
-#
-#                 return JsonResponse(response_data, status=415)
-#
-#             # Attempt to parse the request data as JSON
-#             if content_type == 'application/json':
-#                 try:
-#                     request_data = json.loads(request.body.decode('utf-8'))  # Assumes UTF-8 encoding
-#                 except json.JSONDecodeError as e:
-#                     response_data = {
-#                         'statusCode': 400,  # Use 400 Bad Request for invalid JSON
-#                         'status': 'Failed',
-#                         'data': {'error': 'Invalid JSON data', 'details': str(e)}
-#                     }
-#                     error_logger.error(f'Invalid JSON data.{str(e)}')
-#
-#                     return JsonResponse(response_data, status=400)
-#
-#
-#             # print('Middleware working fine')
-#
-#         # response = self.get_response(request)
-#         # # If response status code is 500, modify the response
-#         # if response.status_code == 500:
-#         #     response_data = {
-#         #         'statusCode': 500,
-#         #         'status': 'error',
-#         #         'data': {'message': "Internal Server Error."},
-#         #     }
-#         #     return JsonResponse(response_data, status=500)
-#         # return response
-#         return self.get_response(request)
 
 class ValidateURLAndJSONMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response
 
     def __call__(self, request):
+        # check url is valid or not
         try:
             resolve(request.path_info)
         except Exception as e:
             response_data = {
                 'status_code': status.HTTP_404_NOT_FOUND,
                 'status': 'failed',
-                'msg': f'Please provide a valid URL.',
+                'data': {'message': f'Requested resource not found.'},
             }
             error_logger.error('Invalid URL.')
             return JsonResponse(response_data, status=404)
@@ -93,26 +32,62 @@ class ValidateURLAndJSONMiddleware:
         if request.method in ['POST', 'PUT']:
             content_type = request.content_type
 
-            if content_type not in ('application/x-www-form-urlencoded', 'application/json', 'multipart/form-data'):
-                response_data = {
-                    'statusCode': 415,
-                    'status': 'Failed',
-                    'data': {'error': 'Unsupported Media Type', 'details': f'Expected application/json but got {content_type}'}
-                }
-                error_logger.error(f'Unsupported Media Type. Expected application/json but got {content_type}')
-                return JsonResponse(response_data, status=415)
-
             if content_type == 'application/json':
                 try:
-                    request_data = json.loads(request.body.decode('utf-8'))
+                    json.loads(request.body.decode('utf-8'))
                 except json.JSONDecodeError as e:
                     response_data = {
                         'statusCode': 400,
                         'status': 'Failed',
-                        'data': {'error': 'Invalid JSON data', 'details': str(e)}
+                        'data': {'message': 'Invalid JSON data', 'details': str(e)}
                     }
                     error_logger.error(f'Invalid JSON data. {str(e)}')
                     return JsonResponse(response_data, status=400)
+            elif content_type in ('application/x-www-form-urlencoded', 'multipart/form-data'):
+                pass
+            else:
+                response_data = {
+                    'statusCode': 400,
+                    'status': 'Failed',
+                    'data': {'message': f"excepted JSON Data but got '{content_type}'", }
+                }
+                error_logger.error(f'Invalid JSON data')
+                return JsonResponse(response_data, status=400)
 
+        # response = self.get_response(request)
+        # if hasattr(response, 'status_code'):
+        #     return self.process_response(response)
+        # return response
         return self.get_response(request)
+
+    def process_exception(self, request, exception):
+        # print('exception method called on middleware')
+        if exception:
+            response_data = {
+                'statusCode': 500,
+                'status': 'failed',
+                'data': {'message': 'Internal Server Error'},
+
+            }
+            error_logger.error(str(exception))
+            return JsonResponse(response_data, status=response_data['statusCode'])
+        return None
+
+    # def get_status(self, status_code):
+    #     if status_code == 200:
+    #         return 'Success'
+    #     elif status_code == 500:
+    #         return 'Internal Server Error'
+    #     else:
+    #         return 'Failed'
+    #
+    # def process_response(self, response):
+    #     print('process response method called')
+    #     formatted_data = {
+    #         'statusCode': response.status_code,
+    #         'status': self.get_status(response.status_code),
+    #         'data': response.data if hasattr(response, 'data') else None
+    #     }
+    #     return JsonResponse(formatted_data, status=response.status_code)
+
 

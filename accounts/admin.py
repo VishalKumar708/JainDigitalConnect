@@ -4,7 +4,7 @@ from .models import User, OTP, Notification, NotificationHistory
 
 class UserAdmin(admin.ModelAdmin):
     list_display = ['id', 'headId', 'name',  'relationId', 'phoneNumber', 'cityId', 'maritalStatusId', 'lookingForMatch', 'sectId',
-                  'professionId', 'bloodGroupId', 'isAdmin', 'dob', 'nativePlace', 'gotra', 'phoneNumberVisibility', 'gender','createdBy', 'updatedBy']
+                  'professionId', 'bloodGroupId', 'isActive', 'isAdmin', 'dob', 'nativePlace', 'gotra', 'phoneNumberVisibility', 'gender','createdBy', 'updatedBy']
 
 
 admin.site.register(User, UserAdmin)

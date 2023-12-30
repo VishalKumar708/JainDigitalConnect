@@ -13,6 +13,7 @@ from django.db.models import Case, F, IntegerField, When
 from django.utils import timezone
 from datetime import datetime, timedelta
 from django.conf import settings
+from utils.permission import IsAccessToMatrimonialAndResidents
 
 # Default age limits
 DEFAULT_BOY_MIN_AGE = 18
@@ -24,11 +25,11 @@ GIRL_MIN_AGE = getattr(settings, 'GIRL_MIN_AGE', DEFAULT_GIRL_MIN_AGE)
 
 
 class GETAllApprovedCityMatrimonial(APIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, IsAccessToMatrimonialAndResidents]
     """ show all approved city and search 'cityName' by user."""
 
     def get(self, request, *args, **kwargs):
-        try:
+        # try:
             #  for search city Name
             cityName = request.GET.get('cityName')
             if cityName:
@@ -41,7 +42,7 @@ class GETAllApprovedCityMatrimonial(APIView):
                     }
                     return Response(response_data)
 
-                serializer = GETCityWithCountSerializer(queryset, many=True)
+                serializer = GETCityWithCountSerializer(queryset)
                 response_data = {
                     'statusCode': 200,
                     'status': 'Success',
@@ -75,19 +76,18 @@ class GETAllApprovedCityMatrimonial(APIView):
 
             }
             return Response(response_data)
-        except Exception as e:
-            response_data = {
-                'status_code': 500,
-                'status': 'error',
-                'data': {'message': str(e)},
-            }
-            return Response(response_data, status=500)
+        # except Exception as e:
+        #     response_data = {
+        #         'status_code': 500,
+        #         'status': 'error',
+        #         'data': {'message': str(e)},
+        #     }
+        #     return Response(response_data, status=500)
 
 
 class GETAllResidentsByCityIdForMatrimonial(APIView):
     pagination_class = CustomPagination
     permission_classes = [IsAuthenticated]
-
 
     def get(self, request, cityId, *args, **kwargs):
         try:

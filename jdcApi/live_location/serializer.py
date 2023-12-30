@@ -26,12 +26,6 @@ class GETAllSectWithCountForDharamSthanHistorySerializer(serializers.ModelSerial
         return count
 
 
-class GETAllSectForLiveLocationSerializer(serializers.ModelSerializer):
-    class Meta:
-        fields = ['id', 'sectName']
-        model = MstSect
-
-
 class GETAllDharamSthanHistorySerializer(serializers.ModelSerializer):
     uploadedBy = serializers.SerializerMethodField()
 
@@ -45,6 +39,21 @@ class GETAllDharamSthanHistorySerializer(serializers.ModelSerializer):
             return obj.name
         except User.DoesNotExist:
             return ""
+
+
+class SearchDharamSthanHistorySerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = DharamSthanHistory
+        fields = ['id', 'title', "year", 'body', 'dharamSthanId']
+
+# ************************************************************************************************
+
+
+class GETAllSectForLiveLocationSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = ['id', 'sectName']
+        model = MstSect
 
 
 class GETDharamSthanDetailsSerializer(serializers.ModelSerializer):

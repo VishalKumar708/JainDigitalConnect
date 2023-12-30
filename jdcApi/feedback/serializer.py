@@ -122,7 +122,9 @@ class GETAllFeedbackForAdminSerializer(serializers.ModelSerializer):
 
     def get_uploadedBy(self, instance):
         try:
-            user_obj = User.objects.get(id=instance.createdBy)
-            return user_obj.name
+            if instance.createdBy:
+                user_obj = User.objects.get(id=instance.createdBy)
+                return user_obj.name
+            return "Guest User"
         except User.DoesNotExist:
             return ""
