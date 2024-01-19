@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from jdcApi.models import LiteratureDocument, MstSect
 from rest_framework.permissions import IsAuthenticated
 from utils.get_id_by_token import get_user_id_from_token_view
-from django.db.models import Q
+from django.db.models import Q, Count
 from accounts.pagination import CustomPagination
 
 
@@ -14,30 +14,23 @@ class POSTNewLiteratureDocument(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
-        try:
-            get_user_id = get_user_id_from_token_view(request)
-            serializer = CREATENewLiteratureDocumentSerializer(data=request.data, context={'user_id_by_token': get_user_id})
-            if serializer.is_valid():
-                serializer.save()
-                response_data = {
-                    'statusCode': 200,
-                    'status': 'Success',
-                    'data': {'message': 'Record Added successfully.'}
-                }
-                return Response(response_data)
+
+        get_user_id = get_user_id_from_token_view(request)
+        serializer = CREATENewLiteratureDocumentSerializer(data=request.data, context={'user_id_by_token': get_user_id})
+        if serializer.is_valid():
+            serializer.save()
             response_data = {
-                'statusCode': 400,
-                'status': 'failed',
-                'data': serializer.errors
+                'statusCode': 200,
+                'status': 'Success',
+                'data': {'message': 'Record Added successfully.'}
             }
-            return Response(response_data, status=400)
-        except Exception as e:
-            response_data = {
-                'statusCode': 500,
-                'status': 'error',
-                'data': {'error': str(e)},
-            }
-            return Response(response_data, status=500)
+            return Response(response_data)
+        response_data = {
+            'statusCode': 400,
+            'status': 'failed',
+            'data': serializer.errors
+        }
+        return Response(response_data, status=400)
 
 
 class PUTLiteratureDocumentById(APIView):
@@ -111,7 +104,10 @@ class GETAllSectLiteratureDocument(APIView):
     """ Count 'LiteratureDocument' by 'Sect' """
 
     def get(self, request, *args, **kwargs):
-        queryset = MstSect.objects.filter(isActive=True)
+        queryset = MstSect.objects.filter(isActive=True).annotate(
+            count=Count('literaturedocument', filter=Q(
+                literaturedocument__isActive=True, literaturedocument__isVerified=True))
+        ).values('id', 'sectName', 'count').order_by('order')
         if len(queryset) < 1:
             response_data = {
                 'status': 200,
@@ -134,85 +130,71 @@ class GETAllLiteratureDocumentForAdmin(APIView):
     pagination_class = CustomPagination
 
     def get(self, request, *args, **kwargs):
-        try:
-            status = request.GET.get('status')
-            if status is None or status.strip().lower() == 'active':
-                queryset = LiteratureDocument.objects.filter(isActive=True, isVerified=True).order_by('title')
-            elif status.strip().lower() == 'inactive':
-                queryset = LiteratureDocument.objects.filter(Q(isActive=False) | Q(isVerified=False)).order_by('title')
-            else:
-                response_data = {
-                    'status': 400,
-                    'statusCode': 'failed',
-                    'data': {'message': f"'status' expected 'active' or 'inactive' value, but got '{status}'."}
-                }
-                return Response(response_data, status=400)
 
-            # queryset = self.get_queryset()
-            if len(queryset) < 1:
-                response_data = {
-                    'statusCode': 200,
-                    'status': 'Success',
-                    'data': {'message': 'No Record found.'}
-                }
+        status = request.GET.get('status')
+        if status is None or status.strip().lower() == 'active':
+            queryset = LiteratureDocument.objects.filter(isActive=True, isVerified=True).order_by('title')
+        elif status.strip().lower() == 'inactive':
+            queryset = LiteratureDocument.objects.filter(Q(isActive=False) | Q(isVerified=False)).order_by('title')
+        else:
+            response_data = {
+                'status': 400,
+                'statusCode': 'failed',
+                'data': {'message': f"'status' expected 'active' or 'inactive' value, but got '{status}'."}
+            }
+            return Response(response_data, status=400)
 
-                return Response(response_data)
-            # pagination
-            pagination_data = {}
-            paginator = self.pagination_class()
-            page = paginator.paginate_queryset(queryset, request)
-            if page is not None:
-                serializer = GETAllActiveLiteratureDocumentSerializer(page, many=True)
-                pagination_data = paginator.get_paginated_response(serializer.data)
-            # serializer = self.get_serializer(queryset, many=True)
-            response_data = {**{
+        # queryset = self.get_queryset()
+        if len(queryset) < 1:
+            response_data = {
                 'statusCode': 200,
-                'status': 'Success'
-            }, **pagination_data}
+                'status': 'Success',
+                'data': {'message': 'No Record found.'}
+            }
 
             return Response(response_data)
-        except Exception as e:
-            response_data = {
-                'statusCode': 500,
-                'status': 'error',
-                'data': {'error': str(e)},
-            }
-            return Response(response_data, status=500)
+        # pagination
+        pagination_data = {}
+        paginator = self.pagination_class()
+        page = paginator.paginate_queryset(queryset, request)
+        if page is not None:
+            serializer = GETAllActiveLiteratureDocumentSerializer(page, many=True)
+            pagination_data = paginator.get_paginated_response(serializer.data)
+        # serializer = self.get_serializer(queryset, many=True)
+        response_data = {**{
+            'statusCode': 200,
+            'status': 'Success'
+        }, **pagination_data}
+
+        return Response(response_data)
 
 
 class GETAllApprovedLiteratureDocument(APIView):
     pagination_class = CustomPagination
 
     def get(self, request, *args, **kwargs):
-        try:
-            queryset = LiteratureDocument.objects.filter(isActive=True, isVerified=True).order_by('title')
-            # queryset = self.get_queryset()
-            if len(queryset) < 1:
-                response_data = {
-                    'statusCode': 200,
-                    'status': 'Success',
-                    'data': {'message': 'No Record found.'}
-                }
 
-                return Response(response_data)
-            # pagination
-            pagination_data = {}
-            paginator = self.pagination_class()
-            page = paginator.paginate_queryset(queryset, request)
-            if page is not None:
-                serializer = GETAllActiveLiteratureDocumentSerializer(page, many=True)
-                pagination_data = paginator.get_paginated_response(serializer.data)
-            # serializer = self.get_serializer(queryset, many=True)
-            response_data = {**{
+        queryset = LiteratureDocument.objects.filter(isActive=True, isVerified=True).order_by('title')
+        # queryset = self.get_queryset()
+        if len(queryset) < 1:
+            response_data = {
                 'statusCode': 200,
-                'status': 'Success'
-            }, **pagination_data}
+                'status': 'Success',
+                'data': {'message': 'No Record found.'}
+            }
 
             return Response(response_data)
-        except Exception as e:
-            response_data = {
-                'statusCode': 500,
-                'status': 'error',
-                'data': {'error': str(e)},
-            }
-            return Response(response_data, status=500)
+        # pagination
+        pagination_data = {}
+        paginator = self.pagination_class()
+        page = paginator.paginate_queryset(queryset, request)
+        if page is not None:
+            serializer = GETAllActiveLiteratureDocumentSerializer(page, many=True)
+            pagination_data = paginator.get_paginated_response(serializer.data)
+        # serializer = self.get_serializer(queryset, many=True)
+        response_data = {**{
+            'statusCode': 200,
+            'status': 'Success'
+        }, **pagination_data}
+
+        return Response(response_data)

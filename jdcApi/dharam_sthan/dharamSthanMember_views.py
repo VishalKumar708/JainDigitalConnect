@@ -28,13 +28,7 @@ class POSTNewDharamSthanMember(APIView):
                 'data': serializer.errors
             }
             return Response(response_data, status=400)
-        # except Exception as e:
-        #     response_data = {
-        #         'statusCode': 500,
-        #         'status': 'error',
-        #         'data': {'message': "Internal Server Error"},
-        #     }
-        #     return Response(response_data, status=500)
+
 
 
 class PUTDharamSthanMemberById(APIView):
@@ -73,13 +67,7 @@ class PUTDharamSthanMemberById(APIView):
                 'data': {'message': f"'DharamSthanMember id' excepted a number but got '{dharamSthanMemberId}'"},
             }
             return Response(response_data, status=404)
-        # except Exception as e:
-        #     response_data = {
-        #         'statusCode': status.HTTP_500_INTERNAL_SERVER_ERROR,
-        #         'status': 'error',
-        #         'data': {'error': str(e)},
-        #     }
-        #     return Response(response_data, status=500)
+
 
 
 class GETDharamSthanMemberDetailsById(APIView):
@@ -109,13 +97,6 @@ class GETDharamSthanMemberDetailsById(APIView):
                 'data': {'message': f"excepted a number but you got '{dharamSthanMemberId}'."}
             }
             return Response(response_data, status=404)
-        except Exception as e:
-            response_data = {
-                'statusCode': 500,
-                'status': 'error',
-                'data': {'message': 'Internal Server Error.'}
-            }
-            return Response(response_data, status=500)
 
 
 class GETAllDharamSthanMembersByDharamSthanId(APIView):
@@ -137,10 +118,3 @@ class GETAllDharamSthanMembersByDharamSthanId(APIView):
                 'data': serializer.data
             }
             return Response(response_data)
-        # except Exception as e:
-        #     response_data = {
-        #         'statusCode': 500,
-        #         'status': 'error',
-        #         'data': {'message': 'Internal Server Error.'}
-        #     }
-        #     return Response(response_data, status=500)

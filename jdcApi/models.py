@@ -2,13 +2,15 @@ from django.core.validators import MaxValueValidator
 from django.db import models
 from django.utils import timezone
 from django.core.validators import FileExtensionValidator
+from masterApi.models import MstSect, MstFeedbackTitle
+from phonenumber_field.modelfields import PhoneNumberField
 
 
 class BaseModel(models.Model):
     isActive = models.BooleanField(default=False)
     groupId = models.CharField(max_length=40, default=1)
-    createdBy = models.CharField(max_length=50, default=1)
-    updatedBy = models.CharField(max_length=50, default=1)
+    # createdBy = models.CharField(max_length=50, default=1)
+    # updatedBy = models.CharField(max_length=50, default=1)
     createdDate = models.DateTimeField(auto_now_add=True)
     updatedDate = models.DateTimeField(auto_now=True)
 
@@ -22,6 +24,10 @@ class State(BaseModel, models.Model):
     stateId = models.AutoField(primary_key=True)
     stateName = models.CharField(max_length=50)
     isVerified = models.BooleanField(default=False)
+    createdBy = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, related_name='created_state',
+                                  null=True)
+    updatedBy = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, related_name='updated_state',
+                                  null=True)
 
     def __str__(self):
         return self.stateName
@@ -35,6 +41,10 @@ class City(BaseModel, models.Model):
     description = models.CharField(max_length=100, null=True)
     isVerified = models.BooleanField(default=False)
     isActiveForResidents = models.BooleanField(default=False)
+    createdBy = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, related_name='created_city',
+                                  null=True)
+    updatedBy = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, related_name='updated_city',
+                                  null=True)
 
     def __str__(self):
         return self.cityName
@@ -46,8 +56,12 @@ class Area(BaseModel, models.Model):
     areaName = models.CharField(max_length=70)
     areaMC = models.CharField(max_length=70, null=True, blank=True)
     landmark = models.CharField(max_length=100, null=True, blank=True)
-    areaContactNumber = models.CharField(max_length=15, null=True, blank=True)
+    areaContactNumber = PhoneNumberField(null=True, blank=True)
     isVerified = models.BooleanField(default=False)
+    createdBy = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, related_name='created_area',
+                                  null=True)
+    updatedBy = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, related_name='updated_area',
+                                  null=True)
 
     def __str__(self):
         return self.areaName
@@ -62,25 +76,20 @@ class Business(BaseModel):
     userId = models.ForeignKey(User, on_delete=models.CASCADE, related_name='GetAllBusinessByUserId')
     businessName = models.CharField(max_length=200)
     businessType = models.CharField(max_length=120)
-    businessPhoneNumber = models.CharField(max_length=10, null=True, blank=True)
+    businessPhoneNumber = PhoneNumberField(null=True, blank=True)
     email = models.EmailField(null=True, blank=True)
     website = models.CharField(max_length=220, null=True, blank=True)
     businessDescription = models.TextField()
     isVerified = models.BooleanField(default=False)
     gstNumber = models.CharField(max_length=20, null=True, blank=True)
     address = models.CharField(max_length=120, null=True, blank=True)
+    createdBy = models.ForeignKey('accounts.User', on_delete=models.CASCADE, related_name='created_business',
+                                  null=True)
+    updatedBy = models.ForeignKey('accounts.User', on_delete=models.CASCADE, related_name='updated_business',
+                                  null=True)
 
     def __str__(self):
         return self.businessName
-
-
-class MstSect(BaseModel):
-    id = models.AutoField(primary_key=True)
-    sectName = models.CharField(max_length=20, unique=True)
-    order = models.IntegerField()
-
-    def __str__(self):
-        return self.sectName
 
 
 class Aarti(BaseModel, models.Model):
@@ -90,6 +99,9 @@ class Aarti(BaseModel, models.Model):
     order = models.IntegerField()
     aartiText = models.TextField()
     isVerified = models.BooleanField(default=False)
+
+    createdBy = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, related_name='created_aarti', null=True)
+    updatedBy = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, related_name='updated_aarti', null=True)
 
     def __str__(self):
         return str(self.id)
@@ -108,6 +120,10 @@ class DharamSthan(BaseModel):
     ifscCode = models.CharField(max_length=30, null=True, blank=True)
     upiId = models.CharField(max_length=50, null=True, blank=True)
     isVerified = models.BooleanField(default=False)
+    createdBy = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, related_name='created_dharam_sthan',
+                                  null=True)
+    updatedBy = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, related_name='updated_dharam_sthan',
+                                  null=True)
 
     def __str__(self):
         return str(self.id)+str(self.name)
@@ -118,8 +134,12 @@ class DharamSthanMember(BaseModel):
     dharamSthanId = models.ForeignKey(DharamSthan, on_delete=models.CASCADE)
     name= models.CharField(max_length=50, null=True)
     position = models.CharField(max_length=50)
-    phoneNumber = models.CharField(max_length=15)
+    phoneNumber = PhoneNumberField()
     isVerified = models.BooleanField(default=False)
+    createdBy = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, related_name='created_dharam_sthan_member',
+                                  null=True)
+    updatedBy = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, related_name='updated_dharam_sthan_member',
+                                  null=True)
 
 
 class DharamSthanHistory(BaseModel):
@@ -131,6 +151,8 @@ class DharamSthanHistory(BaseModel):
     title = models.CharField(max_length=50)
     body = models.TextField()
     # isVerified = models.BooleanField(default=False)
+    createdBy = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, related_name='created_dharam_sthan_history', null=True)
+    updatedBy = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, related_name='updated_dharam_sthan_history', null=True)
 
 
 class LiveLocation(BaseModel):
@@ -138,15 +160,17 @@ class LiveLocation(BaseModel):
     sectId = models.ForeignKey(MstSect, on_delete=models.CASCADE)
     title = models.CharField(max_length=70)
     person1Name = models.CharField(max_length=50)
-    phoneNumber1 = models.CharField(max_length=15)
+    phoneNumber1 = PhoneNumberField()
     person2Name = models.CharField(max_length=50, null=True, blank=True)
-    phoneNumber2 = models.CharField(max_length=15, null=True, blank=True)
+    phoneNumber2 = PhoneNumberField(null=True, blank=True)
     startDate = models.DateField()
     endDate = models.DateField()
     locationLink = models.TextField()
     address = models.CharField(max_length=100)
     description = models.TextField()
     isVerified = models.BooleanField(default=False)
+    createdBy = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, related_name='created_live_location', null=True)
+    updatedBy = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, related_name='updated_live_location', null=True)
 
 
 class Literature(BaseModel):
@@ -156,6 +180,8 @@ class Literature(BaseModel):
     body = models.TextField()
     order = models.IntegerField()
     isVerified = models.BooleanField(default=False)
+    createdBy = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, related_name='created_literature', null=True)
+    updatedBy = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, related_name='updated_literature', null=True)
 
 
 class Saint(BaseModel):
@@ -165,7 +191,7 @@ class Saint(BaseModel):
     ]
     id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=30)
-    sectId = models.ForeignKey(MstSect, on_delete=models.CASCADE, related_name='select_sect')
+    sectId = models.ForeignKey(MstSect, on_delete=models.CASCADE, related_name='all_saint')
     fatherName = models.CharField(max_length=30)
     motherName = models.CharField(max_length=30)
     birthPlace = models.CharField(max_length=30)
@@ -179,12 +205,9 @@ class Saint(BaseModel):
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES)
     description = models.TextField(null=True, blank=True)
     isVerified = models.BooleanField(default=False)
+    createdBy = models.ForeignKey('accounts.User', on_delete=models.CASCADE, related_name='created_saint', null=True)
+    updatedBy = models.ForeignKey('accounts.User', on_delete=models.CASCADE, related_name='updated_saint', null=True)
 
-    # def save(self, *args, **kwargs):
-    #     # Set the time zone here before saving
-    #     # self.dobTime = timezone.now()
-    #     # self.devlokTime = timezone.now()
-    #     super().save(*args, **kwargs)
 
 # class SaintFamily(BaseModel):
 #     id = models.BigAutoField(primary_key=True)
@@ -200,31 +223,8 @@ class Emergency(BaseModel):
     email = models.EmailField(null=True, blank=True)
     website = models.CharField(max_length=255, null=True, blank=True)
     isVerified = models.BooleanField(default=False)
-
-
-#  Master tables
-class MstBloodGroup(BaseModel):
-    id = models.BigAutoField(primary_key=True)
-    bloodGroupName = models.CharField(max_length=7, unique=True)
-    order = models.IntegerField()
-
-
-class MstMaritalStatus(BaseModel):
-    id = models.BigAutoField(primary_key=True)
-    maritalStatusName = models.CharField(max_length=20, unique=True)
-    order = models.IntegerField()
-
-
-class MstRelation(BaseModel):
-    id = models.BigAutoField(primary_key=True)
-    description = models.CharField(max_length=40, unique=True)
-    order = models.IntegerField()
-
-
-class MstProfession(BaseModel):
-    id = models.BigAutoField(primary_key=True)
-    description = models.CharField(max_length=50, unique=True)
-    order = models.IntegerField()
+    createdBy = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, related_name='created_emergency', null=True)
+    updatedBy = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, related_name='updated_emergency', null=True)
 
 
 class Event(BaseModel):
@@ -236,14 +236,16 @@ class Event(BaseModel):
     title = models.CharField(max_length=100)
     body = models.TextField()
     isVerified = models.BooleanField(default=False)
+    createdBy = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, related_name='created_event', null=True)
+    updatedBy = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, related_name='updated_event', null=True)
 
 
 class AppConfigurations(models.Model):
     id = models.BigAutoField(primary_key=True)
     configurationKey = models.CharField(max_length=50, unique=True)
     configurationValue = models.BooleanField()
-    createdBy = models.IntegerField(default=1)
-    updatedBy = models.IntegerField(default=1)
+    createdBy = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, related_name='created_app_configuration', null=True)
+    updatedBy = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, related_name='updated_app_configuration', null=True)
     createdDate = models.DateTimeField(auto_now_add=True)
     updatedDate = models.DateTimeField(auto_now=True)
 
@@ -255,22 +257,20 @@ class LiteratureDocument(BaseModel):
     order = models.IntegerField()
     link = models.TextField(null=True, blank=True)
     file = models.FileField(upload_to='literature_Documents', null=True,
-                            validators=[FileExtensionValidator(allowed_extensions=['txt', 'pdf', 'doc', 'docx'])], blank = True)
+                            validators=[FileExtensionValidator(allowed_extensions=['txt', 'pdf', 'jpeg', 'png'])], blank = True)
     isVerified = models.BooleanField(default=False)
-
-
-class MstFeedbackTitle(BaseModel):
-    id = models.BigAutoField(primary_key=True)
-    title = models.CharField(max_length=100)
-    order = models.IntegerField()
+    createdBy = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, related_name='created_literature_document', null=True)
+    updatedBy = models.ForeignKey('accounts.User', on_delete=models.SET_NULL, related_name='updated_literature_document', null=True)
 
 
 class Feedback(models.Model):
     id = models.BigAutoField(primary_key=True)
     feedbackTitleId = models.ForeignKey(MstFeedbackTitle, on_delete=models.CASCADE, related_name='feedbackTitles')
     body = models.TextField()
-    createdBy = models.CharField(max_length=50, null=True)
-    updatedBy = models.CharField(max_length=50, null=True)
+    createdBy = models.ForeignKey('accounts.User', on_delete=models.CASCADE, related_name='created_feedback', null=True)
+    updatedBy = models.ForeignKey('accounts.User', on_delete=models.CASCADE, related_name='updated_feedback', null=True)
     createdDate = models.DateTimeField(auto_now_add=True)
     updatedDate = models.DateTimeField(auto_now=True)
+
+
 

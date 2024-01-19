@@ -8,7 +8,6 @@ from rest_framework.response import Response
 from django.db.models import Q
 from jdcApi.models import State
 from utils.get_id_by_token import get_user_id_from_token_view
-# from utils.permission import IsOwnerOrReadOnly
 from rest_framework.permissions import IsAuthenticated
 
 
@@ -134,47 +133,32 @@ class GetCitiesByStateId(APIView):
                 'data': {'message': f"'State Id' excepted a number but got '{stateId}'."}
             }
             return Response(response_data, status=404)
-        # except Exception as e:
-        #     response_data = {
-        #         'status_code': status.HTTP_500_INTERNAL_SERVER_ERROR,
-        #         'status': 'error',
-        #         'data': {'error': str(e)},
-        #     }
-        #     return Response(response_data, status=500)
+
 
 
 class POSTNewState(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
-        try:
-            # fetch 'user_id' from token payload
-            get_user_id = get_user_id_from_token_view(request)
-            serializer = CREATEStateSerializer(data=request.data, context={'user_id_by_token': get_user_id})
-            if serializer.is_valid():
-                serializer.save()
-                response_data = {
-                    'status_code': status.HTTP_200_OK,
-                    'status': 'success',
-                    'message': {'message': 'Record Added Successfully.'},
-                }
-                return Response(response_data, status=200)
 
+        # fetch 'user_id' from token payload
+        get_user_id = get_user_id_from_token_view(request)
+        serializer = CREATEStateSerializer(data=request.data, context={'user_id_by_token': get_user_id})
+        if serializer.is_valid():
+            serializer.save()
             response_data = {
-                'status_code': status.HTTP_400_BAD_REQUEST,
-                'status': 'failed',
-                'message': serializer.errors
+                'status_code': status.HTTP_200_OK,
+                'status': 'success',
+                'message': {'message': 'Record Added Successfully.'},
             }
-            return Response(response_data, status=400)
+            return Response(response_data, status=200)
 
-        except Exception as e:
-            # Handle the case when request data is not valid
-            response_data = {
-                'status_code': status.HTTP_500_INTERNAL_SERVER_ERROR,
-                'status': 'error',
-                'data': {'error': str(e)},
-            }
-            return Response(response_data, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        response_data = {
+            'status_code': status.HTTP_400_BAD_REQUEST,
+            'status': 'failed',
+            'message': serializer.errors
+        }
+        return Response(response_data, status=400)
 
 
 class UpdateStateById(APIView):
@@ -218,13 +202,7 @@ class UpdateStateById(APIView):
                 'data': {'message': f"'State Id' excepted a number but got '{stateId}'."}
             }
             return Response(response_data, status=404)
-        except Exception as e:
-            response_data = {
-                'status_code': status.HTTP_500_INTERNAL_SERVER_ERROR,
-                'status': 'error',
-                'data': {'message': str(e)},
-            }
-            return Response(response_data, status=500)
+
 
 
 class GETStateDetailsById(APIView):

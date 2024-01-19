@@ -6,25 +6,15 @@ from accounts.models import User
 from django.core.validators import URLValidator
 import base64
 from django.core.files.uploadedfile import UploadedFile
+from utils.base_serializer import BaseSerializer
 
 
-class CREATENewLiteratureDocumentSerializer(serializers.ModelSerializer):
+class CREATENewLiteratureDocumentSerializer(BaseSerializer):
     title = serializers.CharField(required=True)
 
     class Meta:
         fields = ['sectId', 'title', 'order', 'link', 'file']
         model = LiteratureDocument
-
-    def create(self, validated_data):
-        # Create the user instance with modified data
-        obj = self.Meta.model.objects.create(**validated_data)
-
-        #  add data in field createdBy
-        user_id_by_token = self.context.get('user_id_by_token')
-        obj.createdBy = user_id_by_token
-        obj.save()
-
-        return obj
 
     def to_internal_value(self, data):
         link = data.get('link')
@@ -79,24 +69,12 @@ class CREATENewLiteratureDocumentSerializer(serializers.ModelSerializer):
         return validated_data
 
 
-class UPDATELiteratureDocumentByIdSerializer(serializers.ModelSerializer):
+class UPDATELiteratureDocumentByIdSerializer(BaseSerializer):
     title = serializers.CharField(required=True)
 
     class Meta:
         fields = ['sectId', 'title', 'order', 'link', 'file', 'isVerified', 'isActive']
         model = LiteratureDocument
-
-    def update(self, instance, validated_data):
-        # Update the user instance with modified data
-        if validated_data.get('title'):
-            validated_data['title'] = validated_data['title'].title()
-
-        user_id_by_token = self.context.get('user_id_by_token')
-        validated_data['updatedBy'] = user_id_by_token
-        for attr, value in validated_data.items():
-            setattr(instance, attr, value)
-        instance.save()
-        return instance
 
     def to_internal_value(self, data):
         link = data.get('link')
@@ -169,14 +147,12 @@ class GETLiteratureDocumentDetailsSerializer(serializers.ModelSerializer):
 
 
 class GETAllSectWithCountForLiteratureDocumentSerializer(serializers.ModelSerializer):
-    count = serializers.SerializerMethodField()
+    count = serializers.IntegerField()
 
     class Meta:
         model = MstSect
         fields = ['id', 'sectName', 'count']
 
-    def get_count(self, instance):
-        return LiteratureDocument.objects.filter(isActive=True, isVerified=True, sectId=instance.id).count()
 
 
 class GETAllLiteratureDocumentSerializer(serializers.ModelSerializer):
@@ -189,18 +165,11 @@ class GETAllLiteratureDocumentSerializer(serializers.ModelSerializer):
 
 
 class GETAllActiveLiteratureDocumentSerializer(serializers.ModelSerializer):
-    uploadedBy = serializers.SerializerMethodField()
+    uploadedBy = serializers.CharField(source='createdBy.name')
 
     class Meta:
         fields = ['id', 'title', 'link', 'file', 'uploadedBy']
         model = LiteratureDocument
-
-    def get_uploadedBy(self, instance):
-        try:
-            obj = User.objects.get(id=instance.createdBy)
-            return obj.name
-        except User.DoesNotExist:
-            return ""
 
 
 

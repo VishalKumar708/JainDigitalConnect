@@ -1,3 +1,4 @@
+from django.db.models.functions import Concat
 from jdcApi.models import City, Area, MstSect
 from rest_framework.response import Response
 from .serializer import *
@@ -5,35 +6,18 @@ from rest_framework.views import APIView
 from accounts.serializers import GETAllMemberByAreaIdSerializer, GETAllFamilyByAreaIdSerializer, SearchResidentsInAreaSerializer
 from accounts.pagination import CustomPagination
 from rest_framework.permissions import IsAuthenticated
+from django.db.models import Count, Q, Case, When, Value, F, CharField, Func
 
 
 class GETAllApprovedCityAndSearchCityName(APIView):
     """ show all approved city and search 'cityName' by user."""
     def get(self, request, *args, **kwargs):
-        try:
-            #  for search city Name
+        # try:
+        #  for search city Name
 
-            cityName = request.GET.get('cityName')
-            if cityName:
-                queryset = City.objects.filter(isActive=True, isVerified=True, isActiveForResidents=True, cityName__icontains=cityName.strip()).order_by('cityName')
-                if len(queryset) < 1:
-                    response_data = {
-                        'statusCode': 200,
-                        'status': 'Success',
-                        'data': {"message": "No Results found !"},
-                    }
-                    return Response(response_data)
-
-                serializer = GETCitySerializer(queryset, many=True)
-                response_data = {
-                    'statusCode': 200,
-                    'status': 'Success',
-                    'data': serializer.data,
-                }
-                return Response(response_data)
-
-            queryset = City.objects.filter(isActive=True, isVerified=True, isActiveForResidents=True).order_by(
-                'cityName')
+        cityName = request.GET.get('cityName')
+        if cityName:
+            queryset = City.objects.filter(isActive=True, isVerified=True, isActiveForResidents=True, cityName__icontains=cityName.strip()).order_by('cityName')
             if len(queryset) < 1:
                 response_data = {
                     'statusCode': 200,
@@ -42,20 +26,31 @@ class GETAllApprovedCityAndSearchCityName(APIView):
                 }
                 return Response(response_data)
 
-            serializer = GETCityWithCountSerializer(queryset, many=True)
+            serializer = GETCitySerializer(queryset, many=True)
             response_data = {
-                'status_code': 200,
+                'statusCode': 200,
                 'status': 'Success',
                 'data': serializer.data,
             }
             return Response(response_data)
-        except Exception as e:
+
+        queryset = City.objects.filter(isActive=True, isVerified=True, isActiveForResidents=True).annotate(
+            count=Count('user', filter=Q(user__isActive=True, user__isVerified=True))).values('cityId', 'cityName', 'count').order_by('cityName')
+        if len(queryset) < 1:
             response_data = {
-                'status_code': 500,
-                'status': 'error',
-                'data': {'message': str(e)},
+                'statusCode': 200,
+                'status': 'Success',
+                'data': {"message": "No Results found !"},
             }
-            return Response(response_data, status=500)
+            return Response(response_data)
+
+        serializer = GETCityWithCountSerializer(queryset, many=True)
+        response_data = {
+            'status_code': 200,
+            'status': 'Success',
+            'data': serializer.data,
+        }
+        return Response(response_data)
 
 
 class GetAllApprovedAreasByCityId(APIView):
@@ -102,13 +97,20 @@ class GetAllApprovedAreasByCityId(APIView):
                 }
                 return Response(response_data, status=200)
             # return all the areas
-            queryset = Area.objects.filter(isActive=True, isVerified=True, cityId=cityId).order_by('areaName')
+            queryset = Area.objects.filter(
+                isActive=True, isVerified=True, cityId=cityId
+                ).annotate(
+                count=Count('user', filter=Q(user__isActive=True, user__isVerified=True, user__sectId=cityId)),
+                memberCount=Count('user', filter=Q(user__isActive=True, user__isVerified=True)),
+                familyCount=Count('user', filter=Q(user__isActive=True, user__isVerified=True, user__headId=None))
+            ).order_by('areaName')
+            print('queryset==> ', queryset)
             if len(queryset) < 1:
                 response_data = {
                     'statusCode': 200,
                     'status': 'Success',
-                    'memberCount': User.objects.filter(cityId=cityId).count(),
-                    'familyCount': User.objects.filter(cityId=cityId, headId=None).count(),
+                    # 'memberCount': User.objects.filter(cityId=cityId).count(),
+                    # 'familyCount': User.objects.filter(cityId=cityId, headId=None).count(),
                     'data': {'message': 'Record Not Found'}
                 }
                 return Response(response_data)
@@ -117,8 +119,8 @@ class GetAllApprovedAreasByCityId(APIView):
             response_data = {
                 'status_code': 200,
                 'status': 'Success',
-                'memberCount': User.objects.filter(cityId=cityId).count(),
-                'familyCount': User.objects.filter(cityId=cityId, headId=None).count(),
+                # 'memberCount': User.objects.filter(cityId=cityId).count(),
+                # 'familyCount': User.objects.filter(cityId=cityId, headId=None).count(),
                 'data': serializer.data,
             }
             return Response(response_data)
@@ -130,18 +132,62 @@ class GetAllApprovedAreasByCityId(APIView):
                 'data': {'message': f"'City Id' excepted a number but got '{cityId}'."},
             }
             return Response(response_data, status=404)
-        except Exception as e:
-            response_data = {
-                'status_code': 500,
-                'status': 'error',
-                'data': {'message': str(e)},
-            }
-            return Response(response_data, status=500)
+
+
+from utils.models.custom_queries import calculate_age_expression
+from django.utils import timezone
 
 
 class GETAllResidentsByAreaId(APIView):
     permission_classes = [IsAuthenticated]
     pagination_class = CustomPagination
+
+    def get_all_members(self, request, areaId):
+        members_queryset = User.objects.filter(areaId=areaId).annotate(
+            age=calculate_age_expression('dob', User)
+        ).order_by('name')
+
+        if len(members_queryset) < 1:
+            response_data = {
+                'statusCode': 200,
+                'status': 'success',
+                'data': {'message': 'No Record Found.'},
+            }
+            return Response(response_data, status=200)
+
+        # apply pagination
+        paginator = self.pagination_class()
+        page = paginator.paginate_queryset(members_queryset, request)
+        if page is not None:
+            serializer = GETAllMemberByAreaIdSerializer(members_queryset, many=True)
+            data = paginator.get_paginated_response(serializer.data)
+
+            return Response({**{
+                'statusCode': 200,
+                'status': 'success',
+            }, **data}, status=200)
+
+    def get_all_head_users(self, request, areaId):
+        family_queryset = User.objects.filter(areaId=areaId, headId=None). \
+            annotate(age=calculate_age_expression('dob', User)).order_by('name')
+
+        if len(family_queryset) < 1:
+            response_data = {
+                'statusCode': 200,
+                'status': 'success',
+                'data': {'message': 'No Record Found.'},
+            }
+            return Response(response_data, status=200)
+        # apply pagination
+        paginator = self.pagination_class()
+        page = paginator.paginate_queryset(family_queryset, request)
+        if page is not None:
+            serializer = GETAllFamilyByAreaIdSerializer(page, many=True)
+            data = paginator.get_paginated_response(serializer.data)
+            return Response({**{
+                'statusCode': 200,
+                'status': 'success',
+            }, **data}, status=200)
 
     def get(self, request, areaId, *args, **kwargs):
         try:
@@ -151,7 +197,8 @@ class GETAllResidentsByAreaId(APIView):
             data = {}
             #  for searching resident
             if search_resident_name:
-                search_result = User.objects.filter(areaId=areaId, name__icontains=search_resident_name.strip())
+                search_result = User.objects.filter(areaId=areaId, name__icontains=search_resident_name.strip()
+                                                    ).annotate(age=calculate_age_expression('dob', User))
                 if len(search_result) < 1:
                     response_data = {
                         'statusCode': 200,
@@ -169,58 +216,19 @@ class GETAllResidentsByAreaId(APIView):
 
             #  for getting members/family records
             if resident_type is None or resident_type.strip().lower() == 'family':
-                family_queryset = User.objects.filter(areaId=areaId, headId=None).order_by('name')
-                total_family = len(family_queryset)
-                total_member = User.objects.filter(areaId=areaId).count()
-                if total_family < 1:
-                    response_data = {
-                        'statusCode': 200,
-                        'status': 'success',
-                        'data': {'message': 'No Record Found.'},
-                    }
-                    return Response(response_data, status=200)
-                # apply pagination
-                paginator = self.pagination_class()
-                page = paginator.paginate_queryset(family_queryset, request)
-                if page is not None:
-                    serializer = GETAllFamilyByAreaIdSerializer(page, many=True)
-                    data = paginator.get_paginated_response(serializer.data)
+                return self.get_all_head_users(request=request, areaId=areaId)
 
             elif resident_type.strip().lower() == 'member':
-                members_queryset = User.objects.filter(areaId=areaId).order_by('name')
-                total_member = len(members_queryset)
-                print('total_member ==> ', total_member)
-                total_family = User.objects.filter(areaId=areaId, headId=None).count()
-                if total_member < 1:
-                    response_data = {
-                        'statusCode': 200,
-                        'status': 'success',
-                        'data': {'message': 'No Record Found.'},
-                    }
-                    return Response(response_data, status=200)
-
-                # apply pagination
-                paginator = self.pagination_class()
-                page = paginator.paginate_queryset(members_queryset, request)
-                if page is not None:
-                    serializer = GETAllMemberByAreaIdSerializer(members_queryset, many=True)
-                    data = paginator.get_paginated_response(serializer.data)
+                return self.get_all_members(request=request, areaId=areaId)
 
             else:
                 response_data = {
                     'statusCode': 400,
-                    'status': 'failed',
+                    'status': 'success',
                     'data': {'message': f"'residentType' query param value must be 'family/member'."},
                 }
                 return Response(response_data, status=400)
 
-            response_data = {**{
-                'statusCode': 200,
-                'status': 'failed',
-                'memberCount': total_member,
-                'familyCount': total_family,
-            }, **data}
-            return Response(response_data, status=200)
         except Area.DoesNotExist:
             response_data = {
                 'statusCode': 404,
@@ -243,7 +251,8 @@ class GETAllSectResident(APIView):
     """ show all approved city and search 'cityName' by user."""
     def get(self, request, *args, **kwargs):
         try:
-            queryset = MstSect.objects.filter(isActive=True).order_by('order')
+            queryset = MstSect.objects.filter(isActive=True).annotate(
+            count=Count('user', filter=Q(user__isActive=True, user__isVerified=True))).values('id', 'sectName', 'count').order_by('order')
             # print(queryset)
             if len(queryset) < 1:
                 response_data = {
@@ -294,7 +303,8 @@ class GETAllApprovedCityBySectId(APIView):
                 }
                 return Response(response_data)
 
-            queryset = City.objects.filter(isActive=True, isVerified=True, isActiveForResidents=True).order_by(
+            queryset = City.objects.filter(isActive=True, isVerified=True, isActiveForResidents=True).annotate(
+            count=Count('user', filter=Q(user__isActive=True, user__isVerified=True))).values('cityId', 'cityName', 'count').order_by(
                 'cityName')
             if len(queryset) < 1:
                 response_data = {
@@ -313,7 +323,7 @@ class GETAllApprovedCityBySectId(APIView):
                 }
                 return Response(response_data)
 
-            serializer = GETCityWithCountSerializer(queryset, many=True, context={'sect_wise': True, 'sect_id': sectId})
+            serializer = GETCityWithCountSerializer(queryset, many=True)
             response_data = {
                 'status_code': 200,
                 'status': 'Success',
@@ -334,16 +344,39 @@ class GETAllApprovedCityBySectId(APIView):
                 'data': {'message': f"'sectId' excepted a number but got '{sectId}'."},
             }
             return Response(response_data, status=404)
-        except Exception as e:
-            response_data = {
-                'statusCode': 500,
-                'status': 'error',
-                'data': {'message': str(e)},
-            }
-            return Response(response_data, status=500)
 
 
 class GETAllApprovedAreasBySectIdAndCityId(APIView):
+
+    def get_all_areas(self, sectId, cityId):
+        queryset = Area.objects.filter(isActive=True, isVerified=True, cityId=cityId).annotate(
+            count=Count('user',
+                        filter=Q(user__isActive=True, user__isVerified=True, user__sectId=sectId, user__cityId=cityId)),
+            memberCount=Count('user', filter=Q(user__isActive=True, user__isVerified=True, user__sectId=sectId,
+                                               user__cityId=cityId)),
+            familyCount=Count('user', filter=Q(user__isActive=True, user__isVerified=True, user__headId=None,
+                                               user__sectId=sectId, user__cityId=cityId))
+        ).order_by('areaName')
+        print('queryset==> ', queryset)
+        if len(queryset) < 1:
+            response_data = {
+                'statusCode': 200,
+                'status': 'Success',
+                'memberCount': User.objects.filter(sectId=sectId, cityId=cityId).count(),
+                'familyCount': User.objects.filter(sectId=sectId, cityId=cityId, headId=None).count(),
+                'data': {'message': 'Record Not Found'}
+            }
+            return Response(response_data)
+
+        serializer = GETAreaWithCountSerializer(queryset, many=True, context={'sect_wise': True, 'sect_id': sectId})
+        response_data = {
+            'status_code': 200,
+            'status': 'Success',
+            'memberCount': User.objects.filter(sectId=sectId, cityId=cityId).count(),
+            'familyCount': User.objects.filter(sectId=sectId, cityId=cityId, headId=None).count(),
+            'data': serializer.data,
+        }
+        return Response(response_data)
 
     def get(self, request, sectId, cityId, *args, **kwargs):
         try:
@@ -386,26 +419,8 @@ class GETAllApprovedAreasBySectIdAndCityId(APIView):
                 }
                 return Response(response_data, status=200)
             # return all the areas
-            queryset = Area.objects.filter(isActive=True, isVerified=True, cityId=cityId).order_by('areaName')
-            if len(queryset) < 1:
-                response_data = {
-                    'statusCode': 200,
-                    'status': 'Success',
-                    'memberCount': User.objects.filter(sectId=sectId, cityId=cityId).count(),
-                    'familyCount': User.objects.filter(sectId=sectId, cityId=cityId, headId=None).count(),
-                    'data': {'message': 'Record Not Found'}
-                }
-                return Response(response_data)
+            return self.get_all_areas(sectId=sectId, cityId=cityId)
 
-            serializer = GETAreaWithCountSerializer(queryset, many=True,context={'sect_wise': True, 'sect_id': sectId})
-            response_data = {
-                'status_code': 200,
-                'status': 'Success',
-                'memberCount': User.objects.filter(sectId=sectId, cityId=cityId).count(),
-                'familyCount': User.objects.filter(sectId=sectId, cityId=cityId, headId=None).count(),
-                'data': serializer.data,
-            }
-            return Response(response_data)
         # exceptions
         except ValueError:
             check_sectId = str(sectId).isdigit()
@@ -425,28 +440,65 @@ class GETAllApprovedAreasBySectIdAndCityId(APIView):
                 'data': {'message': message}
             }
             return Response(response_data, status=404)
-        except Exception as e:
-            response_data = {
-                'status_code': 500,
-                'status': 'error',
-                'data': {'message': str(e)},
-            }
-            return Response(response_data, status=500)
 
 
 class GETAllResidentsBySectIdAndAreaId(APIView):
     permission_classes = [IsAuthenticated]
     pagination_class = CustomPagination
 
+    def get_all_members(self, request, sectId, areaId):
+        members_queryset = User.objects.filter(sectId=sectId, areaId=areaId).annotate(age=calculate_age_expression('dob', User)).order_by('name')
+        # print('members_queryset==> ', members_queryset)
+        if len(members_queryset) < 1:
+            response_data = {
+                'statusCode': 200,
+                'status': 'success',
+                'data': {'message': 'No Record Found.'},
+            }
+            return Response(response_data, status=200)
+
+        # apply pagination
+        paginator = self.pagination_class()
+        page = paginator.paginate_queryset(members_queryset, request)
+        if page is not None:
+            serializer = GETAllMemberByAreaIdSerializer(members_queryset, many=True)
+            data = paginator.get_paginated_response(serializer.data)
+
+            return Response({**{
+                'statusCode': 200,
+                'status': 'success',
+            }, **data}, status=200)
+
+    def get_all_head_users(self, request, sectId, areaId):
+        family_queryset = User.objects.filter(sectId=sectId, areaId=areaId, headId=None). \
+            annotate(age=calculate_age_expression('dob', User)).order_by('name')
+
+        if len(family_queryset) < 1:
+            response_data = {
+                'statusCode': 200,
+                'status': 'success',
+                'data': {'message': 'No Record Found.'},
+            }
+            return Response(response_data, status=200)
+        # apply pagination
+        paginator = self.pagination_class()
+        page = paginator.paginate_queryset(family_queryset, request)
+        if page is not None:
+            serializer = GETAllFamilyByAreaIdSerializer(page, many=True)
+            data = paginator.get_paginated_response(serializer.data)
+            return Response({**{
+                'statusCode': 200,
+                'status': 'success',
+            }, **data}, status=200)
+
     def get(self, request, sectId, areaId, *args, **kwargs):
         try:
-            # Area.objects.get(areaId=areaId)
             resident_type = request.GET.get('residentType')
             search_resident_name = request.GET.get('residentName')
-            data = {}
             #  for searching resident
             if search_resident_name:
-                search_result = User.objects.filter(sectId=sectId, areaId=areaId, name__icontains=search_resident_name.strip())
+                search_result = User.objects.filter(sectId=sectId, areaId=areaId, name__icontains=search_resident_name.strip()
+                                                    ).annotate(age=calculate_age_expression('dob', User))
                 if len(search_result) < 1:
                     response_data = {
                         'statusCode': 200,
@@ -464,48 +516,11 @@ class GETAllResidentsBySectIdAndAreaId(APIView):
 
             #  for getting members/family records
             if resident_type is None or resident_type.strip().lower() == 'family':
-                family_queryset = User.objects.filter(sectId=sectId, areaId=areaId, headId=None).order_by('name')
-                total_family = len(family_queryset)
-                total_member = User.objects.filter(sectId=sectId, areaId=areaId).count()
-                if total_family < 1:
-                    response_data = {
-                        'statusCode': 200,
-                        'status': 'success',
-                        'data': {'message': 'No Record Found.'},
-                    }
-                    return Response(response_data, status=200)
-                # apply pagination
-                paginator = self.pagination_class()
-                page = paginator.paginate_queryset(family_queryset, request)
-                if page is not None:
-                    serializer = GETAllFamilyByAreaIdSerializer(page, many=True)
-                    data = paginator.get_paginated_response(serializer.data)
-
-                # if pagination is disable
-                # serializer = GETAllFamilyByAreaIdSerializer(family_queryset, many=True)
+                return self.get_all_head_users(request=request, sectId=sectId, areaId=areaId)
 
             elif resident_type.strip().lower() == 'member':
-                members_queryset = User.objects.filter(sectId=sectId, areaId=areaId).order_by('name')
-                total_member = len(members_queryset)
-                # print('total_member ==> ', total_member)
-                total_family = User.objects.filter(sectId=sectId, areaId=areaId, headId=None).count()
-                if total_member < 1:
-                    response_data = {
-                        'statusCode': 200,
-                        'status': 'success',
-                        'data': {'message': 'No Record Found.'},
-                    }
-                    return Response(response_data, status=200)
+                return self.get_all_members(request=request, sectId=sectId, areaId=areaId)
 
-                # apply pagination
-                paginator = self.pagination_class()
-                page = paginator.paginate_queryset(members_queryset, request)
-                if page is not None:
-                    serializer = GETAllMemberByAreaIdSerializer(members_queryset, many=True)
-                    data = paginator.get_paginated_response(serializer.data)
-
-                # if pagination is disable
-                # serializer = GETAllMemberByAreaIdSerializer(members_queryset, many=True)
             else:
                 response_data = {
                     'statusCode': 400,
@@ -514,13 +529,6 @@ class GETAllResidentsBySectIdAndAreaId(APIView):
                 }
                 return Response(response_data, status=400)
 
-            response_data = {**{
-                'statusCode': 200,
-                'status': 'success',
-                'memberCount': total_member,
-                'familyCount': total_family,
-            }, **data}
-            return Response(response_data, status=200)
         except Area.DoesNotExist:
             response_data = {
                 'statusCode': 404,

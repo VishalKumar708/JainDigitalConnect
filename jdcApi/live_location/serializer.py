@@ -4,10 +4,12 @@ from rest_framework import serializers
 from jdcApi.models import MstSect, DharamSthanHistory, DharamSthan, LiveLocation
 from django.utils import timezone
 from datetime import datetime
-from accounts.models import User
+
+from utils.base_serializer import BaseSerializer
 
 
 class GETAllSectWithCountForDharamSthanHistorySerializer(serializers.ModelSerializer):
+    # count = serializers.IntegerField()
     count = serializers.SerializerMethodField()
 
     class Meta:
@@ -27,18 +29,11 @@ class GETAllSectWithCountForDharamSthanHistorySerializer(serializers.ModelSerial
 
 
 class GETAllDharamSthanHistorySerializer(serializers.ModelSerializer):
-    uploadedBy = serializers.SerializerMethodField()
+    uploadedBy = serializers.CharField(source="createdBy.name")
 
     class Meta:
         model = DharamSthanHistory
         fields = ['id', 'dharamSthanId', 'title', "year", 'body', 'isActive', 'uploadedBy']
-
-    def get_uploadedBy(self, instance):
-        try:
-            obj = User.objects.get(id=instance.createdBy)
-            return obj.name
-        except User.DoesNotExist:
-            return ""
 
 
 class SearchDharamSthanHistorySerializer(serializers.ModelSerializer):
@@ -71,7 +66,7 @@ class GETDharamSthanDetailsSerializer(serializers.ModelSerializer):
 
 
 #  Live Location Serializer
-class CREATENewLiveLocationSerializer(serializers.ModelSerializer):
+class CREATENewLiveLocationSerializer(BaseSerializer):
     startDate = serializers.DateField(input_formats=('%d %B, %Y',))
     endDate = serializers.DateField(input_formats=('%d %B, %Y',))
 
@@ -80,26 +75,9 @@ class CREATENewLiveLocationSerializer(serializers.ModelSerializer):
                     'endDate', 'locationLink', 'address', 'description']
         model = LiveLocation
 
-    def create(self, validated_data):
-        validated_data['title'] = validated_data['title'].title()
-        if validated_data.get('person1Name'):
-            validated_data['person1Name'] = validated_data['person1Name'].title()
-
-        if validated_data.get('person2Name'):
-            validated_data['person2Name'] = validated_data['person2Name'].title()
-        # Create the user instance with modified data
-        state_obj = self.Meta.model.objects.create(**validated_data)
-
-        #  add data in field createdBy
-        user_id_by_token = self.context.get('user_id_by_token')
-        state_obj.createdBy = user_id_by_token
-        state_obj.save()
-
-        return state_obj
-
     def to_internal_value(self, data):
-        phoneNumber1 = data.get('phoneNumber1')
-        phoneNumber2 = data.get('phoneNumber2')
+        # phoneNumber1 = data.get('phoneNumber1')
+        # phoneNumber2 = data.get('phoneNumber2')
         startDate = data.get('startDate')
         endDate = data.get('endDate')
 
@@ -114,14 +92,6 @@ class CREATENewLiveLocationSerializer(serializers.ModelSerializer):
                 errors['sectId'] = ['Invalid Sect Id.']
             except ValueError:
                 errors['sectId'] = [f"'sectId' excepted a number but got '{sect_id}."]
-
-        if phoneNumber1:
-            if not str(phoneNumber1).strip().isdigit() and len(str(phoneNumber1).strip()) != 10:
-                errors['phoneNumber1'] = ["Please Enter Valid PhoneNumber!"]
-
-        if phoneNumber2:
-            if not str(phoneNumber2).strip().isdigit() and len(str(phoneNumber2).strip()) != 10:
-                errors['phoneNumber2'] = ["Please Enter Valid PhoneNumber!"]
 
         if startDate:
             try:
@@ -166,7 +136,7 @@ class CREATENewLiveLocationSerializer(serializers.ModelSerializer):
         return validated_data
 
 
-class UPDATELiveLocationSerializer(serializers.ModelSerializer):
+class UPDATELiveLocationSerializer(BaseSerializer):
     startDate = serializers.DateField(input_formats=('%d %B, %Y',))
     endDate = serializers.DateField(input_formats=('%d %B, %Y',))
 
@@ -175,27 +145,9 @@ class UPDATELiveLocationSerializer(serializers.ModelSerializer):
                     'endDate', 'locationLink', 'address', 'description', 'isVerified', 'isActive']
         model = LiveLocation
 
-    def update(self, instance, validated_data):
-        # Update the user instance with modified data
-        if validated_data.get('title'):
-            validated_data['title'] = validated_data['title'].title()
-
-        if validated_data.get('person1Name'):
-            validated_data['person1Name'] = validated_data['person1Name'].title()
-
-        if validated_data.get('person2Name'):
-            validated_data['person2Name'] = validated_data['person2Name'].title()
-
-        user_id_by_token = self.context.get('user_id_by_token')
-        validated_data['updatedBy'] = user_id_by_token
-        for attr, value in validated_data.items():
-            setattr(instance, attr, value)
-        instance.save()
-        return instance
-
     def to_internal_value(self, data):
-        phoneNumber1 = data.get('phoneNumber1')
-        phoneNumber2 = data.get('phoneNumber2')
+        # phoneNumber1 = data.get('phoneNumber1')
+        # phoneNumber2 = data.get('phoneNumber2')
         startDate = data.get('startDate')
         endDate = data.get('endDate')
 
@@ -211,19 +163,11 @@ class UPDATELiveLocationSerializer(serializers.ModelSerializer):
             except ValueError:
                 errors['sectId'] = [f"'sectId' excepted a number but got '{sect_id}."]
 
-        if phoneNumber1:
-            if not str(phoneNumber1).strip().isdigit() and len(str(phoneNumber1).strip()) != 10:
-                errors['phoneNumber1'] = ["Please Enter Valid PhoneNumber!"]
-
-        if phoneNumber2:
-            if not str(phoneNumber2).strip().isdigit() and len(str(phoneNumber2).strip()) != 10:
-                errors['phoneNumber2'] = ["Please Enter Valid PhoneNumber!"]
-
         if startDate:
             try:
                 current_date = timezone.now().date()
                 # print(current_date)
-                if datetime.strptime(startDate, "%d %B, %Y").date() < current_date :
+                if datetime.strptime(startDate, "%d %B, %Y").date() < current_date:
                     errors['startDate'] = ["Date should be today or a date in the future."]
             except ValueError:
                 pass
@@ -286,15 +230,9 @@ class GETAllLiveLocationByUserIdSerializer(serializers.ModelSerializer):
 
 
 class GETAllLiveLocationBySectIdSerializer(serializers.ModelSerializer):
-    uploadedBy = serializers.SerializerMethodField()
+    uploadedBy = serializers.CharField(source="createdBy.name")
 
     class Meta:
         fields = ['id', 'title', 'description', 'uploadedBy']
         model = LiveLocation
 
-    def get_uploadedBy(self,instance):
-        try:
-            user_obj = User.objects.get(id=instance.createdBy)
-            return user_obj.name
-        except User.DoesNotExist:
-            return ""

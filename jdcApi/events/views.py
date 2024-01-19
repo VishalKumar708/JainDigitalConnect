@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from jdcApi.models import MstSect, City, Event
 from rest_framework.permissions import IsAuthenticated
 from utils.get_id_by_token import get_user_id_from_token_view
-from django.db.models import Q
+from django.db.models import Q, Count
 from accounts.pagination import CustomPagination
 
 
@@ -32,13 +32,6 @@ class POSTNewEvent(APIView):
                 'data': serializer.errors
             }
             return Response(response_data, status=400)
-        # except Exception as e:
-        #     response_data = {
-        #         'statusCode': 500,
-        #         'status': 'error',
-        #         'data': {'message': "Internal Server Error"},
-        #     }
-        #     return Response(response_data, status=500)
 
 
 class PUTEventById(APIView):
@@ -77,13 +70,7 @@ class PUTEventById(APIView):
                 'data': {'message': f"'event id' excepted a number but got '{eventId}'"},
             }
             return Response(response_data, status=404)
-        # except Exception as e:
-        #     response_data = {
-        #         'statusCode': status.HTTP_500_INTERNAL_SERVER_ERROR,
-        #         'status': 'error',
-        #         'data': {'error': str(e)},
-        #     }
-        #     return Response(response_data, status=500)
+
 
 
 class GETEventDetailsById(APIView):
@@ -92,6 +79,7 @@ class GETEventDetailsById(APIView):
     def get(self, request, eventId, *args, **kwargs):
         try:
             instance = Event.objects.get(id=eventId)
+            print('ecent==> ', instance)
             serializer = GETEventDetailsSerializer(instance=instance)
             response_data = {
                 'statusCode': 200,
@@ -113,19 +101,15 @@ class GETEventDetailsById(APIView):
                 'data': {'message': f"'event id' excepted a number but got '{eventId}'"},
             }
             return Response(response_data, status=404)
-        # except Exception as e:
-        #     response_data = {
-        #         'statusCode': status.HTTP_500_INTERNAL_SERVER_ERROR,
-        #         'status': 'error',
-        #         'data': {'error': str(e)},
-        #     }
-        #     return Response(response_data, status=500)
 
 
 class GETAllSectEvent(APIView):
 
     def get(self, request, *args, **kwargs):
-        queryset = MstSect.objects.filter(isActive=True)
+        queryset = MstSect.objects.filter(
+            isActive=True
+        ).annotate(count=Count('event', filter=Q(event__isVerified=True, event__isActive=True, event__endDate__gte=date.today())
+        )).values('id', 'sectName', 'count').order_by('order')
         serializer = GETAllSectWithCountForEventSerializer(queryset, many=True)
         response_data = {
             'statusCode': 200,
@@ -162,7 +146,9 @@ class GETAllCityEventBySectId(APIView):
                 }
                 return Response(response_data)
             # get all active cities from City Model
-            queryset = City.objects.filter(isActive=True, isVerified=True).order_by('cityName')
+            queryset = City.objects.filter(isActive=True, isVerified=True)\
+                .annotate(count=Count('event', filter=Q(event__isVerified=True, event__isActive=True, event__sectId=sectId)))\
+                .values('cityId', 'cityName', 'count').order_by('cityName')
             if len(queryset) < 1:
                 response_data = {
                     'statusCode': 200,
@@ -187,13 +173,7 @@ class GETAllCityEventBySectId(APIView):
                 'data': {"message": f"'sectId' excepted a number but got '{sectId}'."}
             }
             return Response(response_data, status=404)
-        except Exception as e:
-            response_data = {
-                'statusCode': 500,
-                'status': 'error',
-                'data': {'message': "Internal Server Error."},
-            }
-            return Response(response_data, status=500)
+
 
 
 class GETAllActiveEventBySectIdAndCityId(APIView):
@@ -205,6 +185,7 @@ class GETAllActiveEventBySectIdAndCityId(APIView):
             today_date = date.today()
             if status is None or status.strip().lower() == 'active':
                 queryset = Event.objects.filter(sectId=sectId, cityId=cityId, isActive=True, isVerified=True, endDate__gte=today_date).order_by('title')
+                print('==> ',queryset)
             elif status.strip().lower() == 'inactive':
                 queryset = Event.objects.filter(sectId=sectId, cityId=cityId, isActive=True, isVerified=True,
                                         endDate__lt=today_date).order_by('title')
@@ -293,10 +274,4 @@ class GETAllApprovedAndUnapprovedEventForAdmin(APIView):
             }, **pagination_data}
 
             return Response(response_data)
-        # except Exception as e:
-        #     response_data = {
-        #         'statusCode': 500,
-        #         'status': 'error',
-        #         'data': {'error': 'Internal Server Error.'},
-        #     }
-        #     return Response(response_data, status=500)
+

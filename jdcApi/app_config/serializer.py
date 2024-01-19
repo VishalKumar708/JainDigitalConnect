@@ -2,29 +2,20 @@ from django.db.models import Q
 from rest_framework import serializers
 from jdcApi.models import MstSect, AppConfigurations
 from accounts.models import User
+from utils.base_serializer import BaseSerializer
 
-
-class CREATEAppConfigurationSerializer(serializers.ModelSerializer):
+class CREATEAppConfigurationSerializer(BaseSerializer):
 
     class Meta:
         fields = ['configurationKey', 'configurationValue', 'createdBy', 'updatedBy']
         model = AppConfigurations
 
-    def create(self, validated_data):
-        # Transform configurationKey to the desired format
-        configuration_key = validated_data.get('configurationKey', '')
-        validated_data['configurationKey'] = configuration_key.replace(' ', '').lower()  # Remove spaces and convert to lowercase
-
-        # Create the user instance with modified data
-        obj = self.Meta.model.objects.create(**validated_data)
-
-        #  add data in field createdBy
-        user_id_by_token = self.context.get('user_id_by_token')
-        obj.createdBy = user_id_by_token
-        obj.updatedBy = user_id_by_token
-        obj.save()
-
-        return obj
+    # def create(self, validated_data):
+    #     # Transform configurationKey to the desired format
+    #     configuration_key = validated_data.get('configurationKey', '')
+    #     validated_data['configurationKey'] = configuration_key.replace(' ', '').lower()  # Remove spaces and convert to lowercase
+    #
+    #     return obj
 
     def to_internal_value(self, data):
         configuration_key = data.get('configurationKey')
@@ -52,25 +43,26 @@ class CREATEAppConfigurationSerializer(serializers.ModelSerializer):
         # raise validations errors
         if errors:
             raise serializers.ValidationError(errors)
-
+        if validated_data.get('configurationKey'):
+            validated_data['configurationKey'] = configuration_key.replace(' ', '').lower()
         return validated_data
 
 
-class UPDATEAppConfigurationSerializer(serializers.ModelSerializer):
+class UPDATEAppConfigurationSerializer(BaseSerializer):
     class Meta:
         fields = ['configurationKey', 'configurationValue', 'createdBy', 'updatedBy']
         model = AppConfigurations
 
-    def update(self, instance, validated_data):
-        if validated_data.get('configurationKey'):
-            validated_data['configurationKey'] = validated_data['configurationKey'].replace(' ', '').lower()
-
-        user_id_by_token = self.context.get('user_id_by_token')
-        validated_data['updatedBy'] = user_id_by_token
-        for attr, value in validated_data.items():
-            setattr(instance, attr, value)
-        instance.save()
-        return instance
+    # def update(self, instance, validated_data):
+    #     if validated_data.get('configurationKey'):
+    #         validated_data['configurationKey'] = validated_data['configurationKey'].replace(' ', '').lower()
+    #
+    #     user_id_by_token = self.context.get('user_id_by_token')
+    #     validated_data['updatedBy'] = user_id_by_token
+    #     for attr, value in validated_data.items():
+    #         setattr(instance, attr, value)
+    #     instance.save()
+    #     return instance
 
     def to_internal_value(self, data):
         configuration_key = data.get('configurationKey')
@@ -99,6 +91,8 @@ class UPDATEAppConfigurationSerializer(serializers.ModelSerializer):
         if errors:
             raise serializers.ValidationError(errors)
 
+        if validated_data.get('configurationKey'):
+            validated_data['configurationKey'] = configuration_key.replace(' ', '').lower()
         return validated_data
 
 
@@ -110,19 +104,12 @@ class GETAppConfigurationByIdSerializer(serializers.ModelSerializer):
 
 
 class GETAllAppConfigurationSerializer(serializers.ModelSerializer):
-    updatedBy = serializers.SerializerMethodField()
+    updatedBy = serializers.CharField(source='createdBy.name', default="")
     updatedDateTime = serializers.SerializerMethodField()
 
     class Meta:
         fields = ['id', 'configurationKey', 'configurationValue', 'updatedBy', 'updatedDateTime']
         model = AppConfigurations
 
-    def get_updatedBy(self, instance):
-        try:
-            obj = User.objects.get(id=instance.createdBy)
-            return obj.name
-        except User.DoesNotExist:
-            return ""
-
     def get_updatedDateTime(self, instance):
-        return instance.updatedDate.strftime("%d %B %Y %I:%M %p")
+        return instance.updatedDate.strftime("%d %B, %Y %I:%M %p")

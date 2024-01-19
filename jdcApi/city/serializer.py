@@ -1,7 +1,10 @@
 from rest_framework import serializers
 from jdcApi.models import City, Business, State
-from accounts.models import User
-from django.db.models import  Q
+from django.db.models import Q
+
+from utils.base_serializer import BaseSerializer
+
+
 class GETCitySerializer(serializers.ModelSerializer):
     class Meta:
         model = City
@@ -9,25 +12,7 @@ class GETCitySerializer(serializers.ModelSerializer):
         fields = ['cityId', 'cityName']
 
 
-# class GETCityWithCountSerializer(serializers.ModelSerializer):
-#     count = serializers.SerializerMethodField()
-#
-#     class Meta:
-#         model = City
-#         # fields = ['cityId', 'cityName','city_by_areas']
-#         fields = ['cityId', 'cityName', 'count']
-#
-#     def get_count(self, instance):
-#         # screen_type = self.context.get('screen_type')
-#         # if screen_type == 'business':
-#         #     total_businesses = Business.objects.filter(cityId=instance.cityId, isActive=True, isVerified=True).count()
-#         #     return total_businesses
-#         # else:
-#         total_members = User.objects.filter(cityId=instance.cityId).count()
-#         return total_members
-
-
-class CREATECitySerializer(serializers.ModelSerializer):
+class CREATECitySerializer(BaseSerializer):
     """ this serializer use both 'getById, create and update' """
 
     class Meta:
@@ -80,34 +65,11 @@ class CREATECitySerializer(serializers.ModelSerializer):
 
         return validated_data
 
-    def create(self, validated_data):
-        validated_data['cityName'] = validated_data['cityName'].capitalize()
-        # Create the user instance with modified data
-        city_obj = self.Meta.model.objects.create(**validated_data)
 
-        #  add data in field createdBy
-        user_id_by_token = self.context.get('user_id_by_token')
-        city_obj.createdBy = user_id_by_token
-        city_obj.updatedBy = user_id_by_token
-        city_obj.save()
-        return city_obj
-
-
-class UPDATECitySerializer(serializers.ModelSerializer):
+class UPDATECitySerializer(BaseSerializer):
     class Meta:
         model = City
         fields = ['cityName', 'pincode', 'stateId', 'description', 'isVerified', 'isActive', 'isActiveForResidents']
-
-    def update(self, instance, validated_data):
-        # Update the user instance with modified data
-        validated_data['cityName'] = validated_data['cityName'].capitalize()
-
-        user_id_by_token = self.context.get('user_id_by_token')
-        validated_data['updatedBy'] = user_id_by_token
-        for attr, value in validated_data.items():
-            setattr(instance, attr, value)
-        instance.save()
-        return instance
 
     def to_internal_value(self, data):
 
@@ -172,3 +134,4 @@ class GETCityByCityIdSerializer(serializers.ModelSerializer):
         if self.context.get('status'):
             data['isVerified'] = instance.isVerified
         return data
+

@@ -6,37 +6,30 @@ from accounts.pagination import CustomPagination
 from rest_framework.response import Response
 from jdcApi.models import DharamSthanHistory, MstSect, DharamSthan, LiveLocation, AppConfigurations
 from django.utils import timezone
-from django.db.models import Q
+from django.db.models import Q, Count
 
 
 class POSTNewLiveLocation(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
-        try:
-            get_user_id = get_user_id_from_token_view(request)
-            serializer = CREATENewLiveLocationSerializer(data=request.data, context={'user_id_by_token': get_user_id})
-            if serializer.is_valid():
-                serializer.save()
-                response_data = {
-                    'statusCode': 200,
-                    'status': 'Success',
-                    'data': {'message': 'Record Added successfully.'}
-                }
-                return Response(response_data)
+
+        get_user_id = get_user_id_from_token_view(request)
+        serializer = CREATENewLiveLocationSerializer(data=request.data, context={'user_id_by_token': get_user_id})
+        if serializer.is_valid():
+            serializer.save()
             response_data = {
-                'statusCode': 400,
-                'status': 'failed',
-                'data': serializer.errors
+                'statusCode': 200,
+                'status': 'Success',
+                'data': {'message': 'Record Added successfully.'}
             }
-            return Response(response_data, status=400)
-        except Exception as e:
-            response_data = {
-                'statusCode': 500,
-                'status': 'error',
-                'data': {'message': "Internal Server Error"},
-            }
-            return Response(response_data, status=500)
+            return Response(response_data)
+        response_data = {
+            'statusCode': 400,
+            'status': 'failed',
+            'data': serializer.errors
+        }
+        return Response(response_data, status=400)
 
 
 class PUTLiveLocationById(APIView):
@@ -141,7 +134,10 @@ class GETAllSectDharamSthanHistory(APIView):
     """ Count 'DharamSthanHistory' by 'Sect' """
 
     def get(self, request, *args, **kwargs):
-        queryset = MstSect.objects.filter(isActive=True)
+        current_year = timezone.now().year
+        queryset = MstSect.objects.filter(
+            isActive=True
+        )
         # print(queryset)
         if len(queryset) < 1:
             response_data = {

@@ -15,31 +15,23 @@ class POSTNewAppConfiguration(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
-        try:
-            get_user_id = get_user_id_from_token_view(request)
-            serializer = CREATEAppConfigurationSerializer(data=request.data, context={'user_id_by_token': get_user_id})
-            if serializer.is_valid():
-                serializer.save()
-                response_data = {
-                    'statusCode': 200,
-                    'status': 'Success',
-                    'data': {'message': 'Record Added successfully.'}
-                }
-                return Response(response_data)
-            response_data = {
-                'statusCode': 400,
-                'status': 'failed',
-                'data': serializer.errors
-            }
-            return Response(response_data, status=400)
-        except Exception as e:
-            response_data = {
-                'statusCode': 500,
-                'status': 'error',
-                'data': {'error': str(e)},
-            }
-            return Response(response_data, status=500)
 
+        get_user_id = get_user_id_from_token_view(request)
+        serializer = CREATEAppConfigurationSerializer(data=request.data, context={'user_id_by_token': get_user_id})
+        if serializer.is_valid():
+            serializer.save()
+            response_data = {
+                'statusCode': 200,
+                'status': 'Success',
+                'data': {'message': 'Record Added successfully.'}
+            }
+            return Response(response_data)
+        response_data = {
+            'statusCode': 400,
+            'status': 'failed',
+            'data': serializer.errors
+        }
+        return Response(response_data, status=400)
 
 class PUTAppConfigurationById(APIView):
     permission_classes = [IsAuthenticated]
@@ -77,13 +69,6 @@ class PUTAppConfigurationById(APIView):
                 'data': {'message': f"'app configuration id' excepted a number but got '{appConfigurationId}'"},
             }
             return Response(response_data, status=404)
-        except Exception as e:
-            response_data = {
-                'statusCode': status.HTTP_500_INTERNAL_SERVER_ERROR,
-                'status': 'error',
-                'data': {'error': str(e)},
-            }
-            return Response(response_data, status=500)
 
 
 class GETAppConfigurationDetailsById(APIView):

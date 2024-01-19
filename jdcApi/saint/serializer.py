@@ -3,9 +3,11 @@ from rest_framework import serializers
 from jdcApi.models import MstSect, Saint
 from datetime import datetime
 
+from utils.base_serializer import BaseSerializer
+
 
 class GETAllSectWithCountForSaintSerializer(serializers.ModelSerializer):
-    count = serializers.SerializerMethodField()
+    count = serializers.IntegerField()
 
     class Meta:
         model = MstSect
@@ -17,7 +19,7 @@ class GETAllSectWithCountForSaintSerializer(serializers.ModelSerializer):
         return Saint.objects.filter(sectId=sect.id, isActive=True, isVerified=True).count()
 
 
-class CREATESaintSerializer(serializers.ModelSerializer):
+class CREATESaintSerializer(BaseSerializer):
     dob = serializers.DateTimeField(input_formats=['%d %B, %Y'])  # according to 12hr clock to send default time 12:00 AM
     dobTime = serializers.TimeField(input_formats=['%I:%M %p'], allow_null=True)
     dikshaDate = serializers.DateField(input_formats=['%d %B, %Y'])
@@ -78,43 +80,6 @@ class CREATESaintSerializer(serializers.ModelSerializer):
         if errors:
             # print('errors ==> ', errors)
             raise serializers.ValidationError(errors)
-
-        return validated_data
-
-    def create(self, validated_data):
-
-        try:
-            validated_data['name'] = validated_data['name'].title()
-            validated_data['fatherName'] = validated_data['fatherName'].title()
-            validated_data['motherName'] = validated_data['motherName'].title()
-            validated_data['guruName'] = validated_data['guruName'].title()
-            validated_data['birthPlace'] = validated_data['birthPlace'].title()
-        except ValueError:
-            pass
-        # Create the user instance with modified data
-        saint_obj = self.Meta.model.objects.create(**validated_data)
-
-        #  add data in field createdBy
-        user_id_by_token = self.context.get('user_id_by_token')
-        saint_obj.createdBy = user_id_by_token
-        saint_obj.save()
-
-        return saint_obj
-
-
-class UPDATESaintSerializer(serializers.ModelSerializer):
-    dob = serializers.DateField(input_formats=['%d %B, %Y'])
-    dikshaDate = serializers.DateField(input_formats=['%d %B, %Y'])
-    devlokDate = serializers.DateField(input_formats=['%d %B, %Y'],  allow_null=True)
-    dobTime = serializers.TimeField(input_formats=['%I:%M %p'], allow_null=True)
-    devlokTime = serializers.TimeField(input_formats=['%I:%M %p'], allow_null=True)
-
-    class Meta:
-        model = Saint
-        fields = ['name', 'sectId', 'fatherName', 'motherName', 'birthPlace', 'dikshaPlace', 'guruName','dob', 'dobTime', 'dikshaDate', 'devlokDate','devlokTime', 'gender', 'description', 'isVerified', 'isActive']
-
-    def update(self, instance, validated_data):
-        # Update the user instance with modified data
         if validated_data.get('name'):
             validated_data['name'] = validated_data['name'].title()
         if validated_data.get('fatherName'):
@@ -125,13 +90,59 @@ class UPDATESaintSerializer(serializers.ModelSerializer):
             validated_data['guruName'] = validated_data['guruName'].title()
         if validated_data.get('birthPlace'):
             validated_data['birthPlace'] = validated_data['birthPlace'].title()
+        return validated_data
 
-        user_id_by_token = self.context.get('user_id_by_token')
-        validated_data['updatedBy'] = user_id_by_token
-        for attr, value in validated_data.items():
-            setattr(instance, attr, value)
-        instance.save()
-        return instance
+    # def create(self, validated_data):
+    #
+    #     try:
+    #         validated_data['name'] = validated_data['name'].title()
+    #         validated_data['fatherName'] = validated_data['fatherName'].title()
+    #         validated_data['motherName'] = validated_data['motherName'].title()
+    #         validated_data['guruName'] = validated_data['guruName'].title()
+    #         validated_data['birthPlace'] = validated_data['birthPlace'].title()
+    #     except ValueError:
+    #         pass
+    #     # Create the user instance with modified data
+    #     saint_obj = self.Meta.model.objects.create(**validated_data)
+    #
+    #     #  add data in field createdBy
+    #     user_id_by_token = self.context.get('user_id_by_token')
+    #     saint_obj.createdBy = user_id_by_token
+    #     saint_obj.save()
+    #
+    #     return saint_obj
+
+
+class UPDATESaintSerializer(BaseSerializer):
+    dob = serializers.DateField(input_formats=['%d %B, %Y'])
+    dikshaDate = serializers.DateField(input_formats=['%d %B, %Y'])
+    devlokDate = serializers.DateField(input_formats=['%d %B, %Y'],  allow_null=True)
+    dobTime = serializers.TimeField(input_formats=['%I:%M %p'], allow_null=True)
+    devlokTime = serializers.TimeField(input_formats=['%I:%M %p'], allow_null=True)
+
+    class Meta:
+        model = Saint
+        fields = ['name', 'sectId', 'fatherName', 'motherName', 'birthPlace', 'dikshaPlace', 'guruName','dob', 'dobTime', 'dikshaDate', 'devlokDate','devlokTime', 'gender', 'description', 'isVerified', 'isActive']
+
+    # def update(self, instance, validated_data):
+    #     # Update the user instance with modified data
+    #     if validated_data.get('name'):
+    #         validated_data['name'] = validated_data['name'].title()
+    #     if validated_data.get('fatherName'):
+    #         validated_data['fatherName'] = validated_data['fatherName'].title()
+    #     if validated_data.get('motherName'):
+    #         validated_data['motherName'] = validated_data['motherName'].title()
+    #     if validated_data.get('guruName'):
+    #         validated_data['guruName'] = validated_data['guruName'].title()
+    #     if validated_data.get('birthPlace'):
+    #         validated_data['birthPlace'] = validated_data['birthPlace'].title()
+    #
+    #     user_id_by_token = self.context.get('user_id_by_token')
+    #     validated_data['updatedBy'] = user_id_by_token
+    #     for attr, value in validated_data.items():
+    #         setattr(instance, attr, value)
+    #     instance.save()
+    #     return instance
 
     def to_internal_value(self, data):
         sect_id = data.get('sectId')
@@ -190,6 +201,16 @@ class UPDATESaintSerializer(serializers.ModelSerializer):
             # print('errors ==> ', errors)
             raise serializers.ValidationError(errors)
 
+        if validated_data.get('name'):
+            validated_data['name'] = validated_data['name'].title()
+        if validated_data.get('fatherName'):
+            validated_data['fatherName'] = validated_data['fatherName'].title()
+        if validated_data.get('motherName'):
+            validated_data['motherName'] = validated_data['motherName'].title()
+        if validated_data.get('guruName'):
+            validated_data['guruName'] = validated_data['guruName'].title()
+        if validated_data.get('birthPlace'):
+            validated_data['birthPlace'] = validated_data['birthPlace'].title()
         return validated_data
 
 
@@ -237,7 +258,7 @@ class GETSaintByIdSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Saint
-        fields = ['id', 'name', 'sect','sectId', 'fatherName', 'motherName', 'birthPlace', 'dikshaPlace', 'guruName', 'age', 'dikshaDate','devlokDate', 'devlokTime', 'gender', 'dob', 'dobTime', 'dobTime', 'description', 'isVerified', 'isActive']
+        fields = ['id', 'name', 'sect', 'sectId', 'fatherName', 'motherName', 'birthPlace', 'dikshaPlace', 'guruName', 'age', 'dikshaDate','devlokDate', 'devlokTime', 'gender', 'dob', 'dobTime', 'dobTime', 'description', 'isVerified', 'isActive']
 
     def get_age(self, instance):
         dob = instance.dob
@@ -263,9 +284,9 @@ class GETSaintByIdSerializer(serializers.ModelSerializer):
     def get_devlokDate(self, instance):
         dob_time = instance.devlokDate
         return dob_time.strftime('%d %B, %Y') if dob_time else ""
+
     def get_devlokTime(self, instance):
         devlok_time = instance.devlokTime
-
         return devlok_time.strftime('%I:%M %p') if devlok_time else ""
 
 

@@ -3,25 +3,16 @@ from rest_framework import serializers
 from jdcApi.models import DharamSthanHistory, DharamSthan
 from django.utils import timezone
 from datetime import datetime
+from utils.base_serializer import BaseSerializer
 
 
-class CREATEDharamSthanHistorySerializer(serializers.ModelSerializer):
+class CREATEDharamSthanHistorySerializer(BaseSerializer):
     startDate = serializers.DateField(input_formats=("%d %B, %Y",))
     endDate = serializers.DateField(input_formats=("%d %B, %Y",))
 
     class Meta:
         model = DharamSthanHistory
         fields = ['dharamSthanId', "year", 'startDate', 'endDate', 'title', 'body', 'isActive']
-
-    def create(self, validated_data):
-        validated_data['title'] = validated_data['title'].title()
-        # Create the user instance with modified data
-        obj = self.Meta.model.objects.create(**validated_data)
-        #  add data in field createdBy
-        user_id_by_token = self.context.get('user_id_by_token')
-        obj.createdBy = user_id_by_token
-        obj.save()
-        return obj
 
     def to_internal_value(self, data):
         dharam_sthan_id = data.get('dharamSthanId')
@@ -73,7 +64,7 @@ class CREATEDharamSthanHistorySerializer(serializers.ModelSerializer):
         return validated_data
 
 
-class UPDATEDharamSthanHistorySerializer(serializers.ModelSerializer):
+class UPDATEDharamSthanHistorySerializer(BaseSerializer):
     startDate = serializers.DateField(input_formats=("%d %B, %Y",))
     endDate = serializers.DateField(input_formats=("%d %B, %Y",))
 
@@ -81,24 +72,13 @@ class UPDATEDharamSthanHistorySerializer(serializers.ModelSerializer):
         model = DharamSthanHistory
         fields = ['dharamSthanId', "year", 'startDate', 'endDate', 'title', 'body', 'isActive']
 
-    def update(self, instance, validated_data):
-        # Update the user instance with modified data
-        if validated_data.get('title'):
-            validated_data['title'] = validated_data['title'].title()
-
-        user_id_by_token = self.context.get('user_id_by_token')
-        validated_data['updatedBy'] = user_id_by_token
-        for attr, value in validated_data.items():
-            setattr(instance, attr, value)
-        instance.save()
-        return instance
-
     def to_internal_value(self, data):
         dharam_sthan_id = data.get('dharamSthanId')
         year = data.get('year')
         startDate = data.get('startDate')
         endDate = data.get('endDate')
         errors = {}
+
         # custom validation
         if dharam_sthan_id:
             try:
@@ -161,4 +141,6 @@ class GETAllDharamSthanHistorySerializer(serializers.ModelSerializer):
     class Meta:
         model = DharamSthanHistory
         fields = ['id', 'title', "year", 'body', 'isActive']
+
+
 

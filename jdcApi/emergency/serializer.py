@@ -1,8 +1,9 @@
 from rest_framework import serializers
 from jdcApi.models import City, Emergency
+from utils.base_serializer import BaseSerializer
 
 
-class CREATEEmergencySerializer(serializers.ModelSerializer):
+class CREATEEmergencySerializer(BaseSerializer):
 
     class Meta:
         fields = ['cityId', 'departmentName', 'phoneNumber', 'email', 'website']
@@ -51,37 +52,12 @@ class CREATEEmergencySerializer(serializers.ModelSerializer):
 
         return validated_data
 
-    def create(self, validated_data):
-        validated_data['departmentName'] = validated_data['departmentName'].capitalize()
 
-        # Create the user instance with modified data
-        emergency_obj = self.Meta.model.objects.create(**validated_data)
-
-        #  add data in field createdBy
-        user_id_by_token = self.context.get('user_id_by_token')
-        emergency_obj.createdBy = user_id_by_token
-        emergency_obj.save()
-
-        return emergency_obj
-
-
-class UPDATEEmergencySerializer(serializers.ModelSerializer):
+class UPDATEEmergencySerializer(BaseSerializer):
 
     class Meta:
         fields = ['cityId', 'departmentName', 'phoneNumber', 'email', 'website', 'isVerified', 'isActive']
         model = Emergency
-
-    def update(self, instance, validated_data):
-
-        if validated_data.get('departmentName'):
-            validated_data['departmentName'] = validated_data['departmentName'].capitalize()
-
-        user_id_by_token = self.context.get('user_id_by_token')
-        validated_data['updatedBy'] = user_id_by_token
-        for attr, value in validated_data.items():
-            setattr(instance, attr, value)
-        instance.save()
-        return instance
 
     def to_internal_value(self, data):
         updated_fields = {key: value for key, value in data.items() if key in self.Meta.fields}
@@ -135,15 +111,11 @@ class GETEmergencyDetailsSerializer(serializers.ModelSerializer):
 
 
 class GETCityWithCountSerializer(serializers.ModelSerializer):
-    count = serializers.SerializerMethodField()
+    count = serializers.IntegerField()
 
     class Meta:
         model = City
         fields = ['cityId', 'cityName', 'count']
-
-    def get_count(self, instance):
-        count = Emergency.objects.filter(cityId=instance.cityId, isActive=True, isVerified=True).count()
-        return count
 
 
 class GETCitySerializer(serializers.ModelSerializer):

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import User, OTP, Notification, NotificationHistory
+from .models import User, OTP
 
 
 class UserAdmin(admin.ModelAdmin):
@@ -17,16 +17,16 @@ class OTPAdmin(admin.ModelAdmin):
 admin.site.register(OTP, OTPAdmin)
 
 
-class NotificationAdmin(admin.ModelAdmin):
-    list_display = ['id', 'id', 'title', 'body', 'screen', 'createdBy']
+# class NotificationAdmin(admin.ModelAdmin):
+#     list_display = ['id', 'id', 'title', 'body', 'screen', 'createdBy']
+#
+#
+# admin.site.register(Notification, NotificationAdmin)
 
 
-admin.site.register(Notification, NotificationAdmin)
-
-
-class NotificationHistoryAdmin(admin.ModelAdmin):
-    list_display = ['id', 'userId', 'notificationId']
-
-
-admin.site.register(NotificationHistory, NotificationHistoryAdmin)
+# class NotificationHistoryAdmin(admin.ModelAdmin):
+#     list_display = ['id', 'userId', 'notificationId']
+#
+#
+# admin.site.register(NotificationHistory, NotificationHistoryAdmin)
 

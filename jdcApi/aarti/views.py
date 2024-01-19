@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from jdcApi.models import Aarti, MstSect
 from rest_framework.permissions import IsAuthenticated
 from utils.get_id_by_token import get_user_id_from_token_view
-from django.db.models import Q
+from django.db.models import Q, Count
 from accounts.pagination import CustomPagination
 
 
@@ -16,7 +16,11 @@ class GETAllSectAarti(ListAPIView):
     serializer_class = GETAllSectWithCountForAartiSerializer
 
     def get_queryset(self):
-        query_set = MstSect.objects.filter(isActive=True)
+        # query_set = MstSect.objects.filter(isActive=True)
+        query_set = MstSect.objects.filter(isActive=True).annotate(
+        count=Count('aarti', filter=Q(aarti__isActive=True, aarti__isVerified=True))
+        ).values('id', 'sectName', 'count').order_by('order')
+        # print('query==> ', query_set.query)
         return query_set
 
     def list(self, request, *args, **kwargs):
@@ -174,7 +178,7 @@ class POSTNewAarti(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request, *args, **kwargs):
-        try:
+        # try:
             get_user_id = get_user_id_from_token_view(request)
             serializer = CREATEAartiSerializer(data=request.data, context={'user_id_by_token': get_user_id})
             if serializer.is_valid():
@@ -191,13 +195,13 @@ class POSTNewAarti(APIView):
                 'data': serializer.errors
             }
             return Response(response_data, status=400)
-        except Exception as e:
-            response_data = {
-                'statusCode': 500,
-                'status': 'error',
-                'data': {'message': "Internal Server Error"},
-            }
-            return Response(response_data, status=500)
+        # except Exception as e:
+        #     response_data = {
+        #         'statusCode': 500,
+        #         'status': 'error',
+        #         'data': {'message': "Internal Server Error"},
+        #     }
+        #     return Response(response_data, status=500)
 
 
 class UPDATEAarti(APIView):

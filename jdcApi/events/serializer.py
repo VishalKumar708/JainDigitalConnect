@@ -2,27 +2,16 @@ from rest_framework import serializers
 from jdcApi.models import Event, MstSect, City
 from datetime import date, datetime
 from accounts.models import User
+from utils.base_serializer import BaseSerializer
 
 
-class CREATEEventSerializer(serializers.ModelSerializer):
+class CREATEEventSerializer(BaseSerializer):
     startDate = serializers.DateField(input_formats=("%d %B, %Y",))
     endDate = serializers.DateField(input_formats=("%d %B, %Y",))
 
     class Meta:
         fields = ['cityId', 'sectId', 'startDate', 'endDate', 'title', 'body']
         model = Event
-
-    def create(self, validated_data):
-        validated_data['title'] = validated_data['title'].title()
-        # Create the user instance with modified data
-        obj = self.Meta.model.objects.create(**validated_data)
-
-        #  add data in field createdBy
-        user_id_by_token = self.context.get('user_id_by_token')
-        obj.createdBy = user_id_by_token
-        obj.save()
-
-        return obj
 
     def to_internal_value(self, data):
         sect_id = data.get('sectId')
@@ -78,25 +67,13 @@ class CREATEEventSerializer(serializers.ModelSerializer):
         return validated_data
 
 
-class UPDATEEventSerializer(serializers.ModelSerializer):
+class UPDATEEventSerializer(BaseSerializer):
     startDate = serializers.DateField(input_formats=("%d %B, %Y",))
     endDate = serializers.DateField(input_formats=("%d %B, %Y",))
 
     class Meta:
         fields = ['cityId', 'sectId', 'startDate', 'endDate', 'title', 'body', 'isVerified', 'isActive']
         model = Event
-
-    def update(self, instance, validated_data):
-        # Update the user instance with modified data
-        if validated_data.get('title'):
-            validated_data['title'] = validated_data['title'].title()
-
-        user_id_by_token = self.context.get('user_id_by_token')
-        validated_data['updatedBy'] = user_id_by_token
-        for attr, value in validated_data.items():
-            setattr(instance, attr, value)
-        instance.save()
-        return instance
 
     def to_internal_value(self, data):
         sect_id = data.get('sectId')
@@ -163,14 +140,11 @@ class GETEventDetailsSerializer(serializers.ModelSerializer):
 
 
 class GETAllSectWithCountForEventSerializer(serializers.ModelSerializer):
-    count = serializers.SerializerMethodField()
+    count = serializers.IntegerField()
 
     class Meta:
         fields = ['id', 'sectName', 'count']
         model = MstSect
-
-    def get_count(self, instance):
-        return Event.objects.filter(sectId=instance.id, isActive=True, isVerified=True, endDate__gte=date.today()).count()
 
 
 class SearchCitySerializer(serializers.ModelSerializer):
@@ -180,29 +154,19 @@ class SearchCitySerializer(serializers.ModelSerializer):
 
 
 class GETAllCityWithCountForEventSerializer(serializers.ModelSerializer):
-    count = serializers.SerializerMethodField()
+    count = serializers.IntegerField()
 
     class Meta:
         model = City
         fields = ['cityId', 'cityName', 'count']
 
-    def get_count(self, instance):
-        return Event.objects.filter(isActive=True, isVerified=True, cityId=instance.cityId, sectId=self.context.get('sect_id')).count()
-
 
 class GETAllActiveEvents(serializers.ModelSerializer):
-    uploadedBy = serializers.SerializerMethodField()
+    uploadedBy = serializers.CharField(source="createdBy.name")
 
     class Meta:
         fields = ['id', 'title', 'body', 'uploadedBy']
         model = Event
-
-    def get_uploadedBy(self, instance):
-        try:
-            obj = User.objects.get(id=instance.createdBy)
-            return obj.name
-        except User.DoesNotExist:
-            return ""
 
 
 class GETAllEventsForAdmin(serializers.ModelSerializer):

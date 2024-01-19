@@ -4,11 +4,12 @@ from rest_framework.views import APIView
 from .serializer import *
 from rest_framework import status
 from rest_framework.response import Response
-from jdcApi.models import MstSect, DharamSthan, City
+from jdcApi.models import DharamSthan, City
 from rest_framework.permissions import IsAuthenticated
 from utils.get_id_by_token import get_user_id_from_token_view
-from django.db.models import Q
+from django.db.models import Q, Count
 from accounts.pagination import CustomPagination
+from masterApi.models import MstSect
 
 
 class GETAllSectDharamSthan(ListAPIView):
@@ -16,7 +17,10 @@ class GETAllSectDharamSthan(ListAPIView):
     serializer_class = GETAllSectWithCountForDharamSthanSerializer
 
     def get_queryset(self):
-        query_set = MstSect.objects.filter(isActive=True)
+        # query_set = MstSect.objects.filter(isActive=True)
+        query_set = MstSect.objects.filter(isActive=True).annotate(
+            count=Count('dharamsthan', filter=Q(dharamsthan__isActive=True, dharamsthan__isVerified=True))
+        ).values('id', 'sectName', 'count')
         return query_set
 
     def list(self, request, *args, **kwargs):
@@ -62,7 +66,9 @@ class GETAllCityBySectIdDharamSthan(APIView):
                     'data': serializer.data
                 }
                 return Response(response_data)
-            queryset = City.objects.filter(isActive=True, isVerified=True).order_by('cityName')
+            queryset = City.objects.filter(isActive=True, isVerified=True).annotate(
+        count=Count('dharamsthan', filter=Q(dharamsthan__isActive=True, dharamsthan__isVerified=True))
+        ).values('cityId', 'cityName', 'count').order_by('cityName')
             if len(queryset) < 1:
                 response_data = {
                     'statusCode': 200,
@@ -87,13 +93,6 @@ class GETAllCityBySectIdDharamSthan(APIView):
                 'data': {'message': f" 'sectId' excepted a number but got '{sectId}'."},
             }
             return Response(response_data, status=400)
-        # except Exception as e:
-        #     response_data = {
-        #         'statusCode': 500,
-        #         'status': 'error',
-        #         'data': {'message': "Internal Server Error."},
-        #     }
-        #     return Response(response_data, status=500)
 
 
 class GETAllApprovedDharamSthanBySectId(APIView):
@@ -148,13 +147,13 @@ class GETAllApprovedDharamSthanBySectId(APIView):
                 'data': {'message': f" 'cityId' excepted a number but got '{cityId}'." },
             }
             return Response(response_data, status=404)
-        except Exception as e:
-            response_data = {
-                'statusCode': 500,
-                'status': 'error',
-                'data': {'message': "Internal Server Error."},
-            }
-            return Response(response_data, status=500)
+        # except Exception as e:
+        #     response_data = {
+        #         'statusCode': 500,
+        #         'status': 'error',
+        #         'data': {'message': "Internal Server Error."},
+        #     }
+        #     return Response(response_data, status=500)
 
 
 class GETDharamSthanDetailsById(APIView):
@@ -185,13 +184,7 @@ class GETDharamSthanDetailsById(APIView):
                 'data': {'message': f"excepted a number but you got '{dharamSthanId}'."}
             }
             return Response(response_data, status=404)
-        except Exception as e:
-            response_data = {
-                'statusCode': 500,
-                'status': 'error',
-                'data': {'message': 'Internal Server Error.'}
-            }
-            return Response(response_data, status=500)
+
 
 
 class POSTNewDharamSthan(APIView):
@@ -215,13 +208,6 @@ class POSTNewDharamSthan(APIView):
                 'data': serializer.errors
             }
             return Response(response_data, status=400)
-        # except Exception as e:
-        #     response_data = {
-        #         'statusCode': 500,
-        #         'status': 'error',
-        #         'data': {'message': "Internal Server Error"},
-        #     }
-        #     return Response(response_data, status=500)
 
 
 class PUTDharamSthanById(APIView):
@@ -260,13 +246,6 @@ class PUTDharamSthanById(APIView):
                 'data': {'message': f"'DharamSthan id' excepted a number but got '{dharamSthanId}'"},
             }
             return Response(response_data, status=404)
-        # except Exception as e:
-        #     response_data = {
-        #         'statusCode': status.HTTP_500_INTERNAL_SERVER_ERROR,
-        #         'status': 'error',
-        #         'data': {'error': str(e)},
-        #     }
-        #     return Response(response_data, status=500)
 
 #
 
@@ -295,7 +274,9 @@ class GETAllCityDharamSthanForAdmin(APIView):
                 'data': serializer.data
             }
             return Response(response_data)
-        queryset = City.objects.filter(isActive=True, isVerified=True).order_by('cityName')
+        queryset = City.objects.filter(isActive=True, isVerified=True).annotate(
+            count=Count('dharamsthan')
+        ).values('cityId', 'cityName', 'count').order_by('cityName')
         if len(queryset) < 1:
             response_data = {
                 'statusCode': 200,
@@ -320,47 +301,40 @@ class GETAllApprovedAndUnapprovedDharamSthanByCityIdForAdmin(APIView):
     pagination_class = CustomPagination
 
     def get(self, request, cityId, *args, **kwargs):
-        try:
-            status = request.GET.get('status')
-            if status is None or status.strip().lower() == 'active':
-                queryset = DharamSthan.objects.filter(cityId=cityId, isActive=True, isVerified=True).order_by('name')
-            elif status.strip().lower() == 'inactive':
-                queryset = DharamSthan.objects.filter(Q(cityId=cityId), Q(Q(isActive=False) | Q(isVerified=False))).order_by('name')
-            else:
-                response_data = {
-                    'status': 400,
-                    'statusCode': 'failed',
-                    'data': {'message': f"'status' expected 'active' or 'inactive' value, but got '{status}'."}
-                }
-                return Response(response_data, status=400)
+        status = request.GET.get('status')
+        if status is None or status.strip().lower() == 'active':
+            queryset = DharamSthan.objects.filter(cityId=cityId, isActive=True, isVerified=True).order_by('name')
+        elif status.strip().lower() == 'inactive':
+            queryset = DharamSthan.objects.filter(Q(cityId=cityId), Q(Q(isActive=False) | Q(isVerified=False))).order_by('name')
+        else:
+            response_data = {
+                'status': 400,
+                'statusCode': 'failed',
+                'data': {'message': f"'status' expected 'active' or 'inactive' value, but got '{status}'."}
+            }
+            return Response(response_data, status=400)
 
-            # queryset = self.get_queryset()
-            if len(queryset) < 1:
-                response_data = {
-                    'statusCode': 200,
-                    'status': 'Success',
-                    'data': {'message': 'No Record found.'}
-                }
-
-                return Response(response_data)
-            # pagination
-            pagination_data = {}
-            paginator = self.pagination_class()
-            page = paginator.paginate_queryset(queryset, request)
-            if page is not None:
-                serializer = GETAllDharamSthanForAdminSerializer(page, many=True)
-                pagination_data = paginator.get_paginated_response(serializer.data)
-            # serializer = self.get_serializer(queryset, many=True)
-            response_data = {**{
+        # queryset = self.get_queryset()
+        if len(queryset) < 1:
+            response_data = {
                 'statusCode': 200,
-                'status': 'Success'
-            }, **pagination_data}
+                'status': 'Success',
+                'data': {'message': 'No Record found.'}
+            }
 
             return Response(response_data)
-        except Exception as e:
-            response_data = {
-                'statusCode': 500,
-                'status': 'error',
-                'data': {'error': 'Internal Server Error.'},
-            }
-            return Response(response_data, status=500)
+        # pagination
+        pagination_data = {}
+        paginator = self.pagination_class()
+        page = paginator.paginate_queryset(queryset, request)
+        if page is not None:
+            serializer = GETAllDharamSthanForAdminSerializer(page, many=True)
+            pagination_data = paginator.get_paginated_response(serializer.data)
+        # serializer = self.get_serializer(queryset, many=True)
+        response_data = {**{
+            'statusCode': 200,
+            'status': 'Success'
+        }, **pagination_data}
+
+        return Response(response_data)
+

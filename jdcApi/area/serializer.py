@@ -3,24 +3,7 @@ from rest_framework import serializers
 from jdcApi.models import Area, City
 # from datetime import datetime
 from accounts.models import User
-
-
-# class GETAreaWithCountSerializer(serializers.ModelSerializer):
-#     count = serializers.SerializerMethodField()
-#
-#     class Meta:
-#         model = Area
-#         fields = ['areaId', 'areaName', 'count']
-#
-#     def get_count(self, instance):
-#         total_members = User.objects.filter(areaId=instance.areaId).count()
-#         return total_members
-#
-#
-# class GETAreaSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Area
-#         fields = ['areaId', 'areaName']
+from utils.base_serializer import BaseSerializer
 
 
 class GETAreaForAdminSerializer(serializers.ModelSerializer):
@@ -29,7 +12,7 @@ class GETAreaForAdminSerializer(serializers.ModelSerializer):
         fields = ['areaId', 'areaName', 'areaContactNumber']
 
 
-class CREATEAreaSerializer(serializers.ModelSerializer):
+class CREATEAreaSerializer(BaseSerializer):
     class Meta:
         model = Area
         fields = ['cityId', 'areaName', 'areaMC', 'landmark', 'areaContactNumber']
@@ -53,9 +36,9 @@ class CREATEAreaSerializer(serializers.ModelSerializer):
             except ValueError:
                 errors['cityId'] = [f"'city id' excepted a number but got '{city_id}'."]
 
-        if contact_number:
-            if not str(contact_number).isdigit() or len(str(contact_number)) != 10:
-                errors['areaContactNumber'] = ['Please Enter a Valid Number.']
+        # if contact_number:
+        #     if not str(contact_number).isdigit() or len(str(contact_number)) != 10:
+        #         errors['areaContactNumber'] = ['Please Enter a Valid Number.']
         # default validation
         validated_data = None
         try:
@@ -74,35 +57,11 @@ class CREATEAreaSerializer(serializers.ModelSerializer):
 
         return validated_data
 
-    def create(self, validated_data):
-        validated_data['areaName'] = validated_data['areaName'].capitalize()
-        # Create the user instance with modified data
-        city_obj = self.Meta.model.objects.create(**validated_data)
 
-        #  add data in field createdBy
-        user_id_by_token = self.context.get('user_id_by_token')
-        city_obj.createdBy = user_id_by_token
-        city_obj.save()
-
-        return city_obj
-
-
-class UPDATEAreaSerializer(serializers.ModelSerializer):
+class UPDATEAreaSerializer(BaseSerializer):
     class Meta:
         model = Area
         fields = ['cityId', 'areaName', 'areaMC', 'landmark', 'areaContactNumber', 'isActive', 'isVerified']
-
-    def update(self, instance, validated_data):
-        # Update the user instance with modified data
-        if validated_data.get('areaName'):
-            validated_data['areaName'] = validated_data['areaName'].capitalize()
-
-        user_id_by_token = self.context.get('user_id_by_token')
-        validated_data['updatedBy'] = user_id_by_token
-        for attr, value in validated_data.items():
-            setattr(instance, attr, value)
-        instance.save()
-        return instance
 
     def to_internal_value(self, data):
         updated_fields = {key: value for key, value in data.items() if key in self.Meta.fields}
@@ -112,7 +71,7 @@ class UPDATEAreaSerializer(serializers.ModelSerializer):
 
         city_id = data.get('cityId')
         area_name = data.get('areaName')
-        contact_number = data.get('areaContactNumber')
+
         errors = {}
         # custom validation
         if city_id:
@@ -129,9 +88,6 @@ class UPDATEAreaSerializer(serializers.ModelSerializer):
             except ValueError:
                 errors['cityId'] = [f"'city id' excepted a number but got '{city_id}'."]
 
-        if contact_number:
-            if not str(contact_number).isdigit() or len(str(contact_number)) != 10:
-                errors['areaContactNumber'] = ['Please Enter a Valid Number.']
         if city_id is None and area_name:
             errors['areaName'] = [f"to update 'areaName' must provide 'cityId' also."]
         # default validation

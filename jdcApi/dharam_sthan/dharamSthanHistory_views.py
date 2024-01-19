@@ -74,13 +74,6 @@ class PUTDharamSthanHistoryById(APIView):
                 'data': {'message': f"'DharamSthanHistory id' excepted a number but got '{dharamSthanHistoryId}'"},
             }
             return Response(response_data, status=404)
-        # except Exception as e:
-        #     response_data = {
-        #         'statusCode': status.HTTP_500_INTERNAL_SERVER_ERROR,
-        #         'status': 'error',
-        #         'data': {'error': str(e)},
-        #     }
-        #     return Response(response_data, status=500)
 
 
 class GETDharamSthanHistoryDetailsById(APIView):
@@ -147,13 +140,6 @@ class GETAllActiveDharamSthanHistoryBydharamSthanId(APIView):
                 'data': {'message': f"excepted a number but you got '{dharamSthanId}'."}
             }
             return Response(response_data, status=404)
-        except Exception as e:
-            response_data = {
-                'statusCode': 500,
-                'status': 'error',
-                'data': {'message': 'Internal Server Error.'}
-            }
-            return Response(response_data, status=500)
 
 
 class GETAllDharamSthanHistoryBydharamSthanIdForAdmin(APIView):
@@ -184,10 +170,3 @@ class GETAllDharamSthanHistoryBydharamSthanIdForAdmin(APIView):
                 'data': {'message': f"excepted a number but you got '{dharamSthanId}'."}
             }
             return Response(response_data, status=404)
-        except Exception as e:
-            response_data = {
-                'statusCode': 500,
-                'status': 'error',
-                'data': {'message': 'Internal Server Error.'}
-            }
-            return Response(response_data, status=500)

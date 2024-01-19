@@ -1,7 +1,7 @@
 from django.urls import path
 from .user_views import RegisterHead, RegisterMember, GETFamilyByHeadId, IsNumberExist, DeleteMemberById, UpdateUserById, GetAllResidents, GETUserDetailsById
 from .auth_view import SendOTPWithNumber, VerifyOTP
-from .push_notification import CreateNewNotification
+# from .push_notification import CreateNewNotification
 
 from .custom_filter import filter_queryset
 from .tokens import obtain_token
@@ -40,7 +40,7 @@ urlpatterns = [
     path('GETUserDetailsById/<slug:user_id>/', GETUserDetailsById.as_view()),  # correct
 
     # to create new notification (POST)
-    path('POSTNewNotification/', CreateNewNotification.as_view()),
+    # path('POSTNewNotification/', CreateNewNotification.as_view()),
 
     # (12) generate new tokens both "access" and "refresh" (POST)
     path('obtainToken/', obtain_token),

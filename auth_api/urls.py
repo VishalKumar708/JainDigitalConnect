@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView, TokenVerifyView,
@@ -25,11 +26,18 @@ from rest_framework_simplejwt.views import (
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('accounts.urls')),
     # path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
-    path('api/', include('jdcApi.urls'))
+
+    # account app
+    path('', include('accounts.urls')),
+    # jdcApi app
+    path('api/', include('jdcApi.urls')),
+    # masterApi app
+    path('masterApi/', include('masterApi.urls')),
+    # notification App
+    path('notificationApi/', include('notificationApi.urls'))
 
     # path("__debug__/", include("debug_toolbar.urls")),
 ]

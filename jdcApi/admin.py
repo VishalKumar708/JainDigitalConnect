@@ -44,11 +44,11 @@ class BusinessAdmin(admin.ModelAdmin):
 admin.site.register(Business, BusinessAdmin)
 
 
-class MstSectAdmin(admin.ModelAdmin):
-    list_display = ['id', 'sectName', 'isActive']
-
-
-admin.site.register(MstSect, MstSectAdmin)
+# class MstSectAdmin(admin.ModelAdmin):
+#     list_display = ['id', 'sectName', 'isActive']
+#
+#
+# admin.site.register(MstSect, MstSectAdmin)
 
 
 class SaintAdmin(admin.ModelAdmin):
@@ -58,33 +58,33 @@ class SaintAdmin(admin.ModelAdmin):
 admin.site.register(Saint, SaintAdmin)
 
 
-class MstBloodGroupAdmin(admin.ModelAdmin):
-    list_display = ['id', 'bloodGroupName', 'order', 'isActive']
-
-
-admin.site.register(MstBloodGroup, MstBloodGroupAdmin)
-
-
-class MstMaritalStatusAdmin(admin.ModelAdmin):
-    list_display = ['id', 'maritalStatusName',  'order', 'isActive']
-
-
-admin.site.register(MstMaritalStatus, MstMaritalStatusAdmin)
-
-
-class MstRelationAdmin(admin.ModelAdmin):
-    list_display = ['id', 'description', 'order', 'isActive']
-
-
-admin.site.register(MstRelation,MstRelationAdmin)
-
-
-class MstProfessionAdmin(admin.ModelAdmin):
-    list_display = ['id', 'description', 'order', 'isActive']
-
-
-admin.site.register(MstProfession, MstProfessionAdmin)
-
+# class MstBloodGroupAdmin(admin.ModelAdmin):
+#     list_display = ['id', 'bloodGroupName', 'order', 'isActive']
+#
+#
+# admin.site.register(MstBloodGroup, MstBloodGroupAdmin)
+#
+#
+# class MstMaritalStatusAdmin(admin.ModelAdmin):
+#     list_display = ['id', 'maritalStatusName',  'order', 'isActive']
+#
+#
+# admin.site.register(MstMaritalStatus, MstMaritalStatusAdmin)
+#
+#
+# class MstRelationAdmin(admin.ModelAdmin):
+#     list_display = ['id', 'description', 'order', 'isActive']
+#
+#
+# admin.site.register(MstRelation,MstRelationAdmin)
+#
+#
+# class MstProfessionAdmin(admin.ModelAdmin):
+#     list_display = ['id', 'description', 'order', 'isActive']
+#
+#
+# admin.site.register(MstProfession, MstProfessionAdmin)
+#
 
 class EmergencyAdmin(admin.ModelAdmin):
     list_display = ['id', 'departmentName', 'phoneNumber', 'email', 'website', 'isVerified', 'isActive']
@@ -94,7 +94,7 @@ admin.site.register(Emergency, EmergencyAdmin)
 
 
 class DharamSthanAdmin(admin.ModelAdmin):
-    list_display = ['name', 'cityId', 'sectId', 'address', 'locationLink', 'postalCode', 'foundationDate', 'accountNumber', 'ifscCode', 'upiId', 'isActive', 'isVerified']
+    list_display = ['id','name', 'cityId', 'sectId', 'address', 'locationLink', 'postalCode', 'foundationDate', 'accountNumber', 'ifscCode', 'upiId', 'isActive', 'isVerified']
 
 
 admin.site.register(DharamSthan, DharamSthanAdmin)
@@ -143,11 +143,11 @@ class AppConfigurationsAdmin(admin.ModelAdmin):
 admin.site.register(AppConfigurations, AppConfigurationsAdmin)
 
 
-class FeedbackTitleAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title', 'order', 'isActive', 'createdBy', 'updatedBy']
-
-
-admin.site.register(MstFeedbackTitle, FeedbackTitleAdmin)
+# class FeedbackTitleAdmin(admin.ModelAdmin):
+#     list_display = ['id', 'title', 'order', 'isActive', 'createdBy', 'updatedBy']
+#
+#
+# admin.site.register(MstFeedbackTitle, FeedbackTitleAdmin)
 
 
 class FeedbackAdmin(admin.ModelAdmin):

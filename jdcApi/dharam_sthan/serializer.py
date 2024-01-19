@@ -1,30 +1,25 @@
 from django.db.models import Q
 from rest_framework import serializers
-from jdcApi.models import DharamSthan, MstSect, City
-from accounts.models import User
+from jdcApi.models import DharamSthan, City
 from datetime import date, datetime
+from utils.base_serializer import BaseSerializer
+from masterApi.models import MstSect
 
 
 class GETAllSectWithCountForDharamSthanSerializer(serializers.ModelSerializer):
-    count = serializers.SerializerMethodField()
+    count = serializers.IntegerField()
 
     class Meta:
         model = MstSect
         fields = ['id', 'sectName', 'count']
 
-    def get_count(self, instance):
-        return DharamSthan.objects.filter(isActive=True, isVerified=True, sectId=instance.id).count()
-
 
 class GETAllCityWithCountForDharamSthanSerializer(serializers.ModelSerializer):
-    count = serializers.SerializerMethodField()
+    count = serializers.IntegerField()
 
     class Meta:
         model = City
         fields = ['cityId', 'cityName', 'count']
-
-    def get_count(self, instance):
-        return DharamSthan.objects.filter(isActive=True, isVerified=True, cityId=instance.cityId).count()
 
 
 class SearchCitySerializer(serializers.ModelSerializer):
@@ -33,39 +28,12 @@ class SearchCitySerializer(serializers.ModelSerializer):
         fields = ['cityId', 'cityName']
 
 
-class GETDharamSthanSerializer(serializers.ModelSerializer):
-    uploadedBy = serializers.SerializerMethodField()
-
-    class Meta:
-        model = DharamSthan
-        fields = ['id', 'aartiName', 'uploadedBy']
-
-    def get_uploadedBy(self, instance):
-        try:
-            user_obj = User.objects.get(id=instance.createdBy)
-            return user_obj.name
-        except User.DoesNotExist:
-            return ""
-
-
-class CREATEDharamSthanSerializer(serializers.ModelSerializer):
+class CREATEDharamSthanSerializer(BaseSerializer):
     foundationDate = serializers.DateField(input_formats=("%d %B, %Y",))
 
     class Meta:
         model = DharamSthan
         fields = ['name', 'cityId', 'sectId', 'address', 'locationLink', 'postalCode', 'foundationDate', 'accountNumber', 'ifscCode', 'upiId']
-
-    def create(self, validated_data):
-        validated_data['name'] = validated_data['name'].title()
-        # Create the user instance with modified data
-        dharam_sthan_obj = self.Meta.model.objects.create(**validated_data)
-
-        #  add data in field createdBy
-        user_id_by_token = self.context.get('user_id_by_token')
-        dharam_sthan_obj.createdBy = user_id_by_token
-        dharam_sthan_obj.save()
-
-        return dharam_sthan_obj
 
     def to_internal_value(self, data):
         dharam_sthan_name = data.get('name')
@@ -130,25 +98,13 @@ class CREATEDharamSthanSerializer(serializers.ModelSerializer):
         return validated_data
 
 
-class UPDATEDharamSthanSerializer(serializers.ModelSerializer):
+class UPDATEDharamSthanSerializer(BaseSerializer):
     foundationDate = serializers.DateField(input_formats=("%d %B, %Y",))
 
     class Meta:
         model = DharamSthan
         fields = ['name', 'cityId', 'sectId', 'address', 'locationLink', 'postalCode', 'foundationDate',
                   'accountNumber', 'ifscCode', 'upiId', 'isVerified', 'isActive']
-
-    def update(self, instance, validated_data):
-        # Update the user instance with modified data
-        if validated_data.get('name'):
-            validated_data['name'] = validated_data['name'].title()
-
-        user_id_by_token = self.context.get('user_id_by_token')
-        validated_data['updatedBy'] = user_id_by_token
-        for attr, value in validated_data.items():
-            setattr(instance, attr, value)
-        instance.save()
-        return instance
 
     def to_internal_value(self, data):
         dharam_sthan_name = data.get('name')
@@ -229,7 +185,7 @@ class GETDharamSthanDetailsSerializer(serializers.ModelSerializer):
 class GETAllDharamSthanSerializer(serializers.ModelSerializer):
     foundationDate = serializers.SerializerMethodField()
     sectName = serializers.CharField(source='sectId.sectName', read_only=True)
-    uploadedBy = serializers.SerializerMethodField()
+    uploadedBy = serializers.CharField(source='createdBy.name', read_only=True)
 
     class Meta:
         model = DharamSthan
@@ -238,13 +194,6 @@ class GETAllDharamSthanSerializer(serializers.ModelSerializer):
 
     def get_foundationDate(self, instance):
         return instance.foundationDate.strftime("%d %B, %Y")
-
-    def get_uploadedBy(self, instance):
-        try:
-            obj = User.objects.get(id=instance.createdBy)
-            return obj.name
-        except User.DoesNotExist:
-            return " "
 
 
 class SearchDharamSthanSerializer(serializers.ModelSerializer):
@@ -260,6 +209,7 @@ class SearchDharamSthanSerializer(serializers.ModelSerializer):
 
 class GETAllDharamSthanForAdminSerializer(serializers.ModelSerializer):
     foundationDate = serializers.SerializerMethodField()
+
     class Meta:
         model = DharamSthan
         fields = ['id', 'name', 'foundationDate', 'postalCode', 'address', 'locationLink']
@@ -269,11 +219,9 @@ class GETAllDharamSthanForAdminSerializer(serializers.ModelSerializer):
 
 
 class GETAllCityWithCountForDharamSthanForAdminSerializer(serializers.ModelSerializer):
-    count = serializers.SerializerMethodField()
+    count = serializers.IntegerField()
 
     class Meta:
         model = City
         fields = ['cityId', 'cityName', 'count']
 
-    def get_count(self, instance):
-        return DharamSthan.objects.filter(cityId=instance.cityId).count()

@@ -1,4 +1,4 @@
-from django.db.models import Q
+from django.db.models import Q, Count
 from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView
 from .serializer import *
@@ -17,7 +17,9 @@ class GETAllSectSaint(ListAPIView):
     serializer_class = GETAllSectWithCountForSaintSerializer
 
     def get_queryset(self):
-        query_set = MstSect.objects.filter(isActive=True)
+        query_set = MstSect.objects.filter(isActive=True).annotate(
+            count=Count('all_saint', filter=Q(all_saint__isVerified=True,all_saint__isActive=True))
+        ).values('id', 'sectName', 'count')
         return query_set
 
     def list(self, request, *args, **kwargs):
@@ -174,14 +176,6 @@ class GETAllSaintsBySearchParam(APIView):
                 'data': {'message': f"'id' expected a number but got '{sectId}'. "}
             }
             return Response(response_data, status=404)
-        except Exception as e:
-            error_logger.error(f'An Exception occured while searching saint by name {e}')
-            response_data = {
-                'status': 500,
-                'statusCode': 'error',
-                'data': {'error': "Internal Server error."}
-            }
-            return Response(response_data, status=500)
 
 
 class GETAllActiveSaintBySectId(APIView):
@@ -243,7 +237,7 @@ class GETAllActiveSaintBySectId(APIView):
             return Response(response_data, status=500)
 
 
-class GETAllAddAndApprovedSaint(APIView):
+class GETAllSaintForAdmin(APIView):
     pagination_class = CustomPagination
 
     def get(self, request, *args, **kwargs):
@@ -254,9 +248,9 @@ class GETAllAddAndApprovedSaint(APIView):
             if search_param:
                 pagination_data = {}
                 if search_param.strip().lower() == 'active':
-                    queryset = Saint.objects.filter(isVerified=True, isActive=True).order_by('name')
+                    queryset = Saint.objects.filter(isVerified=True, isActive=True).order_by('dikshaDate')
                 elif search_param.strip().lower() == 'inactive':
-                    queryset = Saint.objects.filter(Q(isVerified=False) | Q(isActive=False)).order_by('name')
+                    queryset = Saint.objects.filter(Q(isVerified=False) | Q(isActive=False)).order_by('dikshaDate')
                 else:
                     response_data = {
                         'status': 400,

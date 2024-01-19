@@ -67,3 +67,19 @@ def string_to_bool(input_str):
 #     except Exception as e:
 #         print('Exception while sending email to client.', e)
 #         return False
+
+
+from .models import User  # Import your User model here
+
+def get_user_object_from_context(context, user=None):
+    """ help to add data in 'createdBy' and 'updatedBy' field of each model when a new object is created """
+    user_id_by_token = context.get('user_id_by_token')
+    try:
+        if user_id_by_token:
+            user_object = User.objects.get(id=user_id_by_token)
+        else:
+            user_object = user
+    except User.DoesNotExist:
+        user_object = None
+    return user_object
+

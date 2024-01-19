@@ -4,23 +4,16 @@ from jdcApi.models import City, Business
 from accounts.models import User
 from datetime import datetime
 
+from utils.base_serializer import BaseSerializer
+from phonenumber_field.serializerfields import PhoneNumberField
 
-class CREATEBusinessSerializer(serializers.ModelSerializer):
+
+class CREATEBusinessSerializer(BaseSerializer):
+    businessPhoneNumber = PhoneNumberField()
+
     class Meta:
         model = Business
         fields = ['cityId', 'userId', 'businessName', 'businessType', 'businessPhoneNumber', 'email', 'website','gstNumber', 'address', 'businessDescription']
-
-    def create(self, validated_data):
-        validated_data['businessName'] = validated_data['businessName'].capitalize()
-        # Create the user instance with modified data
-        city_obj = self.Meta.model.objects.create(**validated_data)
-
-        #  add data in field createdBy
-        user_id_by_token = self.context.get('user_id_by_token')
-        city_obj.createdBy = user_id_by_token
-        city_obj.save()
-
-        return city_obj
 
     def to_internal_value(self, data):
         city_id = data.get('cityId')
@@ -71,22 +64,11 @@ class CREATEBusinessSerializer(serializers.ModelSerializer):
         return validated_data
 
 
-class PUTBusinessSerializer(serializers.ModelSerializer):
+class PUTBusinessSerializer(BaseSerializer):
+    businessPhoneNumber = PhoneNumberField()
     class Meta:
         model = Business
         fields = ['userId', 'cityId', 'businessName', 'businessType', 'businessPhoneNumber', 'email', 'website','gstNumber','address', 'businessDescription', 'isVerified', 'isActive']
-
-    def update(self, instance, validated_data):
-        # Update the user instance with modified data
-        if validated_data.get('businessName'):
-            validated_data['businessName'] = validated_data['businessName'].capitalize()
-
-        user_id_by_token = self.context.get('user_id_by_token')
-        validated_data['updatedBy'] = user_id_by_token
-        for attr, value in validated_data.items():
-            setattr(instance, attr, value)
-        instance.save()
-        return instance
 
     def to_internal_value(self, data):
         updated_fields = {key: value for key, value in data.items() if key in self.Meta.fields}
@@ -133,6 +115,7 @@ class PUTBusinessSerializer(serializers.ModelSerializer):
 
 
 class GETBusinessSerializer(serializers.ModelSerializer):
+    businessPhoneNumber = PhoneNumberField(default="")
     class Meta:
         model = Business
         fields = ['businessId', 'businessName', 'businessType', 'businessDescription', 'businessPhoneNumber', 'website', 'email', 'gstNumber', 'address']
@@ -140,22 +123,27 @@ class GETBusinessSerializer(serializers.ModelSerializer):
 
 class GETBusinessByIdSerializer(serializers.ModelSerializer):
     cityName = serializers.CharField(source='cityId.cityName', read_only=True)
+    businessPhoneNumber = PhoneNumberField(default="")
+    countryCode = serializers.SerializerMethodField()
+    phoneNumber = serializers.CharField(source='businessPhoneNumber.national_number', default=None)
 
     class Meta:
         model = Business
-        fields = ['businessId','cityId', 'cityName', 'businessName', 'businessType', 'businessPhoneNumber', 'email', 'website', 'gstNumber', 'businessDescription', 'isVerified', 'isActive']
+        fields = ['businessId','cityId', 'cityName','countryCode','phoneNumber', 'businessName', 'businessType', 'businessPhoneNumber', 'email', 'website', 'gstNumber', 'businessDescription', 'isVerified', 'isActive']
+
+    def get_countryCode(self, instance):
+        print('business phoneNumber==> ',instance.businessPhoneNumber)
+        if instance.businessPhoneNumber:
+            return f"+{instance.businessPhoneNumber.country_code}"
+        return None
 
 
 class GETCityCountForBusinessSerializer(serializers.ModelSerializer):
-    count = serializers.SerializerMethodField()
+    count = serializers.IntegerField()
 
     class Meta:
         model = City
         fields = ['cityId', 'cityName', 'count']
-
-    def get_count(self, instance):
-        total_businesses = Business.objects.filter(cityId=instance.cityId, isActive=True, isVerified=True).count()
-        return total_businesses
 
 
 class GETCitySerializer(serializers.ModelSerializer):

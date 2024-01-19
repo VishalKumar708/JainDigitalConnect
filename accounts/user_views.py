@@ -10,9 +10,11 @@ from .utils import is_valid_mobile_number, is_integer, string_to_bool
 from rest_framework import status
 from .serializers import HeadSerializer, MemberSerializer, GETFamilyByHeadIdSerializer, UpdateMemberSerializer, GETAllUserSerializer, GETUserDetailsByIdSerializer
 
-from .push_notification import send_notification
+
+from notificationApi.push_notification import send_notification
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from .auth import get_user_id_from_token_view
+from phonenumber_field.phonenumber import PhoneNumber
 import logging
 error_logger = logging.getLogger('error')
 info_logger = logging.getLogger('info')
@@ -102,7 +104,7 @@ class GETFamilyByHeadId(APIView):
 
     def get(self, request, head_id,  *args, **kwargs):
         try:
-            int(head_id)
+            # int(head_id)
             User.objects.get(id=head_id, headId=None)
             filtered_obj = User.objects.filter(headId=head_id)
             if len(filtered_obj) == 0:
@@ -158,8 +160,9 @@ class IsNumberExist(APIView):
             }
             return Response(json_data, status=400)
         else:
-
-            if not str(phone_number).isdigit() or len(phone_number.strip()) != 10:
+            phone_number = PhoneNumber(phone_number)
+            print('phoneNumber valid==> ', phone_number.is_valid())
+            if not phone_number.is_valid():
                 json_data = {
                     'statusCode': 400,
                     'status': 'Failed',
@@ -250,7 +253,7 @@ class UpdateUserById(APIView):
 
     def put(self, request, user_id,  *args, **kwargs):
         try:
-            int(user_id)
+            # int(user_id)
             member = User.objects.get(id=user_id)
             # check 'isAdmin' field is available in data or not
             is_admin = None if request.data.get('isAdmin') is None else request.data.get('isAdmin')
@@ -330,43 +333,34 @@ class GetAllResidents(ListAPIView):
         return qs
 
     def list(self, request, *args, **kwargs):
-        try:
-            queryset = self.get_queryset()
-            if len(queryset) == 0:
-                response_data = {
-                    'statusCode': 404,
-                    'status': 'failed',
-                    'data': {'msg': 'Record Not found.'},
-                }
-                info_logger.info('All user data retrieve failed because User not found. ')
-                return Response(response_data)
-
-            # Apply pagination
-            # page_size = self.get_page_size(request)
-            page = self.paginate_queryset(queryset)
-            if page is not None:
-                serializer = self.get_serializer(page, many=True)
-                return self.get_paginated_response(serializer.data)
-
-            # if pagination is disabled
-            serializer = self.get_serializer(queryset, many=True)
-
-            json_data = {
-                'statusCode': 200,
-                'status': 'success',
-                'totalResidents': len(serializer.data),
-                'results': serializer.data
-            }
-            info_logger.info('All user data retrieve successfully.')
-            return Response(json_data)
-        except Exception as e:
-            error_logger.error('An exception occurred in "GetAllResidents" class. %s', str(e))
-            json_data = {
-                'statusCode': 500,
+        queryset = self.get_queryset()
+        if len(queryset) == 0:
+            response_data = {
+                'statusCode': 404,
                 'status': 'failed',
-                'data': {'message': "Internal Server Error."}
+                'data': {'msg': 'Record Not found.'},
             }
-            return Response(json_data, status=500)
+            info_logger.info('All user data retrieve failed because User not found. ')
+            return Response(response_data)
+
+        # Apply pagination
+        # page_size = self.get_page_size(request)
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            data= self.get_paginated_response(serializer.data)
+        else:
+            # if pagination is disabled
+            data = self.get_serializer(queryset, many=True)
+
+        json_data = {**{
+            'statusCode': 200,
+            'status': 'success',
+            # 'totalResidents': len(serializer.data),
+            # 'results': serializer.data
+        }, **{'data':data}}
+        info_logger.info('All user data retrieve successfully.')
+        return Response(json_data)
 
 
 class GETUserDetailsById(APIView):

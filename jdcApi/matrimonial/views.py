@@ -8,7 +8,7 @@ from accounts.models import User
 from rest_framework.permissions import IsAuthenticated
 from accounts.pagination import CustomPagination
 
-from django.db.models import Q
+from django.db.models import Q, Count
 from django.db.models import Case, F, IntegerField, When
 from django.utils import timezone
 from datetime import datetime, timedelta
@@ -50,16 +50,9 @@ class GETAllApprovedCityMatrimonial(APIView):
                 }
                 return Response(response_data)
 
-            # queryset = City.objects.filter(isActive=True, isVerified=True).order_by(
-            #     'cityName')
-            queryset = City.objects.raw(
-                """
-                select jdcapi_city.cityId, jdcapi_city.cityName, count(accounts_user.id) as count from jdcapi_city
-                left join accounts_user on accounts_user.cityId = jdcapi_city.cityId
-                where jdcapi_city.isVerified=true and jdcapi_city.isActive=True
-                group by jdcapi_city.cityId;
-                """)
-            print('queryset', queryset)
+            queryset = City.objects.filter(isActive=True, isVerified=True).annotate(
+                count=Count('user', filter=Q(user__isVerified=True, user__isActive=True))
+            ).values('cityId', 'cityName', 'count').order_by('cityName')
             if len(queryset) < 1:
                 response_data = {
                     'statusCode': 200,
@@ -76,13 +69,6 @@ class GETAllApprovedCityMatrimonial(APIView):
 
             }
             return Response(response_data)
-        # except Exception as e:
-        #     response_data = {
-        #         'status_code': 500,
-        #         'status': 'error',
-        #         'data': {'message': str(e)},
-        #     }
-        #     return Response(response_data, status=500)
 
 
 class GETAllResidentsByCityIdForMatrimonial(APIView):
@@ -167,19 +153,11 @@ class GETAllResidentsByCityIdForMatrimonial(APIView):
                 'data': {'message': f"'cityId' excepted a number but got '{cityId}'"},
             }
             return Response(response_data, status=404)
-        except Exception as e:
-            response_data = {
-                'statusCode': 500,
-                'status': 'error',
-                'data': {'message': str(e)},
-            }
-            return Response(response_data, status=500)
 
 
 class GETAllResidentsForMatrimonial(APIView):
     pagination_class = CustomPagination
     permission_classes = [IsAuthenticated]
-
 
     def get(self, request, *args, **kwargs):
         try:

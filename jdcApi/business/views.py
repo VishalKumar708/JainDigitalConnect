@@ -8,7 +8,7 @@ from rest_framework.permissions import IsAuthenticated
 from utils.get_id_by_token import get_user_id_from_token_view
 from jdcApi.models import Business, City
 from accounts.models import User
-from django.db.models import Q
+from django.db.models import Q, Count
 from accounts.pagination import CustomPagination
 
 
@@ -51,55 +51,51 @@ class GETAllBusinessByUserId(APIView):
 
 class GetAllApprovedCityAndSearchCityNameForBusiness(APIView):
     """ show all approved city and search 'cityName' by user. for 'business' screen"""
+
     def get(self, request, *args, **kwargs):
-        try:
-            queryset = City.objects.filter(isActive=True, isVerified=True).order_by('cityName')
-            # Customize the response data as needed
-            if len(queryset) < 0:
+        # try:
+        queryset = City.objects.filter(isActive=True, isVerified=True).annotate(
+            count=Count('GetAllBusinessByCityId', filter=Q(GetAllBusinessByCityId__isActive=True, GetAllBusinessByCityId__isVerified=True))
+        ).values('cityId', 'cityName', 'count').order_by('cityName')
+        # Customize the response data as needed
+        if len(queryset) < 0:
+            response_data = {
+                'statusCode': status.HTTP_200_OK,
+                'status': 'Success',
+                'data': {"message": "No Record found."},
+            }
+            return Response(response_data)
+
+        #  for search city Name
+        cityName = request.GET.get('cityName')
+        if cityName is None:
+            serializer = GETCityCountForBusinessSerializer(queryset, many=True)
+            response_data = {
+                'status_code': status.HTTP_200_OK,
+                'status': 'Success',
+                'data': serializer.data,
+            }
+            return Response(response_data)
+        else:
+            filtered_queryset = queryset.filter(cityName__icontains=cityName.strip())
+
+            #  if search not found
+            if len(filtered_queryset) < 1:
                 response_data = {
                     'statusCode': status.HTTP_200_OK,
                     'status': 'Success',
-                    'data': {"message": "No Record found."},
+                    'data': {"message": "No Results found !"},
                 }
                 return Response(response_data)
 
-            #  for search city Name
-            cityName = request.GET.get('cityName')
-            if cityName is None:
-                serializer = GETCityCountForBusinessSerializer(queryset, many=True)
-                response_data = {
-                    'status_code': status.HTTP_200_OK,
-                    'status': 'Success',
-                    'data': serializer.data,
-                }
-                return Response(response_data)
-            else:
-                filtered_queryset = queryset.filter(cityName__icontains=cityName.strip())
-
-                #  if search not found
-                if len(filtered_queryset) < 1:
-                    response_data = {
-                        'statusCode': status.HTTP_200_OK,
-                        'status': 'Success',
-                        'data': {"message": "No Results found !"},
-                    }
-                    return Response(response_data)
-
-                # if search found.
-                serializer = GETCitySerializer(filtered_queryset, many=True)
-                response_data = {
-                    'status_code': status.HTTP_200_OK,
-                    'status': 'Success',
-                    'data': serializer.data,
-                }
-                return Response(response_data)
-        except Exception as e:
+            # if search found.
+            serializer = GETCitySerializer(filtered_queryset, many=True)
             response_data = {
-                'status_code': status.HTTP_500_INTERNAL_SERVER_ERROR,
-                'status': 'error',
-                'data': {'error': str(e)},
+                'status_code': status.HTTP_200_OK,
+                'status': 'Success',
+                'data': serializer.data,
             }
-            return Response(response_data, status=500)
+            return Response(response_data)
 
 
 class GetAllApprovedBusinessByCityId(APIView):  # correct
@@ -158,13 +154,6 @@ class GetAllApprovedBusinessByCityId(APIView):  # correct
                 'data': {'message': f"'cityId' excepted a number but got '{cityId}'."},
             }
             return Response(response_data, status=404)
-        except Exception as e:
-            response_data = {
-                'statusCode': status.HTTP_500_INTERNAL_SERVER_ERROR,
-                'status': 'error',
-                'data': {'error': str(e)},
-            }
-            return Response(response_data, status=500)
 
 
 class GetAllApprovedAndUnapprovedBusiness(APIView):  # correct
@@ -172,48 +161,40 @@ class GetAllApprovedAndUnapprovedBusiness(APIView):  # correct
     pagination_class = CustomPagination
 
     def get(self, request, *args, **kwargs):
-        try:
-            status = request.GET.get('status')
+        status = request.GET.get('status')
 
-            if status is None or status.strip().lower() == 'active':
-                queryset = Business.objects.filter(isActive=True, isVerified=True).order_by('businessName')
-            elif status.strip().lower() == 'inactive':
-                queryset = Business.objects.filter(Q(isActive=False) | Q(isVerified=False)).order_by('businessName')
-            else:
-                response_data = {
-                    'status': 400,
-                    'statusCode': 'failed',
-                    'data': {'message': f"'status' expected 'active' or 'inactive' value, but got '{status}'."}
-                }
-                return Response(response_data, status=400)
-
-            if len(queryset) < 1:
-                response_data = {
-                    'statusCode': 200,
-                    'status': 'Success',
-                    'data': {'message': 'No Record found.'}
-                }
-                return Response(response_data)
-            pagination_data = {}
-            paginator = self.pagination_class()
-            page = paginator.paginate_queryset(queryset, request)
-            if page is not None:
-                serializer = GETBusinessSerializer(page, many=True)
-                pagination_data = paginator.get_paginated_response(serializer.data)
-
-            response_data = {**{
-                'statusCode': 200,
-                'status': 'Success'
-            }, ** pagination_data}
-
-            return Response(response_data)
-        except Exception as e:
+        if status is None or status.strip().lower() == 'active':
+            queryset = Business.objects.filter(isActive=True, isVerified=True).order_by('businessName')
+        elif status.strip().lower() == 'inactive':
+            queryset = Business.objects.filter(Q(isActive=False) | Q(isVerified=False)).order_by('businessName')
+        else:
             response_data = {
-                'statusCode': 500,
-                'status': 'error',
-                'data': {'error': str(e)},
+                'status': 400,
+                'statusCode': 'failed',
+                'data': {'message': f"'status' expected 'active' or 'inactive' value, but got '{status}'."}
             }
-            return Response(response_data, status=500)
+            return Response(response_data, status=400)
+
+        if len(queryset) < 1:
+            response_data = {
+                'statusCode': 200,
+                'status': 'Success',
+                'data': {'message': 'No Record found.'}
+            }
+            return Response(response_data)
+        pagination_data = {}
+        paginator = self.pagination_class()
+        page = paginator.paginate_queryset(queryset, request)
+        if page is not None:
+            serializer = GETBusinessSerializer(page, many=True)
+            pagination_data = paginator.get_paginated_response(serializer.data)
+
+        response_data = {**{
+            'statusCode': 200,
+            'status': 'Success'
+        }, ** pagination_data}
+
+        return Response(response_data)
 
 
 class GetBusinessDetailsById(APIView):  # correct
@@ -244,45 +225,29 @@ class GetBusinessDetailsById(APIView):  # correct
                 'data': {'message': f"'BusinessId' excepted a number but got '{businessId}'."}
             }
             return Response(response_data, status=404)
-        except Exception as e:
-            response_data = {
-                'statusCode':  500,
-                'status': 'error',
-                'data': {'error': str(e)}
-            }
-            return Response(response_data, status=500)
 
 
 class POSTNewBusiness(APIView):
     permission_classes = [IsAuthenticated]
 
     def post(self, request,  *args, **kwargs):
-        try:
 
-            get_user_id = get_user_id_from_token_view(request)
-            serializer = CREATEBusinessSerializer(data=request.data, context={'user_id_by_token': get_user_id})
-            if serializer.is_valid():
-                serializer.save()
-                response_data = {
-                    'statusCode': 200,
-                    'status': 'success',
-                    'data': {'message': 'Record Added Successfully.'}
-                }
-                return Response(response_data)
+        get_user_id = get_user_id_from_token_view(request)
+        serializer = CREATEBusinessSerializer(data=request.data, context={'user_id_by_token': get_user_id})
+        if serializer.is_valid():
+            serializer.save()
             response_data = {
-                'statusCode': status.HTTP_400_BAD_REQUEST,
-                'status': 'failed',
-                'data': serializer.errors
+                'statusCode': 200,
+                'status': 'success',
+                'data': {'message': 'Record Added Successfully.'}
             }
-            return Response(response_data, status=400)
-        except Exception as e:
-            # Handle the case when request data is not valid
-            response_data = {
-                'statusCode': status.HTTP_500_INTERNAL_SERVER_ERROR,
-                'status': 'error',
-                'data': {'message': str(e)},
-            }
-            return Response(response_data, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response(response_data)
+        response_data = {
+            'statusCode': status.HTTP_400_BAD_REQUEST,
+            'status': 'failed',
+            'data': serializer.errors
+        }
+        return Response(response_data, status=400)
 
 
 class PUTBusinessById(APIView):
@@ -319,11 +284,3 @@ class PUTBusinessById(APIView):
                 'data': {'message': "Invalid Business Id."},
             }
             return Response(response_data, status=400)
-        # except Exception as e:
-        #     response_data = {
-        #         'statusCode': status.HTTP_500_INTERNAL_SERVER_ERROR,
-        #         'status': 'error',
-        #         'data': {'error': str(e)},
-        #     }
-        #     return Response(response_data, status=500)
-

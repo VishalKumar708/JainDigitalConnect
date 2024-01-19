@@ -1,51 +1,34 @@
 from django.db.models import Q
 from rest_framework import serializers
-from jdcApi.models import Aarti, MstSect
+from jdcApi.models import Aarti
+from masterApi.models import MstSect
 from accounts.models import User
+from utils.base_serializer import BaseSerializer
 
 
 class GETAllSectWithCountForAartiSerializer(serializers.ModelSerializer):
-    count = serializers.SerializerMethodField()
+    count = serializers.IntegerField()
 
     class Meta:
         model = MstSect
         fields = ['id', 'sectName', 'count']
 
-    def get_count(self, instance):
-        return Aarti.objects.filter(isActive=True, isVerified=True, sectId=instance.id).count()
-
 
 class GETAartiSerializer(serializers.ModelSerializer):
-    uploadedBy = serializers.SerializerMethodField()
+    uploadedBy = serializers.CharField(source='createdBy.name', default="")
 
     class Meta:
         model = Aarti
         fields = ['id', 'aartiName', 'uploadedBy']
 
-    def get_uploadedBy(self, instance):
-        try:
-            user_obj = User.objects.get(id=instance.createdBy)
-            return user_obj.name
-        except User.DoesNotExist:
-            return ""
 
 
-class CREATEAartiSerializer(serializers.ModelSerializer):
+class CREATEAartiSerializer(BaseSerializer):
     class Meta:
         model = Aarti
         fields = ['aartiName', 'sectId', 'order', 'aartiText']
 
-    def create(self, validated_data):
-        validated_data['aartiName'] = validated_data['aartiName'].capitalize()
-        # Create the user instance with modified data
-        state_obj = self.Meta.model.objects.create(**validated_data)
 
-        #  add data in field createdBy
-        user_id_by_token = self.context.get('user_id_by_token')
-        state_obj.createdBy = user_id_by_token
-        state_obj.save()
-
-        return state_obj
 
     def to_internal_value(self, data):
         aarti_name = data.get('aartiName')
@@ -85,22 +68,10 @@ class CREATEAartiSerializer(serializers.ModelSerializer):
         return validated_data
 
 
-class UPDATEAartiSerializer(serializers.ModelSerializer):
+class UPDATEAartiSerializer(BaseSerializer):
     class Meta:
         model = Aarti
         fields = ['aartiName', 'sectId', 'order', 'aartiText', 'isVerified', 'isActive']
-
-    def update(self, instance, validated_data):
-        # Update the user instance with modified data
-        if validated_data.get('aartiName'):
-            validated_data['aartiName'] = validated_data['aartiName'].title()
-
-        user_id_by_token = self.context.get('user_id_by_token')
-        validated_data['updatedBy'] = user_id_by_token
-        for attr, value in validated_data.items():
-            setattr(instance, attr, value)
-        instance.save()
-        return instance
 
     def to_internal_value(self, data):
         sect_id = data.get('sectId')

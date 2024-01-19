@@ -2,23 +2,13 @@ from rest_framework import serializers
 from jdcApi.models import MstFeedbackTitle, Aarti, Feedback
 from datetime import date, datetime
 from accounts.models import User
+from utils.base_serializer import BaseSerializer
 
 
-class CREATEFeedbackSerializer(serializers.ModelSerializer):
+class CREATEFeedbackSerializer(BaseSerializer):
     class Meta:
         model = Feedback
         fields = ['feedbackTitleId', 'body']
-
-    def create(self, validated_data):
-
-        obj = self.Meta.model.objects.create(**validated_data)
-
-        #  add data in field createdBy
-        user_id_by_token = self.context.get('user_id_by_token')
-        obj.createdBy = user_id_by_token
-        obj.save()
-
-        return obj
 
     def to_internal_value(self, data):
         feedbackTitle_id = data.get('feedbackTitleId')
@@ -51,19 +41,10 @@ class CREATEFeedbackSerializer(serializers.ModelSerializer):
         return validated_data
 
 
-class UPDATEFeedbackSerializer(serializers.ModelSerializer):
+class UPDATEFeedbackSerializer(BaseSerializer):
     class Meta:
         model = Feedback
         fields = ['feedbackTitleId', 'body']
-
-    def update(self, instance, validated_data):
-
-        user_id_by_token = self.context.get('user_id_by_token')
-        validated_data['updatedBy'] = user_id_by_token
-        for attr, value in validated_data.items():
-            setattr(instance, attr, value)
-        instance.save()
-        return instance
 
     def to_internal_value(self, data):
         feedbackTitle_id = data.get('feedbackTitleId')
@@ -108,7 +89,7 @@ class GETAllFeedbackForAdminSerializer(serializers.ModelSerializer):
     title = serializers.CharField(source='feedbackTitleId.title')
     postedDate = serializers.SerializerMethodField()
     postedTime = serializers.SerializerMethodField()
-    uploadedBy = serializers.SerializerMethodField()
+    uploadedBy = serializers.CharField(source='createdBy.name')
 
     class Meta:
         model = Feedback
@@ -120,11 +101,3 @@ class GETAllFeedbackForAdminSerializer(serializers.ModelSerializer):
     def get_postedTime(self, instance):
         return instance.createdDate.strftime("%I:%M %p")
 
-    def get_uploadedBy(self, instance):
-        try:
-            if instance.createdBy:
-                user_obj = User.objects.get(id=instance.createdBy)
-                return user_obj.name
-            return "Guest User"
-        except User.DoesNotExist:
-            return ""

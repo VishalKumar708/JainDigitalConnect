@@ -1,51 +1,34 @@
 from django.db.models import Q
 from rest_framework import serializers
 from jdcApi.models import Literature, MstSect
-from accounts.models import User
+from utils.base_serializer import BaseSerializer
 
 
 class GETAllSectWithCountForLiteratureSerializer(serializers.ModelSerializer):
-    count = serializers.SerializerMethodField()
+    count = serializers.IntegerField()
 
     class Meta:
         model = MstSect
         fields = ['id', 'sectName', 'count']
 
-    def get_count(self, instance):
-        return Literature.objects.filter(isActive=True, isVerified=True, sectId=instance.id).count()
+
 
 
 class GETLiteratureSerializer(serializers.ModelSerializer):
-    uploadedBy = serializers.SerializerMethodField()
+    uploadedBy = serializers.CharField(source="createdBy.name")
 
     class Meta:
         model = Literature
         fields = ['id', 'title', 'uploadedBy']
 
-    def get_uploadedBy(self, instance):
-        try:
-            user_obj = User.objects.get(id=instance.createdBy)
-            return user_obj.name
-        except User.DoesNotExist:
-            return ""
 
 
-class CREATELiteratureSerializer(serializers.ModelSerializer):
+
+class CREATELiteratureSerializer(BaseSerializer):
     class Meta:
         model = Literature
         fields = ['title', 'sectId', 'order', 'body']
 
-    def create(self, validated_data):
-        validated_data['title'] = validated_data['title'].capitalize()
-        # Create the user instance with modified data
-        state_obj = self.Meta.model.objects.create(**validated_data)
-
-        #  add data in field createdBy
-        user_id_by_token = self.context.get('user_id_by_token')
-        state_obj.createdBy = user_id_by_token
-        state_obj.save()
-
-        return state_obj
 
     def to_internal_value(self, data):
         title = data.get('title')
@@ -85,22 +68,10 @@ class CREATELiteratureSerializer(serializers.ModelSerializer):
         return validated_data
 
 
-class UPDATELiteratureSerializer(serializers.ModelSerializer):
+class UPDATELiteratureSerializer(BaseSerializer):
     class Meta:
         model = Literature
         fields = ['title', 'sectId', 'order', 'body', 'isVerified', 'isActive']
-
-    def update(self, instance, validated_data):
-        # Update the user instance with modified data
-        if validated_data.get('title'):
-            validated_data['title'] = validated_data['title'].title()
-
-        user_id_by_token = self.context.get('user_id_by_token')
-        validated_data['updatedBy'] = user_id_by_token
-        for attr, value in validated_data.items():
-            setattr(instance, attr, value)
-        instance.save()
-        return instance
 
     def to_internal_value(self, data):
         sect_id = data.get('sectId')

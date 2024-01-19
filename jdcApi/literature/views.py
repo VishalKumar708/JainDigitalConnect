@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from jdcApi.models import Literature, MstSect
 from rest_framework.permissions import IsAuthenticated
 from utils.get_id_by_token import get_user_id_from_token_view
-from django.db.models import Q
+from django.db.models import Q, Count
 from accounts.pagination import CustomPagination
 
 
@@ -16,7 +16,9 @@ class GETAllSectLiterature(ListAPIView):
     serializer_class = GETAllSectWithCountForLiteratureSerializer
 
     def get_queryset(self):
-        query_set = MstSect.objects.filter(isActive=True)
+        query_set = MstSect.objects.filter(isActive=True).annotate(
+        count=Count('literature', filter=Q(literature__isActive=True, literature__isVerified=True))
+        ).values('id', 'sectName', 'count').order_by('order')
         return query_set
 
     def list(self, request, *args, **kwargs):

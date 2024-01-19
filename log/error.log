@@ -1,549 +1,110 @@
-ERROR 2023-09-27 15:50:32,386  30 Invalid URL.
-ERROR 2023-09-27 16:06:21,746  30 Invalid URL.
-ERROR 2023-09-28 12:02:50,221  30 Invalid URL.
-ERROR 2023-09-28 12:02:55,649  30 Invalid URL.
-ERROR 2023-09-28 13:05:25,974  434 Exception occur while filtering data ==> Cannot resolve keyword 'mypage' into field. Choices are: address, areaId, bloodGroup, cityId, createdBy, createdDate, currentAddress, dob, emailId, fatherName, fcmdevice, gender, gotra, groupId, groups, headId, id, isActive, isAdmin, is_staff, is_superuser, last_login, logentry, lookingForMatch, maritalStatus, name, nativePlace, notification, password, phoneNumber, phoneNumberVisibility, profession, relationWithHead, sect, updatedBy, updatedDate, user, user_permissions
-ERROR 2023-09-28 13:30:09,604  487 An exception occurred in "GetAllResidents" class. unhashable type: 'ReturnList'
-ERROR 2023-09-28 16:10:16,565  515 An exception occurred in "GetAllResidents" class. 'NoneType' object has no attribute 'dict'
-ERROR 2023-09-28 16:11:01,383  515 An exception occurred in "GetAllResidents" class. 'str' object has no attribute 'dict'
-ERROR 2023-09-28 16:16:48,683  515 An exception occurred in "GetAllResidents" class. 'str' object has no attribute 'dict'
-ERROR 2023-09-28 16:21:21,845  515 An exception occurred in "GetAllResidents" class. 'str' object has no attribute 'dict'
-ERROR 2023-09-28 16:37:20,854  491 An exception occurred in "GetAllResidents" class. object of type 'NoneType' has no len()
-ERROR 2023-09-29 10:29:46,033  30 Invalid URL.
-ERROR 2023-09-29 10:29:50,858  30 Invalid URL.
-ERROR 2023-09-29 13:12:12,715  30 Invalid URL.
-ERROR 2023-09-29 14:28:36,862  64 While sending OTP to client an exception occur == > ['twilio.base.exceptions.TwilioRestException: \n\x1b[31m\x1b[49mHTTP Error\x1b[0m \x1b[37m\x1b[49mYour request was:\x1b[0m\n\n\x1b[36m\x1b[49mPOST /Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json\x1b[0m\n\n\x1b[37m\x1b[49mTwilio returned the following information:\x1b[0m\n\n\x1b[34m\x1b[49mUnable to create record: The number +91819898XXXX is unverified. Trial accounts cannot send messages to unverified numbers; verify +91819898XXXX at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers\x1b[0m\n\n\x1b[37m\x1b[49mMore information may be available here:\x1b[0m\n\n\x1b[34m\x1b[49mhttps://www.twilio.com/docs/errors/21608\x1b[0m\n\n\n'] 
-ERROR 2023-09-29 14:28:57,572  64 While sending OTP to client an exception occur == > ['twilio.base.exceptions.TwilioRestException: \n\x1b[31m\x1b[49mHTTP Error\x1b[0m \x1b[37m\x1b[49mYour request was:\x1b[0m\n\n\x1b[36m\x1b[49mPOST /Accounts/AC74f8aa592b9f4bc82af4402dfd2ce24a/Messages.json\x1b[0m\n\n\x1b[37m\x1b[49mTwilio returned the following information:\x1b[0m\n\n\x1b[34m\x1b[49mUnable to create record: The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.\x1b[0m\n\n\x1b[37m\x1b[49mMore information may be available here:\x1b[0m\n\n\x1b[34m\x1b[49mhttps://www.twilio.com/docs/errors/21608\x1b[0m\n\n\n'] 
-ERROR 2023-09-29 16:53:15,066  231 An exception occurred when extracting payload data from the refresh token. Token has wrong type
-ERROR 2023-10-03 10:03:01,232  30 Invalid URL.
-ERROR 2023-10-03 10:03:14,808  30 Invalid URL.
-ERROR 2023-10-03 11:54:51,410  44 Unsupported Media Type. Expected application/json but got text/plain
-ERROR 2023-10-03 11:56:41,625  30 Invalid URL.
-ERROR 2023-10-03 13:28:05,018  30 Invalid URL.
-ERROR 2023-10-03 14:06:48,175  30 Invalid URL.
-ERROR 2023-10-03 17:24:15,324  30 Invalid URL.
-ERROR 2023-10-04 10:47:36,171  30 Invalid URL.
-ERROR 2023-10-04 10:47:40,725  30 Invalid URL.
-ERROR 2023-10-04 12:57:21,773  58 Invalid JSON data.Expecting value: line 3 column 1 (char 4)
-ERROR 2023-10-04 15:27:18,121  30 Invalid URL.
-ERROR 2023-10-04 16:39:41,007  36 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-10-05 10:06:51,642  30 Invalid URL.
-ERROR 2023-10-05 10:06:57,285  30 Invalid URL.
-ERROR 2023-10-05 10:51:51,885  30 Invalid URL.
-ERROR 2023-10-05 10:58:22,520  30 Invalid URL.
-ERROR 2023-10-05 11:11:10,336  30 Invalid URL.
-ERROR 2023-10-05 11:14:06,574  30 Invalid URL.
-ERROR 2023-10-05 11:14:47,428  30 Invalid URL.
-ERROR 2023-10-05 11:15:26,619  30 Invalid URL.
-ERROR 2023-10-05 11:57:19,873  30 Invalid URL.
-ERROR 2023-10-05 11:57:22,507  30 Invalid URL.
-ERROR 2023-10-05 12:34:30,690  30 Invalid URL.
-ERROR 2023-10-05 13:34:35,372  30 Invalid URL.
-ERROR 2023-10-05 13:34:56,396  30 Invalid URL.
-ERROR 2023-10-05 13:35:07,215  30 Invalid URL.
-ERROR 2023-10-05 13:35:38,377  30 Invalid URL.
-ERROR 2023-10-05 14:10:03,426  58 Invalid JSON data.Expecting value: line 3 column 1 (char 8)
-ERROR 2023-10-05 14:10:54,147  44 Unsupported Media Type. Expected application/json but got multipart/form-data
-ERROR 2023-10-05 16:09:10,167  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-10-05 17:36:44,028  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-10-30 11:47:05,834  30 Invalid URL.
-ERROR 2023-10-30 11:47:09,188  30 Invalid URL.
-ERROR 2023-10-30 16:37:27,753  30 Invalid URL.
-ERROR 2023-10-31 10:10:30,994  30 Invalid URL.
-ERROR 2023-10-31 10:12:07,510  30 Invalid URL.
-ERROR 2023-10-31 10:12:11,555  30 Invalid URL.
-ERROR 2023-10-31 10:56:12,140  30 Invalid URL.
-ERROR 2023-10-31 10:56:35,108  30 Invalid URL.
-ERROR 2023-10-31 10:56:46,368  30 Invalid URL.
-ERROR 2023-10-31 11:37:07,068  30 Invalid URL.
-ERROR 2023-11-14 10:53:43,561  30 Invalid URL.
-ERROR 2023-11-14 10:53:47,893  30 Invalid URL.
-ERROR 2023-11-14 10:53:50,389  30 Invalid URL.
-ERROR 2023-11-14 10:54:11,131  30 Invalid URL.
-ERROR 2023-11-14 11:13:18,835  30 Invalid URL.
-ERROR 2023-11-14 12:52:33,316  30 Invalid URL.
-ERROR 2023-11-14 12:52:40,599  30 Invalid URL.
-ERROR 2023-11-14 12:52:44,973  30 Invalid URL.
-ERROR 2023-11-14 13:44:21,222  30 Invalid URL.
-ERROR 2023-11-14 13:44:33,270  30 Invalid URL.
-ERROR 2023-11-14 13:44:36,081  30 Invalid URL.
-ERROR 2023-11-14 13:44:43,451  30 Invalid URL.
-ERROR 2023-11-14 13:46:42,321  30 Invalid URL.
-ERROR 2023-11-14 13:46:54,246  30 Invalid URL.
-ERROR 2023-11-14 14:28:02,252  30 Invalid URL.
-ERROR 2023-11-14 15:57:54,976  30 Invalid URL.
-ERROR 2023-11-14 16:01:59,823  30 Invalid URL.
-ERROR 2023-11-15 10:37:56,428  30 Invalid URL.
-ERROR 2023-11-15 10:38:03,054  30 Invalid URL.
-ERROR 2023-11-15 13:31:45,122  30 Invalid URL.
-ERROR 2023-11-15 13:31:49,397  30 Invalid URL.
-ERROR 2023-11-16 11:21:56,244  139 While converting dob to object an Exception occur == > time data 'May 9, 2005' does not match format '%B %d %Y' 
-ERROR 2023-11-16 11:26:53,203  139 While converting dob to object an Exception occur == > time data 'May 9, 2005' does not match format '%B %d %Y' 
-ERROR 2023-11-16 11:27:03,971  139 While converting dob to object an Exception occur == > time data 'May 9, 2005' does not match format '%B %d %Y' 
-ERROR 2023-11-16 11:28:11,722  139 While converting dob to object an Exception occur == > time data 'May 9, 2005' does not match format '%B %d %Y' 
-ERROR 2023-11-16 12:50:42,328  36 An Exception occured while creating new Blood Group Field name `description` is not valid for model `MstBloodGroup`.
-ERROR 2023-11-16 13:24:55,007  107 Invalid BloodGroup Id. While fetching record.
-ERROR 2023-11-16 13:25:02,278  110 An Exception occured while fetching data from blood Group. Field 'id' expected a number but got 'sdf'.
-ERROR 2023-11-16 13:33:37,655  132 An Exception occured while fetching all bloodGroup names from blood Group table. Got AttributeError when attempting to get a value for field `bloodGroupName` on serializer `GETBloodGroupByIdSerializer`.
-The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
-Original exception text was: 'QuerySet' object has no attribute 'bloodGroupName'.
-ERROR 2023-11-16 13:34:36,932  132 An Exception occured while fetching all bloodGroup names from blood Group table. Got AttributeError when attempting to get a value for field `bloodGroupName` on serializer `GETAllBloodGroupSerializer`.
-The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
-Original exception text was: 'QuerySet' object has no attribute 'bloodGroupName'.
-ERROR 2023-11-16 13:35:26,186  132 An Exception occured while fetching all bloodGroup names from blood Group table. Got AttributeError when attempting to get a value for field `bloodGroupName` on serializer `GETAllBloodGroupSerializer`.
-The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
-Original exception text was: 'QuerySet' object has no attribute 'bloodGroupName'.
-ERROR 2023-11-16 13:36:29,968  133 An Exception occured while fetching all bloodGroup names from blood Group table. Got AttributeError when attempting to get a value for field `bloodGroupName` on serializer `GETAllBloodGroupSerializer`.
-The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
-Original exception text was: 'QuerySet' object has no attribute 'bloodGroupName'.
-ERROR 2023-11-16 13:38:05,018  133 An Exception occured while fetching all bloodGroup names from blood Group table. Got AttributeError when attempting to get a value for field `bloodGroupName` on serializer `GETAllBloodGroupSerializer`.
-The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
-Original exception text was: 'QuerySet' object has no attribute 'bloodGroupName'.
-ERROR 2023-11-16 13:38:38,125  133 An Exception occured while fetching all bloodGroup names from blood Group table. Got AttributeError when attempting to get a value for field `bloodGroupName` on serializer `GETAllBloodGroupSerializer`.
-The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
-Original exception text was: 'QuerySet' object has no attribute 'bloodGroupName'.
-ERROR 2023-11-16 13:40:51,955  133 An Exception occured while fetching all bloodGroup names from blood Group table. Got AttributeError when attempting to get a value for field `order` on serializer `GETAllBloodGroupSerializer`.
-The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
-Original exception text was: 'QuerySet' object has no attribute 'order'.
-ERROR 2023-11-16 14:40:42,544  36 An Exception occured while creating new Blood Group Cannot resolve keyword 'bloodGroupName' into field. Choices are: createdBy, createdDate, groupId, id, isActive, sectName, select_sect, updatedBy, updatedDate
-ERROR 2023-11-16 15:43:58,606  36 An Exception occured while creating new MaritalStatus Cannot resolve keyword 'maritalStatusName' into field. Choices are: bloodGroupName, createdBy, createdDate, groupId, id, isActive, order, updatedBy, updatedDate
-ERROR 2023-11-16 15:49:21,837  74 Invalid MaritalStatus Id. While updating record.
-ERROR 2023-11-16 15:51:47,841  77 An Exception occured while updating "MaritalStatus" Record. Field 'id' expected a number but got 'afds'.
-ERROR 2023-11-16 15:52:29,336  77 An Exception occured while updating "MaritalStatus" Record. Cannot resolve keyword 'maritalStatusName' into field. Choices are: bloodGroupName, createdBy, createdDate, groupId, id, isActive, order, updatedBy, updatedDate
-ERROR 2023-11-16 16:14:18,265  105 Invalid MaritalStatus Id. While fetching record.
-ERROR 2023-11-16 16:14:25,072  108 An Exception occured while fetching data from MaritalStatus. Field 'id' expected a number but got 'aksd'.
-ERROR 2023-11-16 16:15:25,336  168 An Exception occured while fetching all MaritalStatus names from MstMaritalStatus table. Got AttributeError when attempting to get a value for field `bloodGroupName` on serializer `GETAllMaritalStatusForDropDownSerializer`.
-The serializer field might be named incorrectly and not match any attribute or key on the `MstMaritalStatus` instance.
-Original exception text was: 'MstMaritalStatus' object has no attribute 'bloodGroupName'.
-ERROR 2023-11-16 16:15:51,589  168 An Exception occured while fetching all MaritalStatus names from MstMaritalStatus table. Field name `bloodGroupName` is not valid for model `MstMaritalStatus`.
-ERROR 2023-11-16 17:15:37,421  73 Invalid Relation Id. While updating record.
-ERROR 2023-11-16 17:15:44,194  76 An Exception occured while updating "Relation" Record. Field 'id' expected a number but got 'afds'.
-ERROR 2023-11-16 17:20:00,188  104 Invalid MaritalStatus Id. While fetching record.
-ERROR 2023-11-16 17:20:03,490  107 An Exception occured while fetching data from MaritalStatus. Field 'id' expected a number but got 'sfads'.
-ERROR 2023-11-16 17:20:08,845  107 An Exception occured while fetching data from MaritalStatus. Field 'id' expected a number but got '10adsfdaf'.
-ERROR 2023-11-17 10:14:11,133  30 Invalid URL.
-ERROR 2023-11-17 10:14:15,468  30 Invalid URL.
-ERROR 2023-11-17 10:40:56,685  73 Invalid Profession Id. While updating record.
-ERROR 2023-11-17 10:41:05,315  76 An Exception occured while updating "Profession" Record. Field 'id' expected a number but got 'hghj'.
-ERROR 2023-11-17 10:53:46,581  113 Invalid MaritalStatus Id. While fetching record.
-ERROR 2023-11-17 11:38:54,910  64 An Exception occured while creating new Sect Field name `sectNameorder` is not valid for model `Sect`.
-ERROR 2023-11-17 11:40:59,687  30 Invalid URL.
-ERROR 2023-11-17 11:44:20,693  103 Invalid Sect Id. While updating record.
-ERROR 2023-11-17 11:44:29,039  103 Invalid Sect Id. While updating record.
-ERROR 2023-11-17 11:51:05,912  142 Invalid MaritalStatus Id. While fetching record.
-ERROR 2023-11-17 11:52:28,471  182 An Exception occured while fetching all Sect names from MstSect table. Field name `sectName` is not valid for model `MstProfession`.
-ERROR 2023-11-17 12:11:21,002  184 An Exception occured while fetching all Sect names from MstSect table. name 'Sect' is not defined
-ERROR 2023-11-17 12:40:19,535  44 Unsupported Media Type. Expected application/json but got text/plain
-ERROR 2023-11-17 12:58:40,367  36 An Exception occured while creating new saint Field name `SectId` is not valid for model `Saint`.
-ERROR 2023-11-17 13:49:16,726  36 An Exception occured while creating new saint cannot unpack non-iterable NoneType object
-ERROR 2023-11-17 13:49:33,469  36 An Exception occured while creating new saint too many values to unpack (expected 2)
-ERROR 2023-11-17 14:17:00,080  30 Invalid URL.
-ERROR 2023-11-17 14:17:13,271  192 An Exception occured while searching saint by gender Cannot resolve keyword 'selectSect' into field. Choices are: birthPlace, createdBy, createdDate, description, devlokDate, dikshaDate, dikshaPlace, dob, fatherName, gender, groupId, guruName, id, isActive, isVerified, motherName, name, sectId, sectId_id, updatedBy, updatedDate
-ERROR 2023-11-17 14:21:20,458  30 Invalid URL.
-ERROR 2023-11-17 14:37:05,768  36 An Exception occured while creating new saint 'name'
-ERROR 2023-11-17 14:53:43,329  36 An Exception occured while creating new saint 'name'
-ERROR 2023-11-17 14:53:58,957  36 An Exception occured while creating new saint 'name'
-ERROR 2023-11-17 15:01:34,588  36 An Exception occured while creating new saint 'list' object has no attribute 'items'
-ERROR 2023-11-17 16:39:35,318  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 16:39:47,371  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 16:39:49,788  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 16:40:25,279  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 16:41:25,058  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 16:46:17,339  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 16:46:43,806  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 16:46:57,097  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 16:46:59,216  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 16:47:18,991  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 16:49:45,336  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 16:50:01,009  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 16:51:35,325  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 16:55:27,946  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 16:56:59,386  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 16:58:40,029  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 17:00:11,641  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 17:00:59,836  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 17:01:08,145  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 17:01:39,810  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 17:01:51,965  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 17:02:10,159  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 17:04:01,684  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 17:04:18,748  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 17:04:26,626  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 17:04:42,083  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 17:10:32,806  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 17:10:50,920  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 17:11:30,347  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 17:11:50,238  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 17:12:47,333  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 17:13:10,898  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 17:20:12,337  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 17:20:14,605  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 17:21:05,686  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 17:21:40,212  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 17:22:38,176  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 17:22:51,306  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-17 17:23:33,255  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 10:15:34,348  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 10:19:33,736  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 10:22:02,939  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 10:22:39,177  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 10:25:11,140  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 10:25:21,698  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 10:28:04,090  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 10:33:08,785  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 10:37:01,588  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 10:37:26,060  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 10:42:38,573  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 10:48:58,019  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 10:50:09,444  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 10:51:51,877  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 10:52:29,285  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 10:54:26,252  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 10:57:49,151  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 11:01:42,263  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 11:02:20,057  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 11:02:36,252  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 11:03:58,567  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 11:04:43,020  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 11:05:03,616  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 11:05:34,509  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 11:10:57,235  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 11:11:08,772  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 11:12:57,530  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 11:13:14,508  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 11:16:47,374  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 11:18:30,535  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 11:18:51,690  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 11:22:41,198  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 11:31:04,965  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 11:32:26,266  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 11:32:31,991  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 11:34:03,469  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 11:34:14,320  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 12:07:31,346  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 12:07:52,891  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 12:09:52,004  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 12:13:08,940  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 12:14:05,858  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 12:30:18,447  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 12:30:28,911  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 12:32:14,147  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 12:57:37,443  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 12:57:51,753  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 13:03:15,250  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 13:06:05,029  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 13:06:50,336  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 13:07:14,785  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 13:07:23,115  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 13:07:30,670  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 13:07:44,962  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 13:08:26,309  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 13:09:14,175  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 14:32:32,926  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 14:34:29,128  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 14:42:37,088  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 14:46:17,167  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 14:53:38,603  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 14:55:53,132  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 15:01:14,193  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 15:02:27,598  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 15:02:42,468  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 15:05:22,004  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 15:05:33,048  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-11-18 16:09:24,993  397 An exception occurred in "GetAllResidents" class. Field name `address` is not valid for model `User`.
-ERROR 2023-11-18 16:09:57,039  397 An exception occurred in "GetAllResidents" class. strptime() argument 1 must be str, not None
-ERROR 2023-11-18 16:42:45,400  178 Head not found or Invalid headId.
-ERROR 2023-11-18 16:47:04,428  184 'headId' excepted a number but got 'aad'.
-ERROR 2023-11-18 16:48:46,495  165 'headId' excepted a number but got 'aad'.
-ERROR 2023-11-18 16:49:31,219  157 Head not found or Invalid headId.
-ERROR 2023-11-20 10:24:23,553  30 Invalid URL.
-ERROR 2023-11-20 10:37:44,349  434 user_id = 100 failed to retrieve data.
-ERROR 2023-11-20 10:38:16,469  434 user_id = 100 failed to retrieve data.
-ERROR 2023-11-20 11:27:10,556  30 Invalid URL.
-ERROR 2023-11-20 11:27:15,814  30 Invalid URL.
-ERROR 2023-11-20 11:50:16,495  58 Invalid JSON data.Expecting ',' delimiter: line 14 column 15 (char 129)
-ERROR 2023-11-20 12:00:49,188  260 user_id = 1000 doesn't exist.
-ERROR 2023-11-20 13:18:06,656  30 Invalid URL.
-ERROR 2023-11-20 15:21:25,953  436 user_id = 17 failed to retrieve data.
-ERROR 2023-11-20 18:42:14,935  30 Invalid URL.
-ERROR 2023-11-21 13:21:34,462  30 Invalid URL.
-ERROR 2023-11-21 13:21:47,120  30 Invalid URL.
-ERROR 2023-11-21 13:48:25,533  30 Invalid URL.
-ERROR 2023-11-21 13:53:59,077  30 Invalid URL.
-ERROR 2023-11-21 13:54:08,967  30 Invalid URL.
-ERROR 2023-11-21 14:22:45,858  30 Invalid URL.
-ERROR 2023-11-21 14:58:20,497  30 Invalid URL.
-ERROR 2023-11-21 14:58:24,760  30 Invalid URL.
-ERROR 2023-11-21 16:20:10,380  30 Invalid URL.
-ERROR 2023-11-22 17:45:35,589  30 Invalid URL.
-ERROR 2023-11-24 10:19:39,672  30 Invalid URL.
-ERROR 2023-11-24 10:19:44,235  30 Invalid URL.
-ERROR 2023-11-24 10:37:49,028  30 Invalid URL.
-ERROR 2023-11-24 10:38:13,059  30 Invalid URL.
-ERROR 2023-11-24 10:55:53,867  30 Invalid URL.
-ERROR 2023-11-24 11:20:19,532  30 Invalid URL.
-ERROR 2023-11-24 11:51:54,606  30 Invalid URL.
-ERROR 2023-11-24 11:52:16,757  30 Invalid URL.
-ERROR 2023-11-24 12:20:07,906  302 An Exception occured while fetching individual saint record. 'datetime.date' object has no attribute 'date'
-ERROR 2023-11-24 12:35:07,929  30 Invalid URL.
-ERROR 2023-11-24 12:35:31,276  30 Invalid URL.
-ERROR 2023-11-24 14:52:58,129  44 Unsupported Media Type. Expected application/json but got text/plain
-ERROR 2023-11-24 14:53:08,462  44 Unsupported Media Type. Expected application/json but got text/plain
-ERROR 2023-11-24 14:59:09,125  30 Invalid URL.
-ERROR 2023-11-24 15:15:51,539  44 Unsupported Media Type. Expected application/json but got text/plain
-ERROR 2023-11-27 11:25:55,106  30 Invalid URL.
-ERROR 2023-11-27 11:28:49,116  35 An Exception occured while creating new Sect Class CREATEEmergencySerializer missing "Meta.model" attribute
-ERROR 2023-11-27 11:35:35,955  30 Invalid URL.
-ERROR 2023-11-27 11:35:43,727  30 Invalid URL.
-ERROR 2023-11-27 12:04:05,795  76 Invalid Emergency Id. While updating record.
-ERROR 2023-11-27 14:45:48,980  30 Invalid URL.
-ERROR 2023-11-27 14:45:52,847  30 Invalid URL.
-ERROR 2023-11-27 14:50:54,474  30 Invalid URL.
-ERROR 2023-11-27 14:50:58,883  30 Invalid URL.
-ERROR 2023-11-27 14:51:05,102  30 Invalid URL.
-ERROR 2023-11-27 14:52:28,307  30 Invalid URL.
-ERROR 2023-11-27 15:05:49,233  30 Invalid URL.
-ERROR 2023-11-27 15:07:43,104  202 An Exception occured while searching saint by gender 'GETAllActiveSaintBySectIdUsingSearchParam' object has no attribute 'pagination_class'
-ERROR 2023-11-27 15:15:11,040  30 Invalid URL.
-ERROR 2023-11-27 15:19:55,063  30 Invalid URL.
-ERROR 2023-11-27 15:23:22,079  30 Invalid URL.
-ERROR 2023-11-27 15:24:55,868  30 Invalid URL.
-ERROR 2023-11-27 15:25:08,225  30 Invalid URL.
-ERROR 2023-11-27 15:56:31,276  38 An Exception occured while creating new Sect too many values to unpack (expected 2)
-ERROR 2023-11-28 15:02:57,493  30 Invalid URL.
-ERROR 2023-11-28 15:03:01,829  30 Invalid URL.
-ERROR 2023-11-29 10:41:31,676  44 Unsupported Media Type. Expected application/json but got text/plain
-ERROR 2023-11-29 10:42:55,198  58 Invalid JSON data.Expecting ',' delimiter: line 3 column 5 (char 28)
-ERROR 2023-11-29 11:14:45,189  108 An Exception occured while updating new saint Field 'id' expected a number but got 'gfgh'.
-ERROR 2023-11-29 11:15:59,004  108 An Exception occured while updating new saint Field 'id' expected a number but got 'gfgh'.
-ERROR 2023-11-29 11:16:01,304  108 An Exception occured while updating new saint Field 'id' expected a number but got 'gfgh'.
-ERROR 2023-11-29 11:17:16,937  113 Invalid Saint Id. While updating record.
-ERROR 2023-11-29 11:17:52,164  113 Invalid Saint Id. While updating record.
-ERROR 2023-11-29 14:32:39,328  30 Invalid URL.
-ERROR 2023-11-29 16:04:28,109  44 Unsupported Media Type. Expected application/json but got text/plain
-ERROR 2023-11-30 12:10:54,520  30 Invalid URL.
-ERROR 2023-12-01 13:33:43,707  30 Invalid URL.
-ERROR 2023-12-01 16:11:20,732  58 Invalid JSON data.Expecting ',' delimiter: line 4 column 30 (char 80)
-ERROR 2023-12-05 11:53:39,715  30 Invalid URL.
-ERROR 2023-12-05 11:53:45,554  30 Invalid URL.
-ERROR 2023-12-05 12:25:50,730  30 Invalid URL.
-ERROR 2023-12-05 13:41:40,770  30 Invalid URL.
-ERROR 2023-12-06 10:05:54,850  30 Invalid URL.
-ERROR 2023-12-06 10:06:02,225  30 Invalid URL.
-ERROR 2023-12-06 10:27:03,679  30 Invalid URL.
-ERROR 2023-12-06 10:27:26,298  30 Invalid URL.
-ERROR 2023-12-06 11:28:44,955  58 Invalid JSON data.Expecting ',' delimiter: line 3 column 5 (char 35)
-ERROR 2023-12-06 12:04:45,432  76 Invalid MaritalStatus Id. While updating record.
-ERROR 2023-12-06 12:09:31,142  30 Invalid URL.
-ERROR 2023-12-06 16:06:45,834  58 Invalid JSON data.Expecting ',' delimiter: line 6 column 5 (char 103)
-ERROR 2023-12-07 12:15:49,695  30 Invalid URL.
-ERROR 2023-12-07 12:16:01,190  30 Invalid URL.
-ERROR 2023-12-07 16:20:12,612  30 Invalid URL.
-ERROR 2023-12-08 10:49:18,313  30 Invalid URL.
-ERROR 2023-12-08 10:49:22,865  30 Invalid URL.
-ERROR 2023-12-08 10:59:28,101  30 Invalid URL.
-ERROR 2023-12-08 15:32:40,872  44 Unsupported Media Type. Expected application/json but got multipart/form-data
-ERROR 2023-12-08 15:36:45,298  44 Unsupported Media Type. Expected application/json but got multipart/form-data
-ERROR 2023-12-11 10:33:42,668  30 Invalid URL.
-ERROR 2023-12-11 10:33:53,940  30 Invalid URL.
-ERROR 2023-12-11 14:18:17,863  67 An Exception occured while creating new saint strptime() argument 1 must be str, not None
-ERROR 2023-12-11 14:51:53,067  30 Invalid URL.
-ERROR 2023-12-13 10:52:14,881  30 Invalid URL.
-ERROR 2023-12-13 10:52:27,340  30 Invalid URL.
-ERROR 2023-12-13 10:52:27,659  30 Invalid URL.
-ERROR 2023-12-13 13:07:41,175  30 Invalid URL.
-ERROR 2023-12-13 13:07:49,426  30 Invalid URL.
-ERROR 2023-12-15 09:55:34,220  30 Invalid URL.
-ERROR 2023-12-15 09:55:42,239  30 Invalid URL.
-ERROR 2023-12-15 09:55:42,240  30 Invalid URL.
-ERROR 2023-12-15 09:55:42,242  30 Invalid URL.
-ERROR 2023-12-15 09:55:42,244  30 Invalid URL.
-ERROR 2023-12-15 09:55:42,247  30 Invalid URL.
-ERROR 2023-12-15 09:55:42,259  30 Invalid URL.
-ERROR 2023-12-15 09:55:42,260  30 Invalid URL.
-ERROR 2023-12-15 09:55:42,318  30 Invalid URL.
-ERROR 2023-12-15 09:55:43,104  30 Invalid URL.
-ERROR 2023-12-15 09:55:43,107  30 Invalid URL.
-ERROR 2023-12-15 09:55:43,108  30 Invalid URL.
-ERROR 2023-12-15 09:55:43,109  30 Invalid URL.
-ERROR 2023-12-15 09:55:43,110  30 Invalid URL.
-ERROR 2023-12-15 09:55:43,121  30 Invalid URL.
-ERROR 2023-12-15 09:55:43,123  30 Invalid URL.
-ERROR 2023-12-15 09:55:43,150  30 Invalid URL.
-ERROR 2023-12-15 09:55:43,706  30 Invalid URL.
-ERROR 2023-12-15 09:55:43,708  30 Invalid URL.
-ERROR 2023-12-15 09:55:43,709  30 Invalid URL.
-ERROR 2023-12-15 09:55:43,710  30 Invalid URL.
-ERROR 2023-12-15 09:55:43,710  30 Invalid URL.
-ERROR 2023-12-15 09:55:43,722  30 Invalid URL.
-ERROR 2023-12-15 09:55:43,724  30 Invalid URL.
-ERROR 2023-12-15 09:55:43,749  30 Invalid URL.
-ERROR 2023-12-15 09:56:38,143  30 Invalid URL.
-ERROR 2023-12-15 09:56:38,144  30 Invalid URL.
-ERROR 2023-12-15 09:56:38,146  30 Invalid URL.
-ERROR 2023-12-15 09:56:38,148  30 Invalid URL.
-ERROR 2023-12-15 09:56:38,151  30 Invalid URL.
-ERROR 2023-12-15 09:56:38,161  30 Invalid URL.
-ERROR 2023-12-15 09:56:38,162  30 Invalid URL.
-ERROR 2023-12-15 09:56:39,145  30 Invalid URL.
-ERROR 2023-12-15 09:56:39,147  30 Invalid URL.
-ERROR 2023-12-15 09:56:39,148  30 Invalid URL.
-ERROR 2023-12-15 09:56:39,149  30 Invalid URL.
-ERROR 2023-12-15 09:56:39,150  30 Invalid URL.
-ERROR 2023-12-15 09:56:39,165  30 Invalid URL.
-ERROR 2023-12-15 09:56:39,165  30 Invalid URL.
-ERROR 2023-12-15 09:56:40,354  30 Invalid URL.
-ERROR 2023-12-15 09:56:40,356  30 Invalid URL.
-ERROR 2023-12-15 09:56:40,357  30 Invalid URL.
-ERROR 2023-12-15 09:56:40,358  30 Invalid URL.
-ERROR 2023-12-15 09:56:40,359  30 Invalid URL.
-ERROR 2023-12-15 09:56:40,372  30 Invalid URL.
-ERROR 2023-12-15 09:56:40,373  30 Invalid URL.
-ERROR 2023-12-15 09:56:40,398  30 Invalid URL.
-ERROR 2023-12-15 09:56:42,488  30 Invalid URL.
-ERROR 2023-12-15 09:56:42,489  30 Invalid URL.
-ERROR 2023-12-15 09:56:42,492  30 Invalid URL.
-ERROR 2023-12-15 09:56:42,494  30 Invalid URL.
-ERROR 2023-12-15 09:56:42,497  30 Invalid URL.
-ERROR 2023-12-15 09:56:42,509  30 Invalid URL.
-ERROR 2023-12-15 09:56:42,510  30 Invalid URL.
-ERROR 2023-12-15 09:56:42,537  30 Invalid URL.
-ERROR 2023-12-15 10:10:36,291  90 Invalid URL.
-ERROR 2023-12-15 05:13:10,943  90 Invalid URL.
-ERROR 2023-12-15 06:42:08,292  90 Invalid URL.
-ERROR 2023-12-15 06:42:16,731  90 Invalid URL.
-ERROR 2023-12-15 08:45:52,892  90 Invalid URL.
-ERROR 2023-12-15 09:14:51,959  90 Invalid URL.
-ERROR 2023-12-15 09:15:24,037  90 Invalid URL.
-ERROR 2023-12-15 09:23:00,400  90 Invalid URL.
-ERROR 2023-12-15 09:34:16,224  90 Invalid URL.
-ERROR 2023-12-15 09:58:49,685  90 Invalid URL.
-ERROR 2023-12-15 09:58:58,547  102 Unsupported Media Type. Expected application/json but got 
-ERROR 2023-12-15 09:59:17,006  102 Unsupported Media Type. Expected application/json but got text/plain
-ERROR 2023-12-15 10:14:54,050  90 Invalid URL.
-ERROR 2023-12-15 11:06:52,448  90 Invalid URL.
-ERROR 2023-12-16 05:43:08,592  90 Invalid URL.
-ERROR 2023-12-16 11:42:20,096  90 Invalid URL.
-ERROR 2023-12-16 11:54:07,784  90 Invalid URL.
-ERROR 2023-12-16 11:54:08,794  90 Invalid URL.
-ERROR 2023-12-16 11:55:57,538  36 userId not found to send Notification 
-ERROR 2023-12-16 12:01:21,919  36 userId not found to send Notification 
-ERROR 2023-12-16 12:02:24,938  36 userId not found to send Notification 
-ERROR 2023-12-16 12:02:41,790  36 userId not found to send Notification 
-ERROR 2023-12-26 10:28:35,554  90 Invalid URL.
-ERROR 2023-12-26 10:28:39,573  90 Invalid URL.
-ERROR 2023-12-26 12:24:48,186  90 Invalid URL.
-ERROR 2023-12-26 12:24:53,223  90 Invalid URL.
-ERROR 2023-12-27 10:25:49,606  90 Invalid URL.
-ERROR 2023-12-27 12:12:41,291  102 Unsupported Media Type. Expected application/json but got text/plain
-ERROR 2023-12-27 12:18:47,511  90 Invalid URL.
-ERROR 2023-12-27 12:19:01,419  102 Unsupported Media Type. Expected application/json but got text/plain
-ERROR 2023-12-27 13:38:18,144  90 Invalid URL.
-ERROR 2023-12-27 13:38:59,670  90 Invalid URL.
-ERROR 2023-12-27 13:43:54,009  90 Invalid URL.
-ERROR 2023-12-27 13:44:58,511  90 Invalid URL.
-ERROR 2023-12-27 13:45:28,087  90 Invalid URL.
-ERROR 2023-12-27 15:10:42,773  90 Invalid URL.
-ERROR 2023-12-27 15:12:36,935  90 Invalid URL.
-ERROR 2023-12-27 15:15:03,133  90 Invalid URL.
-ERROR 2023-12-27 15:19:06,975  90 Invalid URL.
-ERROR 2023-12-27 15:19:39,991  90 Invalid URL.
-ERROR 2023-12-27 15:20:25,954  90 Invalid URL.
-ERROR 2023-12-28 11:56:34,778  200 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 11:56:48,968  200 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 11:57:53,177  200 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 11:58:28,170  200 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 11:58:35,213  200 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 11:58:35,228  138 While converting dob to object an Exception occur == > 'NoneType' object has no attribute 'strip' 
-ERROR 2023-12-28 11:58:54,281  200 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:07:59,331  200 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:08:06,200  200 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:08:12,790  200 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:08:12,813  138 While converting dob to object an Exception occur == > 'NoneType' object has no attribute 'strip' 
-ERROR 2023-12-28 12:08:41,987  200 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:17:41,589  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:18:10,600  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:18:10,614  139 While converting dob to object an Exception occur == > 'NoneType' object has no attribute 'strip' 
-ERROR 2023-12-28 12:18:29,121  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:29:20,163  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:29:27,314  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:30:08,952  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:30:28,620  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:32:21,470  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:32:36,560  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:32:50,380  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:33:08,630  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:33:19,009  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:35:04,004  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:35:09,097  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:41:57,123  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:43:18,236  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:43:30,632  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:50:22,762  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:50:54,022  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:50:59,262  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:51:50,135  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:54:39,104  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:54:53,341  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 12:57:08,281  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 13:00:48,108  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 13:00:57,819  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 13:01:27,451  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 13:02:31,030  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 13:03:24,391  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 13:03:33,518  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 13:03:43,712  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 13:06:55,852  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 13:10:55,445  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 13:11:53,060  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 13:12:08,361  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 13:14:35,134  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 13:14:47,180  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 13:16:15,127  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 13:16:29,485  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 13:16:37,417  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 13:18:00,792  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 13:18:07,132  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 13:18:17,671  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 13:18:23,557  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 13:29:19,635  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-28 13:30:47,470  201 An exception occurred when we find user_id by access token. Token is invalid or expired
-ERROR 2023-12-29 15:41:14,891  90 Invalid URL.
-ERROR 2023-12-29 15:41:29,097  90 Invalid URL.
-ERROR 2023-12-29 15:42:48,768  90 Invalid URL.
-ERROR 2023-12-29 15:42:51,751  90 Invalid URL.
-ERROR 2023-12-29 15:43:26,231  90 Invalid URL.
-ERROR 2023-12-29 15:44:55,851  90 Invalid URL.
-ERROR 2023-12-29 15:44:58,852  90 Invalid URL.
-ERROR 2023-12-29 15:46:40,233  90 Invalid URL.
-ERROR 2023-12-29 15:48:05,136  90 Invalid URL.
-ERROR 2023-12-29 15:48:46,591  90 Invalid URL.
-ERROR 2023-12-29 15:48:58,806  90 Invalid URL.
-ERROR 2023-12-29 15:50:25,041  90 Invalid URL.
-ERROR 2023-12-29 15:51:41,043  90 Invalid URL.
-ERROR 2023-12-29 15:51:43,509  90 Invalid URL.
-ERROR 2023-12-29 15:52:56,906  90 Invalid URL.
-ERROR 2023-12-29 15:53:42,901  90 Invalid URL.
-ERROR 2023-12-29 15:53:51,743  90 Invalid URL.
-ERROR 2023-12-29 15:53:58,828  90 Invalid URL.
-ERROR 2023-12-29 15:54:50,246  90 Invalid URL.
-ERROR 2023-12-29 16:04:53,543  90 Invalid URL.
-ERROR 2023-12-29 16:50:16,028  90 Invalid URL.
-ERROR 2023-12-29 17:02:55,983  90 Invalid URL.
-ERROR 2023-12-30 10:26:37,722  90 Invalid URL.
-ERROR 2023-12-30 12:13:15,674  90 Invalid URL.
-ERROR 2023-12-30 15:06:16,196  128 Got AttributeError when attempting to get a value for field `cityName` on serializer `GETCityWithCountSerializer`.
-The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
-Original exception text was: 'QuerySet' object has no attribute 'cityName'.
-ERROR 2023-12-30 15:19:50,341  156 Got AttributeError when attempting to get a value for field `cityName` on serializer `GETCityWithCountSerializer`.
-The serializer field might be named incorrectly and not match any attribute or key on the `QuerySet` instance.
-Original exception text was: 'QuerySet' object has no attribute 'cityName'.
-ERROR 2023-12-30 15:57:33,966  92 Invalid URL.
-ERROR 2023-12-30 15:59:40,863  92 Invalid URL.
-ERROR 2023-12-30 16:27:51,852  54 Invalid JSON data. Expecting value: line 1 column 1 (char 0)
-ERROR 2023-12-30 16:38:18,632  52 Invalid JSON data
-ERROR 2023-12-30 16:39:45,182  52 Invalid JSON data
-ERROR 2023-12-30 16:46:08,222  54 Invalid JSON data
-ERROR 2023-12-30 16:46:22,542  54 Invalid JSON data
-ERROR 2023-12-30 16:46:39,752  54 Invalid JSON data
-ERROR 2023-12-30 16:46:46,249  54 Invalid JSON data
+ERROR 2024-01-05 12:56:50,930  29 Invalid URL.
+ERROR 2024-01-05 13:04:08,920  74 Field 'id' expected a number but got <MstSect: digambar>.
+ERROR 2024-01-05 13:13:42,157  74 Got AttributeError when attempting to get a value for field `profession` on serializer `GETAllMemberByAreaIdSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `User` instance.
+Original exception text was: 'NoneType' object has no attribute 'description'.
+ERROR 2024-01-05 13:18:48,176  74 Got AttributeError when attempting to get a value for field `profession` on serializer `GETAllMemberByAreaIdSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `User` instance.
+Original exception text was: 'NoneType' object has no attribute 'description'.
+ERROR 2024-01-05 13:19:32,252  74 Got AttributeError when attempting to get a value for field `profession` on serializer `GETAllMemberByAreaIdSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `User` instance.
+Original exception text was: 'NoneType' object has no attribute 'description'.
+ERROR 2024-01-05 13:20:02,716  74 'MstSect' object has no attribute 'description'
+ERROR 2024-01-05 13:20:22,195  74 Object of type PhoneNumber is not JSON serializable
+ERROR 2024-01-05 13:21:39,534  74 Object of type PhoneNumber is not JSON serializable
+ERROR 2024-01-05 13:23:29,191  74 Object of type PhoneNumber is not JSON serializable
+ERROR 2024-01-05 13:31:33,627  74 It is redundant to specify `source='phoneNumber'` on field 'CharField' in serializer 'GETAllMemberByAreaIdSerializer', because it is the same as the field name. Remove the `source` keyword argument.
+ERROR 2024-01-05 13:59:02,592  74 Cannot resolve keyword 'relationName' into field. Choices are: createdBy, createdBy_id, createdDate, description, groupId, id, isActive, order, profession_description, sect_name, updatedBy, updatedBy_id, updatedDate, user
+ERROR 2024-01-05 14:00:09,235  74 'dict' object has no attribute 'professionId'
+ERROR 2024-01-05 14:01:23,802  74 "Got KeyError when attempting to get a value for field `profession` on serializer `GETAllMemberByAreaIdSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'profession'."
+ERROR 2024-01-05 14:06:01,799  74 'GETAllMemberByAreaIdSerializer' object has no attribute 'get_profession'
+ERROR 2024-01-05 14:06:24,199  74 'dict' object has no attribute 'professionId'
+ERROR 2024-01-05 14:06:25,761  74 'dict' object has no attribute 'professionId'
+ERROR 2024-01-05 14:07:11,868  74 "Got KeyError when attempting to get a value for field `profession` on serializer `GETAllMemberByAreaIdSerializer`.\nThe serializer field might be named incorrectly and not match any attribute or key on the `dict` instance.\nOriginal exception text was: 'professionId'."
+ERROR 2024-01-05 14:44:01,691  74 The field 'number' was declared on serializer GETAllMemberByAreaIdSerializer, but has not been included in the 'fields' option.
+ERROR 2024-01-05 14:44:30,145  74 'dict' object has no attribute 'professionId'
+ERROR 2024-01-05 16:07:52,281  74 Cannot resolve keyword 'age' into field. Choices are: GetAllBusinessByUserId, areaId, areaId_id, bloodGroupId, bloodGroupId_id, cityId, cityId_id, createdBy, createdBy_id, createdDate, created_aarti, created_app_configuration, created_area, created_blood_groups, created_business, created_by_me, created_city, created_dharam_sthan, created_dharam_sthan_history, created_dharam_sthan_member, created_emergency, created_event, created_feedback, created_feedback_titles, created_literature, created_literature_document, created_live_location, created_marital_status, created_notification_histories, created_notifications, created_professions, created_relations, created_saint, created_sects, created_state, currentAddress, dob, family_members, fatherName, fcmdevice, gender, gotra, groupId, groups, headId, headId_id, id, isActive, isAdmin, isVerified, is_staff, is_superuser, last_login, logentry, lookingForMatch, maritalStatusId, maritalStatusId_id, name, nativePlace, notification, notificationhistory, password, permanentAddress, phoneNumber, phoneNumberVisibility, professionId, professionId_id, relationId, relationId_id, sectId, sectId_id, updatedBy, updatedBy_id, updatedDate, updated_aarti, updated_app_configuration, updated_area, updated_blood_groups, updated_business, updated_by_me, updated_city, updated_dharam_sthan, updated_dharam_sthan_history, updated_dharam_sthan_member, updated_emergency, updated_event, updated_feedback, updated_feedback_titles, updated_literature, updated_literature_document, updated_live_location, updated_marital_status, updated_notification_histories, updated_notifications, updated_professions, updated_relations, updated_saint, updated_sects, updated_state, user_permissions
+ERROR 2024-01-05 16:09:13,331  74 Cannot resolve keyword 'age' into field. Choices are: GetAllBusinessByUserId, areaId, areaId_id, bloodGroupId, bloodGroupId_id, cityId, cityId_id, createdBy, createdBy_id, createdDate, created_aarti, created_app_configuration, created_area, created_blood_groups, created_business, created_by_me, created_city, created_dharam_sthan, created_dharam_sthan_history, created_dharam_sthan_member, created_emergency, created_event, created_feedback, created_feedback_titles, created_literature, created_literature_document, created_live_location, created_marital_status, created_notification_histories, created_notifications, created_professions, created_relations, created_saint, created_sects, created_state, currentAddress, dob, family_members, fatherName, fcmdevice, gender, gotra, groupId, groups, headId, headId_id, id, isActive, isAdmin, isVerified, is_staff, is_superuser, last_login, logentry, lookingForMatch, maritalStatusId, maritalStatusId_id, name, nativePlace, notification, notificationhistory, password, permanentAddress, phoneNumber, phoneNumberVisibility, professionId, professionId_id, relationId, relationId_id, sectId, sectId_id, updatedBy, updatedBy_id, updatedDate, updated_aarti, updated_app_configuration, updated_area, updated_blood_groups, updated_business, updated_by_me, updated_city, updated_dharam_sthan, updated_dharam_sthan_history, updated_dharam_sthan_member, updated_emergency, updated_event, updated_feedback, updated_feedback_titles, updated_literature, updated_literature_document, updated_live_location, updated_marital_status, updated_notification_histories, updated_notifications, updated_professions, updated_relations, updated_saint, updated_sects, updated_state, user_permissions
+ERROR 2024-01-05 16:11:33,602  74 Cannot resolve keyword 'dob_field' into field. Choices are: GetAllBusinessByUserId, areaId, areaId_id, bloodGroupId, bloodGroupId_id, cityId, cityId_id, createdBy, createdBy_id, createdDate, created_aarti, created_app_configuration, created_area, created_blood_groups, created_business, created_by_me, created_city, created_dharam_sthan, created_dharam_sthan_history, created_dharam_sthan_member, created_emergency, created_event, created_feedback, created_feedback_titles, created_literature, created_literature_document, created_live_location, created_marital_status, created_notification_histories, created_notifications, created_professions, created_relations, created_saint, created_sects, created_state, currentAddress, dob, family_members, fatherName, fcmdevice, gender, gotra, groupId, groups, headId, headId_id, id, isActive, isAdmin, isVerified, is_staff, is_superuser, last_login, logentry, lookingForMatch, maritalStatusId, maritalStatusId_id, name, nativePlace, notification, notificationhistory, password, permanentAddress, phoneNumber, phoneNumberVisibility, professionId, professionId_id, relationId, relationId_id, sectId, sectId_id, updatedBy, updatedBy_id, updatedDate, updated_aarti, updated_app_configuration, updated_area, updated_blood_groups, updated_business, updated_by_me, updated_city, updated_dharam_sthan, updated_dharam_sthan_history, updated_dharam_sthan_member, updated_emergency, updated_event, updated_feedback, updated_feedback_titles, updated_literature, updated_literature_document, updated_live_location, updated_marital_status, updated_notification_histories, updated_notifications, updated_professions, updated_relations, updated_saint, updated_sects, updated_state, user_permissions
+ERROR 2024-01-05 16:18:26,047  74 Cannot resolve keyword 'dob_field' into field. Choices are: GetAllBusinessByUserId, areaId, areaId_id, bloodGroupId, bloodGroupId_id, cityId, cityId_id, createdBy, createdBy_id, createdDate, created_aarti, created_app_configuration, created_area, created_blood_groups, created_business, created_by_me, created_city, created_dharam_sthan, created_dharam_sthan_history, created_dharam_sthan_member, created_emergency, created_event, created_feedback, created_feedback_titles, created_literature, created_literature_document, created_live_location, created_marital_status, created_notification_histories, created_notifications, created_professions, created_relations, created_saint, created_sects, created_state, currentAddress, dob, family_members, fatherName, fcmdevice, gender, gotra, groupId, groups, headId, headId_id, id, isActive, isAdmin, isVerified, is_staff, is_superuser, last_login, logentry, lookingForMatch, maritalStatusId, maritalStatusId_id, name, nativePlace, notification, notificationhistory, password, permanentAddress, phoneNumber, phoneNumberVisibility, professionId, professionId_id, relationId, relationId_id, sectId, sectId_id, updatedBy, updatedBy_id, updatedDate, updated_aarti, updated_app_configuration, updated_area, updated_blood_groups, updated_business, updated_by_me, updated_city, updated_dharam_sthan, updated_dharam_sthan_history, updated_dharam_sthan_member, updated_emergency, updated_event, updated_feedback, updated_feedback_titles, updated_literature, updated_literature_document, updated_live_location, updated_marital_status, updated_notification_histories, updated_notifications, updated_professions, updated_relations, updated_saint, updated_sects, updated_state, user_permissions
+ERROR 2024-01-05 16:19:44,772  74 Cannot resolve keyword 'dob_field' into field. Choices are: GetAllBusinessByUserId, areaId, areaId_id, bloodGroupId, bloodGroupId_id, cityId, cityId_id, createdBy, createdBy_id, createdDate, created_aarti, created_app_configuration, created_area, created_blood_groups, created_business, created_by_me, created_city, created_dharam_sthan, created_dharam_sthan_history, created_dharam_sthan_member, created_emergency, created_event, created_feedback, created_feedback_titles, created_literature, created_literature_document, created_live_location, created_marital_status, created_notification_histories, created_notifications, created_professions, created_relations, created_saint, created_sects, created_state, currentAddress, dob, family_members, fatherName, fcmdevice, gender, gotra, groupId, groups, headId, headId_id, id, isActive, isAdmin, isVerified, is_staff, is_superuser, last_login, logentry, lookingForMatch, maritalStatusId, maritalStatusId_id, name, nativePlace, notification, notificationhistory, password, permanentAddress, phoneNumber, phoneNumberVisibility, professionId, professionId_id, relationId, relationId_id, sectId, sectId_id, updatedBy, updatedBy_id, updatedDate, updated_aarti, updated_app_configuration, updated_area, updated_blood_groups, updated_business, updated_by_me, updated_city, updated_dharam_sthan, updated_dharam_sthan_history, updated_dharam_sthan_member, updated_emergency, updated_event, updated_feedback, updated_feedback_titles, updated_literature, updated_literature_document, updated_live_location, updated_marital_status, updated_notification_histories, updated_notifications, updated_professions, updated_relations, updated_saint, updated_sects, updated_state, user_permissions
+ERROR 2024-01-05 16:24:23,524  74 Cannot resolve keyword 'dob_field' into field. Choices are: GetAllBusinessByUserId, areaId, areaId_id, bloodGroupId, bloodGroupId_id, cityId, cityId_id, createdBy, createdBy_id, createdDate, created_aarti, created_app_configuration, created_area, created_blood_groups, created_business, created_by_me, created_city, created_dharam_sthan, created_dharam_sthan_history, created_dharam_sthan_member, created_emergency, created_event, created_feedback, created_feedback_titles, created_literature, created_literature_document, created_live_location, created_marital_status, created_notification_histories, created_notifications, created_professions, created_relations, created_saint, created_sects, created_state, currentAddress, dob, family_members, fatherName, fcmdevice, gender, gotra, groupId, groups, headId, headId_id, id, isActive, isAdmin, isVerified, is_staff, is_superuser, last_login, logentry, lookingForMatch, maritalStatusId, maritalStatusId_id, name, nativePlace, notification, notificationhistory, password, permanentAddress, phoneNumber, phoneNumberVisibility, professionId, professionId_id, relationId, relationId_id, sectId, sectId_id, updatedBy, updatedBy_id, updatedDate, updated_aarti, updated_app_configuration, updated_area, updated_blood_groups, updated_business, updated_by_me, updated_city, updated_dharam_sthan, updated_dharam_sthan_history, updated_dharam_sthan_member, updated_emergency, updated_event, updated_feedback, updated_feedback_titles, updated_literature, updated_literature_document, updated_live_location, updated_marital_status, updated_notification_histories, updated_notifications, updated_professions, updated_relations, updated_saint, updated_sects, updated_state, user_permissions
+ERROR 2024-01-05 16:27:30,113  74 Cannot resolve keyword 'dob_field' into field. Choices are: GetAllBusinessByUserId, areaId, areaId_id, bloodGroupId, bloodGroupId_id, cityId, cityId_id, createdBy, createdBy_id, createdDate, created_aarti, created_app_configuration, created_area, created_blood_groups, created_business, created_by_me, created_city, created_dharam_sthan, created_dharam_sthan_history, created_dharam_sthan_member, created_emergency, created_event, created_feedback, created_feedback_titles, created_literature, created_literature_document, created_live_location, created_marital_status, created_notification_histories, created_notifications, created_professions, created_relations, created_saint, created_sects, created_state, currentAddress, dob, family_members, fatherName, fcmdevice, gender, gotra, groupId, groups, headId, headId_id, id, isActive, isAdmin, isVerified, is_staff, is_superuser, last_login, logentry, lookingForMatch, maritalStatusId, maritalStatusId_id, name, nativePlace, notification, notificationhistory, password, permanentAddress, phoneNumber, phoneNumberVisibility, professionId, professionId_id, relationId, relationId_id, sectId, sectId_id, updatedBy, updatedBy_id, updatedDate, updated_aarti, updated_app_configuration, updated_area, updated_blood_groups, updated_business, updated_by_me, updated_city, updated_dharam_sthan, updated_dharam_sthan_history, updated_dharam_sthan_member, updated_emergency, updated_event, updated_feedback, updated_feedback_titles, updated_literature, updated_literature_document, updated_live_location, updated_marital_status, updated_notification_histories, updated_notifications, updated_professions, updated_relations, updated_saint, updated_sects, updated_state, user_permissions
+ERROR 2024-01-05 16:30:00,726  74 'F' object has no attribute 'split'
+ERROR 2024-01-05 16:30:49,217  74 Cannot resolve keyword 'dob_field' into field. Choices are: GetAllBusinessByUserId, areaId, areaId_id, bloodGroupId, bloodGroupId_id, cityId, cityId_id, createdBy, createdBy_id, createdDate, created_aarti, created_app_configuration, created_area, created_blood_groups, created_business, created_by_me, created_city, created_dharam_sthan, created_dharam_sthan_history, created_dharam_sthan_member, created_emergency, created_event, created_feedback, created_feedback_titles, created_literature, created_literature_document, created_live_location, created_marital_status, created_notification_histories, created_notifications, created_professions, created_relations, created_saint, created_sects, created_state, currentAddress, dob, family_members, fatherName, fcmdevice, gender, gotra, groupId, groups, headId, headId_id, id, isActive, isAdmin, isVerified, is_staff, is_superuser, last_login, logentry, lookingForMatch, maritalStatusId, maritalStatusId_id, name, nativePlace, notification, notificationhistory, password, permanentAddress, phoneNumber, phoneNumberVisibility, professionId, professionId_id, relationId, relationId_id, sectId, sectId_id, updatedBy, updatedBy_id, updatedDate, updated_aarti, updated_app_configuration, updated_area, updated_blood_groups, updated_business, updated_by_me, updated_city, updated_dharam_sthan, updated_dharam_sthan_history, updated_dharam_sthan_member, updated_emergency, updated_event, updated_feedback, updated_feedback_titles, updated_literature, updated_literature_document, updated_live_location, updated_marital_status, updated_notification_histories, updated_notifications, updated_professions, updated_relations, updated_saint, updated_sects, updated_state, user_permissions
+ERROR 2024-01-05 16:32:13,357  74 Cannot resolve keyword 'dob_field' into field. Choices are: GetAllBusinessByUserId, areaId, areaId_id, bloodGroupId, bloodGroupId_id, cityId, cityId_id, createdBy, createdBy_id, createdDate, created_aarti, created_app_configuration, created_area, created_blood_groups, created_business, created_by_me, created_city, created_dharam_sthan, created_dharam_sthan_history, created_dharam_sthan_member, created_emergency, created_event, created_feedback, created_feedback_titles, created_literature, created_literature_document, created_live_location, created_marital_status, created_notification_histories, created_notifications, created_professions, created_relations, created_saint, created_sects, created_state, currentAddress, dob, family_members, fatherName, fcmdevice, gender, gotra, groupId, groups, headId, headId_id, id, isActive, isAdmin, isVerified, is_staff, is_superuser, last_login, logentry, lookingForMatch, maritalStatusId, maritalStatusId_id, name, nativePlace, notification, notificationhistory, password, permanentAddress, phoneNumber, phoneNumberVisibility, professionId, professionId_id, relationId, relationId_id, sectId, sectId_id, updatedBy, updatedBy_id, updatedDate, updated_aarti, updated_app_configuration, updated_area, updated_blood_groups, updated_business, updated_by_me, updated_city, updated_dharam_sthan, updated_dharam_sthan_history, updated_dharam_sthan_member, updated_emergency, updated_event, updated_feedback, updated_feedback_titles, updated_literature, updated_literature_document, updated_live_location, updated_marital_status, updated_notification_histories, updated_notifications, updated_professions, updated_relations, updated_saint, updated_sects, updated_state, user_permissions
+ERROR 2024-01-05 16:32:50,903  74 Cannot resolve keyword 'dob_field' into field. Choices are: GetAllBusinessByUserId, areaId, areaId_id, bloodGroupId, bloodGroupId_id, cityId, cityId_id, createdBy, createdBy_id, createdDate, created_aarti, created_app_configuration, created_area, created_blood_groups, created_business, created_by_me, created_city, created_dharam_sthan, created_dharam_sthan_history, created_dharam_sthan_member, created_emergency, created_event, created_feedback, created_feedback_titles, created_literature, created_literature_document, created_live_location, created_marital_status, created_notification_histories, created_notifications, created_professions, created_relations, created_saint, created_sects, created_state, currentAddress, dob, family_members, fatherName, fcmdevice, gender, gotra, groupId, groups, headId, headId_id, id, isActive, isAdmin, isVerified, is_staff, is_superuser, last_login, logentry, lookingForMatch, maritalStatusId, maritalStatusId_id, name, nativePlace, notification, notificationhistory, password, permanentAddress, phoneNumber, phoneNumberVisibility, professionId, professionId_id, relationId, relationId_id, sectId, sectId_id, updatedBy, updatedBy_id, updatedDate, updated_aarti, updated_app_configuration, updated_area, updated_blood_groups, updated_business, updated_by_me, updated_city, updated_dharam_sthan, updated_dharam_sthan_history, updated_dharam_sthan_member, updated_emergency, updated_event, updated_feedback, updated_feedback_titles, updated_literature, updated_literature_document, updated_live_location, updated_marital_status, updated_notification_histories, updated_notifications, updated_professions, updated_relations, updated_saint, updated_sects, updated_state, user_permissions
+ERROR 2024-01-05 16:50:21,598  74 Concat must take at least two expressions
+ERROR 2024-01-05 16:52:15,786  74 Concat must take at least two expressions
+ERROR 2024-01-05 17:12:09,707  74 Got AttributeError when attempting to get a value for field `age` on serializer `GETAllMemberByAreaIdSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `User` instance.
+Original exception text was: 'User' object has no attribute 'age'.
+ERROR 2024-01-05 17:25:20,028  74 Cannot resolve keyword 'year' into field. Join on 'name' not permitted.
+ERROR 2024-01-05 17:31:01,426  74 Cannot resolve keyword 'year' into field. Join on 'name' not permitted.
+ERROR 2024-01-05 17:41:47,620  74 calculate_age_expression() missing 1 required positional argument: 'model'
+ERROR 2024-01-05 17:42:09,319  74 'name' should be a DateField or DateTimeField.
+ERROR 2024-01-05 17:42:26,832  74 User has no field named 'name22'
+ERROR 2024-01-06 10:23:52,939  74 'F' object has no attribute 'len'
+ERROR 2024-01-06 10:28:01,747  74 'F' object has no attribute 'format_international'
+ERROR 2024-01-06 10:28:23,986  74 'F' object has no attribute 'format_international'
+ERROR 2024-01-06 10:28:50,415  74 Cannot resolve keyword 'isPhoneNumberVisible' into field. Choices are: GetAllBusinessByUserId, age, areaId, areaId_id, bloodGroupId, bloodGroupId_id, cityId, cityId_id, createdBy, createdBy_id, createdDate, created_aarti, created_app_configuration, created_area, created_blood_groups, created_business, created_by_me, created_city, created_dharam_sthan, created_dharam_sthan_history, created_dharam_sthan_member, created_emergency, created_event, created_feedback, created_feedback_titles, created_literature, created_literature_document, created_live_location, created_marital_status, created_notification_histories, created_notifications, created_professions, created_relations, created_saint, created_sects, created_state, currentAddress, dob, family_members, fatherName, fcmdevice, gender, gotra, groupId, groups, headId, headId_id, id, isActive, isAdmin, isVerified, is_staff, is_superuser, last_login, logentry, lookingForMatch, maritalStatusId, maritalStatusId_id, name, nativePlace, notification, notificationhistory, password, permanentAddress, phoneNumber, phoneNumberVisibility, professionId, professionId_id, relationId, relationId_id, sectId, sectId_id, updatedBy, updatedBy_id, updatedDate, updated_aarti, updated_app_configuration, updated_area, updated_blood_groups, updated_business, updated_by_me, updated_city, updated_dharam_sthan, updated_dharam_sthan_history, updated_dharam_sthan_member, updated_emergency, updated_event, updated_feedback, updated_feedback_titles, updated_literature, updated_literature_document, updated_live_location, updated_marital_status, updated_notification_histories, updated_notifications, updated_professions, updated_relations, updated_saint, updated_sects, updated_state, user_permissions
+ERROR 2024-01-06 10:30:14,609  74 Cannot infer type of '-' expression involving these types: PhoneNumberField, IntegerField. You must set output_field.
+ERROR 2024-01-06 10:30:43,450  74 Cannot infer type of '-' expression involving these types: PhoneNumberField, IntegerField. You must set output_field.
+ERROR 2024-01-06 10:31:10,460  74 Cannot infer type of '*' expression involving these types: CharField, PhoneNumberField. You must set output_field.
+ERROR 2024-01-06 10:32:51,111  74 'F' object has no attribute 'format_international'
+ERROR 2024-01-06 10:33:07,872  74 Cannot resolve keyword 'default' into field. Choices are: GetAllBusinessByUserId, age, areaId, areaId_id, bloodGroupId, bloodGroupId_id, cityId, cityId_id, createdBy, createdBy_id, createdDate, created_aarti, created_app_configuration, created_area, created_blood_groups, created_business, created_by_me, created_city, created_dharam_sthan, created_dharam_sthan_history, created_dharam_sthan_member, created_emergency, created_event, created_feedback, created_feedback_titles, created_literature, created_literature_document, created_live_location, created_marital_status, created_notification_histories, created_notifications, created_professions, created_relations, created_saint, created_sects, created_state, currentAddress, dob, family_members, fatherName, fcmdevice, gender, gotra, groupId, groups, headId, headId_id, id, isActive, isAdmin, isVerified, is_staff, is_superuser, last_login, logentry, lookingForMatch, maritalStatusId, maritalStatusId_id, name, nativePlace, notification, notificationhistory, password, permanentAddress, phoneNumber, phoneNumberVisibility, professionId, professionId_id, relationId, relationId_id, sectId, sectId_id, updatedBy, updatedBy_id, updatedDate, updated_aarti, updated_app_configuration, updated_area, updated_blood_groups, updated_business, updated_by_me, updated_city, updated_dharam_sthan, updated_dharam_sthan_history, updated_dharam_sthan_member, updated_emergency, updated_event, updated_feedback, updated_feedback_titles, updated_literature, updated_literature_document, updated_live_location, updated_marital_status, updated_notification_histories, updated_notifications, updated_professions, updated_relations, updated_saint, updated_sects, updated_state, user_permissions
+ERROR 2024-01-06 10:35:21,334  74 'F' object has no attribute 'format_international'
+ERROR 2024-01-06 10:46:59,567  74 Object of type PhoneNumber is not JSON serializable
+ERROR 2024-01-08 10:18:51,480  29 Invalid URL.
+ERROR 2024-01-08 10:18:56,089  29 Invalid URL.
+ERROR 2024-01-08 11:18:18,086  74 Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2024-01-08 11:19:43,351  74 Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'dict'>`
+ERROR 2024-01-08 11:42:48,244  74 Got AttributeError when attempting to get a value for field `age` on serializer `GETAllMemberByAreaIdSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `User` instance.
+Original exception text was: 'User' object has no attribute 'age'.
+ERROR 2024-01-08 11:45:58,348  74 cannot access local variable 'total_member' where it is not associated with a value
+ERROR 2024-01-08 11:46:01,503  74 cannot access local variable 'total_member' where it is not associated with a value
+ERROR 2024-01-08 11:50:13,002  74 rest_framework.response.Response() got multiple values for keyword argument 'status'
+ERROR 2024-01-08 11:51:29,241  74 Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2024-01-08 11:51:31,517  74 Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2024-01-08 11:52:13,491  74 Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2024-01-08 11:53:32,710  74 Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2024-01-08 12:11:58,190  74 Object of type PhoneNumber is not JSON serializable
+ERROR 2024-01-08 12:48:31,011  29 Invalid URL.
+ERROR 2024-01-08 12:49:47,748  29 Invalid URL.
+ERROR 2024-01-08 13:31:06,120  74 Cannot resolve keyword 'city' into field. Choices are: GetAllAreaByCityId, GetAllBusinessByCityId, cities, cityId, cityName, createdBy, createdBy_id, createdDate, description, dharamsthan, event, groupId, isActive, isActiveForResidents, isVerified, pincode, stateId, stateId_id, updatedBy, updatedBy_id, updatedDate, user
+ERROR 2024-01-08 13:33:44,686  74 'QuerySet' object has no attribute 'value'
+ERROR 2024-01-09 14:42:25,840  74 Got AttributeError when attempting to get a value for field `countryCode` on serializer `GETBusinessByIdSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `Business` instance.
+Original exception text was: 'Business' object has no attribute 'self'.
+ERROR 2024-01-09 14:42:56,776  74 Got AttributeError when attempting to get a value for field `countryCode` on serializer `GETBusinessByIdSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `Business` instance.
+Original exception text was: 'Business' object has no attribute 'phoneNumber'.
+ERROR 2024-01-09 14:45:01,127  74 'Business' object has no attribute 'phoneNumber'
+ERROR 2024-01-09 14:45:32,712  74 'NoneType' object has no attribute 'country_code'
+ERROR 2024-01-09 14:56:10,016  74 The field 'phoneNumber' was declared on serializer GETBusinessByIdSerializer, but has not been included in the 'fields' option.
+ERROR 2024-01-09 14:56:38,560  74 Got AttributeError when attempting to get a value for field `phoneNumber` on serializer `GETBusinessByIdSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `Business` instance.
+Original exception text was: 'NoneType' object has no attribute 'national_number'.
+ERROR 2024-01-09 16:33:34,580  29 Invalid URL.
+ERROR 2024-01-09 17:05:36,455  44 Invalid JSON data. Expecting ',' delimiter: line 4 column 5 (char 59)
+ERROR 2024-01-09 17:11:40,793  74 Field 'id' expected a number but got <User: 30>.
+ERROR 2024-01-09 17:13:40,297  74 Field 'id' expected a number but got <User: 30>.
+ERROR 2024-01-09 17:15:48,351  74 Field 'id' expected a number but got <User: 30>.
+ERROR 2024-01-09 17:16:28,062  74 Field 'id' expected a number but got <User: 30>.
+ERROR 2024-01-09 17:37:12,122  54 Invalid JSON data
+ERROR 2024-01-09 17:48:41,527  74 “C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\media\literature_Documents\Bca-final-sem-result.pdf” does not exist
+ERROR 2024-01-10 11:01:06,172  74 “C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\media\literature_Documents\Bca-final-sem-result1.pdf” does not exist
+ERROR 2024-01-10 11:11:02,760  74 “C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\media\literature_Documents\Bca-final-sem-result1.pdf” does not exist
+ERROR 2024-01-10 11:11:05,178  74 “C:\Users\vs123\OneDrive\Desktop\gamika_user_login_api\auth_api\media\literature_Documents\Bca-final-sem-result1.pdf” does not exist
+ERROR 2024-01-10 12:27:01,279  74 Cannot resolve keyword 'saint' into field. Choices are: aarti, createdBy, createdBy_id, createdDate, dharamsthan, event, groupId, id, isActive, literature, literaturedocument, livelocation, order, sectName, select_sect, updatedBy, updatedBy_id, updatedDate, user
+ERROR 2024-01-10 12:29:44,016  74 Cannot resolve keyword 'saint' into field. Choices are: aarti, createdBy, createdBy_id, createdDate, dharamsthan, event, groupId, id, isActive, literature, literaturedocument, livelocation, order, sectName, select_sect, updatedBy, updatedBy_id, updatedDate, user
+ERROR 2024-01-10 12:53:36,510  29 Invalid URL.
+ERROR 2024-01-18 10:28:39,676  132 Head not found or Invalid headId.
+ERROR 2024-01-18 10:32:21,190  29 Invalid URL.
+ERROR 2024-01-18 10:32:27,055  29 Invalid URL.
+ERROR 2024-01-18 10:42:01,367  74 (0) Missing or invalid default region.
+ERROR 2024-01-18 10:50:14,333  74 Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'dict'>`
+ERROR 2024-01-18 10:52:00,215  74 Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'dict'>`
+ERROR 2024-01-18 10:54:13,822  74 Expected a `Response`, `HttpResponse` or `HttpStreamingResponse` to be returned from the view, but received a `<class 'dict'>`
+ERROR 2024-01-18 10:55:37,842  74 Object of type PhoneNumber is not JSON serializable

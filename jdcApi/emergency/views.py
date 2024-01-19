@@ -1,4 +1,4 @@
-from django.db.models import Q
+from django.db.models import Q, Count
 from rest_framework.views import APIView
 from .serializer import *
 from rest_framework.response import Response
@@ -17,32 +17,23 @@ class POSTEmergency(APIView):
 
     def post(self, request, *args, **kwargs):
         """To create add new emergency record."""
-        try:
-            get_user_id = get_user_id_from_token_view(request)
-            serializer = CREATEEmergencySerializer(data=request.data, context={'user_id_by_token': get_user_id})
-            if serializer.is_valid():
-                serializer.save()
-                response_data = {
-                    'status': 200,
-                    'statusCode': 'success',
-                    'data': {'message': 'Record Added Successfully.'}
-                }
-                info_logger.info('New Emergency Created Successfully.')
-                return Response(response_data)
+        get_user_id = get_user_id_from_token_view(request)
+        serializer = CREATEEmergencySerializer(data=request.data, context={'user_id_by_token': get_user_id})
+        if serializer.is_valid():
+            serializer.save()
             response_data = {
-                'status': 400,
-                'statusCode': 'failed',
-                'data': serializer.errors
+                'status': 200,
+                'statusCode': 'success',
+                'data': {'message': 'Record Added Successfully.'}
             }
-            return Response(response_data, status=400)
-        except Exception as e:
-            error_logger.error(f'An Exception occured while creating new Sect {e}')
-            response_data = {
-                'status': 500,
-                'statusCode': 'failed',
-                'data': str(e)
-            }
-            return Response(response_data, status=500)
+            info_logger.info('New Emergency Created Successfully.')
+            return Response(response_data)
+        response_data = {
+            'status': 400,
+            'statusCode': 'failed',
+            'data': serializer.errors
+        }
+        return Response(response_data, status=400)
 
 
 class PUTEmergencyById(APIView):
@@ -50,7 +41,6 @@ class PUTEmergencyById(APIView):
 
     def put(self, request, id, *args, **kwargs):
         try:
-
             obj = Emergency.objects.get(id=id)
             get_user_id = get_user_id_from_token_view(request)
             serializer = UPDATEEmergencySerializer(data=request.data, instance=obj, partial=True,
@@ -85,15 +75,6 @@ class PUTEmergencyById(APIView):
                 'data': f" 'id' excepted a number but got '{id}'."
             }
             return Response(response_data, status=404)
-        except Exception as e:
-            error_logger.error(f'An Exception occured while updating "Emergency" Record. {e}')
-            response_data = {
-                'status': 500,
-                'statusCode': 'failed',
-                'data': str(e)
-
-            }
-            return Response(response_data, status=500)
 
 
 class GETEmergencyDetailById(APIView):
@@ -128,29 +109,12 @@ class GETEmergencyDetailById(APIView):
 class GETAllCityByEmergency(APIView):
     """ show all approved city and search 'cityName' by user."""
     def get(self, request, *args, **kwargs):
-        try:
-            cityName = request.GET.get('cityName')
 
-            # search
-            if cityName:
-                queryset = City.objects.filter(isActive=True, isVerified=True, cityName__icontains=cityName.strip())
-                if len(queryset) < 1:
-                    response_data = {
-                        'statusCode': 200,
-                        'status': 'Success',
-                        'data': {"message": "No Record found."},
-                    }
-                    return Response(response_data)
+        cityName = request.GET.get('cityName')
 
-                serializer = GETCitySerializer(queryset, many=True)
-                response_data = {
-                    'statusCode': 200,
-                    'status': 'Success',
-                    'data': serializer.data,
-                }
-                return Response(response_data)
-
-            queryset = City.objects.filter(isActive=True, isVerified=True).order_by('cityName')
+        # search
+        if cityName:
+            queryset = City.objects.filter(isActive=True, isVerified=True, cityName__icontains=cityName.strip())
             if len(queryset) < 1:
                 response_data = {
                     'statusCode': 200,
@@ -159,20 +123,32 @@ class GETAllCityByEmergency(APIView):
                 }
                 return Response(response_data)
 
-            serializer = GETCityWithCountSerializer(queryset, many=True)
+            serializer = GETCitySerializer(queryset, many=True)
             response_data = {
-                'status_code': 200,
+                'statusCode': 200,
                 'status': 'Success',
                 'data': serializer.data,
             }
             return Response(response_data)
-        except Exception as e:
+
+        queryset = City.objects.filter(isActive=True, isVerified=True).annotate(
+        count=Count('cities', filter=Q(cities__isVerified=True, cities__isActive=True))
+        ).values('cityId', 'cityName', 'count').order_by('cityName')
+        if len(queryset) < 1:
             response_data = {
-                'status_code': 500,
-                'status': 'error',
-                'data': {'error': str(e)},
+                'statusCode': 200,
+                'status': 'Success',
+                'data': {"message": "No Record found."},
             }
-            return Response(response_data, status=500)
+            return Response(response_data)
+
+        serializer = GETCityWithCountSerializer(queryset, many=True)
+        response_data = {
+            'status_code': 200,
+            'status': 'Success',
+            'data': serializer.data,
+        }
+        return Response(response_data)
 
 
 class GETAllEmergencyByCityId(APIView):

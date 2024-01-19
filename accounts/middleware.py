@@ -7,7 +7,6 @@ from django.utils.deprecation import MiddlewareMixin
 from rest_framework import status
 import logging
 
-
 error_logger = logging.getLogger('error')
 info_logger = logging.getLogger('info')
 
@@ -18,6 +17,7 @@ class ValidateURLAndJSONMiddleware:
 
     def __call__(self, request):
         # check url is valid or not
+        print('middleware calling')
         try:
             resolve(request.path_info)
         except Exception as e:
@@ -62,6 +62,8 @@ class ValidateURLAndJSONMiddleware:
 
     def process_exception(self, request, exception):
         # print('exception method called on middleware')
+        print('calling process_exception method')
+        print('exceptions ==> ',exception)
         if exception:
             response_data = {
                 'statusCode': 500,
@@ -70,6 +72,7 @@ class ValidateURLAndJSONMiddleware:
 
             }
             error_logger.error(str(exception))
+            print(exception)
             return JsonResponse(response_data, status=response_data['statusCode'])
         return None
 

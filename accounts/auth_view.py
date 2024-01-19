@@ -8,7 +8,7 @@ from django.db.models import Q
 from .auth import is_otp_expired, generate_otp, is_send_otp, check_number_exist_for_login
 from .utils import is_valid_mobile_number
 from rest_framework import status
-from .push_notification import send_notification
+from notificationApi.push_notification import send_notification
 from .tokens import generate_tokens
 import logging
 info_logger = logging.getLogger('info')

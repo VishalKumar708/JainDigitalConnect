@@ -46,7 +46,11 @@ INSTALLED_APPS = [
     'django_filters',
     'fcm_django',
     'jdcApi',
-    'django_countries'
+    'masterApi',
+    'notificationApi',
+    'django_countries',
+    'phonenumber_field'
+
 
     # 'rest_framework.authtoken'
 ]
@@ -103,7 +107,7 @@ AUTH_USER_MODEL = 'accounts.User'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'api',
+        'NAME': 'api3',
         'USER': 'root',
         'PASSWORD': 'admin',
         'HOST': 'localhost',
@@ -181,11 +185,9 @@ LOGGING = {
     "formatters": {
         "verbose": {
             "format": "%(levelname)s %(asctime)s  %(lineno)s %(message)s",
-
         },
         "plain": {
             "format": "%(levelname)s: %(asctime)s | %(module)s.py| func: %(funcName)s| line number: %(lineno)s| %(message)s",
-
         },
     },
     "filters": {
@@ -204,7 +206,7 @@ LOGGING = {
             "level": "INFO",
             'class': 'logging.handlers.RotatingFileHandler',
             'filename': os.path.join(LOG_DIR, "info.log"),
-            # 'maxBytes': 300 * 1024 * 1024,
+            'maxBytes': 30 * 1024 * 1024,
             'backupCount': 10,
             "formatter": "verbose",
             "encoding": 'utf-8'
@@ -213,7 +215,7 @@ LOGGING = {
             "level": "ERROR",
             'class': 'logging.handlers.RotatingFileHandler',
             'filename': os.path.join(LOG_DIR, "error.log"),
-            # 'maxBytes': 300 * 1024 * 1024,
+            'maxBytes': 30 * 1024 * 1024,
             'backupCount': 10,
             "formatter": "verbose",
             "encoding": 'utf-8'
@@ -222,7 +224,7 @@ LOGGING = {
             "level": "INFO",
             'class': 'logging.handlers.RotatingFileHandler',
             'filename': os.path.join(LOG_DIR, "console.log"),
-            # 'maxBytes': 300 * 1024 * 1024,
+            'maxBytes': 30 * 1024 * 1024,
             'backupCount': 10,
             "formatter": "verbose",
             "encoding": 'utf-8'
@@ -306,3 +308,9 @@ MEDIA_URL = '/media/'
 BOY_MIN_AGE = 21
 GIRL_MIN_AGE = 18
 # OTHERS_MIN_AGE = 25
+from django.conf.locale.en import  formats as en_formats
+en_formats.DATE_FORMAT = 'j F, Y'
+en_formats.DATETIME_INPUT_FORMATS = 'j F, Y g:iA'
+DATE_INPUT_FORMATS = ["%b %d, %Y"]
+
+APPEND_SLASH = False
